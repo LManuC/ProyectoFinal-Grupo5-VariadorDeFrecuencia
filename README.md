@@ -99,14 +99,3 @@ Pmax: 375W / 1/2HP
 |Display con menú                  |  10,6%        |
 |GPIOs                             |   7,7%        |
 |Access point                      |   9,0%        |
-
-
-
-
-
-
-
-
-
-# Gitignore
-Fue creado con una plantilla para KiCad
