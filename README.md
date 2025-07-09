@@ -70,20 +70,20 @@ Pmax: 375W / 1/2HP
 9. Rotura del banco de pruebas
     -  Fabricación de partes críticas de repuesto
     -  Colaboración externa especializada
-10.  Dificultades para simular el desfasaje
+10. Dificultades para simular el desfasaje
     -  Sobreestimación de los tiempos de trabajo
-11.  Error en el cálculo de la corriente máxima de algún componente y la corriente quedó sobredimensionada
+11. Error en el cálculo de la corriente máxima de algún componente y la corriente quedó sobredimensionada
     -  Justificación y documentación de los componentes elegidos
     -  Compra en exceso de dispositivos críticos
-12.  Falla el circuito y se quema una de las placas de potencia
+12. Falla el circuito y se quema una de las placas de potencia
     -  Fabricación de placa extra
     -  Compra en exceso de dispositivos críticos
     -  Circuitería de protección ruteada sin montar
-13.  El transformador está mal calculado y no entrega la potencia necesaria
+13. El transformador está mal calculado y no entrega la potencia necesaria
     -  Ensayos exhaustivos durante el diseño
-14.  Ruido eléctrico interfiere en el display
+14. Ruido eléctrico interfiere en el display
     -  Fabricación de pantalla metálica para separar circuitos ruidosos
-15.  El motor no arranca por falta de potencia en la entrada
+15. El motor no arranca por falta de potencia en la entrada
     -  Pruebas con batería de auto de respaldo
 
 # Calidad
@@ -99,14 +99,3 @@ Pmax: 375W / 1/2HP
 |Display con menú                  |  10,6%        |
 |GPIOs                             |   7,7%        |
 |Access point                      |   9,0%        |
-
-
-
-
-
-
-
-
-
-# Gitignore
-Fue creado con una plantilla para KiCad
