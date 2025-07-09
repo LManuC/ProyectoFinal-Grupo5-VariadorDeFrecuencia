@@ -39,52 +39,74 @@ fout: 0Hz - 150Hz
 Pmax: 375W / 1/2HP
 
 # Riesgos
-1. Fallas en la elección de la topología:
-  - Priorización del diseño frente a otras tareas;
-  - Ensayos varios sobre circuitos físicos;
-2. Rendimiento simulado insuficiente
-  - Priorización del diseño frente a otras tareas;
-  - Ensayos varios sobre circuitos físicos;
-  - Pruebas sobre motores utilizando variadores de frecuencia comerciales con entrada de contínua;
-3. No se consiguen los materiales en el mercado local
-  - Diseño temprano de PCB
-Compra en exceso de dispositivos críticos
-El transformador está mal construído y no entrega la potencia necesaria
-Fabricación de transformador con un proveedor especializado
-Al PCB le faltaron rutear una o más pistas
-Validaciones cruzadas de footprints
-Validaciones cruzadas de esquemáticos
-Validaciones cruzadas de PCB
-Pérdida de componentes
-Compra en exceso de dispositivos críticos
-Compra en exceso de dispositivos pequeños
-Compra en exceso de dispositivos sin marking
-Error en el diseño del footprint
-Validaciones cruzadas de footprints
-Checkbox en componentes para registrar validación
-Agregado de hoja de datos al esquemático
-Agregado de nombre del componente según el fabricante
-Errores de diseño hacen que la tensión no sea lo suficientemente alta
-Diseño autodefensivo con tensiones sobredimensionadas
-Cálculo de convertido con duty de respaldo
-Rotura del banco de pruebas
-Fabricación de partes críticas de repuesto
-Colaboración externa especializada
-Dificultades para simular el desfasaje
-Sobreestimación de los tiempos de trabajo
-Error en el cálculo de la corriente máxima de algún componente y la corriente quedó sobredimensionada
-Justificación y documentación de los componentes elegidos
-Compra en exceso de dispositivos críticos
-Falla el circuito y se quema una de las placas de potencia
-Fabricación de placa extra
-Compra en exceso de dispositivos críticos
-Circuitería de protección ruteada sin montar
-El transformador está mal calculado y no entrega la potencia necesaria
-Ensayos exhaustivos durante el diseño
-Ruido eléctrico interfiere en el display
-Fabricación de pantalla metálica para separar circuitos ruidosos
-El motor no arranca por falta de potencia en la entrada
-Pruebas con batería de auto de respaldo
+1.  Fallas en la elección de la topología:
+    -  Priorización del diseño frente a otras tareas;
+    -  Ensayos varios sobre circuitos físicos;
+2.  Rendimiento simulado insuficiente
+    -  Priorización del diseño frente a otras tareas;
+    -  Ensayos varios sobre circuitos físicos;
+    -  Pruebas sobre motores utilizando variadores de frecuencia comerciales con entrada de contínua;
+3.  No se consiguen los materiales en el mercado local
+    -  Diseño temprano de PCB
+    -  Compra en exceso de dispositivos críticos
+4.  El transformador está mal construído y no entrega la potencia necesaria
+    -  Fabricación de transformador con un proveedor especializado
+5.  Al PCB le faltaron rutear una o más pistas
+    -  Validaciones cruzadas de footprints
+    -  Validaciones cruzadas de esquemáticos
+    -  Validaciones cruzadas de PCB
+6.  Pérdida de componentes
+    -  Compra en exceso de dispositivos críticos
+    -  Compra en exceso de dispositivos pequeños
+    -  Compra en exceso de dispositivos sin marking
+7.  Error en el diseño del footprint
+    -  Validaciones cruzadas de footprints
+    -  Checkbox en componentes para registrar validación
+    -  Agregado de hoja de datos al esquemático
+    -  Agregado de nombre del componente según el fabricante
+8.  Errores de diseño hacen que la tensión no sea lo suficientemente alta
+    -  Diseño autodefensivo con tensiones sobredimensionadas
+    -  Cálculo de convertido con duty de respaldo
+9. Rotura del banco de pruebas
+    -  Fabricación de partes críticas de repuesto
+    -  Colaboración externa especializada
+10.  Dificultades para simular el desfasaje
+    -  Sobreestimación de los tiempos de trabajo
+11.  Error en el cálculo de la corriente máxima de algún componente y la corriente quedó sobredimensionada
+    -  Justificación y documentación de los componentes elegidos
+    -  Compra en exceso de dispositivos críticos
+12.  Falla el circuito y se quema una de las placas de potencia
+    -  Fabricación de placa extra
+    -  Compra en exceso de dispositivos críticos
+    -  Circuitería de protección ruteada sin montar
+13.  El transformador está mal calculado y no entrega la potencia necesaria
+    -  Ensayos exhaustivos durante el diseño
+14.  Ruido eléctrico interfiere en el display
+    -  Fabricación de pantalla metálica para separar circuitos ruidosos
+15.  El motor no arranca por falta de potencia en la entrada
+    -  Pruebas con batería de auto de respaldo
+
+# Calidad
+
+|Funcionalidad                     |  Importancia  |
+|----------------------------------|---------------|
+|Tensión de salida                 |  16,3%        |
+|Tensión entrada                   |  20,7%        |
+|Frecuencia de salida              |   7,1%        |
+|Protecciones contra sobrecorriente|   6,9%        |
+|Aislamiento entrada salida        |  12,1%        |
+|Algoritmo modulación              |   9,6%        |
+|Display con menú                  |  10,6%        |
+|GPIOs                             |   7,7%        |
+|Access point                      |   9,0%        |
+
+
+
+
+
+
+
+
 
 # Gitignore
 Fue creado con una plantilla para KiCad
