@@ -1,0 +1,140 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "9.0")
+	(uuid "e60c11d9-ab9e-4760-a4a7-008fcec65a72")
+	(paper "A4")
+	(lib_symbols)
+	(sheet
+		(at 101.6 40.64)
+		(size 45.72 33.02)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "110275dc-ed3b-4248-b6a0-86f6159a1d7c")
+		(property "Sheetname" "Micro"
+			(at 101.6 39.9284 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "micro.kicad_sch"
+			(at 101.6 74.2446 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "VFD_V1"
+				(path "/e60c11d9-ab9e-4760-a4a7-008fcec65a72"
+					(page "4")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 185.42 91.44)
+		(size 68.58 38.1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "628f2f61-6f1b-4d29-a612-5c194d35f65c")
+		(property "Sheetname" "Inversor"
+			(at 185.42 90.7284 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "inversor.kicad_sch"
+			(at 185.42 130.1246 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "VFD_V1"
+				(path "/e60c11d9-ab9e-4760-a4a7-008fcec65a72"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 55.88 93.98)
+		(size 53.34 30.48)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "c6551446-5e26-4d9a-a5bc-1c867d865e21")
+		(property "Sheetname" "Conversor"
+			(at 55.88 93.2684 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "conversor.kicad_sch"
+			(at 55.88 125.0446 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "VFD_V1"
+				(path "/e60c11d9-ab9e-4760-a4a7-008fcec65a72"
+					(page "3")
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+)
