@@ -1,0 +1,6 @@
+LTspice 24.1.9 for Windows
+Circuit: C:\Users\User\Desktop\ProyectoFinal-Grupo5-VariadorDeFrecuencia\Hardware\Diseno\Digital inputs\Draft1.net
+Start Time: Tue Jul 15 07:51:18 2025
+C:\Users\User\Desktop\ProyectoFinal-Grupo5-VariadorDeFrecuencia\Hardware\Diseno\Digital inputs\Draft1.net(7): This sub-circuit name is not defined.
+X§U5 N002 0 N001 0 N003 LM318.lib LM318 LM318
+                                       ^^^^^^
