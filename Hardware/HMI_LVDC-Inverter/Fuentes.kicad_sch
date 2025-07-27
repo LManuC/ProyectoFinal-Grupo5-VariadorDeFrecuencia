@@ -3910,7 +3910,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Inductor_SMD:L_1206_3216Metric"
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
 			(at 153.3652 67.31 0)
 			(effects
 				(font
@@ -4006,7 +4006,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "4759"
+		(property "Value" "4K75"
 			(at 23.114 67.818 0)
 			(effects
 				(font
@@ -5135,7 +5135,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "680K"
+		(property "Value" "681K"
 			(at 215.392 34.29 0)
 			(effects
 				(font
@@ -5305,7 +5305,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "120K"
+		(property "Value" "121K"
 			(at 217.17 44.45 0)
 			(effects
 				(font
@@ -6063,7 +6063,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "7.005K"
+		(property "Value" "6K98"
 			(at 114.554 70.612 0)
 			(effects
 				(font
@@ -6271,7 +6271,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "39863"
+		(property "Value" "40.2K"
 			(at 23.114 57.658 0)
 			(effects
 				(font
@@ -6376,7 +6376,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "510K"
+		(property "Value" "511K"
 			(at 251.206 34.29 0)
 			(effects
 				(font
@@ -6964,7 +6964,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "500K"
+		(property "Value" "499K"
 			(at 92.964 80.518 0)
 			(effects
 				(font

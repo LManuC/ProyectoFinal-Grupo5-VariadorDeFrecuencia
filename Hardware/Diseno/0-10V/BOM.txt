@@ -1,0 +1,16 @@
+Ref.	Mfg.		Part No.	Description
+---------------- Salida 0-10V aislada -------------------
+C1		--			--			capacitor, 100µF
+C2		--			--			capacitor, 100µF
+M1		Fairchild	2N7002		MOSFET
+Q2		NXP	BC547C	bipolar 	transistor
+R1		--			--			resistor, 10K
+R2		--			--			resistor, 28
+R3		--			--			resistor, 59K
+R4		--			--			resistor, 102
+R5		--			--			resistor, 1K
+U1		(unknown)	4N25		(unknown 3rd party model)
+------------------ Entradas aisladas ---------------------
+R1		--	--		resistor,	1K
+R5		--	--		resistor,	390
+U1		(unknown)	4N25		(unknown 3rd party model)
