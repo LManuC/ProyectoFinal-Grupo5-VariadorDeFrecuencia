@@ -3058,12 +3058,6 @@
 		(uuid "7cc25791-e554-4ab4-82f5-0999bba80d5d")
 	)
 	(junction
-		(at 96.52 88.9)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "89be4c6d-bbf3-44eb-bb7c-4bfddf1d9135")
-	)
-	(junction
 		(at 46.99 22.86)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3122,12 +3116,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "cdca2ae3-cc38-4b69-8a17-7f33ac127045")
-	)
-	(junction
-		(at 96.52 86.36)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "d11b3cb2-fe19-4879-aa57-1612056be9c5")
 	)
 	(junction
 		(at 60.96 40.64)
@@ -4113,16 +4101,6 @@
 	)
 	(wire
 		(pts
-			(xy 93.98 86.36) (xy 96.52 86.36)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6c257146-73e3-4cef-b6e0-ed032c35f8cc")
-	)
-	(wire
-		(pts
 			(xy 83.82 22.86) (xy 83.82 29.21)
 		)
 		(stroke
@@ -4330,16 +4308,6 @@
 			(type default)
 		)
 		(uuid "8f72eefd-8471-430c-98a0-a7513894e5ae")
-	)
-	(wire
-		(pts
-			(xy 93.98 88.9) (xy 96.52 88.9)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "923e3e0e-acee-47df-a7d7-2bb04c746d7e")
 	)
 	(wire
 		(pts
@@ -9539,7 +9507,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "1k"
+		(property "Value" "1K"
 			(at 194.818 34.036 0)
 			(effects
 				(font
@@ -10712,7 +10680,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_DIN:DIN41612_B3_2x5_Female_Vertical_THT"
+		(property "Footprint" "Connector_PinHeader_1.00mm:PinHeader_1x04_P1.00mm_Vertical"
 			(at 91.44 83.82 0)
 			(effects
 				(font
@@ -11030,7 +10998,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100"
+		(property "Value" "102"
 			(at 28.956 93.218 0)
 			(effects
 				(font
