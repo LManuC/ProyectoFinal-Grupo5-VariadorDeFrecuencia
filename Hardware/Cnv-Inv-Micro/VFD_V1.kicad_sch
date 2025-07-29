@@ -6,7 +6,7 @@
 	(paper "A4")
 	(lib_symbols)
 	(sheet
-		(at 101.6 40.64)
+		(at 124.46 33.02)
 		(size 45.72 33.02)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -22,7 +22,7 @@
 		)
 		(uuid "110275dc-ed3b-4248-b6a0-86f6159a1d7c")
 		(property "Sheetname" "Micro"
-			(at 101.6 39.9284 0)
+			(at 124.46 32.3084 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -31,7 +31,7 @@
 			)
 		)
 		(property "Sheetfile" "micro.kicad_sch"
-			(at 101.6 74.2446 0)
+			(at 124.46 66.6246 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -48,8 +48,8 @@
 		)
 	)
 	(sheet
-		(at 185.42 91.44)
-		(size 68.58 38.1)
+		(at 182.88 86.36)
+		(size 52.07 29.21)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -64,7 +64,7 @@
 		)
 		(uuid "628f2f61-6f1b-4d29-a612-5c194d35f65c")
 		(property "Sheetname" "Inversor"
-			(at 185.42 90.7284 0)
+			(at 182.88 85.6484 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -73,7 +73,7 @@
 			)
 		)
 		(property "Sheetfile" "inversor.kicad_sch"
-			(at 185.42 130.1246 0)
+			(at 182.88 116.1546 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -90,7 +90,7 @@
 		)
 	)
 	(sheet
-		(at 55.88 93.98)
+		(at 62.23 83.82)
 		(size 53.34 30.48)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -106,7 +106,7 @@
 		)
 		(uuid "c6551446-5e26-4d9a-a5bc-1c867d865e21")
 		(property "Sheetname" "Conversor"
-			(at 55.88 93.2684 0)
+			(at 62.23 83.1084 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -115,7 +115,7 @@
 			)
 		)
 		(property "Sheetfile" "conversor.kicad_sch"
-			(at 55.88 125.0446 0)
+			(at 62.23 114.8846 0)
 			(effects
 				(font
 					(size 1.27 1.27)
