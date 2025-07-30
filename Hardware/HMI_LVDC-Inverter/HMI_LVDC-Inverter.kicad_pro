@@ -491,8 +491,14 @@
       "/OLED_Vcc": [
         "+3.3V"
       ],
+      "3V3_STM": [
+        "3.3V_STM"
+      ],
       "Net-(BZ1-+)": [
         "+12V"
+      ],
+      "Net-(C10-Pad1)": [
+        "3.3V_STM"
       ],
       "Net-(C12-Pad1)": [
         "+5V"
@@ -512,11 +518,23 @@
       "Net-(U3-Vin)": [
         "+12V"
       ],
+      "Net-(U4-VBAT)": [
+        "3.3V_STM"
+      ],
+      "unconnected-(D10-A-Pad2)": [
+        "3.3V_STM"
+      ],
       "unconnected-(D3-A-Pad2)": [
         "+3.3V"
       ],
+      "unconnected-(D7-A2-Pad2)": [
+        "3.3V_STM"
+      ],
       "unconnected-(J10-Pin_1-Pad1)": [
         "+12V"
+      ],
+      "unconnected-(JP3-A-Pad1)": [
+        "3.3V_STM"
       ],
       "unconnected-(R14-Pad1)": [
         "+12V"
@@ -527,8 +545,14 @@
       "unconnected-(R18-Pad1)": [
         "+3.3V"
       ],
+      "unconnected-(R3-Pad1)": [
+        "3.3V_STM"
+      ],
       "unconnected-(R9-Pad1)": [
         "+12V"
+      ],
+      "unconnected-(U24-Pad4)": [
+        "3.3V_STM"
       ]
     },
     "netclass_patterns": []
@@ -742,6 +766,10 @@
     [
       "e510606f-6f04-4711-9f2b-d43d4de4a4de",
       "Perifericos"
+    ],
+    [
+      "8e625f1a-283f-43a5-a3e9-69e71bd8abe7",
+      "STM32"
     ]
   ],
   "text_variables": {}
