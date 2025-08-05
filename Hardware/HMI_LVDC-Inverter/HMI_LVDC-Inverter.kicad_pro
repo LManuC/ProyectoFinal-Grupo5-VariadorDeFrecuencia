@@ -485,8 +485,14 @@
       "+3.3V": [
         "+3.3V"
       ],
+      "+3.3V_ESP": [
+        "+3.3V_ESP"
+      ],
       "+5V": [
         "+5V"
+      ],
+      "+5V_ESP": [
+        "+5V_ESP"
       ],
       "/OLED_Vcc": [
         "+3.3V"
@@ -525,7 +531,7 @@
         "3.3V_STM"
       ],
       "unconnected-(D3-A-Pad2)": [
-        "+3.3V"
+        "+3.3V_ESP"
       ],
       "unconnected-(D7-A2-Pad2)": [
         "3.3V_STM"
@@ -540,10 +546,10 @@
         "+12V"
       ],
       "unconnected-(R16-Pad1)": [
-        "+5V"
+        "+5V_ESP"
       ],
       "unconnected-(R18-Pad1)": [
-        "+3.3V"
+        "+3.3V_ESP"
       ],
       "unconnected-(R3-Pad1)": [
         "3.3V_STM"
@@ -756,20 +762,20 @@
       "Root"
     ],
     [
+      "8e625f1a-283f-43a5-a3e9-69e71bd8abe7",
+      "STM32"
+    ],
+    [
+      "a762a5f7-801c-41ef-9dab-35eab0968df2",
+      "ESP32"
+    ],
+    [
       "97908d91-3b59-4389-9352-034f2f535314",
       "Fuentes"
     ],
     [
-      "a762a5f7-801c-41ef-9dab-35eab0968df2",
-      "MCU"
-    ],
-    [
       "e510606f-6f04-4711-9f2b-d43d4de4a4de",
       "Perifericos"
-    ],
-    [
-      "8e625f1a-283f-43a5-a3e9-69e71bd8abe7",
-      "STM32"
     ]
   ],
   "text_variables": {}

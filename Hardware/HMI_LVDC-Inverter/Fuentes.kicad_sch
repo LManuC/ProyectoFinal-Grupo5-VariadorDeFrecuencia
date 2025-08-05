@@ -4,6 +4,12 @@
 	(generator_version "9.0")
 	(uuid "cf5e7d06-6831-40bb-93c6-af50397b2e59")
 	(paper "A4")
+	(title_block
+		(title "Variador de frecuencia LVDC")
+		(date "2025-08-05")
+		(rev "0")
+		(company "Andrenacci - Carra")
+	)
 	(lib_symbols
 		(symbol "Connector:TestPoint"
 			(pin_numbers
@@ -4224,7 +4230,7 @@
 			)
 		)
 	)
-	(global_label "+5V"
+	(global_label "+5V_ESP"
 		(shape input)
 		(at 236.22 137.16 0)
 		(fields_autoplaced yes)
@@ -4246,7 +4252,7 @@
 			)
 		)
 	)
-	(global_label "+3.3V"
+	(global_label "+3.3V_ESP"
 		(shape input)
 		(at 262.89 144.78 0)
 		(fields_autoplaced yes)
@@ -4312,7 +4318,7 @@
 			)
 		)
 	)
-	(global_label "+5V"
+	(global_label "+5V_ESP"
 		(shape input)
 		(at 62.23 148.59 180)
 		(fields_autoplaced yes)
@@ -4334,7 +4340,7 @@
 			)
 		)
 	)
-	(global_label "+3.3V"
+	(global_label "+3.3V_ESP"
 		(shape input)
 		(at 116.84 148.59 0)
 		(fields_autoplaced yes)
@@ -4378,7 +4384,7 @@
 			)
 		)
 	)
-	(global_label "+5V"
+	(global_label "+5V_ESP"
 		(shape input)
 		(at 165.1 53.34 0)
 		(fields_autoplaced yes)
@@ -4455,7 +4461,7 @@
 			(justify left bottom)
 		)
 		(uuid "0c6629f2-ae69-4e95-95c5-df951988b92f")
-		(property "Netclass" "+5V"
+		(property "Netclass" "+5V_ESP"
 			(at 62.738 144.018 0)
 			(effects
 				(font
@@ -4516,7 +4522,7 @@
 			(justify left bottom)
 		)
 		(uuid "283c9986-36d4-424f-bd91-45de841a3db9")
-		(property "Netclass" "+3.3V"
+		(property "Netclass" "+3.3V_ESP"
 			(at 255.016 140.208 0)
 			(effects
 				(font
@@ -4546,7 +4552,7 @@
 			(justify left bottom)
 		)
 		(uuid "44133db0-2947-4f77-a196-88e56a6d4b42")
-		(property "Netclass" "+3.3V"
+		(property "Netclass" "+3.3V_ESP"
 			(at 110.236 144.018 0)
 			(effects
 				(font
@@ -4576,7 +4582,7 @@
 			(justify left bottom)
 		)
 		(uuid "5794de15-1f7a-4d8e-a281-8a557c8efaa6")
-		(property "Netclass" "+5V"
+		(property "Netclass" "+5V_ESP"
 			(at 150.622 48.768 0)
 			(effects
 				(font
@@ -4606,7 +4612,7 @@
 			(justify left bottom)
 		)
 		(uuid "60aecd64-8c42-4005-8fc2-4c845ea58c5a")
-		(property "Netclass" "+3.3V"
+		(property "Netclass" "+3.3V_ESP"
 			(at 237.236 23.368 0)
 			(effects
 				(font
@@ -4659,7 +4665,7 @@
 	(netclass_flag ""
 		(length 2.54)
 		(shape round)
-		(at 231.14 144.78 0)
+		(at 229.87 144.78 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4667,8 +4673,8 @@
 			(justify left bottom)
 		)
 		(uuid "80ddb14a-014d-4fd2-84a4-49fe84b2fe10")
-		(property "Netclass" "+5V"
-			(at 229.362 140.208 0)
+		(property "Netclass" "+5V_ESP"
+			(at 225.298 140.208 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4677,7 +4683,7 @@
 			)
 		)
 		(property "Component Class" ""
-			(at -64.77 77.47 0)
+			(at -66.04 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4697,7 +4703,7 @@
 			(justify left bottom)
 		)
 		(uuid "ab6d92d8-12ce-4367-b176-70ee1a634c67")
-		(property "Netclass" "+5V"
+		(property "Netclass" "+5V_ESP"
 			(at 203.962 23.368 0)
 			(effects
 				(font

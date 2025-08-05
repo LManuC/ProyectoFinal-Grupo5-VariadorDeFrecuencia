@@ -4,6 +4,12 @@
 	(generator_version "9.0")
 	(uuid "f8b437fd-aa9f-4b0e-9b42-f7dd21669d83")
 	(paper "A4")
+	(title_block
+		(title "Variador de frecuencia LVDC")
+		(date "2025-08-05")
+		(rev "0")
+		(company "Andrenacci - Carra")
+	)
 	(lib_symbols
 		(symbol "Device:C"
 			(pin_numbers
@@ -2612,16 +2618,6 @@
 	)
 	(wire
 		(pts
-			(xy 256.54 123.19) (xy 256.54 124.46)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "30cfffd9-a936-4833-afa4-91ef1642c491")
-	)
-	(wire
-		(pts
 			(xy 245.11 39.37) (xy 255.27 39.37)
 		)
 		(stroke
@@ -2629,6 +2625,16 @@
 			(type default)
 		)
 		(uuid "3239b8ae-9e23-4a55-9289-5e78cb75888b")
+	)
+	(wire
+		(pts
+			(xy 74.93 43.18) (xy 74.93 46.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "32b73abf-d450-4c91-9110-dc3d23f54df8")
 	)
 	(wire
 		(pts
@@ -2672,7 +2678,7 @@
 	)
 	(wire
 		(pts
-			(xy 95.25 85.09) (xy 92.71 85.09)
+			(xy 96.52 85.09) (xy 92.71 85.09)
 		)
 		(stroke
 			(width 0)
@@ -2762,7 +2768,7 @@
 	)
 	(wire
 		(pts
-			(xy 95.25 87.63) (xy 92.71 87.63)
+			(xy 96.52 87.63) (xy 92.71 87.63)
 		)
 		(stroke
 			(width 0)
@@ -2842,6 +2848,16 @@
 	)
 	(wire
 		(pts
+			(xy 256.54 120.65) (xy 256.54 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "67e4544d-189f-408c-af67-fabd71d242a1")
+	)
+	(wire
+		(pts
 			(xy 256.54 147.32) (xy 256.54 146.05)
 		)
 		(stroke
@@ -2852,7 +2868,7 @@
 	)
 	(wire
 		(pts
-			(xy 264.16 64.77) (xy 264.16 67.31)
+			(xy 264.16 62.23) (xy 264.16 67.31)
 		)
 		(stroke
 			(width 0)
@@ -2879,6 +2895,16 @@
 			(type default)
 		)
 		(uuid "6e8b6be5-f94c-426a-86cc-282f9537c891")
+	)
+	(wire
+		(pts
+			(xy 220.98 27.94) (xy 222.25 27.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6eafa878-a987-44a2-9372-e300895041d8")
 	)
 	(wire
 		(pts
@@ -2972,16 +2998,6 @@
 	)
 	(wire
 		(pts
-			(xy 54.61 100.33) (xy 57.15 100.33)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "81888000-4eba-4fce-ae51-d152e4966f17")
-	)
-	(wire
-		(pts
 			(xy 54.61 118.11) (xy 57.15 118.11)
 		)
 		(stroke
@@ -3019,26 +3035,6 @@
 			(type default)
 		)
 		(uuid "892e0c36-f548-4073-8a64-d659c3d2266b")
-	)
-	(wire
-		(pts
-			(xy 95.25 82.55) (xy 92.71 82.55)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8a6b9614-5d12-46aa-8b22-6e9942a4af7e")
-	)
-	(wire
-		(pts
-			(xy 54.61 102.87) (xy 57.15 102.87)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8be0139a-11ea-43ce-8afe-da96effb4eb0")
 	)
 	(wire
 		(pts
@@ -3099,16 +3095,6 @@
 			(type default)
 		)
 		(uuid "a50ad588-ebf7-4ade-ab0a-a7b6a6b9bb20")
-	)
-	(wire
-		(pts
-			(xy 54.61 105.41) (xy 57.15 105.41)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "aadeebc7-ba04-4f15-90c8-5eeab9940564")
 	)
 	(wire
 		(pts
@@ -3232,6 +3218,16 @@
 	)
 	(wire
 		(pts
+			(xy 72.39 43.18) (xy 74.93 43.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cd42ff23-6c8f-4562-880f-df47a4a88052")
+	)
+	(wire
+		(pts
 			(xy 245.11 26.67) (xy 245.11 29.21)
 		)
 		(stroke
@@ -3249,6 +3245,16 @@
 			(type default)
 		)
 		(uuid "ceb26e97-b215-41cf-844d-fd1188651339")
+	)
+	(wire
+		(pts
+			(xy 255.27 22.86) (xy 255.27 26.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d1d250ed-cee1-465e-9491-d305600d7182")
 	)
 	(wire
 		(pts
@@ -3272,6 +3278,16 @@
 	)
 	(wire
 		(pts
+			(xy 262.89 62.23) (xy 264.16 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "da36073e-92da-407f-baba-39e58b788d28")
+	)
+	(wire
+		(pts
 			(xy 215.9 109.22) (xy 215.9 113.03)
 		)
 		(stroke
@@ -3279,26 +3295,6 @@
 			(type default)
 		)
 		(uuid "da65b3e1-101b-464f-a14e-89adc804c512")
-	)
-	(wire
-		(pts
-			(xy 222.25 30.48) (xy 222.25 31.75)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e0002d5a-d587-4132-88d3-f9f377dd93d9")
-	)
-	(wire
-		(pts
-			(xy 54.61 107.95) (xy 57.15 107.95)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e21c370e-16fd-42bc-9043-71c0abd37de3")
 	)
 	(wire
 		(pts
@@ -3372,6 +3368,16 @@
 	)
 	(wire
 		(pts
+			(xy 255.27 120.65) (xy 256.54 120.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f01c4ac5-da6b-4411-9fcc-cb53b182560a")
+	)
+	(wire
+		(pts
 			(xy 251.46 146.05) (xy 251.46 143.51)
 		)
 		(stroke
@@ -3389,6 +3395,16 @@
 			(type default)
 		)
 		(uuid "f6d25324-7122-49d9-b8b0-dc2a0f5030f8")
+	)
+	(wire
+		(pts
+			(xy 222.25 27.94) (xy 222.25 31.75)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f9993b8d-faf4-4fef-a5ad-78a2bda8aa4c")
 	)
 	(wire
 		(pts
@@ -3419,6 +3435,16 @@
 			(type default)
 		)
 		(uuid "ff6d6ce4-e1e2-4ac2-85d6-6298f2042494")
+	)
+	(wire
+		(pts
+			(xy 254 22.86) (xy 255.27 22.86)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ff96cdcb-19bd-468d-970b-b4c91684e4ad")
 	)
 	(wire
 		(pts
@@ -3530,137 +3556,148 @@
 		)
 		(uuid "ef7d55fe-4a38-4331-a5cb-37b7762d0af4")
 	)
-	(global_label "STO_Input"
+	(global_label "3V3_STM"
 		(shape input)
-		(at 95.25 87.63 0)
+		(at 262.89 62.23 180)
 		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "26a0d91c-ec8e-4151-93d5-a9ebe06fa665")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 250.3496 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "3V3_STM"
+		(shape input)
+		(at 254 22.86 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "3761bcc6-edac-4122-a3a8-dac74687af83")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 241.4596 22.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "3V3_STM"
+		(shape input)
+		(at 220.98 27.94 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "44daef7e-595e-4bc9-ae42-f418b23db80a")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 208.4396 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "3V3_STM"
+		(shape input)
+		(at 255.27 105.41 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "74eb4208-e0f7-4f8e-b7e3-9958767d306f")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 242.7296 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "3V3_STM"
+		(shape input)
+		(at 72.39 43.18 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "785cc07b-478d-4f6e-918a-4d62ce4c57a4")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 59.8496 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "3V3_STM"
+		(shape input)
+		(at 255.27 120.65 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "da8cf282-4be5-4610-99a7-df17cc0e48ed")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 242.7296 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(hierarchical_label "STOP_BUTTON"
+		(shape bidirectional)
+		(at 96.52 87.63 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify left)
 		)
-		(uuid "2bb33537-01c3-4a4f-8258-72fe111cf4b2")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 107.4879 87.63 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "UART_TX"
-		(shape input)
-		(at 54.61 100.33 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "33dacb2e-6910-4c3b-ba08-636a33970975")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 43.8234 100.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "ConverterOn_Out"
-		(shape input)
-		(at 95.25 82.55 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "63cfc916-a9de-49de-adac-01dce3247d21")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 113.8984 82.55 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "I2C_SDA"
-		(shape input)
-		(at 54.61 107.95 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "72ffba22-9d11-4296-b9e1-dbec78e301fe")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 44.0048 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "UART_RX"
-		(shape input)
-		(at 54.61 102.87 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "7a65e584-f30b-47c4-9a28-f27e6af17db3")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 43.521 102.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "I2C_SCL"
-		(shape input)
-		(at 54.61 105.41 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "96db998c-266f-42b9-9e04-85696d1f20db")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 44.0653 105.41 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
+		(uuid "049d0b54-48d4-4369-b17a-b7f0707487ef")
 	)
 	(hierarchical_label "SW_Clk"
 		(shape bidirectional)
@@ -3774,7 +3811,7 @@
 	)
 	(hierarchical_label "TermoSw_Input"
 		(shape bidirectional)
-		(at 95.25 85.09 0)
+		(at 96.52 85.09 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3849,187 +3886,6 @@
 		)
 		(uuid "e5f1a837-747e-458b-a3da-d00f43d81d1b")
 	)
-	(netclass_flag ""
-		(length 2.54)
-		(shape round)
-		(at 256.54 123.19 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "18d73ba7-133d-4923-b8cf-e3781a18ca41")
-		(property "Netclass" "3.3V_STM"
-			(at 246.888 120.904 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Component Class" ""
-			(at -24.13 48.26 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-	)
-	(netclass_flag ""
-		(length 2.54)
-		(shape round)
-		(at 255.27 26.67 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "4c7d0a96-784b-4412-b1ee-22e856e2d6ac")
-		(property "Netclass" "3.3V_STM"
-			(at 245.618 24.384 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Component Class" ""
-			(at -25.4 -48.26 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-	)
-	(netclass_flag ""
-		(length 2.54)
-		(shape round)
-		(at 222.25 30.48 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "50d5b4ed-00d4-45a7-b428-694eca3eb5c7")
-		(property "Netclass" "3.3V_STM"
-			(at 212.598 28.194 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Component Class" ""
-			(at -58.42 -44.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-	)
-	(netclass_flag ""
-		(length 2.54)
-		(shape round)
-		(at 255.27 105.41 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "623b599b-bee8-4b7b-bb8b-cc4c20b788b1")
-		(property "Netclass" "3.3V_STM"
-			(at 245.618 103.124 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Component Class" ""
-			(at -25.4 30.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-	)
-	(netclass_flag ""
-		(length 2.54)
-		(shape round)
-		(at 264.16 64.77 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "b64b986c-2117-4cec-a0f8-4e1e29d25e52")
-		(property "Netclass" "3.3V_STM"
-			(at 254.508 62.484 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Component Class" ""
-			(at -16.51 -10.16 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-	)
-	(netclass_flag ""
-		(length 2.54)
-		(shape round)
-		(at 74.93 46.99 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "e410002c-2fb9-460f-aad4-35a35bf97e5b")
-		(property "Netclass" "3.3V_STM"
-			(at 75.6285 44.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Component Class" ""
-			(at -205.74 -27.94 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-	)
 	(symbol
 		(lib_id "power:GND")
 		(at 264.16 85.09 0)
@@ -4087,7 +3943,7 @@
 			(uuid "b17039db-96b6-434d-ab8c-73fe68836472")
 		)
 		(instances
-			(project "VFD_V1"
+			(project "HMI_LVDC-Inverter"
 				(path "/0057333c-5edf-4047-9690-4d1b87a98977/8e625f1a-283f-43a5-a3e9-69e71bd8abe7"
 					(reference "#PWR028")
 					(unit 1)
@@ -4158,7 +4014,7 @@
 			(uuid "8896a718-82ac-4050-8df1-efee9878af19")
 		)
 		(instances
-			(project "VFD_V1"
+			(project "HMI_LVDC-Inverter"
 				(path "/0057333c-5edf-4047-9690-4d1b87a98977/8e625f1a-283f-43a5-a3e9-69e71bd8abe7"
 					(reference "#PWR024")
 					(unit 1)
@@ -4231,7 +4087,7 @@
 			(uuid "b9819c29-0a1b-46f0-b28b-a20779a4643a")
 		)
 		(instances
-			(project "VFD_V1"
+			(project "HMI_LVDC-Inverter"
 				(path "/0057333c-5edf-4047-9690-4d1b87a98977/8e625f1a-283f-43a5-a3e9-69e71bd8abe7"
 					(reference "R11")
 					(unit 1)
@@ -4304,7 +4160,7 @@
 			(uuid "e837c746-2f15-47a4-9719-37696523aaaa")
 		)
 		(instances
-			(project "VFD_V1"
+			(project "HMI_LVDC-Inverter"
 				(path "/0057333c-5edf-4047-9690-4d1b87a98977/8e625f1a-283f-43a5-a3e9-69e71bd8abe7"
 					(reference "R3")
 					(unit 1)
@@ -4375,7 +4231,7 @@
 			(uuid "ac4c9a36-adb6-41f3-a72c-ecfebd22a0d2")
 		)
 		(instances
-			(project "VFD_V1"
+			(project "HMI_LVDC-Inverter"
 				(path "/0057333c-5edf-4047-9690-4d1b87a98977/8e625f1a-283f-43a5-a3e9-69e71bd8abe7"
 					(reference "#PWR018")
 					(unit 1)
@@ -4446,7 +4302,7 @@
 			(uuid "419c96c9-053e-4491-b966-65db5a02d05e")
 		)
 		(instances
-			(project "VFD_V1"
+			(project "HMI_LVDC-Inverter"
 				(path "/0057333c-5edf-4047-9690-4d1b87a98977/8e625f1a-283f-43a5-a3e9-69e71bd8abe7"
 					(reference "#PWR017")
 					(unit 1)
@@ -4521,7 +4377,7 @@
 			(uuid "6cdad6ae-0663-46f1-af7a-05c678fc3a72")
 		)
 		(instances
-			(project "VFD_V1"
+			(project "HMI_LVDC-Inverter"
 				(path "/0057333c-5edf-4047-9690-4d1b87a98977/8e625f1a-283f-43a5-a3e9-69e71bd8abe7"
 					(reference "C14")
 					(unit 1)
@@ -4592,7 +4448,7 @@
 			(uuid "58e71280-f5ee-4996-9362-287680d1f129")
 		)
 		(instances
-			(project "VFD_V1"
+			(project "HMI_LVDC-Inverter"
 				(path "/0057333c-5edf-4047-9690-4d1b87a98977/8e625f1a-283f-43a5-a3e9-69e71bd8abe7"
 					(reference "#PWR023")
 					(unit 1)
@@ -4665,7 +4521,7 @@
 			(uuid "d5ae37fb-977f-4de2-96ef-24c8788b9165")
 		)
 		(instances
-			(project "VFD_V1"
+			(project "HMI_LVDC-Inverter"
 				(path "/0057333c-5edf-4047-9690-4d1b87a98977/8e625f1a-283f-43a5-a3e9-69e71bd8abe7"
 					(reference "R6")
 					(unit 1)
@@ -4738,7 +4594,7 @@
 			(uuid "244f0f66-6e74-4593-8d8c-af3b71ab6d0b")
 		)
 		(instances
-			(project "VFD_V1"
+			(project "HMI_LVDC-Inverter"
 				(path "/0057333c-5edf-4047-9690-4d1b87a98977/8e625f1a-283f-43a5-a3e9-69e71bd8abe7"
 					(reference "R5")
 					(unit 1)
@@ -4952,7 +4808,7 @@
 			(uuid "699c59a2-0937-4766-827b-493ce7f03749")
 		)
 		(instances
-			(project ""
+			(project "HMI_LVDC-Inverter"
 				(path "/0057333c-5edf-4047-9690-4d1b87a98977/8e625f1a-283f-43a5-a3e9-69e71bd8abe7"
 					(reference "U4")
 					(unit 1)
@@ -5025,7 +4881,7 @@
 			(uuid "6dab6de9-b23b-447d-97f7-6ea99a4ca6ce")
 		)
 		(instances
-			(project "VFD_V1"
+			(project "HMI_LVDC-Inverter"
 				(path "/0057333c-5edf-4047-9690-4d1b87a98977/8e625f1a-283f-43a5-a3e9-69e71bd8abe7"
 					(reference "R12")
 					(unit 1)
@@ -5098,7 +4954,7 @@
 			(uuid "c72135a4-9b70-4086-83f6-d46b8e2652d2")
 		)
 		(instances
-			(project "VFD_V1"
+			(project "HMI_LVDC-Inverter"
 				(path "/0057333c-5edf-4047-9690-4d1b87a98977/8e625f1a-283f-43a5-a3e9-69e71bd8abe7"
 					(reference "R13")
 					(unit 1)
@@ -5173,7 +5029,7 @@
 			(uuid "54b2bdea-eb7d-4b3e-8ad9-ba8f1a654806")
 		)
 		(instances
-			(project "VFD_V1"
+			(project "HMI_LVDC-Inverter"
 				(path "/0057333c-5edf-4047-9690-4d1b87a98977/8e625f1a-283f-43a5-a3e9-69e71bd8abe7"
 					(reference "C7")
 					(unit 1)
@@ -5248,7 +5104,7 @@
 			(uuid "eee4d688-0e3a-4126-b846-057091345424")
 		)
 		(instances
-			(project "VFD_V1"
+			(project "HMI_LVDC-Inverter"
 				(path "/0057333c-5edf-4047-9690-4d1b87a98977/8e625f1a-283f-43a5-a3e9-69e71bd8abe7"
 					(reference "C5")
 					(unit 1)
@@ -5323,7 +5179,7 @@
 			(uuid "9c57267f-381f-4d22-bce5-fb04fe7b2bc6")
 		)
 		(instances
-			(project "VFD_V1"
+			(project "HMI_LVDC-Inverter"
 				(path "/0057333c-5edf-4047-9690-4d1b87a98977/8e625f1a-283f-43a5-a3e9-69e71bd8abe7"
 					(reference "C9")
 					(unit 1)
@@ -5394,7 +5250,7 @@
 			(uuid "1cc20102-a147-49cd-b8bd-09619dc8d81f")
 		)
 		(instances
-			(project "VFD_V1"
+			(project "HMI_LVDC-Inverter"
 				(path "/0057333c-5edf-4047-9690-4d1b87a98977/8e625f1a-283f-43a5-a3e9-69e71bd8abe7"
 					(reference "#PWR020")
 					(unit 1)
@@ -5467,7 +5323,7 @@
 			(uuid "2f17069e-f416-4caa-847e-75ddf85ccc20")
 		)
 		(instances
-			(project "VFD_V1"
+			(project "HMI_LVDC-Inverter"
 				(path "/0057333c-5edf-4047-9690-4d1b87a98977/8e625f1a-283f-43a5-a3e9-69e71bd8abe7"
 					(reference "R4")
 					(unit 1)
@@ -5549,7 +5405,7 @@
 			(uuid "3ff8f9fe-9908-485f-a380-72e1078d4da8")
 		)
 		(instances
-			(project ""
+			(project "HMI_LVDC-Inverter"
 				(path "/0057333c-5edf-4047-9690-4d1b87a98977/8e625f1a-283f-43a5-a3e9-69e71bd8abe7"
 					(reference "SW1")
 					(unit 1)
@@ -5622,7 +5478,7 @@
 			(uuid "f260031f-072e-47a8-908c-52d1eed5a33f")
 		)
 		(instances
-			(project "VFD_V1"
+			(project "HMI_LVDC-Inverter"
 				(path "/0057333c-5edf-4047-9690-4d1b87a98977/8e625f1a-283f-43a5-a3e9-69e71bd8abe7"
 					(reference "R10")
 					(unit 1)
@@ -5693,7 +5549,7 @@
 			(uuid "7f387f73-e06c-4a69-b61a-82154495e1e2")
 		)
 		(instances
-			(project "VFD_V1"
+			(project "HMI_LVDC-Inverter"
 				(path "/0057333c-5edf-4047-9690-4d1b87a98977/8e625f1a-283f-43a5-a3e9-69e71bd8abe7"
 					(reference "#PWR022")
 					(unit 1)
@@ -5768,7 +5624,7 @@
 			(uuid "641dda19-7ffc-4af4-99e8-62aeda4a2563")
 		)
 		(instances
-			(project "VFD_V1"
+			(project "HMI_LVDC-Inverter"
 				(path "/0057333c-5edf-4047-9690-4d1b87a98977/8e625f1a-283f-43a5-a3e9-69e71bd8abe7"
 					(reference "C13")
 					(unit 1)
@@ -5841,7 +5697,7 @@
 			(uuid "08861ec9-b1d9-4623-afdd-2cbdf64e76e8")
 		)
 		(instances
-			(project "VFD_V1"
+			(project "HMI_LVDC-Inverter"
 				(path "/0057333c-5edf-4047-9690-4d1b87a98977/8e625f1a-283f-43a5-a3e9-69e71bd8abe7"
 					(reference "R14")
 					(unit 1)
@@ -5917,7 +5773,7 @@
 			(uuid "13ff1059-a4ae-4c02-b8c7-4ca01469e8f6")
 		)
 		(instances
-			(project ""
+			(project "HMI_LVDC-Inverter"
 				(path "/0057333c-5edf-4047-9690-4d1b87a98977/8e625f1a-283f-43a5-a3e9-69e71bd8abe7"
 					(reference "Y1")
 					(unit 1)
@@ -5988,7 +5844,7 @@
 			(uuid "71d75e88-2b69-4e6b-b79b-38de10be804e")
 		)
 		(instances
-			(project "VFD_V1"
+			(project "HMI_LVDC-Inverter"
 				(path "/0057333c-5edf-4047-9690-4d1b87a98977/8e625f1a-283f-43a5-a3e9-69e71bd8abe7"
 					(reference "#PWR019")
 					(unit 1)
@@ -6061,7 +5917,7 @@
 			(uuid "fdb7ba43-7341-416b-9fdb-26accb4d07ed")
 		)
 		(instances
-			(project "VFD_V1"
+			(project "HMI_LVDC-Inverter"
 				(path "/0057333c-5edf-4047-9690-4d1b87a98977/8e625f1a-283f-43a5-a3e9-69e71bd8abe7"
 					(reference "R9")
 					(unit 1)
@@ -6143,7 +5999,7 @@
 			(uuid "e678e49a-ccb0-4b41-bded-3285188a15db")
 		)
 		(instances
-			(project "VFD_V1"
+			(project "HMI_LVDC-Inverter"
 				(path "/0057333c-5edf-4047-9690-4d1b87a98977/8e625f1a-283f-43a5-a3e9-69e71bd8abe7"
 					(reference "D10")
 					(unit 1)
@@ -6217,7 +6073,7 @@
 			(uuid "9e2dd7e1-186d-4258-bf51-172256072f54")
 		)
 		(instances
-			(project ""
+			(project "HMI_LVDC-Inverter"
 				(path "/0057333c-5edf-4047-9690-4d1b87a98977/8e625f1a-283f-43a5-a3e9-69e71bd8abe7"
 					(reference "JP3")
 					(unit 1)
@@ -6286,7 +6142,7 @@
 			(uuid "d369a970-9948-4d3f-8e8f-7d8e3866f4c6")
 		)
 		(instances
-			(project "VFD_V1"
+			(project "HMI_LVDC-Inverter"
 				(path "/0057333c-5edf-4047-9690-4d1b87a98977/8e625f1a-283f-43a5-a3e9-69e71bd8abe7"
 					(reference "C10")
 					(unit 1)
@@ -6362,7 +6218,7 @@
 			(uuid "459114be-d3d1-4f1d-a148-a68abba78ab7")
 		)
 		(instances
-			(project ""
+			(project "HMI_LVDC-Inverter"
 				(path "/0057333c-5edf-4047-9690-4d1b87a98977/8e625f1a-283f-43a5-a3e9-69e71bd8abe7"
 					(reference "D7")
 					(unit 1)
