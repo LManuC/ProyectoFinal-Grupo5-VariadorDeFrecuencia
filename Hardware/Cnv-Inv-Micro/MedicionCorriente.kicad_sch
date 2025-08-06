@@ -982,7 +982,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "50e5e8f5-cbaf-43e0-93e1-bc7362a3a414")
-		(property "Reference" "C24"
+		(property "Reference" "C13"
 			(at 180.34 100.3299 0)
 			(effects
 				(font
@@ -1036,7 +1036,7 @@
 		(instances
 			(project "VFD_V1"
 				(path "/e60c11d9-ab9e-4760-a4a7-008fcec65a72/c6551446-5e26-4d9a-a5bc-1c867d865e21/5d7c7860-569e-4893-a242-75c72190872b"
-					(reference "C24")
+					(reference "C13")
 					(unit 1)
 				)
 			)
@@ -1051,7 +1051,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "5ad4f0a1-92c3-4316-879a-3ea365124d58")
-		(property "Reference" "#PWR050"
+		(property "Reference" "#PWR035"
 			(at 115.57 118.11 0)
 			(effects
 				(font
@@ -1101,7 +1101,7 @@
 		(instances
 			(project "VFD_V1"
 				(path "/e60c11d9-ab9e-4760-a4a7-008fcec65a72/c6551446-5e26-4d9a-a5bc-1c867d865e21/5d7c7860-569e-4893-a242-75c72190872b"
-					(reference "#PWR050")
+					(reference "#PWR035")
 					(unit 1)
 				)
 			)
@@ -1117,7 +1117,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "65a3f1bc-1d4a-4026-8893-181ec6ac4593")
-		(property "Reference" "D16"
+		(property "Reference" "D10"
 			(at 144.78 105.4099 90)
 			(effects
 				(font
@@ -1171,7 +1171,7 @@
 		(instances
 			(project ""
 				(path "/e60c11d9-ab9e-4760-a4a7-008fcec65a72/c6551446-5e26-4d9a-a5bc-1c867d865e21/5d7c7860-569e-4893-a242-75c72190872b"
-					(reference "D16")
+					(reference "D10")
 					(unit 1)
 				)
 			)
@@ -1186,7 +1186,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "795f265a-c3d6-4e6c-8112-f33fd9f1ce4c")
-		(property "Reference" "#PWR053"
+		(property "Reference" "#PWR038"
 			(at 176.53 114.3 0)
 			(effects
 				(font
@@ -1236,7 +1236,7 @@
 		(instances
 			(project "VFD_V1"
 				(path "/e60c11d9-ab9e-4760-a4a7-008fcec65a72/c6551446-5e26-4d9a-a5bc-1c867d865e21/5d7c7860-569e-4893-a242-75c72190872b"
-					(reference "#PWR053")
+					(reference "#PWR038")
 					(unit 1)
 				)
 			)
@@ -1252,7 +1252,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7f0f8656-91ef-422a-bd2b-816293677f18")
-		(property "Reference" "C23"
+		(property "Reference" "C12"
 			(at 133.35 106.6799 0)
 			(effects
 				(font
@@ -1306,7 +1306,7 @@
 		(instances
 			(project ""
 				(path "/e60c11d9-ab9e-4760-a4a7-008fcec65a72/c6551446-5e26-4d9a-a5bc-1c867d865e21/5d7c7860-569e-4893-a242-75c72190872b"
-					(reference "C23")
+					(reference "C12")
 					(unit 1)
 				)
 			)
@@ -1321,7 +1321,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b3186b5b-5379-476d-b590-33fc4ac1d243")
-		(property "Reference" "#PWR051"
+		(property "Reference" "#PWR036"
 			(at 129.54 119.38 0)
 			(effects
 				(font
@@ -1371,7 +1371,7 @@
 		(instances
 			(project "VFD_V1"
 				(path "/e60c11d9-ab9e-4760-a4a7-008fcec65a72/c6551446-5e26-4d9a-a5bc-1c867d865e21/5d7c7860-569e-4893-a242-75c72190872b"
-					(reference "#PWR051")
+					(reference "#PWR036")
 					(unit 1)
 				)
 			)
@@ -1387,7 +1387,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c7dca8a9-2bfa-4436-88a7-12e2ea098618")
-		(property "Reference" "R39"
+		(property "Reference" "R27"
 			(at 134.62 93.98 90)
 			(effects
 				(font
@@ -1439,7 +1439,7 @@
 		(instances
 			(project "VFD_V1"
 				(path "/e60c11d9-ab9e-4760-a4a7-008fcec65a72/c6551446-5e26-4d9a-a5bc-1c867d865e21/5d7c7860-569e-4893-a242-75c72190872b"
-					(reference "R39")
+					(reference "R27")
 					(unit 1)
 				)
 			)
@@ -1454,7 +1454,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "d1d70d38-64c4-4812-869d-56a8e53daaaf")
-		(property "Reference" "#PWR052"
+		(property "Reference" "#PWR037"
 			(at 142.24 118.11 0)
 			(effects
 				(font
@@ -1504,7 +1504,7 @@
 		(instances
 			(project "VFD_V1"
 				(path "/e60c11d9-ab9e-4760-a4a7-008fcec65a72/c6551446-5e26-4d9a-a5bc-1c867d865e21/5d7c7860-569e-4893-a242-75c72190872b"
-					(reference "#PWR052")
+					(reference "#PWR037")
 					(unit 1)
 				)
 			)
@@ -1520,7 +1520,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e261b0bb-af6b-450b-a927-d14f63afcf3e")
-		(property "Reference" "U15"
+		(property "Reference" "U11"
 			(at 117.7133 87.63 0)
 			(effects
 				(font
@@ -1594,7 +1594,7 @@
 		(instances
 			(project ""
 				(path "/e60c11d9-ab9e-4760-a4a7-008fcec65a72/c6551446-5e26-4d9a-a5bc-1c867d865e21/5d7c7860-569e-4893-a242-75c72190872b"
-					(reference "U15")
+					(reference "U11")
 					(unit 1)
 				)
 			)

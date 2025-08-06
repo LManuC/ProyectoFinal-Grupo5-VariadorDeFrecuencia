@@ -6,48 +6,6 @@
 	(paper "A4")
 	(lib_symbols)
 	(sheet
-		(at 124.46 33.02)
-		(size 45.72 33.02)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(fill
-			(color 0 0 0 0.0000)
-		)
-		(uuid "110275dc-ed3b-4248-b6a0-86f6159a1d7c")
-		(property "Sheetname" "Micro"
-			(at 124.46 32.3084 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "micro.kicad_sch"
-			(at 124.46 66.6246 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(instances
-			(project "VFD_V1"
-				(path "/e60c11d9-ab9e-4760-a4a7-008fcec65a72"
-					(page "4")
-				)
-			)
-		)
-	)
-	(sheet
 		(at 182.88 86.36)
 		(size 52.07 29.21)
 		(exclude_from_sim no)

@@ -368,7 +368,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "21542a60-9b1b-4c0a-a197-fbae02da924e")
-		(property "Reference" "R34"
+		(property "Reference" "R22"
 			(at 104.14 86.36 90)
 			(effects
 				(font
@@ -420,11 +420,11 @@
 		(instances
 			(project "VFD_V1"
 				(path "/e60c11d9-ab9e-4760-a4a7-008fcec65a72/c6551446-5e26-4d9a-a5bc-1c867d865e21/114be0da-6ec0-43cc-95ec-fead423de7f2"
-					(reference "R34")
+					(reference "R22")
 					(unit 1)
 				)
 				(path "/e60c11d9-ab9e-4760-a4a7-008fcec65a72/c6551446-5e26-4d9a-a5bc-1c867d865e21/4ead1ef3-6642-476a-91a4-2f6f295e53fc"
-					(reference "R36")
+					(reference "R24")
 					(unit 1)
 				)
 			)

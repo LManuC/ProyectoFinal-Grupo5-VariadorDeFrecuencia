@@ -1173,7 +1173,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "27fe0c6c-289c-4899-8202-cf88b8d9e60b")
-		(property "Reference" "R33"
+		(property "Reference" "R21"
 			(at 143.51 62.23 90)
 			(effects
 				(font
@@ -1225,19 +1225,19 @@
 		(instances
 			(project "VFD_V1"
 				(path "/e60c11d9-ab9e-4760-a4a7-008fcec65a72/c6551446-5e26-4d9a-a5bc-1c867d865e21/114be0da-6ec0-43cc-95ec-fead423de7f2/285d2753-215f-428f-a3e3-1ef4b695e2d7"
-					(reference "R35")
+					(reference "R23")
 					(unit 1)
 				)
 				(path "/e60c11d9-ab9e-4760-a4a7-008fcec65a72/c6551446-5e26-4d9a-a5bc-1c867d865e21/114be0da-6ec0-43cc-95ec-fead423de7f2/b376caf9-3098-44f3-80b6-fb87206c02dc"
-					(reference "R33")
+					(reference "R21")
 					(unit 1)
 				)
 				(path "/e60c11d9-ab9e-4760-a4a7-008fcec65a72/c6551446-5e26-4d9a-a5bc-1c867d865e21/4ead1ef3-6642-476a-91a4-2f6f295e53fc/285d2753-215f-428f-a3e3-1ef4b695e2d7"
-					(reference "R38")
+					(reference "R26")
 					(unit 1)
 				)
 				(path "/e60c11d9-ab9e-4760-a4a7-008fcec65a72/c6551446-5e26-4d9a-a5bc-1c867d865e21/4ead1ef3-6642-476a-91a4-2f6f295e53fc/b376caf9-3098-44f3-80b6-fb87206c02dc"
-					(reference "R37")
+					(reference "R25")
 					(unit 1)
 				)
 			)

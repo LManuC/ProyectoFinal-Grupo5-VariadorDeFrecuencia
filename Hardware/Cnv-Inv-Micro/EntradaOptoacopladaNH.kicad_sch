@@ -626,7 +626,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "045c2d93-675b-4480-a1a5-adacf039d79d")
-		(property "Reference" "R54"
+		(property "Reference" "R56"
 			(at 112.268 76.2 90)
 			(effects
 				(font
@@ -678,7 +678,7 @@
 		(instances
 			(project "VFD_V1"
 				(path "/e60c11d9-ab9e-4760-a4a7-008fcec65a72/fc30a5fb-ff38-4397-8c78-21712589d910/15d84fde-48a5-471f-8aa3-e7a3fbba29f1"
-					(reference "R54")
+					(reference "R56")
 					(unit 1)
 				)
 			)
@@ -693,7 +693,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "1098428c-cc0c-480c-a4e0-53a7ae4ed420")
-		(property "Reference" "R53"
+		(property "Reference" "R55"
 			(at 90.17 79.248 90)
 			(effects
 				(font
@@ -745,7 +745,7 @@
 		(instances
 			(project "VFD_V1"
 				(path "/e60c11d9-ab9e-4760-a4a7-008fcec65a72/fc30a5fb-ff38-4397-8c78-21712589d910/15d84fde-48a5-471f-8aa3-e7a3fbba29f1"
-					(reference "R53")
+					(reference "R55")
 					(unit 1)
 				)
 			)
@@ -761,7 +761,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6d9d36bf-f26f-4b1c-a38e-6b363ccf66f6")
-		(property "Reference" "U19"
+		(property "Reference" "U20"
 			(at 104.14 74.93 0)
 			(effects
 				(font
@@ -822,7 +822,7 @@
 		(instances
 			(project "VFD_V1"
 				(path "/e60c11d9-ab9e-4760-a4a7-008fcec65a72/fc30a5fb-ff38-4397-8c78-21712589d910/15d84fde-48a5-471f-8aa3-e7a3fbba29f1"
-					(reference "U19")
+					(reference "U20")
 					(unit 1)
 				)
 			)

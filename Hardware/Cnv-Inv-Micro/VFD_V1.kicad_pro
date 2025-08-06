@@ -48,7 +48,7 @@
         "silk_text_thickness": 0.1,
         "silk_text_upright": false,
         "zones": {
-          "min_clearance": 0.5
+          "min_clearance": 0.0
         }
       },
       "diff_pair_dimensions": [
@@ -58,7 +58,12 @@
           "width": 0.0
         }
       ],
-      "drc_exclusions": [],
+      "drc_exclusions": [
+        [
+          "starved_thermal|222123000|96106000|bed8c160-60d3-4294-b600-3b0ce0a43249|1c85cbbb-9944-4172-a770-10085d0cb55d|F.Cu",
+          ""
+        ]
+      ],
       "meta": {
         "version": 2
       },
@@ -194,8 +199,10 @@
         0.4572,
         0.508,
         0.635,
+        0.762,
         1.27,
-        2.286
+        2.286,
+        3.81
       ],
       "tuning_pattern_settings": {
         "diff_pair_defaults": {
@@ -227,6 +234,14 @@
         {
           "diameter": 0.0,
           "drill": 0.0
+        },
+        {
+          "diameter": 0.508,
+          "drill": 0.3048
+        },
+        {
+          "diameter": 1.016,
+          "drill": 0.762
         }
       ],
       "zones_allow_external_fillets": false
@@ -735,7 +750,7 @@
       "plot": "",
       "pos_files": "",
       "specctra_dsn": "",
-      "step": "VFD_V1.stl",
+      "step": "../../Modelo3D/InterfacePCB.step",
       "svg": "",
       "vrml": ""
     },
@@ -898,10 +913,6 @@
       "Conversor"
     ],
     [
-      "110275dc-ed3b-4248-b6a0-86f6159a1d7c",
-      "Micro"
-    ],
-    [
       "34c61ed3-ecc5-4115-9542-7ec7a8a657d2",
       "Mosfet driver module"
     ],
@@ -950,24 +961,12 @@
       "Medición tensión"
     ],
     [
-      "15d84fde-48a5-471f-8aa3-e7a3fbba29f1",
-      "Entrada optoacoplada NH"
-    ],
-    [
       "6ade7ab7-6233-4c60-8ab6-50f492d9a784",
       "Medición tensión1"
     ],
     [
       "fc30a5fb-ff38-4397-8c78-21712589d910",
       "Interfaz de conexión"
-    ],
-    [
-      "b567d3e2-0d19-45d1-8a65-79171974937b",
-      "Entrada optoacoplada NL"
-    ],
-    [
-      "43675de4-b717-470e-b523-b0c410cf7bca",
-      "Entrada optoacoplada NL1"
     ]
   ],
   "text_variables": {}
