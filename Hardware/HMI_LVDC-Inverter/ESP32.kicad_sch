@@ -1871,222 +1871,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Switch:SW_MEC_5E"
-			(pin_names
-				(offset 1.016)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "SW"
-				(at 0.635 5.715 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Value" "SW_MEC_5E"
-				(at 0 -3.175 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 7.62 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "http://www.apem.com/int/index.php?controller=attachment&id_attachment=1371"
-				(at 0 7.62 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "MEC 5E single pole normally-open tactile switch"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "switch normally-open pushbutton push-button"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "SW*MEC*5G*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "SW_MEC_5E_0_1"
-				(polyline
-					(pts
-						(xy -2.54 0) (xy -2.54 2.54) (xy -2.286 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -2.286 3.81) (xy 2.286 3.81)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center -1.778 2.54)
-					(radius 0.508)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 3.81) (xy 0 5.588)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 1.778 2.54)
-					(radius 0.508)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.54 0) (xy 2.54 2.54) (xy 2.286 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(pin passive line
-					(at -5.08 2.54 0)
-					(length 2.54)
-					(name "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 0 0)
-					(length 2.54)
-					(name "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 5.08 2.54 180)
-					(length 2.54)
-					(name "A"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 5.08 0 180)
-					(length 2.54)
-					(name "K"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "power:GND"
 			(power)
 			(pin_numbers
@@ -2371,22 +2155,10 @@
 		(uuid "1c05dbdf-03cd-4ea5-a23c-5ad040c7ba5c")
 	)
 	(junction
-		(at 224.79 154.94)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "20626186-8618-4e97-a37b-07ba11386f15")
-	)
-	(junction
 		(at 266.7 144.78)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "378c9a08-233d-496b-8922-d435502f055f")
-	)
-	(junction
-		(at 189.23 154.94)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "3fc1d2e8-a264-43c2-ba62-697bcafc131e")
 	)
 	(junction
 		(at 196.85 121.92)
@@ -2407,46 +2179,10 @@
 		(uuid "60d9e8c1-4d58-4568-a23a-6894048f4abb")
 	)
 	(junction
-		(at 220.98 132.08)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "70a754f3-19c6-4f70-988f-7bd513e862db")
-	)
-	(junction
-		(at 214.63 142.24)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "7755e113-cad8-49df-8299-1f4518e4bbf8")
-	)
-	(junction
-		(at 217.17 154.94)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "7bd54db7-d737-47cf-9115-750347519416")
-	)
-	(junction
-		(at 186.69 142.24)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "a5775129-5857-4df8-beb9-23f7a0046e84")
-	)
-	(junction
 		(at 261.62 160.02)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "cc41f849-44b1-4d73-bdbd-6a633d7f11ee")
-	)
-	(junction
-		(at 193.04 132.08)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "d211bf63-d5d8-4210-9cdb-126a595c81a1")
-	)
-	(junction
-		(at 196.85 154.94)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "df291c6e-07c1-45b1-afc7-c90a90fbf08a")
 	)
 	(junction
 		(at 224.79 132.08)
@@ -2508,26 +2244,6 @@
 	)
 	(wire
 		(pts
-			(xy 214.63 132.08) (xy 220.98 132.08)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "07e4e9b6-6774-400b-a75c-f6ac20a76d67")
-	)
-	(wire
-		(pts
-			(xy 193.04 128.27) (xy 193.04 132.08)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "089dca6e-069f-4800-941c-1ffea7fd2163")
-	)
-	(wire
-		(pts
 			(xy 125.73 77.47) (xy 111.76 77.47)
 		)
 		(stroke
@@ -2535,56 +2251,6 @@
 			(type default)
 		)
 		(uuid "0a0d244b-7a68-429e-ad89-f54dc1751cb5")
-	)
-	(wire
-		(pts
-			(xy 220.98 132.08) (xy 224.79 132.08)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0aa473d5-b7b3-4071-a1e1-34682ea1cf07")
-	)
-	(wire
-		(pts
-			(xy 214.63 132.08) (xy 214.63 133.35)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0c5e7393-ec64-415c-aa85-1289554ed03d")
-	)
-	(wire
-		(pts
-			(xy 189.23 154.94) (xy 196.85 154.94)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0d73ac9e-5732-4cdf-a2d0-a3b38e0f4637")
-	)
-	(wire
-		(pts
-			(xy 214.63 142.24) (xy 217.17 142.24)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "13b71c65-ac94-40a9-a23c-d38c36d1325e")
-	)
-	(wire
-		(pts
-			(xy 193.04 132.08) (xy 196.85 132.08)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "16d635da-37ab-41c0-8eef-bef56cc7fce5")
 	)
 	(wire
 		(pts
@@ -2615,16 +2281,6 @@
 			(type default)
 		)
 		(uuid "187201dc-ce55-4bce-b2a1-98a3867baa2d")
-	)
-	(wire
-		(pts
-			(xy 196.85 154.94) (xy 196.85 156.21)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "20651501-6eba-4af5-8e55-1fce5b543f7c")
 	)
 	(wire
 		(pts
@@ -2678,16 +2334,6 @@
 	)
 	(wire
 		(pts
-			(xy 217.17 154.94) (xy 217.17 153.67)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2c9e114d-4a28-49f4-950e-034238e24218")
-	)
-	(wire
-		(pts
 			(xy 93.98 104.14) (xy 96.52 104.14)
 		)
 		(stroke
@@ -2718,26 +2364,6 @@
 	)
 	(wire
 		(pts
-			(xy 217.17 143.51) (xy 217.17 142.24)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "356f1457-c798-442c-bde2-4a0f3e50e226")
-	)
-	(wire
-		(pts
-			(xy 214.63 154.94) (xy 217.17 154.94)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "38fbaa58-bd99-4d01-a535-b534bb1a66dc")
-	)
-	(wire
-		(pts
 			(xy 264.16 87.63) (xy 261.62 87.63)
 		)
 		(stroke
@@ -2745,16 +2371,6 @@
 			(type default)
 		)
 		(uuid "3cacc677-4294-43ea-9a2c-26eec1b56ece")
-	)
-	(wire
-		(pts
-			(xy 186.69 132.08) (xy 186.69 133.35)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3e4b3283-fe5c-4c80-b81f-921a7001926d")
 	)
 	(wire
 		(pts
@@ -2838,7 +2454,7 @@
 	)
 	(wire
 		(pts
-			(xy 224.79 154.94) (xy 224.79 156.21)
+			(xy 224.79 149.86) (xy 224.79 156.21)
 		)
 		(stroke
 			(width 0)
@@ -2948,16 +2564,6 @@
 	)
 	(wire
 		(pts
-			(xy 214.63 140.97) (xy 214.63 142.24)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5c9a4dc4-c18c-4494-9ee9-a8adc79c63e9")
-	)
-	(wire
-		(pts
 			(xy 275.59 160.02) (xy 276.86 160.02)
 		)
 		(stroke
@@ -2968,33 +2574,13 @@
 	)
 	(wire
 		(pts
-			(xy 214.63 142.24) (xy 214.63 143.51)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5e47cf69-d417-48dc-883c-d94fced9d13e")
-	)
-	(wire
-		(pts
-			(xy 218.44 128.27) (xy 220.98 128.27)
+			(xy 222.25 132.08) (xy 224.79 132.08)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "5fa22271-7495-4f02-b5ed-bb517183351a")
-	)
-	(wire
-		(pts
-			(xy 189.23 154.94) (xy 189.23 153.67)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "620778d1-7923-43b5-8d97-1be9744683e6")
 	)
 	(wire
 		(pts
@@ -3138,26 +2724,6 @@
 	)
 	(wire
 		(pts
-			(xy 186.69 140.97) (xy 186.69 142.24)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "80ca0636-47c6-4990-8636-640ae2b175c6")
-	)
-	(wire
-		(pts
-			(xy 186.69 132.08) (xy 193.04 132.08)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "82f2ceba-c94e-47c8-948e-3057a28b03d2")
-	)
-	(wire
-		(pts
 			(xy 257.81 99.06) (xy 255.27 99.06)
 		)
 		(stroke
@@ -3185,16 +2751,6 @@
 			(type default)
 		)
 		(uuid "8858ca3f-aa3b-45cb-b47f-d0169bc512d7")
-	)
-	(wire
-		(pts
-			(xy 189.23 143.51) (xy 189.23 142.24)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8b49e4a6-2ff9-4d31-a261-d0ea68c09091")
 	)
 	(wire
 		(pts
@@ -3248,16 +2804,6 @@
 	)
 	(wire
 		(pts
-			(xy 217.17 154.94) (xy 224.79 154.94)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "981bbb15-f91b-48ec-b113-d0dcadcfa536")
-	)
-	(wire
-		(pts
 			(xy 264.16 55.88) (xy 261.62 55.88)
 		)
 		(stroke
@@ -3278,7 +2824,7 @@
 	)
 	(wire
 		(pts
-			(xy 190.5 128.27) (xy 193.04 128.27)
+			(xy 194.31 132.08) (xy 196.85 132.08)
 		)
 		(stroke
 			(width 0)
@@ -3308,26 +2854,6 @@
 	)
 	(wire
 		(pts
-			(xy 220.98 128.27) (xy 220.98 132.08)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a542686d-85a8-4dde-b84d-d43d887dc69d")
-	)
-	(wire
-		(pts
-			(xy 214.63 154.94) (xy 214.63 153.67)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a6dc66c0-f60a-4a5d-8867-330ed463be9f")
-	)
-	(wire
-		(pts
 			(xy 241.3 99.06) (xy 245.11 99.06)
 		)
 		(stroke
@@ -3335,16 +2861,6 @@
 			(type default)
 		)
 		(uuid "a9a95557-0785-4985-a263-7fda913cc4fd")
-	)
-	(wire
-		(pts
-			(xy 186.69 142.24) (xy 189.23 142.24)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "aacade66-16eb-4130-b88d-2b0cac5172aa")
 	)
 	(wire
 		(pts
@@ -3378,7 +2894,7 @@
 	)
 	(wire
 		(pts
-			(xy 196.85 149.86) (xy 196.85 154.94)
+			(xy 196.85 149.86) (xy 196.85 156.21)
 		)
 		(stroke
 			(width 0)
@@ -3408,16 +2924,6 @@
 	)
 	(wire
 		(pts
-			(xy 186.69 154.94) (xy 189.23 154.94)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "bbf50581-59bd-4542-b6d0-53e258621382")
-	)
-	(wire
-		(pts
 			(xy 252.73 123.19) (xy 252.73 124.46)
 		)
 		(stroke
@@ -3438,16 +2944,6 @@
 	)
 	(wire
 		(pts
-			(xy 186.69 154.94) (xy 186.69 153.67)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c1395adc-9a82-4aee-8a5a-18b8c45cf339")
-	)
-	(wire
-		(pts
 			(xy 203.2 95.25) (xy 203.2 97.79)
 		)
 		(stroke
@@ -3465,16 +2961,6 @@
 			(type default)
 		)
 		(uuid "c765a6b8-94e3-478e-a149-ce883340cf5e")
-	)
-	(wire
-		(pts
-			(xy 224.79 149.86) (xy 224.79 154.94)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c92f68c8-549d-4ee7-a4d3-0c36f5482459")
 	)
 	(wire
 		(pts
@@ -3705,16 +3191,6 @@
 			(type default)
 		)
 		(uuid "f486ae7f-53e5-437b-9b14-ed46dddf883e")
-	)
-	(wire
-		(pts
-			(xy 186.69 142.24) (xy 186.69 143.51)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f48a2782-95dd-4bcb-b974-df88427dd58a")
 	)
 	(wire
 		(pts
@@ -4100,7 +3576,7 @@
 	)
 	(hierarchical_label "ESP_EN"
 		(shape bidirectional)
-		(at 190.5 128.27 180)
+		(at 194.31 132.08 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4177,7 +3653,7 @@
 	)
 	(hierarchical_label "ESP_PROG"
 		(shape bidirectional)
-		(at 218.44 128.27 180)
+		(at 222.25 132.08 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4565,7 +4041,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "051aae98-247d-4c88-b05a-c16ac2d76398")
-		(property "Reference" "R18"
+		(property "Reference" "R16"
 			(at 268.478 151.13 0)
 			(effects
 				(font
@@ -4673,7 +4149,7 @@
 		(instances
 			(project "HMI_LVDC-Inverter"
 				(path "/0057333c-5edf-4047-9690-4d1b87a98977/a762a5f7-801c-41ef-9dab-35eab0968df2"
-					(reference "R18")
+					(reference "R16")
 					(unit 1)
 				)
 			)
@@ -6172,111 +5648,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R_US")
-		(at 214.63 137.16 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp yes)
-		(uuid "47198e04-b507-402a-a666-8b2d5f0bd586")
-		(property "Reference" "R17"
-			(at 216.408 136.144 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "221"
-			(at 216.154 137.922 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 215.646 137.414 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 214.63 137.16 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor, US symbol"
-			(at 214.63 137.16 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint checked" ""
-			(at 214.63 137.16 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Symbol checked" ""
-			(at 214.63 137.16 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Price" ""
-			(at 214.63 137.16 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint Checked" ""
-			(at 214.63 137.16 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "ae94105e-a0ce-4be1-820c-517e204b1532")
-		)
-		(pin "2"
-			(uuid "4a3e478f-93a1-4905-901b-c529b3a7f1da")
-		)
-		(instances
-			(project "HMI_LVDC-Inverter"
-				(path "/0057333c-5edf-4047-9690-4d1b87a98977/a762a5f7-801c-41ef-9dab-35eab0968df2"
-					(reference "R17")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Connector:TestPoint")
 		(at 261.62 82.55 90)
 		(unit 1)
@@ -6891,111 +6262,6 @@
 			(project "HMI_LVDC-Inverter"
 				(path "/0057333c-5edf-4047-9690-4d1b87a98977/a762a5f7-801c-41ef-9dab-35eab0968df2"
 					(reference "R12")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R_US")
-		(at 186.69 137.16 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp yes)
-		(uuid "5bb83426-3eb5-4bf0-8d0f-15e98b16fcaa")
-		(property "Reference" "R16"
-			(at 188.468 136.144 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "221"
-			(at 188.214 137.922 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 187.706 137.414 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 186.69 137.16 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor, US symbol"
-			(at 186.69 137.16 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint checked" ""
-			(at 186.69 137.16 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Symbol checked" ""
-			(at 186.69 137.16 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Price" ""
-			(at 186.69 137.16 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint Checked" ""
-			(at 186.69 137.16 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "66ff74d1-68f9-45fa-88b9-d3e8dbafa059")
-		)
-		(pin "2"
-			(uuid "5dda7ef5-1c1e-4143-b3db-87182ae1d2a8")
-		)
-		(instances
-			(project "HMI_LVDC-Inverter"
-				(path "/0057333c-5edf-4047-9690-4d1b87a98977/a762a5f7-801c-41ef-9dab-35eab0968df2"
-					(reference "R16")
 					(unit 1)
 				)
 			)
@@ -7792,125 +7058,6 @@
 			(project "HMI_LVDC-Inverter"
 				(path "/0057333c-5edf-4047-9690-4d1b87a98977/a762a5f7-801c-41ef-9dab-35eab0968df2"
 					(reference "#PWR020")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Switch:SW_MEC_5E")
-		(at 217.17 148.59 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp yes)
-		(uuid "8a177a15-e8f7-4972-aff9-7f64d4742141")
-		(property "Reference" "SW3"
-			(at 218.186 148.59 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "SW_MEC_5E"
-			(at 209.55 148.59 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "Button_Switch_SMD:SW_MEC_5GSH9"
-			(at 209.55 148.59 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://ar.mouser.com/datasheet/2/1628/ts34-3555519.pdf"
-			(at 209.55 148.59 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "MEC 5E single pole normally-open tactile switch"
-			(at 217.17 148.59 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint checked" ""
-			(at 217.17 148.59 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Symbol checked" ""
-			(at 217.17 148.59 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Price" "0.29"
-			(at 217.17 148.59 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "https://ar.mouser.com/ProductDetail/Same-Sky/TS34-62-35-BK-100-SMT-TR?qs=efUn273yAhdTNfYlp2kkeg%3D%3D"
-			(at 217.17 148.59 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint Checked" ""
-			(at 217.17 148.59 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "4"
-			(uuid "7d2e8caa-25b8-4d3c-81f9-3888b8a88170")
-		)
-		(pin "1"
-			(uuid "e34a63cb-a766-4407-80db-b61b7b5415a9")
-		)
-		(pin "2"
-			(uuid "562a8747-0002-4558-9058-5f3438868a76")
-		)
-		(pin "3"
-			(uuid "c4f0e135-712c-491e-b359-6142bffcd92a")
-		)
-		(instances
-			(project "HMI_LVDC-Inverter"
-				(path "/0057333c-5edf-4047-9690-4d1b87a98977/a762a5f7-801c-41ef-9dab-35eab0968df2"
-					(reference "SW3")
 					(unit 1)
 				)
 			)
@@ -9481,125 +8628,6 @@
 			(project "HMI_LVDC-Inverter"
 				(path "/0057333c-5edf-4047-9690-4d1b87a98977/a762a5f7-801c-41ef-9dab-35eab0968df2"
 					(reference "TP15")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Switch:SW_MEC_5E")
-		(at 189.23 148.59 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp yes)
-		(uuid "f5259414-bfa7-4e05-9bfe-7ffab3a79dee")
-		(property "Reference" "SW2"
-			(at 190.246 148.59 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "SW_MEC_5E"
-			(at 181.61 148.59 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "Button_Switch_SMD:SW_MEC_5GSH9"
-			(at 181.61 148.59 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://ar.mouser.com/datasheet/2/1628/ts34-3555519.pdf"
-			(at 181.61 148.59 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "MEC 5E single pole normally-open tactile switch"
-			(at 189.23 148.59 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint checked" ""
-			(at 189.23 148.59 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Symbol checked" ""
-			(at 189.23 148.59 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Price" "0.29"
-			(at 189.23 148.59 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "https://ar.mouser.com/ProductDetail/Same-Sky/TS34-62-35-BK-100-SMT-TR?qs=efUn273yAhdTNfYlp2kkeg%3D%3D"
-			(at 189.23 148.59 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint Checked" ""
-			(at 189.23 148.59 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "4"
-			(uuid "d1e06b59-e49f-480e-b64d-1dc50ef3ce58")
-		)
-		(pin "1"
-			(uuid "cc0a54cb-5fce-440f-9890-73eaa231dbb5")
-		)
-		(pin "2"
-			(uuid "5f5ad404-3535-4a4c-9fe6-029cdb6f1462")
-		)
-		(pin "3"
-			(uuid "fb65b6f0-3ace-4fcc-a72b-a5b8cba42505")
-		)
-		(instances
-			(project "HMI_LVDC-Inverter"
-				(path "/0057333c-5edf-4047-9690-4d1b87a98977/a762a5f7-801c-41ef-9dab-35eab0968df2"
-					(reference "SW2")
 					(unit 1)
 				)
 			)

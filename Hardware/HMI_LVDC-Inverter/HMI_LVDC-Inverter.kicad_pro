@@ -548,6 +548,9 @@
       "unconnected-(R16-Pad1)": [
         "+5V_ESP"
       ],
+      "unconnected-(R17-Pad1)": [
+        "+5V_ESP"
+      ],
       "unconnected-(R18-Pad1)": [
         "+3.3V_ESP"
       ],
@@ -566,10 +569,10 @@
       "unconnected-(U15-Pad4)": [
         "3.3V_STM"
       ],
-      "unconnected-(U16-Pad4)": [
+      "unconnected-(U24-Pad4)": [
         "3.3V_STM"
       ],
-      "unconnected-(U24-Pad4)": [
+      "unconnected-(U9-Pad4)": [
         "3.3V_STM"
       ]
     },
@@ -742,7 +745,7 @@
       }
     ],
     "bom_settings": {
-      "exclude_dnp": true,
+      "exclude_dnp": false,
       "fields_ordered": [
         {
           "group_by": false,
@@ -876,7 +879,7 @@
       "include_excluded_from_bom": false,
       "name": "",
       "sort_asc": true,
-      "sort_field": "Compra"
+      "sort_field": "Reference"
     },
     "connection_grid_size": 50.0,
     "drawing": {
@@ -936,8 +939,40 @@
       "Fuentes"
     ],
     [
+      "01bfb99f-c626-427f-93b6-3a324d1ffba6",
+      "Fuente_ISO"
+    ],
+    [
+      "b48c1cc5-91d8-43f5-9bad-42f80dc8c1d9",
+      "Fuente_ISO1"
+    ],
+    [
       "e510606f-6f04-4711-9f2b-d43d4de4a4de",
       "Perifericos"
+    ],
+    [
+      "bd0135dc-8da7-4e5d-91da-103a4a8ec09c",
+      "FREQ_SEL_1"
+    ],
+    [
+      "56ca9b1f-7ac9-4571-b846-7d181a59aeeb",
+      "FREQ_SEL_2"
+    ],
+    [
+      "8ed63270-0053-4d5b-bff7-f9f37411008b",
+      "FREQ_SEL_3"
+    ],
+    [
+      "055a40fe-cd38-468e-af40-51b3396e74eb",
+      "FREQ_SEL_4"
+    ],
+    [
+      "d5a41d21-a57c-4996-8243-e5c1dd58cf14",
+      "START_CTRL"
+    ],
+    [
+      "6a364d1f-798c-4d3f-8ad2-c49dde5e0a04",
+      "STOP_BUTTON"
     ]
   ],
   "text_variables": {}
