@@ -2238,6 +2238,78 @@
 		(color 0 0 0 0)
 		(uuid "f5a2c8fc-9d80-41bb-9be6-2c30680e2b16")
 	)
+	(no_connect
+		(at 57.15 74.93)
+		(uuid "08eb02ea-2b8e-402e-8c7c-00c81c866bc8")
+	)
+	(no_connect
+		(at 57.15 92.71)
+		(uuid "0b50ea98-e130-431a-9cf4-f98a0baf4bd8")
+	)
+	(no_connect
+		(at 92.71 57.15)
+		(uuid "0fa5b970-f20b-4df4-aabb-54410b94ba9c")
+	)
+	(no_connect
+		(at 57.15 80.01)
+		(uuid "27a76437-2cef-4389-ac12-2c62ba95fd23")
+	)
+	(no_connect
+		(at 57.15 95.25)
+		(uuid "289c9e8b-7772-434d-8bfc-92f8fb94fa9e")
+	)
+	(no_connect
+		(at 57.15 102.87)
+		(uuid "373683af-9190-438a-aa02-16de0df7f235")
+	)
+	(no_connect
+		(at 92.71 82.55)
+		(uuid "37fe8496-228a-45b0-be47-a3b47fb0101f")
+	)
+	(no_connect
+		(at 57.15 110.49)
+		(uuid "47c10943-94ea-4867-8e25-87e71b242d80")
+	)
+	(no_connect
+		(at 57.15 107.95)
+		(uuid "4d94fe2d-97df-4d71-b64d-231793268763")
+	)
+	(no_connect
+		(at 92.71 95.25)
+		(uuid "5d199760-4c78-4c2f-b7f6-93fd0baa01bb")
+	)
+	(no_connect
+		(at 92.71 77.47)
+		(uuid "5e6bb75a-a2be-4f1a-bbb2-fedda179adde")
+	)
+	(no_connect
+		(at 57.15 77.47)
+		(uuid "60377495-ba1e-4ebc-a8d5-d58dae921736")
+	)
+	(no_connect
+		(at 57.15 113.03)
+		(uuid "8ad9eeba-adcf-4bf9-9399-70ed1cf0c5a3")
+	)
+	(no_connect
+		(at 57.15 97.79)
+		(uuid "9dce4578-c290-4044-a09e-be0ce2e4e07c")
+	)
+	(no_connect
+		(at 92.71 74.93)
+		(uuid "af998cc9-be98-4b9d-87dd-13d57f914d50")
+	)
+	(no_connect
+		(at 57.15 100.33)
+		(uuid "b31ad28a-6d70-460d-9743-f2979a9fded3")
+	)
+	(no_connect
+		(at 57.15 105.41)
+		(uuid "d7a469c1-b0ee-43e3-a380-9ab3df905d11")
+	)
+	(no_connect
+		(at 92.71 80.01)
+		(uuid "db4e3680-cbef-40ae-b701-af96271a3ec2")
+	)
 	(wire
 		(pts
 			(xy 255.27 26.67) (xy 245.11 26.67)
@@ -6220,7 +6292,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Crystal:Crystal_SMD_HC49-SD"
+		(property "Footprint" "Crystal:Crystal_SMD_0603-2Pin_6.0x3.5mm"
 			(at 229.87 73.66 0)
 			(effects
 				(font

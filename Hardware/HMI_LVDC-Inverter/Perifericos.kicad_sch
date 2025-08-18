@@ -4277,6 +4277,16 @@
 	)
 	(wire
 		(pts
+			(xy 226.06 140.97) (xy 229.87 140.97)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "159be676-887c-431d-a671-6a86c785cbdf")
+	)
+	(wire
+		(pts
 			(xy 110.49 133.35) (xy 111.76 133.35)
 		)
 		(stroke
@@ -5147,16 +5157,6 @@
 	)
 	(wire
 		(pts
-			(xy 229.87 140.97) (xy 227.33 140.97)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8c341dbf-a85c-43b0-89d0-82e56b4480cd")
-	)
-	(wire
-		(pts
 			(xy 152.4 90.17) (xy 153.67 90.17)
 		)
 		(stroke
@@ -5985,7 +5985,7 @@
 		)
 		(uuid "2c40def7-c987-4806-ba99-7316e025942a")
 	)
-	(label "FREQ_SEL_1"
+	(label "FREQ_SEL_2"
 		(at 111.76 161.29 0)
 		(effects
 			(font
@@ -6264,6 +6264,28 @@
 			(justify right bottom)
 		)
 		(uuid "fad27e96-6679-4456-bb3c-72051f826e0d")
+	)
+	(global_label "3V3_STM"
+		(shape input)
+		(at 226.06 140.97 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "24b4477d-2182-41a0-a2e9-5669a4c20451")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 213.5196 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
 	)
 	(global_label "+12V_ISO"
 		(shape input)
@@ -6794,36 +6816,6 @@
 		)
 		(property "Component Class" ""
 			(at -229.87 8.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-	)
-	(netclass_flag ""
-		(length 2.54)
-		(shape round)
-		(at 227.33 140.97 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "f1673a10-dff2-4d28-a7f6-2b6e077fb498")
-		(property "Netclass" "3.3V_STM"
-			(at 231.902 136.398 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Component Class" ""
-			(at 508 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
