@@ -11,333 +11,6 @@
 		(company "Andrenacci - Carra")
 	)
 	(lib_symbols
-		(symbol "Connector:Conn_01x06_Pin"
-			(pin_names
-				(offset 1.016)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "J"
-				(at 0 7.62 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "Conn_01x06_Pin"
-				(at 0 -10.16 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Generic connector, single row, 01x06, script generated"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_locked" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "connector"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "Connector*:*_1x??_*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "Conn_01x06_Pin_1_1"
-				(rectangle
-					(start 0.8636 5.207)
-					(end 0 4.953)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(rectangle
-					(start 0.8636 2.667)
-					(end 0 2.413)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(rectangle
-					(start 0.8636 0.127)
-					(end 0 -0.127)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(rectangle
-					(start 0.8636 -2.413)
-					(end 0 -2.667)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(rectangle
-					(start 0.8636 -4.953)
-					(end 0 -5.207)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(rectangle
-					(start 0.8636 -7.493)
-					(end 0 -7.747)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 5.08) (xy 0.8636 5.08)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 2.54) (xy 0.8636 2.54)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 0) (xy 0.8636 0)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 -2.54) (xy 0.8636 -2.54)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 -5.08) (xy 0.8636 -5.08)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 -7.62) (xy 0.8636 -7.62)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(pin passive line
-					(at 5.08 5.08 180)
-					(length 3.81)
-					(name "Pin_1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 5.08 2.54 180)
-					(length 3.81)
-					(name "Pin_2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 5.08 0 180)
-					(length 3.81)
-					(name "Pin_3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 5.08 -2.54 180)
-					(length 3.81)
-					(name "Pin_4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 5.08 -5.08 180)
-					(length 3.81)
-					(name "Pin_5"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "5"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 5.08 -7.62 180)
-					(length 3.81)
-					(name "Pin_6"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "6"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Connector:Screw_Terminal_01x03"
 			(pin_names
 				(offset 1.016)
@@ -1231,6 +904,177 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Connector_Generic:Conn_01x03"
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "J"
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Conn_01x03"
+				(at 0 -5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Generic connector, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "connector"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "Connector*:*_1x??_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Conn_01x03_1_1"
+				(rectangle
+					(start -1.27 3.81)
+					(end 1.27 -3.81)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(rectangle
+					(start -1.27 2.667)
+					(end 0 2.413)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 0.127)
+					(end 0 -0.127)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -2.413)
+					(end 0 -2.667)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -5.08 2.54 0)
+					(length 3.81)
+					(name "Pin_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 3.81)
+					(name "Pin_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -2.54 0)
+					(length 3.81)
+					(name "Pin_3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Connector_Generic:Conn_01x04"
 			(pin_names
 				(offset 1.016)
@@ -1660,6 +1504,264 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Connector_Generic:Conn_01x06"
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "J"
+				(at 0 7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Conn_01x06"
+				(at 0 -10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Generic connector, single row, 01x06, script generated (kicad-library-utils/schlib/autogen/connector/)"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "connector"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "Connector*:*_1x??_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Conn_01x06_1_1"
+				(rectangle
+					(start -1.27 6.35)
+					(end 1.27 -8.89)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(rectangle
+					(start -1.27 5.207)
+					(end 0 4.953)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 2.667)
+					(end 0 2.413)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 0.127)
+					(end 0 -0.127)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -2.413)
+					(end 0 -2.667)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -4.953)
+					(end 0 -5.207)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -7.493)
+					(end 0 -7.747)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -5.08 5.08 0)
+					(length 3.81)
+					(name "Pin_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 2.54 0)
+					(length 3.81)
+					(name "Pin_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 3.81)
+					(name "Pin_3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -2.54 0)
+					(length 3.81)
+					(name "Pin_4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -5.08 0)
+					(length 3.81)
+					(name "Pin_5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -7.62 0)
+					(length 3.81)
+					(name "Pin_6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "power:GND"
 			(power)
 			(pin_numbers
@@ -1823,10 +1925,28 @@
 		(uuid "fe1a2572-6280-464f-9a6b-72c8ffabc75e")
 	)
 	(junction
-		(at 231.14 146.05)
+		(at 231.14 153.67)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "578e14c8-4894-4ff2-b554-2d027e15215b")
+		(uuid "45090aef-92d6-496e-98ba-e9843ca4f078")
+	)
+	(junction
+		(at 231.14 140.97)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "5ce2ddb4-13e7-491a-8fea-115cbe25b543")
+	)
+	(junction
+		(at 58.42 31.75)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "79f7c500-b122-4f93-8b16-a77dba64a06f")
+	)
+	(junction
+		(at 231.14 148.59)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d7231529-35ca-48de-b4ed-7fdb5e2c2c05")
 	)
 	(wire
 		(pts
@@ -1900,6 +2020,16 @@
 	)
 	(wire
 		(pts
+			(xy 232.41 134.62) (xy 231.14 134.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1a612ded-4393-4bc5-af78-7f62863264cd")
+	)
+	(wire
+		(pts
 			(xy 161.29 46.99) (xy 172.72 46.99)
 		)
 		(stroke
@@ -1960,6 +2090,16 @@
 	)
 	(wire
 		(pts
+			(xy 231.14 153.67) (xy 232.41 153.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2e6dcf09-f1db-41bc-87fc-049a9e0a8e98")
+	)
+	(wire
+		(pts
 			(xy 77.47 101.6) (xy 86.36 101.6)
 		)
 		(stroke
@@ -2000,7 +2140,7 @@
 	)
 	(wire
 		(pts
-			(xy 231.14 146.05) (xy 232.41 146.05)
+			(xy 231.14 148.59) (xy 232.41 148.59)
 		)
 		(stroke
 			(width 0)
@@ -2050,23 +2190,13 @@
 	)
 	(wire
 		(pts
-			(xy 219.71 148.59) (xy 232.41 148.59)
+			(xy 219.71 151.13) (xy 232.41 151.13)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "4cf2e9f8-8a61-45b5-931d-e606d1382df6")
-	)
-	(wire
-		(pts
-			(xy 232.41 134.62) (xy 231.14 134.62)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "500063d8-a847-4a97-933a-ef90cdb0c6ab")
 	)
 	(wire
 		(pts
@@ -2140,7 +2270,7 @@
 	)
 	(wire
 		(pts
-			(xy 217.17 143.51) (xy 217.17 123.444)
+			(xy 217.17 146.05) (xy 217.17 123.444)
 		)
 		(stroke
 			(width 0)
@@ -2150,7 +2280,7 @@
 	)
 	(wire
 		(pts
-			(xy 214.63 123.444) (xy 214.63 140.97)
+			(xy 214.63 123.444) (xy 214.63 143.51)
 		)
 		(stroke
 			(width 0)
@@ -2190,6 +2320,16 @@
 	)
 	(wire
 		(pts
+			(xy 231.14 153.67) (xy 231.14 148.59)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6486dd94-88db-4c7e-9271-2d23358e2383")
+	)
+	(wire
+		(pts
 			(xy 72.39 128.27) (xy 77.47 128.27)
 		)
 		(stroke
@@ -2200,7 +2340,7 @@
 	)
 	(wire
 		(pts
-			(xy 214.63 140.97) (xy 232.41 140.97)
+			(xy 214.63 143.51) (xy 232.41 143.51)
 		)
 		(stroke
 			(width 0)
@@ -2310,6 +2450,16 @@
 	)
 	(wire
 		(pts
+			(xy 231.14 140.97) (xy 231.14 148.59)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8ff8ccd7-f994-4cac-bd27-f48ee233f598")
+	)
+	(wire
+		(pts
 			(xy 161.29 31.75) (xy 172.72 31.75)
 		)
 		(stroke
@@ -2320,13 +2470,23 @@
 	)
 	(wire
 		(pts
-			(xy 219.71 123.444) (xy 219.71 148.59)
+			(xy 219.71 123.444) (xy 219.71 151.13)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "9d4a8e3c-eb0b-4347-b031-5f09640a5cac")
+	)
+	(wire
+		(pts
+			(xy 231.14 134.62) (xy 231.14 140.97)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a3020dec-97a2-4a37-949a-9278c249ba50")
 	)
 	(wire
 		(pts
@@ -2350,6 +2510,16 @@
 	)
 	(wire
 		(pts
+			(xy 231.14 140.97) (xy 232.41 140.97)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a74d1f2f-089a-413a-89a0-013af03adf26")
+	)
+	(wire
+		(pts
 			(xy 135.89 80.01) (xy 135.89 93.98)
 		)
 		(stroke
@@ -2367,16 +2537,6 @@
 			(type default)
 		)
 		(uuid "bb640ffa-0e78-4523-b3a9-2d271f6a4610")
-	)
-	(wire
-		(pts
-			(xy 231.14 134.62) (xy 231.14 146.05)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c14f3bb2-3d7b-4924-9d4f-2e539b642db1")
 	)
 	(wire
 		(pts
@@ -2430,7 +2590,7 @@
 	)
 	(wire
 		(pts
-			(xy 231.14 149.86) (xy 231.14 146.05)
+			(xy 231.14 154.94) (xy 231.14 153.67)
 		)
 		(stroke
 			(width 0)
@@ -2460,7 +2620,7 @@
 	)
 	(wire
 		(pts
-			(xy 217.17 143.51) (xy 232.41 143.51)
+			(xy 217.17 146.05) (xy 232.41 146.05)
 		)
 		(stroke
 			(width 0)
@@ -2537,6 +2697,26 @@
 			(type default)
 		)
 		(uuid "faacd463-ecc9-436a-810b-5dbd7802400a")
+	)
+	(wire
+		(pts
+			(xy 57.15 26.67) (xy 58.42 26.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fbee5dcc-8ed2-41d5-b538-2799cc6a93fe")
+	)
+	(wire
+		(pts
+			(xy 58.42 26.67) (xy 58.42 31.75)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fccce7ee-d8f9-4215-b5c2-eecf57ef698b")
 	)
 	(global_label "+3.3V_ESP"
 		(shape input)
@@ -2759,89 +2939,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector_Generic:Conn_01x04")
-		(at 237.49 146.05 0)
-		(mirror x)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "372aa7dd-c4b8-42fe-bedf-42c79f0ee28d")
-		(property "Reference" "J10"
-			(at 246.38 144.018 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "Inv_Signal2_A1"
-			(at 246.38 146.558 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Connector_Molex:Molex_KK-254_AE-6410-04A_1x04_P2.54mm_Vertical"
-			(at 237.49 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 237.49 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 237.49 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint Checked" ""
-			(at 237.49 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "a669efbf-b006-4c77-b859-00e03f8e298c")
-		)
-		(pin "3"
-			(uuid "22c1c441-c899-4a73-b9e2-f132fb96d7ad")
-		)
-		(pin "1"
-			(uuid "7e30b5c2-0a07-42a9-89ed-b1c4c0a38ff4")
-		)
-		(pin "4"
-			(uuid "2833d6eb-2177-4a88-989b-82376aaf3528")
-		)
-		(instances
-			(project "HMI_LVDC-Inverter"
-				(path "/0057333c-5edf-4047-9690-4d1b87a98977"
-					(reference "J10")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Connector_Generic:Conn_01x05")
 		(at 67.31 133.35 0)
 		(mirror y)
@@ -2851,7 +2948,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "3a13a47b-b988-4ba5-b9e1-1f3778a3302c")
-		(property "Reference" "J7"
+		(property "Reference" "J6"
 			(at 58.928 135.382 0)
 			(effects
 				(font
@@ -2867,7 +2964,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_1.00mm:PinHeader_1x05_P1.00mm_Vertical"
+		(property "Footprint" "Connector_JST:JST_XH_B5B-XH-A_1x05_P2.50mm_Vertical"
 			(at 67.31 133.35 0)
 			(effects
 				(font
@@ -2876,7 +2973,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C7429617.pdf"
 			(at 67.31 133.35 0)
 			(effects
 				(font
@@ -2903,6 +3000,60 @@
 				(hide yes)
 			)
 		)
+		(property "Compra" "https://www.lcsc.com/product-detail/C7429617.html?s_z=n_ZX-HA2.54-5PPZ"
+			(at 67.31 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Megastar"
+			(at 67.31 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Price" "0.0278"
+			(at 67.31 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Library" ""
+			(at 67.31 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint checked" "Yes"
+			(at 67.31 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Symbol checked" "Yes"
+			(at 67.31 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "c76bacbf-276b-4d35-bd2c-435c422e963e")
 		)
@@ -2921,7 +3072,7 @@
 		(instances
 			(project "HMI_LVDC-Inverter"
 				(path "/0057333c-5edf-4047-9690-4d1b87a98977"
-					(reference "J7")
+					(reference "J6")
 					(unit 1)
 				)
 			)
@@ -3059,7 +3210,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector_Generic:Conn_01x02")
+		(lib_id "Connector_Generic:Conn_01x03")
 		(at 52.07 29.21 0)
 		(mirror y)
 		(unit 1)
@@ -3069,7 +3220,7 @@
 		(dnp no)
 		(uuid "3fcb7b0d-79ee-412f-905b-163b9ce051d5")
 		(property "Reference" "J1"
-			(at 53.848 24.13 0)
+			(at 48.514 27.178 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3077,14 +3228,14 @@
 			)
 		)
 		(property "Value" "Micro_PwrBus_B1"
-			(at 53.594 26.162 0)
+			(at 41.91 29.718 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Footprint" "Connector_Phoenix_MSTB:PhoenixContact_MSTBVA_2,5_2-G-5,08_1x02_P5.08mm_Vertical"
+		(property "Footprint" "Connector_JST:JST_XH_B3B-XH-A_1x03_P2.50mm_Vertical"
 			(at 52.07 29.21 0)
 			(effects
 				(font
@@ -3093,7 +3244,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C22388695.pdf"
 			(at 52.07 29.21 0)
 			(effects
 				(font
@@ -3102,7 +3253,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+		(property "Description" "Generic connector, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)"
 			(at 52.07 29.21 0)
 			(effects
 				(font
@@ -3120,11 +3271,68 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Library" ""
+			(at 52.07 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Compra" "https://www.lcsc.com/product-detail/C22388695.html?s_z=n_ZX-HA2.54-3PZZ"
+			(at 52.07 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Megastar"
+			(at 52.07 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Price" "0.0247"
+			(at 52.07 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint checked" "Yes"
+			(at 52.07 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Symbol checked" "Yes"
+			(at 52.07 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "df8d3f01-3092-4c5a-963d-14d7e4273e27")
 		)
 		(pin "2"
 			(uuid "aa913e71-fd9f-4c1d-ae2c-ad8132881792")
+		)
+		(pin "3"
+			(uuid "a53a3a73-6146-4d06-abb0-ad3c96aa3f24")
 		)
 		(instances
 			(project "HMI_LVDC-Inverter"
@@ -3137,7 +3345,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 231.14 149.86 0)
+		(at 231.14 154.94 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -3145,8 +3353,8 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "4fbf8c21-755a-4ae5-a2c2-9bb9ff76551f")
-		(property "Reference" "#PWR05"
-			(at 231.14 156.21 0)
+		(property "Reference" "#PWR06"
+			(at 231.14 161.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3155,7 +3363,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 229.87 153.67 0)
+			(at 229.87 158.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3164,7 +3372,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 231.14 149.86 0)
+			(at 231.14 154.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3173,7 +3381,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 231.14 149.86 0)
+			(at 231.14 154.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3182,7 +3390,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 231.14 149.86 0)
+			(at 231.14 154.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3196,7 +3404,7 @@
 		(instances
 			(project "HMI_LVDC-Inverter"
 				(path "/0057333c-5edf-4047-9690-4d1b87a98977"
-					(reference "#PWR05")
+					(reference "#PWR06")
 					(unit 1)
 				)
 			)
@@ -3212,7 +3420,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "925cddb0-8da4-49a9-adc5-36cbd5730082")
-		(property "Reference" "J5"
+		(property "Reference" "J4"
 			(at 180.34 62.2299 0)
 			(effects
 				(font
@@ -3230,7 +3438,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_Molex:Molex_KK-254_AE-6410-02A_1x02_P2.54mm_Vertical"
+		(property "Footprint" "Connector_JST:JST_EH_B2B-EH-A_1x02_P2.50mm_Vertical"
 			(at 177.8 62.23 0)
 			(effects
 				(font
@@ -3239,7 +3447,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C7429614.pdf"
 			(at 177.8 62.23 0)
 			(effects
 				(font
@@ -3257,6 +3465,60 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Library" ""
+			(at 177.8 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Compra" "https://www.lcsc.com/product-detail/C7429614.html?s_z=n_ZX-HA2.54-2PZZ"
+			(at 177.8 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Megastar"
+			(at 177.8 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Price" "0.0117"
+			(at 177.8 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint checked" "Yes"
+			(at 177.8 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Symbol checked" "Yes"
+			(at 177.8 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "5be38fe5-844f-47bd-ba2e-49a0ecddfa76")
 		)
@@ -3266,7 +3528,7 @@
 		(instances
 			(project ""
 				(path "/0057333c-5edf-4047-9690-4d1b87a98977"
-					(reference "J5")
+					(reference "J4")
 					(unit 1)
 				)
 			)
@@ -3282,7 +3544,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a13db056-a80e-4cb6-916d-2c59ab1ce49e")
-		(property "Reference" "J9"
+		(property "Reference" "J8"
 			(at 185.42 144.7799 0)
 			(effects
 				(font
@@ -3309,7 +3571,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C492404.pdf"
 			(at 182.88 146.05 0)
 			(effects
 				(font
@@ -3336,6 +3598,60 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Library" ""
+			(at 182.88 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Compra" "https://www.lcsc.com/product-detail/C492404.html?s_z=n_%2520PZ254V-11-05P"
+			(at 182.88 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "XFCN"
+			(at 182.88 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Price" "0.0283"
+			(at 182.88 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint checked" "Yes"
+			(at 182.88 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Symbol checked" "Yes"
+			(at 182.88 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "a549611d-4220-43f0-893a-99e621dafa8b")
 		)
@@ -3354,7 +3670,7 @@
 		(instances
 			(project ""
 				(path "/0057333c-5edf-4047-9690-4d1b87a98977"
-					(reference "J9")
+					(reference "J8")
 					(unit 1)
 				)
 			)
@@ -3369,7 +3685,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "a2c50d56-1e67-4767-b8b8-81d8a4405b74")
-		(property "Reference" "#PWR06"
+		(property "Reference" "#PWR05"
 			(at 176.53 158.75 0)
 			(effects
 				(font
@@ -3419,7 +3735,152 @@
 		(instances
 			(project "HMI_LVDC-Inverter"
 				(path "/0057333c-5edf-4047-9690-4d1b87a98977"
-					(reference "#PWR06")
+					(reference "#PWR05")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x06")
+		(at 246.38 81.28 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "adbe05d1-d4ab-4163-b3cc-bc90d17a79bd")
+		(property "Reference" "J11"
+			(at 248.92 81.2799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "STM32_Programmer"
+			(at 248.92 83.8199 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical"
+			(at 246.38 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C492404.pdf"
+			(at 246.38 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x06, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 246.38 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint Checked" ""
+			(at 246.38 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Library" ""
+			(at 246.38 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Compra" "https://www.lcsc.com/product-detail/C492405.html?s_z=n_PZ254V-11-06P"
+			(at 246.38 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "XFCN"
+			(at 246.38 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Price" "0.0376"
+			(at 246.38 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint checked" "Yes"
+			(at 246.38 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Symbol checked" "Yes"
+			(at 246.38 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "64e860fd-3410-4da0-9c4a-cce1e5613ace")
+		)
+		(pin "1"
+			(uuid "c66f8d51-5531-4702-b409-7cdbf5060f66")
+		)
+		(pin "3"
+			(uuid "cbbc6a38-4e88-44a3-ac40-f401731e92ce")
+		)
+		(pin "4"
+			(uuid "70046c2b-a012-4466-8bc2-7fe7075fb63b")
+		)
+		(pin "5"
+			(uuid "574b9ce0-8a13-4c38-bef3-8d58a3a26ae2")
+		)
+		(pin "6"
+			(uuid "06f678d2-29b0-404a-a7a2-3f69b6776ac3")
+		)
+		(instances
+			(project "HMI_LVDC-Inverter"
+				(path "/0057333c-5edf-4047-9690-4d1b87a98977"
+					(reference "J11")
 					(unit 1)
 				)
 			)
@@ -3435,7 +3896,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c029846d-407e-4257-a340-daa84a63697e")
-		(property "Reference" "J8"
+		(property "Reference" "J7"
 			(at 246.888 131.826 0)
 			(effects
 				(font
@@ -3451,7 +3912,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_Molex:Molex_KK-254_AE-6410-04A_1x04_P2.54mm_Vertical"
+		(property "Footprint" "Connector_JST:JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical"
 			(at 237.49 134.62 0)
 			(effects
 				(font
@@ -3460,7 +3921,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C7429616.pdf"
 			(at 237.49 134.62 0)
 			(effects
 				(font
@@ -3487,6 +3948,60 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Library" ""
+			(at 237.49 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Compra" "https://www.lcsc.com/product-detail/C7429616.html?s_z=n_ZX-HA2.54-4PZZ"
+			(at 237.49 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Megastar"
+			(at 237.49 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Price" "0.0234"
+			(at 237.49 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint checked" "Yes"
+			(at 237.49 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Symbol checked" "Yes"
+			(at 237.49 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "73f4e761-a0e4-4e48-acc5-15e0f557a8da")
 		)
@@ -3502,7 +4017,7 @@
 		(instances
 			(project "HMI_LVDC-Inverter"
 				(path "/0057333c-5edf-4047-9690-4d1b87a98977"
-					(reference "J8")
+					(reference "J7")
 					(unit 1)
 				)
 			)
@@ -3518,7 +4033,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d51d22eb-6f23-45da-a5a3-05d5fa526502")
-		(property "Reference" "J4"
+		(property "Reference" "J2"
 			(at 180.34 30.4799 0)
 			(effects
 				(font
@@ -3545,7 +4060,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C7470117.pdf"
 			(at 177.8 31.75 0)
 			(effects
 				(font
@@ -3555,6 +4070,60 @@
 			)
 		)
 		(property "Description" "Generic screw terminal, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 177.8 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Compra" "https://www.lcsc.com/product-detail/C7470117.html?s_z=n_MX250-3.5-8P-B-GY01-Cu-A"
+			(at 177.8 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint checked" "Yes"
+			(at 177.8 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "MAX"
+			(at 177.8 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Price" "0.1426"
+			(at 177.8 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Symbol checked" "Yes"
+			(at 177.8 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Library" ""
 			(at 177.8 31.75 0)
 			(effects
 				(font
@@ -3575,7 +4144,7 @@
 		(instances
 			(project ""
 				(path "/0057333c-5edf-4047-9690-4d1b87a98977"
-					(reference "J4")
+					(reference "J2")
 					(unit 1)
 				)
 			)
@@ -3618,7 +4187,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C7470117.pdf"
 			(at 177.8 44.45 0)
 			(effects
 				(font
@@ -3628,6 +4197,60 @@
 			)
 		)
 		(property "Description" "Generic screw terminal, single row, 01x08, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 177.8 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Compra" "https://www.lcsc.com/product-detail/C7467034.html?s_z=n_MX250-3.5-8P-B-GY01-Cu-A"
+			(at 177.8 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint checked" "Yes"
+			(at 177.8 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "MAX"
+			(at 177.8 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Price" "0.3497"
+			(at 177.8 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Symbol checked" "Yes"
+			(at 177.8 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Library" ""
 			(at 177.8 44.45 0)
 			(effects
 				(font
@@ -3670,43 +4293,35 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector:Conn_01x06_Pin")
-		(at 246.38 83.82 180)
+		(lib_id "Connector_Generic:Conn_01x06")
+		(at 237.49 146.05 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "fb297e6d-0b17-48cd-b066-60b749b03058")
-		(property "Reference" "J2"
-			(at 247.65 81.2799 0)
+		(fields_autoplaced yes)
+		(uuid "f1b96976-7e17-416d-a2d8-d4b8f3b21abb")
+		(property "Reference" "J9"
+			(at 240.03 146.0499 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 		)
-		(property "Value" "Conn_01x06_Pin"
-			(at 247.65 83.8199 0)
+		(property "Value" "Conn_01x06"
+			(at 240.03 148.5899 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_1.00mm:PinHeader_1x06_P1.00mm_Vertical"
-			(at 246.38 83.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 246.38 83.82 0)
+		(property "Footprint" "Connector_JST:JST_XH_B6B-XH-A_1x06_P2.50mm_Vertical"
+			(at 237.49 146.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3714,8 +4329,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Generic connector, single row, 01x06, script generated"
-			(at 246.38 83.82 0)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C7429618.pdf"
+			(at 237.49 146.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3723,28 +4338,82 @@
 				(hide yes)
 			)
 		)
-		(pin "3"
-			(uuid "973302bc-1f32-4c08-b07d-e6e0a976c6df")
+		(property "Description" "Generic connector, single row, 01x06, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 237.49 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
 		)
-		(pin "1"
-			(uuid "d8c7510e-b2f3-44af-bb7b-4545be3a131d")
+		(property "Compra" "https://www.lcsc.com/product-detail/C7429618.html?s_z=n_ZX-HA2.54-6PZZ"
+			(at 237.49 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
 		)
-		(pin "4"
-			(uuid "f2af7f8d-d76b-488d-84bc-38a74939a5d2")
+		(property "Manufacturer" "Megastar"
+			(at 237.49 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
 		)
-		(pin "5"
-			(uuid "1bd89e41-9263-4f80-aa1e-bf0337bf4093")
+		(property "Price" "0.0334"
+			(at 237.49 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint checked" "Yes"
+			(at 237.49 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Symbol checked" "Yes"
+			(at 237.49 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
 		)
 		(pin "2"
-			(uuid "ef381e74-58a8-4a82-a322-e01703b18dd5")
+			(uuid "10e97158-4426-4b0d-9185-34e04104be2b")
+		)
+		(pin "1"
+			(uuid "fe5583a8-afec-46d8-b722-988c075fba41")
+		)
+		(pin "3"
+			(uuid "276828bd-2832-40e0-9947-83f16cca30f6")
 		)
 		(pin "6"
-			(uuid "e17496b2-eee8-4376-8d7b-51de6ef2d03a")
+			(uuid "76ebc2f6-237d-4d36-938c-08c7209cc82d")
+		)
+		(pin "4"
+			(uuid "7949c103-6c70-449b-9c38-b716ba32deca")
+		)
+		(pin "5"
+			(uuid "781b1ca0-8961-439a-9b18-5ce2757b6653")
 		)
 		(instances
 			(project ""
 				(path "/0057333c-5edf-4047-9690-4d1b87a98977"
-					(reference "J2")
+					(reference "J9")
 					(unit 1)
 				)
 			)

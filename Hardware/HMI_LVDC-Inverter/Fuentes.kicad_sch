@@ -1417,6 +1417,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Library" ""
+			(at 205.74 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "79207c92-da01-4821-96ab-4a8b22c2651e")
 		)
@@ -1532,6 +1541,15 @@
 			)
 		)
 		(property "Manufacturer" "VISHAY"
+			(at 205.74 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Library" ""
 			(at 205.74 43.18 0)
 			(effects
 				(font
@@ -1663,6 +1681,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Library" ""
+			(at 240.03 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "fdd33e42-3f69-4707-8053-f971f299b2f0")
 		)
@@ -1778,6 +1805,15 @@
 			)
 		)
 		(property "Manufacturer" "VISHAY"
+			(at 240.03 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Library" ""
 			(at 240.03 43.18 0)
 			(effects
 				(font

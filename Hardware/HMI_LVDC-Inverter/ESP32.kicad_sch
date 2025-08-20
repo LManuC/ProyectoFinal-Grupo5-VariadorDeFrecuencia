@@ -118,137 +118,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Connector:TestPoint_2Pole"
-			(pin_names
-				(offset 0.762)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "TP"
-				(at 0 1.524 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "TestPoint_2Pole"
-				(at 0 -1.778 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "2-polar test point"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "point tp"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "Pin* Test*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "TestPoint_2Pole_0_1"
-				(circle
-					(center -1.778 0)
-					(radius 0.762)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 1.778 0)
-					(radius 0.762)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(pin passive line
-					(at -5.08 0 0)
-					(length 2.54)
-					(name "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 5.08 0 180)
-					(length 2.54)
-					(name "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Device:C"
 			(pin_numbers
 				(hide yes)
@@ -2468,16 +2337,6 @@
 	)
 	(wire
 		(pts
-			(xy 241.3 93.98) (xy 245.11 93.98)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5071c8ac-6fc6-454a-82f5-3bf4b2de0819")
-	)
-	(wire
-		(pts
 			(xy 125.73 80.01) (xy 111.76 80.01)
 		)
 		(stroke
@@ -2788,16 +2647,6 @@
 	)
 	(wire
 		(pts
-			(xy 257.81 99.06) (xy 255.27 99.06)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "849e137e-3911-4edd-b0f0-33dceebebcf5")
-	)
-	(wire
-		(pts
 			(xy 271.78 124.46) (xy 270.51 124.46)
 		)
 		(stroke
@@ -2918,16 +2767,6 @@
 	)
 	(wire
 		(pts
-			(xy 241.3 99.06) (xy 245.11 99.06)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a9a95557-0785-4985-a263-7fda913cc4fd")
-	)
-	(wire
-		(pts
 			(xy 255.27 144.78) (xy 261.62 144.78)
 		)
 		(stroke
@@ -2985,16 +2824,6 @@
 			(type default)
 		)
 		(uuid "b39bfe4e-f5ee-45e4-b51c-f2bba1761858")
-	)
-	(wire
-		(pts
-			(xy 241.3 104.14) (xy 245.11 104.14)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "bfd4e869-601b-4d5c-b7cd-56e905a8f57c")
 	)
 	(wire
 		(pts
@@ -3105,26 +2934,6 @@
 			(type default)
 		)
 		(uuid "d65f189d-9719-4103-9e39-75c120ecbe5e")
-	)
-	(wire
-		(pts
-			(xy 257.81 104.14) (xy 255.27 104.14)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d9a3eb95-6a74-4d57-91d6-535fe9e8b5f2")
-	)
-	(wire
-		(pts
-			(xy 257.81 93.98) (xy 255.27 93.98)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "dd3dc9a0-9733-48ce-901a-e9cbf7f21afa")
 	)
 	(wire
 		(pts
@@ -3296,16 +3105,6 @@
 		)
 		(uuid "1bb89d23-8286-452e-bf5a-da6d02b7412d")
 	)
-	(label "RTC_XTAL2"
-		(at 241.3 104.14 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "1d83454a-a471-485a-8a4c-ad214711b546")
-	)
 	(label "5V_test"
 		(at 80.01 44.45 180)
 		(effects
@@ -3317,12 +3116,12 @@
 		(uuid "2c126397-c51e-44d7-9be4-fc9f9a70f037")
 	)
 	(label "OLED_SDA"
-		(at 241.3 99.06 180)
+		(at 238.76 87.63 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right bottom)
+			(justify left bottom)
 		)
 		(uuid "43c99eca-1f96-4fd4-a5e5-d843c432092e")
 	)
@@ -3336,16 +3135,6 @@
 		)
 		(uuid "451671c3-2310-4e36-be51-9fc8e058e272")
 	)
-	(label "TXD0_prog"
-		(at 257.81 93.98 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "475e3fd7-a3cd-40ca-88d8-3649ec57a733")
-	)
 	(label "OLED_SDA"
 		(at 113.03 67.31 0)
 		(effects
@@ -3355,16 +3144,6 @@
 			(justify left bottom)
 		)
 		(uuid "504bfdf7-3fd6-4426-9485-6adb14597ce7")
-	)
-	(label "RXD0_prog"
-		(at 241.3 93.98 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "51b63266-8fcf-4eee-8a07-29caf5e4cbc1")
 	)
 	(label "ENABLE"
 		(at 199.39 132.08 0)
@@ -3427,16 +3206,6 @@
 		(uuid "911f3b5e-47f7-47ad-b88d-02c82d08fff1")
 	)
 	(label "RTC_XTAL1"
-		(at 257.81 104.14 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "a4a5f2b2-9ae9-46df-8c84-b049cb98c465")
-	)
-	(label "RTC_XTAL1"
 		(at 113.03 87.63 0)
 		(effects
 			(font
@@ -3447,7 +3216,7 @@
 		(uuid "c6ca8d24-1794-4ba0-a830-528ba4641c83")
 	)
 	(label "OLED_SCL"
-		(at 257.81 99.06 0)
+		(at 264.16 87.63 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4010,7 +3779,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Connector_Pin:Pin_D0.7mm_L6.5mm_W1.8mm_FlatFork"
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
 			(at 261.62 62.23 0)
 			(effects
 				(font
@@ -4065,6 +3834,15 @@
 			)
 		)
 		(property "Footprint Checked" ""
+			(at 261.62 67.31 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Library" ""
 			(at 261.62 67.31 90)
 			(effects
 				(font
@@ -4258,6 +4036,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Library" ""
+			(at 266.7 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "c19b9b67-7711-46d2-8a9c-cdb3ece84a89")
 		)
@@ -4373,6 +4160,15 @@
 			)
 		)
 		(property "Manufacturer" "PANASONIC"
+			(at 196.85 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Library" ""
 			(at 196.85 127 0)
 			(effects
 				(font
@@ -4504,6 +4300,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Library" ""
+			(at 264.16 25.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "71e2bfd5-aa94-41a0-82e2-0a053c86b6c7")
 		)
@@ -4547,7 +4352,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Connector_Pin:Pin_D0.7mm_L6.5mm_W1.8mm_FlatFork"
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
 			(at 261.62 82.55 0)
 			(effects
 				(font
@@ -4602,6 +4407,15 @@
 			)
 		)
 		(property "Footprint Checked" ""
+			(at 261.62 87.63 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Library" ""
 			(at 261.62 87.63 90)
 			(effects
 				(font
@@ -4728,6 +4542,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Library" ""
+			(at 271.78 144.78 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "c2f34b5d-4b9f-40b0-9266-ba0fde9d9559")
 		)
@@ -4836,7 +4659,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Connector_Pin:Pin_D0.7mm_L6.5mm_W1.8mm_FlatFork"
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
 			(at 261.62 67.31 0)
 			(effects
 				(font
@@ -4891,6 +4714,15 @@
 			)
 		)
 		(property "Footprint Checked" ""
+			(at 261.62 72.39 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Library" ""
 			(at 261.62 72.39 90)
 			(effects
 				(font
@@ -5077,6 +4909,15 @@
 			)
 		)
 		(property "Footprint Checked" ""
+			(at 261.62 152.4 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Library" ""
 			(at 261.62 152.4 90)
 			(effects
 				(font
@@ -5404,6 +5245,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Library" ""
+			(at 237.49 26.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "410adb86-139d-44b8-bea3-a81a6ad50e3a")
 		)
@@ -5423,7 +5273,7 @@
 		(lib_id "Device:LED")
 		(at 257.81 124.46 180)
 		(unit 1)
-		(exclude_from_sim no)
+		(exclude_from_sim yes)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
@@ -5534,6 +5384,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Library" ""
+			(at 257.81 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "1627776a-64df-4556-b7b2-bfc99d1b8030")
 		)
@@ -5577,7 +5436,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Connector_Pin:Pin_D0.7mm_L6.5mm_W1.8mm_FlatFork"
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
 			(at 261.62 57.15 0)
 			(effects
 				(font
@@ -5640,6 +5499,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Library" ""
+			(at 261.62 62.23 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "4669bada-d0f7-4ecf-8ea7-2cf02c050242")
 		)
@@ -5647,119 +5515,6 @@
 			(project "HMI_LVDC-Inverter"
 				(path "/0057333c-5edf-4047-9690-4d1b87a98977/a762a5f7-801c-41ef-9dab-35eab0968df2"
 					(reference "TP6")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint_2Pole")
-		(at 250.19 104.14 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "469f543e-dc22-425d-b469-ebedd8d8081d")
-		(property "Reference" "TP19"
-			(at 250.19 101.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "TestPoint_2Pole"
-			(at 250.19 101.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" ""
-			(at 250.19 104.14 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 250.19 104.14 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "2-polar test point"
-			(at 250.19 104.14 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Library" ".\\"
-			(at 250.19 104.14 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint checked" ""
-			(at 250.19 104.14 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Symbol checked" ""
-			(at 250.19 104.14 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Price" ""
-			(at 250.19 104.14 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint Checked" ""
-			(at 250.19 104.14 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "353bca17-ba17-4efb-a344-3059819141c9")
-		)
-		(pin "2"
-			(uuid "4b0e5eab-1471-496b-b8e5-e4638435d4de")
-		)
-		(instances
-			(project "HMI_LVDC-Inverter"
-				(path "/0057333c-5edf-4047-9690-4d1b87a98977/a762a5f7-801c-41ef-9dab-35eab0968df2"
-					(reference "TP19")
 					(unit 1)
 				)
 			)
@@ -5793,7 +5548,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Connector_Pin:Pin_D0.7mm_L6.5mm_W1.8mm_FlatFork"
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
 			(at 261.62 77.47 0)
 			(effects
 				(font
@@ -5856,6 +5611,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Library" ""
+			(at 261.62 82.55 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "d116ea5f-2470-4ab6-bd52-301f466ca514")
 		)
@@ -5896,7 +5660,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Connector_Pin:Pin_D0.7mm_L6.5mm_W1.8mm_FlatFork"
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
 			(at 234.95 67.31 0)
 			(effects
 				(font
@@ -5959,6 +5723,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Library" ""
+			(at 234.95 72.39 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "29f5f098-bea1-4dca-a4e6-d068656b033e")
 		)
@@ -5999,7 +5772,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Connector_Pin:Pin_D0.7mm_L6.5mm_W1.8mm_FlatFork"
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
 			(at 234.95 77.47 0)
 			(effects
 				(font
@@ -6054,6 +5827,15 @@
 			)
 		)
 		(property "Footprint Checked" ""
+			(at 234.95 82.55 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Library" ""
 			(at 234.95 82.55 90)
 			(effects
 				(font
@@ -6174,6 +5956,15 @@
 			)
 		)
 		(property "Compra" "https://www.lcsc.com/product-detail/C14663.html"
+			(at 226.06 26.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Library" ""
 			(at 226.06 26.67 0)
 			(effects
 				(font
@@ -6370,6 +6161,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Library" ""
+			(at 267.97 25.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "31d076a7-5148-4f75-93b3-fb4d5f3bdbe1")
 		)
@@ -6413,7 +6213,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Connector_Pin:Pin_D0.7mm_L6.5mm_W1.8mm_FlatFork"
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
 			(at 234.95 62.23 0)
 			(effects
 				(font
@@ -6476,6 +6276,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Library" ""
+			(at 234.95 67.31 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "00aaec92-6528-497e-b7c9-a0d1b11e51a7")
 		)
@@ -6483,119 +6292,6 @@
 			(project "HMI_LVDC-Inverter"
 				(path "/0057333c-5edf-4047-9690-4d1b87a98977/a762a5f7-801c-41ef-9dab-35eab0968df2"
 					(reference "TP7")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint_2Pole")
-		(at 250.19 99.06 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "674e00af-0e31-4079-b071-cd390f547a52")
-		(property "Reference" "TP18"
-			(at 250.19 96.52 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "TestPoint_2Pole"
-			(at 250.19 96.52 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" ""
-			(at 250.19 99.06 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 250.19 99.06 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "2-polar test point"
-			(at 250.19 99.06 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Library" ".\\"
-			(at 250.19 99.06 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint checked" ""
-			(at 250.19 99.06 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Symbol checked" ""
-			(at 250.19 99.06 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Price" ""
-			(at 250.19 99.06 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint Checked" ""
-			(at 250.19 99.06 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "513c412c-c213-440e-987b-a101aa8b9fc4")
-		)
-		(pin "2"
-			(uuid "bdf2adf0-eaaa-4a7e-bdf1-a98c8335ba4b")
-		)
-		(instances
-			(project "HMI_LVDC-Inverter"
-				(path "/0057333c-5edf-4047-9690-4d1b87a98977/a762a5f7-801c-41ef-9dab-35eab0968df2"
-					(reference "TP18")
 					(unit 1)
 				)
 			)
@@ -6701,6 +6397,15 @@
 			)
 		)
 		(property "Manufacturer" "PANASONIC"
+			(at 224.79 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Library" ""
 			(at 224.79 127 0)
 			(effects
 				(font
@@ -6817,7 +6522,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Connector_Pin:Pin_D0.7mm_L6.5mm_W1.8mm_FlatFork"
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
 			(at 234.95 52.07 0)
 			(effects
 				(font
@@ -6872,6 +6577,15 @@
 			)
 		)
 		(property "Footprint Checked" ""
+			(at 234.95 57.15 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Library" ""
 			(at 234.95 57.15 90)
 			(effects
 				(font
@@ -6998,6 +6712,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Library" ""
+			(at 271.78 160.02 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "32f4ba14-149c-438f-95e3-e7d506aa1f0f")
 		)
@@ -7041,7 +6764,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Connector_Pin:Pin_D0.7mm_L6.5mm_W1.8mm_FlatFork"
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
 			(at 234.95 57.15 0)
 			(effects
 				(font
@@ -7096,6 +6819,15 @@
 			)
 		)
 		(property "Footprint Checked" ""
+			(at 234.95 62.23 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Library" ""
 			(at 234.95 62.23 90)
 			(effects
 				(font
@@ -7209,7 +6941,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Connector_Pin:Pin_D0.7mm_L6.5mm_W1.8mm_FlatFork"
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
 			(at 261.62 50.8 0)
 			(effects
 				(font
@@ -7272,6 +7004,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Library" ""
+			(at 261.62 55.88 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "80e68309-e73c-4b7a-8b34-c382c02d1091")
 		)
@@ -7279,119 +7020,6 @@
 			(project "HMI_LVDC-Inverter"
 				(path "/0057333c-5edf-4047-9690-4d1b87a98977/a762a5f7-801c-41ef-9dab-35eab0968df2"
 					(reference "TP3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint_2Pole")
-		(at 250.19 93.98 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "907118ee-80d2-4d7b-b412-e39fc58f1ba8")
-		(property "Reference" "TP17"
-			(at 250.19 91.44 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "TestPoint_2Pole"
-			(at 250.19 91.44 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" ""
-			(at 250.19 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 250.19 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "2-polar test point"
-			(at 250.19 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Library" ".\\"
-			(at 250.19 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint checked" ""
-			(at 250.19 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Symbol checked" ""
-			(at 250.19 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Price" ""
-			(at 250.19 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint Checked" ""
-			(at 250.19 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "d9af1709-9e1c-4864-aa2e-9690ed7177ce")
-		)
-		(pin "2"
-			(uuid "bed6448c-c059-4d83-8e64-893c280bebcc")
-		)
-		(instances
-			(project "HMI_LVDC-Inverter"
-				(path "/0057333c-5edf-4047-9690-4d1b87a98977/a762a5f7-801c-41ef-9dab-35eab0968df2"
-					(reference "TP17")
 					(unit 1)
 				)
 			)
@@ -7425,7 +7053,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Connector_Pin:Pin_D0.7mm_L6.5mm_W1.8mm_FlatFork"
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
 			(at 234.95 46.99 0)
 			(effects
 				(font
@@ -7480,6 +7108,15 @@
 			)
 		)
 		(property "Footprint Checked" ""
+			(at 234.95 52.07 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Library" ""
 			(at 234.95 52.07 90)
 			(effects
 				(font
@@ -7674,6 +7311,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Library" ""
+			(at 203.2 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "66dd8601-d14d-43a5-aff1-4e11f5264788")
 		)
@@ -7717,7 +7363,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Connector_Pin:Pin_D0.7mm_L6.5mm_W1.8mm_FlatFork"
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
 			(at 261.62 45.72 0)
 			(effects
 				(font
@@ -7772,6 +7418,15 @@
 			)
 		)
 		(property "Footprint Checked" ""
+			(at 261.62 50.8 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Library" ""
 			(at 261.62 50.8 90)
 			(effects
 				(font
@@ -7892,6 +7547,15 @@
 			)
 		)
 		(property "Compra" "https://www.lcsc.com/product-detail/C100040.html?s_z=n_CC0603KRX7R9BB102"
+			(at 224.79 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Library" ""
 			(at 224.79 146.05 0)
 			(effects
 				(font
@@ -8023,6 +7687,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Library" ""
+			(at 195.58 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "d9cd36ff-508e-4e0d-9f4d-386cdfc17ece")
 		)
@@ -8138,6 +7811,15 @@
 			)
 		)
 		(property "Compra" "https://www.lcsc.com/product-detail/C701343.html?s_z=n_ESP32-WROOM-32E"
+			(at 96.52 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Library" ""
 			(at 96.52 67.31 0)
 			(effects
 				(font
@@ -8510,6 +8192,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Library" ""
+			(at 266.7 124.46 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "0cef282d-e4cf-4cff-a220-d01ed64a5086")
 		)
@@ -8633,6 +8324,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Library" ""
+			(at 196.85 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "e00a0441-6280-4779-91a8-dd520c54d024")
 		)
@@ -8676,7 +8376,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Connector_Pin:Pin_D0.7mm_L6.5mm_W1.8mm_FlatFork"
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
 			(at 234.95 82.55 0)
 			(effects
 				(font
@@ -8739,6 +8439,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Library" ""
+			(at 234.95 87.63 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "7c78063d-ee41-453c-98c5-641a7ccb4b05")
 		)
@@ -8779,7 +8488,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Connector_Pin:Pin_D0.7mm_L6.5mm_W1.8mm_FlatFork"
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
 			(at 261.62 72.39 0)
 			(effects
 				(font
@@ -8842,6 +8551,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Library" ""
+			(at 261.62 77.47 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "fe994099-5961-406f-9eaa-019f6f2ff5ca")
 		)
@@ -8882,7 +8600,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Connector_Pin:Pin_D0.7mm_L6.5mm_W1.8mm_FlatFork"
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
 			(at 234.95 72.39 0)
 			(effects
 				(font
@@ -8937,6 +8655,15 @@
 			)
 		)
 		(property "Footprint Checked" ""
+			(at 234.95 77.47 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Library" ""
 			(at 234.95 77.47 90)
 			(effects
 				(font

@@ -3918,6 +3918,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Library" ""
+			(at 99.06 64.77 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "1aa8ad02-c343-4535-8082-65f661444afd")
 		)
@@ -4037,6 +4046,15 @@
 			)
 		)
 		(property "Price" "0.0321"
+			(at 256.54 128.27 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Library" ""
 			(at 256.54 128.27 90)
 			(effects
 				(font
@@ -4307,6 +4325,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Library" ""
+			(at 218.44 80.01 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "a69fefc3-4ddf-41f9-9148-5ea1265671bf")
 		)
@@ -4505,6 +4532,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Library" ""
+			(at 264.16 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "7dc7589b-77a9-44e8-b2e6-aff36ea40bea")
 		)
@@ -4632,6 +4668,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Library" ""
+			(at 222.25 109.22 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "5f8418c0-f222-41e1-86d4-afa0c59674a5")
 		)
@@ -4736,6 +4781,15 @@
 			)
 		)
 		(property "Price" "1.0546"
+			(at 74.93 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Library" ""
 			(at 74.93 90.17 0)
 			(effects
 				(font
@@ -4965,6 +5019,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Library" ""
+			(at 261.62 139.7 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "6e1a156a-d6a5-4bf6-bb47-cb99bdf2bbef")
 		)
@@ -5078,6 +5141,15 @@
 			)
 		)
 		(property "Price" "0.0123"
+			(at 99.06 67.31 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Library" ""
 			(at 99.06 67.31 90)
 			(effects
 				(font
@@ -5205,6 +5277,15 @@
 			)
 		)
 		(property "Price" "0.0123"
+			(at 99.06 69.85 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Library" ""
 			(at 99.06 69.85 90)
 			(effects
 				(font
@@ -5342,6 +5423,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Library" ""
+			(at 245.11 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "016cc7f5-eaf5-4c1e-a67b-00d15646cf7b")
 		)
@@ -5471,6 +5561,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Library" ""
+			(at 256.54 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "688ec485-1c35-40f9-87dd-e1780c79b262")
 		)
@@ -5592,6 +5691,15 @@
 			)
 		)
 		(property "Symbol checked" "Yes"
+			(at 255.27 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Library" ""
 			(at 255.27 33.02 0)
 			(effects
 				(font
@@ -5798,6 +5906,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Library" ""
+			(at 222.25 104.14 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "f7c115e1-b327-485f-9dfb-d3f709381c9e")
 		)
@@ -5917,6 +6034,15 @@
 			)
 		)
 		(property "Price" "0.0123"
+			(at 99.06 62.23 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Library" ""
 			(at 99.06 62.23 90)
 			(effects
 				(font
@@ -6116,6 +6242,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Library" ""
+			(at 218.44 67.31 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "feb2d863-6fae-4476-912a-e3e6d3bc7e3b")
 		)
@@ -6243,6 +6378,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Library" ""
+			(at 99.06 72.39 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "eda749be-9af2-45af-a56e-7388fc207d0f")
 		)
@@ -6292,7 +6436,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Crystal:Crystal_SMD_0603-2Pin_6.0x3.5mm"
+		(property "Footprint" "Crystal:Crystal_SMD_5032-2Pin_5.0x3.2mm"
 			(at 229.87 73.66 0)
 			(effects
 				(font
@@ -6301,7 +6445,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/C12674.pdf"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C115962.pdf"
 			(at 229.87 73.66 0)
 			(effects
 				(font
@@ -6328,7 +6472,7 @@
 				(hide yes)
 			)
 		)
-		(property "Compra" "https://www.lcsc.com/product-detail/C12674.html"
+		(property "Compra" "https://www.lcsc.com/product-detail/C115962.html"
 			(at 229.87 73.66 90)
 			(effects
 				(font
@@ -6355,7 +6499,7 @@
 				(hide yes)
 			)
 		)
-		(property "Price" "0.0871"
+		(property "Price" "0.2002"
 			(at 229.87 73.66 90)
 			(effects
 				(font
@@ -6365,6 +6509,15 @@
 			)
 		)
 		(property "Symbol checked" "Yes"
+			(at 229.87 73.66 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Library" ""
 			(at 229.87 73.66 90)
 			(effects
 				(font
@@ -6571,6 +6724,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Library" ""
+			(at 99.06 59.69 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "d94cad07-28a2-422c-98fe-02c9eb8b3194")
 		)
@@ -6596,7 +6758,7 @@
 		(lib_id "Device:LED")
 		(at 264.16 71.12 90)
 		(unit 1)
-		(exclude_from_sim no)
+		(exclude_from_sim yes)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
@@ -6707,6 +6869,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Library" ""
+			(at 264.16 71.12 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "e8895bc8-7a34-4945-88eb-2f2aa53b4d75")
 		)
@@ -6782,6 +6953,15 @@
 			)
 		)
 		(property "Footprint Checked" ""
+			(at 260.35 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Library" ""
 			(at 260.35 105.41 0)
 			(effects
 				(font
@@ -6913,6 +7093,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Library" ""
+			(at 265.43 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "c67186fc-f43f-49c7-89bb-cab619993726")
 		)
@@ -7035,6 +7224,15 @@
 			)
 		)
 		(property "Symbol checked" "Yes"
+			(at 222.25 35.56 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Library" ""
 			(at 222.25 35.56 90)
 			(effects
 				(font

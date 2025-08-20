@@ -1208,6 +1208,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Library" ""
+			(at 166.37 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "5dce5de6-4b13-4473-b2f4-b6846e3952ac")
 		)
@@ -1339,6 +1348,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Library" ""
+			(at 118.11 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "8343ae51-bafc-4cc3-9e71-f9f09bb4c250")
 		)
@@ -1447,6 +1465,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Library" ""
+			(at 135.89 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "4"
 			(uuid "0c12cb8f-5b24-44c5-b828-b35078553132")
 		)
@@ -1476,7 +1503,7 @@
 		(lib_id "Device:C_Polarized_Small")
 		(at 153.67 88.9 0)
 		(unit 1)
-		(exclude_from_sim no)
+		(exclude_from_sim yes)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
@@ -1573,6 +1600,15 @@
 			)
 		)
 		(property "Symbol checked" "Yes"
+			(at 153.67 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Library" ""
 			(at 153.67 88.9 0)
 			(effects
 				(font
@@ -1701,6 +1737,15 @@
 			)
 		)
 		(property "Symbol checked" "Yes"
+			(at 176.53 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Library" ""
 			(at 176.53 88.9 0)
 			(effects
 				(font

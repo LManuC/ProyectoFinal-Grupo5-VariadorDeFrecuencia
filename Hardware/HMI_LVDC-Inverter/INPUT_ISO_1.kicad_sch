@@ -909,6 +909,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Library" ""
+			(at 154.94 85.09 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "fc2e453b-bad7-4e00-80d3-06df3088562b")
 		)
@@ -1052,6 +1061,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Library" ""
+			(at 133.35 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "c7aa9f01-d3e8-44f9-a99e-7ba50c244a1d")
 		)
@@ -1171,6 +1189,15 @@
 			)
 		)
 		(property "Price" "0.9182"
+			(at 142.24 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Library" ""
 			(at 142.24 87.63 0)
 			(effects
 				(font

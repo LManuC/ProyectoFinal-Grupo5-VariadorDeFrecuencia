@@ -11,7 +11,7 @@
 		(company "Andrenacci - Carra")
 	)
 	(lib_symbols
-		(symbol "Connector:Conn_01x04_Pin"
+		(symbol "Connector_Generic:Conn_01x04"
 			(pin_names
 				(offset 1.016)
 				(hide yes)
@@ -27,7 +27,7 @@
 					)
 				)
 			)
-			(property "Value" "Conn_01x04_Pin"
+			(property "Value" "Conn_01x04"
 				(at 0 -7.62 0)
 				(effects
 					(font
@@ -53,21 +53,13 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "Generic connector, single row, 01x04, script generated"
+			(property "Description" "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"
 				(at 0 0 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 					(hide yes)
-				)
-			)
-			(property "ki_locked" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
 				)
 			)
 			(property "ki_keywords" "connector"
@@ -88,91 +80,54 @@
 					(hide yes)
 				)
 			)
-			(symbol "Conn_01x04_Pin_1_1"
+			(symbol "Conn_01x04_1_1"
 				(rectangle
-					(start 0.8636 2.667)
+					(start -1.27 3.81)
+					(end 1.27 -6.35)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(rectangle
+					(start -1.27 2.667)
 					(end 0 2.413)
 					(stroke
 						(width 0.1524)
 						(type default)
 					)
 					(fill
-						(type outline)
+						(type none)
 					)
 				)
 				(rectangle
-					(start 0.8636 0.127)
+					(start -1.27 0.127)
 					(end 0 -0.127)
 					(stroke
 						(width 0.1524)
 						(type default)
 					)
 					(fill
-						(type outline)
+						(type none)
 					)
 				)
 				(rectangle
-					(start 0.8636 -2.413)
+					(start -1.27 -2.413)
 					(end 0 -2.667)
 					(stroke
 						(width 0.1524)
 						(type default)
 					)
 					(fill
-						(type outline)
+						(type none)
 					)
 				)
 				(rectangle
-					(start 0.8636 -4.953)
+					(start -1.27 -4.953)
 					(end 0 -5.207)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 2.54) (xy 0.8636 2.54)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 0) (xy 0.8636 0)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 -2.54) (xy 0.8636 -2.54)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 -5.08) (xy 0.8636 -5.08)
-					)
 					(stroke
 						(width 0.1524)
 						(type default)
@@ -182,7 +137,7 @@
 					)
 				)
 				(pin passive line
-					(at 5.08 2.54 180)
+					(at -5.08 2.54 0)
 					(length 3.81)
 					(name "Pin_1"
 						(effects
@@ -200,7 +155,7 @@
 					)
 				)
 				(pin passive line
-					(at 5.08 0 180)
+					(at -5.08 0 0)
 					(length 3.81)
 					(name "Pin_2"
 						(effects
@@ -218,7 +173,7 @@
 					)
 				)
 				(pin passive line
-					(at 5.08 -2.54 180)
+					(at -5.08 -2.54 0)
 					(length 3.81)
 					(name "Pin_3"
 						(effects
@@ -236,7 +191,7 @@
 					)
 				)
 				(pin passive line
-					(at 5.08 -5.08 180)
+					(at -5.08 -5.08 0)
 					(length 3.81)
 					(name "Pin_4"
 						(effects
@@ -2938,7 +2893,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Switch:SW_MEC_5G"
+		(symbol "SW_MEC_5G_1"
 			(pin_numbers
 				(hide yes)
 			)
@@ -2949,24 +2904,15 @@
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-			(property "Reference" "SW"
-				(at 1.27 2.54 0)
+			(property "Reference" "SW2"
+				(at 0 -2.032 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(justify left)
 				)
 			)
 			(property "Value" "SW_MEC_5G"
-				(at 0 -1.524 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
 				(at 0 5.08 0)
 				(effects
 					(font
@@ -2975,8 +2921,17 @@
 					(hide yes)
 				)
 			)
-			(property "Datasheet" "http://www.apem.com/int/index.php?controller=attachment&id_attachment=488"
-				(at 0 5.08 0)
+			(property "Footprint" "Footprints:SW_Push_SPST_NO_Alps_SKRK"
+				(at 1.27 13.716 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://www.lcsc.com/datasheet/C720478.pdf"
+				(at 1.27 13.716 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -2985,7 +2940,43 @@
 				)
 			)
 			(property "Description" "MEC 5G single pole normally-open tactile switch"
-				(at 0 0 0)
+				(at 1.27 8.636 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Compra" "https://www.lcsc.com/product-detail/C720478.html?s_z=n_TS-1088"
+				(at 1.27 8.636 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer" "Yuandi"
+				(at 7.366 2.286 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Price" "0.0603"
+				(at 7.366 2.286 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Symbol checked" "Yes"
+				(at 7.366 2.286 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -3011,7 +3002,7 @@
 					(hide yes)
 				)
 			)
-			(symbol "SW_MEC_5G_0_1"
+			(symbol "SW_MEC_5G_1_0_1"
 				(circle
 					(center -2.032 0)
 					(radius 0.508)
@@ -3076,31 +3067,12 @@
 						)
 					)
 				)
+			)
+			(symbol "SW_MEC_5G_1_1_1"
 				(pin passive line
 					(at 5.08 0 180)
 					(length 2.54)
 					(name "B"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(symbol "SW_MEC_5G_1_1"
-				(pin passive line
-					(at -5.08 0 0)
-					(length 2.54)
-					(hide yes)
-					(name "A"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -3108,25 +3080,6 @@
 						)
 					)
 					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 5.08 0 180)
-					(length 2.54)
-					(hide yes)
-					(name "B"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "4"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -6991,6 +6944,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Library" ""
+			(at 175.26 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "104cae78-78bb-42fe-aa2d-d9eed7cdd3a5")
 		)
@@ -7132,6 +7094,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Library" ""
+			(at 34.29 83.82 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "0905707d-9ca6-4dbb-8b8a-b6a274ab5520")
 		)
@@ -7247,6 +7218,15 @@
 			)
 		)
 		(property "Compra" "https://www.lcsc.com/product-detail/C14663.html"
+			(at 187.96 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Library" ""
 			(at 187.96 33.02 0)
 			(effects
 				(font
@@ -7444,6 +7424,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Library" ""
+			(at 66.04 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "5699bda6-be87-4e8a-8fcc-dadd15b4493d")
 		)
@@ -7520,116 +7509,6 @@
 			(project "HMI_LVDC-Inverter"
 				(path "/0057333c-5edf-4047-9690-4d1b87a98977/e510606f-6f04-4711-9f2b-d43d4de4a4de"
 					(reference "#PWR044")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Switch:SW_MEC_5G")
-		(at 72.39 40.64 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "1b5d86d6-f945-4eb2-a60f-ef2c9bb2711f")
-		(property "Reference" "SW7"
-			(at 72.39 42.672 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "SW_MEC_5G"
-			(at 72.39 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" ""
-			(at 72.39 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/C2894750.pdf"
-			(at 72.39 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "MEC 5G single pole normally-open tactile switch"
-			(at 72.39 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Compra" "https://www.lcsc.com/product-detail/C2894750.html"
-			(at 72.39 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "Yuandi"
-			(at 72.39 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Price" "0.1224"
-			(at 72.39 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Symbol checked" "Yes"
-			(at 72.39 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "4a3d5db0-6757-4da5-ac55-c80654b2be65")
-		)
-		(pin "2"
-			(uuid "b743fef5-9142-492a-a949-06059b4cca8d")
-		)
-		(pin "3"
-			(uuid "f73739de-62de-45fb-a2cc-c6ed5f0beec6")
-		)
-		(pin "4"
-			(uuid "36832abc-1414-42db-87bd-7cffa4819c87")
-		)
-		(instances
-			(project "HMI_LVDC-Inverter"
-				(path "/0057333c-5edf-4047-9690-4d1b87a98977/e510606f-6f04-4711-9f2b-d43d4de4a4de"
-					(reference "SW7")
 					(unit 1)
 				)
 			)
@@ -7733,6 +7612,15 @@
 			)
 		)
 		(property "Price" "0.0186"
+			(at 161.29 187.96 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Library" ""
 			(at 161.29 187.96 90)
 			(effects
 				(font
@@ -7864,6 +7752,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Library" ""
+			(at 156.21 34.29 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "7f333223-6e9a-4f7a-9133-38ba25144fab")
 		)
@@ -7980,6 +7877,15 @@
 			)
 		)
 		(property "Compra" "https://www.lcsc.com/product-detail/C72502.html"
+			(at 38.1 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Library" ""
 			(at 38.1 151.13 0)
 			(effects
 				(font
@@ -8183,6 +8089,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Library" ""
+			(at 152.4 187.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "76133485-6447-44e2-b83f-d60e00634f42")
 		)
@@ -8199,16 +8114,17 @@
 		)
 	)
 	(symbol
+		(lib_name "SW_MEC_5G_1")
 		(lib_id "Switch:SW_MEC_5G")
-		(at 53.34 40.64 0)
+		(at 72.39 40.64 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "2875e77a-3423-4fa3-ba04-d991c4a1005d")
-		(property "Reference" "SW6"
-			(at 53.34 42.672 0)
+		(uuid "2bfd08f3-250d-4dd0-b085-c84c45f442f9")
+		(property "Reference" "SW7"
+			(at 72.39 42.672 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8216,7 +8132,7 @@
 			)
 		)
 		(property "Value" "SW_MEC_5G"
-			(at 53.34 35.56 0)
+			(at 72.39 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8224,8 +8140,8 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" ""
-			(at 53.34 35.56 0)
+		(property "Footprint" "Footprints:SW_Push_SPST_NO_Alps_SKRK"
+			(at 73.66 26.924 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8233,8 +8149,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/C2894750.pdf"
-			(at 53.34 35.56 0)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C720478.pdf"
+			(at 73.66 26.924 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8243,7 +8159,7 @@
 			)
 		)
 		(property "Description" "MEC 5G single pole normally-open tactile switch"
-			(at 53.34 40.64 0)
+			(at 73.66 32.004 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8251,8 +8167,8 @@
 				(hide yes)
 			)
 		)
-		(property "Compra" "https://www.lcsc.com/product-detail/C2894750.html"
-			(at 53.34 40.64 0)
+		(property "Compra" "https://www.lcsc.com/product-detail/C720478.html?s_z=n_TS-1088"
+			(at 73.66 32.004 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8261,7 +8177,7 @@
 			)
 		)
 		(property "Manufacturer" "Yuandi"
-			(at 53.34 40.64 0)
+			(at 79.756 38.354 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8269,8 +8185,8 @@
 				(hide yes)
 			)
 		)
-		(property "Price" "0.1224"
-			(at 53.34 40.64 0)
+		(property "Price" "0.0603"
+			(at 79.756 38.354 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8279,7 +8195,16 @@
 			)
 		)
 		(property "Symbol checked" "Yes"
-			(at 53.34 40.64 0)
+			(at 79.756 38.354 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Library" ""
+			(at 72.39 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8288,21 +8213,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "eeb71255-230d-43a5-abe3-265c7c3d4b05")
+			(uuid "fd16c768-5b9d-4f82-a9c3-021a246e3865")
 		)
 		(pin "2"
-			(uuid "75b20200-bead-4db0-af0a-26933a441618")
-		)
-		(pin "3"
-			(uuid "92541e3c-0205-49d3-b970-5c601ce90709")
-		)
-		(pin "4"
-			(uuid "10abc6b2-5cf4-4af8-9f4f-70030529a876")
+			(uuid "b8bdc6f5-7798-4c40-aa2f-0023f0d4f637")
 		)
 		(instances
 			(project "HMI_LVDC-Inverter"
 				(path "/0057333c-5edf-4047-9690-4d1b87a98977/e510606f-6f04-4711-9f2b-d43d4de4a4de"
-					(reference "SW6")
+					(reference "SW7")
 					(unit 1)
 				)
 			)
@@ -8393,6 +8312,15 @@
 			)
 		)
 		(property "Price" "0.0347"
+			(at 237.49 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Library" ""
 			(at 237.49 143.51 0)
 			(effects
 				(font
@@ -8660,6 +8588,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Library" ""
+			(at 255.27 140.97 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "77117ad8-59ca-4b2b-81ff-5a7e14dd4920")
 		)
@@ -8759,6 +8696,15 @@
 			)
 		)
 		(property "Price" "0.9182"
+			(at 177.8 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Library" ""
 			(at 177.8 24.13 0)
 			(effects
 				(font
@@ -8966,6 +8912,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Library" ""
+			(at 161.29 176.53 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "367a817c-1356-4abd-a7af-221e07dae1f0")
 		)
@@ -9081,6 +9036,15 @@
 			)
 		)
 		(property "Compra" "https://www.lcsc.com/product-detail/C14663.html"
+			(at 31.75 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Library" ""
 			(at 31.75 151.13 0)
 			(effects
 				(font
@@ -9216,6 +9180,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Library" ""
+			(at 167.64 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "941d3b2c-ebe4-44a7-a34f-39960695c898")
 		)
@@ -9334,6 +9307,15 @@
 			)
 		)
 		(property "Manufacturer" "VISHAY"
+			(at 170.18 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Library" ""
 			(at 170.18 44.45 0)
 			(effects
 				(font
@@ -9465,6 +9447,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Library" ""
+			(at 43.18 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "51607288-6f40-446f-9910-18015c65f3b1")
 		)
@@ -9587,6 +9578,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Library" ""
+			(at 227.33 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "f89e1cfc-9f3d-4bcf-8ac4-f50f8f6b5cff")
 		)
@@ -9597,6 +9597,348 @@
 			(project "HMI_LVDC-Inverter"
 				(path "/0057333c-5edf-4047-9690-4d1b87a98977/e510606f-6f04-4711-9f2b-d43d4de4a4de"
 					(reference "R32")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "SW_MEC_5G_1")
+		(lib_id "Switch:SW_MEC_5G")
+		(at 106.68 40.64 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "5d999e90-9966-4426-8221-2f9cc6e9301f")
+		(property "Reference" "SW9"
+			(at 106.68 42.672 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SW_MEC_5G"
+			(at 106.68 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Footprints:SW_Push_SPST_NO_Alps_SKRK"
+			(at 107.95 26.924 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C720478.pdf"
+			(at 107.95 26.924 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "MEC 5G single pole normally-open tactile switch"
+			(at 107.95 32.004 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Compra" "https://www.lcsc.com/product-detail/C720478.html?s_z=n_TS-1088"
+			(at 107.95 32.004 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Yuandi"
+			(at 114.046 38.354 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Price" "0.0603"
+			(at 114.046 38.354 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Symbol checked" "Yes"
+			(at 114.046 38.354 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Library" ""
+			(at 106.68 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "363956d8-1cd1-48e2-a4a1-dc9f2acc838c")
+		)
+		(pin "2"
+			(uuid "35b35a74-0df0-4150-904c-3676b15e495e")
+		)
+		(instances
+			(project "HMI_LVDC-Inverter"
+				(path "/0057333c-5edf-4047-9690-4d1b87a98977/e510606f-6f04-4711-9f2b-d43d4de4a4de"
+					(reference "SW9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "SW_MEC_5G_1")
+		(lib_id "Switch:SW_MEC_5G")
+		(at 72.39 29.21 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "5fbfe6c1-58f0-4c32-be30-a9c65a8ad5ad")
+		(property "Reference" "SW3"
+			(at 72.39 31.242 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SW_MEC_5G"
+			(at 72.39 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Footprints:SW_Push_SPST_NO_Alps_SKRK"
+			(at 73.66 15.494 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C720478.pdf"
+			(at 73.66 15.494 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "MEC 5G single pole normally-open tactile switch"
+			(at 73.66 20.574 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Compra" "https://www.lcsc.com/product-detail/C720478.html?s_z=n_TS-1088"
+			(at 73.66 20.574 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Yuandi"
+			(at 79.756 26.924 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Price" "0.0603"
+			(at 79.756 26.924 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Symbol checked" "Yes"
+			(at 79.756 26.924 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Library" ""
+			(at 72.39 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "2863b2a0-284e-4816-b5ec-5c68af0c5e36")
+		)
+		(pin "2"
+			(uuid "25aeff4d-fe9f-468b-b1e2-f9a8fbd4da32")
+		)
+		(instances
+			(project "HMI_LVDC-Inverter"
+				(path "/0057333c-5edf-4047-9690-4d1b87a98977/e510606f-6f04-4711-9f2b-d43d4de4a4de"
+					(reference "SW3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "SW_MEC_5G_1")
+		(lib_id "Switch:SW_MEC_5G")
+		(at 90.17 29.21 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "694f709b-ee33-4b0d-aefb-9e8e56191139")
+		(property "Reference" "SW4"
+			(at 90.17 31.242 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SW_MEC_5G"
+			(at 90.17 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Footprints:SW_Push_SPST_NO_Alps_SKRK"
+			(at 91.44 15.494 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C720478.pdf"
+			(at 91.44 15.494 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "MEC 5G single pole normally-open tactile switch"
+			(at 91.44 20.574 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Compra" "https://www.lcsc.com/product-detail/C720478.html?s_z=n_TS-1088"
+			(at 91.44 20.574 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Yuandi"
+			(at 97.536 26.924 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Price" "0.0603"
+			(at 97.536 26.924 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Symbol checked" "Yes"
+			(at 97.536 26.924 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Library" ""
+			(at 90.17 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b903af0c-255c-4d6b-93a7-f443dee8890d")
+		)
+		(pin "2"
+			(uuid "6dca8597-ecb1-4073-b42e-1df0e1dfaffb")
+		)
+		(instances
+			(project "HMI_LVDC-Inverter"
+				(path "/0057333c-5edf-4047-9690-4d1b87a98977/e510606f-6f04-4711-9f2b-d43d4de4a4de"
+					(reference "SW4")
 					(unit 1)
 				)
 			)
@@ -9729,6 +10071,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Library" ""
+			(at 161.29 72.39 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "588f5410-d2a9-4415-bcff-a4aa687e643d")
 		)
@@ -9844,6 +10195,15 @@
 			)
 		)
 		(property "Manufacturer" "VISHAY"
+			(at 148.59 85.09 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Library" ""
 			(at 148.59 85.09 90)
 			(effects
 				(font
@@ -9975,6 +10335,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Library" ""
+			(at 161.29 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "05a6a6ab-d4b5-4dc7-9765-cf9f1dbfb921")
 		)
@@ -9985,6 +10354,120 @@
 			(project "HMI_LVDC-Inverter"
 				(path "/0057333c-5edf-4047-9690-4d1b87a98977/e510606f-6f04-4711-9f2b-d43d4de4a4de"
 					(reference "C22")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "SW_MEC_5G_1")
+		(lib_id "Switch:SW_MEC_5G")
+		(at 53.34 40.64 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "7a7bf4a0-2cf2-450b-816e-62329dbd603f")
+		(property "Reference" "SW6"
+			(at 53.34 42.672 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SW_MEC_5G"
+			(at 53.34 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Footprints:SW_Push_SPST_NO_Alps_SKRK"
+			(at 54.61 26.924 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C720478.pdf"
+			(at 54.61 26.924 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "MEC 5G single pole normally-open tactile switch"
+			(at 54.61 32.004 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Compra" "https://www.lcsc.com/product-detail/C720478.html?s_z=n_TS-1088"
+			(at 54.61 32.004 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Yuandi"
+			(at 60.706 38.354 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Price" "0.0603"
+			(at 60.706 38.354 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Symbol checked" "Yes"
+			(at 60.706 38.354 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Library" ""
+			(at 53.34 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a4236988-1c00-4f45-891d-6b6ec4e5445f")
+		)
+		(pin "2"
+			(uuid "78253548-91e2-43f5-b2a9-704048e83ad3")
+		)
+		(instances
+			(project "HMI_LVDC-Inverter"
+				(path "/0057333c-5edf-4047-9690-4d1b87a98977/e510606f-6f04-4711-9f2b-d43d4de4a4de"
+					(reference "SW6")
 					(unit 1)
 				)
 			)
@@ -10093,6 +10576,15 @@
 			)
 		)
 		(property "Symbol checked" "Yes"
+			(at 92.71 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Library" ""
 			(at 92.71 151.13 0)
 			(effects
 				(font
@@ -10303,6 +10795,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Library" ""
+			(at 63.5 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "ba81b916-8e30-456e-9bba-2b485213a861")
 		)
@@ -10492,6 +10993,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Library" ""
+			(at 25.4 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "eabc818d-0198-4c13-a029-82ef39844db8")
 		)
@@ -10607,6 +11117,15 @@
 			)
 		)
 		(property "Manufacturer" "ROHM"
+			(at 193.04 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Library" ""
 			(at 193.04 33.02 0)
 			(effects
 				(font
@@ -10738,6 +11257,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Library" ""
+			(at 35.56 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "fc328f57-ef33-4024-a6a6-77f46419357b")
 		)
@@ -10748,116 +11276,6 @@
 			(project "HMI_LVDC-Inverter"
 				(path "/0057333c-5edf-4047-9690-4d1b87a98977/e510606f-6f04-4711-9f2b-d43d4de4a4de"
 					(reference "R27")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Switch:SW_MEC_5G")
-		(at 90.17 40.64 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "9ac18635-ff36-48ee-a6b2-15d3fd70c781")
-		(property "Reference" "SW8"
-			(at 90.17 42.672 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "SW_MEC_5G"
-			(at 90.17 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" ""
-			(at 90.17 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/C2894750.pdf"
-			(at 90.17 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "MEC 5G single pole normally-open tactile switch"
-			(at 90.17 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Compra" "https://www.lcsc.com/product-detail/C2894750.html"
-			(at 90.17 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "Yuandi"
-			(at 90.17 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Price" "0.1224"
-			(at 90.17 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Symbol checked" "Yes"
-			(at 90.17 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "22257327-d866-4743-a0fb-51e4437256f8")
-		)
-		(pin "2"
-			(uuid "ba72caab-3e96-44b3-b4f1-48e5a76079d9")
-		)
-		(pin "3"
-			(uuid "561130f5-3804-40d5-b4b9-7c91eba91aba")
-		)
-		(pin "4"
-			(uuid "c7e46217-100e-4d87-a0c4-17d049ffbaa8")
-		)
-		(instances
-			(project "HMI_LVDC-Inverter"
-				(path "/0057333c-5edf-4047-9690-4d1b87a98977/e510606f-6f04-4711-9f2b-d43d4de4a4de"
-					(reference "SW8")
 					(unit 1)
 				)
 			)
@@ -10963,6 +11381,15 @@
 			)
 		)
 		(property "Manufacturer" "PANASONIC"
+			(at 138.43 40.64 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Library" ""
 			(at 138.43 40.64 90)
 			(effects
 				(font
@@ -11096,6 +11523,15 @@
 		)
 		(property "Compra" "https://www.lcsc.com/product-detail/C965802.html"
 			(at 152.4 176.53 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Library" ""
+			(at 152.4 176.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11357,6 +11793,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Library" ""
+			(at 151.13 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "73da6377-8201-4f4e-8065-4887a779429c")
 		)
@@ -11569,225 +12014,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Switch:SW_MEC_5G")
-		(at 90.17 29.21 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "cefae4c5-adc1-4846-85cd-ee25812634dd")
-		(property "Reference" "SW4"
-			(at 90.17 31.242 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "SW_MEC_5G"
-			(at 90.17 24.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" ""
-			(at 90.17 24.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/C2894750.pdf"
-			(at 90.17 24.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "MEC 5G single pole normally-open tactile switch"
-			(at 90.17 29.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Compra" "https://www.lcsc.com/product-detail/C2894750.html"
-			(at 90.17 29.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "Yuandi"
-			(at 90.17 29.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Price" "0.1224"
-			(at 90.17 29.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Symbol checked" "Yes"
-			(at 90.17 29.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "b73c8633-5038-4518-936f-54a658b345f0")
-		)
-		(pin "2"
-			(uuid "656a2727-e4ba-4c43-8228-0eb5f654aadc")
-		)
-		(pin "3"
-			(uuid "3ab485b8-15df-4d08-a827-8e4fb180eaeb")
-		)
-		(pin "4"
-			(uuid "f4dcce3a-a651-413f-9ffd-2e0fcf6c5345")
-		)
-		(instances
-			(project "HMI_LVDC-Inverter"
-				(path "/0057333c-5edf-4047-9690-4d1b87a98977/e510606f-6f04-4711-9f2b-d43d4de4a4de"
-					(reference "SW4")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:Conn_01x04_Pin")
-		(at 91.44 83.82 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "d04b9b68-bf10-468f-bad8-2e01e2a7321f")
-		(property "Reference" "J11"
-			(at 93.218 91.186 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "Conn_01x04_Pin"
-			(at 93.218 93.726 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Connector_PinHeader_1.00mm:PinHeader_1x04_P1.00mm_Vertical"
-			(at 91.44 83.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 91.44 83.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Generic connector, single row, 01x04, script generated"
-			(at 91.44 83.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint checked" ""
-			(at 91.44 83.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Symbol checked" ""
-			(at 91.44 83.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Price" ""
-			(at 91.44 83.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint Checked" ""
-			(at 91.44 83.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "6c014b8c-9483-434b-93bd-9fcd075a9ac9")
-		)
-		(pin "2"
-			(uuid "361b4879-ad9d-4d9d-b5e3-1e76cac41d79")
-		)
-		(pin "4"
-			(uuid "64f853b8-7dd4-4fe3-b092-d0f5504d2d29")
-		)
-		(pin "3"
-			(uuid "68d370b2-6f18-4a75-b127-745914a2361a")
-		)
-		(instances
-			(project "HMI_LVDC-Inverter"
-				(path "/0057333c-5edf-4047-9690-4d1b87a98977/e510606f-6f04-4711-9f2b-d43d4de4a4de"
-					(reference "J11")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:C_Polarized")
 		(at 72.39 82.55 0)
 		(unit 1)
@@ -11896,6 +12122,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Library" ""
+			(at 72.39 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "c94ee9e4-dde5-4fd2-9d40-30926f51eb89")
 		)
@@ -11906,116 +12141,6 @@
 			(project "HMI_LVDC-Inverter"
 				(path "/0057333c-5edf-4047-9690-4d1b87a98977/e510606f-6f04-4711-9f2b-d43d4de4a4de"
 					(reference "C24")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Switch:SW_MEC_5G")
-		(at 106.68 29.21 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "dee6f22f-a3cf-49d3-baa0-13f68b082a7d")
-		(property "Reference" "SW5"
-			(at 106.68 31.242 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "SW_MEC_5G"
-			(at 106.68 24.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" ""
-			(at 106.68 24.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/C2894750.pdf"
-			(at 106.68 24.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "MEC 5G single pole normally-open tactile switch"
-			(at 106.68 29.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Compra" "https://www.lcsc.com/product-detail/C2894750.html"
-			(at 106.68 29.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "Yuandi"
-			(at 106.68 29.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Price" "0.1224"
-			(at 106.68 29.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Symbol checked" "Yes"
-			(at 106.68 29.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "5bf0d0aa-2221-42fe-8b8c-83551b0e53e2")
-		)
-		(pin "2"
-			(uuid "ded03b91-dddc-4234-aca6-161b3cc5e806")
-		)
-		(pin "3"
-			(uuid "be674302-50f1-466a-8381-6440c5aa8cc3")
-		)
-		(pin "4"
-			(uuid "72d488c0-aa78-4730-8f9b-0bcd20862030")
-		)
-		(instances
-			(project "HMI_LVDC-Inverter"
-				(path "/0057333c-5edf-4047-9690-4d1b87a98977/e510606f-6f04-4711-9f2b-d43d4de4a4de"
-					(reference "SW5")
 					(unit 1)
 				)
 			)
@@ -12104,6 +12229,15 @@
 			)
 		)
 		(property "Price" "0.9182"
+			(at 161.29 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Library" ""
 			(at 161.29 87.63 0)
 			(effects
 				(font
@@ -12247,6 +12381,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Library" ""
+			(at 34.29 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "92a0a85f-eb0c-473f-bcaa-fc90647acdba")
 		)
@@ -12257,6 +12400,143 @@
 			(project "HMI_LVDC-Inverter"
 				(path "/0057333c-5edf-4047-9690-4d1b87a98977/e510606f-6f04-4711-9f2b-d43d4de4a4de"
 					(reference "R29")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x04")
+		(at 91.44 83.82 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "e58f79e6-6145-426c-bae2-be6af27ee0f2")
+		(property "Reference" "J5"
+			(at 88.392 80.518 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "OLED"
+			(at 87.376 83.058 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Connector_JST:JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical"
+			(at 91.44 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 91.44 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 91.44 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint Checked" ""
+			(at 91.44 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Library" ""
+			(at 91.44 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Compra" ""
+			(at 91.44 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" ""
+			(at 91.44 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Price" ""
+			(at 91.44 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint checked" "Yes"
+			(at 91.44 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Symbol checked" "Yes"
+			(at 91.44 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "901166c7-ab1d-497d-80d5-331496ee7157")
+		)
+		(pin "3"
+			(uuid "b160e2de-3ba7-43eb-a522-044b8c0c9f8c")
+		)
+		(pin "1"
+			(uuid "1e9ea487-044b-4db2-8ed5-c387c9fcb7f7")
+		)
+		(pin "4"
+			(uuid "508bffa7-5c0a-4e8e-9c69-0b0220e03a91")
+		)
+		(instances
+			(project "HMI_LVDC-Inverter"
+				(path "/0057333c-5edf-4047-9690-4d1b87a98977/e510606f-6f04-4711-9f2b-d43d4de4a4de"
+					(reference "J5")
 					(unit 1)
 				)
 			)
@@ -12460,16 +12740,17 @@
 		)
 	)
 	(symbol
+		(lib_name "SW_MEC_5G_1")
 		(lib_id "Switch:SW_MEC_5G")
-		(at 106.68 40.64 0)
+		(at 90.17 40.64 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "f28df042-b58f-4e2f-8abf-384cd4f13697")
-		(property "Reference" "SW9"
-			(at 106.68 42.672 0)
+		(uuid "f5c2be7c-079e-4563-842e-c569663a3246")
+		(property "Reference" "SW8"
+			(at 90.17 42.672 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12477,7 +12758,7 @@
 			)
 		)
 		(property "Value" "SW_MEC_5G"
-			(at 106.68 35.56 0)
+			(at 90.17 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12485,8 +12766,8 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" ""
-			(at 106.68 35.56 0)
+		(property "Footprint" "Footprints:SW_Push_SPST_NO_Alps_SKRK"
+			(at 91.44 26.924 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12494,8 +12775,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/C2894750.pdf"
-			(at 106.68 35.56 0)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C720478.pdf"
+			(at 91.44 26.924 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12504,7 +12785,7 @@
 			)
 		)
 		(property "Description" "MEC 5G single pole normally-open tactile switch"
-			(at 106.68 40.64 0)
+			(at 91.44 32.004 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12512,8 +12793,8 @@
 				(hide yes)
 			)
 		)
-		(property "Compra" "https://www.lcsc.com/product-detail/C2894750.html"
-			(at 106.68 40.64 0)
+		(property "Compra" "https://www.lcsc.com/product-detail/C720478.html?s_z=n_TS-1088"
+			(at 91.44 32.004 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12522,7 +12803,7 @@
 			)
 		)
 		(property "Manufacturer" "Yuandi"
-			(at 106.68 40.64 0)
+			(at 97.536 38.354 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12530,8 +12811,8 @@
 				(hide yes)
 			)
 		)
-		(property "Price" "0.1224"
-			(at 106.68 40.64 0)
+		(property "Price" "0.0603"
+			(at 97.536 38.354 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12540,7 +12821,16 @@
 			)
 		)
 		(property "Symbol checked" "Yes"
-			(at 106.68 40.64 0)
+			(at 97.536 38.354 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Library" ""
+			(at 90.17 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12549,37 +12839,32 @@
 			)
 		)
 		(pin "1"
-			(uuid "f75acaf1-4d9a-4b44-bc7f-d0909e737ddd")
+			(uuid "b5ebdf58-5bea-4ea1-ba32-60d362afef71")
 		)
 		(pin "2"
-			(uuid "2003f19e-fa96-45c6-b2f2-5bae5363cef5")
-		)
-		(pin "3"
-			(uuid "a4a127e7-fbe0-47bf-8891-c6e2b758d19b")
-		)
-		(pin "4"
-			(uuid "23d9d611-ea20-49bf-b5d5-5dd751f6447a")
+			(uuid "9ce7db24-f644-4271-a007-884df4123c0d")
 		)
 		(instances
 			(project "HMI_LVDC-Inverter"
 				(path "/0057333c-5edf-4047-9690-4d1b87a98977/e510606f-6f04-4711-9f2b-d43d4de4a4de"
-					(reference "SW9")
+					(reference "SW8")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
+		(lib_name "SW_MEC_5G_1")
 		(lib_id "Switch:SW_MEC_5G")
-		(at 72.39 29.21 0)
+		(at 106.68 29.21 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "f6d98141-9a9f-45d6-bd86-ff957744791b")
-		(property "Reference" "SW3"
-			(at 72.39 31.242 0)
+		(uuid "fc132c36-b097-4121-b747-db81a3bb6792")
+		(property "Reference" "SW5"
+			(at 106.68 31.242 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12587,7 +12872,7 @@
 			)
 		)
 		(property "Value" "SW_MEC_5G"
-			(at 72.39 24.13 0)
+			(at 106.68 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12595,8 +12880,8 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" ""
-			(at 72.39 24.13 0)
+		(property "Footprint" "Footprints:SW_Push_SPST_NO_Alps_SKRK"
+			(at 107.95 15.494 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12604,8 +12889,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/C2894750.pdf"
-			(at 72.39 24.13 0)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C720478.pdf"
+			(at 107.95 15.494 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12614,7 +12899,7 @@
 			)
 		)
 		(property "Description" "MEC 5G single pole normally-open tactile switch"
-			(at 72.39 29.21 0)
+			(at 107.95 20.574 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12622,8 +12907,8 @@
 				(hide yes)
 			)
 		)
-		(property "Compra" "https://www.lcsc.com/product-detail/C2894750.html"
-			(at 72.39 29.21 0)
+		(property "Compra" "https://www.lcsc.com/product-detail/C720478.html?s_z=n_TS-1088"
+			(at 107.95 20.574 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12632,7 +12917,7 @@
 			)
 		)
 		(property "Manufacturer" "Yuandi"
-			(at 72.39 29.21 0)
+			(at 114.046 26.924 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12640,8 +12925,8 @@
 				(hide yes)
 			)
 		)
-		(property "Price" "0.1224"
-			(at 72.39 29.21 0)
+		(property "Price" "0.0603"
+			(at 114.046 26.924 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12650,7 +12935,16 @@
 			)
 		)
 		(property "Symbol checked" "Yes"
-			(at 72.39 29.21 0)
+			(at 114.046 26.924 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Library" ""
+			(at 106.68 29.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12659,27 +12953,22 @@
 			)
 		)
 		(pin "1"
-			(uuid "86239932-da68-4ed6-8393-15f74c3825aa")
+			(uuid "062f50e9-a115-4671-a85b-ed03d40fc4e4")
 		)
 		(pin "2"
-			(uuid "4e661e71-f729-4c92-ab15-99ee05c19377")
-		)
-		(pin "3"
-			(uuid "a8137903-a880-47e4-91d7-052b364dfefa")
-		)
-		(pin "4"
-			(uuid "b2f4795b-5080-4436-a08f-f382cb15510d")
+			(uuid "85447492-db16-4018-b49d-9bacb9d19018")
 		)
 		(instances
 			(project "HMI_LVDC-Inverter"
 				(path "/0057333c-5edf-4047-9690-4d1b87a98977/e510606f-6f04-4711-9f2b-d43d4de4a4de"
-					(reference "SW3")
+					(reference "SW5")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
+		(lib_name "SW_MEC_5G_1")
 		(lib_id "Switch:SW_MEC_5G")
 		(at 53.34 29.21 0)
 		(unit 1)
@@ -12705,8 +12994,8 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" ""
-			(at 53.34 24.13 0)
+		(property "Footprint" "Footprints:SW_Push_SPST_NO_Alps_SKRK"
+			(at 54.61 15.494 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12714,8 +13003,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/C2894750.pdf"
-			(at 53.34 24.13 0)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C720478.pdf"
+			(at 54.61 15.494 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12724,7 +13013,7 @@
 			)
 		)
 		(property "Description" "MEC 5G single pole normally-open tactile switch"
-			(at 53.34 29.21 0)
+			(at 54.61 20.574 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12732,8 +13021,8 @@
 				(hide yes)
 			)
 		)
-		(property "Compra" "https://www.lcsc.com/product-detail/C2894750.html"
-			(at 53.34 29.21 0)
+		(property "Compra" "https://www.lcsc.com/product-detail/C720478.html?s_z=n_TS-1088"
+			(at 54.61 20.574 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12742,7 +13031,7 @@
 			)
 		)
 		(property "Manufacturer" "Yuandi"
-			(at 53.34 29.21 0)
+			(at 60.706 26.924 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12750,8 +13039,8 @@
 				(hide yes)
 			)
 		)
-		(property "Price" "0.1224"
-			(at 53.34 29.21 0)
+		(property "Price" "0.0603"
+			(at 60.706 26.924 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12760,6 +13049,15 @@
 			)
 		)
 		(property "Symbol checked" "Yes"
+			(at 60.706 26.924 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Library" ""
 			(at 53.34 29.21 0)
 			(effects
 				(font
@@ -12773,12 +13071,6 @@
 		)
 		(pin "2"
 			(uuid "acbd0795-b819-48ce-a4ad-5d9ac0d4b0e6")
-		)
-		(pin "3"
-			(uuid "9893880e-18bf-4f85-9167-5b20c53ab209")
-		)
-		(pin "4"
-			(uuid "ed849594-d4dc-435c-b794-8eed9891b8ff")
 		)
 		(instances
 			(project ""
@@ -12892,6 +13184,15 @@
 			)
 		)
 		(property "Symbol checked" "Yes"
+			(at 148.59 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Library" ""
 			(at 148.59 40.64 0)
 			(effects
 				(font
