@@ -1,0 +1,111 @@
+(footprint "5mm cable solder join"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(property "Reference" "REF**"
+		(at 0 -6.35 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "2904469a-76db-4bca-b659-7194c25fd2c0")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+		)
+	)
+	(property "Value" "5mm cable solder join"
+		(at 0 -5.588 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "48467255-584c-4d74-bbba-7c554d4af63a")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "4f058334-fa7d-4050-909e-0b6cc14eabe4")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "82dc07ea-60e3-4948-a005-6f05bdc39535")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr smd)
+	(fp_circle
+		(center 0 0)
+		(end 4.572 0)
+		(stroke
+			(width 0.14986)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "bbb4588c-938b-4422-b6d8-1827d615e140")
+	)
+	(fp_circle
+		(center 0 0)
+		(end 4.572 0)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(fill no)
+		(layer "B.CrtYd")
+		(uuid "65d6435d-e8c0-4f5f-b530-c63fc9ede38b")
+	)
+	(fp_circle
+		(center 0 0)
+		(end 4.572 0)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "5d390ea3-02fa-427b-960a-47476c29f82c")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 6.096 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "df1eb9ba-7dc5-4fe9-a4c0-25ae72c66f6b")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" thru_hole circle
+		(at 0 0)
+		(size 8.636 8.636)
+		(drill 4.9784)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "ef7096c0-6fe5-4440-9cf4-ca58dad80c65")
+	)
+	(embedded_fonts no)
+)

@@ -1,0 +1,9 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "BananaSocket_THT")(type "KiCad")(uri "${KIPRJMOD}/Footprints/BananaSocket_THT.pretty")(options "")(descr ""))
+  (lib (name "Transformador")(type "KiCad")(uri "${KIPRJMOD}/Footprints/Transformador.pretty")(options "")(descr ""))
+  (lib (name "PowerConnector")(type "KiCad")(uri "${KIPRJMOD}/Footprints/PowerConnector.pretty")(options "")(descr ""))
+  (lib (name "myConnectors")(type "KiCad")(uri "${KIPRJMOD}/Footprints/myConnectors.pretty")(options "")(descr ""))
+  (lib (name "TatilSwitch")(type "KiCad")(uri "${KIPRJMOD}/Footprints/TatilSwitch.pretty")(options "")(descr ""))
+  (lib (name "PowerFuse")(type "KiCad")(uri "${KIPRJMOD}/Footprints/PowerFuse.pretty")(options "")(descr ""))
+)
