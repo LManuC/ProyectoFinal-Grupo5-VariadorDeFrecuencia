@@ -184,7 +184,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Isolator:4N25"
+		(symbol "Isolator:PC817"
 			(pin_names
 				(offset 1.016)
 			)
@@ -200,7 +200,7 @@
 					(justify left)
 				)
 			)
-			(property "Value" "4N25"
+			(property "Value" "PC817"
 				(at 0 5.08 0)
 				(effects
 					(font
@@ -209,7 +209,7 @@
 					(justify left)
 				)
 			)
-			(property "Footprint" "Package_DIP:DIP-6_W7.62mm"
+			(property "Footprint" "Package_DIP:DIP-4_W7.62mm"
 				(at -5.08 -5.08 0)
 				(effects
 					(font
@@ -220,7 +220,7 @@
 					(hide yes)
 				)
 			)
-			(property "Datasheet" "https://www.vishay.com/docs/83725/4n25.pdf"
+			(property "Datasheet" "http://www.soselectronic.cz/a_info/resource/d/pc817.pdf"
 				(at 0 0 0)
 				(effects
 					(font
@@ -230,7 +230,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "DC Optocoupler Base Connected, Vce 30V, CTR 20%, Viso 2500V, DIP6"
+			(property "Description" "DC Optocoupler, Vce 35V, CTR 50-300%, DIP-4"
 				(at 0 0 0)
 				(effects
 					(font
@@ -239,7 +239,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_keywords" "NPN DC Optocoupler Base Connected"
+			(property "ki_keywords" "NPN DC Optocoupler"
 				(at 0 0 0)
 				(effects
 					(font
@@ -257,7 +257,7 @@
 					(hide yes)
 				)
 			)
-			(symbol "4N25_0_1"
+			(symbol "PC817_0_1"
 				(rectangle
 					(start -5.08 3.81)
 					(end 5.08 -3.81)
@@ -271,7 +271,7 @@
 				)
 				(polyline
 					(pts
-						(xy -5.08 -2.54) (xy -3.175 -2.54) (xy -3.175 2.54) (xy -5.08 2.54)
+						(xy -5.08 2.54) (xy -2.54 2.54) (xy -2.54 -0.635)
 					)
 					(stroke
 						(width 0)
@@ -283,7 +283,7 @@
 				)
 				(polyline
 					(pts
-						(xy -3.81 -0.635) (xy -2.54 -0.635)
+						(xy -3.175 -0.635) (xy -1.905 -0.635)
 					)
 					(stroke
 						(width 0.254)
@@ -295,7 +295,19 @@
 				)
 				(polyline
 					(pts
-						(xy -3.175 -0.635) (xy -3.81 0.635) (xy -2.54 0.635) (xy -3.175 -0.635)
+						(xy -2.54 -0.635) (xy -2.54 -2.54) (xy -5.08 -2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.54 -0.635) (xy -3.175 0.635) (xy -1.905 0.635) (xy -2.54 -0.635)
 					)
 					(stroke
 						(width 0.254)
@@ -307,7 +319,7 @@
 				)
 				(polyline
 					(pts
-						(xy -0.635 0.508) (xy 0.635 0.508) (xy 0.254 0.381) (xy 0.254 0.635) (xy 0.635 0.508)
+						(xy -0.508 0.508) (xy 0.762 0.508) (xy 0.381 0.381) (xy 0.381 0.635) (xy 0.762 0.508)
 					)
 					(stroke
 						(width 0)
@@ -319,7 +331,7 @@
 				)
 				(polyline
 					(pts
-						(xy -0.635 -0.508) (xy 0.635 -0.508) (xy 0.254 -0.635) (xy 0.254 -0.381) (xy 0.635 -0.508)
+						(xy -0.508 -0.508) (xy 0.762 -0.508) (xy 0.381 -0.635) (xy 0.381 -0.381) (xy 0.762 -0.508)
 					)
 					(stroke
 						(width 0)
@@ -331,10 +343,10 @@
 				)
 				(polyline
 					(pts
-						(xy 2.667 -0.254) (xy 2.667 -2.286)
+						(xy 2.54 1.905) (xy 2.54 -1.905)
 					)
 					(stroke
-						(width 0.3556)
+						(width 0.508)
 						(type default)
 					)
 					(fill
@@ -343,19 +355,7 @@
 				)
 				(polyline
 					(pts
-						(xy 2.667 -1.143) (xy 3.81 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.667 -1.397) (xy 3.81 -2.54)
+						(xy 2.54 0.635) (xy 4.445 2.54)
 					)
 					(stroke
 						(width 0)
@@ -367,7 +367,19 @@
 				)
 				(polyline
 					(pts
-						(xy 3.683 -2.413) (xy 3.429 -1.905) (xy 3.175 -2.159) (xy 3.683 -2.413)
+						(xy 3.048 -1.651) (xy 3.556 -1.143) (xy 4.064 -2.159) (xy 3.048 -1.651)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 4.445 2.54) (xy 5.08 2.54)
 					)
 					(stroke
 						(width 0)
@@ -379,31 +391,19 @@
 				)
 				(polyline
 					(pts
-						(xy 3.81 0) (xy 5.08 0)
+						(xy 4.445 -2.54) (xy 2.54 -0.635)
 					)
 					(stroke
 						(width 0)
 						(type default)
 					)
 					(fill
-						(type none)
+						(type outline)
 					)
 				)
 				(polyline
 					(pts
-						(xy 3.81 -2.54) (xy 5.08 -2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 5.08 2.54) (xy 1.905 2.54) (xy 1.905 -1.27) (xy 2.54 -1.27)
+						(xy 4.445 -2.54) (xy 5.08 -2.54)
 					)
 					(stroke
 						(width 0)
@@ -414,7 +414,7 @@
 					)
 				)
 			)
-			(symbol "4N25_1_1"
+			(symbol "PC817_1_1"
 				(pin passive line
 					(at -7.62 2.54 0)
 					(length 2.54)
@@ -451,25 +451,6 @@
 						)
 					)
 				)
-				(pin no_connect line
-					(at -5.08 0 0)
-					(length 2.54)
-					(hide yes)
-					(name "NC"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
 				(pin passive line
 					(at 7.62 2.54 180)
 					(length 2.54)
@@ -480,25 +461,7 @@
 							)
 						)
 					)
-					(number "6"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 7.62 0 180)
-					(length 2.54)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "5"
+					(number "4"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -516,7 +479,7 @@
 							)
 						)
 					)
-					(number "4"
+					(number "3"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -630,7 +593,7 @@
 		)
 	)
 	(junction
-		(at 133.35 87.63)
+		(at 133.35 85.09)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "45eacabc-313a-4b8e-9fe1-48f1fcd0622b")
@@ -667,7 +630,7 @@
 	)
 	(wire
 		(pts
-			(xy 133.35 87.63) (xy 134.62 87.63)
+			(xy 133.35 85.09) (xy 134.62 85.09)
 		)
 		(stroke
 			(width 0)
@@ -687,7 +650,7 @@
 	)
 	(wire
 		(pts
-			(xy 133.35 77.47) (xy 133.35 78.74)
+			(xy 133.35 74.93) (xy 133.35 76.2)
 		)
 		(stroke
 			(width 0)
@@ -697,7 +660,7 @@
 	)
 	(wire
 		(pts
-			(xy 132.08 87.63) (xy 133.35 87.63)
+			(xy 132.08 85.09) (xy 133.35 85.09)
 		)
 		(stroke
 			(width 0)
@@ -717,7 +680,7 @@
 	)
 	(wire
 		(pts
-			(xy 133.35 86.36) (xy 133.35 87.63)
+			(xy 133.35 83.82) (xy 133.35 85.09)
 		)
 		(stroke
 			(width 0)
@@ -727,7 +690,7 @@
 	)
 	(wire
 		(pts
-			(xy 132.08 77.47) (xy 133.35 77.47)
+			(xy 132.08 74.93) (xy 133.35 74.93)
 		)
 		(stroke
 			(width 0)
@@ -759,7 +722,7 @@
 	)
 	(global_label "+3.3V_ESP"
 		(shape input)
-		(at 132.08 77.47 180)
+		(at 132.08 74.93 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -769,7 +732,7 @@
 		)
 		(uuid "5eeee80a-02dc-4b79-a641-acef4702992b")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 123.41 77.47 0)
+			(at 123.41 74.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -792,7 +755,7 @@
 	)
 	(hierarchical_label "INPUT"
 		(shape bidirectional)
-		(at 132.08 87.63 180)
+		(at 132.08 85.09 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -955,7 +918,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_US")
-		(at 133.35 82.55 180)
+		(at 133.35 80.01 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -963,7 +926,7 @@
 		(dnp no)
 		(uuid "2af292ed-da87-4451-ae55-835559375ec2")
 		(property "Reference" "R35"
-			(at 126.746 81.788 0)
+			(at 126.746 79.248 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -972,7 +935,7 @@
 			)
 		)
 		(property "Value" "33.2K"
-			(at 125.984 83.566 0)
+			(at 125.984 81.026 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -981,7 +944,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
-			(at 132.334 82.296 90)
+			(at 132.334 79.756 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -990,7 +953,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.lcsc.com/datasheet/C706161.pdf"
-			(at 133.35 82.55 0)
+			(at 133.35 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -999,7 +962,7 @@
 			)
 		)
 		(property "Description" "Resistor, US symbol"
-			(at 133.35 82.55 0)
+			(at 133.35 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1008,7 +971,7 @@
 			)
 		)
 		(property "Footprint checked" "Yes"
-			(at 133.35 82.55 0)
+			(at 133.35 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1017,7 +980,7 @@
 			)
 		)
 		(property "Symbol checked" "Yes"
-			(at 133.35 82.55 0)
+			(at 133.35 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1026,7 +989,7 @@
 			)
 		)
 		(property "Price" "0.0095"
-			(at 133.35 82.55 0)
+			(at 133.35 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1035,7 +998,7 @@
 			)
 		)
 		(property "Footprint Checked" ""
-			(at 133.35 82.55 0)
+			(at 133.35 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1044,7 +1007,7 @@
 			)
 		)
 		(property "Compra" "https://www.lcsc.com/product-detail/C706161.html"
-			(at 133.35 82.55 0)
+			(at 133.35 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1053,7 +1016,7 @@
 			)
 		)
 		(property "Manufacturer" "YAGEO"
-			(at 133.35 82.55 0)
+			(at 133.35 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1062,7 +1025,7 @@
 			)
 		)
 		(property "Sim.Library" ""
-			(at 133.35 82.55 0)
+			(at 133.35 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1106,7 +1069,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Isolator:4N25")
+		(lib_id "Isolator:PC817")
 		(at 142.24 87.63 0)
 		(mirror y)
 		(unit 1)
@@ -1114,24 +1077,25 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "83417a0a-3225-48b0-9f85-723ea296dcfc")
-		(property "Reference" "U11"
-			(at 141.986 80.01 0)
+		(fields_autoplaced yes)
+		(uuid "87a904cd-5b81-4c13-8942-ef73146a149f")
+		(property "Reference" "U17"
+			(at 142.24 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "4N25"
-			(at 141.986 82.042 0)
+		(property "Value" "PC817"
+			(at 142.24 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Footprint" "Package_DIP:DIP-6_W7.62mm_SMDSocket_SmallPads"
+		(property "Footprint" "Package_DIP:DIP-4_W7.62mm_SMDSocket_SmallPads"
 			(at 147.32 92.71 0)
 			(effects
 				(font
@@ -1142,7 +1106,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/C898941.pdf"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C3008368.pdf"
 			(at 142.24 87.63 0)
 			(effects
 				(font
@@ -1152,7 +1116,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "DC Optocoupler Base Connected, Vce 30V, CTR 20%, Viso 2500V, DIP6"
+		(property "Description" "DC Optocoupler, Vce 35V, CTR 50-300%, DIP-4"
 			(at 142.24 87.63 0)
 			(effects
 				(font
@@ -1170,7 +1134,7 @@
 				(hide yes)
 			)
 		)
-		(property "Compra" "https://www.lcsc.com/product-detail/C898941.html?s_z=n_4N25%2520SMD-6P"
+		(property "Compra" "https://www.lcsc.com/product-detail/C3008368.html"
 			(at 142.24 87.63 0)
 			(effects
 				(font
@@ -1179,7 +1143,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "onsemi"
+		(property "Manufacturer" "UMW"
 			(at 142.24 87.63 0)
 			(effects
 				(font
@@ -1188,7 +1152,7 @@
 				(hide yes)
 			)
 		)
-		(property "Price" "0.9182"
+		(property "Price" "0.0347"
 			(at 142.24 87.63 0)
 			(effects
 				(font
@@ -1206,48 +1170,42 @@
 				(hide yes)
 			)
 		)
-		(pin "1"
-			(uuid "d9ce99df-adb1-4c71-ba38-d98efa6fcb17")
+		(pin "2"
+			(uuid "bfe3e86e-1a6d-45a7-9c78-0508d87a9f5f")
 		)
 		(pin "3"
-			(uuid "ed135264-bfbf-4be1-9a8b-8e466b022167")
+			(uuid "6729609b-cfac-40c4-b055-92e1b6b852b2")
 		)
 		(pin "4"
-			(uuid "75e03559-2689-494a-8996-97955b368278")
+			(uuid "03609f22-8dc0-41c5-aad1-525a93f0284f")
 		)
-		(pin "6"
-			(uuid "739e1b65-3ff1-49c8-b59c-d246d8ca3696")
-		)
-		(pin "2"
-			(uuid "ffe15572-f57e-430c-9e60-792fd4971917")
-		)
-		(pin "5"
-			(uuid "d1ac0aea-fc57-40cb-8956-61a7691f5402")
+		(pin "1"
+			(uuid "ca6bc520-ffc2-45b7-9a93-544e08e073af")
 		)
 		(instances
 			(project "HMI_LVDC-Inverter"
 				(path "/0057333c-5edf-4047-9690-4d1b87a98977/e510606f-6f04-4711-9f2b-d43d4de4a4de/055a40fe-cd38-468e-af40-51b3396e74eb"
-					(reference "U14")
+					(reference "U20")
 					(unit 1)
 				)
 				(path "/0057333c-5edf-4047-9690-4d1b87a98977/e510606f-6f04-4711-9f2b-d43d4de4a4de/56ca9b1f-7ac9-4571-b846-7d181a59aeeb"
-					(reference "U12")
+					(reference "U18")
 					(unit 1)
 				)
 				(path "/0057333c-5edf-4047-9690-4d1b87a98977/e510606f-6f04-4711-9f2b-d43d4de4a4de/6a364d1f-798c-4d3f-8ad2-c49dde5e0a04"
-					(reference "U16")
+					(reference "U22")
 					(unit 1)
 				)
 				(path "/0057333c-5edf-4047-9690-4d1b87a98977/e510606f-6f04-4711-9f2b-d43d4de4a4de/8ed63270-0053-4d5b-bff7-f9f37411008b"
-					(reference "U13")
+					(reference "U19")
 					(unit 1)
 				)
 				(path "/0057333c-5edf-4047-9690-4d1b87a98977/e510606f-6f04-4711-9f2b-d43d4de4a4de/bd0135dc-8da7-4e5d-91da-103a4a8ec09c"
-					(reference "U11")
+					(reference "U17")
 					(unit 1)
 				)
 				(path "/0057333c-5edf-4047-9690-4d1b87a98977/e510606f-6f04-4711-9f2b-d43d4de4a4de/d5a41d21-a57c-4996-8243-e5c1dd58cf14"
-					(reference "U15")
+					(reference "U21")
 					(unit 1)
 				)
 			)
@@ -1262,7 +1220,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "947da24f-ca7e-4c38-a10a-bd337029fd04")
-		(property "Reference" "#PWR049"
+		(property "Reference" "#PWR050"
 			(at 133.35 97.79 0)
 			(effects
 				(font
@@ -1312,27 +1270,27 @@
 		(instances
 			(project "HMI_LVDC-Inverter"
 				(path "/0057333c-5edf-4047-9690-4d1b87a98977/e510606f-6f04-4711-9f2b-d43d4de4a4de/055a40fe-cd38-468e-af40-51b3396e74eb"
-					(reference "#PWR052")
+					(reference "#PWR053")
 					(unit 1)
 				)
 				(path "/0057333c-5edf-4047-9690-4d1b87a98977/e510606f-6f04-4711-9f2b-d43d4de4a4de/56ca9b1f-7ac9-4571-b846-7d181a59aeeb"
-					(reference "#PWR050")
-					(unit 1)
-				)
-				(path "/0057333c-5edf-4047-9690-4d1b87a98977/e510606f-6f04-4711-9f2b-d43d4de4a4de/6a364d1f-798c-4d3f-8ad2-c49dde5e0a04"
-					(reference "#PWR054")
-					(unit 1)
-				)
-				(path "/0057333c-5edf-4047-9690-4d1b87a98977/e510606f-6f04-4711-9f2b-d43d4de4a4de/8ed63270-0053-4d5b-bff7-f9f37411008b"
 					(reference "#PWR051")
 					(unit 1)
 				)
+				(path "/0057333c-5edf-4047-9690-4d1b87a98977/e510606f-6f04-4711-9f2b-d43d4de4a4de/6a364d1f-798c-4d3f-8ad2-c49dde5e0a04"
+					(reference "#PWR055")
+					(unit 1)
+				)
+				(path "/0057333c-5edf-4047-9690-4d1b87a98977/e510606f-6f04-4711-9f2b-d43d4de4a4de/8ed63270-0053-4d5b-bff7-f9f37411008b"
+					(reference "#PWR052")
+					(unit 1)
+				)
 				(path "/0057333c-5edf-4047-9690-4d1b87a98977/e510606f-6f04-4711-9f2b-d43d4de4a4de/bd0135dc-8da7-4e5d-91da-103a4a8ec09c"
-					(reference "#PWR049")
+					(reference "#PWR050")
 					(unit 1)
 				)
 				(path "/0057333c-5edf-4047-9690-4d1b87a98977/e510606f-6f04-4711-9f2b-d43d4de4a4de/d5a41d21-a57c-4996-8243-e5c1dd58cf14"
-					(reference "#PWR053")
+					(reference "#PWR054")
 					(unit 1)
 				)
 			)
