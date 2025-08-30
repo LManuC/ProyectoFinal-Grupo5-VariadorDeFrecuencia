@@ -1,0 +1,1299 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "9.0")
+	(uuid "9b273dea-f120-4bd3-8cf5-a835b0ec9620")
+	(paper "A4")
+	(title_block
+		(title "Variador de frecuencia LVDC")
+		(date "2025-08-05")
+		(rev "0")
+		(company "Andrenacci - Carra")
+	)
+	(lib_symbols
+		(symbol "Device:R_US"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "R"
+				(at 2.54 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "R_US"
+				(at -2.54 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 1.016 -0.254 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Resistor, US symbol"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "R res resistor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "R_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "R_US_0_1"
+				(polyline
+					(pts
+						(xy 0 2.286) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.286) (xy 1.016 1.905) (xy 0 1.524) (xy -1.016 1.143) (xy 0 0.762)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0.762) (xy 1.016 0.381) (xy 0 0) (xy -1.016 -0.381) (xy 0 -0.762)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -0.762) (xy 1.016 -1.143) (xy 0 -1.524) (xy -1.016 -1.905) (xy 0 -2.286)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -2.286) (xy 0 -2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "R_US_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 1.27)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 1.27)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Isolator:PC817"
+			(pin_names
+				(offset 1.016)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at -5.08 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "PC817"
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" "Package_DIP:DIP-4_W7.62mm"
+				(at -5.08 -5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "http://www.soselectronic.cz/a_info/resource/d/pc817.pdf"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Description" "DC Optocoupler, Vce 35V, CTR 50-300%, DIP-4"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "NPN DC Optocoupler"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "DIP*W7.62mm*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "PC817_0_1"
+				(rectangle
+					(start -5.08 3.81)
+					(end 5.08 -3.81)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(polyline
+					(pts
+						(xy -5.08 2.54) (xy -2.54 2.54) (xy -2.54 -0.635)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -3.175 -0.635) (xy -1.905 -0.635)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.54 -0.635) (xy -2.54 -2.54) (xy -5.08 -2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.54 -0.635) (xy -3.175 0.635) (xy -1.905 0.635) (xy -2.54 -0.635)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.508 0.508) (xy 0.762 0.508) (xy 0.381 0.381) (xy 0.381 0.635) (xy 0.762 0.508)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.508 -0.508) (xy 0.762 -0.508) (xy 0.381 -0.635) (xy 0.381 -0.381) (xy 0.762 -0.508)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 1.905) (xy 2.54 -1.905)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 0.635) (xy 4.445 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.048 -1.651) (xy 3.556 -1.143) (xy 4.064 -2.159) (xy 3.048 -1.651)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 4.445 2.54) (xy 5.08 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 4.445 -2.54) (xy 2.54 -0.635)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 4.445 -2.54) (xy 5.08 -2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "PC817_1_1"
+				(pin passive line
+					(at -7.62 2.54 0)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -7.62 -2.54 0)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 7.62 2.54 180)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 7.62 -2.54 180)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "power:GND"
+			(power)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "#PWR"
+				(at 0 -6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Value" "GND"
+				(at 0 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "global power"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "GND_0_1"
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 -1.27) (xy 1.27 -1.27) (xy 0 -2.54) (xy -1.27 -1.27) (xy 0 -1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "GND_1_1"
+				(pin power_in line
+					(at 0 0 270)
+					(length 0)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+	)
+	(junction
+		(at 133.35 85.09)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "45eacabc-313a-4b8e-9fe1-48f1fcd0622b")
+	)
+	(wire
+		(pts
+			(xy 134.62 90.17) (xy 133.35 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0ee28b9a-a5ca-47cd-a952-6351b58169cc")
+	)
+	(wire
+		(pts
+			(xy 149.86 90.17) (xy 151.13 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "12a30314-7b4b-49e2-8d23-40cf741b7240")
+	)
+	(wire
+		(pts
+			(xy 133.35 90.17) (xy 133.35 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2f497cb2-0914-4702-8ede-e111f8d7ba1e")
+	)
+	(wire
+		(pts
+			(xy 133.35 85.09) (xy 134.62 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "66de1b5d-1155-4467-a62b-464b03b0cc2a")
+	)
+	(wire
+		(pts
+			(xy 149.86 85.09) (xy 151.13 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "803a10a7-d7ee-4e02-bab1-d63465174ea3")
+	)
+	(wire
+		(pts
+			(xy 133.35 74.93) (xy 133.35 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a11deecb-5000-4386-83ed-6f978057796d")
+	)
+	(wire
+		(pts
+			(xy 132.08 85.09) (xy 133.35 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b9d672c6-ed8e-4991-b487-046afacfe953")
+	)
+	(wire
+		(pts
+			(xy 158.75 85.09) (xy 160.02 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d132d882-840b-489e-ab56-0d3d8b5c08f9")
+	)
+	(wire
+		(pts
+			(xy 133.35 83.82) (xy 133.35 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dd6a4789-210d-4ba5-a6bb-fb7d0d39c223")
+	)
+	(wire
+		(pts
+			(xy 132.08 74.93) (xy 133.35 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f070494e-62ec-427a-a649-30facea750ed")
+	)
+	(global_label "+12V_ISO"
+		(shape input)
+		(at 160.02 85.09 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "0f14a970-438f-4feb-9cf3-9d06105787e5")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 172.1976 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "+3.3V_ESP"
+		(shape input)
+		(at 132.08 74.93 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "5eeee80a-02dc-4b79-a641-acef4702992b")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 123.41 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(hierarchical_label "INPUT_ISO"
+		(shape bidirectional)
+		(at 151.13 90.17 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "5914df74-6e89-4e73-aee4-68434fc14116")
+	)
+	(hierarchical_label "INPUT"
+		(shape bidirectional)
+		(at 132.08 85.09 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "69ba956f-14b7-4692-b928-03dffe83d557")
+	)
+	(symbol
+		(lib_id "Device:R_US")
+		(at 154.94 85.09 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "0e3537d7-44e4-4a36-b737-2776c7789b11")
+		(property "Reference" "R36"
+			(at 153.2255 80.5815 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "4.7K"
+			(at 153.162 82.55 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
+			(at 155.194 84.074 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C2078630.pdf"
+			(at 154.94 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, US symbol"
+			(at 154.94 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint checked" "Yes"
+			(at 154.94 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Symbol checked" "Yes"
+			(at 154.94 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Price" "0.0220"
+			(at 154.94 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint Checked" ""
+			(at 154.94 85.09 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Compra" "https://www.lcsc.com/product-detail/C2078630.html"
+			(at 154.94 85.09 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "VISHAY"
+			(at 154.94 85.09 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Library" ""
+			(at 154.94 85.09 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "fc2e453b-bad7-4e00-80d3-06df3088562b")
+		)
+		(pin "2"
+			(uuid "68d79c3f-b8b7-43cd-bfd9-1fa63888cc05")
+		)
+		(instances
+			(project "HMI_LVDC-Inverter"
+				(path "/0057333c-5edf-4047-9690-4d1b87a98977/e510606f-6f04-4711-9f2b-d43d4de4a4de/055a40fe-cd38-468e-af40-51b3396e74eb"
+					(reference "R42")
+					(unit 1)
+				)
+				(path "/0057333c-5edf-4047-9690-4d1b87a98977/e510606f-6f04-4711-9f2b-d43d4de4a4de/56ca9b1f-7ac9-4571-b846-7d181a59aeeb"
+					(reference "R38")
+					(unit 1)
+				)
+				(path "/0057333c-5edf-4047-9690-4d1b87a98977/e510606f-6f04-4711-9f2b-d43d4de4a4de/6a364d1f-798c-4d3f-8ad2-c49dde5e0a04"
+					(reference "R46")
+					(unit 1)
+				)
+				(path "/0057333c-5edf-4047-9690-4d1b87a98977/e510606f-6f04-4711-9f2b-d43d4de4a4de/8ed63270-0053-4d5b-bff7-f9f37411008b"
+					(reference "R40")
+					(unit 1)
+				)
+				(path "/0057333c-5edf-4047-9690-4d1b87a98977/e510606f-6f04-4711-9f2b-d43d4de4a4de/bd0135dc-8da7-4e5d-91da-103a4a8ec09c"
+					(reference "R36")
+					(unit 1)
+				)
+				(path "/0057333c-5edf-4047-9690-4d1b87a98977/e510606f-6f04-4711-9f2b-d43d4de4a4de/d5a41d21-a57c-4996-8243-e5c1dd58cf14"
+					(reference "R44")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_US")
+		(at 133.35 80.01 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "2af292ed-da87-4451-ae55-835559375ec2")
+		(property "Reference" "R35"
+			(at 126.746 79.248 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "33.2K"
+			(at 125.984 81.026 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
+			(at 132.334 79.756 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C706161.pdf"
+			(at 133.35 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, US symbol"
+			(at 133.35 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint checked" "Yes"
+			(at 133.35 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Symbol checked" "Yes"
+			(at 133.35 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Price" "0.0095"
+			(at 133.35 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint Checked" ""
+			(at 133.35 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Compra" "https://www.lcsc.com/product-detail/C706161.html"
+			(at 133.35 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "YAGEO"
+			(at 133.35 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Library" ""
+			(at 133.35 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c7aa9f01-d3e8-44f9-a99e-7ba50c244a1d")
+		)
+		(pin "2"
+			(uuid "1aead457-e32b-447e-91c6-b62bd8ccedaf")
+		)
+		(instances
+			(project "HMI_LVDC-Inverter"
+				(path "/0057333c-5edf-4047-9690-4d1b87a98977/e510606f-6f04-4711-9f2b-d43d4de4a4de/055a40fe-cd38-468e-af40-51b3396e74eb"
+					(reference "R41")
+					(unit 1)
+				)
+				(path "/0057333c-5edf-4047-9690-4d1b87a98977/e510606f-6f04-4711-9f2b-d43d4de4a4de/56ca9b1f-7ac9-4571-b846-7d181a59aeeb"
+					(reference "R37")
+					(unit 1)
+				)
+				(path "/0057333c-5edf-4047-9690-4d1b87a98977/e510606f-6f04-4711-9f2b-d43d4de4a4de/6a364d1f-798c-4d3f-8ad2-c49dde5e0a04"
+					(reference "R45")
+					(unit 1)
+				)
+				(path "/0057333c-5edf-4047-9690-4d1b87a98977/e510606f-6f04-4711-9f2b-d43d4de4a4de/8ed63270-0053-4d5b-bff7-f9f37411008b"
+					(reference "R39")
+					(unit 1)
+				)
+				(path "/0057333c-5edf-4047-9690-4d1b87a98977/e510606f-6f04-4711-9f2b-d43d4de4a4de/bd0135dc-8da7-4e5d-91da-103a4a8ec09c"
+					(reference "R35")
+					(unit 1)
+				)
+				(path "/0057333c-5edf-4047-9690-4d1b87a98977/e510606f-6f04-4711-9f2b-d43d4de4a4de/d5a41d21-a57c-4996-8243-e5c1dd58cf14"
+					(reference "R43")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Isolator:PC817")
+		(at 142.24 87.63 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "87a904cd-5b81-4c13-8942-ef73146a149f")
+		(property "Reference" "U17"
+			(at 142.24 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "PC817"
+			(at 142.24 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_DIP:DIP-4_W7.62mm_SMDSocket_SmallPads"
+			(at 147.32 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C3008368.pdf"
+			(at 142.24 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" "DC Optocoupler, Vce 35V, CTR 50-300%, DIP-4"
+			(at 142.24 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint Checked" ""
+			(at 142.24 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Compra" "https://www.lcsc.com/product-detail/C3008368.html"
+			(at 142.24 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "UMW"
+			(at 142.24 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Price" "0.0347"
+			(at 142.24 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Library" ""
+			(at 142.24 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "bfe3e86e-1a6d-45a7-9c78-0508d87a9f5f")
+		)
+		(pin "3"
+			(uuid "6729609b-cfac-40c4-b055-92e1b6b852b2")
+		)
+		(pin "4"
+			(uuid "03609f22-8dc0-41c5-aad1-525a93f0284f")
+		)
+		(pin "1"
+			(uuid "ca6bc520-ffc2-45b7-9a93-544e08e073af")
+		)
+		(instances
+			(project "HMI_LVDC-Inverter"
+				(path "/0057333c-5edf-4047-9690-4d1b87a98977/e510606f-6f04-4711-9f2b-d43d4de4a4de/055a40fe-cd38-468e-af40-51b3396e74eb"
+					(reference "U20")
+					(unit 1)
+				)
+				(path "/0057333c-5edf-4047-9690-4d1b87a98977/e510606f-6f04-4711-9f2b-d43d4de4a4de/56ca9b1f-7ac9-4571-b846-7d181a59aeeb"
+					(reference "U18")
+					(unit 1)
+				)
+				(path "/0057333c-5edf-4047-9690-4d1b87a98977/e510606f-6f04-4711-9f2b-d43d4de4a4de/6a364d1f-798c-4d3f-8ad2-c49dde5e0a04"
+					(reference "U22")
+					(unit 1)
+				)
+				(path "/0057333c-5edf-4047-9690-4d1b87a98977/e510606f-6f04-4711-9f2b-d43d4de4a4de/8ed63270-0053-4d5b-bff7-f9f37411008b"
+					(reference "U19")
+					(unit 1)
+				)
+				(path "/0057333c-5edf-4047-9690-4d1b87a98977/e510606f-6f04-4711-9f2b-d43d4de4a4de/bd0135dc-8da7-4e5d-91da-103a4a8ec09c"
+					(reference "U17")
+					(unit 1)
+				)
+				(path "/0057333c-5edf-4047-9690-4d1b87a98977/e510606f-6f04-4711-9f2b-d43d4de4a4de/d5a41d21-a57c-4996-8243-e5c1dd58cf14"
+					(reference "U21")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 133.35 91.44 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "947da24f-ca7e-4c38-a10a-bd337029fd04")
+		(property "Reference" "#PWR050"
+			(at 133.35 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 133.096 95.758 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 133.35 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 133.35 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 133.35 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f622b3fd-7485-45e8-83a9-7baab9771fec")
+		)
+		(instances
+			(project "HMI_LVDC-Inverter"
+				(path "/0057333c-5edf-4047-9690-4d1b87a98977/e510606f-6f04-4711-9f2b-d43d4de4a4de/055a40fe-cd38-468e-af40-51b3396e74eb"
+					(reference "#PWR053")
+					(unit 1)
+				)
+				(path "/0057333c-5edf-4047-9690-4d1b87a98977/e510606f-6f04-4711-9f2b-d43d4de4a4de/56ca9b1f-7ac9-4571-b846-7d181a59aeeb"
+					(reference "#PWR051")
+					(unit 1)
+				)
+				(path "/0057333c-5edf-4047-9690-4d1b87a98977/e510606f-6f04-4711-9f2b-d43d4de4a4de/6a364d1f-798c-4d3f-8ad2-c49dde5e0a04"
+					(reference "#PWR055")
+					(unit 1)
+				)
+				(path "/0057333c-5edf-4047-9690-4d1b87a98977/e510606f-6f04-4711-9f2b-d43d4de4a4de/8ed63270-0053-4d5b-bff7-f9f37411008b"
+					(reference "#PWR052")
+					(unit 1)
+				)
+				(path "/0057333c-5edf-4047-9690-4d1b87a98977/e510606f-6f04-4711-9f2b-d43d4de4a4de/bd0135dc-8da7-4e5d-91da-103a4a8ec09c"
+					(reference "#PWR050")
+					(unit 1)
+				)
+				(path "/0057333c-5edf-4047-9690-4d1b87a98977/e510606f-6f04-4711-9f2b-d43d4de4a4de/d5a41d21-a57c-4996-8243-e5c1dd58cf14"
+					(reference "#PWR054")
+					(unit 1)
+				)
+			)
+		)
+	)
+)
