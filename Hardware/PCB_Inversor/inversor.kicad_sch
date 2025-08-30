@@ -5151,7 +5151,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_Molex:Molex_KK-254_AE-6410-04A_1x04_P2.54mm_Vertical"
+		(property "Footprint" "Connector_JST:JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical"
 			(at 24.13 36.83 0)
 			(effects
 				(font
@@ -5495,7 +5495,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "TK8A65D"
+		(property "Value" "STF24N65M2"
 			(at 113.03 142.2399 0)
 			(effects
 				(font
@@ -5795,7 +5795,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "TK8A65D"
+		(property "Value" "STF24N65M2"
 			(at 173.99 126.9999 0)
 			(effects
 				(font
@@ -5896,7 +5896,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "TK8A65D"
+		(property "Value" "STF24N65M2"
 			(at 143.51 140.9699 0)
 			(effects
 				(font
@@ -6073,7 +6073,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "TK8A65D"
+		(property "Value" "STF24N65M2"
 			(at 173.99 140.9699 0)
 			(effects
 				(font
@@ -6248,7 +6248,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "TK8A65D"
+		(property "Value" "STF24N65M2"
 			(at 113.03 128.2699 0)
 			(effects
 				(font
@@ -6355,7 +6355,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_Molex:Molex_KK-254_AE-6410-04A_1x04_P2.54mm_Vertical"
+		(property "Footprint" "Connector_JST:JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical"
 			(at 24.13 54.61 0)
 			(effects
 				(font
@@ -6567,7 +6567,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_Molex:Molex_KK-254_AE-6410-02A_1x02_P2.54mm_Vertical"
+		(property "Footprint" "Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical"
 			(at 196.85 81.28 0)
 			(effects
 				(font
@@ -6629,7 +6629,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "TK8A65D"
+		(property "Value" "STF24N65M2"
 			(at 143.51 128.2699 0)
 			(effects
 				(font

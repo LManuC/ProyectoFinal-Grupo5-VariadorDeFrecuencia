@@ -101,7 +101,7 @@
         "pth_inside_courtyard": "ignore",
         "shorting_items": "error",
         "silk_edge_clearance": "warning",
-        "silk_over_copper": "warning",
+        "silk_over_copper": "ignore",
         "silk_overlap": "warning",
         "skew_out_of_range": "error",
         "solder_mask_bridge": "error",
@@ -745,7 +745,7 @@
       "plot": "Production/",
       "pos_files": "",
       "specctra_dsn": "",
-      "step": "../../Modelo3D/InterfacePCB.step",
+      "step": "../../Modelo3D/InverterPCB.step",
       "svg": "",
       "vrml": ""
     },
