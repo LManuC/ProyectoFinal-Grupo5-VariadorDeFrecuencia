@@ -745,7 +745,7 @@
       "plot": "Production/",
       "pos_files": "",
       "specctra_dsn": "",
-      "step": "../../Modelo3D/InterfacePCB.step",
+      "step": "../../Modelo3D/ConverterPCB.step",
       "svg": "",
       "vrml": ""
     },
