@@ -1,0 +1,140 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "9.0")
+	(uuid "e60c11d9-ab9e-4760-a4a7-008fcec65a72")
+	(paper "A4")
+	(lib_symbols)
+	(sheet
+		(at 140.97 107.95)
+		(size 71.12 30.48)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "a1acc572-d1ac-4446-af25-063a17ee1a88")
+		(property "Sheetname" "Interfaz HMI"
+			(at 140.97 107.2384 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "HMI_Interfaz.kicad_sch"
+			(at 140.97 139.0146 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "PCB_Integradora"
+				(path "/e60c11d9-ab9e-4760-a4a7-008fcec65a72"
+					(page "3")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 86.36 41.91)
+		(size 91.44 40.64)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "d79edd3c-1f20-406b-89b4-00dca4dd68af")
+		(property "Sheetname" "ESP Programadora"
+			(at 86.36 41.1984 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "ESP_Programmer.kicad_sch"
+			(at 86.36 83.1346 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "PCB_Integradora"
+				(path "/e60c11d9-ab9e-4760-a4a7-008fcec65a72"
+					(page "4")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 40.64 106.68)
+		(size 54.61 33.02)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "fc30a5fb-ff38-4397-8c78-21712589d910")
+		(property "Sheetname" "Interfaz de conexión"
+			(at 40.64 105.9684 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "InterfazConexion.kicad_sch"
+			(at 40.64 140.2846 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "PCB_Integradora"
+				(path "/e60c11d9-ab9e-4760-a4a7-008fcec65a72"
+					(page "19")
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+)

@@ -1,0 +1,171 @@
+%TF.GenerationSoftware,KiCad,Pcbnew,9.0.3*%
+%TF.CreationDate,2025-08-21T00:29:16-03:00*%
+%TF.ProjectId,PCB_Interfaz,5043425f-496e-4746-9572-66617a2e6b69,rev?*%
+%TF.SameCoordinates,Original*%
+%TF.FileFunction,Copper,L1,Top*%
+%TF.FilePolarity,Positive*%
+%FSLAX46Y46*%
+G04 Gerber Fmt 4.6, Leading zero omitted, Abs format (unit mm)*
+G04 Created by KiCad (PCBNEW 9.0.3) date 2025-08-21 00:29:16*
+%MOMM*%
+%LPD*%
+G01*
+G04 APERTURE LIST*
+G04 Aperture macros list*
+%AMRoundRect*
+0 Rectangle with rounded corners*
+0 $1 Rounding radius*
+0 $2 $3 $4 $5 $6 $7 $8 $9 X,Y pos of 4 corners*
+0 Add a 4 corners polygon primitive as box body*
+4,1,4,$2,$3,$4,$5,$6,$7,$8,$9,$2,$3,0*
+0 Add four circle primitives for the rounded corners*
+1,1,$1+$1,$2,$3*
+1,1,$1+$1,$4,$5*
+1,1,$1+$1,$6,$7*
+1,1,$1+$1,$8,$9*
+0 Add four rect primitives between the rounded corners*
+20,1,$1+$1,$2,$3,$4,$5,0*
+20,1,$1+$1,$4,$5,$6,$7,0*
+20,1,$1+$1,$6,$7,$8,$9,0*
+20,1,$1+$1,$8,$9,$2,$3,0*%
+G04 Aperture macros list end*
+%TA.AperFunction,ComponentPad*%
+%ADD10RoundRect,0.250000X0.620000X0.845000X-0.620000X0.845000X-0.620000X-0.845000X0.620000X-0.845000X0*%
+%TD*%
+%TA.AperFunction,ComponentPad*%
+%ADD11O,1.740000X2.190000*%
+%TD*%
+%TA.AperFunction,ComponentPad*%
+%ADD12C,12.700000*%
+%TD*%
+%TA.AperFunction,ComponentPad*%
+%ADD13RoundRect,0.250000X-1.550000X0.650000X-1.550000X-0.650000X1.550000X-0.650000X1.550000X0.650000X0*%
+%TD*%
+%TA.AperFunction,ComponentPad*%
+%ADD14O,3.600000X1.800000*%
+%TD*%
+%TA.AperFunction,ComponentPad*%
+%ADD15R,6.600000X3.300000*%
+%TD*%
+%TA.AperFunction,ComponentPad*%
+%ADD16O,6.600000X3.300000*%
+%TD*%
+%TA.AperFunction,ComponentPad*%
+%ADD17C,1.600000*%
+%TD*%
+%TA.AperFunction,ComponentPad*%
+%ADD18RoundRect,0.250000X-1.050000X1.050000X-1.050000X-1.050000X1.050000X-1.050000X1.050000X1.050000X0*%
+%TD*%
+%TA.AperFunction,ComponentPad*%
+%ADD19C,2.600000*%
+%TD*%
+%TA.AperFunction,ComponentPad*%
+%ADD20R,1.800000X1.800000*%
+%TD*%
+%TA.AperFunction,ComponentPad*%
+%ADD21C,1.800000*%
+%TD*%
+G04 APERTURE END LIST*
+D10*
+%TO.P,Inv_Pwr1,1,Pin_1*%
+%TO.N,/Interfaz de conexi\u00F3n/12V_Cnv*%
+X90788000Y-84455000D03*
+D11*
+%TO.P,Inv_Pwr1,2,Pin_2*%
+%TO.N,/Interfaz de conexi\u00F3n/Gnd_Cnv*%
+X88248000Y-84455000D03*
+%TD*%
+D12*
+%TO.P,Pw_In-1,1,Pin_1*%
+%TO.N,unconnected-(Pw_In-1-Pin_1-Pad1)*%
+X127850000Y-124802000D03*
+%TO.P,Pw_In-1,2,Pin_2*%
+%TO.N,unconnected-(Pw_In-1-Pin_2-Pad2)*%
+X145122000Y-124802000D03*
+%TD*%
+D13*
+%TO.P,Motor_Out2,1,Pin_1*%
+%TO.N,Net-(Motor_Out2-Pin_1)*%
+X118833000Y-84035000D03*
+D14*
+%TO.P,Motor_Out2,2,Pin_2*%
+%TO.N,Net-(Motor_Out2-Pin_2)*%
+X118833000Y-89115000D03*
+%TO.P,Motor_Out2,3,Pin_3*%
+%TO.N,Net-(Motor_Out2-Pin_3)*%
+X118833000Y-94195000D03*
+%TD*%
+D15*
+%TO.P,Motor_Pwr1,1,Pin_1*%
+%TO.N,Net-(Motor_Out2-Pin_3)*%
+X136779000Y-106393000D03*
+D16*
+%TO.P,Motor_Pwr1,2,Pin_2*%
+%TO.N,Net-(Motor_Out2-Pin_2)*%
+X136779000Y-96393000D03*
+%TO.P,Motor_Pwr1,3,Pin_3*%
+%TO.N,Net-(Motor_Out2-Pin_1)*%
+X136779000Y-86393000D03*
+%TD*%
+D17*
+%TO.P,R48,1*%
+%TO.N,Net-(D11-K)*%
+X98386000Y-93179000D03*
+%TO.P,R48,2*%
+%TO.N,/Interfaz de conexi\u00F3n/Gnd_Cnv*%
+X88226000Y-93179000D03*
+%TD*%
+D10*
+%TO.P,Cnv_Pwr1,1,Pin_1*%
+%TO.N,/Interfaz de conexi\u00F3n/12V_Cnv*%
+X100037000Y-84416000D03*
+D11*
+%TO.P,Cnv_Pwr1,2,Pin_2*%
+%TO.N,/Interfaz de conexi\u00F3n/Gnd_Cnv*%
+X97497000Y-84416000D03*
+%TD*%
+D10*
+%TO.P,Cooler1,1,Pin_1*%
+%TO.N,/Interfaz de conexi\u00F3n/12V_Cnv*%
+X108800000Y-84455000D03*
+D11*
+%TO.P,Cooler1,2,Pin_2*%
+%TO.N,/Interfaz de conexi\u00F3n/Gnd_Cnv*%
+X106260000Y-84455000D03*
+%TD*%
+D18*
+%TO.P,12V_Pwr1,1,Pin_1*%
+%TO.N,/Interfaz de conexi\u00F3n/12V_Cnv*%
+X94061500Y-102402000D03*
+D19*
+%TO.P,12V_Pwr1,2,Pin_2*%
+%TO.N,/Interfaz de conexi\u00F3n/Gnd_Cnv*%
+X94061500Y-107402000D03*
+%TD*%
+D10*
+%TO.P,Inv_Pwr2,1,Pin_1*%
+%TO.N,/Interfaz de conexi\u00F3n/12V_Cnv*%
+X108800000Y-92818000D03*
+D11*
+%TO.P,Inv_Pwr2,2,Pin_2*%
+%TO.N,/Interfaz de conexi\u00F3n/Gnd_Cnv*%
+X106260000Y-92818000D03*
+%TD*%
+D12*
+%TO.P,Pw_In+1,1,Pin_1*%
+%TO.N,unconnected-(Pw_In+1-Pin_1-Pad1)*%
+X93687000Y-124802000D03*
+%TO.P,Pw_In+1,2,Pin_2*%
+%TO.N,unconnected-(Pw_In+1-Pin_2-Pad2)*%
+X110959000Y-124802000D03*
+%TD*%
+D20*
+%TO.P,D11,1,K*%
+%TO.N,Net-(D11-K)*%
+X93980000Y-112649000D03*
+D21*
+%TO.P,D11,2,A*%
+%TO.N,/Interfaz de conexi\u00F3n/12V_Cnv*%
+X91440000Y-112649000D03*
+%TD*%
+M02*
