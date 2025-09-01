@@ -742,7 +742,7 @@
       "gencad": "",
       "idf": "",
       "netlist": "",
-      "plot": "Production/",
+      "plot": "GerberFiles/",
       "pos_files": "",
       "specctra_dsn": "",
       "step": "../../Modelo3D/ConverterPCB.step",
