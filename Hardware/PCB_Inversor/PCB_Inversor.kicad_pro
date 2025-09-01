@@ -742,7 +742,7 @@
       "gencad": "",
       "idf": "",
       "netlist": "",
-      "plot": "Production/",
+      "plot": "../PCB_Conversor/GerberFiles/",
       "pos_files": "",
       "specctra_dsn": "",
       "step": "../../Modelo3D/InverterPCB.step",

@@ -74,7 +74,7 @@
 			(mirror no)
 			(drillshape 0)
 			(scaleselection 1)
-			(outputdirectory "Production/")
+			(outputdirectory "../PCB_Conversor/GerberFiles/")
 		)
 	)
 	(net 0 "")
