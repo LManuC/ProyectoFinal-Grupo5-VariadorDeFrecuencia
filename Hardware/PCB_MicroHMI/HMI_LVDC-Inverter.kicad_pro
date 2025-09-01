@@ -596,7 +596,7 @@
       "gencad": "",
       "idf": "",
       "netlist": "",
-      "plot": "",
+      "plot": "GerberFiles/",
       "pos_files": "",
       "specctra_dsn": "",
       "step": "../../Modelo3D/MicroHMIPCB.step",
