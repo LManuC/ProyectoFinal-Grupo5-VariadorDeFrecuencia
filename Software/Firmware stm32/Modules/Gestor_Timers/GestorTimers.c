@@ -48,3 +48,27 @@ void GestorTimers_IniciarTimer(TimersEnum timerEnum) {
 void GestorTimers_DetenerTimer(TimersEnum timerEnum) {
 
 }
+
+
+void GestorTimers_IniciarTimerSVM() {
+
+    // Vamos a setear la prioridad del timer 3 a 0
+    HAL_NVIC_SetPriority(TIM3_IRQn, 0, 0);
+    HAL_NVIC_EnableIRQ(TIM3_IRQn);
+
+    // Se inician los 4 canales del timer 3
+    HAL_TIM_IC_Start_IT(htim_SVM, TIM_CHANNEL_1);
+    HAL_TIM_IC_Start_IT(htim_SVM, TIM_CHANNEL_2);
+    HAL_TIM_IC_Start_IT(htim_SVM, TIM_CHANNEL_3);
+    HAL_TIM_IC_Start_IT(htim_SVM, TIM_CHANNEL_4);
+}
+
+void GestorTimers_DetenerTimerSVM() {
+
+    HAL_TIM_IC_Stop_IT(htim_SVM, TIM_CHANNEL_1);
+    HAL_TIM_IC_Stop_IT(htim_SVM, TIM_CHANNEL_2);
+    HAL_TIM_IC_Stop_IT(htim_SVM, TIM_CHANNEL_3);
+    HAL_TIM_IC_Stop_IT(htim_SVM, TIM_CHANNEL_4);
+
+    __HAL_TIM_SET_COUNTER(htim_SVM, 0);
+}

@@ -30,6 +30,7 @@
 #include "../Modules/Gestor_Timers/GestorTimers.h"
 #include "../Modules/Gestor_Estados/GestorEstados.h"
 #include "../Modules/SoftTimers/SoftTimers.h"
+#include "../Modules/SPI_Interfase/SPIModule.h"
 
 
 
@@ -42,6 +43,11 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
+
+// Estas variables estan para prueba nomas
+static inline void CallActionStart(void) { GestorEstados_Action(ACTION_START, 0);}
+static inline void CallActionStop(void)  { GestorEstados_Action(ACTION_STOP, 0);}
+
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -50,15 +56,14 @@
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
+SPI_HandleTypeDef hspi2;
+DMA_HandleTypeDef hdma_spi2_tx;
+DMA_HandleTypeDef hdma_spi2_rx;
+
 TIM_HandleTypeDef htim2;
 TIM_HandleTypeDef htim3;
 
 UART_HandleTypeDef huart1;
-
-// Estas variables estan para prueba nomas
-static inline void CallActionStart(void) { GestorEstados_Action(ACTION_START);}
-static inline void CallActionStop(void)  { GestorEstados_Action(ACTION_STOP);}
-
 
 /* USER CODE BEGIN PV */
 
@@ -67,8 +72,8 @@ extern UART_HandleTypeDef huart1;
 // Aca vamos a iniciar el gestor de svm
 //GestorSVM gestorSVM; // Frecuencia de 1kHz para el switch y 1kHz para el temporizador
 
-static int contadorValores[20];
-static int index = 0;
+//static int contadorValores[20];
+//static int index = 0;
 
 
 /* USER CODE END PV */
@@ -76,9 +81,11 @@ static int index = 0;
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
+static void MX_DMA_Init(void);
 static void MX_TIM3_Init(void);
 static void MX_USART1_UART_Init(void);
 static void MX_TIM2_Init(void);
+static void MX_SPI2_Init(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -168,13 +175,22 @@ int main(void)
       {2, 0, 1}
   };
 
-  // Iniciamos el gestor de svm
+  //  ------------      CONFIGURACION DEL MODULO SVM      ------------------------
+
+  // Generamos la variable a pasar por puntero
   ConfiguracionSVM config;
-  config.frec_switch = 4500; // Frecuencia de 1kHz para el switch
-  config.frec_output = 5; // Frecuencia de 1kHz para el temporizador
+  config.frecOutMin = 1;
+  config.frecOutMax = 450;
+  config.frec_switch = 2200; // Frecuencia de 2.2kHz para el switch
+  //config.frec_output = 0; // Frecuencia de 1kHz para el temporizador
+  config.frecOutputTaget = 50;
   config.direccionRotacion = 1; // Sentido horario
   config.resolucionTimer = 255; // Resolucion del timer (255 para 8 bits)
-  
+
+  //Configuracion dinamica
+  config.acel = 5;        // En frec/seg
+  config.desacel = 3;     // En frec/seg
+
   // Cargamos el orden de activacion de los puertos
   for(int i = 0; i < 6; i++) {
     for(int j = 0; j < 3; j++) {
@@ -183,15 +199,18 @@ int main(void)
   }
 
   // Cargamos los numeros de los pines
-  config.puerto_senal_pierna[0] = GPIO_PIN_3;
-  config.puerto_senal_pierna[1] = GPIO_PIN_4;
+  config.puerto_senal_pierna[0] = GPIO_PIN_1;
+  config.puerto_senal_pierna[1] = GPIO_PIN_3;
   config.puerto_senal_pierna[2] = GPIO_PIN_5;
+  config.puerto_encen_pierna[0] = GPIO_PIN_2;
+  config.puerto_encen_pierna[1] = GPIO_PIN_4;
+  config.puerto_encen_pierna[2] = GPIO_PIN_6;
 
   GestorSVM_SetConfiguration(&config);
 
   GestorDinamica_Init();
   ConfigDinamica configDin;
-  configDin.acel = 1;    // 1 rps / seg ^ 2
+  configDin.acel = 2;    // 1 rps / seg ^ 2
   configDin.descel = 1; // 1 rps / seg ^ 2
   configDin.t_acel = 5;         // 5 segundos
   configDin.t_decel = 5;        // 5 segundos
@@ -205,16 +224,19 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_DMA_Init();
   MX_TIM3_Init();
   MX_USART1_UART_Init();
   MX_TIM2_Init();
+  MX_SPI2_Init();
   /* USER CODE BEGIN 2 */
 
   GestorEstados_Init();
   SoftTimer_Inicio();
+  SPI_Init(&hspi2);
 
 
-
+  /*
   // Aca tenemos que iniciar los timers
   // Pero no lo hacemos, sino que esperamos a los botones de inicio
 
@@ -226,15 +248,20 @@ int main(void)
   
   //HAL_NVIC_SetPriority(TIM2_IRQn, 2, 0); // Menor prioridad que TIM3
   //HAL_TIM_IC_Start_IT(&htim2, TIM_CHANNEL_1);
+  */
 
 
-
-
+  // ESTO ES PARA PROBAR ACTIVAR UN BOTON -----   NO SE USA
   // Aca voy a iniciar un timmer que va a simular el toque de un boton
+  //SoftTimer_Set(TIMER_10, UNICO_DISPARO, 3000, CallActionStart);
 
-  SoftTimer_Set(TIMER_10, UNICO_DISPARO, 3000, CallActionStart);
 
+  // Informamos al gestor de estados que finalizo la inicializacion
+  // Esta debe ser la ultima llama de funcion del init
+  GestorEstados_Action(ACTION_INIT_DONE, 0);
 
+  printf("Config done\n");
+  
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -245,15 +272,18 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 
-    GestorEstados_Run();
+    //GestorEstados_Run();
     SoftTimer_Loop();
+
+    /*
+    //SPI_Loop();
 	  //printf("Holamundo\n");
     //HAL_GPIO_WritePin(GPIOA, GPIO_PIN_7, GPIO_PIN_SET);
     //HAL_Delay(2000);
     //printf("AngSwitch: %d \n", GetData());
     //HAL_GPIO_WritePin(GPIOA, GPIO_PIN_7, GPIO_PIN_RESET);
     //HAL_Delay(500);
-
+    */
   }
   /* USER CODE END 3 */
 }
@@ -295,6 +325,43 @@ void SystemClock_Config(void)
   {
     Error_Handler();
   }
+}
+
+/**
+  * @brief SPI2 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_SPI2_Init(void)
+{
+
+  /* USER CODE BEGIN SPI2_Init 0 */
+
+  /* USER CODE END SPI2_Init 0 */
+
+  /* USER CODE BEGIN SPI2_Init 1 */
+
+  /* USER CODE END SPI2_Init 1 */
+  /* SPI2 parameter configuration*/
+  hspi2.Instance = SPI2;
+  hspi2.Init.Mode = SPI_MODE_SLAVE;
+  hspi2.Init.Direction = SPI_DIRECTION_2LINES;
+  hspi2.Init.DataSize = SPI_DATASIZE_8BIT;
+  hspi2.Init.CLKPolarity = SPI_POLARITY_LOW;
+  hspi2.Init.CLKPhase = SPI_PHASE_1EDGE;
+  hspi2.Init.NSS = SPI_NSS_HARD_INPUT;
+  hspi2.Init.FirstBit = SPI_FIRSTBIT_MSB;
+  hspi2.Init.TIMode = SPI_TIMODE_DISABLE;
+  hspi2.Init.CRCCalculation = SPI_CRCCALCULATION_DISABLE;
+  hspi2.Init.CRCPolynomial = 10;
+  if (HAL_SPI_Init(&hspi2) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN SPI2_Init 2 */
+
+  /* USER CODE END SPI2_Init 2 */
+
 }
 
 /**
@@ -420,7 +487,7 @@ static void MX_TIM3_Init(void)
     Error_Handler();
   }
   __HAL_TIM_ENABLE_OCxPRELOAD(&htim3, TIM_CHANNEL_3);
-  sConfigOC.Pulse = 200;
+  sConfigOC.Pulse = 256;
   if (HAL_TIM_OC_ConfigChannel(&htim3, &sConfigOC, TIM_CHANNEL_4) != HAL_OK)
   {
     Error_Handler();
@@ -466,6 +533,25 @@ static void MX_USART1_UART_Init(void)
 }
 
 /**
+  * Enable DMA controller clock
+  */
+static void MX_DMA_Init(void)
+{
+
+  /* DMA controller clock enable */
+  __HAL_RCC_DMA1_CLK_ENABLE();
+
+  /* DMA interrupt init */
+  /* DMA1_Channel4_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA1_Channel4_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(DMA1_Channel4_IRQn);
+  /* DMA1_Channel5_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA1_Channel5_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(DMA1_Channel5_IRQn);
+
+}
+
+/**
   * @brief GPIO Initialization Function
   * @param None
   * @retval None
@@ -480,20 +566,30 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_2|GPIO_PIN_3|GPIO_PIN_4|GPIO_PIN_5
-                          |GPIO_PIN_6|GPIO_PIN_7|GPIO_PIN_8|GPIO_PIN_9
-                          |GPIO_PIN_10|GPIO_PIN_15, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_3|GPIO_PIN_4
+                          |GPIO_PIN_5|GPIO_PIN_6|GPIO_PIN_7|GPIO_PIN_8
+                          |GPIO_PIN_9|GPIO_PIN_10|GPIO_PIN_15, GPIO_PIN_RESET);
 
-  /*Configure GPIO pins : PA2 PA3 PA4 PA5
-                           PA6 PA7 PA8 PA9
-                           PA10 PA15 */
-  GPIO_InitStruct.Pin = GPIO_PIN_2|GPIO_PIN_3|GPIO_PIN_4|GPIO_PIN_5
-                          |GPIO_PIN_6|GPIO_PIN_7|GPIO_PIN_8|GPIO_PIN_9
-                          |GPIO_PIN_10|GPIO_PIN_15;
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0|GPIO_PIN_1, GPIO_PIN_RESET);
+
+  /*Configure GPIO pins : PA1 PA2 PA3 PA4
+                           PA5 PA6 PA7 PA8
+                           PA9 PA10 PA15 */
+  GPIO_InitStruct.Pin = GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_3|GPIO_PIN_4
+                          |GPIO_PIN_5|GPIO_PIN_6|GPIO_PIN_7|GPIO_PIN_8
+                          |GPIO_PIN_9|GPIO_PIN_10|GPIO_PIN_15;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : PB0 PB1 */
+  GPIO_InitStruct.Pin = GPIO_PIN_0|GPIO_PIN_1;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
 }
 
@@ -576,7 +672,7 @@ void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim) {
 
 	if (htim == &htim3) {
         // handle TIM1 interrupts
-    	uint32_t counter_value = TIM3->CNT;
+    	//uint32_t counter_value = TIM3->CNT;
     }
 }
 

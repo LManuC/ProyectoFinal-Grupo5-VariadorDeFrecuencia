@@ -1,5 +1,5 @@
 /*
- * GestorSVM.h
+ *  GestorSVM.h
  *
  *  Created on: Apr 4, 2025
  *      Author: Elian
@@ -29,12 +29,22 @@ typedef struct ValoresSwitching {
 
 
 typedef struct ConfiguracionSVM {
+    
+    // Configuracion basica
+    int frecOutMin;
+    int frecOutMax;
     int frec_switch;        // Frecuencia de switcheo
-    float frec_output;        // Frecuencia de salida
+    int frecOutputTaget;        // Frecuencia de salida
     int direccionRotacion;  // 1 = sentido horario, -1 = antihorario
     int resolucionTimer;    // Resolucion del timer (255 para 8 bits)
-    char puerto_senal_pierna[3];     // Este tiene los valores de los puertos
-    char puerto_encen_pierna[3];
+
+    // Configuracion dinamica en Hz/seg
+    int acel;
+    int desacel;
+
+    // Configuracion de puertos
+    char puerto_senal_pierna[3];    // Puertos In de los IR2104
+    char puerto_encen_pierna[3];    // Puertos Shutdown de los IR2104
     char orden_pierna[6][3];     // Este tiene el orden con que se encienden los pines
 
 } ConfiguracionSVM;
@@ -77,11 +87,33 @@ extern GestorSVM gestorSVM; // Instancia del gestor de SVM
 
 void GestorSVM_Init();
 void GestorSVM_SetConfiguration(ConfiguracionSVM* configuracion);
-void GestorSVM_CalcularValoresSwitching(ValoresSwitching* valor);
+void GestorSVM_CalcularValoresSwitching(/*ValoresSwitching* valor*/);
 void GestorSVM_SwitchPuertos(OrdenSwitch orden, char estado);
 
 
-// Esta funcion solo es llamada por el timmer asociado
+// Las siguientes funciones devuelven 0 si todo salio bien y 1 si no se ejecuto
+
+// El motor se arranca con la funcion start, este acelera hasta la frec
+// que tiene cargada.
+int GestorSVM_MotorStart();
+// Si el motor esta girando lo recomendado es frenarlo con esta funcion.
+// No usar setFrecOut(0)
+int GestorSVM_MotorStop();
+// Ante el caso de emergencia se desactiva el inversor y se apagan las
+// interruciones, para volver a encender se debe usar motorStart
+int GestorSVM_Estop();
+// Seteo de una frecuencia objetivo, si el motor esta girando
+// va a reaccionar con una aceleracion o desaceleracion dependiendo
+// de la frecuencia actual.
+int GestorSVM_SetFrecOut(int frec);
+// Cambio de sentido de giro, esta solo se puede dar si el motor esta frenado
+int GestorSVM_SetDir(int dir);
+// Cambio de la aceleracion
+int GestorSVM_SetAcel(int acel);
+// Cambio de la desaceleracion
+int GestorSVM_SetDecel(int decel);
+
+// Funcion llamada a la frecSwitch por el timmer asociado
 void GestorSVM_Interrupt();
 
 #endif /* GESTOR_SVM_GESTORSVM_H_ */
