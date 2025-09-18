@@ -25,6 +25,10 @@
     "format": "c",
     "inttypes.h": "c",
     "esp_mac.h": "c",
-    "mcp23017.h": "c"
+    "mcp23017.h": "c",
+    "cstdlib": "c",
+    "io_control.h": "c",
+    "bitset": "c",
+    "queue.h": "c"
   }
 }

@@ -5,7 +5,7 @@
 #include <inttypes.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include "C:/Users/User/esp/v5.5/esp-idf/components/driver/i2c/include/driver/i2c.h"
+#include <stdbool.h>
 
 #define I2C_MASTER_TIMEOUT_MS   100
 #define I2C_MASTER_NUM          1
@@ -39,36 +39,42 @@
 #define __MCP23017_GPPU_PULL_UP_ENABLE__        1
 #define __MCP23017_GPPU_PULL_UP_DISABLE__       0
 
-#define __MCP23017_IODIR_INPUT__        1
-#define __MCP23017_IODIR_OUTPUT__       0
+#define __MCP23017_IODIR_INPUT__                1
+#define __MCP23017_IODIR_OUTPUT__               0
 
-#define __MCP23017_GPINTEN_ENABLE__        1
-#define __MCP23017_GPINTEN_DISABLE__       0
+#define __MCP23017_GPINTEN_ENABLE__             1
+#define __MCP23017_GPINTEN_DISABLE__            0
+
+#define __MCP23017_INTCON_DEFVAL__              1
+#define __MCP23017_INTCON_CHANGE__              0
 
 
 
 
-#define __MCP23017_WRITE__                  0
-#define __MCP23017_READ__                   1
+#define __MCP23017_WRITE__                      0
+#define __MCP23017_READ__                       1
 
-#define __MCP23017_IO_OUTPUT__              0
-#define __MCP23017_IO_INPUT__               1
+#define __MCP23017_IO_OUTPUT__                  0
+#define __MCP23017_IO_INPUT__                   1
 
-#define __MCP23017_POSITIVE_LOGIC__         0
-#define __MCP23017_OPPOSITE_LOGIC__         1
+#define __MCP23017_POSITIVE_LOGIC__             0
+#define __MCP23017_OPPOSITE_LOGIC__             1
 
-#define __MCP23017_INTERRUPT_ENABLE__       0
-#define __MCP23017_INTERRUPT_DISABLE__      1
+#define __MCP23017_INTERRUPT_ENABLE__           0
+#define __MCP23017_INTERRUPT_DISABLE__          1
 
-#define __MCP23017_INT_CHANGE__             0
-#define __MCP23017_INT_DEFAULT_COMP__       1
+#define __MCP23017_INT_CHANGE__                 0
+#define __MCP23017_INT_DEFAULT_COMP__           1
+
+#define __MCP23017_PORT_A__                     0
+#define __MCP23017_PORT_B__                     1
 
 #define __MCP23017_ADDRESS__                0b010   // CONFIGURADO POR HARDWARE ----> OPCODE: 0100AAA0 -> 01000000 | __MCP23017_ADDRESS__ << 1 | R/W
 
 
 #define __MCP23017_READ_OPPCODE__           0b0100 << 4 | __MCP23017_ADDRESS__ << 1 | __MCP23017_READ__
 #define __MCP23017_WRITE_OPPCODE__          0b0100 << 4 | __MCP23017_ADDRESS__ << 1 | __MCP23017_WRITE__
-#define __MCP23017_FUNC_MODE__              __MCP23017_BYTE_MODE__
+#define __MCP23017_FUNC_MODE__              __MCP23017_SEQUENTIAL_MODE__
 
 
 
@@ -275,8 +281,15 @@ typedef union {
     } bits;
 } MCP23017_INTCAP_t;
 
-esp_err_t register_read(uint8_t register_address, uint8_t *data);
-esp_err_t register_write(uint8_t register_address, uint8_t data);
+enum mcp_port_e {
+    PORTA = __MCP23017_PORT_A__,
+    PORTB = __MCP23017_PORT_B__
+};
+
 esp_err_t MCP23017_INIT( void );
+esp_err_t mcp_get_on_interrupt_input(enum mcp_port_e port, uint8_t *data);
+esp_err_t mcp_interrupt_flag(enum mcp_port_e port, uint8_t *data);
+esp_err_t mcp_write_output_pin(enum mcp_port_e port, uint8_t pin, bool state);
+esp_err_t mcp_read_port(enum mcp_port_e port, uint8_t *data);
 
 #endif

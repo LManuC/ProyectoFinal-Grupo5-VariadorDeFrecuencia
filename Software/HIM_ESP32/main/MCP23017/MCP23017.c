@@ -18,16 +18,31 @@ La secuencia de escritura se define de la siguiente amnera:
 
 #include "MCP23017.h"
 #include "esp_log.h"
+#include "C:/Users/User/esp/v5.5/esp-idf/components/driver/i2c/include/driver/i2c.h"
+
+static esp_err_t mcp_register_read(uint8_t register_address, uint8_t *data);
+static esp_err_t mcp_register_write(uint8_t register_address, uint8_t data);
 
 static const char *TAG = "MCP23017";
 
+/**
+ * @fn esp_err_t MCP23017_INIT( void )
+ * 
+ * @brief Inicializa el MCP23017 escribiendo en los diferentes registros
+ * 
+ * @details La función está explícitamente pensada para el PCB del variador de frecuencia. Setea pull-ups en los pines de entrada de la matriz de pulsadores y en las entradas aisladas a través de los optoacopladores, configura las salidas, interrupciones y los valores lógicos que disparan la interrupción.
+ *
+ * @return esp_err_t 
+ */
 esp_err_t MCP23017_INIT( void ) {
     esp_err_t ret = ESP_OK;
     ESP_LOGI(TAG, "Iniciando modulo");
     MCP23017_IOCON_t iocon;
-    MCP23017_GPPU_t gppua;
+    MCP23017_GPPU_t gppua, gppub;
     MCP23017_IODIR_t iodira, iodirb;
     MCP23017_GPINTEN_t gpintena, gpintenb;
+    MCP23017_DEFVAL_t defvala, defvalb;
+    MCP23017_INTCON_t intcona, intconb;
 
     iocon.bits.INTPOL = __MCP23017_INTPOL_POLARITY_HIGH__;          // Los pines de interrupción se ponen en 1 cuando hay una interrupción
     iocon.bits.ODR = __MCP23017_ODR_ACTIVE_DRIVER_OUTPUT__;         // Los pines de interrupción configuran como salidas activas
@@ -40,6 +55,11 @@ esp_err_t MCP23017_INIT( void ) {
     gppua.bits.PU3 = __MCP23017_GPPU_PULL_UP_ENABLE__;
     gppua.bits.PU4 = __MCP23017_GPPU_PULL_UP_ENABLE__;
     gppua.bits.PU5 = __MCP23017_GPPU_PULL_UP_ENABLE__;
+
+    gppub.bits.PU2 = __MCP23017_GPPU_PULL_UP_ENABLE__;
+    gppub.bits.PU3 = __MCP23017_GPPU_PULL_UP_ENABLE__;
+    gppub.bits.PU4 = __MCP23017_GPPU_PULL_UP_ENABLE__;
+    gppub.bits.PU5 = __MCP23017_GPPU_PULL_UP_ENABLE__;
 
     iodira.bits.IO0 = __MCP23017_IODIR_OUTPUT__;
     iodira.bits.IO1 = __MCP23017_IODIR_OUTPUT__;
@@ -70,17 +90,101 @@ esp_err_t MCP23017_INIT( void ) {
     gpintenb.bits.GPINT4 = __MCP23017_GPINTEN_ENABLE__;
     gpintenb.bits.GPINT5 = __MCP23017_GPINTEN_ENABLE__;
 
-    ret = register_write( (uint8_t) MCP23017_IOCON_REGISTER, iocon.all);
-    ret = register_write( (uint8_t) MCP23017_GPPUA_REGISTER, gppua.all);
-    ret = register_write( (uint8_t) MCP23017_IODIRA_REGISTER, iodira.all);
-    ret = register_write( (uint8_t) MCP23017_IODIRB_REGISTER, iodirb.all);
-    ret = register_write( (uint8_t) MCP23017_GPINTENA_REGISTER, gpintena.all);
-    ret = register_write( (uint8_t) MCP23017_GPINTENB_REGISTER, gpintenb.all);
+    defvala.bits.DEF2 = 1;
+    defvala.bits.DEF3 = 1;
+    defvala.bits.DEF4 = 1;
+    defvala.bits.DEF5 = 1;
+    defvala.bits.DEF6 = 0;
+
+    defvalb.bits.DEF2 = 1;
+    defvalb.bits.DEF3 = 1;
+    defvalb.bits.DEF4 = 1;
+    defvalb.bits.DEF5 = 1;
+
+    intcona.bits.IOC2 = __MCP23017_INTCON_DEFVAL__;
+    intcona.bits.IOC3 = __MCP23017_INTCON_DEFVAL__;
+    intcona.bits.IOC4 = __MCP23017_INTCON_DEFVAL__;
+    intcona.bits.IOC5 = __MCP23017_INTCON_DEFVAL__;
+    intcona.bits.IOC6 = __MCP23017_INTCON_DEFVAL__;
+
+    intconb.bits.IOC2 = __MCP23017_INTCON_DEFVAL__;
+    intconb.bits.IOC3 = __MCP23017_INTCON_DEFVAL__;
+    intconb.bits.IOC4 = __MCP23017_INTCON_DEFVAL__;
+    intconb.bits.IOC5 = __MCP23017_INTCON_DEFVAL__;
+
+    ret = mcp_register_write( (uint8_t) MCP23017_IOCON_REGISTER     , iocon.all     );  //
+    ret = mcp_register_write( (uint8_t) MCP23017_IODIRA_REGISTER    , iodira.all    );  //
+    ret = mcp_register_write( (uint8_t) MCP23017_IODIRB_REGISTER    , iodirb.all    );  //
+    // ret = mcp_register_write( (uint8_t) MCP23017_IPOLB_REGISTER     , iodira.all );  // Mantienen reset val
+    ret = mcp_register_write( (uint8_t) MCP23017_GPINTENA_REGISTER  , gpintena.all  );  //
+    ret = mcp_register_write( (uint8_t) MCP23017_GPINTENB_REGISTER  , gpintenb.all  );  //
+    ret = mcp_register_write( (uint8_t) MCP23017_DEFVALA_REGISTER   , defvala.all   );  //
+    ret = mcp_register_write( (uint8_t) MCP23017_DEFVALB_REGISTER   , defvalb.all   );  //
+    ret = mcp_register_write( (uint8_t) MCP23017_INTCONA_REGISTER   , intcona.all   );  //
+    ret = mcp_register_write( (uint8_t) MCP23017_INTCONB_REGISTER   , intconb.all   );  //
+    ret = mcp_register_write( (uint8_t) MCP23017_GPPUA_REGISTER     , gppua.all     );  //
+    ret = mcp_register_write( (uint8_t) MCP23017_GPPUB_REGISTER     , gppub.all     );  //
+    // ret = mcp_register_write( (uint8_t) MCP23017_INTFA_REGISTER     , iodira.all    );   // Read only
+    // ret = mcp_register_write( (uint8_t) MCP23017_INTFB_REGISTER     , iodirb.all    );   // Read only
+    // ret = mcp_register_write( (uint8_t) MCP23017_INTCAPA_REGISTER   , gpintena.all  );   // Read only
+    // ret = mcp_register_write( (uint8_t) MCP23017_INTCAPB_REGISTER   , gpintenb.all  );   // Read only
+    // ret = mcp_register_write( (uint8_t) MCP23017_GPIOA_REGISTER     , defvala.all   );   // Operational registers
+    // ret = mcp_register_write( (uint8_t) MCP23017_GPIOB_REGISTER     , defvalb.all   );   // Operational registers
+    // ret = mcp_register_write( (uint8_t) MCP23017_OLATA_REGISTER     , intcona.all   );   // Operational registers
+    // ret = mcp_register_write( (uint8_t) MCP23017_OLATB_REGISTER     , intconb.all   );   // Operational registers
 
     return ret;
 }
 
-esp_err_t register_read(uint8_t register_address, uint8_t *data) {
+esp_err_t mcp_get_on_interrupt_input(enum mcp_port_e port, uint8_t *data) {
+    esp_err_t esp_err;
+    if ( port == __MCP23017_PORT_A__ || port == __MCP23017_PORT_B__ ) {
+        esp_err = mcp_register_read(MCP23017_INTCAPA_REGISTER + port, data);
+    } else {
+        esp_err = ESP_ERR_INVALID_ARG;
+    }
+    return esp_err;
+}
+
+esp_err_t mcp_write_output_pin(enum mcp_port_e port, uint8_t pin, bool state) {
+    esp_err_t esp_err;
+    uint8_t data;
+    if ( port == __MCP23017_PORT_A__ || port == __MCP23017_PORT_B__ ) {
+        if ( !(esp_err = mcp_register_read(MCP23017_GPIOA_REGISTER + port, &data) ) ) {
+            if (state ) {
+                data |= (1 << pin);
+            } else {
+                data &= ~(1 << pin);
+            }
+            esp_err = mcp_register_write(MCP23017_OLATA_REGISTER + port, data);
+        }
+    } else {
+        esp_err = ESP_ERR_INVALID_ARG;
+    }
+    return esp_err;
+}
+
+esp_err_t mcp_read_port(enum mcp_port_e port, uint8_t *data) {
+    esp_err_t esp_err;
+    if ( port == __MCP23017_PORT_A__ || port == __MCP23017_PORT_B__ ) {
+        esp_err = mcp_register_read(MCP23017_GPIOA_REGISTER + port, data);
+    } else {
+        esp_err = ESP_ERR_INVALID_ARG;
+    }
+    return esp_err;
+}
+
+esp_err_t mcp_interrupt_flag(enum mcp_port_e port, uint8_t *data) {
+    esp_err_t esp_err;
+    if ( port == __MCP23017_PORT_A__ || port == __MCP23017_PORT_B__ ) {
+        esp_err = mcp_register_read(MCP23017_INTFA_REGISTER + port, data);
+    } else {
+        esp_err = ESP_ERR_INVALID_ARG;
+    }
+    return esp_err;
+}
+
+static esp_err_t mcp_register_read(uint8_t register_address, uint8_t *data) {
     esp_err_t ret = ESP_OK;
     i2c_cmd_handle_t cmd = i2c_cmd_link_create();
     i2c_master_start(cmd);
@@ -95,7 +199,7 @@ esp_err_t register_read(uint8_t register_address, uint8_t *data) {
     return ret;
 }
 
-esp_err_t register_write(uint8_t register_address, uint8_t data) {
+static esp_err_t mcp_register_write(uint8_t register_address, uint8_t data) {
     esp_err_t ret = ESP_OK;
     i2c_cmd_handle_t cmd = i2c_cmd_link_create();
     i2c_master_start(cmd);
