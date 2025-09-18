@@ -1,7 +1,7 @@
 {
     "version":            "1.2",
     "project_name":       "HIM_ESP32",
-    "project_version":    "80e24fb",
+    "project_version":    "e6b561d-dirty",
     "project_path":       "C:/Users/User/Desktop/ProyectoFinal-Grupo5-VariadorDeFrecuencia/Software/HIM_ESP32",
     "idf_path":           "C:/Users/User/esp/v5.5/esp-idf",
     "build_dir":          "C:/Users/User/Desktop/ProyectoFinal-Grupo5-VariadorDeFrecuencia/Software/HIM_ESP32/build",
@@ -370,8 +370,8 @@
             "managed_reqs": [],
             "managed_priv_reqs": [],
             "file": "C:/Users/User/Desktop/ProyectoFinal-Grupo5-VariadorDeFrecuencia/Software/HIM_ESP32/build/esp-idf/main/libmain.a",
-            "sources": [ "C:/Users/User/Desktop/ProyectoFinal-Grupo5-VariadorDeFrecuencia/Software/HIM_ESP32/main/real_time_stats_example_main.c" ],
-            "include_dirs": [ "." ]
+            "sources": [ "C:/Users/User/Desktop/ProyectoFinal-Grupo5-VariadorDeFrecuencia/Software/HIM_ESP32/main/real_time_stats_example_main.c", "C:/Users/User/Desktop/ProyectoFinal-Grupo5-VariadorDeFrecuencia/Software/HIM_ESP32/main/MCP23017/MCP23017.c" ],
+            "include_dirs": [ ".", "MCP23017" ]
         },
         "mbedtls": {
             "alias": "idf::mbedtls",
@@ -1786,7 +1786,7 @@
             "priv_reqs": [],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "include_dirs": [ "." ]
+            "include_dirs": [ ".", "MCP23017" ]
         }
     },
     "debug_prefix_map_gdbinit": "",

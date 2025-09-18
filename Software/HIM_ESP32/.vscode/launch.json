@@ -10,6 +10,25 @@
       "type": "espidf",
       "name": "Launch",
       "request": "launch"
+    },
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "launch",
+      "args": [],
+      "stopAtEntry": false,
+      "externalConsole": true,
+      "cwd": "c:/Users/User/Desktop/ProyectoFinal-Grupo5-VariadorDeFrecuencia/Software/HIM_ESP32",
+      "program": "c:/Users/User/Desktop/ProyectoFinal-Grupo5-VariadorDeFrecuencia/Software/HIM_ESP32/build/Debug/outDebug",
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
     }
   ]
 }
