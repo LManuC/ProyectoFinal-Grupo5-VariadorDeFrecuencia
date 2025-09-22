@@ -97,11 +97,13 @@ ACTION_RESP_MOVING
                 // Inicio del motor
                 GestorSVM_MotorStart();
 
-                currentState = STATE_RUNNING;
+                currentState = STATE_VEL_CHANGE;
                 return ACTION_RESP_OK; // Retornar 0 si la accion fue exitosa
-            }else if(currentState == STATE_RUNNING) {
+            }else if(currentState == STATE_RUNNING || currentState == STATE_VEL_CHANGE || currentState == STATE_BRAKING) {
                 // Si ya estamos en estado running, no hacemos nada
                 return ACTION_RESP_MOVING; // Retornar 2 si ya estamos moviendo
+            }else if(currentState == STATE_EMERGENCY) {
+                return ACTION_RESP_EMERGENCY_ACTIVE;
             }
             return ACTION_RESP_ERR;
         case ACTION_STOP:
@@ -129,9 +131,19 @@ ACTION_RESP_MOVING
             }
 
             return ACTION_RESP_ERR;   // Retornar 1 si la accion no se ejecuto
+        case ACTION_MOTOR_STOPPED:
+            if(currentState == STATE_BRAKING) {
+                currentState = STATE_IDLE;
+                return ACTION_RESP_OK;
+            }
+            return ACTION_RESP_ERR;
         case ACTION_EMERGENCY:
             // Implementar la logica para manejar una emergencia
             if(currentState != STATE_EMERGENCY) {
+                // Si el motor esta girando se manda la interrupcion
+                if(currentState == STATE_RUNNING || currentState == STATE_BRAKING || currentState == STATE_VEL_CHANGE) {
+                    GestorSVM_Estop();
+                }
                 currentState = STATE_EMERGENCY;
                 return ACTION_RESP_OK;   // Retornar 1 si la accion no se ejecuto
             }
@@ -146,22 +158,76 @@ ACTION_RESP_MOVING
 
         case ACTION_SET_FREC:
             // Implementar la logica para cambiar la velocidad
-            retVal = GestorSVM_SetFrecOut(value);
-            if(retVal == 0) {return ACTION_RESP_OK;} 
-            else {return ACTION_RESP_ERR;}
+            if(currentState == STATE_IDLE || currentState == STATE_RUNNING) {
+                retVal = GestorSVM_SetFrec(value);
+                if(retVal == 0) {
+                    return ACTION_RESP_OK;
+                } else if(retVal == 1) {
+                    currentState = STATE_VEL_CHANGE;
+                    return ACTION_RESP_OK;
+                } else if(retVal == -1) {
+                    // Velocidad fuera de rango
+                    return ACTION_RESP_OUT_RANGE;
+                }else if(retVal == -2) {
+                    // La velocidad es la misma que ya tiene cargada
+                    return ACTION_RESP_OK;
+                }
+            } else if(currentState == STATE_VEL_CHANGE || currentState == STATE_BRAKING) {
+                return ACTION_RESP_MOVING;
+            }
+            
+            return ACTION_RESP_ERR;
 
         case ACTION_SET_ACEL:
             // Implementar la logica para cambiar la aceleracion
-            retVal = GestorSVM_SetAcel(value);
-            if(retVal == 0) {return ACTION_RESP_OK;} 
-            else {return ACTION_RESP_ERR;}           
+            if(currentState == STATE_IDLE || currentState == STATE_RUNNING) {
+                retVal = GestorSVM_SetAcel(value);
+                if(retVal == 0) {return ACTION_RESP_OK;} 
+                else if(retVal == -1) {return ACTION_RESP_OUT_RANGE;}
+                else if(retVal == -2) {return ACTION_RESP_ERR;}
+            }
+            
+            return ACTION_RESP_ERR;
+
+        case ACTION_SET_DESACEL:
+            if(currentState == STATE_IDLE || currentState == STATE_RUNNING) {
+                retVal = GestorSVM_SetDecel(value);
+                if(retVal == 0) {return ACTION_RESP_OK;} 
+                else if(retVal == -1) {return ACTION_RESP_OUT_RANGE;}
+                else if(retVal == -2) {return ACTION_RESP_ERR;}
+            }
+
+            return ACTION_RESP_ERR;
             
         case ACTION_SET_DIR:
-            // Implementar la logica para cambiar la direccion
-            retVal = GestorSVM_SetDir(value);
-            if(retVal == 0) {return ACTION_RESP_OK;} 
-            else {return ACTION_RESP_ERR;}
+            // Logica para cambiar la direccion
+            if(currentState == STATE_IDLE) {
+                retVal = GestorSVM_SetDir(value);
+                if(retVal == 0) {return ACTION_RESP_OK;} 
+                else if(retVal == -1) {return ACTION_RESP_OUT_RANGE;}
+                else if(retVal == -2) {return ACTION_RESP_MOVING;}
+                else {return ACTION_RESP_ERR;}
+            }
+            return ACTION_RESP_MOVING;
 
+        case ACTION_GET_FREC:
+            return GestorSVM_GetFrec();
+            
+        case ACTION_GET_ACEL:
+            return GestorSVM_GetAcel();
+            
+        case ACTION_GET_DESACEL:
+            return GestorSVM_GetDesacel();
+            
+        case ACTION_GET_DIR:
+            return GestorSVM_GetDir();
+
+        case ACTION_IS_MOTOR_STOP:
+            if(currentState == STATE_IDLE || currentState == STATE_EMERGENCY) {
+                return 1;
+            }else {
+                return 0;
+            }
         default:
             return -1; // Retornar -1 si no se reconoce la accion
     }

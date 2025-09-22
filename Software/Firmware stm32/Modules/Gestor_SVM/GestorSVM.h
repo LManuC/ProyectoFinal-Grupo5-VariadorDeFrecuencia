@@ -34,13 +34,18 @@ typedef struct ConfiguracionSVM {
     int frecOutMin;
     int frecOutMax;
     int frec_switch;        // Frecuencia de switcheo
-    int frecOutputTaget;        // Frecuencia de salida
+    int frecReferencia;     // Frecuencia de referencia
     int direccionRotacion;  // 1 = sentido horario, -1 = antihorario
     int resolucionTimer;    // Resolucion del timer (255 para 8 bits)
 
     // Configuracion dinamica en Hz/seg
     int acel;
     int desacel;
+    // Rango
+    int acelMax;
+    int acelMin;
+    int desacelMax;
+    int desacelMin;
 
     // Configuracion de puertos
     char puerto_senal_pierna[3];    // Puertos In de los IR2104
@@ -50,10 +55,22 @@ typedef struct ConfiguracionSVM {
 } ConfiguracionSVM;
 
 typedef enum {
-    ORDEN_SWITCH_1 = 0,
-    ORDEN_SWITCH_2,
-    ORDEN_SWITCH_3
+    ORDEN_SWITCH_1_UP = 0,
+    ORDEN_SWITCH_2_UP = 1,
+    ORDEN_SWITCH_3_UP = 2,
+    ORDEN_SWITCH_3_DOWN = 3,
+    ORDEN_SWITCH_2_DOWN = 4,
+    ORDEN_SWITCH_1_DOWN = 5,
 }OrdenSwitch ;
+
+
+typedef enum {
+    SWITCH_INT_CH1 = 0,
+    SWITCH_INT_CH2,
+    SWITCH_INT_CH3,
+    SWITCH_INT_RESET,
+    SWITCH_INT_CLEAN,
+} SwitchInterruptType;
 
 #ifdef __cplusplus
 
@@ -88,7 +105,7 @@ extern GestorSVM gestorSVM; // Instancia del gestor de SVM
 void GestorSVM_Init();
 void GestorSVM_SetConfiguration(ConfiguracionSVM* configuracion);
 void GestorSVM_CalcularValoresSwitching(/*ValoresSwitching* valor*/);
-void GestorSVM_SwitchPuertos(OrdenSwitch orden, char estado);
+void GestorSVM_SwitchPuertos(OrdenSwitch orden, char estado, int numCuadrante);
 
 
 // Las siguientes funciones devuelven 0 si todo salio bien y 1 si no se ejecuto
@@ -105,15 +122,37 @@ int GestorSVM_Estop();
 // Seteo de una frecuencia objetivo, si el motor esta girando
 // va a reaccionar con una aceleracion o desaceleracion dependiendo
 // de la frecuencia actual.
-int GestorSVM_SetFrecOut(int frec);
+// Devuelve 0 si se modifica exitosamente la configuracion pero el motor 
+// no esta girando
+// Devuelve 1 si se modifica la config y el motor esta en movimiento
+// Devuelve -1 si falla la config por fuera de rango
+// Devuelve -2 si falla la config por ser la misma velocidad a la seteada
+int GestorSVM_SetFrec(int frec);
 // Cambio de sentido de giro, esta solo se puede dar si el motor esta frenado
+// Devuelve 0 si se modifica la configuracion
+// Devuelve -1 si esta fuera del rango
+// Devuelve -2 si no se modifica
 int GestorSVM_SetDir(int dir);
 // Cambio de la aceleracion
+// Devuelve 0 si se modifica exitosamente
+// Devuelve -1 si falla por fuera de rango
+// Devuelve -2 si falla ya que esta cambiando de velocidad
 int GestorSVM_SetAcel(int acel);
 // Cambio de la desaceleracion
+// Devuelve 0 si se modifica exitosamente
+// Devuelve -1 si falla por fuera de rango
+// Devuelve -2 si falla ya que esta cambiando de velocidad
 int GestorSVM_SetDecel(int decel);
 
-// Funcion llamada a la frecSwitch por el timmer asociado
-void GestorSVM_Interrupt();
+// Devuelve la velocidad actual del motor
+int GestorSVM_GetFrec();
+int GestorSVM_GetAcel();
+int GestorSVM_GetDesacel();
+int GestorSVM_GetDir();
+
+// Funcion llamada a la frecSwitch por el timmer asociado al switcheo
+void GestorSVM_SwitchInterrupt(SwitchInterruptType intType);
+// Funcion llamada a la frecCalculo por el timmer asociado al calculo
+void GestorSVM_CalcInterrupt();
 
 #endif /* GESTOR_SVM_GESTORSVM_H_ */

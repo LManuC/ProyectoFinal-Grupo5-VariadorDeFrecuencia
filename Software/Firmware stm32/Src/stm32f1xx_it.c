@@ -25,8 +25,6 @@
 
 #include "../Modules/Gestor_SVM/GestorSVM.h"
 
-#include "../Modules/Gestor_DinamicaMotor/GestorDinamica.h"
-#include "../Modules/Gestor_DinamicaMotor/GestorDinamica.h"
 
 
 /* USER CODE END Includes */
@@ -248,7 +246,7 @@ void DMA1_Channel5_IRQHandler(void)
 void TIM2_IRQHandler(void)
 {
   /* USER CODE BEGIN TIM2_IRQn 0 */
-  GestorDinamica_Interrupt();
+  GestorSVM_CalcInterrupt();
   /* USER CODE END TIM2_IRQn 0 */
   HAL_TIM_IRQHandler(&htim2);
   /* USER CODE BEGIN TIM2_IRQn 1 */
@@ -270,9 +268,48 @@ void TIM3_IRQHandler(void)
 
   //-----------              NOTASS     ----------------------------------------
 
+/*
+  
+  // Canal 1
+	if (__HAL_TIM_GET_FLAG(&htim3, TIM_FLAG_CC1) != RESET) {
+		if (__HAL_TIM_GET_IT_SOURCE(&htim3, TIM_IT_CC1) !=RESET) {
+			__HAL_TIM_CLEAR_IT(&htim3, TIM_IT_CC1);
+			// Interrupción canal 1
+      GestorSVM_SwitchInterrupt(SWITCH_INT_RESET);
+		}
+	}
 
-  GestorSVM_Interrupt();
+  // Canal 2
+  if (__HAL_TIM_GET_FLAG(&htim3, TIM_FLAG_CC2) != RESET) {
+    if (__HAL_TIM_GET_IT_SOURCE(&htim3, TIM_IT_CC2) !=RESET) {
+      __HAL_TIM_CLEAR_IT(&htim3, TIM_IT_CC2);
+      // Interrupción canal 2
+      GestorSVM_SwitchInterrupt(SWITCH_INT_CH1);
+    }
+  }
 
+  // Canal 3
+  if (__HAL_TIM_GET_FLAG(&htim3, TIM_FLAG_CC3) != RESET) {
+    if (__HAL_TIM_GET_IT_SOURCE(&htim3, TIM_IT_CC3) !=RESET) {
+        __HAL_TIM_CLEAR_IT(&htim3, TIM_IT_CC3);
+        // Interrupción canal 3
+        GestorSVM_SwitchInterrupt(SWITCH_INT_CH2);
+    }
+  }
+
+  // Canal 4
+  if (__HAL_TIM_GET_FLAG(&htim3, TIM_FLAG_CC4) != RESET) {
+    if (__HAL_TIM_GET_IT_SOURCE(&htim3, TIM_IT_CC4) !=RESET) {
+      __HAL_TIM_CLEAR_IT(&htim3, TIM_IT_CC4);
+      // Interrupción canal 4
+      GestorSVM_SwitchInterrupt(SWITCH_INT_CH3);
+    }
+  }
+
+  */
+
+  // Evito el HAL_TIM_IRQHandler(&htim3);
+  //return;
 
   /*
 	// Aca realizamos el calculo 

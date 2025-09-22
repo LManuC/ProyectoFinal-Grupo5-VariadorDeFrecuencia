@@ -18,15 +18,23 @@ typedef enum {
     ACTION_EMERGENCY,
     ACTION_SET_FREC,
     ACTION_SET_ACEL,
+    ACTION_SET_DESACEL,
     ACTION_SET_DIR,
     ACTION_TO_CONST_RUNNING,    // Llego de la aceleracion o desaceleracion a una velocidad constante distinta de cero
+    ACTION_GET_FREC,
+    ACTION_GET_ACEL,
+    ACTION_GET_DESACEL,
+    ACTION_GET_DIR,
+    ACTION_IS_MOTOR_STOP,
 } SystemAction;
 
 typedef enum {
     ACTION_RESP_OK = 0,
     ACTION_RESP_ERR = 1,
     ACTION_RESP_MOVING = 2,
-    ACTION_RESP_NOT_MOVING,
+    ACTION_RESP_NOT_MOVING = 3,
+    ACTION_RESP_OUT_RANGE = 4,
+    ACTION_RESP_EMERGENCY_ACTIVE = 5,
 } SystemActionResponse;
 
 void GestorEstados_Init();

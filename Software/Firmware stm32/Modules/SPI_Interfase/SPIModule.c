@@ -16,35 +16,39 @@
 
 // Definiciones privadas al modulo
 
-// Comandos SPI
-#define CMD_START      0x10
-#define CMD_STOP       0x11
-#define CMD_SET_FREC   0x20
-#define CMD_SET_ACEL   0x21
-#define CMD_SET_DIR    0x22
-#define CMD_GET_FREC   0x30
-#define CMD_GET_ACEL   0x31
-#define CMD_GET_DIR    0x32
-#define CMD_IS_STOP    0x33
-// Commando dummy del master para buscar la respuesta
-#define CMD_DUMMY      0x50          
+// Consultas SPI
+typedef enum {
+    SPI_REQUEST_START       = 10,
+    SPI_REQUEST_STOP        = 11,
+    SPI_REQUEST_SET_FREC    = 12,
+    SPI_REQUEST_SET_ACEL    = 13,
+    SPI_REQUEST_SET_DESACEL = 14,
+    SPI_REQUEST_SET_DIR     = 15,
+    SPI_REQUEST_GET_FREC    = 16,
+    SPI_REQUEST_GET_ACEL    = 17,
+    SPI_REQUEST_GET_DESACEL = 18,
+    SPI_REQUEST_GET_DIR     = 19,
+    SPI_REQUEST_IS_STOP     = 20,
+    SPI_REQUEST_EMERGENCY   = 21,
+} SPI_Request;
 
+// Commando dummy del master para buscar la respuesta
+#define SPI_REQUEST_RESPONSE  0x50   
 
 // Respuestas SPI
-//#define RESP_OK   0xFF
-//#define RESP_ERR  0x00
-//#define RESP_ERR_MOVING 0x10
-
 typedef enum {
-    RESP_OK = 0xFF,
-    RESP_ERR = 0xA0,
-    RESP_ERR_CMD_UNKNOWN = 0xA1,        // Comando desconocido
-    RESP_ERR_NO_COMMAND = 0xA2,         // Llego mensaje pero sin comando
-    RESP_ERR_MOVING = 0xA3,             // Comando Start pero motor ya esta en movimiento
-    RESP_ERR_NOT_MOVING = 0xA4,         // Comando Stop pero motor no esta en movimiento    
-    RESP_ERR_DATA_MISSING = 0x5,       // Comando que requiere datos pero no llegaron
-    RESP_ERR_DATA_INVALID = 0xA6,       // Comando que tiene datos invalidos
-} RespSPI;  
+    SPI_RESPONSE_OK = 0xFF,
+    SPI_RESPONSE_ERR = 0xA0,
+    SPI_RESPONSE_ERR_CMD_UNKNOWN = 0xA1,            // Comando desconocido
+    SPI_RESPONSE_ERR_NO_COMMAND = 0xA2,             // Llego mensaje pero sin comando
+    SPI_RESPONSE_ERR_MOVING = 0xA3,                 // Comando Start pero motor ya esta en movimiento
+    SPI_RESPONSE_ERR_NOT_MOVING = 0xA4,             // Comando Stop pero motor no esta en movimiento    
+    SPI_RESPONSE_ERR_DATA_MISSING = 0xA5,           // Comando que requiere datos pero no llegaron
+    SPI_RESPONSE_ERR_DATA_INVALID = 0xA6,           // Comando que tiene datos invalidos
+    SPI_RESPONSE_ERR_DATA_OUT_RANGE = 0xA7,         // Comando con datos fuera de rango permitido
+    SPI_RESPONSE_ERR_EMERGENCY_ACTIVE = 0xA8,       // Emergencia activa
+    SPI_LAST_VALUE,                                 // Los mensajes deben tener un valor consecutivo uno de otro
+} SPI_Response;
 
 
 
@@ -73,7 +77,7 @@ SPI_HandleTypeDef* hspi;
 
 // Prototipos de funciones privadas al modulo
 
-RespSPI SPI_ProcesarComando(uint8_t* buffer, int index, uint8_t* bufferResponse);
+void SPI_ProcesarComando(uint8_t* buffer, int index, uint8_t* bufferResponse);
 
 
 
@@ -98,7 +102,7 @@ void SPI_Init(void* _hspi) {
     memset(rxDMABuffer, 0, sizeof(rxDMABuffer));
     memset(txDMABuffer, 0, sizeof(txDMABuffer));
 
-    txDMABuffer[0] = RESP_OK;
+    txDMABuffer[0] = SPI_RESPONSE_OK;
     txDMABuffer[1] = ';';
 
     // Inicio de el DMA
@@ -168,7 +172,7 @@ void SPI_Loop(void) {
 // Generalmente vamos a atacar al modulo gestor de estados
 // Ademas aca tenemos que cargar el buffer Tx del DMA 
 // Si tenemos que responder con un valor lo vamos a pasar por bufferResponse
-RespSPI SPI_ProcesarComando(uint8_t* buffer, int cantBytes, uint8_t* bufferResponse) {
+void SPI_ProcesarComando(uint8_t* buffer, int cantBytes, uint8_t* bufferResponse) {
 
     int resp;
     int val;
@@ -177,114 +181,201 @@ RespSPI SPI_ProcesarComando(uint8_t* buffer, int cantBytes, uint8_t* bufferRespo
     bufferResponse[0] = '\0';
 
     switch(buffer[0]) {
-        case CMD_START:
-
-            // Comprobacion que el mensaje tiene 1 byte, solo el comando
-            if(cantBytes != 1) {return RESP_ERR_DATA_MISSING;}
+        case SPI_REQUEST_START:
 
             resp = GestorEstados_Action(ACTION_START, 0);
 
             if(resp == ACTION_RESP_OK) {
-                return RESP_OK;
+                bufferResponse[0] = SPI_RESPONSE_OK;
             }else if(resp == ACTION_RESP_MOVING) {
-                return RESP_ERR_MOVING;
+                bufferResponse[0] = SPI_RESPONSE_ERR_MOVING;
+            }else if(resp == ACTION_RESP_EMERGENCY_ACTIVE) {
+                bufferResponse[0] = SPI_RESPONSE_ERR_EMERGENCY_ACTIVE;            
             }else {
-                return RESP_ERR;
+                bufferResponse[0] = SPI_RESPONSE_ERR;
             }
 
-            break;
-        case CMD_STOP:
+            bufferResponse[1] = ';';
+            return;
 
-            // Comprobacion que el mensaje tiene 1 byte, solo el comando
-            if(cantBytes != 1) {return RESP_ERR_DATA_MISSING;}
+        case SPI_REQUEST_STOP:
 
             resp = GestorEstados_Action(ACTION_STOP, 0);
             
             if(resp == ACTION_RESP_OK) {
-                return RESP_OK;
+                bufferResponse[0] = SPI_RESPONSE_OK;
             }else if(resp == ACTION_RESP_NOT_MOVING) {
-                return RESP_ERR_NOT_MOVING;
+                bufferResponse[0] = SPI_RESPONSE_ERR_NOT_MOVING;
             }else {
-                return RESP_ERR;
+                bufferResponse[0] = SPI_RESPONSE_ERR;
             }
+            
+            bufferResponse[1] = ';';
 
-            break;
-        case CMD_SET_FREC:
+            return;
 
-            // Comprobacion que el mensaje tiene 3 byte, dos de datos
-            if(cantBytes != 3) {return RESP_ERR_DATA_MISSING;}
+        case SPI_REQUEST_EMERGENCY:
 
-            val = (int)buffer[0] + (int)buffer[1];
+            GestorEstados_Action(ACTION_EMERGENCY, 0);
+
+            bufferResponse[0] = SPI_RESPONSE_OK;
+            bufferResponse[1] = ';';
+
+            return;
+
+        case SPI_REQUEST_SET_FREC:
+
+            val = (uint8_t)buffer[1] + (uint8_t)buffer[2];
 
             resp = GestorEstados_Action(ACTION_SET_FREC, val);
             
             if(resp == ACTION_RESP_OK) {
-                return RESP_OK;
+                bufferResponse[0] = SPI_RESPONSE_OK;
+            }else if(resp == ACTION_RESP_OUT_RANGE) {
+                bufferResponse[0] = SPI_RESPONSE_ERR_DATA_OUT_RANGE;
+            }else if(resp == ACTION_RESP_MOVING) {
+                bufferResponse[0] = SPI_RESPONSE_ERR_MOVING;
             }else {
-                return RESP_ERR;
+                bufferResponse[0] = SPI_RESPONSE_ERR;
             }
 
-            break;
-        case CMD_SET_ACEL:
+            bufferResponse[1] = ';';
 
-            // Comprobacion que el mensaje tiene 3 byte, dos de datos
-            if(cantBytes != 3) {return RESP_ERR_DATA_MISSING;}
+            return;
 
-            val = (int)buffer[0] + (int)buffer[1];
-            
-            resp = GestorEstados_Action(ACTION_SET_ACEL, val);
+        case SPI_REQUEST_SET_ACEL:
+          
+            resp = GestorEstados_Action(ACTION_SET_ACEL, (uint8_t)buffer[1]);
 
             if(resp == ACTION_RESP_OK) {
-                return RESP_OK;
+                bufferResponse[0] = SPI_RESPONSE_OK;
+            }else if(resp == ACTION_RESP_OUT_RANGE) {
+                bufferResponse[0] = SPI_RESPONSE_ERR_DATA_OUT_RANGE;
+            }else if(resp == ACTION_RESP_MOVING) {
+                bufferResponse[0] = SPI_RESPONSE_ERR_MOVING;
             }else {
-                return RESP_ERR;
+                bufferResponse[0] = SPI_RESPONSE_ERR;
             }
+
+            bufferResponse[1] = ';';
+
+            return;
+
+        case SPI_REQUEST_SET_DESACEL:
             
-            break;
-        case CMD_SET_DIR:
+            resp = GestorEstados_Action(ACTION_SET_DESACEL, (uint8_t)buffer[1]);
 
-            // Comprobacion que el mensaje tiene 2 byte, uno de datos
-            if(cantBytes != 2) {return RESP_ERR_DATA_MISSING;}
+            if(resp == ACTION_RESP_OK) {
+                bufferResponse[0] = SPI_RESPONSE_OK;
+            }else if(resp == ACTION_RESP_OUT_RANGE) {
+                bufferResponse[0] = SPI_RESPONSE_ERR_DATA_OUT_RANGE;
+            }else if(resp == ACTION_RESP_MOVING) {
+                bufferResponse[0] = SPI_RESPONSE_ERR_MOVING;
+            }else {
+                bufferResponse[0] = SPI_RESPONSE_ERR;
+            }
 
-            val = (int)buffer[0];
+            bufferResponse[1] = ';';
 
-            if(val != 1 && val != 0) {return RESP_ERR_DATA_INVALID;}
+            return;
+
+        case SPI_REQUEST_SET_DIR:
+
+            val = (uint8_t)buffer[1];
         
             resp = GestorEstados_Action(ACTION_SET_DIR, val);
 
             if(resp == ACTION_RESP_OK) {
-                return RESP_OK;
+                bufferResponse[0] = SPI_RESPONSE_OK;
+            }else if(resp == ACTION_RESP_OUT_RANGE) {
+                bufferResponse[0] = SPI_RESPONSE_ERR_DATA_OUT_RANGE;
+            }else if(resp == ACTION_RESP_MOVING) {
+                bufferResponse[0] = SPI_RESPONSE_ERR_MOVING;
             }else {
-                return RESP_ERR;
+                bufferResponse[0] = SPI_RESPONSE_ERR;
             }
 
-            break;
-        case CMD_GET_FREC:
-            break;
-        case CMD_GET_ACEL:
-            break;
-        case CMD_GET_DIR:
-            break;
-        case CMD_IS_STOP:
-            break;
-        case CMD_DUMMY:
-            return RESP_OK;
+            bufferResponse[1] = ';';
+
+            return;
+
+        case SPI_REQUEST_GET_FREC:
+
+            val = GestorEstados_Action(ACTION_GET_FREC, 0);
+            
+            bufferResponse[0] = SPI_RESPONSE_OK;
+            if(val > 255) {
+                bufferResponse[1] = 255;
+                bufferResponse[2] = val - 255; 
+            }else {
+                bufferResponse[1] = val;
+                bufferResponse[2] = 0;
+            }
+
+            bufferResponse[3] = ';';
+
+            return;
+            
+        case SPI_REQUEST_GET_ACEL:
+
+        	bufferResponse[0] = SPI_RESPONSE_OK;
+        	bufferResponse[1] = GestorEstados_Action(ACTION_GET_ACEL, 0);
+            bufferResponse[2] = 0;
+            bufferResponse[3] = ';';
+
+            return;
+            
+        case SPI_REQUEST_GET_DESACEL:
+
+        	bufferResponse[0] = SPI_RESPONSE_OK;
+        	bufferResponse[1] = GestorEstados_Action(ACTION_GET_DESACEL, 0);
+            bufferResponse[2] = 0;
+            bufferResponse[3] = ';';
+
+            return;
+
+        case SPI_REQUEST_GET_DIR:
+
+        	bufferResponse[0] = SPI_RESPONSE_OK;
+        	bufferResponse[1] = GestorEstados_Action(ACTION_GET_DIR, 0);
+            bufferResponse[2] = 0;
+            bufferResponse[3] = ';';
+
+            return;
+
+        case SPI_REQUEST_IS_STOP:
+
+        	bufferResponse[0] = SPI_RESPONSE_OK;
+        	bufferResponse[1] = GestorEstados_Action(ACTION_IS_MOTOR_STOP, 0);
+            bufferResponse[2] = 0;
+            bufferResponse[3] = ';';
+
+            return;
+
+        case SPI_REQUEST_RESPONSE:
+
+            bufferResponse[0] = SPI_RESPONSE_OK;
+            bufferResponse[1] = ';';
+
+            return;
 
         default:
-            return RESP_ERR_CMD_UNKNOWN;
+        
+            bufferResponse[0] = SPI_RESPONSE_ERR_CMD_UNKNOWN;
+            bufferResponse[1] = ';';
+
+            return;
 
     }
 
-    return RESP_ERR;
+    bufferResponse[0] = SPI_RESPONSE_ERR;
+    bufferResponse[1] = ';'; ;
 }
 
 
 void HAL_SPI_TxRxCpltCallback(SPI_HandleTypeDef *_hspi) {
     int len = 0;
     int found = 0;
-    RespSPI resp;
-    //uint8_t bufferResponse[10];
-    uint8_t txDMABufferLen = 0;
 
     // Limpiamos el buffer de envio
     memset(txDMABuffer, 0, sizeof(txDMABuffer));
@@ -301,19 +392,11 @@ void HAL_SPI_TxRxCpltCallback(SPI_HandleTypeDef *_hspi) {
         }
 
         if(found) {
-            resp = SPI_ProcesarComando(rxDMABuffer, len, txDMABuffer);
-            txDMABufferLen = strlen((char*)txDMABuffer);
+            
+            SPI_ProcesarComando(rxDMABuffer, len, txDMABuffer);
 
-            // Si se debe responder con el bufferResponse
-            if(txDMABufferLen != 0 && resp == RESP_OK) {
-                txDMABuffer[txDMABufferLen] = ';'; // Aseguramos el fin de cadena
-            }else{
-                // Si se debe responder con resp
-                txDMABuffer[0] = resp;
-                txDMABuffer[1] = ';';
-            }
         }else {
-            txDMABuffer[0] = RESP_ERR_NO_COMMAND;
+            txDMABuffer[0] = SPI_RESPONSE_ERR_NO_COMMAND;
             txDMABuffer[1] = ';';
             
         }
@@ -322,8 +405,6 @@ void HAL_SPI_TxRxCpltCallback(SPI_HandleTypeDef *_hspi) {
 
         HAL_SPI_TransmitReceive_DMA(hspi, txDMABuffer, rxDMABuffer, SPI_TRANSMITION_SIZE);
 
-        // Procesas lo que llego en rx_buffer
-        // Preparas la proxima respuesta en tx_buffer
-        //HAL_SPI_TransmitReceive_DMA(hspi, txDMABuffer, rxDMABuffer, SPI_BUF_SIZE);
     }
 }
+

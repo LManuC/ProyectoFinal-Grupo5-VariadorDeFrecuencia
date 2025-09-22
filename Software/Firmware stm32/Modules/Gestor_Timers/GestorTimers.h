@@ -16,8 +16,6 @@ typedef enum {
 } TimersEnum;
 
 void GestorTimers_Init();
-void GestorTimers_IniciarTimer(TimersEnum timerEnum);   // Esta queda deprecada
-void GestorTimers_DetenerTimer(TimersEnum timerEnum);   // Esta queda deprecada
 
 void GestorTimers_IniciarTimerSVM();
 void GestorTimers_DetenerTimerSVM();

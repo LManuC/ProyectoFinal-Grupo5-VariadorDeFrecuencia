@@ -181,15 +181,19 @@ int main(void)
   ConfiguracionSVM config;
   config.frecOutMin = 1;
   config.frecOutMax = 450;
-  config.frec_switch = 2200; // Frecuencia de 2.2kHz para el switch
+  config.frec_switch = 2511; // Frecuencia de 2.511kHz para el switch
   //config.frec_output = 0; // Frecuencia de 1kHz para el temporizador
-  config.frecOutputTaget = 50;
+  config.frecReferencia = 50;
   config.direccionRotacion = 1; // Sentido horario
   config.resolucionTimer = 255; // Resolucion del timer (255 para 8 bits)
 
   //Configuracion dinamica
   config.acel = 5;        // En frec/seg
   config.desacel = 3;     // En frec/seg
+  config.acelMax = 50;
+  config.acelMin = 1;
+  config.desacelMax = 50;
+  config.desacelMin = 1;
 
   // Cargamos el orden de activacion de los puertos
   for(int i = 0; i < 6; i++) {
@@ -210,7 +214,7 @@ int main(void)
 
   GestorDinamica_Init();
   ConfigDinamica configDin;
-  configDin.acel = 2;    // 1 rps / seg ^ 2
+  configDin.acel = 1;    // 1 rps / seg ^ 2
   configDin.descel = 1; // 1 rps / seg ^ 2
   configDin.t_acel = 5;         // 5 segundos
   configDin.t_decel = 5;        // 5 segundos
@@ -261,6 +265,13 @@ int main(void)
   GestorEstados_Action(ACTION_INIT_DONE, 0);
 
   printf("Config done\n");
+
+
+
+  /// Esto es para propositos de debug
+  __HAL_DBGMCU_FREEZE_TIM3();  // Congela TIM3 cuando el core está en halt
+  __HAL_DBGMCU_FREEZE_TIM2();  // Idem para TIM2 si querés
+
   
   /* USER CODE END 2 */
 
@@ -384,9 +395,9 @@ static void MX_TIM2_Init(void)
 
   /* USER CODE END TIM2_Init 1 */
   htim2.Instance = TIM2;
-  htim2.Init.Prescaler = 7200-1;
+  htim2.Init.Prescaler = 0;
   htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim2.Init.Period = 10-1;
+  htim2.Init.Period = 7199;
   htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim2.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_Base_Init(&htim2) != HAL_OK)
@@ -442,7 +453,7 @@ static void MX_TIM3_Init(void)
 
   /* USER CODE END TIM3_Init 1 */
   htim3.Instance = TIM3;
-  htim3.Init.Prescaler = 28;
+  htim3.Init.Prescaler = 55;
   htim3.Init.CounterMode = TIM_COUNTERMODE_CENTERALIGNED3;
   htim3.Init.Period = 256;
   htim3.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
@@ -487,7 +498,7 @@ static void MX_TIM3_Init(void)
     Error_Handler();
   }
   __HAL_TIM_ENABLE_OCxPRELOAD(&htim3, TIM_CHANNEL_3);
-  sConfigOC.Pulse = 256;
+  sConfigOC.Pulse = 240;
   if (HAL_TIM_OC_ConfigChannel(&htim3, &sConfigOC, TIM_CHANNEL_4) != HAL_OK)
   {
     Error_Handler();
