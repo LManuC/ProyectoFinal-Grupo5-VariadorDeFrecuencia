@@ -297,7 +297,7 @@ void sh1106_draw_text(sh1106_t *oled, const char *text, int x, int y) {
     }
 }
 
-void sh1106_draw_number(sh1106_t *oled, uint16_t value, int x, int y, uint8_t dots) {
+void sh1106_draw_number(sh1106_t *oled, uint16_t value, int x, int y, uint8_t size) {
     uint8_t y_diff = 0;
     char text[6];
     sprintf(text, "%d", value);
@@ -308,9 +308,11 @@ void sh1106_draw_number(sh1106_t *oled, uint16_t value, int x, int y, uint8_t do
             y_diff += 9;
         }
         if ( text[letter] >= '0' && text[letter] <= '9') {
-            sh1106_draw_bitmap(oled, font5x7_rownumber[text[letter] - '0'],8, 7, x + 8 * x_diff, y + y_diff);
-        } else if ( text[letter] == ':') {
-            sh1106_draw_bitmap(oled, font5x7_double_dot,8, 7, x + 8 * x_diff, y + y_diff);
+            if ( size == SH1106_SIZE_1 ) {
+                sh1106_draw_bitmap(oled, font5x7_rownumber[text[letter] - '0'],8, 7, x + 8 * x_diff, y + y_diff);
+            } else if ( size == SH1106_SIZE_2 ) {
+                sh1106_draw_bitmap(oled, font8x14_rownumber[text[letter] - '0'],8, 14, x + 9 * x_diff, y + y_diff);
+            }
         }
     }
 }
@@ -351,4 +353,12 @@ void sh1106_draw_fail(sh1106_t *oled, int x, int y) {
 
 void sh1106_draw_line(sh1106_t *oled, int x, int y) {
     sh1106_draw_bitmap(oled, line_bmp,128, 1, x, y);
+}
+
+void sh1106_draw_double_dot(sh1106_t *oled, int x, int y, uint8_t size) {
+    if ( size == SH1106_SIZE_1 ) {
+        sh1106_draw_bitmap(oled, font5x7_double_dot,8, 7, x, y);
+    } else if ( size == SH1106_SIZE_2 ) {
+        sh1106_draw_bitmap(oled, font8x14_double_dot,8, 14, x, y);
+    }
 }

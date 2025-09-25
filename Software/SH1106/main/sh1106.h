@@ -4,6 +4,9 @@
 #include <stdint.h>
 #include <stdbool.h>
 
+#define SH1106_SIZE_1           0
+#define SH1106_SIZE_2           1
+
 typedef struct {
     uint8_t width;
     uint8_t height;
@@ -33,6 +36,7 @@ void sh1106_draw_arrow(sh1106_t *oled, int x, int y);
 void sh1106_draw_fail(sh1106_t *oled, int x, int y);
 void sh1106_draw_line(sh1106_t *oled, int x, int y);
 void sh1106_print_hour(sh1106_t *oled, const char *text);
-void sh1106_draw_number(sh1106_t *oled, uint16_t value, int x, int y, uint8_t dots);
+void sh1106_draw_number(sh1106_t *oled, uint16_t value, int x, int y, uint8_t size);
+void sh1106_draw_double_dot(sh1106_t *oled, int x, int y, uint8_t size);
 
 #endif // SH1106_H

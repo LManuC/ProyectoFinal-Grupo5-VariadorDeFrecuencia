@@ -18,44 +18,6 @@
 #include "esp_log.h"
 #include "driver/gpio.h"
 
-/*void app_main(void)
-{
-    printf("Hello world!\n");
-
-    // Print chip information 
-    esp_chip_info_t chip_info;
-    uint32_t flash_size;
-    esp_chip_info(&chip_info);
-    printf("This is %s chip with %d CPU core(s), %s%s%s%s, ",
-           CONFIG_IDF_TARGET,
-           chip_info.cores,
-           (chip_info.features & CHIP_FEATURE_WIFI_BGN) ? "WiFi/" : "",
-           (chip_info.features & CHIP_FEATURE_BT) ? "BT" : "",
-           (chip_info.features & CHIP_FEATURE_BLE) ? "BLE" : "",
-           (chip_info.features & CHIP_FEATURE_IEEE802154) ? ", 802.15.4 (Zigbee/Thread)" : "");
-
-    unsigned major_rev = chip_info.revision / 100;
-    unsigned minor_rev = chip_info.revision % 100;
-    printf("silicon revision v%d.%d, ", major_rev, minor_rev);
-    if(esp_flash_get_size(NULL, &flash_size) != ESP_OK) {
-        printf("Get flash size failed");
-        return;
-    }
-
-    printf("%" PRIu32 "MB %s flash\n", flash_size / (uint32_t)(1024 * 1024),
-           (chip_info.features & CHIP_FEATURE_EMB_FLASH) ? "embedded" : "external");
-
-    printf("Minimum free heap size: %" PRIu32 " bytes\n", esp_get_minimum_free_heap_size());
-
-    for (int i = 10; i >= 0; i--) {
-        printf("Restarting in %d seconds...\n", i);
-        vTaskDelay(1000 / portTICK_PERIOD_MS);
-    }
-    printf("Restarting now.\n");
-    fflush(stdout);
-    esp_restart();
-}
-*/
 static const char *TAG = "UTN-CA-PF2025";
 
 #define BTN_INCREMENTO                  0xFE
@@ -130,8 +92,8 @@ void app_main(void) {
         .tm_year = 2025 - 1900, // Año desde 1900
         .tm_mon  = 9,           // Mes (0=enero, 8=septiembre)
         .tm_mday = 18,          // Día del mes
-        .tm_hour = 0,          // Hora
-        .tm_min  = 47,          // Minuto
+        .tm_hour = 20,          // Hora
+        .tm_min  = 23,          // Minuto
         .tm_sec  = 30            // Segundo
     };
 
@@ -170,32 +132,26 @@ void app_main(void) {
         //          timeinfo.tm_sec);
         sh1106_clear_buffer(&oled);
         if ( arrow_cursor == FREC_LINE_INDX - LINE_INCREMENT && edit ) {
-            sprintf(hora_str, "%02d:%02d:%02d", scratch_hor, scratch_min, scratch_seg);
             if ( multiplier_cursor == 1 ) {
                 if ( blink > 12 ) {
-                    sh1106_draw_number(&oled, scratch_seg,    76, 0, 0);
+                    sprintf(hora_str, "  :%02d:%02d", scratch_min, scratch_seg);
                 }
-                sh1106_draw_number(&oled, scratch_min,     52, 0, 0);
-                sh1106_draw_number(&oled, scratch_hor,     28, 0, 0);
+                sprintf(hora_str, "%02d:%02d:%02d", scratch_hor, scratch_min, scratch_seg);
             } else if ( multiplier_cursor == 2 ) {
                 if ( blink > 12 ) {
-                    sh1106_draw_number(&oled, scratch_min,     52, 0, 0);
+                    sprintf(hora_str, "%02d:  :%02d", scratch_hor, scratch_seg);
                 }
-                sh1106_draw_number(&oled, scratch_seg,    76, 0, 0);
-                sh1106_draw_number(&oled, scratch_hor,     28, 0, 0);
+                sprintf(hora_str, "%02d:%02d:%02d", scratch_hor, scratch_min, scratch_seg);
             } else if ( multiplier_cursor == 3 ) {
                 if ( blink > 12 ) {
-                    sh1106_draw_number(&oled, scratch_hor,     28, 0, 0);
+                    sprintf(hora_str, "%02d:%02d:  ", scratch_hor, scratch_min);
                 }
-                sh1106_draw_number(&oled, scratch_seg,    76, 0, 0);
-                sh1106_draw_number(&oled, scratch_min,     52, 0, 0);
+                sprintf(hora_str, "%02d:%02d:%02d", scratch_hor, scratch_min, scratch_seg);
             }
-            sh1106_draw_text  (&oled, ":",            44, 0);
-            sh1106_draw_text  (&oled, ":",            68, 0);
         } else {
             strftime(hora_str, sizeof(hora_str), "%H:%M:%S", &timeinfo);
-            sh1106_print_hour(&oled, hora_str);
         }
+        sh1106_print_hour(&oled, hora_str);
         sh1106_draw_utn_logo(&oled, 1, 1);
         // sh1106_draw_fail(&oled, 109, 1);
         sh1106_draw_line(&oled, 0, 17);
@@ -210,45 +166,45 @@ void app_main(void) {
 
         if ( arrow_cursor == HINI_LINE_INDX && edit ) {
             if ( blink > 12 && multiplier_cursor == 1 ) {
-                sh1106_draw_number(&oled, scratch_min,    108, HINI_LINE_INDX, 0);
+                sh1106_draw_number(&oled, scratch_min,    108, HINI_LINE_INDX, SH1106_SIZE_1);
             } else if ( blink > 12 && multiplier_cursor == 2 ) {
-                sh1106_draw_number(&oled, scratch_hor,     85, HINI_LINE_INDX, 0);
+                sh1106_draw_number(&oled, scratch_hor,     85, HINI_LINE_INDX, SH1106_SIZE_1);
             }
             sh1106_draw_text  (&oled, ":",            101, HINI_LINE_INDX);
         } else {
-            sh1106_draw_number(&oled, h_ini,            85, HINI_LINE_INDX, 0);
+            sh1106_draw_number(&oled, h_ini,            85, HINI_LINE_INDX, SH1106_SIZE_1);
             sh1106_draw_text  (&oled,   ":",           101, HINI_LINE_INDX);
-            sh1106_draw_number(&oled, m_ini,           108, HINI_LINE_INDX, 0);
+            sh1106_draw_number(&oled, m_ini,           108, HINI_LINE_INDX, SH1106_SIZE_1);
         }
         if ( arrow_cursor == HFIN_LINE_INDX && edit ) {
             if ( blink > 12 && multiplier_cursor == 1 ) {
-                sh1106_draw_number(&oled, scratch_hor,     85, HFIN_LINE_INDX, 0);
+                sh1106_draw_number(&oled, scratch_hor,     85, HFIN_LINE_INDX, SH1106_SIZE_1);
             } else if ( blink > 12 && multiplier_cursor == 2 ) {
-                sh1106_draw_number(&oled, scratch_min,    108, HFIN_LINE_INDX, 0);
+                sh1106_draw_number(&oled, scratch_min,    108, HFIN_LINE_INDX, SH1106_SIZE_1);
             }
             sh1106_draw_text  (&oled, ":",            101, HFIN_LINE_INDX);
         } else {
-            sh1106_draw_number(&oled, h_fin,            85, HFIN_LINE_INDX, 0);
+            sh1106_draw_number(&oled, h_fin,            85, HFIN_LINE_INDX, SH1106_SIZE_1);
             sh1106_draw_text  (&oled, ":",             101, HFIN_LINE_INDX);
-            sh1106_draw_number(&oled, m_fin,           108, HFIN_LINE_INDX, 0);
+            sh1106_draw_number(&oled, m_fin,           108, HFIN_LINE_INDX, SH1106_SIZE_1);
         }
         if ( arrow_cursor == FREC_LINE_INDX && edit ) {
             if ( blink > 12 )
-                sh1106_draw_number(&oled, scratch,     85, FREC_LINE_INDX, 0);
+                sh1106_draw_number(&oled, scratch,     85, FREC_LINE_INDX, SH1106_SIZE_1);
         } else {
-            sh1106_draw_number(&oled, freq,     85, FREC_LINE_INDX, 0);
+            sh1106_draw_number(&oled, freq,     85, FREC_LINE_INDX, SH1106_SIZE_1);
         }
         if ( arrow_cursor == VBUS_LINE_INDX && edit ) {
             if ( blink > 12 )
-                sh1106_draw_number(&oled, scratch,     85, VBUS_LINE_INDX, 0);
+                sh1106_draw_number(&oled, scratch,     85, VBUS_LINE_INDX, SH1106_SIZE_1);
         } else {
-            sh1106_draw_number(&oled, vbus_min,     85, VBUS_LINE_INDX, 0);
+            sh1106_draw_number(&oled, vbus_min,     85, VBUS_LINE_INDX, SH1106_SIZE_1);
         }
         if ( arrow_cursor == IBUS_LINE_INDX && edit ) {
             if ( blink > 12 )
-                sh1106_draw_number(&oled, scratch,     85, IBUS_LINE_INDX, 0);
+                sh1106_draw_number(&oled, scratch,     85, IBUS_LINE_INDX, SH1106_SIZE_1);
         } else {
-            sh1106_draw_number(&oled, ibus_max, 85, IBUS_LINE_INDX, 0);
+            sh1106_draw_number(&oled, ibus_max, 85, IBUS_LINE_INDX, SH1106_SIZE_1);
         }
         ESP_ERROR_CHECK(sh1106_refresh(&oled));
 
