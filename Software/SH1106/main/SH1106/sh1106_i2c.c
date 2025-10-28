@@ -2,7 +2,7 @@
 #include "freertos/FreeRTOS.h"
 #include "esp_err.h"
 #include "driver/i2c.h"
-#include "sh1106.h"
+// #include "sh1106.h"
 
 #define I2C_NUM         I2C_NUM_0
 #define SH1106_ADDR     0x3C  // puede variar: 0x3C o 0x3D
