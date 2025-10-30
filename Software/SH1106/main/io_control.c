@@ -245,7 +245,7 @@ void MCP23017_interrupt_attendance(void* arg) {
     
     buzzer_time = 50;
     for(;;) {
-        set_freq_output(get_frequency());
+        set_freq_output(get_status_frequency());
         if(xQueueReceive(MCP23017_evt_queue, &io_num, pdMS_TO_TICKS(200))) {
             if ( io_num == INT_A_PIN ) {
                 ESP_ERROR_CHECK_WITHOUT_ABORT( mcp_interrupt_flag(PORTA, &scratch_data) );

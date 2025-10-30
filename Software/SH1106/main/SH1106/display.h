@@ -17,6 +17,12 @@ void engine_emergency_stop();
 uint16_t change_frequency(uint8_t speed_slector);
 void update_meas(seccurity_settings_t bus_meas);
 uint16_t get_frequency_destiny();
-uint16_t get_frequency();
+uint16_t get_status_frequency();
+uint16_t get_system_frequency();
+uint16_t get_system_acceleration();
+uint16_t get_system_desacceleration();
+void set_system_emergency();
+uint8_t get_speed_selector();
+system_status_e get_system_status();
 
 #endif

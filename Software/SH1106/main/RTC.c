@@ -3,6 +3,7 @@
 #include "sdkconfig.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
+#include "freertos/queue.h"
 #include "esp_err.h"
 #include "esp_timer.h"
 #include "esp_log.h"
@@ -16,6 +17,8 @@ typedef struct {
 } rtc_alarms_t;
 
 static rtc_alarms_t rtc_alarms;
+
+extern QueueHandle_t isolated_inputs_queue;
 
 static esp_err_t program_alarm(esp_timer_handle_t *timer_handle, void (*callback)(void *), int hour, int minute, const char *name);
 void alarm_start_cb(void *arg);
@@ -111,12 +114,14 @@ esp_err_t rtc_schedule_alarms() {
 
 // Callback para inicio de tarea
 void alarm_start_cb(void *arg) {
+    uint8_t signal_to_screen = 11;
     ESP_LOGI(TAG, "⏰ Alarma de INICIO disparada");
-    // Acá podés arrancar tu tarea (ej: motor, display, etc.)
+    xQueueSend(isolated_inputs_queue, &signal_to_screen, 0);
 }
 
 // Callback para fin de tarea
 void alarm_stop_cb(void *arg) {
+    uint8_t signal_to_screen = 15;
     ESP_LOGI(TAG, "⏰ Alarma de FIN disparada");
-    // Acá podés detener tu tarea
+    xQueueSend(isolated_inputs_queue, &signal_to_screen, 0);
 }

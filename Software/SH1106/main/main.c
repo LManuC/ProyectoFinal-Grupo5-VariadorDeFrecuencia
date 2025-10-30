@@ -43,7 +43,7 @@ static const char *TAG = "UTN-CA-PF2025";
 void app_main(void) {
 
     if ( adc_init_two_channels() == ESP_OK) {
-        xTaskCreatePinnedToCore(adc_task, "adc_task", 2048, NULL, 9, NULL, tskNO_AFFINITY);
+        xTaskCreatePinnedToCore(adc_task, "adc_task", 4096, NULL, 9, NULL, tskNO_AFFINITY);
     } else {
         ESP_LOGE(TAG, "adc_init_two_channels falló; no se inicializaron correctamente los ADC");
         ESP_ERROR_CHECK(ESP_FAIL);

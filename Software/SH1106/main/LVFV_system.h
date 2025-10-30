@@ -43,6 +43,14 @@
 /*
  * Definiciones para sistema 
  */  
+typedef enum system_status_e {
+    SYSTEM_IDLE,
+    SYSTEM_ACCLE_DESACCEL,
+    SYSTEM_REGIME,
+    SYSTEM_BREAKING,
+    SYSTEM_EMERGENCY
+} system_status_e;
+
 typedef enum sh1106_variable_lines_e{
     first = VARIABLE_FIRST,
     second = VARIABLE_SECOND,
@@ -77,7 +85,7 @@ typedef struct system_status_t {
     uint16_t vbus_min;
     uint16_t ibus_max;
     uint8_t inputs_status;
-    uint8_t emergency_status;
+    system_status_e status;
 } system_status_t;
 
 

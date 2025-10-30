@@ -114,35 +114,46 @@ static void set_frequency_table( ) {
 
 static void accelerating(void *pvParameters ) {
     vTaskDelay(pdMS_TO_TICKS(200));
-    while( system_status.frequency != system_frequency_settings.freq_regime ) {
-        if ( (system_status.frequency + system_frequency_settings.acceleration ) > system_frequency_settings.freq_regime ) {
-            system_status.frequency = system_frequency_settings.freq_regime;
+    while( system_status.frequency != system_status.frequency_destiny ) {
+        if ( (system_status.frequency + system_frequency_settings.acceleration ) > system_status.frequency_destiny ) {
+            system_status.frequency = system_status.frequency_destiny;
         } else {
             system_status.frequency += system_frequency_settings.acceleration;
         }
         vTaskDelay(pdMS_TO_TICKS(1000));
     }
+    system_status.status = SYSTEM_REGIME;
     accelerating_handle = NULL;
     vTaskDelete(NULL);
 }
 
 static void desaccelerating( void *pvParameters ) {
     vTaskDelay(pdMS_TO_TICKS(200));
-    while( system_status.frequency ) {
-        if ( system_status.frequency > system_frequency_settings.desacceleration ) {
+    while( system_status.frequency != system_status.frequency_destiny ) {
+        if ( system_status.frequency - system_frequency_settings.desacceleration < system_status.frequency_destiny ) {
+            system_status.frequency = system_status.frequency_destiny;
+        } else if ( system_status.frequency > system_frequency_settings.desacceleration ) {
             system_status.frequency -= system_frequency_settings.desacceleration;
         } else {
             system_status.frequency = 0;
         }
         vTaskDelay(pdMS_TO_TICKS(1000));
     }
+    if ( system_status.status != SYSTEM_EMERGENCY ) {
+        if( system_status.status != SYSTEM_BREAKING ) {
+            system_status.status = SYSTEM_REGIME;
+        } else {
+            system_status.status = SYSTEM_IDLE;
+        }
+    }
     desaccelerating_handle = NULL;
     vTaskDelete(NULL);
 }
 
 uint16_t engine_start() {
-    if ( system_status.emergency_status == 0 ) {
+    if ( system_status.status != SYSTEM_EMERGENCY ) {
         system_status.frequency_destiny = frequency_table[system_status.inputs_status];
+        system_status.status = SYSTEM_ACCLE_DESACCEL;
         if ( desaccelerating_handle != NULL ) {
             vTaskDelete( desaccelerating_handle );
             desaccelerating_handle = NULL;
@@ -154,12 +165,16 @@ uint16_t engine_start() {
 
 void engine_stop() {
     system_status.frequency_destiny = 0;
-    system_status.emergency_status = 0;
     if ( accelerating_handle != NULL ) {
         vTaskDelete( accelerating_handle );
         accelerating_handle = NULL;
     }
-    xTaskCreatePinnedToCore(desaccelerating, "desaccelerating", 1024, NULL, 9, &desaccelerating_handle, tskNO_AFFINITY);
+    if ( system_status.status == SYSTEM_EMERGENCY ) {
+        system_status.status = SYSTEM_IDLE;
+    } else {
+        system_status.status = SYSTEM_BREAKING;
+        xTaskCreatePinnedToCore(desaccelerating, "desaccelerating", 1024, NULL, 9, &desaccelerating_handle, tskNO_AFFINITY);
+    }
 }
 
 void engine_emergency_stop() {
@@ -173,7 +188,7 @@ void engine_emergency_stop() {
     }
     system_status.frequency_destiny = 0;
     system_status.frequency = 0;
-    system_status.emergency_status = 1;
+    system_status.status = SYSTEM_EMERGENCY;
 }
 
 uint16_t change_frequency(uint8_t speed_slector) {
@@ -195,6 +210,7 @@ uint16_t change_frequency(uint8_t speed_slector) {
         xTaskCreatePinnedToCore(accelerating, "accelerating", 1024, NULL, 9, &accelerating_handle, tskNO_AFFINITY);
         ESP_LOGI( TAG, "Cambiando la frecuencia de regimen a %d. Acelerando", system_status.frequency_destiny);
     }
+    system_status.status = SYSTEM_ACCLE_DESACCEL;
     return system_status.frequency_destiny;
 }
 
@@ -202,34 +218,54 @@ uint16_t get_frequency_destiny() {
     return system_status.frequency_destiny;
 }
 
-uint16_t get_frequency() {
+uint8_t get_speed_selector() {
+    return system_status.inputs_status;
+}
+
+uint16_t get_status_frequency() {
     return system_status.frequency;
 }
 
+uint16_t get_system_frequency() {
+    return system_frequency_settings.freq_regime;
+}
+
+uint16_t get_system_acceleration() {
+    return system_frequency_settings.acceleration;
+}
+
+uint16_t get_system_desacceleration() {
+    return system_frequency_settings.desacceleration;
+}
+
+system_status_e get_system_status() {
+    return system_status.status;
+}
+
+void set_system_emergency() {
+    engine_stop();
+    system_status.status = SYSTEM_EMERGENCY;
+}
+
 void update_meas(seccurity_settings_t bus_meas) {
-    uint16_t vbus, ibus;
-    vbus = bus_meas.vbus_min;
-    ibus = bus_meas.ibus_max;
     system_status.vbus_min = bus_meas.vbus_min;
     system_status.ibus_max = bus_meas.ibus_max;
 
-    if ( ibus > system_seccurity_settings.ibus_max ) {
-        if ( system_status.emergency_status == 0 ) {
-            ESP_LOGI( TAG, "Disparo de emergencia por sobre corriente. Mando senal");
+    if ( system_status.ibus_max > system_seccurity_settings.ibus_max ) {
+        if ( system_status.status != SYSTEM_EMERGENCY ) {
+            ESP_LOGE( TAG, "Disparo de emergencia por sobre corriente. Mando senal");
             uint32_t emergency = SECURITY_EXCEDED;
             xQueueSend(isolated_inputs_queue, &emergency, 0);
-            system_status.emergency_status = 1;
+            system_status.status = SYSTEM_EMERGENCY;
         }
     }
 
-    if ( vbus < system_seccurity_settings.vbus_min ) {
-        if ( system_status.emergency_status == 0 ) {
-            ESP_LOGI( TAG, "system_status.vbus_min = %d", system_status.vbus_min);
-            ESP_LOGI( TAG, "system_seccurity_settings.vbus_min = %d", system_seccurity_settings.vbus_min);
-            ESP_LOGI( TAG, "Disparo de emergencia por baja tensión. Mando senal");
+    if ( system_status.vbus_min < system_seccurity_settings.vbus_min ) {
+        if ( system_status.status == SYSTEM_EMERGENCY ) {
+            ESP_LOGE( TAG, "Disparo de emergencia por baja tensión. Mando senal");
             uint32_t emergency = SECURITY_EXCEDED;
             xQueueSend(isolated_inputs_queue, &emergency, 0);
-            system_status.emergency_status = 1;
+            system_status.status = SYSTEM_EMERGENCY;
         }
     }
 }

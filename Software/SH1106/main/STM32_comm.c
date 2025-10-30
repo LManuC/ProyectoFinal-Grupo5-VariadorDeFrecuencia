@@ -19,19 +19,17 @@
 #include "./SH1106/display.h"
 
 // ===== Pines =====
-#define PIN_NUM_CS     12   // ⚠️ Strap pin MTDI (ver nota más abajo)
-#define PIN_NUM_SCK    14
+#define PIN_NUM_CS     12
+#define PIN_NUM_CLK    14
 #define PIN_NUM_MISO   26
 #define PIN_NUM_MOSI   25
 
 // ===== SPI =====
 #define SPI_HOST_USED      SPI2_HOST     // HSPI
-#define SPI_CLOCK_HZ       (1*1000*1000) // 1 MHz
+#define SPI_CLOCK_HZ       1*1000*1000           // 1 MHz
 #define SPI_QUEUE_TX_DEPTH 1
 
 static const char *TAG = "SPI";
-
-static spi_device_handle_t s_spi_dev = NULL;
 
 extern QueueHandle_t isolated_inputs_queue;
 extern QueueHandle_t bus_meas_evt_queue;
@@ -52,7 +50,7 @@ typedef enum {
 } SPI_Request;
 
 typedef enum {
-    SPI_RESPONSE_ERR = 0xA0,
+    SPI_RESPONSE_ERR = 0xA0,                    // 160
     SPI_RESPONSE_ERR_CMD_UNKNOWN,               // Comando desconocido
     SPI_RESPONSE_ERR_NO_COMMAND,                // Llego mensaje pero sin comando
     SPI_RESPONSE_ERR_MOVING,                    // Comando Start pero motor ya esta en movimiento
@@ -65,7 +63,7 @@ typedef enum {
 
 #define SPI_REQUEST_RESPONSE   0x50  // Comando para recibir la respuesta
 
-spi_device_handle_t spi_handle;
+static spi_device_handle_t spi_handle = NULL;
 
 /* Item en cola: comando + valor (usar -1 si no aplica) */
 typedef struct {
@@ -79,38 +77,30 @@ static SPI_Response SPI_SendRequest(spi_cmd_item_t *spi_cmd_item);
 
 /* =================== Inicialización del bus =================== */
 esp_err_t SPI_Init(void) {
-    esp_err_t err;
-
     spi_bus_config_t buscfg = {
-        .mosi_io_num = PIN_NUM_MOSI,
         .miso_io_num = PIN_NUM_MISO,
-        .sclk_io_num = PIN_NUM_SCK,
+        .mosi_io_num = PIN_NUM_MOSI,
+        .sclk_io_num = PIN_NUM_CLK,
         .quadwp_io_num = -1,
         .quadhd_io_num = -1,
-        .max_transfer_sz = 64,
+        .max_transfer_sz = 32
     };
-
-    err = spi_bus_initialize(SPI_HOST_USED, &buscfg, SPI_DMA_DISABLED);
-
-    if (err != ESP_OK) {
-        return err;
-    }
 
     spi_device_interface_config_t devcfg = {
         .clock_speed_hz = SPI_CLOCK_HZ,
-        .mode = 0,                    // CPOL=0, CPHA=0
-        .spics_io_num = PIN_NUM_CS,   // ⚠️ ver nota sobre GPIO12
-        .queue_size = SPI_QUEUE_TX_DEPTH,
+        .mode = 0,                              // SPI mode 0
+        .spics_io_num = PIN_NUM_CS,             // CS pin
+        .queue_size = 1,
+        .flags = SPI_DEVICE_NO_DUMMY            // Sin dummy bits
     };
 
-    err = spi_bus_add_device(SPI_HOST_USED, &devcfg, &s_spi_dev);
+    // Inicializar bus SPI
+    esp_err_t ret = spi_bus_initialize(VSPI_HOST, &buscfg, 1);
+    ESP_ERROR_CHECK(ret);
 
-    if (err != ESP_OK) {
-        return err;
-    }
-
-    ESP_LOGI(TAG, "SPI OK: CS=%d SCK=%d MISO=%d MOSI=%d clk=%d Hz",
-             PIN_NUM_CS, PIN_NUM_SCK, PIN_NUM_MISO, PIN_NUM_MOSI, SPI_CLOCK_HZ);
+    // Añadir dispositivo
+    ret = spi_bus_add_device(VSPI_HOST, &devcfg, &spi_handle);
+    ESP_ERROR_CHECK(ret);
     return ESP_OK;
 }
 
@@ -125,9 +115,24 @@ void SPI_communication(void *arg) {
         vTaskDelay(pdMS_TO_TICKS(100));
     }
 
+    vTaskDelay(pdMS_TO_TICKS(2000));
+
+    for (uint8_t i = 0; i < 10; i++) { 
+        xQueueReceive( bus_meas_evt_queue, &bus_meas, pdMS_TO_TICKS(portMAX_DELAY ) );
+        update_meas(bus_meas);
+        xQueueReceive( isolated_inputs_queue, &new_button, pdMS_TO_TICKS(20) );
+    }
+    engine_stop();
+    do {
+        item.request = SPI_REQUEST_STOP;
+        item.setValue = 0;
+        item.getValue = 0;
+    } while ( SPI_SendRequest(&item) != SPI_RESPONSE_ERR_NOT_MOVING);
+    
     ESP_LOGI(TAG, "SPI_communication lista. Esperando comandos...");
 
     while (1) {
+        // ESP_LOGI(TAG, "STATUS = %d", get_system_status() );
         if ( xQueueReceive( bus_meas_evt_queue, &bus_meas, pdMS_TO_TICKS(20) ) ) {
             update_meas(bus_meas);
         }
@@ -141,36 +146,64 @@ void SPI_communication(void *arg) {
                     SPI_SendRequest(&item);
                     engine_emergency_stop();
                     break;
-                case TERMO_SW_RELEASED:
-                case EMERGENCI_STOP_RELEASED:
-                    if ( new_button == TERMO_SW_RELEASED ) {
-                        ESP_LOGI(TAG, "Termoswitch desactivado");
-                    } else {
-                        ESP_LOGI(TAG, "Botón de EMERGENCIA liberado");
-                    }
-                    item.request = SPI_REQUEST_STOP;
-                    item.setValue = 0;
-                    item.getValue = 0;
-                    SPI_SendRequest(&item);
-                    break;
                 case STOP_PRESSED:
-                    ESP_LOGI(TAG, "Botón de Parada presionado");
                     engine_stop();
+                    ESP_LOGI(TAG, "Botón de Parada presionado");
                     item.request = SPI_REQUEST_STOP;
                     item.setValue = 0;
                     item.getValue = 0;
                     SPI_SendRequest(&item);
                     break;
-                case STOP_RELEASED:
-                    ESP_LOGI(TAG, "Botón de Parada liberado");
+                case TERMO_SW_RELEASED:
+                    ESP_LOGI(TAG, "Termoswitch desactivado");
+                    break;
+                case EMERGENCI_STOP_RELEASED:
+                    ESP_LOGI(TAG, "Botón de EMERGENCIA liberado");
                     break;
                 case START_PRESSED:
-                    ESP_LOGI(TAG, "Botón de Inicio presionado");
-                    engine_start();
-                    item.request = SPI_REQUEST_START;
-                    item.setValue = 0;
-                    item.getValue = 0;
-                    SPI_SendRequest(&item);
+                    if ( get_system_status() == SYSTEM_IDLE ) {
+                        ESP_LOGI(TAG, "Botón de Inicio presionado");
+                        SPI_Response SPI_commando_response;
+                        
+                        item.request = SPI_REQUEST_SET_FREC;
+                        item.setValue = get_system_frequency();
+                        item.getValue = 0;
+                        SPI_commando_response = SPI_SendRequest(&item);
+                        if ( SPI_commando_response != SPI_RESPONSE_OK ) {
+                            ESP_LOGE(TAG,"Error cargando la frecuencia");
+                            break;
+                        }
+                        
+                        item.request = SPI_REQUEST_SET_ACEL;
+                        item.setValue = get_system_acceleration();
+                        item.getValue = 0;
+                        SPI_commando_response = SPI_SendRequest(&item);
+                        if ( SPI_commando_response != SPI_RESPONSE_OK ) {
+                            ESP_LOGE(TAG,"Error cargando la aceleracion");
+                            break;
+                        }
+                        
+                        item.request = SPI_REQUEST_SET_DESACEL;
+                        item.setValue = get_system_desacceleration();
+                        item.getValue = 0;
+                        SPI_commando_response = SPI_SendRequest(&item);
+                        if ( SPI_commando_response != SPI_RESPONSE_OK ) {
+                            ESP_LOGE(TAG,"Error cargando la desaceleracion");
+                            break;
+                        }
+                        
+                        item.request = SPI_REQUEST_START;
+                        item.setValue = 0;
+                        item.getValue = 0;
+                        SPI_commando_response = SPI_SendRequest(&item);
+                        if ( SPI_commando_response != SPI_RESPONSE_OK ) {
+                            ESP_LOGE(TAG,"Error arrancando el motor");
+                            break;
+                        }
+                        engine_start();
+                    } else {
+                        ESP_LOGE(TAG,"El motor debe estar detenido para poder arrancarlo");
+                    }
                     break;
                 case START_RELEASED:
                     ESP_LOGI(TAG, "Botón de Inicio liberado");
@@ -201,11 +234,20 @@ void SPI_communication(void *arg) {
                 case SPEED_SELECTOR_7:
                 case SPEED_SELECTOR_8:
                 case SPEED_SELECTOR_9:
-                    ESP_LOGI(TAG, "Cambio de velocidad: %d", new_button - SPEED_SELECTOR_0);
-                    item.request = SPI_REQUEST_SET_FREC;
-                    item.setValue = change_frequency( new_button - SPEED_SELECTOR_0 );
-                    item.getValue = 0;
-                    SPI_SendRequest(&item);
+                    uint8_t old_speed_selector = get_speed_selector();
+                    system_status_e status = get_system_status();
+                    if ( status == SYSTEM_REGIME || status == SYSTEM_ACCLE_DESACCEL ) {
+                        ESP_LOGI(TAG, "Cambio de velocidad: %d", new_button - SPEED_SELECTOR_0);
+                        item.request = SPI_REQUEST_SET_FREC;
+                        item.setValue = change_frequency( new_button - SPEED_SELECTOR_0 );
+                        item.getValue = 0;
+                        if ( SPI_SendRequest(&item) != SPI_RESPONSE_OK ) {
+                            // change_frequency( old_speed_selector );
+                            ESP_LOGE(TAG, "El STM32 no respondio correctamente");
+                        }
+                    } else {
+                        ESP_LOGI(TAG, "No puede cambiar la velocidad, status = &d", status);
+                    }
                     break;
             }            
         }
@@ -287,6 +329,7 @@ static SPI_Response SPI_SendRequest(spi_cmd_item_t *spi_cmd_item) {
 
 
 
+    ESP_LOGI( TAG, "rx_buffer[0]: %d", rx_buffer[0]);
     if(flagDevolverValor && rx_buffer[0] == SPI_RESPONSE_OK) {
         
         spi_cmd_item->getValue = rx_buffer[1] + rx_buffer[2];

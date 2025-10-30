@@ -119,14 +119,18 @@ void adc_task(void *arg) {
 
             if (calibration_current_ok) {
                 adc_cali_raw_to_voltage(calibration_current, raw_meas_current, &meas_current);
+                // ESP_LOGI(TAG, "Bus current = %d mV", meas_current);
+                // ESP_LOGI(TAG, "current = %d mA", current*5);
+                
                 // ESP_LOGI(TAG, "Bus current = %4f mA", meas_current * 0.6656);
                 // ESP_LOGI(TAG, "Bus current = %4d mA", (int) truncf(meas_current * 0.6656) );
-                uint32_t ibus_prom = 0;
-                ibus_vector[vector_index] = (int) truncf(meas_current * 0.6656);
+                ibus_vector[vector_index] = abs(meas_current - 2500);
+                int ibus_prom = 0;
                 for ( uint8_t i = 0; i < 20; i++ ) {
                     ibus_prom += ibus_vector[i];
                 }
-                bus_meas.ibus_max = (uint16_t) ibus_prom/20;
+                uint16_t raw_current = (uint16_t) ibus_prom/20;
+                bus_meas.ibus_max = raw_current * 5;
             } else {
                 // ESP_LOGI(TAG, "Bus current raw = %4d", raw_meas_current);
             }
