@@ -158,7 +158,7 @@ ACTION_RESP_MOVING
 
         case ACTION_SET_FREC:
             // Implementar la logica para cambiar la velocidad
-            if(currentState == STATE_IDLE || currentState == STATE_RUNNING) {
+            if(currentState == STATE_IDLE || currentState == STATE_RUNNING || currentState == STATE_VEL_CHANGE) {
                 retVal = GestorSVM_SetFrec(value);
                 if(retVal == 0) {
                     return ACTION_RESP_OK;
@@ -172,7 +172,7 @@ ACTION_RESP_MOVING
                     // La velocidad es la misma que ya tiene cargada
                     return ACTION_RESP_OK;
                 }
-            } else if(currentState == STATE_VEL_CHANGE || currentState == STATE_BRAKING) {
+            } else if( currentState == STATE_BRAKING) {
                 return ACTION_RESP_MOVING;
             }
             
