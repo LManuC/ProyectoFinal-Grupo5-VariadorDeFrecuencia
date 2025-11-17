@@ -54,18 +54,10 @@ typedef enum {
 
 #define CMD_LEN 3   // cantidad de bytes que envía el master
 
+uint8_t rxDMABuffer[SPI_BUF_SIZE];					// Buffer para almacenar bytes de SPI por DMA (copia directa a memoria)
+uint8_t txDMABuffer[SPI_BUF_SIZE];					// Buffer para almacenar la respuesta por DMA
 
-
-// Variables privadas al modulo
-
-// Buffer para almacenar bytes de SPI por DMA (copia directa a memoria)
-uint8_t rxDMABuffer[SPI_BUF_SIZE];
-// Buffer para almacenar la respuesta por DMA
-uint8_t txDMABuffer[SPI_BUF_SIZE];
-
-
-// Buffer para almacenar la cadena recibida con el comando
-volatile uint8_t rxBuffer[SPI_BUF_SIZE];
+volatile uint8_t rxBuffer[SPI_BUF_SIZE];			// Buffer para almacenar la cadena recibida con el comando
 volatile int rxIndex = 0;
 
 volatile uint8_t tx_buffer[CMD_LEN] = {0xAA, 0xBB, 0xCC}; // respuesta inicial
@@ -75,12 +67,7 @@ SPI_HandleTypeDef* hspi;
 
 
 
-// Prototipos de funciones privadas al modulo
-
 void SPI_ProcesarComando(uint8_t* buffer, int index, uint8_t* bufferResponse);
-
-
-
 
 void SPI_Init(void* _hspi) {
 
@@ -89,10 +76,11 @@ void SPI_Init(void* _hspi) {
         Se baja la prioridad 
     */
     
-    /* DMA1_Channel4_IRQn interrupt configuration */
+    // DMA1_Channel4_IRQn interrupt configuration
     HAL_NVIC_SetPriority(DMA1_Channel4_IRQn, 2, 0);
     HAL_NVIC_EnableIRQ(DMA1_Channel4_IRQn);
-    /* DMA1_Channel5_IRQn interrupt configuration */
+
+    // DMA1_Channel5_IRQn interrupt configuration
     HAL_NVIC_SetPriority(DMA1_Channel5_IRQn, 2, 0);
     HAL_NVIC_EnableIRQ(DMA1_Channel5_IRQn);
 
@@ -196,6 +184,9 @@ void SPI_ProcesarComando(uint8_t* buffer, int cantBytes, uint8_t* bufferResponse
             }
 
             bufferResponse[1] = ';';
+
+            printf("Response OK START");
+
             return;
 
         case SPI_REQUEST_STOP:
@@ -212,6 +203,8 @@ void SPI_ProcesarComando(uint8_t* buffer, int cantBytes, uint8_t* bufferResponse
             
             bufferResponse[1] = ';';
 
+            printf("Response OK STOP");
+
             return;
 
         case SPI_REQUEST_EMERGENCY:
@@ -222,6 +215,8 @@ void SPI_ProcesarComando(uint8_t* buffer, int cantBytes, uint8_t* bufferResponse
             bufferResponse[1] = ';';
 
             return;
+
+            printf("Response OK EMERGENCY");
 
         case SPI_REQUEST_SET_FREC:
 
@@ -241,6 +236,8 @@ void SPI_ProcesarComando(uint8_t* buffer, int cantBytes, uint8_t* bufferResponse
 
             bufferResponse[1] = ';';
 
+            printf("Response OK frequency set");
+
             return;
 
         case SPI_REQUEST_SET_ACEL:
@@ -259,6 +256,8 @@ void SPI_ProcesarComando(uint8_t* buffer, int cantBytes, uint8_t* bufferResponse
 
             bufferResponse[1] = ';';
 
+            printf("Response OK acceleration set");
+
             return;
 
         case SPI_REQUEST_SET_DESACEL:
@@ -276,6 +275,8 @@ void SPI_ProcesarComando(uint8_t* buffer, int cantBytes, uint8_t* bufferResponse
             }
 
             bufferResponse[1] = ';';
+
+            printf("Response OK desacceleration set");
 
             return;
 
@@ -297,6 +298,8 @@ void SPI_ProcesarComando(uint8_t* buffer, int cantBytes, uint8_t* bufferResponse
 
             bufferResponse[1] = ';';
 
+            printf("Response OK direction set");
+
             return;
 
         case SPI_REQUEST_GET_FREC:
@@ -314,6 +317,8 @@ void SPI_ProcesarComando(uint8_t* buffer, int cantBytes, uint8_t* bufferResponse
 
             bufferResponse[3] = ';';
 
+            printf("Response OK frequency value");
+
             return;
             
         case SPI_REQUEST_GET_ACEL:
@@ -322,6 +327,8 @@ void SPI_ProcesarComando(uint8_t* buffer, int cantBytes, uint8_t* bufferResponse
         	bufferResponse[1] = GestorEstados_Action(ACTION_GET_ACEL, 0);
             bufferResponse[2] = 0;
             bufferResponse[3] = ';';
+
+            printf("Response OK acceleration value");
 
             return;
             
@@ -332,6 +339,8 @@ void SPI_ProcesarComando(uint8_t* buffer, int cantBytes, uint8_t* bufferResponse
             bufferResponse[2] = 0;
             bufferResponse[3] = ';';
 
+            printf("Response OK desacceleration value");
+
             return;
 
         case SPI_REQUEST_GET_DIR:
@@ -340,6 +349,8 @@ void SPI_ProcesarComando(uint8_t* buffer, int cantBytes, uint8_t* bufferResponse
         	bufferResponse[1] = GestorEstados_Action(ACTION_GET_DIR, 0);
             bufferResponse[2] = 0;
             bufferResponse[3] = ';';
+
+            printf("Response OK direction value");
 
             return;
 
@@ -350,6 +361,8 @@ void SPI_ProcesarComando(uint8_t* buffer, int cantBytes, uint8_t* bufferResponse
             bufferResponse[2] = 0;
             bufferResponse[3] = ';';
 
+            printf("Response OK Stop/Moving");
+
             return;
 
         case SPI_REQUEST_RESPONSE:
@@ -357,12 +370,16 @@ void SPI_ProcesarComando(uint8_t* buffer, int cantBytes, uint8_t* bufferResponse
             bufferResponse[0] = SPI_RESPONSE_OK;
             bufferResponse[1] = ';';
 
+            printf("Response OK");
+
             return;
 
         default:
         
             bufferResponse[0] = SPI_RESPONSE_ERR_CMD_UNKNOWN;
             bufferResponse[1] = ';';
+
+            printf("Response Unknown");
 
             return;
 
@@ -378,7 +395,7 @@ void HAL_SPI_TxRxCpltCallback(SPI_HandleTypeDef *_hspi) {
     int found = 0;
 
     // Limpiamos el buffer de envio
-    memset(txDMABuffer, 0, sizeof(txDMABuffer));
+    //memset(txDMABuffer, 0, sizeof(txDMABuffer));
 
     if (_hspi->Instance == SPI2) {
 
@@ -391,15 +408,20 @@ void HAL_SPI_TxRxCpltCallback(SPI_HandleTypeDef *_hspi) {
             }
         }
 
-        if(found) {
-            
-            SPI_ProcesarComando(rxDMABuffer, len, txDMABuffer);
+        // Arrancamos con respuesta por defecto
+        uint8_t resp[4] = { SPI_RESPONSE_ERR_NO_COMMAND, ';', 0, 0 };
 
-        }else {
-            txDMABuffer[0] = SPI_RESPONSE_ERR_NO_COMMAND;
-            txDMABuffer[1] = ';';
+        if( found && len > 0 ) {
             
+            SPI_ProcesarComando(rxDMABuffer, len, resp);
+
         }
+
+        // Copiar la respuesta al TX para la PRÓXIMA transacción
+        txDMABuffer[0] = resp[0];
+        txDMABuffer[1] = resp[1];
+        txDMABuffer[2] = resp[2];
+        txDMABuffer[3] = resp[3];
 
         memset(rxDMABuffer, 0, sizeof(rxDMABuffer));
 
