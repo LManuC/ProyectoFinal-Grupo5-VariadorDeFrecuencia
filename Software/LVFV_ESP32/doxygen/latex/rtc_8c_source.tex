@@ -1,0 +1,190 @@
+\doxysection{rtc.\+c}
+\hypertarget{rtc_8c_source}{}\label{rtc_8c_source}\index{C:/Users/User/LVFV\_ESP32/main/rtc/rtc.c@{C:/Users/User/LVFV\_ESP32/main/rtc/rtc.c}}
+\mbox{\hyperlink{rtc_8c}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <sys/time.h>}}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00011}00011\ \textcolor{preprocessor}{\#include\ "{}sdkconfig.h"{}}}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00012}00012\ \textcolor{preprocessor}{\#include\ "{}esp\_err.h"{}}}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00013}00013\ \textcolor{preprocessor}{\#include\ "{}esp\_timer.h"{}}}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00014}00014\ \textcolor{preprocessor}{\#include\ "{}esp\_log.h"{}}}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00016}00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{sys_control_8h}{../system/sysControl.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00017}00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{rtc_8h}{RTC.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00024}\mbox{\hyperlink{structrtc__alarms__t}{00024}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00025}\mbox{\hyperlink{structrtc__alarms__t_a8a3734ce2d569058493d0c6d28e92dff}{00025}}\ \ \ \ \ esp\_timer\_handle\_t\ \mbox{\hyperlink{structrtc__alarms__t_a8a3734ce2d569058493d0c6d28e92dff}{start\_timer}};}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00026}\mbox{\hyperlink{structrtc__alarms__t_ab1d567cca0836a894a9577ba45fac511}{00026}}\ \ \ \ \ esp\_timer\_handle\_t\ \mbox{\hyperlink{structrtc__alarms__t_ab1d567cca0836a894a9577ba45fac511}{stop\_timer}};}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00027}00027\ \}\ \mbox{\hyperlink{structrtc__alarms__t}{rtc\_alarms\_t}};}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00029}\mbox{\hyperlink{rtc_8c_a5a85b9c772bbeb480b209a3e6ea92b4c}{00029}}\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{adc_8c_a5a85b9c772bbeb480b209a3e6ea92b4c}{TAG}}\ =\ \textcolor{stringliteral}{"{}RTC"{}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Variable\ dedicada\ a\ la\ impresión\ de\ mensajes\ de\ logs}}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00030}\mbox{\hyperlink{rtc_8c_a27b710d06dd027d535da94e798d0a819}{00030}}\ \textcolor{keyword}{static}\ \mbox{\hyperlink{structrtc__alarms__t}{rtc\_alarms\_t}}\ \mbox{\hyperlink{rtc_8c_a27b710d06dd027d535da94e798d0a819}{rtc\_alarms}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Declaración\ de\ contenedor\ de\ handlers\ de\ alarma\ para\ inicio\ y\ fin\ de\ marcha}}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00031}\mbox{\hyperlink{rtc_8c_ab2199ad93a3c4b4fa1de3d486346cba7}{00031}}\ \textcolor{keyword}{static}\ \mbox{\hyperlink{structtime__settings__t}{time\_settings\_t}}\ \mbox{\hyperlink{rtc_8c_ab2199ad93a3c4b4fa1de3d486346cba7}{alarm\_settings}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Settings\ de\ horarios\ de\ inicio\ y\ fin\ de\ marcha\ de\ motor}}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00063}00063\ \textcolor{keyword}{static}\ esp\_err\_t\ \mbox{\hyperlink{rtc_8c_ab576cf2b5649a8f5af8c1eca26c1e01a}{program\_alarm}}(esp\_timer\_handle\_t\ *timer\_handle,\ \textcolor{keywordtype}{void}\ (*callback)(\textcolor{keywordtype}{void}\ *),\ \textcolor{keywordtype}{int}\ hour,\ \textcolor{keywordtype}{int}\ minute,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *name);}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00075}00075\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{rtc_8c_ae9adc0a6f5c490088bf65676a23ef49e}{alarm\_start\_cb}}(\textcolor{keywordtype}{void}\ *arg);}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00087}00087\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{rtc_8c_ae1c6ac7aa77f0274bbdb795eab58f081}{alarm\_stop\_cb}}(\textcolor{keywordtype}{void}\ *arg);}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00089}\mbox{\hyperlink{rtc_8c_ae110c54d6d4dcbd67211a1ac02cdc222}{00089}}\ esp\_err\_t\ \mbox{\hyperlink{rtc_8c_ae110c54d6d4dcbd67211a1ac02cdc222}{initRTC}}()\ \{}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00090}00090\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00091}00091\ \ \ \ \ \textcolor{keyword}{struct\ }timeval\ tv\ =\ \{}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00092}00092\ \ \ \ \ \ \ \ \ .tv\_sec\ =\ 0,}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00093}00093\ \ \ \ \ \ \ \ \ .tv\_usec\ =\ 0}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00094}00094\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00096}00096\ \ \ \ \ settimeofday(\&tv,\ NULL);\ \textcolor{comment}{//\ Cargar\ en\ RTC\ interno}}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00097}00097\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00098}00098\ \ \ \ \ \textcolor{keywordflow}{return}\ ESP\_OK;}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00099}00099\ \}}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00101}\mbox{\hyperlink{rtc_8c_a18ec0d194dc994434090b873251093b0}{00101}}\ esp\_err\_t\ \mbox{\hyperlink{rtc_8c_a18ec0d194dc994434090b873251093b0}{setTime}}(\textcolor{keyword}{struct}\ tm\ *setting\_time)\ \{}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00103}00103\ \ \ \ \ \textcolor{keywordflow}{if}\ (\ setting\_time\ ==\ NULL\ )\ \{}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00104}00104\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ESP\_ERR\_INVALID\_ARG;}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00105}00105\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00106}00106\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00107}00107\ \ \ \ \ time\_t\ now\ =\ mktime(setting\_time);\ \ \textcolor{comment}{//\ Convierte\ a\ timestamp\ UNIX}}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00109}00109\ \ \ \ \ \textcolor{keyword}{struct\ }timeval\ tv\ =\ \{}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00110}00110\ \ \ \ \ \ \ \ \ .tv\_sec\ =\ now,}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00111}00111\ \ \ \ \ \ \ \ \ .tv\_usec\ =\ 0}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00112}00112\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00113}00113\ }
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00114}00114\ \ \ \ \ settimeofday(\&tv,\ NULL);\ \textcolor{comment}{//\ Cargar\ en\ RTC\ interno}}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00115}00115\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00116}00116\ \ \ \ \ \textcolor{keywordflow}{return}\ ESP\_OK;}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00117}00117\ \}}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00119}\mbox{\hyperlink{rtc_8c_a044acdfeee0cbf154bb9679e46b9bcf9}{00119}}\ esp\_err\_t\ \mbox{\hyperlink{rtc_8c_a044acdfeee0cbf154bb9679e46b9bcf9}{getTime}}(\textcolor{keyword}{struct}\ tm\ *current\_timeinfo)\ \{}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00120}00120\ \ \ \ \ time\_t\ now;}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00121}00121\ }
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00122}00122\ \ \ \ \ \textcolor{keywordflow}{if}\ (\ current\_timeinfo\ ==\ NULL\ )\ \{}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00123}00123\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ESP\_ERR\_INVALID\_ARG;}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00124}00124\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00125}00125\ }
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00126}00126\ \ \ \ \ time(\&now);}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00127}00127\ \ \ \ \ localtime\_r(\&now,\ current\_timeinfo);}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00128}00128\ }
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00129}00129\ \ \ \ \ \textcolor{keywordflow}{return}\ ESP\_OK;}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00130}00130\ \}}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00131}00131\ }
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00132}\mbox{\hyperlink{rtc_8c_adb9ac05b0bcd1cc3769f8a9931d90c06}{00132}}\ esp\_err\_t\ \mbox{\hyperlink{rtc_8c_adb9ac05b0bcd1cc3769f8a9931d90c06}{rtc\_schedule\_alarms}}(\mbox{\hyperlink{structtime__settings__t}{time\_settings\_t}}\ *time\_settings)\ \{}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00133}00133\ }
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00134}00134\ \ \ \ \ \textcolor{keywordflow}{if}\ (\ time\_settings\ !=\ NULL\ )\ \{}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00135}00135\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{rtc_8c_ab2199ad93a3c4b4fa1de3d486346cba7}{alarm\_settings}}.time\_start-\/>tm\_hour\ =\ time\_settings-\/>\mbox{\hyperlink{structtime__settings__t_a3dce91f42d172e8fccc4647d8f2a3aa8}{time\_start}}-\/>tm\_hour;}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00136}00136\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{rtc_8c_ab2199ad93a3c4b4fa1de3d486346cba7}{alarm\_settings}}.time\_start-\/>tm\_min\ =\ time\_settings-\/>\mbox{\hyperlink{structtime__settings__t_a3dce91f42d172e8fccc4647d8f2a3aa8}{time\_start}}-\/>tm\_min;}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00137}00137\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{rtc_8c_ab2199ad93a3c4b4fa1de3d486346cba7}{alarm\_settings}}.time\_stop-\/>tm\_hour\ =\ time\_settings-\/>\mbox{\hyperlink{structtime__settings__t_a6549e561c2961a7bb3d1d8dd13c10e3f}{time\_stop}}-\/>tm\_hour;}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00138}00138\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{rtc_8c_ab2199ad93a3c4b4fa1de3d486346cba7}{alarm\_settings}}.time\_stop-\/>tm\_min\ =\ time\_settings-\/>\mbox{\hyperlink{structtime__settings__t_a6549e561c2961a7bb3d1d8dd13c10e3f}{time\_stop}}-\/>tm\_min;}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00139}00139\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00140}00140\ }
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00141}00141\ \ \ \ \ \textcolor{comment}{//\ Cancelo\ las\ anteriores\ si\ existían}}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00142}00142\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{rtc_8c_a27b710d06dd027d535da94e798d0a819}{rtc\_alarms}}.start\_timer)\ \{}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00143}00143\ \ \ \ \ \ \ \ \ esp\_timer\_stop(\mbox{\hyperlink{rtc_8c_a27b710d06dd027d535da94e798d0a819}{rtc\_alarms}}.start\_timer);}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00144}00144\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00145}00145\ \ \ \ \ \textcolor{comment}{//\ Programo\ las\ nuevas}}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00146}00146\ \ \ \ \ esp\_err\_t\ err1\ =\ \mbox{\hyperlink{rtc_8c_ab576cf2b5649a8f5af8c1eca26c1e01a}{program\_alarm}}(\&\mbox{\hyperlink{rtc_8c_a27b710d06dd027d535da94e798d0a819}{rtc\_alarms}}.start\_timer,\ \mbox{\hyperlink{rtc_8c_ae9adc0a6f5c490088bf65676a23ef49e}{alarm\_start\_cb}},\ \mbox{\hyperlink{rtc_8c_ab2199ad93a3c4b4fa1de3d486346cba7}{alarm\_settings}}.time\_start-\/>tm\_hour,\ \mbox{\hyperlink{rtc_8c_ab2199ad93a3c4b4fa1de3d486346cba7}{alarm\_settings}}.time\_start-\/>tm\_min,\ \textcolor{stringliteral}{"{}start\_alarm"{}});}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00147}00147\ }
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00148}00148\ \ \ \ \ \textcolor{comment}{//\ Cancelo\ las\ anteriores\ si\ existían}}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00149}00149\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{rtc_8c_a27b710d06dd027d535da94e798d0a819}{rtc\_alarms}}.stop\_timer)\ \{}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00150}00150\ \ \ \ \ \ \ \ \ esp\_timer\_stop(\mbox{\hyperlink{rtc_8c_a27b710d06dd027d535da94e798d0a819}{rtc\_alarms}}.stop\_timer);}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00151}00151\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00152}00152\ \ \ \ \ \textcolor{comment}{//\ Programo\ las\ nuevas}}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00153}00153\ \ \ \ \ esp\_err\_t\ err2\ =\ \mbox{\hyperlink{rtc_8c_ab576cf2b5649a8f5af8c1eca26c1e01a}{program\_alarm}}(\&\mbox{\hyperlink{rtc_8c_a27b710d06dd027d535da94e798d0a819}{rtc\_alarms}}.stop\_timer,\ \mbox{\hyperlink{rtc_8c_ae1c6ac7aa77f0274bbdb795eab58f081}{alarm\_stop\_cb}},\ \mbox{\hyperlink{rtc_8c_ab2199ad93a3c4b4fa1de3d486346cba7}{alarm\_settings}}.time\_stop-\/>tm\_hour,\ \mbox{\hyperlink{rtc_8c_ab2199ad93a3c4b4fa1de3d486346cba7}{alarm\_settings}}.time\_stop-\/>tm\_min,\ \textcolor{stringliteral}{"{}stop\_alarm"{}});}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00154}00154\ }
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00155}00155\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00156}00156\ \ \ \ \ \textcolor{keywordflow}{if}\ (err1\ ==\ ESP\_OK\ \&\&\ err2\ ==\ ESP\_OK)\{}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00157}00157\ \ \ \ \ \ \ \ \ ESP\_LOGI(\mbox{\hyperlink{adc_8c_a5a85b9c772bbeb480b209a3e6ea92b4c}{TAG}},\ \textcolor{stringliteral}{"{}Configurando\ alarmas:\ INICIO\ \%02d:\%02d"{}},\ \mbox{\hyperlink{rtc_8c_ab2199ad93a3c4b4fa1de3d486346cba7}{alarm\_settings}}.time\_start-\/>tm\_hour,\ \mbox{\hyperlink{rtc_8c_ab2199ad93a3c4b4fa1de3d486346cba7}{alarm\_settings}}.time\_start-\/>tm\_min);}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00158}00158\ \ \ \ \ \ \ \ \ ESP\_LOGI(\mbox{\hyperlink{adc_8c_a5a85b9c772bbeb480b209a3e6ea92b4c}{TAG}},\ \textcolor{stringliteral}{"{}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ \ FIN\ \ \ \%02d:\%02d"{}},\ \mbox{\hyperlink{rtc_8c_ab2199ad93a3c4b4fa1de3d486346cba7}{alarm\_settings}}.time\_stop-\/>tm\_hour,\ \mbox{\hyperlink{rtc_8c_ab2199ad93a3c4b4fa1de3d486346cba7}{alarm\_settings}}.time\_stop-\/>tm\_min);}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00159}00159\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ESP\_OK;}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00160}00160\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00161}00161\ \ \ \ \ \ \ \ \ ESP\_LOGE(\mbox{\hyperlink{adc_8c_a5a85b9c772bbeb480b209a3e6ea92b4c}{TAG}},\ \textcolor{stringliteral}{"{}ERROR\ AL\ CONFIGURAR\ LAS\ ALARMAS"{}});}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00162}00162\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ESP\_FAIL;}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00163}00163\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00164}00164\ \}}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00165}00165\ }
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00166}\mbox{\hyperlink{rtc_8c_ab576cf2b5649a8f5af8c1eca26c1e01a}{00166}}\ \textcolor{keyword}{static}\ esp\_err\_t\ \mbox{\hyperlink{rtc_8c_ab576cf2b5649a8f5af8c1eca26c1e01a}{program\_alarm}}(esp\_timer\_handle\_t\ *timer\_handle,\ \textcolor{keywordtype}{void}\ (*callback)(\textcolor{keywordtype}{void}\ *),\ \textcolor{keywordtype}{int}\ hour,\ \textcolor{keywordtype}{int}\ minute,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *name)\ \{}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00167}00167\ \ \ \ \ time\_t\ now;}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00168}00168\ \ \ \ \ \textcolor{keyword}{struct\ }tm\ timeinfo\_alarm;}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00169}00169\ \ \ \ \ time(\&now);}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00170}00170\ \ \ \ \ localtime\_r(\&now,\ \&timeinfo\_alarm);}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00171}00171\ }
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00172}00172\ \ \ \ \ \textcolor{keyword}{struct\ }tm\ alarm\_tm\ =\ timeinfo\_alarm;}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00173}00173\ \ \ \ \ alarm\_tm.tm\_hour\ =\ hour;}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00174}00174\ \ \ \ \ alarm\_tm.tm\_min\ \ =\ minute;}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00175}00175\ \ \ \ \ alarm\_tm.tm\_sec\ \ =\ 0;}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00176}00176\ }
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00177}00177\ \ \ \ \ time\_t\ alarm\_epoch\ =\ mktime(\&alarm\_tm);}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00178}00178\ \ \ \ \ \textcolor{keywordflow}{if}\ (alarm\_epoch\ <=\ now)\ \{}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00179}00179\ \ \ \ \ \ \ \ \ alarm\_epoch\ +=\ 24\ *\ 3600;}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00180}00180\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00181}00181\ }
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00182}00182\ \ \ \ \ int64\_t\ usec\_until\_alarm\ =\ (alarm\_epoch\ -\/\ now)\ *\ 1000000LL;}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00183}00183\ }
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00184}00184\ \ \ \ \ esp\_timer\_create\_args\_t\ timer\_args\ =\ \{}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00185}00185\ \ \ \ \ \ \ \ \ .callback\ =\ callback,}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00186}00186\ \ \ \ \ \ \ \ \ .arg\ =\ NULL,}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00187}00187\ \ \ \ \ \ \ \ \ .dispatch\_method\ =\ ESP\_TIMER\_TASK,}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00188}00188\ \ \ \ \ \ \ \ \ .name\ =\ name}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00189}00189\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00190}00190\ }
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00191}00191\ \ \ \ \ esp\_err\_t\ err\ =\ esp\_timer\_create(\&timer\_args,\ timer\_handle);}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00192}00192\ \ \ \ \ \textcolor{keywordflow}{if}\ (err\ !=\ ESP\_OK)\ \{}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00193}00193\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ err;}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00194}00194\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00195}00195\ }
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00196}00196\ \ \ \ \ err\ =\ esp\_timer\_start\_once(*timer\_handle,\ usec\_until\_alarm);}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00197}00197\ \ \ \ \ \textcolor{keywordflow}{if}\ (err\ !=\ ESP\_OK)\ \{}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00198}00198\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ err;}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00199}00199\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00200}00200\ }
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00201}00201\ \ \ \ \ ESP\_LOGI(\mbox{\hyperlink{adc_8c_a5a85b9c772bbeb480b209a3e6ea92b4c}{TAG}},\ \textcolor{stringliteral}{"{}Programada\ \%s\ para\ \%02d:\%02d\ (en\ \%lld\ segundos)"{}},\ name,\ hour,\ minute,\ (alarm\_epoch\ -\/\ now));}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00202}00202\ }
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00203}00203\ \ \ \ \ \textcolor{keywordflow}{return}\ ESP\_OK;}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00204}00204\ \}}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00205}00205\ }
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00206}00206\ \textcolor{comment}{//\ Callback\ para\ inicio\ de\ tarea}}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00207}\mbox{\hyperlink{rtc_8c_ae9adc0a6f5c490088bf65676a23ef49e}{00207}}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{rtc_8c_ae9adc0a6f5c490088bf65676a23ef49e}{alarm\_start\_cb}}(\textcolor{keywordtype}{void}\ *arg)\ \{}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00208}00208\ \ \ \ \ ESP\_LOGI(\mbox{\hyperlink{adc_8c_a5a85b9c772bbeb480b209a3e6ea92b4c}{TAG}},\ \textcolor{stringliteral}{"{}⏰\ Alarma\ de\ INICIO\ disparada"{}});}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00209}00209\ }
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00210}00210\ \ \ \ \ \textcolor{comment}{//\ Cancelo\ las\ anteriores\ si\ existían}}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00211}00211\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{rtc_8c_a27b710d06dd027d535da94e798d0a819}{rtc\_alarms}}.start\_timer)\ \{}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00212}00212\ \ \ \ \ \ \ \ \ esp\_timer\_stop(\mbox{\hyperlink{rtc_8c_a27b710d06dd027d535da94e798d0a819}{rtc\_alarms}}.start\_timer);}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00213}00213\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00214}00214\ \ \ \ \ \textcolor{comment}{//\ Programo\ las\ nuevas}}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00215}00215\ \ \ \ \ ESP\_ERROR\_CHECK(\mbox{\hyperlink{rtc_8c_ab576cf2b5649a8f5af8c1eca26c1e01a}{program\_alarm}}(\&\mbox{\hyperlink{rtc_8c_a27b710d06dd027d535da94e798d0a819}{rtc\_alarms}}.start\_timer,\ \mbox{\hyperlink{rtc_8c_ae9adc0a6f5c490088bf65676a23ef49e}{alarm\_start\_cb}},\ \mbox{\hyperlink{rtc_8c_ab2199ad93a3c4b4fa1de3d486346cba7}{alarm\_settings}}.time\_start-\/>tm\_hour,\ \mbox{\hyperlink{rtc_8c_ab2199ad93a3c4b4fa1de3d486346cba7}{alarm\_settings}}.time\_start-\/>tm\_min,\ \textcolor{stringliteral}{"{}start\_alarm"{}}));}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00216}00216\ }
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00217}00217\ \ \ \ \ \textcolor{comment}{//\ Cancelo\ las\ anteriores\ si\ existían}}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00218}00218\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{rtc_8c_a27b710d06dd027d535da94e798d0a819}{rtc\_alarms}}.stop\_timer)\ \{}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00219}00219\ \ \ \ \ \ \ \ \ esp\_timer\_stop(\mbox{\hyperlink{rtc_8c_a27b710d06dd027d535da94e798d0a819}{rtc\_alarms}}.stop\_timer);}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00220}00220\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00221}00221\ \ \ \ \ \textcolor{comment}{//\ Programo\ las\ nuevas}}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00222}00222\ \ \ \ \ ESP\_ERROR\_CHECK(\mbox{\hyperlink{rtc_8c_ab576cf2b5649a8f5af8c1eca26c1e01a}{program\_alarm}}(\&\mbox{\hyperlink{rtc_8c_a27b710d06dd027d535da94e798d0a819}{rtc\_alarms}}.stop\_timer,\ \mbox{\hyperlink{rtc_8c_ae1c6ac7aa77f0274bbdb795eab58f081}{alarm\_stop\_cb}},\ \mbox{\hyperlink{rtc_8c_ab2199ad93a3c4b4fa1de3d486346cba7}{alarm\_settings}}.time\_stop-\/>tm\_hour,\ \mbox{\hyperlink{rtc_8c_ab2199ad93a3c4b4fa1de3d486346cba7}{alarm\_settings}}.time\_stop-\/>tm\_min,\ \textcolor{stringliteral}{"{}stop\_alarm"{}}));}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00223}00223\ }
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00224}00224\ \ \ \ \ \mbox{\hyperlink{sys_control_8c_aba4a84160e22ceea0cedd0ddcd454af4}{SystemEventPost}}(\mbox{\hyperlink{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796a63785524fddc6173ea49aacebd1ba9b4}{START\_PRESSED}});}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00225}00225\ \}}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00226}00226\ }
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00227}00227\ \textcolor{comment}{//\ Callback\ para\ fin\ de\ tarea}}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00228}\mbox{\hyperlink{rtc_8c_ae1c6ac7aa77f0274bbdb795eab58f081}{00228}}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{rtc_8c_ae1c6ac7aa77f0274bbdb795eab58f081}{alarm\_stop\_cb}}(\textcolor{keywordtype}{void}\ *arg)\ \{}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00229}00229\ \ \ \ \ ESP\_LOGI(\mbox{\hyperlink{adc_8c_a5a85b9c772bbeb480b209a3e6ea92b4c}{TAG}},\ \textcolor{stringliteral}{"{}⏰\ Alarma\ de\ FIN\ disparada"{}});}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00230}00230\ }
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00231}00231\ \ \ \ \ \textcolor{comment}{//\ Cancelo\ las\ anteriores\ si\ existían}}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00232}00232\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{rtc_8c_a27b710d06dd027d535da94e798d0a819}{rtc\_alarms}}.start\_timer)\ \{}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00233}00233\ \ \ \ \ \ \ \ \ esp\_timer\_stop(\mbox{\hyperlink{rtc_8c_a27b710d06dd027d535da94e798d0a819}{rtc\_alarms}}.start\_timer);}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00234}00234\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00235}00235\ \ \ \ \ \textcolor{comment}{//\ Programo\ las\ nuevas}}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00236}00236\ \ \ \ \ ESP\_ERROR\_CHECK(\mbox{\hyperlink{rtc_8c_ab576cf2b5649a8f5af8c1eca26c1e01a}{program\_alarm}}(\&\mbox{\hyperlink{rtc_8c_a27b710d06dd027d535da94e798d0a819}{rtc\_alarms}}.start\_timer,\ \mbox{\hyperlink{rtc_8c_ae9adc0a6f5c490088bf65676a23ef49e}{alarm\_start\_cb}},\ \mbox{\hyperlink{rtc_8c_ab2199ad93a3c4b4fa1de3d486346cba7}{alarm\_settings}}.time\_start-\/>tm\_hour,\ \mbox{\hyperlink{rtc_8c_ab2199ad93a3c4b4fa1de3d486346cba7}{alarm\_settings}}.time\_start-\/>tm\_min,\ \textcolor{stringliteral}{"{}start\_alarm"{}}));}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00237}00237\ }
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00238}00238\ \ \ \ \ \textcolor{comment}{//\ Cancelo\ las\ anteriores\ si\ existían}}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00239}00239\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{rtc_8c_a27b710d06dd027d535da94e798d0a819}{rtc\_alarms}}.stop\_timer)\ \{}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00240}00240\ \ \ \ \ \ \ \ \ esp\_timer\_stop(\mbox{\hyperlink{rtc_8c_a27b710d06dd027d535da94e798d0a819}{rtc\_alarms}}.stop\_timer);}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00241}00241\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00242}00242\ \ \ \ \ \textcolor{comment}{//\ Programo\ las\ nuevas}}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00243}00243\ \ \ \ \ ESP\_ERROR\_CHECK(\mbox{\hyperlink{rtc_8c_ab576cf2b5649a8f5af8c1eca26c1e01a}{program\_alarm}}(\&\mbox{\hyperlink{rtc_8c_a27b710d06dd027d535da94e798d0a819}{rtc\_alarms}}.stop\_timer,\ \mbox{\hyperlink{rtc_8c_ae1c6ac7aa77f0274bbdb795eab58f081}{alarm\_stop\_cb}},\ \mbox{\hyperlink{rtc_8c_ab2199ad93a3c4b4fa1de3d486346cba7}{alarm\_settings}}.time\_stop-\/>tm\_hour,\ \mbox{\hyperlink{rtc_8c_ab2199ad93a3c4b4fa1de3d486346cba7}{alarm\_settings}}.time\_stop-\/>tm\_min,\ \textcolor{stringliteral}{"{}stop\_alarm"{}}));}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00244}00244\ }
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00245}00245\ \ \ \ \ \mbox{\hyperlink{sys_control_8c_aba4a84160e22ceea0cedd0ddcd454af4}{SystemEventPost}}(\mbox{\hyperlink{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796aa9aca1a320269de9561c234df472939c}{STOP\_PRESSED}});}
+\DoxyCodeLine{\Hypertarget{rtc_8c_source_l00246}00246\ \}}
+
+\end{DoxyCode}

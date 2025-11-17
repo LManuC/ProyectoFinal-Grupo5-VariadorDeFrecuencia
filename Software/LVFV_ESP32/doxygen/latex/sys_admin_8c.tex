@@ -1,0 +1,394 @@
+\doxysection{Referencia del archivo C\+:/\+Users/\+User/\+LVFV\+\_\+\+ESP32/main/system/sys\+Admin.c}
+\hypertarget{sys_admin_8c}{}\label{sys_admin_8c}\index{C:/Users/User/LVFV\_ESP32/main/system/sysAdmin.c@{C:/Users/User/LVFV\_ESP32/main/system/sysAdmin.c}}
+
+
+Archivo de funciones que permiten controlar las variables fundamentales del sistema que controla el motor, solo para poder ser representadas en el display. Las variables reales de sistema se encuentran el el STM32.  
+
+
+{\ttfamily \#include "{}esp\+\_\+log.\+h"{}}\newline
+{\ttfamily \#include "{}esp\+\_\+err.\+h"{}}\newline
+{\ttfamily \#include "{}freertos/\+Free\+RTOS.\+h"{}}\newline
+{\ttfamily \#include "{}freertos/task.\+h"{}}\newline
+{\ttfamily \#include "{}freertos/queue.\+h"{}}\newline
+{\ttfamily \#include "{}esp\+\_\+system.\+h"{}}\newline
+{\ttfamily \#include "{}Sys\+Admin.\+h"{}}\newline
+Gráfico de dependencias incluidas en sys\+Admin.\+c\+:
+% FIG 0
+\doxysubsubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{sys_admin_8c_abe28e281ca81cf401dbd8b06f719d606}{accelerating}} (void \texorpdfstring{$\ast$}{*}pv\+Parameters)
+\begin{DoxyCompactList}\small\item\em Tareas dedicada a incrementar la frecuencia que es impresa en el display de acuerdo a la aceleración y hasta la frecuencia de regimen. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{sys_admin_8c_a16593ac6c0abf6f65c696373af621487}{desaccelerating}} (void \texorpdfstring{$\ast$}{*}pv\+Parameters)
+\begin{DoxyCompactList}\small\item\em Tareas dedicada a decrementar la frecuencia que es impresa en el display de acuerdo a la desaceleración y hasta la frecuencia de regimen o 0Hz. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{sys_admin_8c_a62e7c27f84d0db690242eeb717c4e17b}{engine\+\_\+start}} ()
+\begin{DoxyCompactList}\small\item\em Función que setea la frecuencia de régimen de acuerdo a lo configurado por el usuario y ejecuta la tarea accelerating. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{sys_admin_8c_abb59808fe42c3d4dd43e0f91d1f699a9}{engine\+\_\+stop}} ()
+\begin{DoxyCompactList}\small\item\em Función que setea la frecuencia de régimen de acuerdo a lo configurado por el usuario y ejecuta la tarea desaccelerating. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sys_admin_8c_aa6c33be7b7273385ae39a1f682f28f75}{engine\+\_\+emergency\+\_\+stop}} ()
+\begin{DoxyCompactList}\small\item\em Pasa la frecuencia de regimen a 0Hz y pasa a estado SYSTEM\+\_\+\+EMERGENCY. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{sys_admin_8c_a6b7a46f08b0f4ed784a8001e221a32a8}{change\+\_\+frequency}} (uint8\+\_\+t speed\+\_\+slector)
+\begin{DoxyCompactList}\small\item\em Cambia la frecuencias de régimen del motor de acuerdo a la entrada aislada que haya ingresado. Ejecuta accelerating o desaccelerating, de acuerdo a lo necesario. \end{DoxyCompactList}\item 
+esp\+\_\+err\+\_\+t \mbox{\hyperlink{sys_admin_8c_a7bf3fbe77325da35d54220bf89fb26ce}{get\+\_\+status}} (\mbox{\hyperlink{structsystem__status__t}{system\+\_\+status\+\_\+t}} \texorpdfstring{$\ast$}{*}s\+\_\+e)
+\begin{DoxyCompactList}\small\item\em Obtiene una réplica del status del sistema. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791}{system\+\_\+status\+\_\+e}} \mbox{\hyperlink{sys_admin_8c_ab7f234b01f6a10381a179c5dbfa5a3be}{update\+\_\+meas}} (uint16\+\_\+t vbus\+\_\+meas, uint16\+\_\+t ibus\+\_\+meas)
+\begin{DoxyCompactList}\small\item\em Actualiza las mediciones de tensión y corriente del bus de contínua. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sys_admin_8c_a4c6328d6bdb3ae404b65b9046dc71446}{set\+\_\+frequency\+\_\+table}} (uint16\+\_\+t input\+\_\+variable, uint16\+\_\+t freq\+\_\+regime)
+\begin{DoxyCompactList}\small\item\em Carga en el vector de velocidades configurables por entradas, las diferentes frecuencias de trabajo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sys_admin_8c_a5f1c91f368c1994714cc10c041120367}{set\+\_\+seccurity\+\_\+settings}} (\mbox{\hyperlink{structseccurity__settings__t}{seccurity\+\_\+settings\+\_\+t}} \texorpdfstring{$\ast$}{*}s\+\_\+s)
+\begin{DoxyCompactList}\small\item\em Actualiza las variables de seguridad del sistema. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{sys_admin_8c_a5a85b9c772bbeb480b209a3e6ea92b4c}{TAG}} = "{}sys\+Admin"{}
+\item 
+static \mbox{\hyperlink{structsystem__status__t}{system\+\_\+status\+\_\+t}} \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\+\_\+status}}
+\item 
+static \mbox{\hyperlink{structseccurity__settings__t}{seccurity\+\_\+settings\+\_\+t}} \mbox{\hyperlink{sys_admin_8c_a45b4049988bafe92214f32fd28019e30}{system\+\_\+seccurity\+\_\+settings}}
+\item 
+static uint16\+\_\+t \mbox{\hyperlink{sys_admin_8c_aa12e414b0919881d870f6596c2250185}{frequency\+\_\+table}} \mbox{[}8\mbox{]}
+\item 
+static Task\+Handle\+\_\+t \mbox{\hyperlink{sys_admin_8c_aa37a6d8617ec99a22272a0445cfe9a08}{accelerating\+\_\+handle}} = NULL
+\item 
+static Task\+Handle\+\_\+t \mbox{\hyperlink{sys_admin_8c_aef1cbb22108ca96e11c5f161d31bda51}{desaccelerating\+\_\+handle}} = NULL
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Archivo de funciones que permiten controlar las variables fundamentales del sistema que controla el motor, solo para poder ser representadas en el display. Las variables reales de sistema se encuentran el el STM32. 
+
+\begin{DoxyAuthor}{Autor}
+Andrenacci -\/ Carra 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Versión}
+2.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Fecha}
+2025-\/11-\/06 
+\end{DoxyDate}
+
+
+Definición en el archivo \mbox{\hyperlink{sys_admin_8c_source}{sys\+Admin.\+c}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{sys_admin_8c_doc-func-members}
+\doxysubsection{Documentación de funciones}
+\Hypertarget{sys_admin_8c_abe28e281ca81cf401dbd8b06f719d606}\index{sysAdmin.c@{sysAdmin.c}!accelerating@{accelerating}}
+\index{accelerating@{accelerating}!sysAdmin.c@{sysAdmin.c}}
+\doxysubsubsection{\texorpdfstring{accelerating()}{accelerating()}}
+{\footnotesize\ttfamily \label{sys_admin_8c_abe28e281ca81cf401dbd8b06f719d606} 
+void accelerating (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{pv\+Parameters}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Tareas dedicada a incrementar la frecuencia que es impresa en el display de acuerdo a la aceleración y hasta la frecuencia de regimen. 
+
+Es una tarea que debe ser creada cada vez que se necesita incrementar la frecuencia impresa ya que, al terminar de llegar a régimen, termina su propia ejecución. Al terminar su ejecución pasa de SYSTEM\+\_\+\+ACCLE\+\_\+\+DESACCEL a SYSTEM\+\_\+\+REGIME
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\texttt{in}}  & {\em pv\+Parameters} & Sin uso \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea \mbox{\hyperlink{sys_admin_8c_source_l00051}{51}} del archivo \mbox{\hyperlink{sys_admin_8c_source}{sys\+Admin.\+c}}.
+
+Gráfico de llamadas a esta función\+:
+% FIG 1
+\Hypertarget{sys_admin_8c_a6b7a46f08b0f4ed784a8001e221a32a8}\index{sysAdmin.c@{sysAdmin.c}!change\_frequency@{change\_frequency}}
+\index{change\_frequency@{change\_frequency}!sysAdmin.c@{sysAdmin.c}}
+\doxysubsubsection{\texorpdfstring{change\_frequency()}{change\_frequency()}}
+{\footnotesize\ttfamily \label{sys_admin_8c_a6b7a46f08b0f4ed784a8001e221a32a8} 
+uint16\+\_\+t change\+\_\+frequency (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{speed\+\_\+slector}{}\end{DoxyParamCaption})}
+
+
+
+Cambia la frecuencias de régimen del motor de acuerdo a la entrada aislada que haya ingresado. Ejecuta accelerating o desaccelerating, de acuerdo a lo necesario. 
+
+De acuerdo a la frecuencia de régimen elegida y el tipo de variación, la frecuencia de destión tendrá diferentes valores, siempre menores a las de régimen.
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\texttt{in}}  & {\em speed\+\_\+slector} & Índice dentro del array con frecuencias de trabajo\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+0Hz si {\ttfamily speed\+\_\+selector} fue mal pasada como argumento, sino la frecuencia de destino 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{sys_admin_8c_source_l00133}{133}} del archivo \mbox{\hyperlink{sys_admin_8c_source}{sys\+Admin.\+c}}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 2
+Gráfico de llamadas a esta función\+:
+% FIG 3
+\Hypertarget{sys_admin_8c_a16593ac6c0abf6f65c696373af621487}\index{sysAdmin.c@{sysAdmin.c}!desaccelerating@{desaccelerating}}
+\index{desaccelerating@{desaccelerating}!sysAdmin.c@{sysAdmin.c}}
+\doxysubsubsection{\texorpdfstring{desaccelerating()}{desaccelerating()}}
+{\footnotesize\ttfamily \label{sys_admin_8c_a16593ac6c0abf6f65c696373af621487} 
+void desaccelerating (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{pv\+Parameters}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Tareas dedicada a decrementar la frecuencia que es impresa en el display de acuerdo a la desaceleración y hasta la frecuencia de regimen o 0Hz. 
+
+Es una tarea que debe ser creada cada vez que se necesita decrementar la frecuencia impresa ya que, al terminar de llegar a régimen, termina su propia ejecución. Al terminar su ejecución pasa de SYSTEM\+\_\+\+BREAKING a SYSTEM\+\_\+\+REGIME o de SYSTEM\+\_\+\+ACCLE\+\_\+\+DESACCEL a SYSTEM\+\_\+\+REGIME. En caso de estar en SYSTEM\+\_\+\+EMERGENCY no cambia el status
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\texttt{in}}  & {\em pv\+Parameters} & Sin uso \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea \mbox{\hyperlink{sys_admin_8c_source_l00067}{67}} del archivo \mbox{\hyperlink{sys_admin_8c_source}{sys\+Admin.\+c}}.
+
+Gráfico de llamadas a esta función\+:
+% FIG 4
+\Hypertarget{sys_admin_8c_aa6c33be7b7273385ae39a1f682f28f75}\index{sysAdmin.c@{sysAdmin.c}!engine\_emergency\_stop@{engine\_emergency\_stop}}
+\index{engine\_emergency\_stop@{engine\_emergency\_stop}!sysAdmin.c@{sysAdmin.c}}
+\doxysubsubsection{\texorpdfstring{engine\_emergency\_stop()}{engine\_emergency\_stop()}}
+{\footnotesize\ttfamily \label{sys_admin_8c_aa6c33be7b7273385ae39a1f682f28f75} 
+void engine\+\_\+emergency\+\_\+stop (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Pasa la frecuencia de regimen a 0Hz y pasa a estado SYSTEM\+\_\+\+EMERGENCY. 
+
+Termina las tareas accelerating y desaccelerating 
+
+Definición en la línea \mbox{\hyperlink{sys_admin_8c_source_l00119}{119}} del archivo \mbox{\hyperlink{sys_admin_8c_source}{sys\+Admin.\+c}}.
+
+Gráfico de llamadas a esta función\+:
+% FIG 5
+\Hypertarget{sys_admin_8c_a62e7c27f84d0db690242eeb717c4e17b}\index{sysAdmin.c@{sysAdmin.c}!engine\_start@{engine\_start}}
+\index{engine\_start@{engine\_start}!sysAdmin.c@{sysAdmin.c}}
+\doxysubsubsection{\texorpdfstring{engine\_start()}{engine\_start()}}
+{\footnotesize\ttfamily \label{sys_admin_8c_a62e7c27f84d0db690242eeb717c4e17b} 
+uint16\+\_\+t engine\+\_\+start (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Función que setea la frecuencia de régimen de acuerdo a lo configurado por el usuario y ejecuta la tarea accelerating. 
+
+En caso de que desaccelerating esté corriendo, antes de ejecutar accelerating, la cierra para no generar un efecto de subida y bajada de frecuencia. El status pasará a SYSTEM\+\_\+\+ACCLE\+\_\+\+DESACCEL
+
+\begin{DoxyReturn}{Devuelve}
+Frecuencia de destino configurada 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{sys_admin_8c_source_l00091}{91}} del archivo \mbox{\hyperlink{sys_admin_8c_source}{sys\+Admin.\+c}}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 6
+Gráfico de llamadas a esta función\+:
+% FIG 7
+\Hypertarget{sys_admin_8c_abb59808fe42c3d4dd43e0f91d1f699a9}\index{sysAdmin.c@{sysAdmin.c}!engine\_stop@{engine\_stop}}
+\index{engine\_stop@{engine\_stop}!sysAdmin.c@{sysAdmin.c}}
+\doxysubsubsection{\texorpdfstring{engine\_stop()}{engine\_stop()}}
+{\footnotesize\ttfamily \label{sys_admin_8c_abb59808fe42c3d4dd43e0f91d1f699a9} 
+uint16\+\_\+t engine\+\_\+stop (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Función que setea la frecuencia de régimen de acuerdo a lo configurado por el usuario y ejecuta la tarea desaccelerating. 
+
+En caso de que accelerating esté corriendo, antes de ejecutar desaccelerating, la cierra para no generar un efecto de subida y bajada de frecuencia. El status pasará a SYSTEM\+\_\+\+ACCLE\+\_\+\+DESACCEL o SYSTEM\+\_\+\+BREAKING de a cuerdo a la acción que haya ocurrido
+
+\begin{DoxyReturn}{Devuelve}
+Frecuencia de destino configurada 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{sys_admin_8c_source_l00104}{104}} del archivo \mbox{\hyperlink{sys_admin_8c_source}{sys\+Admin.\+c}}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 8
+Gráfico de llamadas a esta función\+:
+% FIG 9
+\Hypertarget{sys_admin_8c_a7bf3fbe77325da35d54220bf89fb26ce}\index{sysAdmin.c@{sysAdmin.c}!get\_status@{get\_status}}
+\index{get\_status@{get\_status}!sysAdmin.c@{sysAdmin.c}}
+\doxysubsubsection{\texorpdfstring{get\_status()}{get\_status()}}
+{\footnotesize\ttfamily \label{sys_admin_8c_a7bf3fbe77325da35d54220bf89fb26ce} 
+esp\+\_\+err\+\_\+t get\+\_\+status (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structsystem__status__t}{system\+\_\+status\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{s\+\_\+e}{}\end{DoxyParamCaption})}
+
+
+
+Obtiene una réplica del status del sistema. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\texttt{out}}  & {\em s\+\_\+e} & Puntero a la variable donde se devolverá la información de status\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+
+\begin{DoxyItemize}
+\item ESP\+\_\+\+ERR\+\_\+\+NOT\+\_\+\+ALLOWED\+: En caso de que s\+\_\+e sea un puntero a NULL
+\item ESP\+\_\+\+OK\+: Si la copia fue exitosa 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{sys_admin_8c_source_l00160}{160}} del archivo \mbox{\hyperlink{sys_admin_8c_source}{sys\+Admin.\+c}}.
+
+Gráfico de llamadas a esta función\+:
+% FIG 10
+\Hypertarget{sys_admin_8c_a4c6328d6bdb3ae404b65b9046dc71446}\index{sysAdmin.c@{sysAdmin.c}!set\_frequency\_table@{set\_frequency\_table}}
+\index{set\_frequency\_table@{set\_frequency\_table}!sysAdmin.c@{sysAdmin.c}}
+\doxysubsubsection{\texorpdfstring{set\_frequency\_table()}{set\_frequency\_table()}}
+{\footnotesize\ttfamily \label{sys_admin_8c_a4c6328d6bdb3ae404b65b9046dc71446} 
+void set\+\_\+frequency\+\_\+table (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{input\+\_\+variable}{, }\item[{uint16\+\_\+t}]{freq\+\_\+regime}{}\end{DoxyParamCaption})}
+
+
+
+Carga en el vector de velocidades configurables por entradas, las diferentes frecuencias de trabajo. 
+
+La posición 0 del buffer es la frecuencia de regimen, la posición 7 es la frecuencia más baja distinta de cero
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\texttt{in}}  & {\em input\+\_\+variable} & Tipo de variación entre las diferentes entradas. 1 para variación lineal; 2 para variación cuadrática.\\
+\hline
+\mbox{\texttt{in}}  & {\em freq\+\_\+regime} & Frecuencia de regimen ingresada por el usuario \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea \mbox{\hyperlink{sys_admin_8c_source_l00198}{198}} del archivo \mbox{\hyperlink{sys_admin_8c_source}{sys\+Admin.\+c}}.
+
+Gráfico de llamadas a esta función\+:
+% FIG 11
+\Hypertarget{sys_admin_8c_a5f1c91f368c1994714cc10c041120367}\index{sysAdmin.c@{sysAdmin.c}!set\_seccurity\_settings@{set\_seccurity\_settings}}
+\index{set\_seccurity\_settings@{set\_seccurity\_settings}!sysAdmin.c@{sysAdmin.c}}
+\doxysubsubsection{\texorpdfstring{set\_seccurity\_settings()}{set\_seccurity\_settings()}}
+{\footnotesize\ttfamily \label{sys_admin_8c_a5f1c91f368c1994714cc10c041120367} 
+void set\+\_\+seccurity\+\_\+settings (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structseccurity__settings__t}{seccurity\+\_\+settings\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{s\+\_\+s}{}\end{DoxyParamCaption})}
+
+
+
+Actualiza las variables de seguridad del sistema. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\texttt{in}}  & {\em s\+\_\+s} & Puntero a la estructura con las variables de seguridad a actualizar \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea \mbox{\hyperlink{sys_admin_8c_source_l00220}{220}} del archivo \mbox{\hyperlink{sys_admin_8c_source}{sys\+Admin.\+c}}.
+
+Gráfico de llamadas a esta función\+:
+% FIG 12
+\Hypertarget{sys_admin_8c_ab7f234b01f6a10381a179c5dbfa5a3be}\index{sysAdmin.c@{sysAdmin.c}!update\_meas@{update\_meas}}
+\index{update\_meas@{update\_meas}!sysAdmin.c@{sysAdmin.c}}
+\doxysubsubsection{\texorpdfstring{update\_meas()}{update\_meas()}}
+{\footnotesize\ttfamily \label{sys_admin_8c_ab7f234b01f6a10381a179c5dbfa5a3be} 
+\mbox{\hyperlink{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791}{system\+\_\+status\+\_\+e}} update\+\_\+meas (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{vbus\+\_\+meas}{, }\item[{uint16\+\_\+t}]{ibus\+\_\+meas}{}\end{DoxyParamCaption})}
+
+
+
+Actualiza las mediciones de tensión y corriente del bus de contínua. 
+
+En caso que superar los límites configurados, entra en SYSTEM\+\_\+\+EMERGENCY
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\texttt{in}}  & {\em vbus\+\_\+meas} & 
+\begin{DoxyItemize}
+\item Tensión de bus de contínua leído por el ADC
+\end{DoxyItemize}\\
+\hline
+\mbox{\texttt{in}}  & {\em ibus\+\_\+meas} & 
+\begin{DoxyItemize}
+\item Corriente de bus de contínua leído por el ADC
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+
+\begin{DoxyItemize}
+\item SYSTEM\+\_\+\+IDLE\+: El sistema se encuentra en estado de reposo
+\item SYSTEM\+\_\+\+ACCLE\+\_\+\+DESACCEL\+: El sistema se encuentra acelerando o desacelerando
+\item SYSTEM\+\_\+\+REGIME\+: El sistema está con el motor girando a régimen
+\item SYSTEM\+\_\+\+BREAKING\+: El sistema está frenando
+\item SYSTEM\+\_\+\+EMERGENCY\+: El sistema entra por primera vez en estado de emergencia
+\item SYSTEM\+\_\+\+EMERGENCY\+\_\+\+OK\+: El sistema continúa en estado de emergencia 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{sys_admin_8c_source_l00172}{172}} del archivo \mbox{\hyperlink{sys_admin_8c_source}{sys\+Admin.\+c}}.
+
+Gráfico de llamadas a esta función\+:
+% FIG 13
+
+
+\label{doc-var-members}
+\Hypertarget{sys_admin_8c_doc-var-members}
+\doxysubsection{Documentación de variables}
+\Hypertarget{sys_admin_8c_aa37a6d8617ec99a22272a0445cfe9a08}\index{sysAdmin.c@{sysAdmin.c}!accelerating\_handle@{accelerating\_handle}}
+\index{accelerating\_handle@{accelerating\_handle}!sysAdmin.c@{sysAdmin.c}}
+\doxysubsubsection{\texorpdfstring{accelerating\_handle}{accelerating\_handle}}
+{\footnotesize\ttfamily \label{sys_admin_8c_aa37a6d8617ec99a22272a0445cfe9a08} 
+Task\+Handle\+\_\+t accelerating\+\_\+handle = NULL\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{sys_admin_8c_source_l00024}{24}} del archivo \mbox{\hyperlink{sys_admin_8c_source}{sys\+Admin.\+c}}.
+
+\Hypertarget{sys_admin_8c_aef1cbb22108ca96e11c5f161d31bda51}\index{sysAdmin.c@{sysAdmin.c}!desaccelerating\_handle@{desaccelerating\_handle}}
+\index{desaccelerating\_handle@{desaccelerating\_handle}!sysAdmin.c@{sysAdmin.c}}
+\doxysubsubsection{\texorpdfstring{desaccelerating\_handle}{desaccelerating\_handle}}
+{\footnotesize\ttfamily \label{sys_admin_8c_aef1cbb22108ca96e11c5f161d31bda51} 
+Task\+Handle\+\_\+t desaccelerating\+\_\+handle = NULL\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{sys_admin_8c_source_l00025}{25}} del archivo \mbox{\hyperlink{sys_admin_8c_source}{sys\+Admin.\+c}}.
+
+\Hypertarget{sys_admin_8c_aa12e414b0919881d870f6596c2250185}\index{sysAdmin.c@{sysAdmin.c}!frequency\_table@{frequency\_table}}
+\index{frequency\_table@{frequency\_table}!sysAdmin.c@{sysAdmin.c}}
+\doxysubsubsection{\texorpdfstring{frequency\_table}{frequency\_table}}
+{\footnotesize\ttfamily \label{sys_admin_8c_aa12e414b0919881d870f6596c2250185} 
+uint16\+\_\+t frequency\+\_\+table\mbox{[}8\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{sys_admin_8c_source_l00023}{23}} del archivo \mbox{\hyperlink{sys_admin_8c_source}{sys\+Admin.\+c}}.
+
+\Hypertarget{sys_admin_8c_a45b4049988bafe92214f32fd28019e30}\index{sysAdmin.c@{sysAdmin.c}!system\_seccurity\_settings@{system\_seccurity\_settings}}
+\index{system\_seccurity\_settings@{system\_seccurity\_settings}!sysAdmin.c@{sysAdmin.c}}
+\doxysubsubsection{\texorpdfstring{system\_seccurity\_settings}{system\_seccurity\_settings}}
+{\footnotesize\ttfamily \label{sys_admin_8c_a45b4049988bafe92214f32fd28019e30} 
+\mbox{\hyperlink{structseccurity__settings__t}{seccurity\+\_\+settings\+\_\+t}} system\+\_\+seccurity\+\_\+settings\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{sys_admin_8c_source_l00022}{22}} del archivo \mbox{\hyperlink{sys_admin_8c_source}{sys\+Admin.\+c}}.
+
+\Hypertarget{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}\index{sysAdmin.c@{sysAdmin.c}!system\_status@{system\_status}}
+\index{system\_status@{system\_status}!sysAdmin.c@{sysAdmin.c}}
+\doxysubsubsection{\texorpdfstring{system\_status}{system\_status}}
+{\footnotesize\ttfamily \label{sys_admin_8c_a9f4a5a19b42426463975a42d18564601} 
+\mbox{\hyperlink{structsystem__status__t}{system\+\_\+status\+\_\+t}} system\+\_\+status\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{sys_admin_8c_source_l00021}{21}} del archivo \mbox{\hyperlink{sys_admin_8c_source}{sys\+Admin.\+c}}.
+
+\Hypertarget{sys_admin_8c_a5a85b9c772bbeb480b209a3e6ea92b4c}\index{sysAdmin.c@{sysAdmin.c}!TAG@{TAG}}
+\index{TAG@{TAG}!sysAdmin.c@{sysAdmin.c}}
+\doxysubsubsection{\texorpdfstring{TAG}{TAG}}
+{\footnotesize\ttfamily \label{sys_admin_8c_a5a85b9c772bbeb480b209a3e6ea92b4c} 
+const char\texorpdfstring{$\ast$}{*} TAG = "{}sys\+Admin"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{sys_admin_8c_source_l00020}{20}} del archivo \mbox{\hyperlink{sys_admin_8c_source}{sys\+Admin.\+c}}.
+

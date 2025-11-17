@@ -1,0 +1,358 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Low Voltage Variable Frequency Drive: Referencia del archivo C:/Users/User/LVFV_ESP32/main/display/display.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="DoxyPic.jpeg"/></td>
+  <td id="projectalign">
+   <div id="projectname">Low Voltage Variable Frequency Drive<span id="projectnumber">&#160;2.0</span>
+   </div>
+   <div id="projectbrief">Proyecto final Andrenacci-Carra 2026. Variador de frecuencia de motor trifásico 1/3HP utilizando 12V de contínua como fuente de entrada de tensión.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('display_8h.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia del archivo display.h</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Declaración de funciones que de consulta de los seteos hechos por el usuario, tarea que controla el display y posteo de eventos para controlar el display.  
+<a href="#details">Más...</a></p>
+<div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &lt;stdbool.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="_l_v_f_v__system_8h_source.html">../LVFV_system.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Gráfico de dependencias incluidas en display.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="display_8h__incl.png" border="0" usemap="#a_c_1_2_users_2_user_2_l_v_f_v___e_s_p32_2main_2display_2display_8h" loading="lazy" alt=""/></div>
+</div>
+</div><div class="textblock"><div class="dynheader">
+Gráfico de los archivos que directa o indirectamente incluyen a este archivo:</div>
+<div class="dyncontent">
+<div class="center"><img src="display_8h__dep__incl.png" border="0" usemap="#a_c_1_2_users_2_user_2_l_v_f_v___e_s_p32_2main_2display_2display_8hdep" loading="lazy" alt=""/></div>
+</div>
+</div>
+<p><a href="display_8h_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:a12dc0f33fbf57c48dffabf60ab02d01e" id="r_a12dc0f33fbf57c48dffabf60ab02d01e"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a12dc0f33fbf57c48dffabf60ab02d01e">get_system_frequency</a> ()</td></tr>
+<tr class="memdesc:a12dc0f33fbf57c48dffabf60ab02d01e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entrega el valor de frecuencia de regimen seteado por el usuario.  <br /></td></tr>
+<tr class="memitem:a66d26ed49b8196ba0498d8a553167ec3" id="r_a66d26ed49b8196ba0498d8a553167ec3"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a66d26ed49b8196ba0498d8a553167ec3">get_system_acceleration</a> ()</td></tr>
+<tr class="memdesc:a66d26ed49b8196ba0498d8a553167ec3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entrega el valor de aceleración seteado por el usuario.  <br /></td></tr>
+<tr class="memitem:afa6a8bd839cfecfb389e75fc3946a6b7" id="r_afa6a8bd839cfecfb389e75fc3946a6b7"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afa6a8bd839cfecfb389e75fc3946a6b7">get_system_desacceleration</a> ()</td></tr>
+<tr class="memdesc:afa6a8bd839cfecfb389e75fc3946a6b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entrega el valor de desaceleración seteado por el usuario.  <br /></td></tr>
+<tr class="memitem:a274d1d8208b52559a4c9906c2bb62b33" id="r_a274d1d8208b52559a4c9906c2bb62b33"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a274d1d8208b52559a4c9906c2bb62b33">sh1106_init</a> ()</td></tr>
+<tr class="memdesc:a274d1d8208b52559a4c9906c2bb62b33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Función que inicializa el display para comenzar a imprimir.  <br /></td></tr>
+<tr class="memitem:a0c23017a47c450de05f8c7af642c7461" id="r_a0c23017a47c450de05f8c7af642c7461"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0c23017a47c450de05f8c7af642c7461">task_display</a> (void *pvParameters)</td></tr>
+<tr class="memdesc:a0c23017a47c450de05f8c7af642c7461"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tarea de display que controla las diferentes pantallas de muestra, selección y edición de las variables de sistema.  <br /></td></tr>
+<tr class="memitem:ac70cfc639d4afbd5116d8361b1b25b41" id="r_ac70cfc639d4afbd5116d8361b1b25b41"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac70cfc639d4afbd5116d8361b1b25b41">DisplayEventPost</a> (<a class="el" href="_l_v_f_v__system_8h.html#ab7a290ebff8e2a3230e8085ee87d4796">systemSignal_e</a> event)</td></tr>
+<tr class="memdesc:ac70cfc639d4afbd5116d8361b1b25b41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Función que permite encolar acciones para que ejecute la tarea de display.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Declaración de funciones que de consulta de los seteos hechos por el usuario, tarea que controla el display y posteo de eventos para controlar el display. </p>
+<dl class="section author"><dt>Autor</dt><dd>Andrenacci - Carra </dd></dl>
+<dl class="section version"><dt>Versión</dt><dd>2.0 </dd></dl>
+<dl class="section date"><dt>Fecha</dt><dd>2025-11-06 </dd></dl>
+
+<p class="definition">Definición en el archivo <a class="el" href="display_8h_source.html">display.h</a>.</p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones</h2>
+<a id="ac70cfc639d4afbd5116d8361b1b25b41" name="ac70cfc639d4afbd5116d8361b1b25b41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac70cfc639d4afbd5116d8361b1b25b41">&#9670;&#160;</a></span>DisplayEventPost()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">esp_err_t DisplayEventPost </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_l_v_f_v__system_8h.html#ab7a290ebff8e2a3230e8085ee87d4796">systemSignal_e</a></td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Función que permite encolar acciones para que ejecute la tarea de display. </p>
+<dl class="retval"><dt>Valores devueltos</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">pdTRUE</td><td>Si se encoló exitosamente errQUEUE_FULL: Cualquier tipo de falla </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00815">815</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
+<div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="display_8h_ac70cfc639d4afbd5116d8361b1b25b41_icgraph.png" border="0" usemap="#adisplay_8h_ac70cfc639d4afbd5116d8361b1b25b41_icgraph" loading="lazy" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a66d26ed49b8196ba0498d8a553167ec3" name="a66d26ed49b8196ba0498d8a553167ec3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66d26ed49b8196ba0498d8a553167ec3">&#9670;&#160;</a></span>get_system_acceleration()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t get_system_acceleration </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Entrega el valor de aceleración seteado por el usuario. </p>
+<dl class="retval"><dt>Valores devueltos</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">Valor</td><td>de aceleración configurado por el usuario </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00455">455</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
+<div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="display_8h_a66d26ed49b8196ba0498d8a553167ec3_icgraph.png" border="0" usemap="#adisplay_8h_a66d26ed49b8196ba0498d8a553167ec3_icgraph" loading="lazy" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="afa6a8bd839cfecfb389e75fc3946a6b7" name="afa6a8bd839cfecfb389e75fc3946a6b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa6a8bd839cfecfb389e75fc3946a6b7">&#9670;&#160;</a></span>get_system_desacceleration()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t get_system_desacceleration </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Entrega el valor de desaceleración seteado por el usuario. </p>
+<dl class="retval"><dt>Valores devueltos</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">Valor</td><td>de desaceleración configurado por el usuario </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00459">459</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
+<div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="display_8h_afa6a8bd839cfecfb389e75fc3946a6b7_icgraph.png" border="0" usemap="#adisplay_8h_afa6a8bd839cfecfb389e75fc3946a6b7_icgraph" loading="lazy" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a12dc0f33fbf57c48dffabf60ab02d01e" name="a12dc0f33fbf57c48dffabf60ab02d01e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12dc0f33fbf57c48dffabf60ab02d01e">&#9670;&#160;</a></span>get_system_frequency()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t get_system_frequency </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Entrega el valor de frecuencia de regimen seteado por el usuario. </p>
+<dl class="retval"><dt>Valores devueltos</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">Valor</td><td>de frecuencia de regimen configurado por el usuario </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00451">451</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
+<div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="display_8h_a12dc0f33fbf57c48dffabf60ab02d01e_icgraph.png" border="0" usemap="#adisplay_8h_a12dc0f33fbf57c48dffabf60ab02d01e_icgraph" loading="lazy" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a274d1d8208b52559a4c9906c2bb62b33" name="a274d1d8208b52559a4c9906c2bb62b33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a274d1d8208b52559a4c9906c2bb62b33">&#9670;&#160;</a></span>sh1106_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">esp_err_t sh1106_init </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Función que inicializa el display para comenzar a imprimir. </p>
+<dl class="retval"><dt>Valores devueltos</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">ESP_OK</td><td>Si inicializa correctamente ESP_FAIL Si alguno de los comandos de inicialización falla </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00463">463</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
+<div class="dynheader">
+Gráfico de llamadas de esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="display_8h_a274d1d8208b52559a4c9906c2bb62b33_cgraph.png" border="0" usemap="#adisplay_8h_a274d1d8208b52559a4c9906c2bb62b33_cgraph" loading="lazy" alt=""/></div>
+</div>
+<div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="display_8h_a274d1d8208b52559a4c9906c2bb62b33_icgraph.png" border="0" usemap="#adisplay_8h_a274d1d8208b52559a4c9906c2bb62b33_icgraph" loading="lazy" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a0c23017a47c450de05f8c7af642c7461" name="a0c23017a47c450de05f8c7af642c7461"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c23017a47c450de05f8c7af642c7461">&#9670;&#160;</a></span>task_display()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void task_display </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>pvParameters</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tarea de display que controla las diferentes pantallas de muestra, selección y edición de las variables de sistema. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pvParameters</td><td>Variable sin uso </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00480">480</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
+<div class="dynheader">
+Gráfico de llamadas de esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="display_8h_a0c23017a47c450de05f8c7af642c7461_cgraph.png" border="0" usemap="#adisplay_8h_a0c23017a47c450de05f8c7af642c7461_cgraph" loading="lazy" alt=""/></div>
+</div>
+<div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="display_8h_a0c23017a47c450de05f8c7af642c7461_icgraph.png" border="0" usemap="#adisplay_8h_a0c23017a47c450de05f8c7af642c7461_icgraph" loading="lazy" alt=""/></div>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_5c982d53a68cdbcd421152b4020263a9.html">main</a></li><li class="navelem"><a href="dir_5898438c66b62807cbfcea68fbed40da.html">display</a></li><li class="navelem"><a href="display_8h.html">display.h</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

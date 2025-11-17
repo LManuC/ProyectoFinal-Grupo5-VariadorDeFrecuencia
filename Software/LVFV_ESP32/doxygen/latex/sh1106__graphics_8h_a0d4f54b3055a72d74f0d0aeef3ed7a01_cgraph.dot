@@ -1,0 +1,11 @@
+digraph "sh1106_draw_line"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="sh1106_draw_line",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge2_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="sh1106_draw_bitmap",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$sh1106__graphics_8c.html#a91cc491d144c14e80210b75012c76c85",tooltip="La función escribe en el bitmap de la pantalla los caracteres que el usuario desea imprimir."];
+}

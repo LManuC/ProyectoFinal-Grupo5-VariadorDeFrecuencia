@@ -1,0 +1,545 @@
+\doxysection{Referencia del archivo C\+:/\+Users/\+User/\+LVFV\+\_\+\+ESP32/main/io\+\_\+control/\+MCP23017.c}
+\hypertarget{_m_c_p23017_8c}{}\label{_m_c_p23017_8c}\index{C:/Users/User/LVFV\_ESP32/main/io\_control/MCP23017.c@{C:/Users/User/LVFV\_ESP32/main/io\_control/MCP23017.c}}
+
+
+Declaración de funciones de inicialización, lectura y escritura a través del puerto I2C el dispositivo MCP23017.  
+
+
+{\ttfamily \#include "{}MCP23017.\+h"{}}\newline
+{\ttfamily \#include "{}esp\+\_\+log.\+h"{}}\newline
+{\ttfamily \#include "{}esp\+\_\+err.\+h"{}}\newline
+{\ttfamily \#include "{}driver/i2c.\+h"{}}\newline
+{\ttfamily \#include "{}freertos/semphr.\+h"{}}\newline
+Gráfico de dependencias incluidas en MCP23017.\+c\+:
+% FIG 0
+\doxysubsubsection*{defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_m_c_p23017_8c_a7ebc0bc57afc33bd33967be8479690db}{I2\+C\+\_\+\+MASTER\+\_\+\+TIMEOUT\+\_\+\+MS}}~100
+\item 
+\#define \mbox{\hyperlink{_m_c_p23017_8c_a033b5e8a30541fe4ff939a62fdb7a43d}{I2\+C\+\_\+\+MASTER\+\_\+\+SCL\+\_\+\+IO}}~15
+\item 
+\#define \mbox{\hyperlink{_m_c_p23017_8c_af47631d568bba17edf9d1ea042602bb6}{I2\+C\+\_\+\+MASTER\+\_\+\+SDA\+\_\+\+IO}}~2
+\item 
+\#define \mbox{\hyperlink{_m_c_p23017_8c_a9f1bf69eb2008656b05f0cdd8ad85645}{I2\+C\+\_\+\+IO\+\_\+\+MASTER\+\_\+\+NUM}}~I2\+C\+\_\+\+NUM\+\_\+1
+\item 
+\#define \mbox{\hyperlink{_m_c_p23017_8c_a5c22ca4de37a83a59014e48b0a0b043d}{I2\+C\+\_\+\+MASTER\+\_\+\+FREQ\+\_\+\+HZ}}~100000
+\item 
+\#define \mbox{\hyperlink{_m_c_p23017_8c_aaa0e84f340ef5ea9db2d7624fdadaa26}{I2\+C\+\_\+\+MASTER\+\_\+\+TX\+\_\+\+BUF\+\_\+\+DISABLE}}~0
+\item 
+\#define \mbox{\hyperlink{_m_c_p23017_8c_a37a0707200e50e3b3e9ab28b1b8d6777}{I2\+C\+\_\+\+MASTER\+\_\+\+RX\+\_\+\+BUF\+\_\+\+DISABLE}}~0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+static esp\+\_\+err\+\_\+t \mbox{\hyperlink{_m_c_p23017_8c_aa09875b3891e4aac12cbf97edca60a00}{i2c\+\_\+master\+\_\+init}} (void)
+\begin{DoxyCompactList}\small\item\em Función que inicializa el puerto I2C y el mutex para acceder ordenadamente al hardware. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{_m_c_p23017_8c_aed81e479662eaff44bc64570faf9e8e7}{i2c\+\_\+is\+\_\+hardware\+\_\+free}} ()
+\begin{DoxyCompactList}\small\item\em Función que pide recursos de hardware para realizar una operación de lectura o escritura. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{_m_c_p23017_8c_a94e4dde496c85e131f1010dcbd8cdb17}{i2c\+\_\+release\+\_\+hardware}} ()
+\begin{DoxyCompactList}\small\item\em Función que devuelve recursos de hardware luego de realizar una operación para que pueda realizarse una nueva lectura o escritura. \end{DoxyCompactList}\item 
+static esp\+\_\+err\+\_\+t \mbox{\hyperlink{_m_c_p23017_8c_af42886d0f61b87ce537e1f79cd394d15}{mcp\+\_\+register\+\_\+read}} (uint8\+\_\+t register\+\_\+address, uint8\+\_\+t \texorpdfstring{$\ast$}{*}data)
+\begin{DoxyCompactList}\small\item\em Función que lee {\ttfamily register\+\_\+address} del MCP23017. La información obtenida se almacena en {\ttfamily data}. \end{DoxyCompactList}\item 
+static esp\+\_\+err\+\_\+t \mbox{\hyperlink{_m_c_p23017_8c_a6ea3e64f6d309838ac0dce7e0208ed80}{mcp\+\_\+register\+\_\+write}} (uint8\+\_\+t register\+\_\+address, uint8\+\_\+t data)
+\begin{DoxyCompactList}\small\item\em Función que escribe en {\ttfamily register\+\_\+address} del MCP23017 el dato {\ttfamily data}. \end{DoxyCompactList}\item 
+esp\+\_\+err\+\_\+t \mbox{\hyperlink{_m_c_p23017_8c_ae831de4438e6f78cb8fb8d57b90960a5}{MCP23017\+\_\+\+INIT}} (void)
+\begin{DoxyCompactList}\small\item\em Función dedicada a inicializar y configurar el MCP23017. El chip utiliza i2C. \end{DoxyCompactList}\item 
+esp\+\_\+err\+\_\+t \mbox{\hyperlink{_m_c_p23017_8c_a4c24408bad301abb52a111226e57466d}{mcp\+\_\+get\+\_\+on\+\_\+interrupt\+\_\+input}} (enum \mbox{\hyperlink{mcp23017__defs_8h_a7b7476975849505bba2c9b211b62d5bd}{mcp\+\_\+port\+\_\+e}} port, uint8\+\_\+t \texorpdfstring{$\ast$}{*}data)
+\begin{DoxyCompactList}\small\item\em Función que lee el registro INTCAP del MCP23017. \end{DoxyCompactList}\item 
+esp\+\_\+err\+\_\+t \mbox{\hyperlink{_m_c_p23017_8c_ab0b70ff25556234d7ab76b16f1cc1534}{mcp\+\_\+write\+\_\+output\+\_\+pin}} (enum \mbox{\hyperlink{mcp23017__defs_8h_a7b7476975849505bba2c9b211b62d5bd}{mcp\+\_\+port\+\_\+e}} port, uint8\+\_\+t pin, bool state)
+\begin{DoxyCompactList}\small\item\em Función que lee el registro GPIO, escribe {\ttfamily state} en el {\ttfamily pin} del {\ttfamily port} escribe el registro OLAT del MCP23017. \end{DoxyCompactList}\item 
+esp\+\_\+err\+\_\+t \mbox{\hyperlink{_m_c_p23017_8c_a8b3a939458d2c4d94598667bec9af9dd}{mcp\+\_\+write\+\_\+output\+\_\+port}} (enum \mbox{\hyperlink{mcp23017__defs_8h_a7b7476975849505bba2c9b211b62d5bd}{mcp\+\_\+port\+\_\+e}} port, uint8\+\_\+t data)
+\begin{DoxyCompactList}\small\item\em Función que escribe {\ttfamily data} en el escribe el registro OLAT del {\ttfamily port} del MCP23017. \end{DoxyCompactList}\item 
+esp\+\_\+err\+\_\+t \mbox{\hyperlink{_m_c_p23017_8c_a22dd18f78e093af119af2aaa0ef2bd6d}{mcp\+\_\+read\+\_\+port}} (enum \mbox{\hyperlink{mcp23017__defs_8h_a7b7476975849505bba2c9b211b62d5bd}{mcp\+\_\+port\+\_\+e}} port, uint8\+\_\+t \texorpdfstring{$\ast$}{*}data)
+\begin{DoxyCompactList}\small\item\em Función que lee el registro GPIO del {\ttfamily port} del MCP23017 y lo devuelve en {\ttfamily data}. \end{DoxyCompactList}\item 
+esp\+\_\+err\+\_\+t \mbox{\hyperlink{_m_c_p23017_8c_a7b2284a2d02ab4515e7742720352c1ed}{mcp\+\_\+interrupt\+\_\+flag}} (enum \mbox{\hyperlink{mcp23017__defs_8h_a7b7476975849505bba2c9b211b62d5bd}{mcp\+\_\+port\+\_\+e}} port, uint8\+\_\+t \texorpdfstring{$\ast$}{*}data)
+\begin{DoxyCompactList}\small\item\em Función que lee el registro INTF del MCP23017. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_m_c_p23017_8c_a5a85b9c772bbeb480b209a3e6ea92b4c}{TAG}} = "{}MCP23017"{}
+\item 
+Semaphore\+Handle\+\_\+t \mbox{\hyperlink{_m_c_p23017_8c_ac2bea2d9f778e95aaa0b2a89ac49bfb2}{x\+I2\+C\+\_\+\+Mutex}} = NULL
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Declaración de funciones de inicialización, lectura y escritura a través del puerto I2C el dispositivo MCP23017. 
+
+\begin{DoxyAuthor}{Autor}
+Andrenacci -\/ Carra
+\end{DoxyAuthor}
+Este chip permite usar sus dos puertos de 8 bits por separado o como uno solo de 16 bits. Tiene la función de reportar una interrupción configurable por puerto a través de 2 pines, uno por puerto, que informar si hubo algún cambio en las entradas si así lo deseo; estos pines de interrupción pueden ser configurados también para que actúen en conjunto o separado. Para su funcionamiento de direccionamiento tiene dos modos\+: "{}\+Byte mode"{} o "{}\+Sequencial mode"{} que se configuran en el registro IOCON que, aunque en el mapa de registros esté duplicado, es compartido entre ambos puerto, por lo que acceder por una dirección u otra es indiferente\+:
+\begin{DoxyItemize}
+\item Byte mode\+: no incrementa el puntero interno de direcciones en cada comando enviado, sino que en cada escritura/lectura se le debe indicar a que dirección de memoria se desea acceder si no se desea acceder a la última dirección de memoria accedida. Esto permite hacer polling en el mismo registro, con la intención de estar monitoreando contínuamente la/las entradas de interés. Utilizando el modo ICON.\+BANK = 0, habilita una función especial que permite tooglear entre los registros del puerto A y B secuencialmente en cada acceso al chip.
+\item Sequenctial mode\+: El puntero de dirección interno del chip se incrementa a cada byte de datos enviado. Cuando llega al último registro del mapa de registro hace un rollover al registro 0x00.
+\end{DoxyItemize}
+
+La secuencia de escritura se define de la siguiente amnera\+: S 0100AAA0 ADDR DIN P \begin{DoxyVersion}{Versión}
+2.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Fecha}
+2025-\/11-\/06 
+\end{DoxyDate}
+
+
+Definición en el archivo \mbox{\hyperlink{_m_c_p23017_8c_source}{MCP23017.\+c}}.
+
+
+
+\label{doc-define-members}
+\Hypertarget{_m_c_p23017_8c_doc-define-members}
+\doxysubsection{Documentación de «define»}
+\Hypertarget{_m_c_p23017_8c_a9f1bf69eb2008656b05f0cdd8ad85645}\index{MCP23017.c@{MCP23017.c}!I2C\_IO\_MASTER\_NUM@{I2C\_IO\_MASTER\_NUM}}
+\index{I2C\_IO\_MASTER\_NUM@{I2C\_IO\_MASTER\_NUM}!MCP23017.c@{MCP23017.c}}
+\doxysubsubsection{\texorpdfstring{I2C\_IO\_MASTER\_NUM}{I2C\_IO\_MASTER\_NUM}}
+{\footnotesize\ttfamily \label{_m_c_p23017_8c_a9f1bf69eb2008656b05f0cdd8ad85645} 
+\#define I2\+C\+\_\+\+IO\+\_\+\+MASTER\+\_\+\+NUM~I2\+C\+\_\+\+NUM\+\_\+1}
+
+Número de puerto I2C de la comunicación con el MCP23017 
+
+Definición en la línea \mbox{\hyperlink{_m_c_p23017_8c_source_l00106}{106}} del archivo \mbox{\hyperlink{_m_c_p23017_8c_source}{MCP23017.\+c}}.
+
+\Hypertarget{_m_c_p23017_8c_a5c22ca4de37a83a59014e48b0a0b043d}\index{MCP23017.c@{MCP23017.c}!I2C\_MASTER\_FREQ\_HZ@{I2C\_MASTER\_FREQ\_HZ}}
+\index{I2C\_MASTER\_FREQ\_HZ@{I2C\_MASTER\_FREQ\_HZ}!MCP23017.c@{MCP23017.c}}
+\doxysubsubsection{\texorpdfstring{I2C\_MASTER\_FREQ\_HZ}{I2C\_MASTER\_FREQ\_HZ}}
+{\footnotesize\ttfamily \label{_m_c_p23017_8c_a5c22ca4de37a83a59014e48b0a0b043d} 
+\#define I2\+C\+\_\+\+MASTER\+\_\+\+FREQ\+\_\+\+HZ~100000}
+
+Frecuencia estándar de operción del I2C para comunicación con el MCP23017 en 100000MHz 
+
+Definición en la línea \mbox{\hyperlink{_m_c_p23017_8c_source_l00107}{107}} del archivo \mbox{\hyperlink{_m_c_p23017_8c_source}{MCP23017.\+c}}.
+
+\Hypertarget{_m_c_p23017_8c_a37a0707200e50e3b3e9ab28b1b8d6777}\index{MCP23017.c@{MCP23017.c}!I2C\_MASTER\_RX\_BUF\_DISABLE@{I2C\_MASTER\_RX\_BUF\_DISABLE}}
+\index{I2C\_MASTER\_RX\_BUF\_DISABLE@{I2C\_MASTER\_RX\_BUF\_DISABLE}!MCP23017.c@{MCP23017.c}}
+\doxysubsubsection{\texorpdfstring{I2C\_MASTER\_RX\_BUF\_DISABLE}{I2C\_MASTER\_RX\_BUF\_DISABLE}}
+{\footnotesize\ttfamily \label{_m_c_p23017_8c_a37a0707200e50e3b3e9ab28b1b8d6777} 
+\#define I2\+C\+\_\+\+MASTER\+\_\+\+RX\+\_\+\+BUF\+\_\+\+DISABLE~0}
+
+Largo de buffer I2C en 0 porque no es utilizado al ser un dispositivo maestro el ESP32 
+
+Definición en la línea \mbox{\hyperlink{_m_c_p23017_8c_source_l00109}{109}} del archivo \mbox{\hyperlink{_m_c_p23017_8c_source}{MCP23017.\+c}}.
+
+\Hypertarget{_m_c_p23017_8c_a033b5e8a30541fe4ff939a62fdb7a43d}\index{MCP23017.c@{MCP23017.c}!I2C\_MASTER\_SCL\_IO@{I2C\_MASTER\_SCL\_IO}}
+\index{I2C\_MASTER\_SCL\_IO@{I2C\_MASTER\_SCL\_IO}!MCP23017.c@{MCP23017.c}}
+\doxysubsubsection{\texorpdfstring{I2C\_MASTER\_SCL\_IO}{I2C\_MASTER\_SCL\_IO}}
+{\footnotesize\ttfamily \label{_m_c_p23017_8c_a033b5e8a30541fe4ff939a62fdb7a43d} 
+\#define I2\+C\+\_\+\+MASTER\+\_\+\+SCL\+\_\+\+IO~15}
+
+GPIO para SCL de la comunicación con el MCP23017 
+
+Definición en la línea \mbox{\hyperlink{_m_c_p23017_8c_source_l00104}{104}} del archivo \mbox{\hyperlink{_m_c_p23017_8c_source}{MCP23017.\+c}}.
+
+\Hypertarget{_m_c_p23017_8c_af47631d568bba17edf9d1ea042602bb6}\index{MCP23017.c@{MCP23017.c}!I2C\_MASTER\_SDA\_IO@{I2C\_MASTER\_SDA\_IO}}
+\index{I2C\_MASTER\_SDA\_IO@{I2C\_MASTER\_SDA\_IO}!MCP23017.c@{MCP23017.c}}
+\doxysubsubsection{\texorpdfstring{I2C\_MASTER\_SDA\_IO}{I2C\_MASTER\_SDA\_IO}}
+{\footnotesize\ttfamily \label{_m_c_p23017_8c_af47631d568bba17edf9d1ea042602bb6} 
+\#define I2\+C\+\_\+\+MASTER\+\_\+\+SDA\+\_\+\+IO~2}
+
+GPIO para SDA de la comunicación con el MCP23017 
+
+Definición en la línea \mbox{\hyperlink{_m_c_p23017_8c_source_l00105}{105}} del archivo \mbox{\hyperlink{_m_c_p23017_8c_source}{MCP23017.\+c}}.
+
+\Hypertarget{_m_c_p23017_8c_a7ebc0bc57afc33bd33967be8479690db}\index{MCP23017.c@{MCP23017.c}!I2C\_MASTER\_TIMEOUT\_MS@{I2C\_MASTER\_TIMEOUT\_MS}}
+\index{I2C\_MASTER\_TIMEOUT\_MS@{I2C\_MASTER\_TIMEOUT\_MS}!MCP23017.c@{MCP23017.c}}
+\doxysubsubsection{\texorpdfstring{I2C\_MASTER\_TIMEOUT\_MS}{I2C\_MASTER\_TIMEOUT\_MS}}
+{\footnotesize\ttfamily \label{_m_c_p23017_8c_a7ebc0bc57afc33bd33967be8479690db} 
+\#define I2\+C\+\_\+\+MASTER\+\_\+\+TIMEOUT\+\_\+\+MS~100}
+
+Tiempo durante el cual se espera alguna respuesta del esclavo antes de cortar la comunicación 
+
+Definición en la línea \mbox{\hyperlink{_m_c_p23017_8c_source_l00103}{103}} del archivo \mbox{\hyperlink{_m_c_p23017_8c_source}{MCP23017.\+c}}.
+
+\Hypertarget{_m_c_p23017_8c_aaa0e84f340ef5ea9db2d7624fdadaa26}\index{MCP23017.c@{MCP23017.c}!I2C\_MASTER\_TX\_BUF\_DISABLE@{I2C\_MASTER\_TX\_BUF\_DISABLE}}
+\index{I2C\_MASTER\_TX\_BUF\_DISABLE@{I2C\_MASTER\_TX\_BUF\_DISABLE}!MCP23017.c@{MCP23017.c}}
+\doxysubsubsection{\texorpdfstring{I2C\_MASTER\_TX\_BUF\_DISABLE}{I2C\_MASTER\_TX\_BUF\_DISABLE}}
+{\footnotesize\ttfamily \label{_m_c_p23017_8c_aaa0e84f340ef5ea9db2d7624fdadaa26} 
+\#define I2\+C\+\_\+\+MASTER\+\_\+\+TX\+\_\+\+BUF\+\_\+\+DISABLE~0}
+
+Largo de buffer I2C en 0 porque no es utilizado al ser un dispositivo maestro el ESP32 
+
+Definición en la línea \mbox{\hyperlink{_m_c_p23017_8c_source_l00108}{108}} del archivo \mbox{\hyperlink{_m_c_p23017_8c_source}{MCP23017.\+c}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{_m_c_p23017_8c_doc-func-members}
+\doxysubsection{Documentación de funciones}
+\Hypertarget{_m_c_p23017_8c_aed81e479662eaff44bc64570faf9e8e7}\index{MCP23017.c@{MCP23017.c}!i2c\_is\_hardware\_free@{i2c\_is\_hardware\_free}}
+\index{i2c\_is\_hardware\_free@{i2c\_is\_hardware\_free}!MCP23017.c@{MCP23017.c}}
+\doxysubsubsection{\texorpdfstring{i2c\_is\_hardware\_free()}{i2c\_is\_hardware\_free()}}
+{\footnotesize\ttfamily \label{_m_c_p23017_8c_aed81e479662eaff44bc64570faf9e8e7} 
+bool i2c\+\_\+is\+\_\+hardware\+\_\+free (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Función que pide recursos de hardware para realizar una operación de lectura o escritura. 
+
+En caso que los recursos de hardware estuviesen siendo usados, duerme la app durante 100ms
+
+\begin{DoxyAttention}{Atención}
+Función bloqueante 
+\end{DoxyAttention}
+
+
+Definición en la línea \mbox{\hyperlink{_m_c_p23017_8c_source_l00134}{134}} del archivo \mbox{\hyperlink{_m_c_p23017_8c_source}{MCP23017.\+c}}.
+
+Gráfico de llamadas a esta función\+:
+% FIG 1
+\Hypertarget{_m_c_p23017_8c_aa09875b3891e4aac12cbf97edca60a00}\index{MCP23017.c@{MCP23017.c}!i2c\_master\_init@{i2c\_master\_init}}
+\index{i2c\_master\_init@{i2c\_master\_init}!MCP23017.c@{MCP23017.c}}
+\doxysubsubsection{\texorpdfstring{i2c\_master\_init()}{i2c\_master\_init()}}
+{\footnotesize\ttfamily \label{_m_c_p23017_8c_aa09875b3891e4aac12cbf97edca60a00} 
+esp\+\_\+err\+\_\+t i2c\+\_\+master\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Función que inicializa el puerto I2C y el mutex para acceder ordenadamente al hardware. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\texttt{in}}  & {\em register\+\_\+address} & Es la dirección de memoria del registro que se quiere acceder en el MCP23017.\\
+\hline
+\mbox{\texttt{in}}  & {\em data} & Información que quiere escribirse en {\ttfamily register\+\_\+address} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+
+\begin{DoxyItemize}
+\item ESP\+\_\+\+OK en caso de éxito.
+\item ESP\+\_\+\+ERR\+\_\+\+INVALID\+\_\+\+ARG Error de parámetro
+\item ESP\+\_\+\+FAIL Error al enviar comando, el esclavo no envió ACK a la transferencia.
+\item ESP\+\_\+\+ERR\+\_\+\+INVALID\+\_\+\+STATE I2C El driver no fue inicializado o no está en modo master.
+\item ESP\+\_\+\+ERR\+\_\+\+TIMEOUT Timueout de la operación porque el bus está ocupado. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{_m_c_p23017_8c_source_l00111}{111}} del archivo \mbox{\hyperlink{_m_c_p23017_8c_source}{MCP23017.\+c}}.
+
+Gráfico de llamadas a esta función\+:
+% FIG 2
+\Hypertarget{_m_c_p23017_8c_a94e4dde496c85e131f1010dcbd8cdb17}\index{MCP23017.c@{MCP23017.c}!i2c\_release\_hardware@{i2c\_release\_hardware}}
+\index{i2c\_release\_hardware@{i2c\_release\_hardware}!MCP23017.c@{MCP23017.c}}
+\doxysubsubsection{\texorpdfstring{i2c\_release\_hardware()}{i2c\_release\_hardware()}}
+{\footnotesize\ttfamily \label{_m_c_p23017_8c_a94e4dde496c85e131f1010dcbd8cdb17} 
+void i2c\+\_\+release\+\_\+hardware (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Función que devuelve recursos de hardware luego de realizar una operación para que pueda realizarse una nueva lectura o escritura. 
+
+
+
+Definición en la línea \mbox{\hyperlink{_m_c_p23017_8c_source_l00142}{142}} del archivo \mbox{\hyperlink{_m_c_p23017_8c_source}{MCP23017.\+c}}.
+
+Gráfico de llamadas a esta función\+:
+% FIG 3
+\Hypertarget{_m_c_p23017_8c_ae831de4438e6f78cb8fb8d57b90960a5}\index{MCP23017.c@{MCP23017.c}!MCP23017\_INIT@{MCP23017\_INIT}}
+\index{MCP23017\_INIT@{MCP23017\_INIT}!MCP23017.c@{MCP23017.c}}
+\doxysubsubsection{\texorpdfstring{MCP23017\_INIT()}{MCP23017\_INIT()}}
+{\footnotesize\ttfamily \label{_m_c_p23017_8c_ae831de4438e6f78cb8fb8d57b90960a5} 
+esp\+\_\+err\+\_\+t MCP23017\+\_\+\+INIT (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Función dedicada a inicializar y configurar el MCP23017. El chip utiliza i2C. 
+
+Inicializa el MCP32017. Configura las entradas IO2, IO3, IO4, IO5 y IO6 del puerto A (Todas ellas sin pull up activo) y las entradas IO0, IO1, IO2 y IO3 del puerto B (Todas ellas con pull up activo); configura como salidas IO0, IO1 y IO7 del puerto A y IO4, IO5, IO6 y IO7 del puerto B. Todas las entradas generan una interrpción que se informa por los pines INTA e INTB del chip por separado (Las interrupciones del puerto A genera un cambio en el pin INTA; misma explicación para INTB). Las interrupciones se generarán siempre cuando haya un cambio en la entrada (Ya sea un flanco positivo o negativo). Los pines INTA e INTB son salidas activas que se pondrán en alto en caso de tener una interrupción.
+
+\begin{DoxyReturn}{Devuelve}
+
+\begin{DoxyItemize}
+\item ESP\+\_\+\+OK en caso de éxito.
+\item ESP\+\_\+\+ERR\+\_\+\+INVALID\+\_\+\+ARG Error de parámetro
+\item ESP\+\_\+\+FAIL Error al enviar comando, el esclavo no envió ACK a la transferencia.
+\item ESP\+\_\+\+ERR\+\_\+\+INVALID\+\_\+\+STATE I2C El driver no fue inicializado o no está en modo master.
+\item ESP\+\_\+\+ERR\+\_\+\+TIMEOUT Timueout de la operación porque el bus está ocupado. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{_m_c_p23017_8c_source_l00174}{174}} del archivo \mbox{\hyperlink{_m_c_p23017_8c_source}{MCP23017.\+c}}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 4
+Gráfico de llamadas a esta función\+:
+% FIG 5
+\Hypertarget{_m_c_p23017_8c_a4c24408bad301abb52a111226e57466d}\index{MCP23017.c@{MCP23017.c}!mcp\_get\_on\_interrupt\_input@{mcp\_get\_on\_interrupt\_input}}
+\index{mcp\_get\_on\_interrupt\_input@{mcp\_get\_on\_interrupt\_input}!MCP23017.c@{MCP23017.c}}
+\doxysubsubsection{\texorpdfstring{mcp\_get\_on\_interrupt\_input()}{mcp\_get\_on\_interrupt\_input()}}
+{\footnotesize\ttfamily \label{_m_c_p23017_8c_a4c24408bad301abb52a111226e57466d} 
+esp\+\_\+err\+\_\+t mcp\+\_\+get\+\_\+on\+\_\+interrupt\+\_\+input (\begin{DoxyParamCaption}\item[{enum \mbox{\hyperlink{mcp23017__defs_8h_a7b7476975849505bba2c9b211b62d5bd}{mcp\+\_\+port\+\_\+e}}}]{port}{, }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{data}{}\end{DoxyParamCaption})}
+
+
+
+Función que lee el registro INTCAP del MCP23017. 
+
+El registro INTCAP retiene el valor de las entradas al generarse una interrupción.
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\texttt{in}}  & {\em port} & Puede tomar los valores PORTA o PORTB, dependiendo del puerto que se quiera acceder.\\
+\hline
+\mbox{\texttt{out}}  & {\em data} & Puntero donde se almaecnará la lectura del registro INTCAP.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+
+\begin{DoxyItemize}
+\item ESP\+\_\+\+OK en caso de éxito.
+\item ESP\+\_\+\+ERR\+\_\+\+INVALID\+\_\+\+ARG Error de parámetro
+\item ESP\+\_\+\+FAIL Error al enviar comando, el esclavo no envió ACK a la transferencia.
+\item ESP\+\_\+\+ERR\+\_\+\+INVALID\+\_\+\+STATE I2C El driver no fue inicializado o no está en modo master.
+\item ESP\+\_\+\+ERR\+\_\+\+TIMEOUT Timueout de la operación porque el bus está ocupado. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{_m_c_p23017_8c_source_l00312}{312}} del archivo \mbox{\hyperlink{_m_c_p23017_8c_source}{MCP23017.\+c}}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 6
+Gráfico de llamadas a esta función\+:
+% FIG 7
+\Hypertarget{_m_c_p23017_8c_a7b2284a2d02ab4515e7742720352c1ed}\index{MCP23017.c@{MCP23017.c}!mcp\_interrupt\_flag@{mcp\_interrupt\_flag}}
+\index{mcp\_interrupt\_flag@{mcp\_interrupt\_flag}!MCP23017.c@{MCP23017.c}}
+\doxysubsubsection{\texorpdfstring{mcp\_interrupt\_flag()}{mcp\_interrupt\_flag()}}
+{\footnotesize\ttfamily \label{_m_c_p23017_8c_a7b2284a2d02ab4515e7742720352c1ed} 
+esp\+\_\+err\+\_\+t mcp\+\_\+interrupt\+\_\+flag (\begin{DoxyParamCaption}\item[{enum \mbox{\hyperlink{mcp23017__defs_8h_a7b7476975849505bba2c9b211b62d5bd}{mcp\+\_\+port\+\_\+e}}}]{port}{, }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{data}{}\end{DoxyParamCaption})}
+
+
+
+Función que lee el registro INTF del MCP23017. 
+
+El registro INTF retiene el valor de la entrada que generó la interrupción. Luego de haber leído este registro, el pin INTx vuelve a su estado de reposo.
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\texttt{in}}  & {\em port} & Puede tomar los valores PORTA o PORTB, dependiendo del puerto que se quiera acceder.\\
+\hline
+\mbox{\texttt{out}}  & {\em data} & Puntero donde se almaecnará la lectura del registro INTF.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+
+\begin{DoxyItemize}
+\item ESP\+\_\+\+OK en caso de éxito.
+\item ESP\+\_\+\+ERR\+\_\+\+INVALID\+\_\+\+ARG Error de parámetro
+\item ESP\+\_\+\+FAIL Error al enviar comando, el esclavo no envió ACK a la transferencia.
+\item ESP\+\_\+\+ERR\+\_\+\+INVALID\+\_\+\+STATE I2C El driver no fue inicializado o no está en modo master.
+\item ESP\+\_\+\+ERR\+\_\+\+TIMEOUT Timueout de la operación porque el bus está ocupado. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{_m_c_p23017_8c_source_l00387}{387}} del archivo \mbox{\hyperlink{_m_c_p23017_8c_source}{MCP23017.\+c}}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 8
+Gráfico de llamadas a esta función\+:
+% FIG 9
+\Hypertarget{_m_c_p23017_8c_a22dd18f78e093af119af2aaa0ef2bd6d}\index{MCP23017.c@{MCP23017.c}!mcp\_read\_port@{mcp\_read\_port}}
+\index{mcp\_read\_port@{mcp\_read\_port}!MCP23017.c@{MCP23017.c}}
+\doxysubsubsection{\texorpdfstring{mcp\_read\_port()}{mcp\_read\_port()}}
+{\footnotesize\ttfamily \label{_m_c_p23017_8c_a22dd18f78e093af119af2aaa0ef2bd6d} 
+esp\+\_\+err\+\_\+t mcp\+\_\+read\+\_\+port (\begin{DoxyParamCaption}\item[{enum \mbox{\hyperlink{mcp23017__defs_8h_a7b7476975849505bba2c9b211b62d5bd}{mcp\+\_\+port\+\_\+e}}}]{port}{, }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{data}{}\end{DoxyParamCaption})}
+
+
+
+Función que lee el registro GPIO del {\ttfamily port} del MCP23017 y lo devuelve en {\ttfamily data}. 
+
+El registro GPIO es el que representa la exteriorización de los estados de los etados lógicos altos o bajos de los pines.
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\texttt{in}}  & {\em port} & Puede tomar los valores PORTA o PORTB, dependiendo del puerto que se quiera escribir.\\
+\hline
+\mbox{\texttt{out}}  & {\em data} & Puntero donde se almacena el estado del {\ttfamily puerto} del MCP23017.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+
+\begin{DoxyItemize}
+\item ESP\+\_\+\+OK en caso de éxito.
+\item ESP\+\_\+\+ERR\+\_\+\+INVALID\+\_\+\+ARG Error de parámetro
+\item ESP\+\_\+\+FAIL Error al enviar comando, el esclavo no envió ACK a la transferencia.
+\item ESP\+\_\+\+ERR\+\_\+\+INVALID\+\_\+\+STATE I2C El driver no fue inicializado o no está en modo master.
+\item ESP\+\_\+\+ERR\+\_\+\+TIMEOUT Timueout de la operación porque el bus está ocupado. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{_m_c_p23017_8c_source_l00370}{370}} del archivo \mbox{\hyperlink{_m_c_p23017_8c_source}{MCP23017.\+c}}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 10
+Gráfico de llamadas a esta función\+:
+% FIG 11
+\Hypertarget{_m_c_p23017_8c_af42886d0f61b87ce537e1f79cd394d15}\index{MCP23017.c@{MCP23017.c}!mcp\_register\_read@{mcp\_register\_read}}
+\index{mcp\_register\_read@{mcp\_register\_read}!MCP23017.c@{MCP23017.c}}
+\doxysubsubsection{\texorpdfstring{mcp\_register\_read()}{mcp\_register\_read()}}
+{\footnotesize\ttfamily \label{_m_c_p23017_8c_af42886d0f61b87ce537e1f79cd394d15} 
+esp\+\_\+err\+\_\+t mcp\+\_\+register\+\_\+read (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{register\+\_\+address}{, }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Función que lee {\ttfamily register\+\_\+address} del MCP23017. La información obtenida se almacena en {\ttfamily data}. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\texttt{in}}  & {\em register\+\_\+address} & Es la dirección de memoria del registro que se quiere acceder en el MCP23017.\\
+\hline
+\mbox{\texttt{out}}  & {\em data} & Información que leida de {\ttfamily register\+\_\+address} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+
+\begin{DoxyItemize}
+\item ESP\+\_\+\+OK en caso de éxito.
+\item ESP\+\_\+\+ERR\+\_\+\+INVALID\+\_\+\+ARG Error de parámetro
+\item ESP\+\_\+\+FAIL Error al enviar comando, el esclavo no envió ACK a la transferencia.
+\item ESP\+\_\+\+ERR\+\_\+\+INVALID\+\_\+\+STATE I2C El driver no fue inicializado o no está en modo master.
+\item ESP\+\_\+\+ERR\+\_\+\+TIMEOUT Timueout de la operación porque el bus está ocupado. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{_m_c_p23017_8c_source_l00146}{146}} del archivo \mbox{\hyperlink{_m_c_p23017_8c_source}{MCP23017.\+c}}.
+
+Gráfico de llamadas a esta función\+:
+% FIG 12
+\Hypertarget{_m_c_p23017_8c_a6ea3e64f6d309838ac0dce7e0208ed80}\index{MCP23017.c@{MCP23017.c}!mcp\_register\_write@{mcp\_register\_write}}
+\index{mcp\_register\_write@{mcp\_register\_write}!MCP23017.c@{MCP23017.c}}
+\doxysubsubsection{\texorpdfstring{mcp\_register\_write()}{mcp\_register\_write()}}
+{\footnotesize\ttfamily \label{_m_c_p23017_8c_a6ea3e64f6d309838ac0dce7e0208ed80} 
+esp\+\_\+err\+\_\+t mcp\+\_\+register\+\_\+write (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{register\+\_\+address}{, }\item[{uint8\+\_\+t}]{data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Función que escribe en {\ttfamily register\+\_\+address} del MCP23017 el dato {\ttfamily data}. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\texttt{in}}  & {\em register\+\_\+address} & Es la dirección de memoria del registro que se quiere acceder en el MCP23017.\\
+\hline
+\mbox{\texttt{in}}  & {\em data} & Información que quiere escribirse en {\ttfamily register\+\_\+address} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+
+\begin{DoxyItemize}
+\item ESP\+\_\+\+OK en caso de éxito.
+\item ESP\+\_\+\+ERR\+\_\+\+INVALID\+\_\+\+ARG Error de parámetro
+\item ESP\+\_\+\+FAIL Error al enviar comando, el esclavo no envió ACK a la transferencia.
+\item ESP\+\_\+\+ERR\+\_\+\+INVALID\+\_\+\+STATE I2C El driver no fue inicializado o no está en modo master.
+\item ESP\+\_\+\+ERR\+\_\+\+TIMEOUT Timueout de la operación porque el bus está ocupado. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{_m_c_p23017_8c_source_l00161}{161}} del archivo \mbox{\hyperlink{_m_c_p23017_8c_source}{MCP23017.\+c}}.
+
+Gráfico de llamadas a esta función\+:
+% FIG 13
+\Hypertarget{_m_c_p23017_8c_ab0b70ff25556234d7ab76b16f1cc1534}\index{MCP23017.c@{MCP23017.c}!mcp\_write\_output\_pin@{mcp\_write\_output\_pin}}
+\index{mcp\_write\_output\_pin@{mcp\_write\_output\_pin}!MCP23017.c@{MCP23017.c}}
+\doxysubsubsection{\texorpdfstring{mcp\_write\_output\_pin()}{mcp\_write\_output\_pin()}}
+{\footnotesize\ttfamily \label{_m_c_p23017_8c_ab0b70ff25556234d7ab76b16f1cc1534} 
+esp\+\_\+err\+\_\+t mcp\+\_\+write\+\_\+output\+\_\+pin (\begin{DoxyParamCaption}\item[{enum \mbox{\hyperlink{mcp23017__defs_8h_a7b7476975849505bba2c9b211b62d5bd}{mcp\+\_\+port\+\_\+e}}}]{port}{, }\item[{uint8\+\_\+t}]{pin}{, }\item[{bool}]{state}{}\end{DoxyParamCaption})}
+
+
+
+Función que lee el registro GPIO, escribe {\ttfamily state} en el {\ttfamily pin} del {\ttfamily port} escribe el registro OLAT del MCP23017. 
+
+El registro OLAT es el que exterioriza el estado del pin en etados lógicos altos o bajos.
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\texttt{in}}  & {\em port} & Puede tomar los valores PORTA o PORTB, dependiendo del puerto que se quiera escribir.\\
+\hline
+\mbox{\texttt{in}}  & {\em pin} & Pin físico que quiere ser modificado su estado\\
+\hline
+\mbox{\texttt{in}}  & {\em state} & Estado True o False que puede tomar el pin que quiere ser modificado\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+
+\begin{DoxyItemize}
+\item ESP\+\_\+\+OK en caso de éxito.
+\item ESP\+\_\+\+ERR\+\_\+\+INVALID\+\_\+\+ARG Error de parámetro
+\item ESP\+\_\+\+FAIL Error al enviar comando, el esclavo no envió ACK a la transferencia.
+\item ESP\+\_\+\+ERR\+\_\+\+INVALID\+\_\+\+STATE I2C El driver no fue inicializado o no está en modo master.
+\item ESP\+\_\+\+ERR\+\_\+\+TIMEOUT Timueout de la operación porque el bus está ocupado. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{_m_c_p23017_8c_source_l00328}{328}} del archivo \mbox{\hyperlink{_m_c_p23017_8c_source}{MCP23017.\+c}}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 14
+Gráfico de llamadas a esta función\+:
+% FIG 15
+\Hypertarget{_m_c_p23017_8c_a8b3a939458d2c4d94598667bec9af9dd}\index{MCP23017.c@{MCP23017.c}!mcp\_write\_output\_port@{mcp\_write\_output\_port}}
+\index{mcp\_write\_output\_port@{mcp\_write\_output\_port}!MCP23017.c@{MCP23017.c}}
+\doxysubsubsection{\texorpdfstring{mcp\_write\_output\_port()}{mcp\_write\_output\_port()}}
+{\footnotesize\ttfamily \label{_m_c_p23017_8c_a8b3a939458d2c4d94598667bec9af9dd} 
+esp\+\_\+err\+\_\+t mcp\+\_\+write\+\_\+output\+\_\+port (\begin{DoxyParamCaption}\item[{enum \mbox{\hyperlink{mcp23017__defs_8h_a7b7476975849505bba2c9b211b62d5bd}{mcp\+\_\+port\+\_\+e}}}]{port}{, }\item[{uint8\+\_\+t}]{data}{}\end{DoxyParamCaption})}
+
+
+
+Función que escribe {\ttfamily data} en el escribe el registro OLAT del {\ttfamily port} del MCP23017. 
+
+Escribe {\ttfamily data} entero, no pin a pin.
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\texttt{in}}  & {\em port} & Puede tomar los valores PORTA o PORTB, dependiendo del puerto que se quiera escribir.\\
+\hline
+\mbox{\texttt{in}}  & {\em data} & Estado True o False que puede tomar los pines del {\ttfamily port} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+
+\begin{DoxyItemize}
+\item ESP\+\_\+\+OK en caso de éxito.
+\item ESP\+\_\+\+ERR\+\_\+\+INVALID\+\_\+\+ARG Error de parámetro
+\item ESP\+\_\+\+FAIL Error al enviar comando, el esclavo no envió ACK a la transferencia.
+\item ESP\+\_\+\+ERR\+\_\+\+INVALID\+\_\+\+STATE I2C El driver no fue inicializado o no está en modo master.
+\item ESP\+\_\+\+ERR\+\_\+\+TIMEOUT Timueout de la operación porque el bus está ocupado. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{_m_c_p23017_8c_source_l00353}{353}} del archivo \mbox{\hyperlink{_m_c_p23017_8c_source}{MCP23017.\+c}}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 16
+Gráfico de llamadas a esta función\+:
+% FIG 17
+
+
+\label{doc-var-members}
+\Hypertarget{_m_c_p23017_8c_doc-var-members}
+\doxysubsection{Documentación de variables}
+\Hypertarget{_m_c_p23017_8c_a5a85b9c772bbeb480b209a3e6ea92b4c}\index{MCP23017.c@{MCP23017.c}!TAG@{TAG}}
+\index{TAG@{TAG}!MCP23017.c@{MCP23017.c}}
+\doxysubsubsection{\texorpdfstring{TAG}{TAG}}
+{\footnotesize\ttfamily \label{_m_c_p23017_8c_a5a85b9c772bbeb480b209a3e6ea92b4c} 
+const char\texorpdfstring{$\ast$}{*} TAG = "{}MCP23017"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+Varaible que se imprime en los ESP\+\_\+\+LOG 
+
+Definición en la línea \mbox{\hyperlink{_m_c_p23017_8c_source_l00100}{100}} del archivo \mbox{\hyperlink{_m_c_p23017_8c_source}{MCP23017.\+c}}.
+
+\Hypertarget{_m_c_p23017_8c_ac2bea2d9f778e95aaa0b2a89ac49bfb2}\index{MCP23017.c@{MCP23017.c}!xI2C\_Mutex@{xI2C\_Mutex}}
+\index{xI2C\_Mutex@{xI2C\_Mutex}!MCP23017.c@{MCP23017.c}}
+\doxysubsubsection{\texorpdfstring{xI2C\_Mutex}{xI2C\_Mutex}}
+{\footnotesize\ttfamily \label{_m_c_p23017_8c_ac2bea2d9f778e95aaa0b2a89ac49bfb2} 
+Semaphore\+Handle\+\_\+t x\+I2\+C\+\_\+\+Mutex = NULL}
+
+Semáforo (Mutex) que es utilizado para que dos comandos sean ejecutados al mismo tiempo y evitar que uno superponga al otro, trayendo datos incorrectos del MCP23017 
+
+Definición en la línea \mbox{\hyperlink{_m_c_p23017_8c_source_l00101}{101}} del archivo \mbox{\hyperlink{_m_c_p23017_8c_source}{MCP23017.\+c}}.
+

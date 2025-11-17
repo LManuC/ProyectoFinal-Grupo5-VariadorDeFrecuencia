@@ -1,0 +1,156 @@
+\doxysection{Referencia del archivo C\+:/\+Users/\+User/\+LVFV\+\_\+\+ESP32/main/nvs/nvs.h}
+\hypertarget{nvs_8h}{}\label{nvs_8h}\index{C:/Users/User/LVFV\_ESP32/main/nvs/nvs.h@{C:/Users/User/LVFV\_ESP32/main/nvs/nvs.h}}
+
+
+Declaración de funciones de lectura y escritura de memoria no volatil. Útiles para los reset y no tener que reconfigurar siempre las variables básicas del sistema.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include "{}../\+LVFV\+\_\+system.\+h"{}}\newline
+Gráfico de dependencias incluidas en nvs.\+h\+:
+% FIG 0
+Gráfico de los archivos que directa o indirectamente incluyen a este archivo\+:
+% FIG 1
+\doxysubsubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+esp\+\_\+err\+\_\+t \mbox{\hyperlink{nvs_8h_a3da2b2c6e021ca7b976168dc8308b254}{nvs\+\_\+init\+\_\+once}} (void)
+\begin{DoxyCompactList}\small\item\em Inicializa la memoria NVS una única vez. \end{DoxyCompactList}\item 
+esp\+\_\+err\+\_\+t \mbox{\hyperlink{nvs_8h_a478715e615bb92a10014227cf9d89248}{load\+\_\+variables}} (\mbox{\hyperlink{structfrequency__settings__t}{frequency\+\_\+settings\+\_\+t}} \texorpdfstring{$\ast$}{*}frequency\+\_\+settings, \mbox{\hyperlink{structtime__settings__t}{time\+\_\+settings\+\_\+t}} \texorpdfstring{$\ast$}{*}time\+\_\+settings, \mbox{\hyperlink{structseccurity__settings__t}{seccurity\+\_\+settings\+\_\+t}} \texorpdfstring{$\ast$}{*}seccurity\+\_\+settings)
+\begin{DoxyCompactList}\small\item\em Carga desde NVS los parámetros de frecuencia, seguridad y ventanas horarias. \end{DoxyCompactList}\item 
+esp\+\_\+err\+\_\+t \mbox{\hyperlink{nvs_8h_ab46a7fb052466c1648288b24eced88f2}{save\+\_\+variables}} (\mbox{\hyperlink{structfrequency__settings__t}{frequency\+\_\+settings\+\_\+t}} \texorpdfstring{$\ast$}{*}frequency\+\_\+settings, \mbox{\hyperlink{structtime__settings__t}{time\+\_\+settings\+\_\+t}} \texorpdfstring{$\ast$}{*}time\+\_\+settings, \mbox{\hyperlink{structseccurity__settings__t}{seccurity\+\_\+settings\+\_\+t}} \texorpdfstring{$\ast$}{*}seccurity\+\_\+settings)
+\begin{DoxyCompactList}\small\item\em Guarda en NVS los parámetros de frecuencia, seguridad y ventanas horarias. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Declaración de funciones de lectura y escritura de memoria no volatil. Útiles para los reset y no tener que reconfigurar siempre las variables básicas del sistema. 
+
+\begin{DoxyAuthor}{Autor}
+Andrenacci -\/ Carra 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Versión}
+2.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Fecha}
+2025-\/11-\/06 
+\end{DoxyDate}
+
+
+Definición en el archivo \mbox{\hyperlink{nvs_8h_source}{nvs.\+h}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{nvs_8h_doc-func-members}
+\doxysubsection{Documentación de funciones}
+\Hypertarget{nvs_8h_a478715e615bb92a10014227cf9d89248}\index{nvs.h@{nvs.h}!load\_variables@{load\_variables}}
+\index{load\_variables@{load\_variables}!nvs.h@{nvs.h}}
+\doxysubsubsection{\texorpdfstring{load\_variables()}{load\_variables()}}
+{\footnotesize\ttfamily \label{nvs_8h_a478715e615bb92a10014227cf9d89248} 
+esp\+\_\+err\+\_\+t load\+\_\+variables (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structfrequency__settings__t}{frequency\+\_\+settings\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{frequency\+\_\+settings}{, }\item[{\mbox{\hyperlink{structtime__settings__t}{time\+\_\+settings\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{time\+\_\+settings}{, }\item[{\mbox{\hyperlink{structseccurity__settings__t}{seccurity\+\_\+settings\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{seccurity\+\_\+settings}{}\end{DoxyParamCaption})}
+
+
+
+Carga desde NVS los parámetros de frecuencia, seguridad y ventanas horarias. 
+
+Utiliza las funciones internas de lectura (load\+\_\+16) para obtener cada parámetro persistido en NVS. Si alguna lectura falla, retorna el primer error encontrado. En caso de no existir una clave, se aplica el valor por defecto definido en cada macro de carga.
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\texttt{out}}  & {\em frequency\+\_\+settings} & Estructura de parámetros de frecuencia a cargar.\\
+\hline
+\mbox{\texttt{out}}  & {\em time\+\_\+settings} & Estructura de parámetros de tiempo (ventanas start/stop) a cargar.\\
+\hline
+\mbox{\texttt{out}}  & {\em seccurity\+\_\+settings} & Estructura de parámetros de seguridad (vbus/ibus) a cargar.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Valores devueltos}
+{\em -\/} & ESP\+\_\+\+OK\+: Si todas las lecturas fueron exitosas (o claves ausentes con default aplicado).
+\begin{DoxyItemize}
+\item ESP\+\_\+\+FAIL\+: si hay un error interno.
+\item ESP\+\_\+\+ERR\+\_\+\+NVS\+\_\+\+NOT\+\_\+\+INITIALIZED\+: si la NVS no está inicializada.
+\item ESP\+\_\+\+ERR\+\_\+\+NVS\+\_\+\+PART\+\_\+\+NOT\+\_\+\+FOUND\+: si la partición "{}nvs"{} no se encuentra.
+\item ESP\+\_\+\+ERR\+\_\+\+NVS\+\_\+\+INVALID\+\_\+\+NAME\+: si alguna clave no cumple restricciones.
+\item ESP\+\_\+\+ERR\+\_\+\+NO\+\_\+\+MEM / ESP\+\_\+\+ERR\+\_\+\+NVS\+\_\+\+NOT\+\_\+\+ENOUGH\+\_\+\+SPACE\+: errores internos de la NVS.
+\item ESP\+\_\+\+ERR\+\_\+\+NOT\+\_\+\+ALLOWED\+: si la partición es solo lectura.
+\item ESP\+\_\+\+ERR\+\_\+\+INVALID\+\_\+\+ARG\+: si el handler interno de NVS es NULL. 
+\end{DoxyItemize}\\
+\hline
+\end{DoxyRetVals}
+
+
+Definición en la línea \mbox{\hyperlink{nvs_8c_source_l00246}{246}} del archivo \mbox{\hyperlink{nvs_8c_source}{nvs.\+c}}.
+
+\Hypertarget{nvs_8h_a3da2b2c6e021ca7b976168dc8308b254}\index{nvs.h@{nvs.h}!nvs\_init\_once@{nvs\_init\_once}}
+\index{nvs\_init\_once@{nvs\_init\_once}!nvs.h@{nvs.h}}
+\doxysubsubsection{\texorpdfstring{nvs\_init\_once()}{nvs\_init\_once()}}
+{\footnotesize\ttfamily \label{nvs_8h_a3da2b2c6e021ca7b976168dc8308b254} 
+esp\+\_\+err\+\_\+t nvs\+\_\+init\+\_\+once (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Inicializa la memoria NVS una única vez. 
+
+Intenta inicializar la NVS mediante nvs\+\_\+flash\+\_\+init(). Si la memoria está llena (ESP\+\_\+\+ERR\+\_\+\+NVS\+\_\+\+NO\+\_\+\+FREE\+\_\+\+PAGES) o se detecta una nueva versión de NVS (ESP\+\_\+\+ERR\+\_\+\+NVS\+\_\+\+NEW\+\_\+\+VERSION\+\_\+\+FOUND), se borra la partición NVS y se vuelve a inicializar. No realiza inicialización repetida si ya fue hecha por el sistema.
+
+
+\begin{DoxyRetVals}{Valores devueltos}
+{\em -\/} & ESP\+\_\+\+OK\+: Si la inicialización fue exitosa.
+\begin{DoxyItemize}
+\item ESP\+\_\+\+ERR\+\_\+\+NVS\+\_\+\+NO\+\_\+\+FREE\+\_\+\+PAGES\+: Sin páginas libres; requiere borrado y reinicialización.
+\item ESP\+\_\+\+ERR\+\_\+\+NVS\+\_\+\+NEW\+\_\+\+VERSION\+\_\+\+FOUND\+: Versión de NVS incompatible; requiere borrado.
+\item ESP\+\_\+\+ERR\+\_\+\+NVS\+\_\+\+NOT\+\_\+\+INITIALIZED\+: si la memoria no pudo inicializarse.
+\item ESP\+\_\+\+ERR\+\_\+\+NVS\+\_\+\+PART\+\_\+\+NOT\+\_\+\+FOUND\+: si la partición con la etiqueta "{}nvs"{} no se encuentra.
+\item ESP\+\_\+\+ERR\+\_\+\+NOT\+\_\+\+ALLOWED\+: Si la partición es solo lectura.
+\item Otros códigos de error propagados por nvs\+\_\+flash\+\_\+init() o nvs\+\_\+flash\+\_\+erase(). 
+\end{DoxyItemize}\\
+\hline
+\end{DoxyRetVals}
+
+
+Definición en la línea \mbox{\hyperlink{nvs_8c_source_l00237}{237}} del archivo \mbox{\hyperlink{nvs_8c_source}{nvs.\+c}}.
+
+Gráfico de llamadas a esta función\+:
+% FIG 2
+\Hypertarget{nvs_8h_ab46a7fb052466c1648288b24eced88f2}\index{nvs.h@{nvs.h}!save\_variables@{save\_variables}}
+\index{save\_variables@{save\_variables}!nvs.h@{nvs.h}}
+\doxysubsubsection{\texorpdfstring{save\_variables()}{save\_variables()}}
+{\footnotesize\ttfamily \label{nvs_8h_ab46a7fb052466c1648288b24eced88f2} 
+esp\+\_\+err\+\_\+t save\+\_\+variables (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structfrequency__settings__t}{frequency\+\_\+settings\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{frequency\+\_\+settings}{, }\item[{\mbox{\hyperlink{structtime__settings__t}{time\+\_\+settings\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{time\+\_\+settings}{, }\item[{\mbox{\hyperlink{structseccurity__settings__t}{seccurity\+\_\+settings\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{seccurity\+\_\+settings}{}\end{DoxyParamCaption})}
+
+
+
+Guarda en NVS los parámetros de frecuencia, seguridad y ventanas horarias. 
+
+Utiliza las funciones internas de guardado (save\+\_\+16) para persistir cada parámetro en la NVS. Si alguna escritura falla, retorna el primer error encontrado.
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\texttt{in}}  & {\em frequency\+\_\+settings} & Estructura con parámetros de frecuencia a guardar.\\
+\hline
+\mbox{\texttt{in}}  & {\em time\+\_\+settings} & Estructura con parámetros de tiempo (ventanas start/stop) a guardar.\\
+\hline
+\mbox{\texttt{in}}  & {\em seccurity\+\_\+settings} & Estructura con parámetros de seguridad (vbus/ibus) a guardar.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Valores devueltos}
+{\em -\/} & ESP\+\_\+\+OK\+: Si todas las escrituras fueron exitosas.
+\begin{DoxyItemize}
+\item ESP\+\_\+\+FAIL\+: si hay un error interno.
+\item ESP\+\_\+\+ERR\+\_\+\+NVS\+\_\+\+NOT\+\_\+\+INITIALIZED\+: si la NVS no está inicializada.
+\item ESP\+\_\+\+ERR\+\_\+\+NVS\+\_\+\+PART\+\_\+\+NOT\+\_\+\+FOUND\+: si la partición "{}nvs"{} no se encuentra.
+\item ESP\+\_\+\+ERR\+\_\+\+NVS\+\_\+\+INVALID\+\_\+\+NAME\+: si alguna clave no cumple restricciones.
+\item ESP\+\_\+\+ERR\+\_\+\+NO\+\_\+\+MEM / ESP\+\_\+\+ERR\+\_\+\+NVS\+\_\+\+NOT\+\_\+\+ENOUGH\+\_\+\+SPACE\+: errores internos de la NVS o espacio insuficiente.
+\item ESP\+\_\+\+ERR\+\_\+\+NOT\+\_\+\+ALLOWED\+: si la partición es solo lectura.
+\item ESP\+\_\+\+ERR\+\_\+\+INVALID\+\_\+\+ARG\+: si el handler interno de NVS es NULL. 
+\end{DoxyItemize}\\
+\hline
+\end{DoxyRetVals}
+
+
+Definición en la línea \mbox{\hyperlink{nvs_8c_source_l00310}{310}} del archivo \mbox{\hyperlink{nvs_8c_source}{nvs.\+c}}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 3

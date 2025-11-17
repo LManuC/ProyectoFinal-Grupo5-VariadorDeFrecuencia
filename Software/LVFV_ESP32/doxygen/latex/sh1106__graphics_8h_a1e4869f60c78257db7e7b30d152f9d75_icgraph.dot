@@ -1,0 +1,32 @@
+digraph "sh1106_draw_utn_logo"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="sh1106_draw_utn_logo",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge15_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="sh1106_print_frame",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$display_8c.html#a53bce9b7fc41d510f91fe40b01d296d5",tooltip="Función que agrega al buffer de la pantalla un marco fijo que incluye la hora, la línea horizontal di..."];
+  Node2 -> Node3 [id="edge16_Node000002_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="sh1106_frequency_edit\l_variables",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$display_8c.html#aac2da5f11f68738a69e9f34857e0364e",tooltip="Imprime en pantalla las variables de frecuencia a editar: Frecuencia de régimen, aceleración,..."];
+  Node3 -> Node4 [id="edge17_Node000003_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="task_display",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$display_8c.html#a0c23017a47c450de05f8c7af642c7461",tooltip="Tarea de display que controla las diferentes pantallas de muestra, selección y edición de las variabl..."];
+  Node4 -> Node5 [id="edge18_Node000004_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="app_main",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$main_8c.html#a630544a7f0a2cc40d8a7fefab7e2fe70",tooltip="Tag de logs del sistema."];
+  Node2 -> Node6 [id="edge19_Node000002_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="sh1106_main_screen",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$display_8c.html#a68c92b6a0fed27244dea02a1421d70b3",tooltip="Pantalla principal dell sistema. Allí se muestra la hora del sistema, la frecuencia a la que se encue..."];
+  Node6 -> Node4 [id="edge20_Node000006_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 -> Node7 [id="edge21_Node000002_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="sh1106_security_edit\l_variables",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$display_8c.html#ace8dea497c558e3edb559d848856c233",tooltip="Imprime en pantalla las variables de seguridad a editar: Tensión mínima en la bus de contíncua y corr..."];
+  Node7 -> Node4 [id="edge22_Node000007_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 -> Node8 [id="edge23_Node000002_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node8 [id="Node000008",label="sh1106_select_edit\l_variables",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$display_8c.html#a4ecf1cb087c1b0706199c5965ed87c5b",tooltip="Permite al usuario seleccionar entre las tres pantallas de edición de variables: Frecuencia,..."];
+  Node8 -> Node4 [id="edge24_Node000008_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 -> Node9 [id="edge25_Node000002_Node000009",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node9 [id="Node000009",label="sh1106_time_edit_variables",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$display_8c.html#a6b84e310816652c40db2a3af353b0194",tooltip="Imprime en pantalla las variables de tiempo a editar: Hora del sistema, hora de inicio y hora de fin."];
+  Node9 -> Node4 [id="edge26_Node000009_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node10 [id="edge27_Node000001_Node000010",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node10 [id="Node000010",label="sh1106_splash_screen",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$display_8c.html#ab07ce08361000a77647dc393f0d7b233",tooltip="Pantalla de splash que se imprime al iniciar el sistema."];
+  Node10 -> Node4 [id="edge28_Node000010_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+}

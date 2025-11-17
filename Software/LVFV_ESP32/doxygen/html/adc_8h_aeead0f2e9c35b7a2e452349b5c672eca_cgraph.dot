@@ -1,0 +1,11 @@
+digraph "adc_init_two_channels"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="adc_init_two_channels",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Configura los 4 ADC necesarios para el sistema y los calibra para obtener las mediciones en desde 0 a..."];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="adc_cali_try_init",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$adc_8c.html#a3862aae06b5dfd4b6a23b569a4540fe2",tooltip="Estandariza las mediciones del ADC en función de la tensión que representa el pin físico en mili volt..."];
+}

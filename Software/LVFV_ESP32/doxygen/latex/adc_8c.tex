@@ -1,0 +1,408 @@
+\doxysection{Referencia del archivo C\+:/\+Users/\+User/\+LVFV\+\_\+\+ESP32/main/adc/adc.c}
+\hypertarget{adc_8c}{}\label{adc_8c}\index{C:/Users/User/LVFV\_ESP32/main/adc/adc.c@{C:/Users/User/LVFV\_ESP32/main/adc/adc.c}}
+
+
+Funcion de inicialización y tarea lectura del ADC.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include "{}freertos/\+Free\+RTOS.\+h"{}}\newline
+{\ttfamily \#include "{}freertos/task.\+h"{}}\newline
+{\ttfamily \#include "{}freertos/queue.\+h"{}}\newline
+{\ttfamily \#include "{}esp\+\_\+log.\+h"{}}\newline
+{\ttfamily \#include "{}esp\+\_\+err.\+h"{}}\newline
+{\ttfamily \#include "{}esp\+\_\+adc/adc\+\_\+oneshot.\+h"{}}\newline
+{\ttfamily \#include "{}esp\+\_\+adc/adc\+\_\+cali.\+h"{}}\newline
+{\ttfamily \#include "{}esp\+\_\+adc/adc\+\_\+cali\+\_\+scheme.\+h"{}}\newline
+{\ttfamily \#include "{}esp\+\_\+adc/adc\+\_\+continuous.\+h"{}}\newline
+{\ttfamily \#include "{}../\+LVFV\+\_\+system.\+h"{}}\newline
+{\ttfamily \#include "{}../adc/adc.\+h"{}}\newline
+{\ttfamily \#include "{}../\+System/\+Sys\+Admin.\+h"{}}\newline
+Gráfico de dependencias incluidas en adc.\+c\+:
+% FIG 0
+\doxysubsubsection*{defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{adc_8c_af54819f3e0f7360f21de8b3f9d803c08}{ADC\+\_\+\+PERIOD\+\_\+\+MS}}~50
+\item 
+\#define \mbox{\hyperlink{adc_8c_ab8818cc3918e2a7d8d5858cb1ef86364}{ADC\+\_\+\+UNIT\+\_\+\+USED}}~ADC\+\_\+\+UNIT\+\_\+1
+\item 
+\#define \mbox{\hyperlink{adc_8c_aab4df6cb3f9222a5b0098063eade262c}{ADC\+\_\+\+CH\+\_\+\+GPIO34}}~ADC\+\_\+\+CHANNEL\+\_\+6
+\item 
+\#define \mbox{\hyperlink{adc_8c_ac5b49a253e8fc48859dce8e9fdd8cf6f}{ADC\+\_\+\+CH\+\_\+\+GPIO35}}~ADC\+\_\+\+CHANNEL\+\_\+7
+\item 
+\#define \mbox{\hyperlink{adc_8c_a56a4bd2cb7afd6db44ef55a1d4587c89}{ADC\+\_\+\+CH\+\_\+\+GPIO36}}~ADC\+\_\+\+CHANNEL\+\_\+0
+\item 
+\#define \mbox{\hyperlink{adc_8c_a58b5c420b69ca6aba810ff90b81150f3}{ADC\+\_\+\+CH\+\_\+\+GPIO39}}~ADC\+\_\+\+CHANNEL\+\_\+3
+\item 
+\#define \mbox{\hyperlink{adc_8c_a764b64d78324053bd17ae2654f080658}{ADC\+\_\+\+ATTEN\+\_\+\+USED}}~( (adc\+\_\+atten\+\_\+t) 3 )
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+static esp\+\_\+err\+\_\+t \mbox{\hyperlink{adc_8c_a3862aae06b5dfd4b6a23b569a4540fe2}{adc\+\_\+cali\+\_\+try\+\_\+init}} (adc\+\_\+unit\+\_\+t unit, adc\+\_\+channel\+\_\+t ch, adc\+\_\+atten\+\_\+t atten, adc\+\_\+cali\+\_\+handle\+\_\+t \texorpdfstring{$\ast$}{*}out)
+\begin{DoxyCompactList}\small\item\em Estandariza las mediciones del ADC en función de la tensión que representa el pin físico en mili volts. \end{DoxyCompactList}\item 
+esp\+\_\+err\+\_\+t \mbox{\hyperlink{adc_8c_aeead0f2e9c35b7a2e452349b5c672eca}{adc\+\_\+init\+\_\+two\+\_\+channels}} (void)
+\begin{DoxyCompactList}\small\item\em Configura los 4 ADC necesarios para el sistema y los calibra para obtener las mediciones en desde 0 a 3125mV. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{adc_8c_a1b78b89977b7b9e5ebc32e9456337379}{adc\+\_\+task}} (void \texorpdfstring{$\ast$}{*}arg)
+\begin{DoxyCompactList}\small\item\em Función programada como alarma para finalizar el funcionamiento del motor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791}{system\+\_\+status\+\_\+e}} \mbox{\hyperlink{adc_8c_aa1581e2212cf6853c63ae97147e9ed1f}{read\+ADC}} (void)
+\begin{DoxyCompactList}\small\item\em Desencola mediciones obtenidas desde el ADC para tensión y corriente del bus de contínua, compara con los parámetros seteados y dispara el estado de emergencia si es necesario. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{adc_8c_a5a85b9c772bbeb480b209a3e6ea92b4c}{TAG}} = "{}ADC\+\_\+\+ESPADC"{}
+\item 
+static adc\+\_\+oneshot\+\_\+unit\+\_\+handle\+\_\+t \mbox{\hyperlink{adc_8c_a60ac5e86633367adafa2e5e7722a5f1d}{s\+\_\+adc}} = NULL
+\item 
+static adc\+\_\+cali\+\_\+handle\+\_\+t \mbox{\hyperlink{adc_8c_a851532613e9b788ef5cdaae8a793293b}{calibration\+\_\+bus\+\_\+voltage}} = NULL
+\item 
+static adc\+\_\+cali\+\_\+handle\+\_\+t \mbox{\hyperlink{adc_8c_a1932e503ef7786f06b766fba9f8151b6}{calibration\+\_\+current}} = NULL
+\item 
+static adc\+\_\+cali\+\_\+handle\+\_\+t \mbox{\hyperlink{adc_8c_a542296d98fccbfffe83472fd94ac65bd}{calibration\+\_\+5\+V\+\_\+source}} = NULL
+\item 
+static adc\+\_\+cali\+\_\+handle\+\_\+t \mbox{\hyperlink{adc_8c_a5a1bd2c5793ac7753f8a0906218f5ea7}{calibration\+\_\+3\+V3\+\_\+source}} = NULL
+\item 
+static bool \mbox{\hyperlink{adc_8c_a99c81d57aff2167c9def024cfd611c70}{calibration\+\_\+bus\+\_\+voltage\+\_\+ok}} = false
+\item 
+static bool \mbox{\hyperlink{adc_8c_a5b37b97574e20e835bbd3a8b9f245cb5}{calibration\+\_\+current\+\_\+ok}} = false
+\item 
+static bool \mbox{\hyperlink{adc_8c_a82a688a2bd4797ad48da469919441eb5}{calibration\+\_\+5\+V\+\_\+source\+\_\+ok}} = false
+\item 
+static bool \mbox{\hyperlink{adc_8c_ae4b530de7864564055c6c19c4a1ef2c8}{calibration\+\_\+3\+V3\+\_\+source\+\_\+ok}} = false
+\item 
+Queue\+Handle\+\_\+t \mbox{\hyperlink{adc_8c_a6180364ad07572b6a621ab10c902c3ee}{bus\+\_\+meas\+\_\+evt\+\_\+queue}} = NULL
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Funcion de inicialización y tarea lectura del ADC. 
+
+\begin{DoxyAuthor}{Autor}
+Andrenacci -\/ Carra 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Versión}
+2.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Fecha}
+2025-\/11-\/06 
+\end{DoxyDate}
+
+
+Definición en el archivo \mbox{\hyperlink{adc_8c_source}{adc.\+c}}.
+
+
+
+\label{doc-define-members}
+\Hypertarget{adc_8c_doc-define-members}
+\doxysubsection{Documentación de «define»}
+\Hypertarget{adc_8c_a764b64d78324053bd17ae2654f080658}\index{adc.c@{adc.c}!ADC\_ATTEN\_USED@{ADC\_ATTEN\_USED}}
+\index{ADC\_ATTEN\_USED@{ADC\_ATTEN\_USED}!adc.c@{adc.c}}
+\doxysubsubsection{\texorpdfstring{ADC\_ATTEN\_USED}{ADC\_ATTEN\_USED}}
+{\footnotesize\ttfamily \label{adc_8c_a764b64d78324053bd17ae2654f080658} 
+\#define ADC\+\_\+\+ATTEN\+\_\+\+USED~( (adc\+\_\+atten\+\_\+t) 3 )}
+
+
+
+Definición en la línea \mbox{\hyperlink{adc_8c_source_l00036}{36}} del archivo \mbox{\hyperlink{adc_8c_source}{adc.\+c}}.
+
+\Hypertarget{adc_8c_aab4df6cb3f9222a5b0098063eade262c}\index{adc.c@{adc.c}!ADC\_CH\_GPIO34@{ADC\_CH\_GPIO34}}
+\index{ADC\_CH\_GPIO34@{ADC\_CH\_GPIO34}!adc.c@{adc.c}}
+\doxysubsubsection{\texorpdfstring{ADC\_CH\_GPIO34}{ADC\_CH\_GPIO34}}
+{\footnotesize\ttfamily \label{adc_8c_aab4df6cb3f9222a5b0098063eade262c} 
+\#define ADC\+\_\+\+CH\+\_\+\+GPIO34~ADC\+\_\+\+CHANNEL\+\_\+6}
+
+
+
+Definición en la línea \mbox{\hyperlink{adc_8c_source_l00031}{31}} del archivo \mbox{\hyperlink{adc_8c_source}{adc.\+c}}.
+
+\Hypertarget{adc_8c_ac5b49a253e8fc48859dce8e9fdd8cf6f}\index{adc.c@{adc.c}!ADC\_CH\_GPIO35@{ADC\_CH\_GPIO35}}
+\index{ADC\_CH\_GPIO35@{ADC\_CH\_GPIO35}!adc.c@{adc.c}}
+\doxysubsubsection{\texorpdfstring{ADC\_CH\_GPIO35}{ADC\_CH\_GPIO35}}
+{\footnotesize\ttfamily \label{adc_8c_ac5b49a253e8fc48859dce8e9fdd8cf6f} 
+\#define ADC\+\_\+\+CH\+\_\+\+GPIO35~ADC\+\_\+\+CHANNEL\+\_\+7}
+
+
+
+Definición en la línea \mbox{\hyperlink{adc_8c_source_l00032}{32}} del archivo \mbox{\hyperlink{adc_8c_source}{adc.\+c}}.
+
+\Hypertarget{adc_8c_a56a4bd2cb7afd6db44ef55a1d4587c89}\index{adc.c@{adc.c}!ADC\_CH\_GPIO36@{ADC\_CH\_GPIO36}}
+\index{ADC\_CH\_GPIO36@{ADC\_CH\_GPIO36}!adc.c@{adc.c}}
+\doxysubsubsection{\texorpdfstring{ADC\_CH\_GPIO36}{ADC\_CH\_GPIO36}}
+{\footnotesize\ttfamily \label{adc_8c_a56a4bd2cb7afd6db44ef55a1d4587c89} 
+\#define ADC\+\_\+\+CH\+\_\+\+GPIO36~ADC\+\_\+\+CHANNEL\+\_\+0}
+
+
+
+Definición en la línea \mbox{\hyperlink{adc_8c_source_l00033}{33}} del archivo \mbox{\hyperlink{adc_8c_source}{adc.\+c}}.
+
+\Hypertarget{adc_8c_a58b5c420b69ca6aba810ff90b81150f3}\index{adc.c@{adc.c}!ADC\_CH\_GPIO39@{ADC\_CH\_GPIO39}}
+\index{ADC\_CH\_GPIO39@{ADC\_CH\_GPIO39}!adc.c@{adc.c}}
+\doxysubsubsection{\texorpdfstring{ADC\_CH\_GPIO39}{ADC\_CH\_GPIO39}}
+{\footnotesize\ttfamily \label{adc_8c_a58b5c420b69ca6aba810ff90b81150f3} 
+\#define ADC\+\_\+\+CH\+\_\+\+GPIO39~ADC\+\_\+\+CHANNEL\+\_\+3}
+
+
+
+Definición en la línea \mbox{\hyperlink{adc_8c_source_l00034}{34}} del archivo \mbox{\hyperlink{adc_8c_source}{adc.\+c}}.
+
+\Hypertarget{adc_8c_af54819f3e0f7360f21de8b3f9d803c08}\index{adc.c@{adc.c}!ADC\_PERIOD\_MS@{ADC\_PERIOD\_MS}}
+\index{ADC\_PERIOD\_MS@{ADC\_PERIOD\_MS}!adc.c@{adc.c}}
+\doxysubsubsection{\texorpdfstring{ADC\_PERIOD\_MS}{ADC\_PERIOD\_MS}}
+{\footnotesize\ttfamily \label{adc_8c_af54819f3e0f7360f21de8b3f9d803c08} 
+\#define ADC\+\_\+\+PERIOD\+\_\+\+MS~50}
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\texttt{in}}  & {\em arg} & Sin uso.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Valores devueltos}
+{\em -\/} & ESP\+\_\+\+OK\+: Si inicialización y calibración de todos los ADC fue satisfactoria
+\begin{DoxyItemize}
+\item ESP\+\_\+\+ERR\+\_\+\+INVALID\+\_\+\+ARG\+: Si la iniciaulización de algún ADC falló
+\item ESP\+\_\+\+ERR\+\_\+\+INVALID\+\_\+\+STATE\+: Si las calibraciones de algún ADC falló 
+\end{DoxyItemize}\\
+\hline
+\end{DoxyRetVals}
+
+
+Definición en la línea \mbox{\hyperlink{adc_8c_source_l00028}{28}} del archivo \mbox{\hyperlink{adc_8c_source}{adc.\+c}}.
+
+\Hypertarget{adc_8c_ab8818cc3918e2a7d8d5858cb1ef86364}\index{adc.c@{adc.c}!ADC\_UNIT\_USED@{ADC\_UNIT\_USED}}
+\index{ADC\_UNIT\_USED@{ADC\_UNIT\_USED}!adc.c@{adc.c}}
+\doxysubsubsection{\texorpdfstring{ADC\_UNIT\_USED}{ADC\_UNIT\_USED}}
+{\footnotesize\ttfamily \label{adc_8c_ab8818cc3918e2a7d8d5858cb1ef86364} 
+\#define ADC\+\_\+\+UNIT\+\_\+\+USED~ADC\+\_\+\+UNIT\+\_\+1}
+
+
+
+Definición en la línea \mbox{\hyperlink{adc_8c_source_l00030}{30}} del archivo \mbox{\hyperlink{adc_8c_source}{adc.\+c}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{adc_8c_doc-func-members}
+\doxysubsection{Documentación de funciones}
+\Hypertarget{adc_8c_a3862aae06b5dfd4b6a23b569a4540fe2}\index{adc.c@{adc.c}!adc\_cali\_try\_init@{adc\_cali\_try\_init}}
+\index{adc\_cali\_try\_init@{adc\_cali\_try\_init}!adc.c@{adc.c}}
+\doxysubsubsection{\texorpdfstring{adc\_cali\_try\_init()}{adc\_cali\_try\_init()}}
+{\footnotesize\ttfamily \label{adc_8c_a3862aae06b5dfd4b6a23b569a4540fe2} 
+esp\+\_\+err\+\_\+t adc\+\_\+cali\+\_\+try\+\_\+init (\begin{DoxyParamCaption}\item[{adc\+\_\+unit\+\_\+t}]{unit}{, }\item[{adc\+\_\+channel\+\_\+t}]{ch}{, }\item[{adc\+\_\+atten\+\_\+t}]{atten}{, }\item[{adc\+\_\+cali\+\_\+handle\+\_\+t \texorpdfstring{$\ast$}{*}}]{out}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Estandariza las mediciones del ADC en función de la tensión que representa el pin físico en mili volts. 
+
+Denera la configuración necesaria para que las mediciones pasen de cuentas a mili volts desde 0 a 3125 mili volts
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\texttt{in}}  & {\em uint} & Unidad del ADC utilizada. Puede tomar valores ADC\+\_\+\+UNIT\+\_\+1 o ADC\+\_\+\+UNIT\+\_\+2\\
+\hline
+\mbox{\texttt{in}}  & {\em ch} & Canal del ADC utilizado. Puede tomar valores ADC\+\_\+\+CHANNEL\+\_\+0, ADC\+\_\+\+CHANNEL\+\_\+1, ADC\+\_\+\+CHANNEL\+\_\+2, ADC\+\_\+\+CHANNEL\+\_\+3, ADC\+\_\+\+CHANNEL\+\_\+4, ADC\+\_\+\+CHANNEL\+\_\+5, ADC\+\_\+\+CHANNEL\+\_\+6, ADC\+\_\+\+CHANNEL\+\_\+7, ADC\+\_\+\+CHANNEL\+\_\+8 o ADC\+\_\+\+CHANNEL\+\_\+9.\\
+\hline
+\mbox{\texttt{in}}  & {\em atten} & Atenuación configurada en el ADC. Puede tomar valores ADC\+\_\+\+ATTEN\+\_\+\+DB\+\_\+0, ADC\+\_\+\+ATTEN\+\_\+\+DB\+\_\+2\+\_\+5, ADC\+\_\+\+ATTEN\+\_\+\+DB\+\_\+6 o ADC\+\_\+\+ATTEN\+\_\+\+DB\+\_\+12\\
+\hline
+\mbox{\texttt{in}}  & {\em out} & Puntero al handler del ADC utilizado.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Valores devueltos}
+{\em -\/} & ESP\+\_\+\+OK\+: Si la calibración del ADC fue satisfactoria
+\begin{DoxyItemize}
+\item ESP\+\_\+\+ERR\+\_\+\+INVALID\+\_\+\+ARG\+: Si los argumentos de calibración fueron incorrectos
+\item ESP\+\_\+\+ERR\+\_\+\+NO\+\_\+\+MEM\+: No hay suficiente memoria
+\item ESP\+\_\+\+ERR\+\_\+\+NOT\+\_\+\+SUPPORTED\+: Los e\+Fose no están correctamente inicializados
+\item ESP\+\_\+\+ERR\+\_\+\+INVALID\+\_\+\+ARG\+: Si out es un puntero nulo 
+\end{DoxyItemize}\\
+\hline
+\end{DoxyRetVals}
+
+
+Definición en la línea \mbox{\hyperlink{adc_8c_source_l00080}{80}} del archivo \mbox{\hyperlink{adc_8c_source}{adc.\+c}}.
+
+Gráfico de llamadas a esta función\+:
+% FIG 1
+\Hypertarget{adc_8c_aeead0f2e9c35b7a2e452349b5c672eca}\index{adc.c@{adc.c}!adc\_init\_two\_channels@{adc\_init\_two\_channels}}
+\index{adc\_init\_two\_channels@{adc\_init\_two\_channels}!adc.c@{adc.c}}
+\doxysubsubsection{\texorpdfstring{adc\_init\_two\_channels()}{adc\_init\_two\_channels()}}
+{\footnotesize\ttfamily \label{adc_8c_aeead0f2e9c35b7a2e452349b5c672eca} 
+esp\+\_\+err\+\_\+t adc\+\_\+init\+\_\+two\+\_\+channels (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Configura los 4 ADC necesarios para el sistema y los calibra para obtener las mediciones en desde 0 a 3125mV. 
+
+Configura por las entradas el canal 0 (GPIO36) el nivel de tensión de fuente de 5V, 3 (GPIO39) el nivel de tensión de fuente de 3.\+3V, 6 (GPIO34) tensión de bus de contínua y 7 (GPIO35) corriente de bus de contínua cada 
+
+Definición en la línea \mbox{\hyperlink{adc_8c_source_l00097}{97}} del archivo \mbox{\hyperlink{adc_8c_source}{adc.\+c}}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 2
+Gráfico de llamadas a esta función\+:
+% FIG 3
+\Hypertarget{adc_8c_a1b78b89977b7b9e5ebc32e9456337379}\index{adc.c@{adc.c}!adc\_task@{adc\_task}}
+\index{adc\_task@{adc\_task}!adc.c@{adc.c}}
+\doxysubsubsection{\texorpdfstring{adc\_task()}{adc\_task()}}
+{\footnotesize\ttfamily \label{adc_8c_a1b78b89977b7b9e5ebc32e9456337379} 
+void adc\+\_\+task (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{arg}{}\end{DoxyParamCaption})}
+
+
+
+Función programada como alarma para finalizar el funcionamiento del motor. 
+
+Lee por las entradas el canal 0 (GPIO36) el nivel de tensión de fuente de 5V, 3 (GPIO39) el nivel de tensión de fuente de 3.\+3V, 6 (GPIO34) tensión de bus de contínua y 7 (GPIO35) corriente de bus de contínua cada 
+
+Definición en la línea \mbox{\hyperlink{adc_8c_source_l00146}{146}} del archivo \mbox{\hyperlink{adc_8c_source}{adc.\+c}}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 4
+Gráfico de llamadas a esta función\+:
+% FIG 5
+\Hypertarget{adc_8c_aa1581e2212cf6853c63ae97147e9ed1f}\index{adc.c@{adc.c}!readADC@{readADC}}
+\index{readADC@{readADC}!adc.c@{adc.c}}
+\doxysubsubsection{\texorpdfstring{readADC()}{readADC()}}
+{\footnotesize\ttfamily \label{adc_8c_aa1581e2212cf6853c63ae97147e9ed1f} 
+\mbox{\hyperlink{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791}{system\+\_\+status\+\_\+e}} read\+ADC (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Desencola mediciones obtenidas desde el ADC para tensión y corriente del bus de contínua, compara con los parámetros seteados y dispara el estado de emergencia si es necesario. 
+
+Consulta si existe alguna medición encolada en bus\+\_\+meas\+\_\+evt\+\_\+queue sin ser bloqueante y envía esas mediciones a analizar por el sistema para evaluar si corresponde o no un estado de emergencia.
+
+
+\begin{DoxyRetVals}{Valores devueltos}
+{\em -\/} & SYSTEM\+\_\+\+EMERGENCY\+: Si las mediciones de tensión o corriente del bus de DC está fuera de los parámetros esperados
+\begin{DoxyItemize}
+\item SYSTEM\+\_\+\+EMERGENCY\+\_\+\+OK\+: Si las mediciones de tensión o corriente del bus de DC continúan por fuera de los parámetros esperados
+\item Otros estados\+: Si la medición está dentro de los parámetros aceptables 
+\end{DoxyItemize}\\
+\hline
+\end{DoxyRetVals}
+
+
+Definición en la línea \mbox{\hyperlink{adc_8c_source_l00227}{227}} del archivo \mbox{\hyperlink{adc_8c_source}{adc.\+c}}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 6
+Gráfico de llamadas a esta función\+:
+% FIG 7
+
+
+\label{doc-var-members}
+\Hypertarget{adc_8c_doc-var-members}
+\doxysubsection{Documentación de variables}
+\Hypertarget{adc_8c_a6180364ad07572b6a621ab10c902c3ee}\index{adc.c@{adc.c}!bus\_meas\_evt\_queue@{bus\_meas\_evt\_queue}}
+\index{bus\_meas\_evt\_queue@{bus\_meas\_evt\_queue}!adc.c@{adc.c}}
+\doxysubsubsection{\texorpdfstring{bus\_meas\_evt\_queue}{bus\_meas\_evt\_queue}}
+{\footnotesize\ttfamily \label{adc_8c_a6180364ad07572b6a621ab10c902c3ee} 
+Queue\+Handle\+\_\+t bus\+\_\+meas\+\_\+evt\+\_\+queue = NULL}
+
+
+
+Definición en la línea \mbox{\hyperlink{adc_8c_source_l00052}{52}} del archivo \mbox{\hyperlink{adc_8c_source}{adc.\+c}}.
+
+\Hypertarget{adc_8c_a5a1bd2c5793ac7753f8a0906218f5ea7}\index{adc.c@{adc.c}!calibration\_3V3\_source@{calibration\_3V3\_source}}
+\index{calibration\_3V3\_source@{calibration\_3V3\_source}!adc.c@{adc.c}}
+\doxysubsubsection{\texorpdfstring{calibration\_3V3\_source}{calibration\_3V3\_source}}
+{\footnotesize\ttfamily \label{adc_8c_a5a1bd2c5793ac7753f8a0906218f5ea7} 
+adc\+\_\+cali\+\_\+handle\+\_\+t calibration\+\_\+3\+V3\+\_\+source = NULL\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{adc_8c_source_l00045}{45}} del archivo \mbox{\hyperlink{adc_8c_source}{adc.\+c}}.
+
+\Hypertarget{adc_8c_ae4b530de7864564055c6c19c4a1ef2c8}\index{adc.c@{adc.c}!calibration\_3V3\_source\_ok@{calibration\_3V3\_source\_ok}}
+\index{calibration\_3V3\_source\_ok@{calibration\_3V3\_source\_ok}!adc.c@{adc.c}}
+\doxysubsubsection{\texorpdfstring{calibration\_3V3\_source\_ok}{calibration\_3V3\_source\_ok}}
+{\footnotesize\ttfamily \label{adc_8c_ae4b530de7864564055c6c19c4a1ef2c8} 
+bool calibration\+\_\+3\+V3\+\_\+source\+\_\+ok = false\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{adc_8c_source_l00050}{50}} del archivo \mbox{\hyperlink{adc_8c_source}{adc.\+c}}.
+
+\Hypertarget{adc_8c_a542296d98fccbfffe83472fd94ac65bd}\index{adc.c@{adc.c}!calibration\_5V\_source@{calibration\_5V\_source}}
+\index{calibration\_5V\_source@{calibration\_5V\_source}!adc.c@{adc.c}}
+\doxysubsubsection{\texorpdfstring{calibration\_5V\_source}{calibration\_5V\_source}}
+{\footnotesize\ttfamily \label{adc_8c_a542296d98fccbfffe83472fd94ac65bd} 
+adc\+\_\+cali\+\_\+handle\+\_\+t calibration\+\_\+5\+V\+\_\+source = NULL\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{adc_8c_source_l00044}{44}} del archivo \mbox{\hyperlink{adc_8c_source}{adc.\+c}}.
+
+\Hypertarget{adc_8c_a82a688a2bd4797ad48da469919441eb5}\index{adc.c@{adc.c}!calibration\_5V\_source\_ok@{calibration\_5V\_source\_ok}}
+\index{calibration\_5V\_source\_ok@{calibration\_5V\_source\_ok}!adc.c@{adc.c}}
+\doxysubsubsection{\texorpdfstring{calibration\_5V\_source\_ok}{calibration\_5V\_source\_ok}}
+{\footnotesize\ttfamily \label{adc_8c_a82a688a2bd4797ad48da469919441eb5} 
+bool calibration\+\_\+5\+V\+\_\+source\+\_\+ok = false\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{adc_8c_source_l00049}{49}} del archivo \mbox{\hyperlink{adc_8c_source}{adc.\+c}}.
+
+\Hypertarget{adc_8c_a851532613e9b788ef5cdaae8a793293b}\index{adc.c@{adc.c}!calibration\_bus\_voltage@{calibration\_bus\_voltage}}
+\index{calibration\_bus\_voltage@{calibration\_bus\_voltage}!adc.c@{adc.c}}
+\doxysubsubsection{\texorpdfstring{calibration\_bus\_voltage}{calibration\_bus\_voltage}}
+{\footnotesize\ttfamily \label{adc_8c_a851532613e9b788ef5cdaae8a793293b} 
+adc\+\_\+cali\+\_\+handle\+\_\+t calibration\+\_\+bus\+\_\+voltage = NULL\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{adc_8c_source_l00042}{42}} del archivo \mbox{\hyperlink{adc_8c_source}{adc.\+c}}.
+
+\Hypertarget{adc_8c_a99c81d57aff2167c9def024cfd611c70}\index{adc.c@{adc.c}!calibration\_bus\_voltage\_ok@{calibration\_bus\_voltage\_ok}}
+\index{calibration\_bus\_voltage\_ok@{calibration\_bus\_voltage\_ok}!adc.c@{adc.c}}
+\doxysubsubsection{\texorpdfstring{calibration\_bus\_voltage\_ok}{calibration\_bus\_voltage\_ok}}
+{\footnotesize\ttfamily \label{adc_8c_a99c81d57aff2167c9def024cfd611c70} 
+bool calibration\+\_\+bus\+\_\+voltage\+\_\+ok = false\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{adc_8c_source_l00047}{47}} del archivo \mbox{\hyperlink{adc_8c_source}{adc.\+c}}.
+
+\Hypertarget{adc_8c_a1932e503ef7786f06b766fba9f8151b6}\index{adc.c@{adc.c}!calibration\_current@{calibration\_current}}
+\index{calibration\_current@{calibration\_current}!adc.c@{adc.c}}
+\doxysubsubsection{\texorpdfstring{calibration\_current}{calibration\_current}}
+{\footnotesize\ttfamily \label{adc_8c_a1932e503ef7786f06b766fba9f8151b6} 
+adc\+\_\+cali\+\_\+handle\+\_\+t calibration\+\_\+current = NULL\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{adc_8c_source_l00043}{43}} del archivo \mbox{\hyperlink{adc_8c_source}{adc.\+c}}.
+
+\Hypertarget{adc_8c_a5b37b97574e20e835bbd3a8b9f245cb5}\index{adc.c@{adc.c}!calibration\_current\_ok@{calibration\_current\_ok}}
+\index{calibration\_current\_ok@{calibration\_current\_ok}!adc.c@{adc.c}}
+\doxysubsubsection{\texorpdfstring{calibration\_current\_ok}{calibration\_current\_ok}}
+{\footnotesize\ttfamily \label{adc_8c_a5b37b97574e20e835bbd3a8b9f245cb5} 
+bool calibration\+\_\+current\+\_\+ok = false\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{adc_8c_source_l00048}{48}} del archivo \mbox{\hyperlink{adc_8c_source}{adc.\+c}}.
+
+\Hypertarget{adc_8c_a60ac5e86633367adafa2e5e7722a5f1d}\index{adc.c@{adc.c}!s\_adc@{s\_adc}}
+\index{s\_adc@{s\_adc}!adc.c@{adc.c}}
+\doxysubsubsection{\texorpdfstring{s\_adc}{s\_adc}}
+{\footnotesize\ttfamily \label{adc_8c_a60ac5e86633367adafa2e5e7722a5f1d} 
+adc\+\_\+oneshot\+\_\+unit\+\_\+handle\+\_\+t s\+\_\+adc = NULL\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{adc_8c_source_l00040}{40}} del archivo \mbox{\hyperlink{adc_8c_source}{adc.\+c}}.
+
+\Hypertarget{adc_8c_a5a85b9c772bbeb480b209a3e6ea92b4c}\index{adc.c@{adc.c}!TAG@{TAG}}
+\index{TAG@{TAG}!adc.c@{adc.c}}
+\doxysubsubsection{\texorpdfstring{TAG}{TAG}}
+{\footnotesize\ttfamily \label{adc_8c_a5a85b9c772bbeb480b209a3e6ea92b4c} 
+const char\texorpdfstring{$\ast$}{*} TAG = "{}ADC\+\_\+\+ESPADC"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{adc_8c_source_l00038}{38}} del archivo \mbox{\hyperlink{adc_8c_source}{adc.\+c}}.
+

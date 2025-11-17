@@ -1,0 +1,303 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Low Voltage Variable Frequency Drive: Referencia del archivo C:/Users/User/LVFV_ESP32/main/nvs/nvs.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="DoxyPic.jpeg"/></td>
+  <td id="projectalign">
+   <div id="projectname">Low Voltage Variable Frequency Drive<span id="projectnumber">&#160;2.0</span>
+   </div>
+   <div id="projectbrief">Proyecto final Andrenacci-Carra 2026. Variador de frecuencia de motor trifásico 1/3HP utilizando 12V de contínua como fuente de entrada de tensión.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('nvs_8h.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia del archivo nvs.h</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Declaración de funciones de lectura y escritura de memoria no volatil. Útiles para los reset y no tener que reconfigurar siempre las variables básicas del sistema.  
+<a href="#details">Más...</a></p>
+<div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="_l_v_f_v__system_8h_source.html">../LVFV_system.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Gráfico de dependencias incluidas en nvs.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="nvs_8h__incl.png" border="0" usemap="#a_c_1_2_users_2_user_2_l_v_f_v___e_s_p32_2main_2nvs_2nvs_8h" loading="lazy" alt=""/></div>
+</div>
+</div><div class="textblock"><div class="dynheader">
+Gráfico de los archivos que directa o indirectamente incluyen a este archivo:</div>
+<div class="dyncontent">
+<div class="center"><img src="nvs_8h__dep__incl.png" border="0" usemap="#a_c_1_2_users_2_user_2_l_v_f_v___e_s_p32_2main_2nvs_2nvs_8hdep" loading="lazy" alt=""/></div>
+</div>
+</div>
+<p><a href="nvs_8h_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:a3da2b2c6e021ca7b976168dc8308b254" id="r_a3da2b2c6e021ca7b976168dc8308b254"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3da2b2c6e021ca7b976168dc8308b254">nvs_init_once</a> (void)</td></tr>
+<tr class="memdesc:a3da2b2c6e021ca7b976168dc8308b254"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicializa la memoria NVS una única vez.  <br /></td></tr>
+<tr class="memitem:a478715e615bb92a10014227cf9d89248" id="r_a478715e615bb92a10014227cf9d89248"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a478715e615bb92a10014227cf9d89248">load_variables</a> (<a class="el" href="structfrequency__settings__t.html">frequency_settings_t</a> *frequency_settings, <a class="el" href="structtime__settings__t.html">time_settings_t</a> *time_settings, <a class="el" href="structseccurity__settings__t.html">seccurity_settings_t</a> *seccurity_settings)</td></tr>
+<tr class="memdesc:a478715e615bb92a10014227cf9d89248"><td class="mdescLeft">&#160;</td><td class="mdescRight">Carga desde NVS los parámetros de frecuencia, seguridad y ventanas horarias.  <br /></td></tr>
+<tr class="memitem:ab46a7fb052466c1648288b24eced88f2" id="r_ab46a7fb052466c1648288b24eced88f2"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab46a7fb052466c1648288b24eced88f2">save_variables</a> (<a class="el" href="structfrequency__settings__t.html">frequency_settings_t</a> *frequency_settings, <a class="el" href="structtime__settings__t.html">time_settings_t</a> *time_settings, <a class="el" href="structseccurity__settings__t.html">seccurity_settings_t</a> *seccurity_settings)</td></tr>
+<tr class="memdesc:ab46a7fb052466c1648288b24eced88f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Guarda en NVS los parámetros de frecuencia, seguridad y ventanas horarias.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Declaración de funciones de lectura y escritura de memoria no volatil. Útiles para los reset y no tener que reconfigurar siempre las variables básicas del sistema. </p>
+<dl class="section author"><dt>Autor</dt><dd>Andrenacci - Carra </dd></dl>
+<dl class="section version"><dt>Versión</dt><dd>2.0 </dd></dl>
+<dl class="section date"><dt>Fecha</dt><dd>2025-11-06 </dd></dl>
+
+<p class="definition">Definición en el archivo <a class="el" href="nvs_8h_source.html">nvs.h</a>.</p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones</h2>
+<a id="a478715e615bb92a10014227cf9d89248" name="a478715e615bb92a10014227cf9d89248"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a478715e615bb92a10014227cf9d89248">&#9670;&#160;</a></span>load_variables()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">esp_err_t load_variables </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structfrequency__settings__t.html">frequency_settings_t</a> *</td>          <td class="paramname"><span class="paramname"><em>frequency_settings</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structtime__settings__t.html">time_settings_t</a> *</td>          <td class="paramname"><span class="paramname"><em>time_settings</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structseccurity__settings__t.html">seccurity_settings_t</a> *</td>          <td class="paramname"><span class="paramname"><em>seccurity_settings</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Carga desde NVS los parámetros de frecuencia, seguridad y ventanas horarias. </p>
+<p>Utiliza las funciones internas de lectura (load_16) para obtener cada parámetro persistido en NVS. Si alguna lectura falla, retorna el primer error encontrado. En caso de no existir una clave, se aplica el valor por defecto definido en cada macro de carga.</p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">frequency_settings</td><td>Estructura de parámetros de frecuencia a cargar.</td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">time_settings</td><td>Estructura de parámetros de tiempo (ventanas start/stop) a cargar.</td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">seccurity_settings</td><td>Estructura de parámetros de seguridad (vbus/ibus) a cargar.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valores devueltos</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">-</td><td>ESP_OK: Si todas las lecturas fueron exitosas (o claves ausentes con default aplicado).<ul>
+<li>ESP_FAIL: si hay un error interno.</li>
+<li>ESP_ERR_NVS_NOT_INITIALIZED: si la NVS no está inicializada.</li>
+<li>ESP_ERR_NVS_PART_NOT_FOUND: si la partición "nvs" no se encuentra.</li>
+<li>ESP_ERR_NVS_INVALID_NAME: si alguna clave no cumple restricciones.</li>
+<li>ESP_ERR_NO_MEM / ESP_ERR_NVS_NOT_ENOUGH_SPACE: errores internos de la NVS.</li>
+<li>ESP_ERR_NOT_ALLOWED: si la partición es solo lectura.</li>
+<li>ESP_ERR_INVALID_ARG: si el handler interno de NVS es NULL. </li>
+</ul>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="nvs_8c_source.html#l00246">246</a> del archivo <a class="el" href="nvs_8c_source.html">nvs.c</a>.</p>
+
+</div>
+</div>
+<a id="a3da2b2c6e021ca7b976168dc8308b254" name="a3da2b2c6e021ca7b976168dc8308b254"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3da2b2c6e021ca7b976168dc8308b254">&#9670;&#160;</a></span>nvs_init_once()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">esp_err_t nvs_init_once </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Inicializa la memoria NVS una única vez. </p>
+<p>Intenta inicializar la NVS mediante nvs_flash_init(). Si la memoria está llena (ESP_ERR_NVS_NO_FREE_PAGES) o se detecta una nueva versión de NVS (ESP_ERR_NVS_NEW_VERSION_FOUND), se borra la partición NVS y se vuelve a inicializar. No realiza inicialización repetida si ya fue hecha por el sistema.</p>
+<dl class="retval"><dt>Valores devueltos</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">-</td><td>ESP_OK: Si la inicialización fue exitosa.<ul>
+<li>ESP_ERR_NVS_NO_FREE_PAGES: Sin páginas libres; requiere borrado y reinicialización.</li>
+<li>ESP_ERR_NVS_NEW_VERSION_FOUND: Versión de NVS incompatible; requiere borrado.</li>
+<li>ESP_ERR_NVS_NOT_INITIALIZED: si la memoria no pudo inicializarse.</li>
+<li>ESP_ERR_NVS_PART_NOT_FOUND: si la partición con la etiqueta "nvs" no se encuentra.</li>
+<li>ESP_ERR_NOT_ALLOWED: Si la partición es solo lectura.</li>
+<li>Otros códigos de error propagados por nvs_flash_init() o nvs_flash_erase(). </li>
+</ul>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="nvs_8c_source.html#l00237">237</a> del archivo <a class="el" href="nvs_8c_source.html">nvs.c</a>.</p>
+<div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="nvs_8h_a3da2b2c6e021ca7b976168dc8308b254_icgraph.png" border="0" usemap="#anvs_8h_a3da2b2c6e021ca7b976168dc8308b254_icgraph" loading="lazy" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="ab46a7fb052466c1648288b24eced88f2" name="ab46a7fb052466c1648288b24eced88f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab46a7fb052466c1648288b24eced88f2">&#9670;&#160;</a></span>save_variables()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">esp_err_t save_variables </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structfrequency__settings__t.html">frequency_settings_t</a> *</td>          <td class="paramname"><span class="paramname"><em>frequency_settings</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structtime__settings__t.html">time_settings_t</a> *</td>          <td class="paramname"><span class="paramname"><em>time_settings</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structseccurity__settings__t.html">seccurity_settings_t</a> *</td>          <td class="paramname"><span class="paramname"><em>seccurity_settings</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Guarda en NVS los parámetros de frecuencia, seguridad y ventanas horarias. </p>
+<p>Utiliza las funciones internas de guardado (save_16) para persistir cada parámetro en la NVS. Si alguna escritura falla, retorna el primer error encontrado.</p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">frequency_settings</td><td>Estructura con parámetros de frecuencia a guardar.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">time_settings</td><td>Estructura con parámetros de tiempo (ventanas start/stop) a guardar.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">seccurity_settings</td><td>Estructura con parámetros de seguridad (vbus/ibus) a guardar.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valores devueltos</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">-</td><td>ESP_OK: Si todas las escrituras fueron exitosas.<ul>
+<li>ESP_FAIL: si hay un error interno.</li>
+<li>ESP_ERR_NVS_NOT_INITIALIZED: si la NVS no está inicializada.</li>
+<li>ESP_ERR_NVS_PART_NOT_FOUND: si la partición "nvs" no se encuentra.</li>
+<li>ESP_ERR_NVS_INVALID_NAME: si alguna clave no cumple restricciones.</li>
+<li>ESP_ERR_NO_MEM / ESP_ERR_NVS_NOT_ENOUGH_SPACE: errores internos de la NVS o espacio insuficiente.</li>
+<li>ESP_ERR_NOT_ALLOWED: si la partición es solo lectura.</li>
+<li>ESP_ERR_INVALID_ARG: si el handler interno de NVS es NULL. </li>
+</ul>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="nvs_8c_source.html#l00310">310</a> del archivo <a class="el" href="nvs_8c_source.html">nvs.c</a>.</p>
+<div class="dynheader">
+Gráfico de llamadas de esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="nvs_8h_ab46a7fb052466c1648288b24eced88f2_cgraph.png" border="0" usemap="#anvs_8h_ab46a7fb052466c1648288b24eced88f2_cgraph" loading="lazy" alt=""/></div>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_5c982d53a68cdbcd421152b4020263a9.html">main</a></li><li class="navelem"><a href="dir_ff79468534f4d57a62dcb8879a1832de.html">nvs</a></li><li class="navelem"><a href="nvs_8h.html">nvs.h</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

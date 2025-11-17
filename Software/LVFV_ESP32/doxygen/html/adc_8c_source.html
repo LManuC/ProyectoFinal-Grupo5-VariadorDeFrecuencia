@@ -1,0 +1,351 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Low Voltage Variable Frequency Drive: Archivo de código fuente C:/Users/User/LVFV_ESP32/main/adc/adc.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="DoxyPic.jpeg"/></td>
+  <td id="projectalign">
+   <div id="projectname">Low Voltage Variable Frequency Drive<span id="projectnumber">&#160;2.0</span>
+   </div>
+   <div id="projectbrief">Proyecto final Andrenacci-Carra 2026. Variador de frecuencia de motor trifásico 1/3HP utilizando 12V de contínua como fuente de entrada de tensión.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('adc_8c_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">adc.c</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="adc_8c.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;math.h&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;freertos/FreeRTOS.h&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;freertos/task.h&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;freertos/queue.h&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;esp_log.h&quot;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &quot;esp_err.h&quot;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &quot;esp_adc/adc_oneshot.h&quot;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &quot;esp_adc/adc_cali.h&quot;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &quot;esp_adc/adc_cali_scheme.h&quot;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &quot;esp_adc/adc_continuous.h&quot;</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &quot;<a class="code" href="_l_v_f_v__system_8h.html">../LVFV_system.h</a>&quot;</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &quot;<a class="code" href="adc_8h.html">../adc/adc.h</a>&quot;</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#include &quot;<a class="code" href="sys_admin_8h.html">../System/SysAdmin.h</a>&quot;</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="adc_8c.html#af54819f3e0f7360f21de8b3f9d803c08">   28</a></span><span class="preprocessor">#define ADC_PERIOD_MS          50</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="adc_8c.html#ab8818cc3918e2a7d8d5858cb1ef86364">   30</a></span><span class="preprocessor">#define ADC_UNIT_USED          ADC_UNIT_1</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="adc_8c.html#aab4df6cb3f9222a5b0098063eade262c">   31</a></span><span class="preprocessor">#define ADC_CH_GPIO34          ADC_CHANNEL_6   </span><span class="comment">// GPIO34</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="adc_8c.html#ac5b49a253e8fc48859dce8e9fdd8cf6f">   32</a></span><span class="preprocessor">#define ADC_CH_GPIO35          ADC_CHANNEL_7   </span><span class="comment">// GPIO35</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="adc_8c.html#a56a4bd2cb7afd6db44ef55a1d4587c89">   33</a></span><span class="preprocessor">#define ADC_CH_GPIO36          ADC_CHANNEL_0   </span><span class="comment">// GPIO36</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="adc_8c.html#a58b5c420b69ca6aba810ff90b81150f3">   34</a></span><span class="preprocessor">#define ADC_CH_GPIO39          ADC_CHANNEL_3   </span><span class="comment">// GPIO39</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="adc_8c.html#a764b64d78324053bd17ae2654f080658">   36</a></span><span class="preprocessor">#define ADC_ATTEN_USED         ( (adc_atten_t) 3 ) </span><span class="comment">// ~3.3–3.6 V FS aprox.</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="adc_8c.html#a5a85b9c772bbeb480b209a3e6ea92b4c">   38</a></span><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code hl_variable" href="adc_8c.html#a5a85b9c772bbeb480b209a3e6ea92b4c">TAG</a> = <span class="stringliteral">&quot;ADC_ESPADC&quot;</span>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="adc_8c.html#a60ac5e86633367adafa2e5e7722a5f1d">   40</a></span><span class="keyword">static</span> adc_oneshot_unit_handle_t <a class="code hl_variable" href="adc_8c.html#a60ac5e86633367adafa2e5e7722a5f1d">s_adc</a> = NULL;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="adc_8c.html#a851532613e9b788ef5cdaae8a793293b">   42</a></span><span class="keyword">static</span> adc_cali_handle_t <a class="code hl_variable" href="adc_8c.html#a851532613e9b788ef5cdaae8a793293b">calibration_bus_voltage</a> = NULL;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="adc_8c.html#a1932e503ef7786f06b766fba9f8151b6">   43</a></span><span class="keyword">static</span> adc_cali_handle_t <a class="code hl_variable" href="adc_8c.html#a1932e503ef7786f06b766fba9f8151b6">calibration_current</a> = NULL;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="adc_8c.html#a542296d98fccbfffe83472fd94ac65bd">   44</a></span><span class="keyword">static</span> adc_cali_handle_t <a class="code hl_variable" href="adc_8c.html#a542296d98fccbfffe83472fd94ac65bd">calibration_5V_source</a> = NULL;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="adc_8c.html#a5a1bd2c5793ac7753f8a0906218f5ea7">   45</a></span><span class="keyword">static</span> adc_cali_handle_t <a class="code hl_variable" href="adc_8c.html#a5a1bd2c5793ac7753f8a0906218f5ea7">calibration_3V3_source</a> = NULL;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="adc_8c.html#a99c81d57aff2167c9def024cfd611c70">   47</a></span><span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code hl_variable" href="adc_8c.html#a99c81d57aff2167c9def024cfd611c70">calibration_bus_voltage_ok</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="adc_8c.html#a5b37b97574e20e835bbd3a8b9f245cb5">   48</a></span><span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code hl_variable" href="adc_8c.html#a5b37b97574e20e835bbd3a8b9f245cb5">calibration_current_ok</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="adc_8c.html#a82a688a2bd4797ad48da469919441eb5">   49</a></span><span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code hl_variable" href="adc_8c.html#a82a688a2bd4797ad48da469919441eb5">calibration_5V_source_ok</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="adc_8c.html#ae4b530de7864564055c6c19c4a1ef2c8">   50</a></span><span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code hl_variable" href="adc_8c.html#ae4b530de7864564055c6c19c4a1ef2c8">calibration_3V3_source_ok</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="adc_8c.html#a6180364ad07572b6a621ab10c902c3ee">   52</a></span>QueueHandle_t <a class="code hl_variable" href="adc_8c.html#a6180364ad07572b6a621ab10c902c3ee">bus_meas_evt_queue</a> = NULL;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span></div>
+<div class="foldopen" id="foldopen00080" data-start="{" data-end="}">
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="adc_8c.html#a3862aae06b5dfd4b6a23b569a4540fe2">   80</a></span><span class="keyword">static</span> esp_err_t <a class="code hl_function" href="adc_8c.html#a3862aae06b5dfd4b6a23b569a4540fe2">adc_cali_try_init</a>(adc_unit_t unit, adc_channel_t ch, adc_atten_t atten, adc_cali_handle_t *out) {</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    esp_err_t err;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="keywordflow">if</span> ( out == NULL ) {</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        <span class="keywordflow">return</span> ESP_ERR_INVALID_ARG;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    }</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    adc_cali_line_fitting_config_t cfg2 = {</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        .unit_id  = unit,</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        .atten    = atten,</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        .bitwidth = ADC_BITWIDTH_DEFAULT,</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    };</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    err = adc_cali_create_scheme_line_fitting(&amp;cfg2, out);</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="keywordflow">return</span> err;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>}</div>
+</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="foldopen" id="foldopen00097" data-start="{" data-end="}">
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="adc_8c.html#aeead0f2e9c35b7a2e452349b5c672eca">   97</a></span>esp_err_t <a class="code hl_function" href="adc_8c.html#aeead0f2e9c35b7a2e452349b5c672eca">adc_init_two_channels</a>(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    esp_err_t retval;</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    adc_oneshot_unit_init_cfg_t unit_cfg = {</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        .unit_id = <a class="code hl_define" href="adc_8c.html#ab8818cc3918e2a7d8d5858cb1ef86364">ADC_UNIT_USED</a>,</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    };</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    adc_oneshot_new_unit(&amp;unit_cfg, &amp;<a class="code hl_variable" href="adc_8c.html#a60ac5e86633367adafa2e5e7722a5f1d">s_adc</a>);</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    adc_oneshot_chan_cfg_t ch_cfg = {</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        .bitwidth = ADC_BITWIDTH_DEFAULT,</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        .atten    = <a class="code hl_define" href="adc_8c.html#a764b64d78324053bd17ae2654f080658">ADC_ATTEN_USED</a>,</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    };</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    retval = adc_oneshot_config_channel(<a class="code hl_variable" href="adc_8c.html#a60ac5e86633367adafa2e5e7722a5f1d">s_adc</a>, <a class="code hl_define" href="adc_8c.html#aab4df6cb3f9222a5b0098063eade262c">ADC_CH_GPIO34</a>, &amp;ch_cfg);</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <span class="keywordflow">if</span> ( retval != ESP_OK ) {</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        <span class="keywordflow">return</span> retval;</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    }</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    retval = adc_oneshot_config_channel(<a class="code hl_variable" href="adc_8c.html#a60ac5e86633367adafa2e5e7722a5f1d">s_adc</a>, <a class="code hl_define" href="adc_8c.html#ac5b49a253e8fc48859dce8e9fdd8cf6f">ADC_CH_GPIO35</a>, &amp;ch_cfg);</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    <span class="keywordflow">if</span> ( retval != ESP_OK ) {</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        <span class="keywordflow">return</span> retval;</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    }</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    retval = adc_oneshot_config_channel(<a class="code hl_variable" href="adc_8c.html#a60ac5e86633367adafa2e5e7722a5f1d">s_adc</a>, <a class="code hl_define" href="adc_8c.html#a56a4bd2cb7afd6db44ef55a1d4587c89">ADC_CH_GPIO36</a>, &amp;ch_cfg);</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    <span class="keywordflow">if</span> ( retval != ESP_OK ) {</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        <span class="keywordflow">return</span> retval;</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    }</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    retval = adc_oneshot_config_channel(<a class="code hl_variable" href="adc_8c.html#a60ac5e86633367adafa2e5e7722a5f1d">s_adc</a>, <a class="code hl_define" href="adc_8c.html#a58b5c420b69ca6aba810ff90b81150f3">ADC_CH_GPIO39</a>, &amp;ch_cfg);</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    <span class="keywordflow">if</span> ( retval != ESP_OK ) {</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        <span class="keywordflow">return</span> retval;</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    }</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> </div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    <span class="comment">/* Calibración (si el chip lo soporta) */</span></div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    <a class="code hl_variable" href="adc_8c.html#a82a688a2bd4797ad48da469919441eb5">calibration_5V_source_ok</a> = <a class="code hl_function" href="adc_8c.html#a3862aae06b5dfd4b6a23b569a4540fe2">adc_cali_try_init</a>(<a class="code hl_define" href="adc_8c.html#ab8818cc3918e2a7d8d5858cb1ef86364">ADC_UNIT_USED</a>, <a class="code hl_define" href="adc_8c.html#a56a4bd2cb7afd6db44ef55a1d4587c89">ADC_CH_GPIO36</a>, <a class="code hl_define" href="adc_8c.html#a764b64d78324053bd17ae2654f080658">ADC_ATTEN_USED</a>, &amp;<a class="code hl_variable" href="adc_8c.html#a542296d98fccbfffe83472fd94ac65bd">calibration_5V_source</a>);</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    <a class="code hl_variable" href="adc_8c.html#ae4b530de7864564055c6c19c4a1ef2c8">calibration_3V3_source_ok</a> = <a class="code hl_function" href="adc_8c.html#a3862aae06b5dfd4b6a23b569a4540fe2">adc_cali_try_init</a>(<a class="code hl_define" href="adc_8c.html#ab8818cc3918e2a7d8d5858cb1ef86364">ADC_UNIT_USED</a>, <a class="code hl_define" href="adc_8c.html#a58b5c420b69ca6aba810ff90b81150f3">ADC_CH_GPIO39</a>, <a class="code hl_define" href="adc_8c.html#a764b64d78324053bd17ae2654f080658">ADC_ATTEN_USED</a>, &amp;<a class="code hl_variable" href="adc_8c.html#a5a1bd2c5793ac7753f8a0906218f5ea7">calibration_3V3_source</a>);</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    <a class="code hl_variable" href="adc_8c.html#a99c81d57aff2167c9def024cfd611c70">calibration_bus_voltage_ok</a> = <a class="code hl_function" href="adc_8c.html#a3862aae06b5dfd4b6a23b569a4540fe2">adc_cali_try_init</a>(<a class="code hl_define" href="adc_8c.html#ab8818cc3918e2a7d8d5858cb1ef86364">ADC_UNIT_USED</a>, <a class="code hl_define" href="adc_8c.html#aab4df6cb3f9222a5b0098063eade262c">ADC_CH_GPIO34</a>, <a class="code hl_define" href="adc_8c.html#a764b64d78324053bd17ae2654f080658">ADC_ATTEN_USED</a>, &amp;<a class="code hl_variable" href="adc_8c.html#a851532613e9b788ef5cdaae8a793293b">calibration_bus_voltage</a>);</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    <a class="code hl_variable" href="adc_8c.html#a5b37b97574e20e835bbd3a8b9f245cb5">calibration_current_ok</a> = <a class="code hl_function" href="adc_8c.html#a3862aae06b5dfd4b6a23b569a4540fe2">adc_cali_try_init</a>(<a class="code hl_define" href="adc_8c.html#ab8818cc3918e2a7d8d5858cb1ef86364">ADC_UNIT_USED</a>, <a class="code hl_define" href="adc_8c.html#ac5b49a253e8fc48859dce8e9fdd8cf6f">ADC_CH_GPIO35</a>, <a class="code hl_define" href="adc_8c.html#a764b64d78324053bd17ae2654f080658">ADC_ATTEN_USED</a>, &amp;<a class="code hl_variable" href="adc_8c.html#a1932e503ef7786f06b766fba9f8151b6">calibration_current</a>);</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span> </div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    ESP_LOGI(<a class="code hl_variable" href="adc_8c.html#a5a85b9c772bbeb480b209a3e6ea92b4c">TAG</a>, <span class="stringliteral">&quot;Calibración: 5v Source = %s&quot;</span>, <a class="code hl_variable" href="adc_8c.html#a82a688a2bd4797ad48da469919441eb5">calibration_5V_source_ok</a> == ESP_OK ? <span class="stringliteral">&quot;ON&quot;</span> : <span class="stringliteral">&quot;OFF&quot;</span>);</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    ESP_LOGI(<a class="code hl_variable" href="adc_8c.html#a5a85b9c772bbeb480b209a3e6ea92b4c">TAG</a>, <span class="stringliteral">&quot;Calibración: 3.3v Source = %s&quot;</span>, <a class="code hl_variable" href="adc_8c.html#ae4b530de7864564055c6c19c4a1ef2c8">calibration_3V3_source_ok</a> == ESP_OK ? <span class="stringliteral">&quot;ON&quot;</span> : <span class="stringliteral">&quot;OFF&quot;</span>);</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    ESP_LOGI(<a class="code hl_variable" href="adc_8c.html#a5a85b9c772bbeb480b209a3e6ea92b4c">TAG</a>, <span class="stringliteral">&quot;Calibración: DC bus voltage = %s&quot;</span>, <a class="code hl_variable" href="adc_8c.html#a99c81d57aff2167c9def024cfd611c70">calibration_bus_voltage_ok</a> == ESP_OK ? <span class="stringliteral">&quot;ON&quot;</span> : <span class="stringliteral">&quot;OFF&quot;</span>);</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    ESP_LOGI(<a class="code hl_variable" href="adc_8c.html#a5a85b9c772bbeb480b209a3e6ea92b4c">TAG</a>, <span class="stringliteral">&quot;Calibración: DC bus current = %s&quot;</span>, <a class="code hl_variable" href="adc_8c.html#a5b37b97574e20e835bbd3a8b9f245cb5">calibration_current_ok</a> == ESP_OK ? <span class="stringliteral">&quot;ON&quot;</span> : <span class="stringliteral">&quot;OFF&quot;</span>);</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    </div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    <span class="keywordflow">return</span> ESP_OK;</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>}</div>
+</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span> </div>
+<div class="foldopen" id="foldopen00146" data-start="{" data-end="}">
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno"><a class="line" href="adc_8c.html#a1b78b89977b7b9e5ebc32e9456337379">  146</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="adc_8c.html#a1b78b89977b7b9e5ebc32e9456337379">adc_task</a>(<span class="keywordtype">void</span> *arg) {</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span> </div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    uint16_t vbus_vector[20], ibus_vector[20];</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    uint16_t vector_index = 0;</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span> </div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    <span class="keywordtype">int</span> raw_meas_bus_voltage = 0, raw_meas_current = 0, raw_meas_5V_source = 0, raw_meas_3V3_source = 0;</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    <span class="keywordtype">int</span> meas_bus_voltage  = 0, meas_current  = 0, meas_5V_source  = 0, meas_3V3_source  = 0;</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> </div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    <a class="code hl_struct" href="structseccurity__settings__t.html">seccurity_settings_t</a> bus_meas;</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span> </div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    <span class="keywordflow">if</span> ( <a class="code hl_function" href="adc_8c.html#aeead0f2e9c35b7a2e452349b5c672eca">adc_init_two_channels</a>() != ESP_OK) {</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        ESP_LOGE(<a class="code hl_variable" href="adc_8c.html#a5a85b9c772bbeb480b209a3e6ea92b4c">TAG</a>, <span class="stringliteral">&quot;adc_init_two_channels falló; no se inicializaron correctamente los ADC&quot;</span>);</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>        ESP_ERROR_CHECK(ESP_FAIL);</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    }</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span> </div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="adc_8c.html#a6180364ad07572b6a621ab10c902c3ee">bus_meas_evt_queue</a> == NULL) {</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>        <a class="code hl_variable" href="adc_8c.html#a6180364ad07572b6a621ab10c902c3ee">bus_meas_evt_queue</a> = xQueueCreate(1, <span class="keyword">sizeof</span>(<a class="code hl_struct" href="structseccurity__settings__t.html">seccurity_settings_t</a>));</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="adc_8c.html#a6180364ad07572b6a621ab10c902c3ee">bus_meas_evt_queue</a> == NULL) {</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>            ESP_LOGE(<a class="code hl_variable" href="adc_8c.html#a5a85b9c772bbeb480b209a3e6ea92b4c">TAG</a>, <span class="stringliteral">&quot;No se pudo crear la cola de mediciones de bus&quot;</span>);</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>            <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>        }</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    }</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span> </div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    <span class="keywordflow">while</span> (1) {</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>        <span class="keywordflow">if</span> (adc_oneshot_read(<a class="code hl_variable" href="adc_8c.html#a60ac5e86633367adafa2e5e7722a5f1d">s_adc</a>, <a class="code hl_define" href="adc_8c.html#aab4df6cb3f9222a5b0098063eade262c">ADC_CH_GPIO34</a>, &amp;raw_meas_bus_voltage) == ESP_OK) {</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="adc_8c.html#a99c81d57aff2167c9def024cfd611c70">calibration_bus_voltage_ok</a>) {</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>                adc_cali_raw_to_voltage(<a class="code hl_variable" href="adc_8c.html#a851532613e9b788ef5cdaae8a793293b">calibration_bus_voltage</a>, raw_meas_bus_voltage, &amp;meas_bus_voltage);</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>                uint32_t vbus_prom = 0;</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>                vbus_vector[vector_index] = (int) truncf(meas_bus_voltage / 9.014);</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>                <span class="keywordflow">for</span> ( uint8_t i = 0; i &lt; 20; i++ ) {</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>                    vbus_prom += vbus_vector[i];</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>                }</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>                bus_meas.<a class="code hl_variable" href="structseccurity__settings__t.html#a58033d9c9f897d33e98d9686d7cf78b5">vbus_min</a> = (uint16_t) vbus_prom/20;</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>            }</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>            ESP_LOGE(<a class="code hl_variable" href="adc_8c.html#a5a85b9c772bbeb480b209a3e6ea92b4c">TAG</a>, <span class="stringliteral">&quot;Error de lectura tensión&quot;</span>);</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>        }</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span> </div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>        <span class="keywordflow">if</span> (adc_oneshot_read(<a class="code hl_variable" href="adc_8c.html#a60ac5e86633367adafa2e5e7722a5f1d">s_adc</a>, <a class="code hl_define" href="adc_8c.html#ac5b49a253e8fc48859dce8e9fdd8cf6f">ADC_CH_GPIO35</a>, &amp;raw_meas_current) == ESP_OK) {</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span> </div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="adc_8c.html#a5b37b97574e20e835bbd3a8b9f245cb5">calibration_current_ok</a>) {</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>                adc_cali_raw_to_voltage(<a class="code hl_variable" href="adc_8c.html#a1932e503ef7786f06b766fba9f8151b6">calibration_current</a>, raw_meas_current, &amp;meas_current);</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>                ibus_vector[vector_index] = abs(meas_current - 2500);</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>                <span class="keywordtype">int</span> ibus_prom = 0;</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>                <span class="keywordflow">for</span> ( uint8_t i = 0; i &lt; 20; i++ ) {</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>                    ibus_prom += ibus_vector[i];</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>                }</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>                uint16_t raw_current = (uint16_t) ibus_prom/20;</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>                bus_meas.<a class="code hl_variable" href="structseccurity__settings__t.html#a69f28b5a90c9b33472fb9b8e7d530cb1">ibus_max</a> = raw_current * 5;</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>            }</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>            ESP_LOGE(<a class="code hl_variable" href="adc_8c.html#a5a85b9c772bbeb480b209a3e6ea92b4c">TAG</a>, <span class="stringliteral">&quot;Error de lectura corriente&quot;</span>);</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>        }</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span> </div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>        <span class="keywordflow">if</span> (adc_oneshot_read(<a class="code hl_variable" href="adc_8c.html#a60ac5e86633367adafa2e5e7722a5f1d">s_adc</a>, <a class="code hl_define" href="adc_8c.html#a58b5c420b69ca6aba810ff90b81150f3">ADC_CH_GPIO39</a>, &amp;raw_meas_3V3_source) == ESP_OK) {</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="adc_8c.html#ae4b530de7864564055c6c19c4a1ef2c8">calibration_3V3_source_ok</a>) {</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>                adc_cali_raw_to_voltage(<a class="code hl_variable" href="adc_8c.html#a5a1bd2c5793ac7753f8a0906218f5ea7">calibration_3V3_source</a>, raw_meas_3V3_source, &amp;meas_3V3_source);</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>            }</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>            ESP_LOGE(<a class="code hl_variable" href="adc_8c.html#a5a85b9c772bbeb480b209a3e6ea92b4c">TAG</a>, <span class="stringliteral">&quot;Error de lectura corriente&quot;</span>);</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>        }</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span> </div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>        <span class="keywordflow">if</span> (adc_oneshot_read(<a class="code hl_variable" href="adc_8c.html#a60ac5e86633367adafa2e5e7722a5f1d">s_adc</a>, <a class="code hl_define" href="adc_8c.html#a56a4bd2cb7afd6db44ef55a1d4587c89">ADC_CH_GPIO36</a>, &amp;raw_meas_5V_source) == ESP_OK) {</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="adc_8c.html#a82a688a2bd4797ad48da469919441eb5">calibration_5V_source_ok</a>) {</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>                adc_cali_raw_to_voltage(<a class="code hl_variable" href="adc_8c.html#a542296d98fccbfffe83472fd94ac65bd">calibration_5V_source</a>, raw_meas_5V_source, &amp;meas_5V_source);</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>            }</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>            ESP_LOGE(<a class="code hl_variable" href="adc_8c.html#a5a85b9c772bbeb480b209a3e6ea92b4c">TAG</a>, <span class="stringliteral">&quot;Error de lectura corriente&quot;</span>);</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>        }</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span> </div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>        <span class="keywordflow">if</span> ( xQueueSend(<a class="code hl_variable" href="adc_8c.html#a6180364ad07572b6a621ab10c902c3ee">bus_meas_evt_queue</a>, &amp;bus_meas, 0) != pdTRUE ) {</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>            ESP_LOGE(<a class="code hl_variable" href="adc_8c.html#a5a85b9c772bbeb480b209a3e6ea92b4c">TAG</a>, <span class="stringliteral">&quot;No se pudo postear la medicion&quot;</span>);</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>        }</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span> </div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>        <span class="keywordflow">if</span> ( ++vector_index == 20 ) {</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>            vector_index = 0;</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>        }</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>        vTaskDelay(pdMS_TO_TICKS(<a class="code hl_define" href="adc_8c.html#af54819f3e0f7360f21de8b3f9d803c08">ADC_PERIOD_MS</a>));</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>    }</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>}</div>
+</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span> </div>
+<div class="foldopen" id="foldopen00227" data-start="{" data-end="}">
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno"><a class="line" href="adc_8c.html#aa1581e2212cf6853c63ae97147e9ed1f">  227</a></span><a class="code hl_enumeration" href="_l_v_f_v__system_8h.html#a175b5f4c0244bf0bde30789366d31791">system_status_e</a> <a class="code hl_function" href="adc_8c.html#aa1581e2212cf6853c63ae97147e9ed1f">readADC</a>(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>    <a class="code hl_struct" href="structseccurity__settings__t.html">seccurity_settings_t</a> bus_meas;</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>    <a class="code hl_struct" href="structsystem__status__t.html">system_status_t</a> s_e;</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span> </div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>    <span class="keywordflow">if</span> ( xQueueReceive( <a class="code hl_variable" href="adc_8c.html#a6180364ad07572b6a621ab10c902c3ee">bus_meas_evt_queue</a>, &amp;bus_meas, pdMS_TO_TICKS(0) ) ) {</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="sys_admin_8c.html#ab7f234b01f6a10381a179c5dbfa5a3be">update_meas</a>(bus_meas.<a class="code hl_variable" href="structseccurity__settings__t.html#a58033d9c9f897d33e98d9686d7cf78b5">vbus_min</a>, bus_meas.<a class="code hl_variable" href="structseccurity__settings__t.html#a69f28b5a90c9b33472fb9b8e7d530cb1">ibus_max</a>);</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>    }</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>    <a class="code hl_function" href="sys_admin_8c.html#a7bf3fbe77325da35d54220bf89fb26ce">get_status</a>(&amp;s_e);</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>    <span class="keywordflow">return</span> s_e.<a class="code hl_variable" href="structsystem__status__t.html#a255e9638fdd08fc3c12bd74ce8893217">status</a>;</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>}</div>
+</div>
+<div class="ttc" id="a_l_v_f_v__system_8h_html"><div class="ttname"><a href="_l_v_f_v__system_8h.html">LVFV_system.h</a></div><div class="ttdoc">Declaraciones de estructuras, variables, definiciones y estados generales del sistema utilizados en v...</div></div>
+<div class="ttc" id="a_l_v_f_v__system_8h_html_a175b5f4c0244bf0bde30789366d31791"><div class="ttname"><a href="_l_v_f_v__system_8h.html#a175b5f4c0244bf0bde30789366d31791">system_status_e</a></div><div class="ttdeci">system_status_e</div><div class="ttdoc">Posibles estados general que puede tomar el sistema.</div><div class="ttdef"><b>Definition</b> <a href="_l_v_f_v__system_8h_source.html#l00056">LVFV_system.h:56</a></div></div>
+<div class="ttc" id="aadc_8c_html_a1932e503ef7786f06b766fba9f8151b6"><div class="ttname"><a href="adc_8c.html#a1932e503ef7786f06b766fba9f8151b6">calibration_current</a></div><div class="ttdeci">static adc_cali_handle_t calibration_current</div><div class="ttdef"><b>Definition</b> <a href="#l00043">adc.c:43</a></div></div>
+<div class="ttc" id="aadc_8c_html_a1b78b89977b7b9e5ebc32e9456337379"><div class="ttname"><a href="adc_8c.html#a1b78b89977b7b9e5ebc32e9456337379">adc_task</a></div><div class="ttdeci">void adc_task(void *arg)</div><div class="ttdoc">Función programada como alarma para finalizar el funcionamiento del motor.</div><div class="ttdef"><b>Definition</b> <a href="#l00146">adc.c:146</a></div></div>
+<div class="ttc" id="aadc_8c_html_a3862aae06b5dfd4b6a23b569a4540fe2"><div class="ttname"><a href="adc_8c.html#a3862aae06b5dfd4b6a23b569a4540fe2">adc_cali_try_init</a></div><div class="ttdeci">static esp_err_t adc_cali_try_init(adc_unit_t unit, adc_channel_t ch, adc_atten_t atten, adc_cali_handle_t *out)</div><div class="ttdoc">Estandariza las mediciones del ADC en función de la tensión que representa el pin físico en mili volt...</div><div class="ttdef"><b>Definition</b> <a href="#l00080">adc.c:80</a></div></div>
+<div class="ttc" id="aadc_8c_html_a542296d98fccbfffe83472fd94ac65bd"><div class="ttname"><a href="adc_8c.html#a542296d98fccbfffe83472fd94ac65bd">calibration_5V_source</a></div><div class="ttdeci">static adc_cali_handle_t calibration_5V_source</div><div class="ttdef"><b>Definition</b> <a href="#l00044">adc.c:44</a></div></div>
+<div class="ttc" id="aadc_8c_html_a56a4bd2cb7afd6db44ef55a1d4587c89"><div class="ttname"><a href="adc_8c.html#a56a4bd2cb7afd6db44ef55a1d4587c89">ADC_CH_GPIO36</a></div><div class="ttdeci">#define ADC_CH_GPIO36</div><div class="ttdef"><b>Definition</b> <a href="#l00033">adc.c:33</a></div></div>
+<div class="ttc" id="aadc_8c_html_a58b5c420b69ca6aba810ff90b81150f3"><div class="ttname"><a href="adc_8c.html#a58b5c420b69ca6aba810ff90b81150f3">ADC_CH_GPIO39</a></div><div class="ttdeci">#define ADC_CH_GPIO39</div><div class="ttdef"><b>Definition</b> <a href="#l00034">adc.c:34</a></div></div>
+<div class="ttc" id="aadc_8c_html_a5a1bd2c5793ac7753f8a0906218f5ea7"><div class="ttname"><a href="adc_8c.html#a5a1bd2c5793ac7753f8a0906218f5ea7">calibration_3V3_source</a></div><div class="ttdeci">static adc_cali_handle_t calibration_3V3_source</div><div class="ttdef"><b>Definition</b> <a href="#l00045">adc.c:45</a></div></div>
+<div class="ttc" id="aadc_8c_html_a5a85b9c772bbeb480b209a3e6ea92b4c"><div class="ttname"><a href="adc_8c.html#a5a85b9c772bbeb480b209a3e6ea92b4c">TAG</a></div><div class="ttdeci">static const char * TAG</div><div class="ttdef"><b>Definition</b> <a href="#l00038">adc.c:38</a></div></div>
+<div class="ttc" id="aadc_8c_html_a5b37b97574e20e835bbd3a8b9f245cb5"><div class="ttname"><a href="adc_8c.html#a5b37b97574e20e835bbd3a8b9f245cb5">calibration_current_ok</a></div><div class="ttdeci">static bool calibration_current_ok</div><div class="ttdef"><b>Definition</b> <a href="#l00048">adc.c:48</a></div></div>
+<div class="ttc" id="aadc_8c_html_a60ac5e86633367adafa2e5e7722a5f1d"><div class="ttname"><a href="adc_8c.html#a60ac5e86633367adafa2e5e7722a5f1d">s_adc</a></div><div class="ttdeci">static adc_oneshot_unit_handle_t s_adc</div><div class="ttdef"><b>Definition</b> <a href="#l00040">adc.c:40</a></div></div>
+<div class="ttc" id="aadc_8c_html_a6180364ad07572b6a621ab10c902c3ee"><div class="ttname"><a href="adc_8c.html#a6180364ad07572b6a621ab10c902c3ee">bus_meas_evt_queue</a></div><div class="ttdeci">QueueHandle_t bus_meas_evt_queue</div><div class="ttdef"><b>Definition</b> <a href="#l00052">adc.c:52</a></div></div>
+<div class="ttc" id="aadc_8c_html_a764b64d78324053bd17ae2654f080658"><div class="ttname"><a href="adc_8c.html#a764b64d78324053bd17ae2654f080658">ADC_ATTEN_USED</a></div><div class="ttdeci">#define ADC_ATTEN_USED</div><div class="ttdef"><b>Definition</b> <a href="#l00036">adc.c:36</a></div></div>
+<div class="ttc" id="aadc_8c_html_a82a688a2bd4797ad48da469919441eb5"><div class="ttname"><a href="adc_8c.html#a82a688a2bd4797ad48da469919441eb5">calibration_5V_source_ok</a></div><div class="ttdeci">static bool calibration_5V_source_ok</div><div class="ttdef"><b>Definition</b> <a href="#l00049">adc.c:49</a></div></div>
+<div class="ttc" id="aadc_8c_html_a851532613e9b788ef5cdaae8a793293b"><div class="ttname"><a href="adc_8c.html#a851532613e9b788ef5cdaae8a793293b">calibration_bus_voltage</a></div><div class="ttdeci">static adc_cali_handle_t calibration_bus_voltage</div><div class="ttdef"><b>Definition</b> <a href="#l00042">adc.c:42</a></div></div>
+<div class="ttc" id="aadc_8c_html_a99c81d57aff2167c9def024cfd611c70"><div class="ttname"><a href="adc_8c.html#a99c81d57aff2167c9def024cfd611c70">calibration_bus_voltage_ok</a></div><div class="ttdeci">static bool calibration_bus_voltage_ok</div><div class="ttdef"><b>Definition</b> <a href="#l00047">adc.c:47</a></div></div>
+<div class="ttc" id="aadc_8c_html_aa1581e2212cf6853c63ae97147e9ed1f"><div class="ttname"><a href="adc_8c.html#aa1581e2212cf6853c63ae97147e9ed1f">readADC</a></div><div class="ttdeci">system_status_e readADC(void)</div><div class="ttdoc">Desencola mediciones obtenidas desde el ADC para tensión y corriente del bus de contínua,...</div><div class="ttdef"><b>Definition</b> <a href="#l00227">adc.c:227</a></div></div>
+<div class="ttc" id="aadc_8c_html_aab4df6cb3f9222a5b0098063eade262c"><div class="ttname"><a href="adc_8c.html#aab4df6cb3f9222a5b0098063eade262c">ADC_CH_GPIO34</a></div><div class="ttdeci">#define ADC_CH_GPIO34</div><div class="ttdef"><b>Definition</b> <a href="#l00031">adc.c:31</a></div></div>
+<div class="ttc" id="aadc_8c_html_ab8818cc3918e2a7d8d5858cb1ef86364"><div class="ttname"><a href="adc_8c.html#ab8818cc3918e2a7d8d5858cb1ef86364">ADC_UNIT_USED</a></div><div class="ttdeci">#define ADC_UNIT_USED</div><div class="ttdef"><b>Definition</b> <a href="#l00030">adc.c:30</a></div></div>
+<div class="ttc" id="aadc_8c_html_ac5b49a253e8fc48859dce8e9fdd8cf6f"><div class="ttname"><a href="adc_8c.html#ac5b49a253e8fc48859dce8e9fdd8cf6f">ADC_CH_GPIO35</a></div><div class="ttdeci">#define ADC_CH_GPIO35</div><div class="ttdef"><b>Definition</b> <a href="#l00032">adc.c:32</a></div></div>
+<div class="ttc" id="aadc_8c_html_ae4b530de7864564055c6c19c4a1ef2c8"><div class="ttname"><a href="adc_8c.html#ae4b530de7864564055c6c19c4a1ef2c8">calibration_3V3_source_ok</a></div><div class="ttdeci">static bool calibration_3V3_source_ok</div><div class="ttdef"><b>Definition</b> <a href="#l00050">adc.c:50</a></div></div>
+<div class="ttc" id="aadc_8c_html_aeead0f2e9c35b7a2e452349b5c672eca"><div class="ttname"><a href="adc_8c.html#aeead0f2e9c35b7a2e452349b5c672eca">adc_init_two_channels</a></div><div class="ttdeci">esp_err_t adc_init_two_channels(void)</div><div class="ttdoc">Configura los 4 ADC necesarios para el sistema y los calibra para obtener las mediciones en desde 0 a...</div><div class="ttdef"><b>Definition</b> <a href="#l00097">adc.c:97</a></div></div>
+<div class="ttc" id="aadc_8c_html_af54819f3e0f7360f21de8b3f9d803c08"><div class="ttname"><a href="adc_8c.html#af54819f3e0f7360f21de8b3f9d803c08">ADC_PERIOD_MS</a></div><div class="ttdeci">#define ADC_PERIOD_MS</div><div class="ttdef"><b>Definition</b> <a href="#l00028">adc.c:28</a></div></div>
+<div class="ttc" id="aadc_8h_html"><div class="ttname"><a href="adc_8h.html">adc.h</a></div><div class="ttdoc">Declraración de funcion de inicialización y tarea lectura del ADC.</div></div>
+<div class="ttc" id="astructseccurity__settings__t_html"><div class="ttname"><a href="structseccurity__settings__t.html">seccurity_settings_t</a></div><div class="ttdef"><b>Definition</b> <a href="_l_v_f_v__system_8h_source.html#l00088">LVFV_system.h:88</a></div></div>
+<div class="ttc" id="astructseccurity__settings__t_html_a58033d9c9f897d33e98d9686d7cf78b5"><div class="ttname"><a href="structseccurity__settings__t.html#a58033d9c9f897d33e98d9686d7cf78b5">seccurity_settings_t::vbus_min</a></div><div class="ttdeci">uint16_t vbus_min</div><div class="ttdef"><b>Definition</b> <a href="_l_v_f_v__system_8h_source.html#l00089">LVFV_system.h:89</a></div></div>
+<div class="ttc" id="astructseccurity__settings__t_html_a69f28b5a90c9b33472fb9b8e7d530cb1"><div class="ttname"><a href="structseccurity__settings__t.html#a69f28b5a90c9b33472fb9b8e7d530cb1">seccurity_settings_t::ibus_max</a></div><div class="ttdeci">uint16_t ibus_max</div><div class="ttdef"><b>Definition</b> <a href="_l_v_f_v__system_8h_source.html#l00090">LVFV_system.h:90</a></div></div>
+<div class="ttc" id="astructsystem__status__t_html"><div class="ttname"><a href="structsystem__status__t.html">system_status_t</a></div><div class="ttdoc">Estructura con las variables necesarias para establecer las condiciones de trabajo del motor.</div><div class="ttdef"><b>Definition</b> <a href="_l_v_f_v__system_8h_source.html#l00098">LVFV_system.h:98</a></div></div>
+<div class="ttc" id="astructsystem__status__t_html_a255e9638fdd08fc3c12bd74ce8893217"><div class="ttname"><a href="structsystem__status__t.html#a255e9638fdd08fc3c12bd74ce8893217">system_status_t::status</a></div><div class="ttdeci">system_status_e status</div><div class="ttdef"><b>Definition</b> <a href="_l_v_f_v__system_8h_source.html#l00104">LVFV_system.h:104</a></div></div>
+<div class="ttc" id="asys_admin_8c_html_a7bf3fbe77325da35d54220bf89fb26ce"><div class="ttname"><a href="sys_admin_8c.html#a7bf3fbe77325da35d54220bf89fb26ce">get_status</a></div><div class="ttdeci">esp_err_t get_status(system_status_t *s_e)</div><div class="ttdoc">Obtiene una réplica del status del sistema.</div><div class="ttdef"><b>Definition</b> <a href="sys_admin_8c_source.html#l00160">sysAdmin.c:160</a></div></div>
+<div class="ttc" id="asys_admin_8c_html_ab7f234b01f6a10381a179c5dbfa5a3be"><div class="ttname"><a href="sys_admin_8c.html#ab7f234b01f6a10381a179c5dbfa5a3be">update_meas</a></div><div class="ttdeci">system_status_e update_meas(uint16_t vbus_meas, uint16_t ibus_meas)</div><div class="ttdoc">Actualiza las mediciones de tensión y corriente del bus de contínua.</div><div class="ttdef"><b>Definition</b> <a href="sys_admin_8c_source.html#l00172">sysAdmin.c:172</a></div></div>
+<div class="ttc" id="asys_admin_8h_html"><div class="ttname"><a href="sys_admin_8h.html">sysAdmin.h</a></div><div class="ttdoc">Header con las funciones de funcionamiento del sistema.</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_5c982d53a68cdbcd421152b4020263a9.html">main</a></li><li class="navelem"><a href="dir_4fddad3309642be78b149daae17beced.html">adc</a></li><li class="navelem"><a href="adc_8c.html">adc.c</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

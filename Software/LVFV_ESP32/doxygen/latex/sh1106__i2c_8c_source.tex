@@ -1,0 +1,35 @@
+\doxysection{sh1106\+\_\+i2c.\+c}
+\hypertarget{sh1106__i2c_8c_source}{}\label{sh1106__i2c_8c_source}\index{C:/Users/User/LVFV\_ESP32/main/display/sh1106\_i2c.c@{C:/Users/User/LVFV\_ESP32/main/display/sh1106\_i2c.c}}
+\mbox{\hyperlink{sh1106__i2c_8c}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{sh1106__i2c_8c_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{sh1106__i2c_8c_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}freertos/FreeRTOS.h"{}}}
+\DoxyCodeLine{\Hypertarget{sh1106__i2c_8c_source_l00010}00010\ \textcolor{preprocessor}{\#include\ "{}esp\_err.h"{}}}
+\DoxyCodeLine{\Hypertarget{sh1106__i2c_8c_source_l00011}00011\ \textcolor{preprocessor}{\#include\ "{}driver/i2c.h"{}}}
+\DoxyCodeLine{\Hypertarget{sh1106__i2c_8c_source_l00012}00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{sh1106__i2c_8h}{./sh1106\_i2c.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{sh1106__i2c_8c_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{sh1106__i2c_8c_source_l00014}\mbox{\hyperlink{sh1106__i2c_8c_aec23a3748d5005f4f96d0a2e23fe2d12}{00014}}\ \textcolor{preprocessor}{\#define\ I2C\_DISPLAY\ \ \ \ \ I2C\_NUM\_0\ \ \ \ \ \ \ }\textcolor{comment}{//\ Npumero\ de\ puerto\ I2C\ utilizado\ para\ el\ display}}
+\DoxyCodeLine{\Hypertarget{sh1106__i2c_8c_source_l00015}\mbox{\hyperlink{sh1106__i2c_8c_a2fc5aed134b0a86938fbea521e512e35}{00015}}\ \textcolor{preprocessor}{\#define\ SH1106\_ADDR\ \ \ \ \ 0x3C\ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ Addess\ del\ display.\ Puede\ variar:\ 0x3C\ o\ 0x3D\ según\ como\ se\ configure\ el\ hardware}}
+\DoxyCodeLine{\Hypertarget{sh1106__i2c_8c_source_l00016}\mbox{\hyperlink{sh1106__i2c_8c_a7d74683c370cb7ec4743f52a66ef3557}{00016}}\ \textcolor{preprocessor}{\#define\ CMD\_CONTROL\ \ \ \ \ 0x00\ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ Control\ byte\ para\ comandos}}
+\DoxyCodeLine{\Hypertarget{sh1106__i2c_8c_source_l00017}\mbox{\hyperlink{sh1106__i2c_8c_a9610560f4235ab980fbae04b4eaabbbf}{00017}}\ \textcolor{preprocessor}{\#define\ DATA\_CONTROL\ \ \ \ 0x40\ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ Control\ byte\ para\ datos}}
+\DoxyCodeLine{\Hypertarget{sh1106__i2c_8c_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{sh1106__i2c_8c_source_l00019}\mbox{\hyperlink{sh1106__i2c_8c_a1ffdff303fbfc1bd79e1f5fae7398d11}{00019}}\ esp\_err\_t\ \mbox{\hyperlink{sh1106__i2c_8c_a1ffdff303fbfc1bd79e1f5fae7398d11}{sh1106\_write}}(\textcolor{keyword}{const}\ uint8\_t\ *data,\ \textcolor{keywordtype}{size\_t}\ len,\ \mbox{\hyperlink{sh1106__i2c_8h_a40a3616782f6f1a961751940c1428c40}{sh1106\_comm\_type\_t}}\ comm\_type)\ \{}
+\DoxyCodeLine{\Hypertarget{sh1106__i2c_8c_source_l00020}00020\ \ \ \ \ i2c\_cmd\_handle\_t\ cmdh\ =\ i2c\_cmd\_link\_create();}
+\DoxyCodeLine{\Hypertarget{sh1106__i2c_8c_source_l00021}00021\ \ \ \ \ i2c\_master\_start(cmdh);}
+\DoxyCodeLine{\Hypertarget{sh1106__i2c_8c_source_l00022}00022\ \ \ \ \ i2c\_master\_write\_byte(cmdh,\ (\mbox{\hyperlink{sh1106__i2c_8c_a2fc5aed134b0a86938fbea521e512e35}{SH1106\_ADDR}}\ <<\ 1)\ |\ I2C\_MASTER\_WRITE,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{sh1106__i2c_8c_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{sh1106__i2c_8c_source_l00024}00024\ \ \ \ \ \textcolor{keywordflow}{if}\ (\ comm\_type\ ==\ \mbox{\hyperlink{sh1106__i2c_8h_a40a3616782f6f1a961751940c1428c40ae37bba64d3507db56e3bf0692b868fa7}{SH1106\_COMM\_CMD}}\ )\ \{}
+\DoxyCodeLine{\Hypertarget{sh1106__i2c_8c_source_l00025}00025\ \ \ \ \ \ \ \ \ i2c\_master\_write\_byte(cmdh,\ \mbox{\hyperlink{sh1106__i2c_8c_a7d74683c370cb7ec4743f52a66ef3557}{CMD\_CONTROL}},\ \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{sh1106__i2c_8c_source_l00026}00026\ \ \ \ \ \ \ \ \ i2c\_master\_write\_byte(cmdh,\ *data,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{sh1106__i2c_8c_source_l00027}00027\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{sh1106__i2c_8c_source_l00028}00028\ \ \ \ \ \ \ \ \ i2c\_master\_write\_byte(cmdh,\ \mbox{\hyperlink{sh1106__i2c_8c_a9610560f4235ab980fbae04b4eaabbbf}{DATA\_CONTROL}},\ \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{sh1106__i2c_8c_source_l00029}00029\ \ \ \ \ \ \ \ \ i2c\_master\_write(cmdh,\ data,\ len,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{sh1106__i2c_8c_source_l00030}00030\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{sh1106__i2c_8c_source_l00031}00031\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{sh1106__i2c_8c_source_l00032}00032\ \ \ \ \ i2c\_master\_stop(cmdh);}
+\DoxyCodeLine{\Hypertarget{sh1106__i2c_8c_source_l00033}00033\ \ \ \ \ esp\_err\_t\ ret\ =\ i2c\_master\_cmd\_begin(\mbox{\hyperlink{sh1106__i2c_8c_aec23a3748d5005f4f96d0a2e23fe2d12}{I2C\_DISPLAY}},\ cmdh,\ pdMS\_TO\_TICKS(1000));}
+\DoxyCodeLine{\Hypertarget{sh1106__i2c_8c_source_l00034}00034\ \ \ \ \ i2c\_cmd\_link\_delete(cmdh);}
+\DoxyCodeLine{\Hypertarget{sh1106__i2c_8c_source_l00035}00035\ \ \ \ \ \textcolor{keywordflow}{return}\ ret;}
+\DoxyCodeLine{\Hypertarget{sh1106__i2c_8c_source_l00036}00036\ \}}
+
+\end{DoxyCode}

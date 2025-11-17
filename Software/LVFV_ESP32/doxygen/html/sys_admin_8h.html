@@ -1,0 +1,450 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Low Voltage Variable Frequency Drive: Referencia del archivo C:/Users/User/LVFV_ESP32/main/system/sysAdmin.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="DoxyPic.jpeg"/></td>
+  <td id="projectalign">
+   <div id="projectname">Low Voltage Variable Frequency Drive<span id="projectnumber">&#160;2.0</span>
+   </div>
+   <div id="projectbrief">Proyecto final Andrenacci-Carra 2026. Variador de frecuencia de motor trifásico 1/3HP utilizando 12V de contínua como fuente de entrada de tensión.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('sys_admin_8h.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia del archivo sysAdmin.h</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Header con las funciones de funcionamiento del sistema.  
+<a href="#details">Más...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="_l_v_f_v__system_8h_source.html">../LVFV_system.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Gráfico de dependencias incluidas en sysAdmin.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="sys_admin_8h__incl.png" border="0" usemap="#a_c_1_2_users_2_user_2_l_v_f_v___e_s_p32_2main_2system_2sys_admin_8h" loading="lazy" alt=""/></div>
+</div>
+</div><div class="textblock"><div class="dynheader">
+Gráfico de los archivos que directa o indirectamente incluyen a este archivo:</div>
+<div class="dyncontent">
+<div class="center"><img src="sys_admin_8h__dep__incl.png" border="0" usemap="#a_c_1_2_users_2_user_2_l_v_f_v___e_s_p32_2main_2system_2sys_admin_8hdep" loading="lazy" alt=""/></div>
+</div>
+</div>
+<p><a href="sys_admin_8h_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:a7bf3fbe77325da35d54220bf89fb26ce" id="r_a7bf3fbe77325da35d54220bf89fb26ce"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7bf3fbe77325da35d54220bf89fb26ce">get_status</a> (<a class="el" href="structsystem__status__t.html">system_status_t</a> *s_e)</td></tr>
+<tr class="memdesc:a7bf3fbe77325da35d54220bf89fb26ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene una réplica del status del sistema.  <br /></td></tr>
+<tr class="memitem:a62e7c27f84d0db690242eeb717c4e17b" id="r_a62e7c27f84d0db690242eeb717c4e17b"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a62e7c27f84d0db690242eeb717c4e17b">engine_start</a> ()</td></tr>
+<tr class="memdesc:a62e7c27f84d0db690242eeb717c4e17b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Función que setea la frecuencia de régimen de acuerdo a lo configurado por el usuario y ejecuta la tarea accelerating.  <br /></td></tr>
+<tr class="memitem:abb59808fe42c3d4dd43e0f91d1f699a9" id="r_abb59808fe42c3d4dd43e0f91d1f699a9"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abb59808fe42c3d4dd43e0f91d1f699a9">engine_stop</a> ()</td></tr>
+<tr class="memdesc:abb59808fe42c3d4dd43e0f91d1f699a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Función que setea la frecuencia de régimen de acuerdo a lo configurado por el usuario y ejecuta la tarea desaccelerating.  <br /></td></tr>
+<tr class="memitem:aa6c33be7b7273385ae39a1f682f28f75" id="r_aa6c33be7b7273385ae39a1f682f28f75"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa6c33be7b7273385ae39a1f682f28f75">engine_emergency_stop</a> ()</td></tr>
+<tr class="memdesc:aa6c33be7b7273385ae39a1f682f28f75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pasa la frecuencia de regimen a 0Hz y pasa a estado SYSTEM_EMERGENCY.  <br /></td></tr>
+<tr class="memitem:a6b7a46f08b0f4ed784a8001e221a32a8" id="r_a6b7a46f08b0f4ed784a8001e221a32a8"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6b7a46f08b0f4ed784a8001e221a32a8">change_frequency</a> (uint8_t speed_slector)</td></tr>
+<tr class="memdesc:a6b7a46f08b0f4ed784a8001e221a32a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cambia la frecuencias de régimen del motor de acuerdo a la entrada aislada que haya ingresado. Ejecuta accelerating o desaccelerating, de acuerdo a lo necesario.  <br /></td></tr>
+<tr class="memitem:ab7f234b01f6a10381a179c5dbfa5a3be" id="r_ab7f234b01f6a10381a179c5dbfa5a3be"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_l_v_f_v__system_8h.html#a175b5f4c0244bf0bde30789366d31791">system_status_e</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab7f234b01f6a10381a179c5dbfa5a3be">update_meas</a> (uint16_t vbus_meas, uint16_t ibus_meas)</td></tr>
+<tr class="memdesc:ab7f234b01f6a10381a179c5dbfa5a3be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Actualiza las mediciones de tensión y corriente del bus de contínua.  <br /></td></tr>
+<tr class="memitem:a4c6328d6bdb3ae404b65b9046dc71446" id="r_a4c6328d6bdb3ae404b65b9046dc71446"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4c6328d6bdb3ae404b65b9046dc71446">set_frequency_table</a> (uint16_t input_variable, uint16_t freq_regime)</td></tr>
+<tr class="memdesc:a4c6328d6bdb3ae404b65b9046dc71446"><td class="mdescLeft">&#160;</td><td class="mdescRight">Carga en el vector de velocidades configurables por entradas, las diferentes frecuencias de trabajo.  <br /></td></tr>
+<tr class="memitem:a5f1c91f368c1994714cc10c041120367" id="r_a5f1c91f368c1994714cc10c041120367"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5f1c91f368c1994714cc10c041120367">set_seccurity_settings</a> (<a class="el" href="structseccurity__settings__t.html">seccurity_settings_t</a> *s_s)</td></tr>
+<tr class="memdesc:a5f1c91f368c1994714cc10c041120367"><td class="mdescLeft">&#160;</td><td class="mdescRight">Actualiza las variables de seguridad del sistema.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Header con las funciones de funcionamiento del sistema. </p>
+<dl class="section author"><dt>Autor</dt><dd>Andrenacci - Carra </dd></dl>
+<dl class="section version"><dt>Versión</dt><dd>2.0 </dd></dl>
+<dl class="section date"><dt>Fecha</dt><dd>2025-11-06 </dd></dl>
+
+<p class="definition">Definición en el archivo <a class="el" href="sys_admin_8h_source.html">sysAdmin.h</a>.</p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones</h2>
+<a id="a6b7a46f08b0f4ed784a8001e221a32a8" name="a6b7a46f08b0f4ed784a8001e221a32a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b7a46f08b0f4ed784a8001e221a32a8">&#9670;&#160;</a></span>change_frequency()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t change_frequency </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>speed_slector</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Cambia la frecuencias de régimen del motor de acuerdo a la entrada aislada que haya ingresado. Ejecuta accelerating o desaccelerating, de acuerdo a lo necesario. </p>
+<p>De acuerdo a la frecuencia de régimen elegida y el tipo de variación, la frecuencia de destión tendrá diferentes valores, siempre menores a las de régimen.</p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">speed_slector</td><td>Índice dentro del array con frecuencias de trabajo</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>0Hz si <code class="param">speed_selector</code> fue mal pasada como argumento, sino la frecuencia de destino </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="sys_admin_8c_source.html#l00133">133</a> del archivo <a class="el" href="sys_admin_8c_source.html">sysAdmin.c</a>.</p>
+<div class="dynheader">
+Gráfico de llamadas de esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="sys_admin_8h_a6b7a46f08b0f4ed784a8001e221a32a8_cgraph.png" border="0" usemap="#asys_admin_8h_a6b7a46f08b0f4ed784a8001e221a32a8_cgraph" loading="lazy" alt=""/></div>
+</div>
+<div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="sys_admin_8h_a6b7a46f08b0f4ed784a8001e221a32a8_icgraph.png" border="0" usemap="#asys_admin_8h_a6b7a46f08b0f4ed784a8001e221a32a8_icgraph" loading="lazy" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="aa6c33be7b7273385ae39a1f682f28f75" name="aa6c33be7b7273385ae39a1f682f28f75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6c33be7b7273385ae39a1f682f28f75">&#9670;&#160;</a></span>engine_emergency_stop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void engine_emergency_stop </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Pasa la frecuencia de regimen a 0Hz y pasa a estado SYSTEM_EMERGENCY. </p>
+<p>Termina las tareas accelerating y desaccelerating </p>
+
+<p class="definition">Definición en la línea <a class="el" href="sys_admin_8c_source.html#l00119">119</a> del archivo <a class="el" href="sys_admin_8c_source.html">sysAdmin.c</a>.</p>
+<div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="sys_admin_8h_aa6c33be7b7273385ae39a1f682f28f75_icgraph.png" border="0" usemap="#asys_admin_8h_aa6c33be7b7273385ae39a1f682f28f75_icgraph" loading="lazy" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a62e7c27f84d0db690242eeb717c4e17b" name="a62e7c27f84d0db690242eeb717c4e17b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62e7c27f84d0db690242eeb717c4e17b">&#9670;&#160;</a></span>engine_start()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t engine_start </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Función que setea la frecuencia de régimen de acuerdo a lo configurado por el usuario y ejecuta la tarea accelerating. </p>
+<p>En caso de que desaccelerating esté corriendo, antes de ejecutar accelerating, la cierra para no generar un efecto de subida y bajada de frecuencia. El status pasará a SYSTEM_ACCLE_DESACCEL</p>
+<dl class="section return"><dt>Devuelve</dt><dd>Frecuencia de destino configurada </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="sys_admin_8c_source.html#l00091">91</a> del archivo <a class="el" href="sys_admin_8c_source.html">sysAdmin.c</a>.</p>
+<div class="dynheader">
+Gráfico de llamadas de esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="sys_admin_8h_a62e7c27f84d0db690242eeb717c4e17b_cgraph.png" border="0" usemap="#asys_admin_8h_a62e7c27f84d0db690242eeb717c4e17b_cgraph" loading="lazy" alt=""/></div>
+</div>
+<div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="sys_admin_8h_a62e7c27f84d0db690242eeb717c4e17b_icgraph.png" border="0" usemap="#asys_admin_8h_a62e7c27f84d0db690242eeb717c4e17b_icgraph" loading="lazy" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="abb59808fe42c3d4dd43e0f91d1f699a9" name="abb59808fe42c3d4dd43e0f91d1f699a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb59808fe42c3d4dd43e0f91d1f699a9">&#9670;&#160;</a></span>engine_stop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t engine_stop </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Función que setea la frecuencia de régimen de acuerdo a lo configurado por el usuario y ejecuta la tarea desaccelerating. </p>
+<p>En caso de que accelerating esté corriendo, antes de ejecutar desaccelerating, la cierra para no generar un efecto de subida y bajada de frecuencia. El status pasará a SYSTEM_ACCLE_DESACCEL o SYSTEM_BREAKING de a cuerdo a la acción que haya ocurrido</p>
+<dl class="section return"><dt>Devuelve</dt><dd>Frecuencia de destino configurada </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="sys_admin_8c_source.html#l00104">104</a> del archivo <a class="el" href="sys_admin_8c_source.html">sysAdmin.c</a>.</p>
+<div class="dynheader">
+Gráfico de llamadas de esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="sys_admin_8h_abb59808fe42c3d4dd43e0f91d1f699a9_cgraph.png" border="0" usemap="#asys_admin_8h_abb59808fe42c3d4dd43e0f91d1f699a9_cgraph" loading="lazy" alt=""/></div>
+</div>
+<div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="sys_admin_8h_abb59808fe42c3d4dd43e0f91d1f699a9_icgraph.png" border="0" usemap="#asys_admin_8h_abb59808fe42c3d4dd43e0f91d1f699a9_icgraph" loading="lazy" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a7bf3fbe77325da35d54220bf89fb26ce" name="a7bf3fbe77325da35d54220bf89fb26ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7bf3fbe77325da35d54220bf89fb26ce">&#9670;&#160;</a></span>get_status()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">esp_err_t get_status </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsystem__status__t.html">system_status_t</a> *</td>          <td class="paramname"><span class="paramname"><em>s_e</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtiene una réplica del status del sistema. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">s_e</td><td>Puntero a la variable donde se devolverá la información de status</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd><ul>
+<li>ESP_ERR_NOT_ALLOWED: En caso de que s_e sea un puntero a NULL</li>
+<li>ESP_OK: Si la copia fue exitosa </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="sys_admin_8c_source.html#l00160">160</a> del archivo <a class="el" href="sys_admin_8c_source.html">sysAdmin.c</a>.</p>
+<div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="sys_admin_8h_a7bf3fbe77325da35d54220bf89fb26ce_icgraph.png" border="0" usemap="#asys_admin_8h_a7bf3fbe77325da35d54220bf89fb26ce_icgraph" loading="lazy" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a4c6328d6bdb3ae404b65b9046dc71446" name="a4c6328d6bdb3ae404b65b9046dc71446"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c6328d6bdb3ae404b65b9046dc71446">&#9670;&#160;</a></span>set_frequency_table()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void set_frequency_table </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>input_variable</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>freq_regime</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Carga en el vector de velocidades configurables por entradas, las diferentes frecuencias de trabajo. </p>
+<p>La posición 0 del buffer es la frecuencia de regimen, la posición 7 es la frecuencia más baja distinta de cero</p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">input_variable</td><td>Tipo de variación entre las diferentes entradas. 1 para variación lineal; 2 para variación cuadrática.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">freq_regime</td><td>Frecuencia de regimen ingresada por el usuario </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="sys_admin_8c_source.html#l00198">198</a> del archivo <a class="el" href="sys_admin_8c_source.html">sysAdmin.c</a>.</p>
+<div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="sys_admin_8h_a4c6328d6bdb3ae404b65b9046dc71446_icgraph.png" border="0" usemap="#asys_admin_8h_a4c6328d6bdb3ae404b65b9046dc71446_icgraph" loading="lazy" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a5f1c91f368c1994714cc10c041120367" name="a5f1c91f368c1994714cc10c041120367"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f1c91f368c1994714cc10c041120367">&#9670;&#160;</a></span>set_seccurity_settings()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void set_seccurity_settings </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structseccurity__settings__t.html">seccurity_settings_t</a> *</td>          <td class="paramname"><span class="paramname"><em>s_s</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Actualiza las variables de seguridad del sistema. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">s_s</td><td>Puntero a la estructura con las variables de seguridad a actualizar </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="sys_admin_8c_source.html#l00220">220</a> del archivo <a class="el" href="sys_admin_8c_source.html">sysAdmin.c</a>.</p>
+<div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="sys_admin_8h_a5f1c91f368c1994714cc10c041120367_icgraph.png" border="0" usemap="#asys_admin_8h_a5f1c91f368c1994714cc10c041120367_icgraph" loading="lazy" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="ab7f234b01f6a10381a179c5dbfa5a3be" name="ab7f234b01f6a10381a179c5dbfa5a3be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7f234b01f6a10381a179c5dbfa5a3be">&#9670;&#160;</a></span>update_meas()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_l_v_f_v__system_8h.html#a175b5f4c0244bf0bde30789366d31791">system_status_e</a> update_meas </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>vbus_meas</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>ibus_meas</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Actualiza las mediciones de tensión y corriente del bus de contínua. </p>
+<p>En caso que superar los límites configurados, entra en SYSTEM_EMERGENCY</p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">vbus_meas</td><td><ul>
+<li>Tensión de bus de contínua leído por el ADC</li>
+</ul>
+</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ibus_meas</td><td><ul>
+<li>Corriente de bus de contínua leído por el ADC</li>
+</ul>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd><ul>
+<li>SYSTEM_IDLE: El sistema se encuentra en estado de reposo</li>
+<li>SYSTEM_ACCLE_DESACCEL: El sistema se encuentra acelerando o desacelerando</li>
+<li>SYSTEM_REGIME: El sistema está con el motor girando a régimen</li>
+<li>SYSTEM_BREAKING: El sistema está frenando</li>
+<li>SYSTEM_EMERGENCY: El sistema entra por primera vez en estado de emergencia</li>
+<li>SYSTEM_EMERGENCY_OK: El sistema continúa en estado de emergencia </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="sys_admin_8c_source.html#l00172">172</a> del archivo <a class="el" href="sys_admin_8c_source.html">sysAdmin.c</a>.</p>
+<div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="sys_admin_8h_ab7f234b01f6a10381a179c5dbfa5a3be_icgraph.png" border="0" usemap="#asys_admin_8h_ab7f234b01f6a10381a179c5dbfa5a3be_icgraph" loading="lazy" alt=""/></div>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_5c982d53a68cdbcd421152b4020263a9.html">main</a></li><li class="navelem"><a href="dir_4ebdb2553a3894a04487b5c1cfb0e048.html">system</a></li><li class="navelem"><a href="sys_admin_8h.html">sysAdmin.h</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

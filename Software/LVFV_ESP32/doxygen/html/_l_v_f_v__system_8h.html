@@ -1,0 +1,490 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Low Voltage Variable Frequency Drive: Referencia del archivo C:/Users/User/LVFV_ESP32/main/LVFV_system.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="DoxyPic.jpeg"/></td>
+  <td id="projectalign">
+   <div id="projectname">Low Voltage Variable Frequency Drive<span id="projectnumber">&#160;2.0</span>
+   </div>
+   <div id="projectbrief">Proyecto final Andrenacci-Carra 2026. Variador de frecuencia de motor trifásico 1/3HP utilizando 12V de contínua como fuente de entrada de tensión.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('_l_v_f_v__system_8h.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia del archivo LVFV_system.h</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Declaraciones de estructuras, variables, definiciones y estados generales del sistema utilizados en varios de los archivos.  
+<a href="#details">Más...</a></p>
+<div class="textblock"><code>#include &lt;inttypes.h&gt;</code><br />
+<code>#include &lt;time.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Gráfico de dependencias incluidas en LVFV_system.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="_l_v_f_v__system_8h__incl.png" border="0" usemap="#a_c_1_2_users_2_user_2_l_v_f_v___e_s_p32_2main_2_l_v_f_v__system_8h" loading="lazy" alt=""/></div>
+</div>
+</div><div class="textblock"><div class="dynheader">
+Gráfico de los archivos que directa o indirectamente incluyen a este archivo:</div>
+<div class="dyncontent">
+<div class="center"><img src="_l_v_f_v__system_8h__dep__incl.png" border="0" usemap="#a_c_1_2_users_2_user_2_l_v_f_v___e_s_p32_2main_2_l_v_f_v__system_8hdep" loading="lazy" alt=""/></div>
+</div>
+</div>
+<p><a href="_l_v_f_v__system_8h_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Estructuras de datos</h2></td></tr>
+<tr class="memitem:frequency_5Fsettings_5Ft" id="r_frequency_5Fsettings_5Ft"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfrequency__settings__t.html">frequency_settings_t</a></td></tr>
+<tr class="memitem:time_5Fsettings_5Ft" id="r_time_5Fsettings_5Ft"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtime__settings__t.html">time_settings_t</a></td></tr>
+<tr class="memitem:seccurity_5Fsettings_5Ft" id="r_seccurity_5Fsettings_5Ft"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structseccurity__settings__t.html">seccurity_settings_t</a></td></tr>
+<tr class="memitem:system_5Fstatus_5Ft" id="r_system_5Fstatus_5Ft"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsystem__status__t.html">system_status_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estructura con las variables necesarias para establecer las condiciones de trabajo del motor.  <a href="structsystem__status__t.html#details">Más...</a><br /></td></tr>
+<tr class="memitem:frequency_5Fsettings_5FSH1106_5Ft" id="r_frequency_5Fsettings_5FSH1106_5Ft"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfrequency__settings___s_h1106__t.html">frequency_settings_SH1106_t</a></td></tr>
+<tr class="memitem:time_5Fsettings_5FSH1106_5Ft" id="r_time_5Fsettings_5FSH1106_5Ft"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtime__settings___s_h1106__t.html">time_settings_SH1106_t</a></td></tr>
+<tr class="memitem:seccurity_5Fsettings_5FSH1106_5Ft" id="r_seccurity_5Fsettings_5FSH1106_5Ft"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structseccurity__settings___s_h1106__t.html">seccurity_settings_SH1106_t</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
+defines</h2></td></tr>
+<tr class="memitem:a7232d1212ac2ef189a99b00d2a73f8b9" id="r_a7232d1212ac2ef189a99b00d2a73f8b9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7232d1212ac2ef189a99b00d2a73f8b9">SH1106_SIZE_1</a>&#160;&#160;&#160;0</td></tr>
+<tr class="memitem:ad5d076e03ff12ef3f71967552e329489" id="r_ad5d076e03ff12ef3f71967552e329489"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad5d076e03ff12ef3f71967552e329489">SH1106_SIZE_2</a>&#160;&#160;&#160;1</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-typedef-members" class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+typedefs</h2></td></tr>
+<tr class="memitem:a59dd0e53b1918c22a681503427e5b1be" id="r_a59dd0e53b1918c22a681503427e5b1be"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="#a175b5f4c0244bf0bde30789366d31791">system_status_e</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a59dd0e53b1918c22a681503427e5b1be">system_status_e</a></td></tr>
+<tr class="memitem:ad8e9d59d760bb3f2294db36d12ff4d03" id="r_ad8e9d59d760bb3f2294db36d12ff4d03"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="#afe617d6ade6b2289b5efe09a74bb4609">sh1106_variable_lines_e</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad8e9d59d760bb3f2294db36d12ff4d03">sh1106_variable_lines_e</a></td></tr>
+<tr class="memitem:a11d605c8e601c10e12bb930a8cfccf66" id="r_a11d605c8e601c10e12bb930a8cfccf66"><td class="memItemLeft" align="right" valign="top">typedef struct frequency_settings_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a11d605c8e601c10e12bb930a8cfccf66">frequency_settings_t</a></td></tr>
+<tr class="memitem:a260ae581f410f5fe85eeb1df6acd13df" id="r_a260ae581f410f5fe85eeb1df6acd13df"><td class="memItemLeft" align="right" valign="top">typedef struct time_settings_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a260ae581f410f5fe85eeb1df6acd13df">time_settings_t</a></td></tr>
+<tr class="memitem:a46d8fbc2d3cdf032c5836bd1af361588" id="r_a46d8fbc2d3cdf032c5836bd1af361588"><td class="memItemLeft" align="right" valign="top">typedef struct seccurity_settings_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a46d8fbc2d3cdf032c5836bd1af361588">seccurity_settings_t</a></td></tr>
+<tr class="memitem:ad75b239708efd5dbf4be4383e32d84f8" id="r_ad75b239708efd5dbf4be4383e32d84f8"><td class="memItemLeft" align="right" valign="top">typedef struct system_status_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad75b239708efd5dbf4be4383e32d84f8">system_status_t</a></td></tr>
+<tr class="memitem:a9b9173ed9b22fe140d2d5ede23faf8f5" id="r_a9b9173ed9b22fe140d2d5ede23faf8f5"><td class="memItemLeft" align="right" valign="top">typedef struct frequency_settings_SH1106_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9b9173ed9b22fe140d2d5ede23faf8f5">frequency_settings_SH1106_t</a></td></tr>
+<tr class="memitem:a26e8477744b5133926c8cb044893da7b" id="r_a26e8477744b5133926c8cb044893da7b"><td class="memItemLeft" align="right" valign="top">typedef struct time_settings_SH1106_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a26e8477744b5133926c8cb044893da7b">time_settings_SH1106_t</a></td></tr>
+<tr class="memitem:a4115d2da9b42a05d80068e0b15ef5f5d" id="r_a4115d2da9b42a05d80068e0b15ef5f5d"><td class="memItemLeft" align="right" valign="top">typedef struct seccurity_settings_SH1106_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4115d2da9b42a05d80068e0b15ef5f5d">seccurity_settings_SH1106_t</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-enum-members" class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumeraciones</h2></td></tr>
+<tr class="memitem:ab7a290ebff8e2a3230e8085ee87d4796" id="r_ab7a290ebff8e2a3230e8085ee87d4796"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab7a290ebff8e2a3230e8085ee87d4796">systemSignal_e</a> { <br />
+&#160;&#160;<a class="el" href="#ab7a290ebff8e2a3230e8085ee87d4796ab964e5038b062d4b6d1287996db4ddd4">BUTTON_MENU</a> = 1
+, <a class="el" href="#ab7a290ebff8e2a3230e8085ee87d4796a3534e510a800f1a3975a255756f0246d">BUTTON_OK</a>
+, <a class="el" href="#ab7a290ebff8e2a3230e8085ee87d4796a80bbae5d9dece7dc5b0d0a45f9390770">BUTTON_BACK</a>
+, <a class="el" href="#ab7a290ebff8e2a3230e8085ee87d4796a37666936297216dce293b0aa31c474b8">BUTTON_UP</a>
+, <br />
+&#160;&#160;<a class="el" href="#ab7a290ebff8e2a3230e8085ee87d4796a0c7746cfbcac16484b2266e6f51e5e0b">BUTTON_DOWN</a>
+, <a class="el" href="#ab7a290ebff8e2a3230e8085ee87d4796a55dc0d53615e28ee8af66827bee48e4e">BUTTON_LEFT</a>
+, <a class="el" href="#ab7a290ebff8e2a3230e8085ee87d4796a13046edd6d64a0de5821b5ff4c7581ce">BUTTON_RIGHT</a>
+, <a class="el" href="#ab7a290ebff8e2a3230e8085ee87d4796a8dcc4bb9d4e2b215128f0e14faab9d48">BUTTON_SAVE</a>
+, <br />
+&#160;&#160;<a class="el" href="#ab7a290ebff8e2a3230e8085ee87d4796a763a5af56f6336bb097fc295c10224c6">EMERGENCI_STOP_PRESSED</a>
+, <a class="el" href="#ab7a290ebff8e2a3230e8085ee87d4796a8ecc5c208d515907194017a50654a5f0">EMERGENCI_STOP_RELEASED</a>
+, <a class="el" href="#ab7a290ebff8e2a3230e8085ee87d4796a63785524fddc6173ea49aacebd1ba9b4">START_PRESSED</a>
+, <a class="el" href="#ab7a290ebff8e2a3230e8085ee87d4796a3ceda522fe82f4612779cbe9ffea6ddd">START_RELEASED</a>
+, <br />
+&#160;&#160;<a class="el" href="#ab7a290ebff8e2a3230e8085ee87d4796aba2430dee359622ce93e0bc30200dbb4">TERMO_SW_PRESSED</a>
+, <a class="el" href="#ab7a290ebff8e2a3230e8085ee87d4796abcb0b2c8962fd29cc040541a0098d610">TERMO_SW_RELEASED</a>
+, <a class="el" href="#ab7a290ebff8e2a3230e8085ee87d4796aa9aca1a320269de9561c234df472939c">STOP_PRESSED</a>
+, <a class="el" href="#ab7a290ebff8e2a3230e8085ee87d4796a5c721f64225ace40ee5401ce7bf66af1">STOP_RELEASED</a>
+, <br />
+&#160;&#160;<a class="el" href="#ab7a290ebff8e2a3230e8085ee87d4796a358a2b2b7d5d25917484d0604b8b8c61">SPEED_SELECTOR_0</a>
+, <a class="el" href="#ab7a290ebff8e2a3230e8085ee87d4796ae43bf9bce9d9d974d8c49591073f07f3">SPEED_SELECTOR_1</a>
+, <a class="el" href="#ab7a290ebff8e2a3230e8085ee87d4796a0bbea2c20296f454237438bb42f9a60a">SPEED_SELECTOR_2</a>
+, <a class="el" href="#ab7a290ebff8e2a3230e8085ee87d4796abd5d9529779c1898ec0e751b73baaa11">SPEED_SELECTOR_3</a>
+, <br />
+&#160;&#160;<a class="el" href="#ab7a290ebff8e2a3230e8085ee87d4796a16fbe5797dd7a2ba4232942b933fbc28">SPEED_SELECTOR_4</a>
+, <a class="el" href="#ab7a290ebff8e2a3230e8085ee87d4796a4b6f37253b2a4bc26776c0b0ec42b497">SPEED_SELECTOR_5</a>
+, <a class="el" href="#ab7a290ebff8e2a3230e8085ee87d4796a83e86c5ce7c84431fc2ebd24178d2d55">SPEED_SELECTOR_6</a>
+, <a class="el" href="#ab7a290ebff8e2a3230e8085ee87d4796a8ef3a2e510ee1546eaa292f1cb4f48a9">SPEED_SELECTOR_7</a>
+, <br />
+&#160;&#160;<a class="el" href="#ab7a290ebff8e2a3230e8085ee87d4796abbea50e710109e7e6692d445362c8b48">SPEED_SELECTOR_8</a>
+, <a class="el" href="#ab7a290ebff8e2a3230e8085ee87d4796a68941af0ed0d68bc31c09e87a8c5490d">SPEED_SELECTOR_9</a>
+, <a class="el" href="#ab7a290ebff8e2a3230e8085ee87d4796a28442d6913cbeabc9ed6fe1e20a255bf">SECURITY_EXCEDED</a>
+, <a class="el" href="#ab7a290ebff8e2a3230e8085ee87d4796af31dc398d7d8cbf4a834c81d7dfa0e82">SECURITY_OK</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:ab7a290ebff8e2a3230e8085ee87d4796"><td class="mdescLeft">&#160;</td><td class="mdescRight">Variable dedicada a la identificación del tipo de señal que es recibida por las entradas digitales y analógicas del sistema para que se tome una desición a nivel de sistema.  <a href="#ab7a290ebff8e2a3230e8085ee87d4796">Más...</a><br /></td></tr>
+<tr class="memitem:a175b5f4c0244bf0bde30789366d31791" id="r_a175b5f4c0244bf0bde30789366d31791"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a175b5f4c0244bf0bde30789366d31791">system_status_e</a> { <br />
+&#160;&#160;<a class="el" href="#a175b5f4c0244bf0bde30789366d31791a20cc395940efb44d047c63108d2ef837">SYSTEM_IDLE</a>
+, <a class="el" href="#a175b5f4c0244bf0bde30789366d31791a355058bb815d40f78a343c756d58c47f">SYSTEM_ACCLE_DESACCEL</a>
+, <a class="el" href="#a175b5f4c0244bf0bde30789366d31791af08242ba685ecc48c255df8932379618">SYSTEM_REGIME</a>
+, <a class="el" href="#a175b5f4c0244bf0bde30789366d31791a800775137620f33c4ba7b7810a94e365">SYSTEM_BREAKING</a>
+, <br />
+&#160;&#160;<a class="el" href="#a175b5f4c0244bf0bde30789366d31791abf715611d16f62350c373d1c4aa17547">SYSTEM_EMERGENCY</a>
+, <a class="el" href="#a175b5f4c0244bf0bde30789366d31791a51d3220cff10b80b0d524652e825bf5c">SYSTEM_EMERGENCY_OK</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:a175b5f4c0244bf0bde30789366d31791"><td class="mdescLeft">&#160;</td><td class="mdescRight">Posibles estados general que puede tomar el sistema.  <a href="#a175b5f4c0244bf0bde30789366d31791">Más...</a><br /></td></tr>
+<tr class="memitem:afe617d6ade6b2289b5efe09a74bb4609" id="r_afe617d6ade6b2289b5efe09a74bb4609"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afe617d6ade6b2289b5efe09a74bb4609">sh1106_variable_lines_e</a> { <br />
+&#160;&#160;<a class="el" href="#afe617d6ade6b2289b5efe09a74bb4609aa4500e61db092c2e1719b5d68b047ec3">first</a> = VARIABLE_FIRST
+, <a class="el" href="#afe617d6ade6b2289b5efe09a74bb4609aed5e1b554d8a8c57ad81b1e7d6278cc2">second</a> = VARIABLE_SECOND
+, <a class="el" href="#afe617d6ade6b2289b5efe09a74bb4609a084d514734ca9531c812b1d49f5695b8">third</a> = VARIABLE_THIRD
+, <a class="el" href="#afe617d6ade6b2289b5efe09a74bb4609a2fa414b1321ed60700ca25cb0b285038">fourth</a> = VARIABLE_FOURTH
+, <br />
+&#160;&#160;<a class="el" href="#afe617d6ade6b2289b5efe09a74bb4609a4ead4f814c0f187705ee29aa88188af5">fifth</a> = VARIABLE_FIFTH
+, <a class="el" href="#afe617d6ade6b2289b5efe09a74bb4609af50a69e45252411508fbcfcd4b50c471">sixth</a> = VARIABLE_SIXTH
+, <a class="el" href="#afe617d6ade6b2289b5efe09a74bb4609aefdb468b3bc7f82ad7c7dae101feacc6">seventh</a> = VARIABLE_SEVENTH
+<br />
+ }</td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Declaraciones de estructuras, variables, definiciones y estados generales del sistema utilizados en varios de los archivos. </p>
+<dl class="section author"><dt>Autor</dt><dd>Andrenacci - Carra </dd></dl>
+<dl class="section version"><dt>Versión</dt><dd>2.0 </dd></dl>
+<dl class="section date"><dt>Fecha</dt><dd>2025-11-06 </dd></dl>
+
+<p class="definition">Definición en el archivo <a class="el" href="_l_v_f_v__system_8h_source.html">LVFV_system.h</a>.</p>
+</div><a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Documentación de «define»</h2>
+<a id="a7232d1212ac2ef189a99b00d2a73f8b9" name="a7232d1212ac2ef189a99b00d2a73f8b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7232d1212ac2ef189a99b00d2a73f8b9">&#9670;&#160;</a></span>SH1106_SIZE_1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SH1106_SIZE_1&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_l_v_f_v__system_8h_source.html#l00110">110</a> del archivo <a class="el" href="_l_v_f_v__system_8h_source.html">LVFV_system.h</a>.</p>
+
+</div>
+</div>
+<a id="ad5d076e03ff12ef3f71967552e329489" name="ad5d076e03ff12ef3f71967552e329489"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5d076e03ff12ef3f71967552e329489">&#9670;&#160;</a></span>SH1106_SIZE_2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SH1106_SIZE_2&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_l_v_f_v__system_8h_source.html#l00111">111</a> del archivo <a class="el" href="_l_v_f_v__system_8h_source.html">LVFV_system.h</a>.</p>
+
+</div>
+</div>
+<a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Documentación de «typedef»</h2>
+<a id="a9b9173ed9b22fe140d2d5ede23faf8f5" name="a9b9173ed9b22fe140d2d5ede23faf8f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b9173ed9b22fe140d2d5ede23faf8f5">&#9670;&#160;</a></span>frequency_settings_SH1106_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct frequency_settings_SH1106_t frequency_settings_SH1106_t</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a11d605c8e601c10e12bb930a8cfccf66" name="a11d605c8e601c10e12bb930a8cfccf66"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11d605c8e601c10e12bb930a8cfccf66">&#9670;&#160;</a></span>frequency_settings_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct frequency_settings_t frequency_settings_t</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4115d2da9b42a05d80068e0b15ef5f5d" name="a4115d2da9b42a05d80068e0b15ef5f5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4115d2da9b42a05d80068e0b15ef5f5d">&#9670;&#160;</a></span>seccurity_settings_SH1106_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct seccurity_settings_SH1106_t seccurity_settings_SH1106_t</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a46d8fbc2d3cdf032c5836bd1af361588" name="a46d8fbc2d3cdf032c5836bd1af361588"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46d8fbc2d3cdf032c5836bd1af361588">&#9670;&#160;</a></span>seccurity_settings_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct seccurity_settings_t seccurity_settings_t</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad8e9d59d760bb3f2294db36d12ff4d03" name="ad8e9d59d760bb3f2294db36d12ff4d03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8e9d59d760bb3f2294db36d12ff4d03">&#9670;&#160;</a></span>sh1106_variable_lines_e</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef enum <a class="el" href="#afe617d6ade6b2289b5efe09a74bb4609">sh1106_variable_lines_e</a> <a class="el" href="#afe617d6ade6b2289b5efe09a74bb4609">sh1106_variable_lines_e</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a59dd0e53b1918c22a681503427e5b1be" name="a59dd0e53b1918c22a681503427e5b1be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59dd0e53b1918c22a681503427e5b1be">&#9670;&#160;</a></span>system_status_e</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef enum <a class="el" href="#a175b5f4c0244bf0bde30789366d31791">system_status_e</a> <a class="el" href="#a175b5f4c0244bf0bde30789366d31791">system_status_e</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad75b239708efd5dbf4be4383e32d84f8" name="ad75b239708efd5dbf4be4383e32d84f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad75b239708efd5dbf4be4383e32d84f8">&#9670;&#160;</a></span>system_status_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct system_status_t system_status_t</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a26e8477744b5133926c8cb044893da7b" name="a26e8477744b5133926c8cb044893da7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26e8477744b5133926c8cb044893da7b">&#9670;&#160;</a></span>time_settings_SH1106_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct time_settings_SH1106_t time_settings_SH1106_t</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a260ae581f410f5fe85eeb1df6acd13df" name="a260ae581f410f5fe85eeb1df6acd13df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a260ae581f410f5fe85eeb1df6acd13df">&#9670;&#160;</a></span>time_settings_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct time_settings_t time_settings_t</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">Documentación de enumeraciones</h2>
+<a id="afe617d6ade6b2289b5efe09a74bb4609" name="afe617d6ade6b2289b5efe09a74bb4609"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe617d6ade6b2289b5efe09a74bb4609">&#9670;&#160;</a></span>sh1106_variable_lines_e</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#afe617d6ade6b2289b5efe09a74bb4609">sh1106_variable_lines_e</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Valores de enumeraciones</th></tr><tr><td class="fieldname"><a id="afe617d6ade6b2289b5efe09a74bb4609aa4500e61db092c2e1719b5d68b047ec3" name="afe617d6ade6b2289b5efe09a74bb4609aa4500e61db092c2e1719b5d68b047ec3"></a>first&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="afe617d6ade6b2289b5efe09a74bb4609aed5e1b554d8a8c57ad81b1e7d6278cc2" name="afe617d6ade6b2289b5efe09a74bb4609aed5e1b554d8a8c57ad81b1e7d6278cc2"></a>second&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="afe617d6ade6b2289b5efe09a74bb4609a084d514734ca9531c812b1d49f5695b8" name="afe617d6ade6b2289b5efe09a74bb4609a084d514734ca9531c812b1d49f5695b8"></a>third&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="afe617d6ade6b2289b5efe09a74bb4609a2fa414b1321ed60700ca25cb0b285038" name="afe617d6ade6b2289b5efe09a74bb4609a2fa414b1321ed60700ca25cb0b285038"></a>fourth&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="afe617d6ade6b2289b5efe09a74bb4609a4ead4f814c0f187705ee29aa88188af5" name="afe617d6ade6b2289b5efe09a74bb4609a4ead4f814c0f187705ee29aa88188af5"></a>fifth&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="afe617d6ade6b2289b5efe09a74bb4609af50a69e45252411508fbcfcd4b50c471" name="afe617d6ade6b2289b5efe09a74bb4609af50a69e45252411508fbcfcd4b50c471"></a>sixth&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="afe617d6ade6b2289b5efe09a74bb4609aefdb468b3bc7f82ad7c7dae101feacc6" name="afe617d6ade6b2289b5efe09a74bb4609aefdb468b3bc7f82ad7c7dae101feacc6"></a>seventh&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">Definición en la línea <a class="el" href="_l_v_f_v__system_8h_source.html#l00065">65</a> del archivo <a class="el" href="_l_v_f_v__system_8h_source.html">LVFV_system.h</a>.</p>
+
+</div>
+</div>
+<a id="a175b5f4c0244bf0bde30789366d31791" name="a175b5f4c0244bf0bde30789366d31791"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a175b5f4c0244bf0bde30789366d31791">&#9670;&#160;</a></span>system_status_e</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#a175b5f4c0244bf0bde30789366d31791">system_status_e</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Posibles estados general que puede tomar el sistema. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Valores de enumeraciones</th></tr><tr><td class="fieldname"><a id="a175b5f4c0244bf0bde30789366d31791a20cc395940efb44d047c63108d2ef837" name="a175b5f4c0244bf0bde30789366d31791a20cc395940efb44d047c63108d2ef837"></a>SYSTEM_IDLE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a175b5f4c0244bf0bde30789366d31791a355058bb815d40f78a343c756d58c47f" name="a175b5f4c0244bf0bde30789366d31791a355058bb815d40f78a343c756d58c47f"></a>SYSTEM_ACCLE_DESACCEL&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a175b5f4c0244bf0bde30789366d31791af08242ba685ecc48c255df8932379618" name="a175b5f4c0244bf0bde30789366d31791af08242ba685ecc48c255df8932379618"></a>SYSTEM_REGIME&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a175b5f4c0244bf0bde30789366d31791a800775137620f33c4ba7b7810a94e365" name="a175b5f4c0244bf0bde30789366d31791a800775137620f33c4ba7b7810a94e365"></a>SYSTEM_BREAKING&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a175b5f4c0244bf0bde30789366d31791abf715611d16f62350c373d1c4aa17547" name="a175b5f4c0244bf0bde30789366d31791abf715611d16f62350c373d1c4aa17547"></a>SYSTEM_EMERGENCY&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a175b5f4c0244bf0bde30789366d31791a51d3220cff10b80b0d524652e825bf5c" name="a175b5f4c0244bf0bde30789366d31791a51d3220cff10b80b0d524652e825bf5c"></a>SYSTEM_EMERGENCY_OK&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">Definición en la línea <a class="el" href="_l_v_f_v__system_8h_source.html#l00056">56</a> del archivo <a class="el" href="_l_v_f_v__system_8h_source.html">LVFV_system.h</a>.</p>
+
+</div>
+</div>
+<a id="ab7a290ebff8e2a3230e8085ee87d4796" name="ab7a290ebff8e2a3230e8085ee87d4796"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7a290ebff8e2a3230e8085ee87d4796">&#9670;&#160;</a></span>systemSignal_e</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#ab7a290ebff8e2a3230e8085ee87d4796">systemSignal_e</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Variable dedicada a la identificación del tipo de señal que es recibida por las entradas digitales y analógicas del sistema para que se tome una desición a nivel de sistema. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Valores de enumeraciones</th></tr><tr><td class="fieldname"><a id="ab7a290ebff8e2a3230e8085ee87d4796ab964e5038b062d4b6d1287996db4ddd4" name="ab7a290ebff8e2a3230e8085ee87d4796ab964e5038b062d4b6d1287996db4ddd4"></a>BUTTON_MENU&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab7a290ebff8e2a3230e8085ee87d4796a3534e510a800f1a3975a255756f0246d" name="ab7a290ebff8e2a3230e8085ee87d4796a3534e510a800f1a3975a255756f0246d"></a>BUTTON_OK&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab7a290ebff8e2a3230e8085ee87d4796a80bbae5d9dece7dc5b0d0a45f9390770" name="ab7a290ebff8e2a3230e8085ee87d4796a80bbae5d9dece7dc5b0d0a45f9390770"></a>BUTTON_BACK&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab7a290ebff8e2a3230e8085ee87d4796a37666936297216dce293b0aa31c474b8" name="ab7a290ebff8e2a3230e8085ee87d4796a37666936297216dce293b0aa31c474b8"></a>BUTTON_UP&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab7a290ebff8e2a3230e8085ee87d4796a0c7746cfbcac16484b2266e6f51e5e0b" name="ab7a290ebff8e2a3230e8085ee87d4796a0c7746cfbcac16484b2266e6f51e5e0b"></a>BUTTON_DOWN&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab7a290ebff8e2a3230e8085ee87d4796a55dc0d53615e28ee8af66827bee48e4e" name="ab7a290ebff8e2a3230e8085ee87d4796a55dc0d53615e28ee8af66827bee48e4e"></a>BUTTON_LEFT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab7a290ebff8e2a3230e8085ee87d4796a13046edd6d64a0de5821b5ff4c7581ce" name="ab7a290ebff8e2a3230e8085ee87d4796a13046edd6d64a0de5821b5ff4c7581ce"></a>BUTTON_RIGHT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab7a290ebff8e2a3230e8085ee87d4796a8dcc4bb9d4e2b215128f0e14faab9d48" name="ab7a290ebff8e2a3230e8085ee87d4796a8dcc4bb9d4e2b215128f0e14faab9d48"></a>BUTTON_SAVE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab7a290ebff8e2a3230e8085ee87d4796a763a5af56f6336bb097fc295c10224c6" name="ab7a290ebff8e2a3230e8085ee87d4796a763a5af56f6336bb097fc295c10224c6"></a>EMERGENCI_STOP_PRESSED&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab7a290ebff8e2a3230e8085ee87d4796a8ecc5c208d515907194017a50654a5f0" name="ab7a290ebff8e2a3230e8085ee87d4796a8ecc5c208d515907194017a50654a5f0"></a>EMERGENCI_STOP_RELEASED&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab7a290ebff8e2a3230e8085ee87d4796a63785524fddc6173ea49aacebd1ba9b4" name="ab7a290ebff8e2a3230e8085ee87d4796a63785524fddc6173ea49aacebd1ba9b4"></a>START_PRESSED&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab7a290ebff8e2a3230e8085ee87d4796a3ceda522fe82f4612779cbe9ffea6ddd" name="ab7a290ebff8e2a3230e8085ee87d4796a3ceda522fe82f4612779cbe9ffea6ddd"></a>START_RELEASED&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab7a290ebff8e2a3230e8085ee87d4796aba2430dee359622ce93e0bc30200dbb4" name="ab7a290ebff8e2a3230e8085ee87d4796aba2430dee359622ce93e0bc30200dbb4"></a>TERMO_SW_PRESSED&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab7a290ebff8e2a3230e8085ee87d4796abcb0b2c8962fd29cc040541a0098d610" name="ab7a290ebff8e2a3230e8085ee87d4796abcb0b2c8962fd29cc040541a0098d610"></a>TERMO_SW_RELEASED&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab7a290ebff8e2a3230e8085ee87d4796aa9aca1a320269de9561c234df472939c" name="ab7a290ebff8e2a3230e8085ee87d4796aa9aca1a320269de9561c234df472939c"></a>STOP_PRESSED&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab7a290ebff8e2a3230e8085ee87d4796a5c721f64225ace40ee5401ce7bf66af1" name="ab7a290ebff8e2a3230e8085ee87d4796a5c721f64225ace40ee5401ce7bf66af1"></a>STOP_RELEASED&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab7a290ebff8e2a3230e8085ee87d4796a358a2b2b7d5d25917484d0604b8b8c61" name="ab7a290ebff8e2a3230e8085ee87d4796a358a2b2b7d5d25917484d0604b8b8c61"></a>SPEED_SELECTOR_0&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab7a290ebff8e2a3230e8085ee87d4796ae43bf9bce9d9d974d8c49591073f07f3" name="ab7a290ebff8e2a3230e8085ee87d4796ae43bf9bce9d9d974d8c49591073f07f3"></a>SPEED_SELECTOR_1&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab7a290ebff8e2a3230e8085ee87d4796a0bbea2c20296f454237438bb42f9a60a" name="ab7a290ebff8e2a3230e8085ee87d4796a0bbea2c20296f454237438bb42f9a60a"></a>SPEED_SELECTOR_2&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab7a290ebff8e2a3230e8085ee87d4796abd5d9529779c1898ec0e751b73baaa11" name="ab7a290ebff8e2a3230e8085ee87d4796abd5d9529779c1898ec0e751b73baaa11"></a>SPEED_SELECTOR_3&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab7a290ebff8e2a3230e8085ee87d4796a16fbe5797dd7a2ba4232942b933fbc28" name="ab7a290ebff8e2a3230e8085ee87d4796a16fbe5797dd7a2ba4232942b933fbc28"></a>SPEED_SELECTOR_4&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab7a290ebff8e2a3230e8085ee87d4796a4b6f37253b2a4bc26776c0b0ec42b497" name="ab7a290ebff8e2a3230e8085ee87d4796a4b6f37253b2a4bc26776c0b0ec42b497"></a>SPEED_SELECTOR_5&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab7a290ebff8e2a3230e8085ee87d4796a83e86c5ce7c84431fc2ebd24178d2d55" name="ab7a290ebff8e2a3230e8085ee87d4796a83e86c5ce7c84431fc2ebd24178d2d55"></a>SPEED_SELECTOR_6&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab7a290ebff8e2a3230e8085ee87d4796a8ef3a2e510ee1546eaa292f1cb4f48a9" name="ab7a290ebff8e2a3230e8085ee87d4796a8ef3a2e510ee1546eaa292f1cb4f48a9"></a>SPEED_SELECTOR_7&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab7a290ebff8e2a3230e8085ee87d4796abbea50e710109e7e6692d445362c8b48" name="ab7a290ebff8e2a3230e8085ee87d4796abbea50e710109e7e6692d445362c8b48"></a>SPEED_SELECTOR_8&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab7a290ebff8e2a3230e8085ee87d4796a68941af0ed0d68bc31c09e87a8c5490d" name="ab7a290ebff8e2a3230e8085ee87d4796a68941af0ed0d68bc31c09e87a8c5490d"></a>SPEED_SELECTOR_9&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab7a290ebff8e2a3230e8085ee87d4796a28442d6913cbeabc9ed6fe1e20a255bf" name="ab7a290ebff8e2a3230e8085ee87d4796a28442d6913cbeabc9ed6fe1e20a255bf"></a>SECURITY_EXCEDED&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab7a290ebff8e2a3230e8085ee87d4796af31dc398d7d8cbf4a834c81d7dfa0e82" name="ab7a290ebff8e2a3230e8085ee87d4796af31dc398d7d8cbf4a834c81d7dfa0e82"></a>SECURITY_OK&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">Definición en la línea <a class="el" href="_l_v_f_v__system_8h_source.html#l00020">20</a> del archivo <a class="el" href="_l_v_f_v__system_8h_source.html">LVFV_system.h</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_5c982d53a68cdbcd421152b4020263a9.html">main</a></li><li class="navelem"><a href="_l_v_f_v__system_8h.html">LVFV_system.h</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

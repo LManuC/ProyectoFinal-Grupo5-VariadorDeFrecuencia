@@ -1,0 +1,364 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Low Voltage Variable Frequency Drive: Referencia del archivo C:/Users/User/LVFV_ESP32/main/system/sysControl.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="DoxyPic.jpeg"/></td>
+  <td id="projectalign">
+   <div id="projectname">Low Voltage Variable Frequency Drive<span id="projectnumber">&#160;2.0</span>
+   </div>
+   <div id="projectbrief">Proyecto final Andrenacci-Carra 2026. Variador de frecuencia de motor trifásico 1/3HP utilizando 12V de contínua como fuente de entrada de tensión.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('sys_control_8h.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia del archivo sysControl.h</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Declraraciones de funciones que controlan el sistema del STM32. Además se encontrarán los comandos y respuestas que admite el STM32.  
+<a href="#details">Más...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="_l_v_f_v__system_8h_source.html">../LVFV_system.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Gráfico de dependencias incluidas en sysControl.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="sys_control_8h__incl.png" border="0" usemap="#a_c_1_2_users_2_user_2_l_v_f_v___e_s_p32_2main_2system_2sys_control_8h" loading="lazy" alt=""/></div>
+</div>
+</div><div class="textblock"><div class="dynheader">
+Gráfico de los archivos que directa o indirectamente incluyen a este archivo:</div>
+<div class="dyncontent">
+<div class="center"><img src="sys_control_8h__dep__incl.png" border="0" usemap="#a_c_1_2_users_2_user_2_l_v_f_v___e_s_p32_2main_2system_2sys_control_8hdep" loading="lazy" alt=""/></div>
+</div>
+</div>
+<p><a href="sys_control_8h_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Estructuras de datos</h2></td></tr>
+<tr class="memitem:spi_5Fcmd_5Fitem_5Ft" id="r_spi_5Fcmd_5Fitem_5Ft"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structspi__cmd__item__t.html">spi_cmd_item_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estructura de datos que contiene un comando a enviar por SPI, un argumento que se desea enviar al STM32 y un dato que que pueda recibirse como respuesta en consecuencia.  <a href="structspi__cmd__item__t.html#details">Más...</a><br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-enum-members" class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumeraciones</h2></td></tr>
+<tr class="memitem:abcc4e317bdfcd5f571d62f7ed92facc5" id="r_abcc4e317bdfcd5f571d62f7ed92facc5"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abcc4e317bdfcd5f571d62f7ed92facc5">SPI_Request</a> { <br />
+&#160;&#160;<a class="el" href="#abcc4e317bdfcd5f571d62f7ed92facc5afb08ac5078702d238e336a813719e9ac">SPI_REQUEST_START</a> = 10
+, <a class="el" href="#abcc4e317bdfcd5f571d62f7ed92facc5a4baff6e3f2b188e4176a5a462f9c89d5">SPI_REQUEST_STOP</a>
+, <a class="el" href="#abcc4e317bdfcd5f571d62f7ed92facc5a7161c8e8f4f677d8f5537560bdb7f70e">SPI_REQUEST_SET_FREC</a>
+, <a class="el" href="#abcc4e317bdfcd5f571d62f7ed92facc5afefeeb17807a057814da8ca09c8a9179">SPI_REQUEST_SET_ACEL</a>
+, <br />
+&#160;&#160;<a class="el" href="#abcc4e317bdfcd5f571d62f7ed92facc5af17d7382d3bc959eb5de0c79bb5b740e">SPI_REQUEST_SET_DESACEL</a>
+, <a class="el" href="#abcc4e317bdfcd5f571d62f7ed92facc5aa37aff4a7f01b47a80578af9f81f077f">SPI_REQUEST_SET_DIR</a>
+, <a class="el" href="#abcc4e317bdfcd5f571d62f7ed92facc5a2885786ad2c90e237e562f56737d5a51">SPI_REQUEST_GET_FREC</a>
+, <a class="el" href="#abcc4e317bdfcd5f571d62f7ed92facc5a360ce739c6acb058bfeb3fa04f5ea4ea">SPI_REQUEST_GET_ACEL</a>
+, <br />
+&#160;&#160;<a class="el" href="#abcc4e317bdfcd5f571d62f7ed92facc5a25999f55d934be143ea601d3967ab5a3">SPI_REQUEST_GET_DESACEL</a>
+, <a class="el" href="#abcc4e317bdfcd5f571d62f7ed92facc5a928c0d0c241acbd8dda3e853931a1d5d">SPI_REQUEST_GET_DIR</a>
+, <a class="el" href="#abcc4e317bdfcd5f571d62f7ed92facc5a3b1235b2b1f4a2b76d6c9986e04d2c90">SPI_REQUEST_IS_STOP</a>
+, <a class="el" href="#abcc4e317bdfcd5f571d62f7ed92facc5a3e1e4b098113ed293e6cc38961d15105">SPI_REQUEST_EMERGENCY</a>
+, <br />
+&#160;&#160;<a class="el" href="#abcc4e317bdfcd5f571d62f7ed92facc5ad00e47a3fa1e44b0879a19b021b4c8d8">SPI_REQUEST_RESPONSE</a> = 0x50
+<br />
+ }</td></tr>
+<tr class="memdesc:abcc4e317bdfcd5f571d62f7ed92facc5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Posibles comandos que puede enviar el STM32.  <a href="#abcc4e317bdfcd5f571d62f7ed92facc5">Más...</a><br /></td></tr>
+<tr class="memitem:acdb815a404f9450379dae79745e5ccd9" id="r_acdb815a404f9450379dae79745e5ccd9"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acdb815a404f9450379dae79745e5ccd9">SPI_Response</a> { <br />
+&#160;&#160;<a class="el" href="#acdb815a404f9450379dae79745e5ccd9a5a270a88abe106fde26e3725dc54115e">SPI_RESPONSE_ERR</a> = 0xA0
+, <a class="el" href="#acdb815a404f9450379dae79745e5ccd9a732ecbbd42a5e8809536040964c86427">SPI_RESPONSE_ERR_CMD_UNKNOWN</a>
+, <a class="el" href="#acdb815a404f9450379dae79745e5ccd9aee0c8330799c2bab5168eb65d1c9f4ca">SPI_RESPONSE_ERR_NO_COMMAND</a>
+, <a class="el" href="#acdb815a404f9450379dae79745e5ccd9a67277b7287dabc065ea3585cc2e6630a">SPI_RESPONSE_ERR_MOVING</a>
+, <br />
+&#160;&#160;<a class="el" href="#acdb815a404f9450379dae79745e5ccd9af85830305f68c29305f43e85ca1fcd2a">SPI_RESPONSE_ERR_NOT_MOVING</a>
+, <a class="el" href="#acdb815a404f9450379dae79745e5ccd9aa007b919a29275b8c8b7ac19d74a1efd">SPI_RESPONSE_ERR_DATA_MISSING</a>
+, <a class="el" href="#acdb815a404f9450379dae79745e5ccd9a61474fe74a6c8ad2ee1ab7fd1c572dbb">SPI_RESPONSE_ERR_DATA_INVALID</a>
+, <a class="el" href="#acdb815a404f9450379dae79745e5ccd9aa69c0c081c3ae5a2ca82d94c06f112dd">SPI_RESPONSE_ERR_DATA_OUT_RANGE</a>
+, <br />
+&#160;&#160;<a class="el" href="#acdb815a404f9450379dae79745e5ccd9a354b001329a9015ee8fa4d11fe98e1fb">SPI_RESPONSE_OK</a> = 0xFF
+<br />
+ }</td></tr>
+<tr class="memdesc:acdb815a404f9450379dae79745e5ccd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Posibles respuesta que puede enviar el STM32 en consecuencia por los request enviados.  <a href="#acdb815a404f9450379dae79745e5ccd9">Más...</a><br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:ad98df654b2d69b2699482f667045022e" id="r_ad98df654b2d69b2699482f667045022e"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad98df654b2d69b2699482f667045022e">SPI_Init</a> (void)</td></tr>
+<tr class="memdesc:ad98df654b2d69b2699482f667045022e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicializa el módulo SPI del ESP32.  <br /></td></tr>
+<tr class="memitem:a50b899a34931236e1ec86c160983f167" id="r_a50b899a34931236e1ec86c160983f167"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a50b899a34931236e1ec86c160983f167">SPI_communication</a> (void *arg)</td></tr>
+<tr class="memdesc:a50b899a34931236e1ec86c160983f167"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tarea que controla en arranque, parada y emergencia del sistema.  <br /></td></tr>
+<tr class="memitem:aba4a84160e22ceea0cedd0ddcd454af4" id="r_aba4a84160e22ceea0cedd0ddcd454af4"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aba4a84160e22ceea0cedd0ddcd454af4">SystemEventPost</a> (<a class="el" href="_l_v_f_v__system_8h.html#ab7a290ebff8e2a3230e8085ee87d4796">systemSignal_e</a> event)</td></tr>
+<tr class="memdesc:aba4a84160e22ceea0cedd0ddcd454af4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encola comandos en la cola system_event_queue.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Declraraciones de funciones que controlan el sistema del STM32. Además se encontrarán los comandos y respuestas que admite el STM32. </p>
+<dl class="section author"><dt>Autor</dt><dd>Andrenacci - Carra </dd></dl>
+<dl class="section version"><dt>Versión</dt><dd>2.0 </dd></dl>
+<dl class="section date"><dt>Fecha</dt><dd>2025-11-06 </dd></dl>
+
+<p class="definition">Definición en el archivo <a class="el" href="sys_control_8h_source.html">sysControl.h</a>.</p>
+</div><a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">Documentación de enumeraciones</h2>
+<a id="abcc4e317bdfcd5f571d62f7ed92facc5" name="abcc4e317bdfcd5f571d62f7ed92facc5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abcc4e317bdfcd5f571d62f7ed92facc5">&#9670;&#160;</a></span>SPI_Request</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#abcc4e317bdfcd5f571d62f7ed92facc5">SPI_Request</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Posibles comandos que puede enviar el STM32. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Valores de enumeraciones</th></tr><tr><td class="fieldname"><a id="abcc4e317bdfcd5f571d62f7ed92facc5afb08ac5078702d238e336a813719e9ac" name="abcc4e317bdfcd5f571d62f7ed92facc5afb08ac5078702d238e336a813719e9ac"></a>SPI_REQUEST_START&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="abcc4e317bdfcd5f571d62f7ed92facc5a4baff6e3f2b188e4176a5a462f9c89d5" name="abcc4e317bdfcd5f571d62f7ed92facc5a4baff6e3f2b188e4176a5a462f9c89d5"></a>SPI_REQUEST_STOP&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="abcc4e317bdfcd5f571d62f7ed92facc5a7161c8e8f4f677d8f5537560bdb7f70e" name="abcc4e317bdfcd5f571d62f7ed92facc5a7161c8e8f4f677d8f5537560bdb7f70e"></a>SPI_REQUEST_SET_FREC&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="abcc4e317bdfcd5f571d62f7ed92facc5afefeeb17807a057814da8ca09c8a9179" name="abcc4e317bdfcd5f571d62f7ed92facc5afefeeb17807a057814da8ca09c8a9179"></a>SPI_REQUEST_SET_ACEL&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="abcc4e317bdfcd5f571d62f7ed92facc5af17d7382d3bc959eb5de0c79bb5b740e" name="abcc4e317bdfcd5f571d62f7ed92facc5af17d7382d3bc959eb5de0c79bb5b740e"></a>SPI_REQUEST_SET_DESACEL&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="abcc4e317bdfcd5f571d62f7ed92facc5aa37aff4a7f01b47a80578af9f81f077f" name="abcc4e317bdfcd5f571d62f7ed92facc5aa37aff4a7f01b47a80578af9f81f077f"></a>SPI_REQUEST_SET_DIR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="abcc4e317bdfcd5f571d62f7ed92facc5a2885786ad2c90e237e562f56737d5a51" name="abcc4e317bdfcd5f571d62f7ed92facc5a2885786ad2c90e237e562f56737d5a51"></a>SPI_REQUEST_GET_FREC&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="abcc4e317bdfcd5f571d62f7ed92facc5a360ce739c6acb058bfeb3fa04f5ea4ea" name="abcc4e317bdfcd5f571d62f7ed92facc5a360ce739c6acb058bfeb3fa04f5ea4ea"></a>SPI_REQUEST_GET_ACEL&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="abcc4e317bdfcd5f571d62f7ed92facc5a25999f55d934be143ea601d3967ab5a3" name="abcc4e317bdfcd5f571d62f7ed92facc5a25999f55d934be143ea601d3967ab5a3"></a>SPI_REQUEST_GET_DESACEL&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="abcc4e317bdfcd5f571d62f7ed92facc5a928c0d0c241acbd8dda3e853931a1d5d" name="abcc4e317bdfcd5f571d62f7ed92facc5a928c0d0c241acbd8dda3e853931a1d5d"></a>SPI_REQUEST_GET_DIR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="abcc4e317bdfcd5f571d62f7ed92facc5a3b1235b2b1f4a2b76d6c9986e04d2c90" name="abcc4e317bdfcd5f571d62f7ed92facc5a3b1235b2b1f4a2b76d6c9986e04d2c90"></a>SPI_REQUEST_IS_STOP&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="abcc4e317bdfcd5f571d62f7ed92facc5a3e1e4b098113ed293e6cc38961d15105" name="abcc4e317bdfcd5f571d62f7ed92facc5a3e1e4b098113ed293e6cc38961d15105"></a>SPI_REQUEST_EMERGENCY&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="abcc4e317bdfcd5f571d62f7ed92facc5ad00e47a3fa1e44b0879a19b021b4c8d8" name="abcc4e317bdfcd5f571d62f7ed92facc5ad00e47a3fa1e44b0879a19b021b4c8d8"></a>SPI_REQUEST_RESPONSE&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">Definición en la línea <a class="el" href="sys_control_8h_source.html#l00019">19</a> del archivo <a class="el" href="sys_control_8h_source.html">sysControl.h</a>.</p>
+
+</div>
+</div>
+<a id="acdb815a404f9450379dae79745e5ccd9" name="acdb815a404f9450379dae79745e5ccd9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acdb815a404f9450379dae79745e5ccd9">&#9670;&#160;</a></span>SPI_Response</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#acdb815a404f9450379dae79745e5ccd9">SPI_Response</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Posibles respuesta que puede enviar el STM32 en consecuencia por los request enviados. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Valores de enumeraciones</th></tr><tr><td class="fieldname"><a id="acdb815a404f9450379dae79745e5ccd9a5a270a88abe106fde26e3725dc54115e" name="acdb815a404f9450379dae79745e5ccd9a5a270a88abe106fde26e3725dc54115e"></a>SPI_RESPONSE_ERR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="acdb815a404f9450379dae79745e5ccd9a732ecbbd42a5e8809536040964c86427" name="acdb815a404f9450379dae79745e5ccd9a732ecbbd42a5e8809536040964c86427"></a>SPI_RESPONSE_ERR_CMD_UNKNOWN&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="acdb815a404f9450379dae79745e5ccd9aee0c8330799c2bab5168eb65d1c9f4ca" name="acdb815a404f9450379dae79745e5ccd9aee0c8330799c2bab5168eb65d1c9f4ca"></a>SPI_RESPONSE_ERR_NO_COMMAND&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="acdb815a404f9450379dae79745e5ccd9a67277b7287dabc065ea3585cc2e6630a" name="acdb815a404f9450379dae79745e5ccd9a67277b7287dabc065ea3585cc2e6630a"></a>SPI_RESPONSE_ERR_MOVING&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="acdb815a404f9450379dae79745e5ccd9af85830305f68c29305f43e85ca1fcd2a" name="acdb815a404f9450379dae79745e5ccd9af85830305f68c29305f43e85ca1fcd2a"></a>SPI_RESPONSE_ERR_NOT_MOVING&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="acdb815a404f9450379dae79745e5ccd9aa007b919a29275b8c8b7ac19d74a1efd" name="acdb815a404f9450379dae79745e5ccd9aa007b919a29275b8c8b7ac19d74a1efd"></a>SPI_RESPONSE_ERR_DATA_MISSING&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="acdb815a404f9450379dae79745e5ccd9a61474fe74a6c8ad2ee1ab7fd1c572dbb" name="acdb815a404f9450379dae79745e5ccd9a61474fe74a6c8ad2ee1ab7fd1c572dbb"></a>SPI_RESPONSE_ERR_DATA_INVALID&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="acdb815a404f9450379dae79745e5ccd9aa69c0c081c3ae5a2ca82d94c06f112dd" name="acdb815a404f9450379dae79745e5ccd9aa69c0c081c3ae5a2ca82d94c06f112dd"></a>SPI_RESPONSE_ERR_DATA_OUT_RANGE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="acdb815a404f9450379dae79745e5ccd9a354b001329a9015ee8fa4d11fe98e1fb" name="acdb815a404f9450379dae79745e5ccd9a354b001329a9015ee8fa4d11fe98e1fb"></a>SPI_RESPONSE_OK&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">Definición en la línea <a class="el" href="sys_control_8h_source.html#l00040">40</a> del archivo <a class="el" href="sys_control_8h_source.html">sysControl.h</a>.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones</h2>
+<a id="a50b899a34931236e1ec86c160983f167" name="a50b899a34931236e1ec86c160983f167"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50b899a34931236e1ec86c160983f167">&#9670;&#160;</a></span>SPI_communication()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SPI_communication </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>arg</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tarea que controla en arranque, parada y emergencia del sistema. </p>
+<p>Espera comandos a través de la cola system_event_queue para evaluar si enviar comandos de start, stop, emergencia, cambios de velocidad, etc. Hace indirectamente el polling de las mediciones del ADC para evaluar si está en estado de emergencia o no.</p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">arg</td><td>Sin uso </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="sys_control_8c_source.html#l00186">186</a> del archivo <a class="el" href="sys_control_8c_source.html">sysControl.c</a>.</p>
+<div class="dynheader">
+Gráfico de llamadas de esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="sys_control_8h_a50b899a34931236e1ec86c160983f167_cgraph.png" border="0" usemap="#asys_control_8h_a50b899a34931236e1ec86c160983f167_cgraph" loading="lazy" alt=""/></div>
+</div>
+<div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="sys_control_8h_a50b899a34931236e1ec86c160983f167_icgraph.png" border="0" usemap="#asys_control_8h_a50b899a34931236e1ec86c160983f167_icgraph" loading="lazy" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="ad98df654b2d69b2699482f667045022e" name="ad98df654b2d69b2699482f667045022e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad98df654b2d69b2699482f667045022e">&#9670;&#160;</a></span>SPI_Init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">esp_err_t SPI_Init </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Inicializa el módulo SPI del ESP32. </p>
+<p>Con figura los pines PIN_NUM_CS en el pin IO12, PIN_NUM_CLK en el pin IO14, PIN_NUM_MISO en el pin IO26 y PIN_NUM_MOSI en el pin IO25; además configura el clock del SPI en 1MHz y tendrá solo un comando para encolar</p>
+<dl class="section return"><dt>Devuelve</dt><dd><ul>
+<li>ESP_ERR_INVALID_ARG Si la configuración es inválida. La combinación de los parámetros puede resultar inválida.</li>
+<li>ESP_ERR_INVALID_STATE Si el host ya se encontraba en uso, si la fuente de clock es inviable o si el SPI no fue inicializado correctamente.</li>
+<li>ESP_ERR_NOT_FOUND if there is no available DMA channel</li>
+<li>ESP_ERR_NO_MEM Si no hay memoria suficiente para inicializar el módulo</li>
+<li>ESP_OK si la configuración fue exitosa </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="sys_control_8c_source.html#l00155">155</a> del archivo <a class="el" href="sys_control_8c_source.html">sysControl.c</a>.</p>
+<div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="sys_control_8h_ad98df654b2d69b2699482f667045022e_icgraph.png" border="0" usemap="#asys_control_8h_ad98df654b2d69b2699482f667045022e_icgraph" loading="lazy" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="aba4a84160e22ceea0cedd0ddcd454af4" name="aba4a84160e22ceea0cedd0ddcd454af4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba4a84160e22ceea0cedd0ddcd454af4">&#9670;&#160;</a></span>SystemEventPost()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">esp_err_t SystemEventPost </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_l_v_f_v__system_8h.html#ab7a290ebff8e2a3230e8085ee87d4796">systemSignal_e</a></td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Encola comandos en la cola system_event_queue. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">event</td><td>Evento que se desea encolar en el sistema</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd><ul>
+<li>pdTRUE Si el comando se posteó correctamente</li>
+<li>Cualquier otra respuesta implica que la cola está llena </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="sys_control_8c_source.html#l00346">346</a> del archivo <a class="el" href="sys_control_8c_source.html">sysControl.c</a>.</p>
+<div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="sys_control_8h_aba4a84160e22ceea0cedd0ddcd454af4_icgraph.png" border="0" usemap="#asys_control_8h_aba4a84160e22ceea0cedd0ddcd454af4_icgraph" loading="lazy" alt=""/></div>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_5c982d53a68cdbcd421152b4020263a9.html">main</a></li><li class="navelem"><a href="dir_4ebdb2553a3894a04487b5c1cfb0e048.html">system</a></li><li class="navelem"><a href="sys_control_8h.html">sysControl.h</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,291 @@
+\doxysection{Referencia del archivo C\+:/\+Users/\+User/\+LVFV\+\_\+\+ESP32/main/system/sys\+Control.h}
+\hypertarget{sys_control_8h}{}\label{sys_control_8h}\index{C:/Users/User/LVFV\_ESP32/main/system/sysControl.h@{C:/Users/User/LVFV\_ESP32/main/system/sysControl.h}}
+
+
+Declraraciones de funciones que controlan el sistema del STM32. Además se encontrarán los comandos y respuestas que admite el STM32.  
+
+
+{\ttfamily \#include "{}../\+LVFV\+\_\+system.\+h"{}}\newline
+Gráfico de dependencias incluidas en sys\+Control.\+h\+:
+% FIG 0
+Gráfico de los archivos que directa o indirectamente incluyen a este archivo\+:
+% FIG 1
+\doxysubsubsection*{Estructuras de datos}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structspi__cmd__item__t}{spi\+\_\+cmd\+\_\+item\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Estructura de datos que contiene un comando a enviar por SPI, un argumento que se desea enviar al STM32 y un dato que que pueda recibirse como respuesta en consecuencia. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumeraciones}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{sys_control_8h_abcc4e317bdfcd5f571d62f7ed92facc5}{SPI\+\_\+\+Request}} \{ \newline
+\mbox{\hyperlink{sys_control_8h_abcc4e317bdfcd5f571d62f7ed92facc5afb08ac5078702d238e336a813719e9ac}{SPI\+\_\+\+REQUEST\+\_\+\+START}} = 10
+, \mbox{\hyperlink{sys_control_8h_abcc4e317bdfcd5f571d62f7ed92facc5a4baff6e3f2b188e4176a5a462f9c89d5}{SPI\+\_\+\+REQUEST\+\_\+\+STOP}}
+, \mbox{\hyperlink{sys_control_8h_abcc4e317bdfcd5f571d62f7ed92facc5a7161c8e8f4f677d8f5537560bdb7f70e}{SPI\+\_\+\+REQUEST\+\_\+\+SET\+\_\+\+FREC}}
+, \mbox{\hyperlink{sys_control_8h_abcc4e317bdfcd5f571d62f7ed92facc5afefeeb17807a057814da8ca09c8a9179}{SPI\+\_\+\+REQUEST\+\_\+\+SET\+\_\+\+ACEL}}
+, \newline
+\mbox{\hyperlink{sys_control_8h_abcc4e317bdfcd5f571d62f7ed92facc5af17d7382d3bc959eb5de0c79bb5b740e}{SPI\+\_\+\+REQUEST\+\_\+\+SET\+\_\+\+DESACEL}}
+, \mbox{\hyperlink{sys_control_8h_abcc4e317bdfcd5f571d62f7ed92facc5aa37aff4a7f01b47a80578af9f81f077f}{SPI\+\_\+\+REQUEST\+\_\+\+SET\+\_\+\+DIR}}
+, \mbox{\hyperlink{sys_control_8h_abcc4e317bdfcd5f571d62f7ed92facc5a2885786ad2c90e237e562f56737d5a51}{SPI\+\_\+\+REQUEST\+\_\+\+GET\+\_\+\+FREC}}
+, \mbox{\hyperlink{sys_control_8h_abcc4e317bdfcd5f571d62f7ed92facc5a360ce739c6acb058bfeb3fa04f5ea4ea}{SPI\+\_\+\+REQUEST\+\_\+\+GET\+\_\+\+ACEL}}
+, \newline
+\mbox{\hyperlink{sys_control_8h_abcc4e317bdfcd5f571d62f7ed92facc5a25999f55d934be143ea601d3967ab5a3}{SPI\+\_\+\+REQUEST\+\_\+\+GET\+\_\+\+DESACEL}}
+, \mbox{\hyperlink{sys_control_8h_abcc4e317bdfcd5f571d62f7ed92facc5a928c0d0c241acbd8dda3e853931a1d5d}{SPI\+\_\+\+REQUEST\+\_\+\+GET\+\_\+\+DIR}}
+, \mbox{\hyperlink{sys_control_8h_abcc4e317bdfcd5f571d62f7ed92facc5a3b1235b2b1f4a2b76d6c9986e04d2c90}{SPI\+\_\+\+REQUEST\+\_\+\+IS\+\_\+\+STOP}}
+, \mbox{\hyperlink{sys_control_8h_abcc4e317bdfcd5f571d62f7ed92facc5a3e1e4b098113ed293e6cc38961d15105}{SPI\+\_\+\+REQUEST\+\_\+\+EMERGENCY}}
+, \newline
+\mbox{\hyperlink{sys_control_8h_abcc4e317bdfcd5f571d62f7ed92facc5ad00e47a3fa1e44b0879a19b021b4c8d8}{SPI\+\_\+\+REQUEST\+\_\+\+RESPONSE}} = 0x50
+ \}
+\begin{DoxyCompactList}\small\item\em Posibles comandos que puede enviar el STM32. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{sys_control_8h_acdb815a404f9450379dae79745e5ccd9}{SPI\+\_\+\+Response}} \{ \newline
+\mbox{\hyperlink{sys_control_8h_acdb815a404f9450379dae79745e5ccd9a5a270a88abe106fde26e3725dc54115e}{SPI\+\_\+\+RESPONSE\+\_\+\+ERR}} = 0x\+A0
+, \mbox{\hyperlink{sys_control_8h_acdb815a404f9450379dae79745e5ccd9a732ecbbd42a5e8809536040964c86427}{SPI\+\_\+\+RESPONSE\+\_\+\+ERR\+\_\+\+CMD\+\_\+\+UNKNOWN}}
+, \mbox{\hyperlink{sys_control_8h_acdb815a404f9450379dae79745e5ccd9aee0c8330799c2bab5168eb65d1c9f4ca}{SPI\+\_\+\+RESPONSE\+\_\+\+ERR\+\_\+\+NO\+\_\+\+COMMAND}}
+, \mbox{\hyperlink{sys_control_8h_acdb815a404f9450379dae79745e5ccd9a67277b7287dabc065ea3585cc2e6630a}{SPI\+\_\+\+RESPONSE\+\_\+\+ERR\+\_\+\+MOVING}}
+, \newline
+\mbox{\hyperlink{sys_control_8h_acdb815a404f9450379dae79745e5ccd9af85830305f68c29305f43e85ca1fcd2a}{SPI\+\_\+\+RESPONSE\+\_\+\+ERR\+\_\+\+NOT\+\_\+\+MOVING}}
+, \mbox{\hyperlink{sys_control_8h_acdb815a404f9450379dae79745e5ccd9aa007b919a29275b8c8b7ac19d74a1efd}{SPI\+\_\+\+RESPONSE\+\_\+\+ERR\+\_\+\+DATA\+\_\+\+MISSING}}
+, \mbox{\hyperlink{sys_control_8h_acdb815a404f9450379dae79745e5ccd9a61474fe74a6c8ad2ee1ab7fd1c572dbb}{SPI\+\_\+\+RESPONSE\+\_\+\+ERR\+\_\+\+DATA\+\_\+\+INVALID}}
+, \mbox{\hyperlink{sys_control_8h_acdb815a404f9450379dae79745e5ccd9aa69c0c081c3ae5a2ca82d94c06f112dd}{SPI\+\_\+\+RESPONSE\+\_\+\+ERR\+\_\+\+DATA\+\_\+\+OUT\+\_\+\+RANGE}}
+, \newline
+\mbox{\hyperlink{sys_control_8h_acdb815a404f9450379dae79745e5ccd9a354b001329a9015ee8fa4d11fe98e1fb}{SPI\+\_\+\+RESPONSE\+\_\+\+OK}} = 0x\+FF
+ \}
+\begin{DoxyCompactList}\small\item\em Posibles respuesta que puede enviar el STM32 en consecuencia por los request enviados. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+esp\+\_\+err\+\_\+t \mbox{\hyperlink{sys_control_8h_ad98df654b2d69b2699482f667045022e}{SPI\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Inicializa el módulo SPI del ESP32. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sys_control_8h_a50b899a34931236e1ec86c160983f167}{SPI\+\_\+communication}} (void \texorpdfstring{$\ast$}{*}arg)
+\begin{DoxyCompactList}\small\item\em Tarea que controla en arranque, parada y emergencia del sistema. \end{DoxyCompactList}\item 
+esp\+\_\+err\+\_\+t \mbox{\hyperlink{sys_control_8h_aba4a84160e22ceea0cedd0ddcd454af4}{System\+Event\+Post}} (\mbox{\hyperlink{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796}{system\+Signal\+\_\+e}} event)
+\begin{DoxyCompactList}\small\item\em Encola comandos en la cola system\+\_\+event\+\_\+queue. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Declraraciones de funciones que controlan el sistema del STM32. Además se encontrarán los comandos y respuestas que admite el STM32. 
+
+\begin{DoxyAuthor}{Autor}
+Andrenacci -\/ Carra 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Versión}
+2.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Fecha}
+2025-\/11-\/06 
+\end{DoxyDate}
+
+
+Definición en el archivo \mbox{\hyperlink{sys_control_8h_source}{sys\+Control.\+h}}.
+
+
+
+\label{doc-enum-members}
+\Hypertarget{sys_control_8h_doc-enum-members}
+\doxysubsection{Documentación de enumeraciones}
+\Hypertarget{sys_control_8h_abcc4e317bdfcd5f571d62f7ed92facc5}\index{sysControl.h@{sysControl.h}!SPI\_Request@{SPI\_Request}}
+\index{SPI\_Request@{SPI\_Request}!sysControl.h@{sysControl.h}}
+\doxysubsubsection{\texorpdfstring{SPI\_Request}{SPI\_Request}}
+{\footnotesize\ttfamily \label{sys_control_8h_abcc4e317bdfcd5f571d62f7ed92facc5} 
+enum \mbox{\hyperlink{sys_control_8h_abcc4e317bdfcd5f571d62f7ed92facc5}{SPI\+\_\+\+Request}}}
+
+
+
+Posibles comandos que puede enviar el STM32. 
+
+\begin{DoxyEnumFields}[2]{Valores de enumeraciones}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPI\_REQUEST\_START@{SPI\_REQUEST\_START}!sysControl.h@{sysControl.h}}\index{sysControl.h@{sysControl.h}!SPI\_REQUEST\_START@{SPI\_REQUEST\_START}}}\Hypertarget{sys_control_8h_abcc4e317bdfcd5f571d62f7ed92facc5afb08ac5078702d238e336a813719e9ac}\label{sys_control_8h_abcc4e317bdfcd5f571d62f7ed92facc5afb08ac5078702d238e336a813719e9ac} 
+SPI\+\_\+\+REQUEST\+\_\+\+START&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPI\_REQUEST\_STOP@{SPI\_REQUEST\_STOP}!sysControl.h@{sysControl.h}}\index{sysControl.h@{sysControl.h}!SPI\_REQUEST\_STOP@{SPI\_REQUEST\_STOP}}}\Hypertarget{sys_control_8h_abcc4e317bdfcd5f571d62f7ed92facc5a4baff6e3f2b188e4176a5a462f9c89d5}\label{sys_control_8h_abcc4e317bdfcd5f571d62f7ed92facc5a4baff6e3f2b188e4176a5a462f9c89d5} 
+SPI\+\_\+\+REQUEST\+\_\+\+STOP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPI\_REQUEST\_SET\_FREC@{SPI\_REQUEST\_SET\_FREC}!sysControl.h@{sysControl.h}}\index{sysControl.h@{sysControl.h}!SPI\_REQUEST\_SET\_FREC@{SPI\_REQUEST\_SET\_FREC}}}\Hypertarget{sys_control_8h_abcc4e317bdfcd5f571d62f7ed92facc5a7161c8e8f4f677d8f5537560bdb7f70e}\label{sys_control_8h_abcc4e317bdfcd5f571d62f7ed92facc5a7161c8e8f4f677d8f5537560bdb7f70e} 
+SPI\+\_\+\+REQUEST\+\_\+\+SET\+\_\+\+FREC&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPI\_REQUEST\_SET\_ACEL@{SPI\_REQUEST\_SET\_ACEL}!sysControl.h@{sysControl.h}}\index{sysControl.h@{sysControl.h}!SPI\_REQUEST\_SET\_ACEL@{SPI\_REQUEST\_SET\_ACEL}}}\Hypertarget{sys_control_8h_abcc4e317bdfcd5f571d62f7ed92facc5afefeeb17807a057814da8ca09c8a9179}\label{sys_control_8h_abcc4e317bdfcd5f571d62f7ed92facc5afefeeb17807a057814da8ca09c8a9179} 
+SPI\+\_\+\+REQUEST\+\_\+\+SET\+\_\+\+ACEL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPI\_REQUEST\_SET\_DESACEL@{SPI\_REQUEST\_SET\_DESACEL}!sysControl.h@{sysControl.h}}\index{sysControl.h@{sysControl.h}!SPI\_REQUEST\_SET\_DESACEL@{SPI\_REQUEST\_SET\_DESACEL}}}\Hypertarget{sys_control_8h_abcc4e317bdfcd5f571d62f7ed92facc5af17d7382d3bc959eb5de0c79bb5b740e}\label{sys_control_8h_abcc4e317bdfcd5f571d62f7ed92facc5af17d7382d3bc959eb5de0c79bb5b740e} 
+SPI\+\_\+\+REQUEST\+\_\+\+SET\+\_\+\+DESACEL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPI\_REQUEST\_SET\_DIR@{SPI\_REQUEST\_SET\_DIR}!sysControl.h@{sysControl.h}}\index{sysControl.h@{sysControl.h}!SPI\_REQUEST\_SET\_DIR@{SPI\_REQUEST\_SET\_DIR}}}\Hypertarget{sys_control_8h_abcc4e317bdfcd5f571d62f7ed92facc5aa37aff4a7f01b47a80578af9f81f077f}\label{sys_control_8h_abcc4e317bdfcd5f571d62f7ed92facc5aa37aff4a7f01b47a80578af9f81f077f} 
+SPI\+\_\+\+REQUEST\+\_\+\+SET\+\_\+\+DIR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPI\_REQUEST\_GET\_FREC@{SPI\_REQUEST\_GET\_FREC}!sysControl.h@{sysControl.h}}\index{sysControl.h@{sysControl.h}!SPI\_REQUEST\_GET\_FREC@{SPI\_REQUEST\_GET\_FREC}}}\Hypertarget{sys_control_8h_abcc4e317bdfcd5f571d62f7ed92facc5a2885786ad2c90e237e562f56737d5a51}\label{sys_control_8h_abcc4e317bdfcd5f571d62f7ed92facc5a2885786ad2c90e237e562f56737d5a51} 
+SPI\+\_\+\+REQUEST\+\_\+\+GET\+\_\+\+FREC&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPI\_REQUEST\_GET\_ACEL@{SPI\_REQUEST\_GET\_ACEL}!sysControl.h@{sysControl.h}}\index{sysControl.h@{sysControl.h}!SPI\_REQUEST\_GET\_ACEL@{SPI\_REQUEST\_GET\_ACEL}}}\Hypertarget{sys_control_8h_abcc4e317bdfcd5f571d62f7ed92facc5a360ce739c6acb058bfeb3fa04f5ea4ea}\label{sys_control_8h_abcc4e317bdfcd5f571d62f7ed92facc5a360ce739c6acb058bfeb3fa04f5ea4ea} 
+SPI\+\_\+\+REQUEST\+\_\+\+GET\+\_\+\+ACEL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPI\_REQUEST\_GET\_DESACEL@{SPI\_REQUEST\_GET\_DESACEL}!sysControl.h@{sysControl.h}}\index{sysControl.h@{sysControl.h}!SPI\_REQUEST\_GET\_DESACEL@{SPI\_REQUEST\_GET\_DESACEL}}}\Hypertarget{sys_control_8h_abcc4e317bdfcd5f571d62f7ed92facc5a25999f55d934be143ea601d3967ab5a3}\label{sys_control_8h_abcc4e317bdfcd5f571d62f7ed92facc5a25999f55d934be143ea601d3967ab5a3} 
+SPI\+\_\+\+REQUEST\+\_\+\+GET\+\_\+\+DESACEL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPI\_REQUEST\_GET\_DIR@{SPI\_REQUEST\_GET\_DIR}!sysControl.h@{sysControl.h}}\index{sysControl.h@{sysControl.h}!SPI\_REQUEST\_GET\_DIR@{SPI\_REQUEST\_GET\_DIR}}}\Hypertarget{sys_control_8h_abcc4e317bdfcd5f571d62f7ed92facc5a928c0d0c241acbd8dda3e853931a1d5d}\label{sys_control_8h_abcc4e317bdfcd5f571d62f7ed92facc5a928c0d0c241acbd8dda3e853931a1d5d} 
+SPI\+\_\+\+REQUEST\+\_\+\+GET\+\_\+\+DIR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPI\_REQUEST\_IS\_STOP@{SPI\_REQUEST\_IS\_STOP}!sysControl.h@{sysControl.h}}\index{sysControl.h@{sysControl.h}!SPI\_REQUEST\_IS\_STOP@{SPI\_REQUEST\_IS\_STOP}}}\Hypertarget{sys_control_8h_abcc4e317bdfcd5f571d62f7ed92facc5a3b1235b2b1f4a2b76d6c9986e04d2c90}\label{sys_control_8h_abcc4e317bdfcd5f571d62f7ed92facc5a3b1235b2b1f4a2b76d6c9986e04d2c90} 
+SPI\+\_\+\+REQUEST\+\_\+\+IS\+\_\+\+STOP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPI\_REQUEST\_EMERGENCY@{SPI\_REQUEST\_EMERGENCY}!sysControl.h@{sysControl.h}}\index{sysControl.h@{sysControl.h}!SPI\_REQUEST\_EMERGENCY@{SPI\_REQUEST\_EMERGENCY}}}\Hypertarget{sys_control_8h_abcc4e317bdfcd5f571d62f7ed92facc5a3e1e4b098113ed293e6cc38961d15105}\label{sys_control_8h_abcc4e317bdfcd5f571d62f7ed92facc5a3e1e4b098113ed293e6cc38961d15105} 
+SPI\+\_\+\+REQUEST\+\_\+\+EMERGENCY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPI\_REQUEST\_RESPONSE@{SPI\_REQUEST\_RESPONSE}!sysControl.h@{sysControl.h}}\index{sysControl.h@{sysControl.h}!SPI\_REQUEST\_RESPONSE@{SPI\_REQUEST\_RESPONSE}}}\Hypertarget{sys_control_8h_abcc4e317bdfcd5f571d62f7ed92facc5ad00e47a3fa1e44b0879a19b021b4c8d8}\label{sys_control_8h_abcc4e317bdfcd5f571d62f7ed92facc5ad00e47a3fa1e44b0879a19b021b4c8d8} 
+SPI\+\_\+\+REQUEST\+\_\+\+RESPONSE&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definición en la línea \mbox{\hyperlink{sys_control_8h_source_l00019}{19}} del archivo \mbox{\hyperlink{sys_control_8h_source}{sys\+Control.\+h}}.
+
+\Hypertarget{sys_control_8h_acdb815a404f9450379dae79745e5ccd9}\index{sysControl.h@{sysControl.h}!SPI\_Response@{SPI\_Response}}
+\index{SPI\_Response@{SPI\_Response}!sysControl.h@{sysControl.h}}
+\doxysubsubsection{\texorpdfstring{SPI\_Response}{SPI\_Response}}
+{\footnotesize\ttfamily \label{sys_control_8h_acdb815a404f9450379dae79745e5ccd9} 
+enum \mbox{\hyperlink{sys_control_8h_acdb815a404f9450379dae79745e5ccd9}{SPI\+\_\+\+Response}}}
+
+
+
+Posibles respuesta que puede enviar el STM32 en consecuencia por los request enviados. 
+
+\begin{DoxyEnumFields}[2]{Valores de enumeraciones}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPI\_RESPONSE\_ERR@{SPI\_RESPONSE\_ERR}!sysControl.h@{sysControl.h}}\index{sysControl.h@{sysControl.h}!SPI\_RESPONSE\_ERR@{SPI\_RESPONSE\_ERR}}}\Hypertarget{sys_control_8h_acdb815a404f9450379dae79745e5ccd9a5a270a88abe106fde26e3725dc54115e}\label{sys_control_8h_acdb815a404f9450379dae79745e5ccd9a5a270a88abe106fde26e3725dc54115e} 
+SPI\+\_\+\+RESPONSE\+\_\+\+ERR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPI\_RESPONSE\_ERR\_CMD\_UNKNOWN@{SPI\_RESPONSE\_ERR\_CMD\_UNKNOWN}!sysControl.h@{sysControl.h}}\index{sysControl.h@{sysControl.h}!SPI\_RESPONSE\_ERR\_CMD\_UNKNOWN@{SPI\_RESPONSE\_ERR\_CMD\_UNKNOWN}}}\Hypertarget{sys_control_8h_acdb815a404f9450379dae79745e5ccd9a732ecbbd42a5e8809536040964c86427}\label{sys_control_8h_acdb815a404f9450379dae79745e5ccd9a732ecbbd42a5e8809536040964c86427} 
+SPI\+\_\+\+RESPONSE\+\_\+\+ERR\+\_\+\+CMD\+\_\+\+UNKNOWN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPI\_RESPONSE\_ERR\_NO\_COMMAND@{SPI\_RESPONSE\_ERR\_NO\_COMMAND}!sysControl.h@{sysControl.h}}\index{sysControl.h@{sysControl.h}!SPI\_RESPONSE\_ERR\_NO\_COMMAND@{SPI\_RESPONSE\_ERR\_NO\_COMMAND}}}\Hypertarget{sys_control_8h_acdb815a404f9450379dae79745e5ccd9aee0c8330799c2bab5168eb65d1c9f4ca}\label{sys_control_8h_acdb815a404f9450379dae79745e5ccd9aee0c8330799c2bab5168eb65d1c9f4ca} 
+SPI\+\_\+\+RESPONSE\+\_\+\+ERR\+\_\+\+NO\+\_\+\+COMMAND&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPI\_RESPONSE\_ERR\_MOVING@{SPI\_RESPONSE\_ERR\_MOVING}!sysControl.h@{sysControl.h}}\index{sysControl.h@{sysControl.h}!SPI\_RESPONSE\_ERR\_MOVING@{SPI\_RESPONSE\_ERR\_MOVING}}}\Hypertarget{sys_control_8h_acdb815a404f9450379dae79745e5ccd9a67277b7287dabc065ea3585cc2e6630a}\label{sys_control_8h_acdb815a404f9450379dae79745e5ccd9a67277b7287dabc065ea3585cc2e6630a} 
+SPI\+\_\+\+RESPONSE\+\_\+\+ERR\+\_\+\+MOVING&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPI\_RESPONSE\_ERR\_NOT\_MOVING@{SPI\_RESPONSE\_ERR\_NOT\_MOVING}!sysControl.h@{sysControl.h}}\index{sysControl.h@{sysControl.h}!SPI\_RESPONSE\_ERR\_NOT\_MOVING@{SPI\_RESPONSE\_ERR\_NOT\_MOVING}}}\Hypertarget{sys_control_8h_acdb815a404f9450379dae79745e5ccd9af85830305f68c29305f43e85ca1fcd2a}\label{sys_control_8h_acdb815a404f9450379dae79745e5ccd9af85830305f68c29305f43e85ca1fcd2a} 
+SPI\+\_\+\+RESPONSE\+\_\+\+ERR\+\_\+\+NOT\+\_\+\+MOVING&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPI\_RESPONSE\_ERR\_DATA\_MISSING@{SPI\_RESPONSE\_ERR\_DATA\_MISSING}!sysControl.h@{sysControl.h}}\index{sysControl.h@{sysControl.h}!SPI\_RESPONSE\_ERR\_DATA\_MISSING@{SPI\_RESPONSE\_ERR\_DATA\_MISSING}}}\Hypertarget{sys_control_8h_acdb815a404f9450379dae79745e5ccd9aa007b919a29275b8c8b7ac19d74a1efd}\label{sys_control_8h_acdb815a404f9450379dae79745e5ccd9aa007b919a29275b8c8b7ac19d74a1efd} 
+SPI\+\_\+\+RESPONSE\+\_\+\+ERR\+\_\+\+DATA\+\_\+\+MISSING&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPI\_RESPONSE\_ERR\_DATA\_INVALID@{SPI\_RESPONSE\_ERR\_DATA\_INVALID}!sysControl.h@{sysControl.h}}\index{sysControl.h@{sysControl.h}!SPI\_RESPONSE\_ERR\_DATA\_INVALID@{SPI\_RESPONSE\_ERR\_DATA\_INVALID}}}\Hypertarget{sys_control_8h_acdb815a404f9450379dae79745e5ccd9a61474fe74a6c8ad2ee1ab7fd1c572dbb}\label{sys_control_8h_acdb815a404f9450379dae79745e5ccd9a61474fe74a6c8ad2ee1ab7fd1c572dbb} 
+SPI\+\_\+\+RESPONSE\+\_\+\+ERR\+\_\+\+DATA\+\_\+\+INVALID&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPI\_RESPONSE\_ERR\_DATA\_OUT\_RANGE@{SPI\_RESPONSE\_ERR\_DATA\_OUT\_RANGE}!sysControl.h@{sysControl.h}}\index{sysControl.h@{sysControl.h}!SPI\_RESPONSE\_ERR\_DATA\_OUT\_RANGE@{SPI\_RESPONSE\_ERR\_DATA\_OUT\_RANGE}}}\Hypertarget{sys_control_8h_acdb815a404f9450379dae79745e5ccd9aa69c0c081c3ae5a2ca82d94c06f112dd}\label{sys_control_8h_acdb815a404f9450379dae79745e5ccd9aa69c0c081c3ae5a2ca82d94c06f112dd} 
+SPI\+\_\+\+RESPONSE\+\_\+\+ERR\+\_\+\+DATA\+\_\+\+OUT\+\_\+\+RANGE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPI\_RESPONSE\_OK@{SPI\_RESPONSE\_OK}!sysControl.h@{sysControl.h}}\index{sysControl.h@{sysControl.h}!SPI\_RESPONSE\_OK@{SPI\_RESPONSE\_OK}}}\Hypertarget{sys_control_8h_acdb815a404f9450379dae79745e5ccd9a354b001329a9015ee8fa4d11fe98e1fb}\label{sys_control_8h_acdb815a404f9450379dae79745e5ccd9a354b001329a9015ee8fa4d11fe98e1fb} 
+SPI\+\_\+\+RESPONSE\+\_\+\+OK&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definición en la línea \mbox{\hyperlink{sys_control_8h_source_l00040}{40}} del archivo \mbox{\hyperlink{sys_control_8h_source}{sys\+Control.\+h}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{sys_control_8h_doc-func-members}
+\doxysubsection{Documentación de funciones}
+\Hypertarget{sys_control_8h_a50b899a34931236e1ec86c160983f167}\index{sysControl.h@{sysControl.h}!SPI\_communication@{SPI\_communication}}
+\index{SPI\_communication@{SPI\_communication}!sysControl.h@{sysControl.h}}
+\doxysubsubsection{\texorpdfstring{SPI\_communication()}{SPI\_communication()}}
+{\footnotesize\ttfamily \label{sys_control_8h_a50b899a34931236e1ec86c160983f167} 
+void SPI\+\_\+communication (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{arg}{}\end{DoxyParamCaption})}
+
+
+
+Tarea que controla en arranque, parada y emergencia del sistema. 
+
+Espera comandos a través de la cola system\+\_\+event\+\_\+queue para evaluar si enviar comandos de start, stop, emergencia, cambios de velocidad, etc. Hace indirectamente el polling de las mediciones del ADC para evaluar si está en estado de emergencia o no.
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\texttt{in,out}}  & {\em arg} & Sin uso \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea \mbox{\hyperlink{sys_control_8c_source_l00186}{186}} del archivo \mbox{\hyperlink{sys_control_8c_source}{sys\+Control.\+c}}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 2
+Gráfico de llamadas a esta función\+:
+% FIG 3
+\Hypertarget{sys_control_8h_ad98df654b2d69b2699482f667045022e}\index{sysControl.h@{sysControl.h}!SPI\_Init@{SPI\_Init}}
+\index{SPI\_Init@{SPI\_Init}!sysControl.h@{sysControl.h}}
+\doxysubsubsection{\texorpdfstring{SPI\_Init()}{SPI\_Init()}}
+{\footnotesize\ttfamily \label{sys_control_8h_ad98df654b2d69b2699482f667045022e} 
+esp\+\_\+err\+\_\+t SPI\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Inicializa el módulo SPI del ESP32. 
+
+Con figura los pines PIN\+\_\+\+NUM\+\_\+\+CS en el pin IO12, PIN\+\_\+\+NUM\+\_\+\+CLK en el pin IO14, PIN\+\_\+\+NUM\+\_\+\+MISO en el pin IO26 y PIN\+\_\+\+NUM\+\_\+\+MOSI en el pin IO25; además configura el clock del SPI en 1MHz y tendrá solo un comando para encolar
+
+\begin{DoxyReturn}{Devuelve}
+
+\begin{DoxyItemize}
+\item ESP\+\_\+\+ERR\+\_\+\+INVALID\+\_\+\+ARG Si la configuración es inválida. La combinación de los parámetros puede resultar inválida.
+\item ESP\+\_\+\+ERR\+\_\+\+INVALID\+\_\+\+STATE Si el host ya se encontraba en uso, si la fuente de clock es inviable o si el SPI no fue inicializado correctamente.
+\item ESP\+\_\+\+ERR\+\_\+\+NOT\+\_\+\+FOUND if there is no available DMA channel
+\item ESP\+\_\+\+ERR\+\_\+\+NO\+\_\+\+MEM Si no hay memoria suficiente para inicializar el módulo
+\item ESP\+\_\+\+OK si la configuración fue exitosa 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{sys_control_8c_source_l00155}{155}} del archivo \mbox{\hyperlink{sys_control_8c_source}{sys\+Control.\+c}}.
+
+Gráfico de llamadas a esta función\+:
+% FIG 4
+\Hypertarget{sys_control_8h_aba4a84160e22ceea0cedd0ddcd454af4}\index{sysControl.h@{sysControl.h}!SystemEventPost@{SystemEventPost}}
+\index{SystemEventPost@{SystemEventPost}!sysControl.h@{sysControl.h}}
+\doxysubsubsection{\texorpdfstring{SystemEventPost()}{SystemEventPost()}}
+{\footnotesize\ttfamily \label{sys_control_8h_aba4a84160e22ceea0cedd0ddcd454af4} 
+esp\+\_\+err\+\_\+t System\+Event\+Post (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796}{system\+Signal\+\_\+e}}}]{event}{}\end{DoxyParamCaption})}
+
+
+
+Encola comandos en la cola system\+\_\+event\+\_\+queue. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\texttt{in}}  & {\em event} & Evento que se desea encolar en el sistema\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+
+\begin{DoxyItemize}
+\item pd\+TRUE Si el comando se posteó correctamente
+\item Cualquier otra respuesta implica que la cola está llena 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{sys_control_8c_source_l00346}{346}} del archivo \mbox{\hyperlink{sys_control_8c_source}{sys\+Control.\+c}}.
+
+Gráfico de llamadas a esta función\+:
+% FIG 5

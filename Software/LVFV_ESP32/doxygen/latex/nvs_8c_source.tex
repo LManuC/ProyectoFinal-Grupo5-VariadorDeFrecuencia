@@ -1,0 +1,310 @@
+\doxysection{nvs.\+c}
+\hypertarget{nvs_8c_source}{}\label{nvs_8c_source}\index{C:/Users/User/LVFV\_ESP32/main/nvs/nvs.c@{C:/Users/User/LVFV\_ESP32/main/nvs/nvs.c}}
+\mbox{\hyperlink{nvs_8c}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}nvs\_flash.h"{}}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00010}00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{nvs_8h}{nvs.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00011}00011\ \textcolor{preprocessor}{\#include\ "{}esp\_log.h"{}}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00013}00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_l_v_f_v__system_8h}{../LVFV\_system.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00014}00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{nvs_8h}{./nvs.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00015}00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{sys_admin_8h}{../system/sysAdmin.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00017}\mbox{\hyperlink{nvs_8c_a1570185c0844c3086083ad4265495bd6}{00017}}\ \textcolor{preprocessor}{\#define\ save\_frequency(freq\_op)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ save\_16("{}freq\_freq"{},\ (freq\_op)\ )}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00018}\mbox{\hyperlink{nvs_8c_af67870d921ce25397422341b46942203}{00018}}\ \textcolor{preprocessor}{\#define\ save\_acceleration(freq\_acceleration)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ save\_16("{}freq\_acce"{},\ (freq\_acceleration)\ )}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00019}\mbox{\hyperlink{nvs_8c_ac113328abebdeeddfaf106f9cfe2db86}{00019}}\ \textcolor{preprocessor}{\#define\ save\_desacceleration(freq\_desacceleration)\ \ \ \ \ \ \ \ \ \ \ \ \ \ save\_16("{}freq\_desa"{},\ (freq\_desacceleration)\ )}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00020}\mbox{\hyperlink{nvs_8c_afe2e52760dbc3442a748897ed18b1206}{00020}}\ \textcolor{preprocessor}{\#define\ save\_input\_variable(freq\_input\_variable)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ save\_16("{}freq\_input"{},\ (freq\_input\_variable)\ )}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00021}\mbox{\hyperlink{nvs_8c_a46fb36a049ba19d30725c225747e5828}{00021}}\ \textcolor{preprocessor}{\#define\ save\_vbus\_min(vbus\_min)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ save\_16("{}vbus\_min"{},\ (vbus\_min)\ )}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00022}\mbox{\hyperlink{nvs_8c_a42158f367e878c412dd3f37dcf462a7c}{00022}}\ \textcolor{preprocessor}{\#define\ save\_ibus\_max(ibus\_max)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ save\_16("{}ibus\_max"{},\ (ibus\_max)\ )}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00023}\mbox{\hyperlink{nvs_8c_a44f6d322a8815d8fc43c876ab1338525}{00023}}\ \textcolor{preprocessor}{\#define\ save\_hour\_ini(hour\_ini)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ save\_16("{}hour\_ini"{},\ (hour\_ini)\ )}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00024}\mbox{\hyperlink{nvs_8c_a2d76e5325e6708b32161921216b6333a}{00024}}\ \textcolor{preprocessor}{\#define\ save\_min\_ini(min\_ini)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ save\_16("{}min\_ini"{},\ (min\_ini)\ )}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00025}\mbox{\hyperlink{nvs_8c_a80d8770c1573486c37edda353df8e3a2}{00025}}\ \textcolor{preprocessor}{\#define\ save\_hour\_fin(hour\_fin)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ save\_16("{}hour\_fin"{},\ (hour\_fin)\ )}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00026}\mbox{\hyperlink{nvs_8c_a748d697288c81149145d4a8f650b564b}{00026}}\ \textcolor{preprocessor}{\#define\ save\_min\_fin(min\_fin)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ save\_16("{}min\_fin"{},\ (min\_fin)\ )}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00028}\mbox{\hyperlink{nvs_8c_a1ddc1e86d2b0aa565c03c5fbcf1f4a0f}{00028}}\ \textcolor{preprocessor}{\#define\ load\_frequency(freq\_op)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ load\_16("{}freq\_freq"{},\ (freq\_op),\ 50\ )}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00029}\mbox{\hyperlink{nvs_8c_a0fa90eb3454471e28c2211cce3d26609}{00029}}\ \textcolor{preprocessor}{\#define\ load\_acceleration(freq\_acceleration)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ load\_16("{}freq\_acce"{},\ (freq\_acceleration),\ 5\ )}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00030}\mbox{\hyperlink{nvs_8c_a9f433adf6c44dd67fa9afb330cc5d0ad}{00030}}\ \textcolor{preprocessor}{\#define\ load\_desacceleration(freq\_desacceleration)\ \ \ \ \ \ \ \ \ \ \ \ \ \ load\_16("{}freq\_desa"{},\ (freq\_desacceleration),\ 3\ )}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00031}\mbox{\hyperlink{nvs_8c_a70fed175d7bed57778bcc59bebfe1363}{00031}}\ \textcolor{preprocessor}{\#define\ load\_input\_variable(freq\_input\_variable)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ load\_16("{}freq\_input"{},\ (freq\_input\_variable),\ 1\ )}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00032}\mbox{\hyperlink{nvs_8c_a7ce8874cac459174ced4242a1ade89d8}{00032}}\ \textcolor{preprocessor}{\#define\ load\_vbus\_min(vbus\_min)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ load\_16("{}vbus\_min"{},\ (vbus\_min),\ 310\ )}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00033}\mbox{\hyperlink{nvs_8c_a4fcf54808b8c3867360514d0404b2ba5}{00033}}\ \textcolor{preprocessor}{\#define\ load\_ibus\_max(ibus\_max)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ load\_16("{}ibus\_max"{},\ (ibus\_max),\ 2000\ )}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00034}\mbox{\hyperlink{nvs_8c_a35dae4c3d55de2d3eb0fcd1a96923002}{00034}}\ \textcolor{preprocessor}{\#define\ load\_hour\_ini(hour\_ini)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ load\_16("{}hour\_ini"{},\ (hour\_ini),\ 20\ )}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00035}\mbox{\hyperlink{nvs_8c_a85a7874c786b4e91038561cb0a03a30b}{00035}}\ \textcolor{preprocessor}{\#define\ load\_min\_ini(min\_ini)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ load\_16("{}min\_ini"{},\ (min\_ini),\ 30\ )}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00036}\mbox{\hyperlink{nvs_8c_aeaa91810b27562dc975d4d28e5b07c43}{00036}}\ \textcolor{preprocessor}{\#define\ load\_hour\_fin(hour\_fin)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ load\_16("{}hour\_fin"{},\ (hour\_fin),\ 20\ )}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00037}\mbox{\hyperlink{nvs_8c_a7e5a969c7f67044cf69e916d99a25774}{00037}}\ \textcolor{preprocessor}{\#define\ load\_min\_fin(min\_fin)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ load\_16("{}min\_fin"{},\ (min\_fin),\ 35\ )}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00039}\mbox{\hyperlink{nvs_8c_a5a85b9c772bbeb480b209a3e6ea92b4c}{00039}}\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{adc_8c_a5a85b9c772bbeb480b209a3e6ea92b4c}{TAG}}\ =\ \textcolor{stringliteral}{"{}NVS"{}};}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00041}00041\ \textcolor{comment}{//\ /**}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00042}00042\ \textcolor{comment}{//\ \ *\ @fn\ static\ esp\_err\_t\ save\_32\ (const\ char\ *var\_tag,\ int32\_t\ value);}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00043}00043\ \textcolor{comment}{//\ \ *}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00044}00044\ \textcolor{comment}{//\ \ *\ @brief\ Accede\ a\ la\ memoria\ NVS\ para\ guardar\ un\ dato\ de\ 32\ bits\ en\ memoria\ no\ volatil.}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00045}00045\ \textcolor{comment}{//\ \ *}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00046}00046\ \textcolor{comment}{//\ \ *\ @details\ Abre\ la\ memoria\ NVS\ con\ el\ namespace\ "{}storage"{}\ y\ guarda\ la\ variable\ cuyo\ namespace\ es\ @p\ var\_tag\ para\ guardarla\ en\ @p\ value.}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00047}00047\ \textcolor{comment}{//\ \ *}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00048}00048\ \textcolor{comment}{//\ \ *\ @param[in]\ var\_tag}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00049}00049\ \textcolor{comment}{//\ \ *\ \ \ \ \ \ Nombre\ del\ namespace\ donde\ se\ almacenará\ la\ variable\ que\ se\ está\ intentando\ guardar.\ Es\ un\ string.}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00050}00050\ \textcolor{comment}{//\ \ *}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00051}00051\ \textcolor{comment}{//\ \ *\ @param[out]\ value}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00052}00052\ \textcolor{comment}{//\ \ *\ \ \ \ \ \ Puntero\ donde\ se\ guardará\ el\ dato\ que\ se\ desea\ guardar\ de\ la\ memoria.}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00053}00053\ \textcolor{comment}{//\ \ *}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00054}00054\ \textcolor{comment}{//\ \ *\ @retval\ }}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00055}00055\ \textcolor{comment}{//\ \ *\ \ \ \ \ \ -\/\ ESP\_OK:\ Si\ la\ escritura\ de\ la\ variable\ fue\ exitosa}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00056}00056\ \textcolor{comment}{//\ \ *\ \ \ \ \ \ -\/\ ESP\_FAIL:\ si\ hay\ un\ interno\ error;\ generalmente\ ocurre\ cuando\ la\ memoria\ tiene\ una\ oartición\ corrupta.}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00057}00057\ \textcolor{comment}{//\ \ *\ \ \ \ \ \ -\/\ ESP\_ERR\_NVS\_NOT\_INITIALIZED:\ si\ la\ memoria\ no\ fue\ inicializada.}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00058}00058\ \textcolor{comment}{//\ \ *\ \ \ \ \ \ -\/\ ESP\_ERR\_NVS\_PART\_NOT\_FOUND:\ si\ la\ partición\ con\ la\ etiqueta\ "{}nvs"{}\ no\ se\ encuentra.}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00059}00059\ \textcolor{comment}{//\ \ *\ \ \ \ \ \ -\/\ ESP\_ERR\_NVS\_NOT\_FOUND:\ id\ namespace\ doesn't\ exist\ yet\ and\ mode\ is\ NVS\_READONLY.}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00060}00060\ \textcolor{comment}{//\ \ *\ \ \ \ \ \ -\/\ ESP\_ERR\_NVS\_INVALID\_NAME:\ si\ el\ nombre\ del\ namespace\ no\ cumple\ con\ las\ restricciones.}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00061}00061\ \textcolor{comment}{//\ \ *\ \ \ \ \ \ -\/\ ESP\_ERR\_NO\_MEM:\ en\ caso\ que\ la\ memoria\ no\ puda\ ser\ guardada\ por\ la\ estructura\ interna.}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00062}00062\ \textcolor{comment}{//\ \ *\ \ \ \ \ \ -\/\ ESP\_ERR\_NVS\_NOT\_ENOUGH\_SPACE:\ Si\ no\ hay\ espacia\ para\ une\ nueva\ entrad\ o\ si\ hay\ demasiados\ namespaces\ diferentes\ (max\ 254).}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00063}00063\ \textcolor{comment}{//\ \ *\ \ \ \ \ \ -\/\ ESP\_ERR\_NOT\_ALLOWED:\ Si\ la\ partición\ es\ solo\ lectura\ y\ se\ abrió\ en\ modo\ NVS\_READWRITE.}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00064}00064\ \textcolor{comment}{//\ \ *\ \ \ \ \ \ -\/\ ESP\_ERR\_INVALID\_ARG:\ Si\ el\ handler\ de\ la\ NVS\ es\ NULL.}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00065}00065\ \textcolor{comment}{//\ \ */}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00066}00066\ \textcolor{comment}{//\ static\ esp\_err\_t\ save\_32\ (const\ char\ *var\_tag,\ int32\_t\ value)\ \{}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00067}00067\ \textcolor{comment}{//\ \ \ \ \ nvs\_handle\_t\ h;}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00068}00068\ \textcolor{comment}{//\ \ \ \ \ esp\_err\_t\ err;}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00069}00069\ \textcolor{comment}{//\ \ \ \ \ err\ =\ nvs\_open("{}storage"{},\ NVS\_READWRITE,\ \&h);}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00070}00070\ \textcolor{comment}{//\ \ \ \ \ if\ (err\ !=\ ESP\_OK)\ \{}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00071}00071\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ return\ err;}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00072}00072\ \textcolor{comment}{//\ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00073}00073\ \textcolor{comment}{//\ \ \ \ \ ESP\_LOGI(TAG,\ "{}Guardando\ \%s\ =\ \%ld"{},\ var\_tag,\ (long)value);}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00074}00074\ \textcolor{comment}{//\ \ \ \ \ err\ =\ nvs\_set\_i32(h,\ var\_tag,\ value);\ \ \ \ \ //\ <-\/-\/\ i32\ correcto}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00075}00075\ \textcolor{comment}{//\ \ \ \ \ if\ (err\ ==\ ESP\_OK)\ err\ =\ nvs\_commit(h);}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00076}00076\ \textcolor{comment}{//\ \ \ \ \ nvs\_close(h);}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00077}00077\ \textcolor{comment}{//\ \ \ \ \ return\ err;}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00078}00078\ \textcolor{comment}{//\ \}}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00105}\mbox{\hyperlink{nvs_8c_a05e32ed837064f05bc00ec4e5e67e2e4}{00105}}\ \textcolor{keyword}{static}\ esp\_err\_t\ \mbox{\hyperlink{nvs_8c_a05e32ed837064f05bc00ec4e5e67e2e4}{save\_16}}\ (\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *var\_tag,\ int16\_t\ value)\ \{}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00106}00106\ \ \ \ \ nvs\_handle\_t\ h;}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00107}00107\ \ \ \ \ esp\_err\_t\ err;}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00109}00109\ \ \ \ \ err\ =\ nvs\_open(\textcolor{stringliteral}{"{}storage"{}},\ NVS\_READWRITE,\ \&h);}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00110}00110\ \ \ \ \ \textcolor{keywordflow}{if}\ (err\ !=\ ESP\_OK)\ \{}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00111}00111\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ err;}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00112}00112\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00113}00113\ }
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00114}00114\ \ \ \ \ ESP\_LOGI(\mbox{\hyperlink{adc_8c_a5a85b9c772bbeb480b209a3e6ea92b4c}{TAG}},\ \textcolor{stringliteral}{"{}Guardando\ \%s\ =\ \%d"{}},\ var\_tag,\ (\textcolor{keywordtype}{int})value);}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00115}00115\ \ \ \ \ err\ =\ nvs\_set\_i16(h,\ var\_tag,\ value);}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00116}00116\ \ \ \ \ \textcolor{keywordflow}{if}\ (err\ ==\ ESP\_OK)\ err\ =\ nvs\_commit(h);}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00118}00118\ \ \ \ \ nvs\_close(h);}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00119}00119\ \ \ \ \ \textcolor{keywordflow}{return}\ err;}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00120}00120\ \}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00121}00121\ }
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00122}00122\ \textcolor{comment}{//\ /**}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00123}00123\ \textcolor{comment}{//\ \ *\ @fn\ static\ esp\_err\_t\ load\_32(const\ char\ *var\_tag,\ int32\_t\ *value,\ int32\_t\ defval);}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00124}00124\ \textcolor{comment}{//\ \ *}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00125}00125\ \textcolor{comment}{//\ \ *\ @brief\ Accede\ a\ la\ memoria\ NVS\ para\ obtener\ un\ dato\ de\ 32\ bits\ guardado\ en\ memoria\ no\ volatil.}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00126}00126\ \textcolor{comment}{//\ \ *}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00127}00127\ \textcolor{comment}{//\ \ *\ @details\ Abre\ la\ memoria\ NVS\ con\ el\ namespace\ "{}storage"{}\ y\ intenta\ leer\ la\ variable\ cuyo\ namespace\ es\ @p\ var\_tag\ para\ guardarla\ en\ @p\ value.\ En\ caso\ de\ error,\ guarda\ @p\ defval\ como\ valor\ default\ en\ @p\ value.}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00128}00128\ \textcolor{comment}{//\ \ *}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00129}00129\ \textcolor{comment}{//\ \ *\ @param[in]\ var\_tag}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00130}00130\ \textcolor{comment}{//\ \ *\ \ \ \ \ \ Nombre\ del\ namespace\ donde\ se\ almacena\ la\ variable\ que\ se\ está\ intentando\ leer.\ Es\ un\ string.}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00131}00131\ \textcolor{comment}{//\ \ *}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00132}00132\ \textcolor{comment}{//\ \ *\ @param[out]\ value}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00133}00133\ \textcolor{comment}{//\ \ *\ \ \ \ \ \ Puntero\ donde\ se\ guardará\ el\ dato\ que\ se\ desea\ leer\ de\ la\ memoria.}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00134}00134\ \textcolor{comment}{//\ \ *}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00135}00135\ \textcolor{comment}{//\ \ *\ @param[in]\ defval}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00136}00136\ \textcolor{comment}{//\ \ *\ \ \ \ \ \ Valor\ default\ que\ se\ utiliza\ en\ caso\ que\ nunca\ se\ haya\ creado\ la\ variable\ o\ si\ existe\ algún\ problema\ al\ abrir\ la\ NVS.}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00137}00137\ \textcolor{comment}{//\ \ *}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00138}00138\ \textcolor{comment}{//\ \ *\ @retval\ }}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00139}00139\ \textcolor{comment}{//\ \ *\ \ \ \ \ \ -\/\ ESP\_OK:\ Si\ la\ lectura\ de\ la\ variable\ fue\ exitosa}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00140}00140\ \textcolor{comment}{//\ \ *\ \ \ \ \ \ -\/\ ESP\_FAIL:\ si\ hay\ un\ interno\ error;\ generalmente\ ocurre\ cuando\ la\ memoria\ tiene\ una\ oartición\ corrupta.}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00141}00141\ \textcolor{comment}{//\ \ *\ \ \ \ \ \ -\/\ ESP\_ERR\_NVS\_NOT\_INITIALIZED:\ si\ la\ memoria\ no\ fue\ inicializada.}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00142}00142\ \textcolor{comment}{//\ \ *\ \ \ \ \ \ -\/\ ESP\_ERR\_NVS\_PART\_NOT\_FOUND:\ si\ la\ partición\ con\ la\ etiqueta\ "{}nvs"{}\ no\ se\ encuentra.}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00143}00143\ \textcolor{comment}{//\ \ *\ \ \ \ \ \ -\/\ ESP\_ERR\_NVS\_NOT\_FOUND:\ id\ namespace\ doesn't\ exist\ yet\ and\ mode\ is\ NVS\_READONLY.}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00144}00144\ \textcolor{comment}{//\ \ *\ \ \ \ \ \ -\/\ ESP\_ERR\_NVS\_INVALID\_NAME:\ si\ el\ nombre\ del\ namespace\ no\ cumple\ con\ las\ restricciones.}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00145}00145\ \textcolor{comment}{//\ \ *\ \ \ \ \ \ -\/\ ESP\_ERR\_NO\_MEM:\ en\ caso\ que\ la\ memoria\ no\ puda\ ser\ guardada\ por\ la\ estructura\ interna.}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00146}00146\ \textcolor{comment}{//\ \ *\ \ \ \ \ \ -\/\ ESP\_ERR\_NVS\_NOT\_ENOUGH\_SPACE:\ Si\ no\ hay\ espacia\ para\ une\ nueva\ entrad\ o\ si\ hay\ demasiados\ namespaces\ diferentes\ (max\ 254).}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00147}00147\ \textcolor{comment}{//\ \ *\ \ \ \ \ \ -\/\ ESP\_ERR\_NOT\_ALLOWED:\ Si\ la\ partición\ es\ solo\ lectura\ y\ se\ abrió\ en\ modo\ NVS\_READWRITE.}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00148}00148\ \textcolor{comment}{//\ \ *\ \ \ \ \ \ -\/\ ESP\_ERR\_INVALID\_ARG:\ Si\ el\ handler\ de\ la\ NVS\ es\ NULL.}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00149}00149\ \textcolor{comment}{//\ \ */}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00150}00150\ \textcolor{comment}{//\ static\ esp\_err\_t\ load\_32(const\ char\ *var\_tag,\ int32\_t\ *value,\ int32\_t\ defval)\ \{}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00151}00151\ \textcolor{comment}{//\ \ \ \ \ nvs\_handle\_t\ h;}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00152}00152\ \textcolor{comment}{//\ \ \ \ \ esp\_err\_t\ err;}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00153}00153\ \textcolor{comment}{//\ \ \ \ \ if\ (\ var\_tag\ ==\ NULL\ )\ \{}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00154}00154\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ return\ ESP\_FAIL;}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00155}00155\ \textcolor{comment}{//\ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00156}00156\ \textcolor{comment}{//\ \ \ \ \ err\ =\ nvs\_open("{}storage"{},\ NVS\_READWRITE,\ \&h);}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00157}00157\ \textcolor{comment}{//\ \ \ \ \ if\ (err\ !=\ ESP\_OK)\ \{}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00158}00158\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ return\ err;}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00159}00159\ \textcolor{comment}{//\ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00160}00160\ \textcolor{comment}{//\ \ \ \ \ if\ (err\ !=\ ESP\_OK)\ \{\ }}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00161}00161\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ *value\ =\ defval;}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00162}00162\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ return\ err;}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00163}00163\ \textcolor{comment}{//\ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00164}00164\ \textcolor{comment}{//\ \ \ \ \ err\ =\ nvs\_get\_i32(h,\ var\_tag,\ value);}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00165}00165\ \textcolor{comment}{//\ \ \ \ \ if\ (err\ ==\ ESP\_ERR\_NVS\_NOT\_FOUND)\ \{}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00166}00166\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ *value\ =\ defval;}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00167}00167\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ ESP\_LOGW(TAG,\ "{}Clave\ \%s\ no\ encontrada,\ usando\ default=\%ld"{},\ var\_tag,\ (long)defval);}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00168}00168\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ err\ =\ ESP\_OK;}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00169}00169\ \textcolor{comment}{//\ \ \ \ \ \}\ else\ if\ (err\ ==\ ESP\_OK)\ \{}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00170}00170\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ ESP\_LOGI(TAG,\ "{}Cargado\ \%s\ =\ \%ld"{},\ var\_tag,\ (long)*value);\ \ \ //\ <-\/-\/\ *value}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00171}00171\ \textcolor{comment}{//\ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00172}00172\ \textcolor{comment}{//\ \ \ \ \ nvs\_close(h);}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00173}00173\ \textcolor{comment}{//\ \ \ \ \ return\ err;}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00174}00174\ \textcolor{comment}{//\ \}}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00175}00175\ }
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00204}\mbox{\hyperlink{nvs_8c_aa3660d5ae265546ff8a232ae0c14c663}{00204}}\ \textcolor{keyword}{static}\ esp\_err\_t\ \mbox{\hyperlink{nvs_8c_aa3660d5ae265546ff8a232ae0c14c663}{load\_16}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *var\_tag,\ int16\_t\ *value,\ int16\_t\ defval)\ \{}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00205}00205\ \ \ \ \ nvs\_handle\_t\ h;}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00206}00206\ }
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00207}00207\ \ \ \ \ esp\_err\_t\ err;}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00208}00208\ }
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00209}00209\ \ \ \ \ \textcolor{keywordflow}{if}\ (\ var\_tag\ ==\ NULL\ )\ \{}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00210}00210\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ESP\_FAIL;}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00211}00211\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00212}00212\ }
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00213}00213\ \ \ \ \ err\ =\ nvs\_open(\textcolor{stringliteral}{"{}storage"{}},\ NVS\_READWRITE,\ \&h);}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00214}00214\ }
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00215}00215\ \ \ \ \ \textcolor{keywordflow}{if}\ (err\ !=\ ESP\_OK)\ \{}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00216}00216\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ err;}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00217}00217\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00218}00218\ }
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00219}00219\ \ \ \ \ \textcolor{keywordflow}{if}\ (err\ !=\ ESP\_OK)\ \{\ }
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00220}00220\ \ \ \ \ \ \ \ \ *value\ =\ defval;}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00221}00221\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ err;}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00222}00222\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00223}00223\ }
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00224}00224\ \ \ \ \ err\ =\ nvs\_get\_i16(h,\ var\_tag,\ value);}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00225}00225\ \ \ \ \ \textcolor{keywordflow}{if}\ (err\ ==\ ESP\_ERR\_NVS\_NOT\_FOUND)\ \{}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00226}00226\ \ \ \ \ \ \ \ \ *value\ =\ defval;}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00227}00227\ \ \ \ \ \ \ \ \ ESP\_LOGW(\mbox{\hyperlink{adc_8c_a5a85b9c772bbeb480b209a3e6ea92b4c}{TAG}},\ \textcolor{stringliteral}{"{}Clave\ \%s\ no\ encontrada,\ usando\ default=\%d"{}},\ var\_tag,\ (\textcolor{keywordtype}{int})defval);}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00228}00228\ \ \ \ \ \ \ \ \ err\ =\ ESP\_OK;}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00229}00229\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (err\ ==\ ESP\_OK)\ \{}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00230}00230\ \ \ \ \ \ \ \ \ ESP\_LOGI(\mbox{\hyperlink{adc_8c_a5a85b9c772bbeb480b209a3e6ea92b4c}{TAG}},\ \textcolor{stringliteral}{"{}Cargado\ \%s\ =\ \%d"{}},\ var\_tag,\ (\textcolor{keywordtype}{int})*value);\ \ \ \ \ \textcolor{comment}{//\ <-\/-\/\ *value}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00231}00231\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00232}00232\ }
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00233}00233\ \ \ \ \ nvs\_close(h);}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00234}00234\ \ \ \ \ \textcolor{keywordflow}{return}\ err;}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00235}00235\ \}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00236}00236\ }
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00237}\mbox{\hyperlink{nvs_8c_a3da2b2c6e021ca7b976168dc8308b254}{00237}}\ esp\_err\_t\ \mbox{\hyperlink{nvs_8c_a3da2b2c6e021ca7b976168dc8308b254}{nvs\_init\_once}}(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00238}00238\ \ \ \ \ esp\_err\_t\ err\ =\ nvs\_flash\_init();}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00239}00239\ \ \ \ \ \textcolor{keywordflow}{if}\ (err\ ==\ ESP\_ERR\_NVS\_NO\_FREE\_PAGES\ ||\ err\ ==\ ESP\_ERR\_NVS\_NEW\_VERSION\_FOUND)\ \{}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00240}00240\ \ \ \ \ \ \ \ \ ESP\_ERROR\_CHECK(nvs\_flash\_erase());}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00241}00241\ \ \ \ \ \ \ \ \ err\ =\ nvs\_flash\_init();}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00242}00242\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00243}00243\ \ \ \ \ \textcolor{keywordflow}{return}\ err;}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00244}00244\ \}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00245}00245\ }
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00246}\mbox{\hyperlink{nvs_8c_a478715e615bb92a10014227cf9d89248}{00246}}\ esp\_err\_t\ \mbox{\hyperlink{nvs_8c_a478715e615bb92a10014227cf9d89248}{load\_variables}}(\mbox{\hyperlink{structfrequency__settings__t}{frequency\_settings\_t}}\ *frequency\_settings,\ \mbox{\hyperlink{structtime__settings__t}{time\_settings\_t}}\ *time\_settings,\ \mbox{\hyperlink{structseccurity__settings__t}{seccurity\_settings\_t}}\ *seccurity\_settings)\ \{}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00247}00247\ \ \ \ \ esp\_err\_t\ retval;}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00248}00248\ \ \ \ \ retval\ =\ \mbox{\hyperlink{nvs_8c_a1ddc1e86d2b0aa565c03c5fbcf1f4a0f}{load\_frequency}}(\ (int16\_t*)\ \&(frequency\_settings-\/>\mbox{\hyperlink{structfrequency__settings__t_a926d6368e65c23d77658fd6fd2c08af9}{freq\_regime}})\ );}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00249}00249\ \ \ \ \ \textcolor{keywordflow}{if}\ (\ retval\ !=\ ESP\_OK\ )\{\ }
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00250}00250\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ retval;}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00251}00251\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00252}00252\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00253}00253\ }
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00254}00254\ \ \ \ \ retval\ =\ \mbox{\hyperlink{nvs_8c_a0fa90eb3454471e28c2211cce3d26609}{load\_acceleration}}(\ (int16\_t*)\ \&(frequency\_settings-\/>\mbox{\hyperlink{structfrequency__settings__t_a44e11b804280aecf19f944765588d26f}{acceleration}})\ );}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00255}00255\ \ \ \ \ \textcolor{keywordflow}{if}\ (\ retval\ !=\ ESP\_OK\ )\{\ }
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00256}00256\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ retval;}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00257}00257\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00258}00258\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00259}00259\ }
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00260}00260\ \ \ \ \ retval\ =\ \mbox{\hyperlink{nvs_8c_a9f433adf6c44dd67fa9afb330cc5d0ad}{load\_desacceleration}}(\ (int16\_t*)\ \&(frequency\_settings-\/>\mbox{\hyperlink{structfrequency__settings__t_a8d753b012e5099230395ba6421d5d35b}{desacceleration}})\ );}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00261}00261\ \ \ \ \ \textcolor{keywordflow}{if}\ (\ retval\ !=\ ESP\_OK\ )\{\ }
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00262}00262\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ retval;}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00263}00263\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00264}00264\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00265}00265\ }
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00266}00266\ \ \ \ \ retval\ =\ \mbox{\hyperlink{nvs_8c_a70fed175d7bed57778bcc59bebfe1363}{load\_input\_variable}}(\ (int16\_t*)\ \&(frequency\_settings-\/>\mbox{\hyperlink{structfrequency__settings__t_adbc9bfdd34cf261290d0c07e20756985}{input\_variable}})\ );}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00267}00267\ \ \ \ \ \textcolor{keywordflow}{if}\ (\ retval\ !=\ ESP\_OK\ )\{\ }
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00268}00268\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ retval;}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00269}00269\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00270}00270\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00271}00271\ }
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00272}00272\ \ \ \ \ retval\ =\ \mbox{\hyperlink{nvs_8c_a7ce8874cac459174ced4242a1ade89d8}{load\_vbus\_min}}(\ (int16\_t*)\ \&(seccurity\_settings-\/>\mbox{\hyperlink{structseccurity__settings__t_a58033d9c9f897d33e98d9686d7cf78b5}{vbus\_min}})\ );}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00273}00273\ \ \ \ \ \textcolor{keywordflow}{if}\ (\ retval\ !=\ ESP\_OK\ )\{\ }
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00274}00274\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ retval;}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00275}00275\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00276}00276\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00277}00277\ }
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00278}00278\ \ \ \ \ retval\ =\ \mbox{\hyperlink{nvs_8c_a4fcf54808b8c3867360514d0404b2ba5}{load\_ibus\_max}}(\ (int16\_t*)\ \&(seccurity\_settings-\/>\mbox{\hyperlink{structseccurity__settings__t_a69f28b5a90c9b33472fb9b8e7d530cb1}{ibus\_max}})\ );}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00279}00279\ \ \ \ \ \textcolor{keywordflow}{if}\ (\ retval\ !=\ ESP\_OK\ )\{\ }
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00280}00280\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ retval;}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00281}00281\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00282}00282\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00283}00283\ }
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00284}00284\ \ \ \ \ retval\ =\ \mbox{\hyperlink{nvs_8c_a35dae4c3d55de2d3eb0fcd1a96923002}{load\_hour\_ini}}(\ (int16\_t*)\ \&(time\_settings-\/>\mbox{\hyperlink{structtime__settings__t_a3dce91f42d172e8fccc4647d8f2a3aa8}{time\_start}}-\/>tm\_hour)\ );}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00285}00285\ \ \ \ \ \textcolor{keywordflow}{if}\ (\ retval\ !=\ ESP\_OK\ )\{\ }
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00286}00286\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ retval;}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00287}00287\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00288}00288\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00289}00289\ }
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00290}00290\ \ \ \ \ retval\ =\ \mbox{\hyperlink{nvs_8c_a85a7874c786b4e91038561cb0a03a30b}{load\_min\_ini}}(\ (int16\_t*)\ \&(time\_settings-\/>\mbox{\hyperlink{structtime__settings__t_a3dce91f42d172e8fccc4647d8f2a3aa8}{time\_start}}-\/>tm\_min)\ );}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00291}00291\ \ \ \ \ \textcolor{keywordflow}{if}\ (\ retval\ !=\ ESP\_OK\ )\{\ }
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00292}00292\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ retval;}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00293}00293\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00294}00294\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00295}00295\ }
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00296}00296\ \ \ \ \ retval\ =\ \mbox{\hyperlink{nvs_8c_aeaa91810b27562dc975d4d28e5b07c43}{load\_hour\_fin}}(\ (int16\_t*)\ \&(time\_settings-\/>\mbox{\hyperlink{structtime__settings__t_a6549e561c2961a7bb3d1d8dd13c10e3f}{time\_stop}}-\/>tm\_hour)\ );}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00297}00297\ \ \ \ \ \textcolor{keywordflow}{if}\ (\ retval\ !=\ ESP\_OK\ )\{\ }
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00298}00298\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ retval;}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00299}00299\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00300}00300\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00301}00301\ }
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00302}00302\ \ \ \ \ retval\ =\ \mbox{\hyperlink{nvs_8c_a7e5a969c7f67044cf69e916d99a25774}{load\_min\_fin}}(\ (int16\_t*)\ \&(time\_settings-\/>\mbox{\hyperlink{structtime__settings__t_a6549e561c2961a7bb3d1d8dd13c10e3f}{time\_stop}}-\/>tm\_min)\ );}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00303}00303\ \ \ \ \ \textcolor{keywordflow}{if}\ (\ retval\ !=\ ESP\_OK\ )\{\ }
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00304}00304\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ retval;}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00305}00305\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00306}00306\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00307}00307\ \ \ \ \ \textcolor{keywordflow}{return}\ retval;}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00308}00308\ \}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00309}00309\ }
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00310}\mbox{\hyperlink{nvs_8c_ab46a7fb052466c1648288b24eced88f2}{00310}}\ esp\_err\_t\ \mbox{\hyperlink{nvs_8c_ab46a7fb052466c1648288b24eced88f2}{save\_variables}}(\mbox{\hyperlink{structfrequency__settings__t}{frequency\_settings\_t}}\ *frequency\_settings,\ \mbox{\hyperlink{structtime__settings__t}{time\_settings\_t}}\ *time\_settings,\ \mbox{\hyperlink{structseccurity__settings__t}{seccurity\_settings\_t}}\ *seccurity\_settings)\ \{}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00311}00311\ \ \ \ \ esp\_err\_t\ retval;}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00312}00312\ \ \ \ \ retval\ =\ \mbox{\hyperlink{nvs_8c_a1570185c0844c3086083ad4265495bd6}{save\_frequency}}(\ (int16\_t)\ frequency\_settings-\/>\mbox{\hyperlink{structfrequency__settings__t_a926d6368e65c23d77658fd6fd2c08af9}{freq\_regime}});}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00313}00313\ \ \ \ \ \textcolor{keywordflow}{if}\ (\ retval\ !=\ ESP\_OK\ )\{\ }
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00314}00314\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ retval;}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00315}00315\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00316}00316\ }
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00317}00317\ \ \ \ \ retval\ =\ \mbox{\hyperlink{nvs_8c_af67870d921ce25397422341b46942203}{save\_acceleration}}(\ (int16\_t)\ frequency\_settings-\/>\mbox{\hyperlink{structfrequency__settings__t_a44e11b804280aecf19f944765588d26f}{acceleration}});}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00318}00318\ \ \ \ \ \textcolor{keywordflow}{if}\ (\ retval\ !=\ ESP\_OK\ )\{\ }
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00319}00319\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ retval;}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00320}00320\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00321}00321\ }
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00322}00322\ \ \ \ \ retval\ =\ \mbox{\hyperlink{nvs_8c_ac113328abebdeeddfaf106f9cfe2db86}{save\_desacceleration}}(\ (int16\_t)\ frequency\_settings-\/>\mbox{\hyperlink{structfrequency__settings__t_a8d753b012e5099230395ba6421d5d35b}{desacceleration}});}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00323}00323\ \ \ \ \ \textcolor{keywordflow}{if}\ (\ retval\ !=\ ESP\_OK\ )\{\ }
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00324}00324\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ retval;}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00325}00325\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00326}00326\ }
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00327}00327\ \ \ \ \ retval\ =\ \mbox{\hyperlink{nvs_8c_afe2e52760dbc3442a748897ed18b1206}{save\_input\_variable}}(\ (int16\_t)\ frequency\_settings-\/>\mbox{\hyperlink{structfrequency__settings__t_adbc9bfdd34cf261290d0c07e20756985}{input\_variable}});}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00328}00328\ \ \ \ \ \textcolor{keywordflow}{if}\ (\ retval\ !=\ ESP\_OK\ )\{\ }
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00329}00329\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ retval;}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00330}00330\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00331}00331\ }
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00332}00332\ \ \ \ \ retval\ =\ \mbox{\hyperlink{nvs_8c_a46fb36a049ba19d30725c225747e5828}{save\_vbus\_min}}(\ (int16\_t)\ seccurity\_settings-\/>\mbox{\hyperlink{structseccurity__settings__t_a58033d9c9f897d33e98d9686d7cf78b5}{vbus\_min}});}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00333}00333\ \ \ \ \ \textcolor{keywordflow}{if}\ (\ retval\ !=\ ESP\_OK\ )\{\ }
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00334}00334\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ retval;}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00335}00335\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00336}00336\ }
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00337}00337\ \ \ \ \ retval\ =\ \mbox{\hyperlink{nvs_8c_a42158f367e878c412dd3f37dcf462a7c}{save\_ibus\_max}}(\ (int16\_t)\ seccurity\_settings-\/>\mbox{\hyperlink{structseccurity__settings__t_a69f28b5a90c9b33472fb9b8e7d530cb1}{ibus\_max}});}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00338}00338\ \ \ \ \ \textcolor{keywordflow}{if}\ (\ retval\ !=\ ESP\_OK\ )\{\ }
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00339}00339\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ retval;}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00340}00340\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00341}00341\ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_a5f1c91f368c1994714cc10c041120367}{set\_seccurity\_settings}}(\ seccurity\_settings\ );}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00342}00342\ }
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00343}00343\ \ \ \ \ retval\ =\ \mbox{\hyperlink{nvs_8c_a44f6d322a8815d8fc43c876ab1338525}{save\_hour\_ini}}(\ (int16\_t)\ time\_settings-\/>\mbox{\hyperlink{structtime__settings__t_a3dce91f42d172e8fccc4647d8f2a3aa8}{time\_start}}-\/>tm\_hour);}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00344}00344\ \ \ \ \ \textcolor{keywordflow}{if}\ (\ retval\ !=\ ESP\_OK\ )\{\ }
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00345}00345\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ retval;}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00346}00346\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00347}00347\ }
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00348}00348\ \ \ \ \ retval\ =\ \mbox{\hyperlink{nvs_8c_a2d76e5325e6708b32161921216b6333a}{save\_min\_ini}}(\ (int16\_t)\ time\_settings-\/>\mbox{\hyperlink{structtime__settings__t_a3dce91f42d172e8fccc4647d8f2a3aa8}{time\_start}}-\/>tm\_min);}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00349}00349\ \ \ \ \ \textcolor{keywordflow}{if}\ (\ retval\ !=\ ESP\_OK\ )\{\ }
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00350}00350\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ retval;}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00351}00351\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00352}00352\ }
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00353}00353\ \ \ \ \ retval\ =\ \mbox{\hyperlink{nvs_8c_a80d8770c1573486c37edda353df8e3a2}{save\_hour\_fin}}(\ (int16\_t)\ time\_settings-\/>\mbox{\hyperlink{structtime__settings__t_a6549e561c2961a7bb3d1d8dd13c10e3f}{time\_stop}}-\/>tm\_hour);}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00354}00354\ \ \ \ \ \textcolor{keywordflow}{if}\ (\ retval\ !=\ ESP\_OK\ )\{\ }
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00355}00355\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ retval;}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00356}00356\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00357}00357\ }
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00358}00358\ \ \ \ \ retval\ =\ \mbox{\hyperlink{nvs_8c_a748d697288c81149145d4a8f650b564b}{save\_min\_fin}}(\ (int16\_t)\ time\_settings-\/>\mbox{\hyperlink{structtime__settings__t_a6549e561c2961a7bb3d1d8dd13c10e3f}{time\_stop}}-\/>tm\_min);}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00359}00359\ \ \ \ \ \textcolor{keywordflow}{if}\ (\ retval\ !=\ ESP\_OK\ )\{\ }
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00360}00360\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ retval;}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00361}00361\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00362}00362\ }
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00363}00363\ \ \ \ \ \textcolor{keywordflow}{return}\ retval;}
+\DoxyCodeLine{\Hypertarget{nvs_8c_source_l00364}00364\ \}}
+
+\end{DoxyCode}

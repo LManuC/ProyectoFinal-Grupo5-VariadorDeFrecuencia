@@ -1,0 +1,434 @@
+\doxysection{Referencia del archivo C\+:/\+Users/\+User/\+LVFV\+\_\+\+ESP32/main/\+LVFV\+\_\+system.h}
+\hypertarget{_l_v_f_v__system_8h}{}\label{_l_v_f_v__system_8h}\index{C:/Users/User/LVFV\_ESP32/main/LVFV\_system.h@{C:/Users/User/LVFV\_ESP32/main/LVFV\_system.h}}
+
+
+Declaraciones de estructuras, variables, definiciones y estados generales del sistema utilizados en varios de los archivos.  
+
+
+{\ttfamily \#include $<$inttypes.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+Gráfico de dependencias incluidas en LVFV\+\_\+system.\+h\+:
+% FIG 0
+Gráfico de los archivos que directa o indirectamente incluyen a este archivo\+:
+% FIG 1
+\doxysubsubsection*{Estructuras de datos}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structfrequency__settings__t}{frequency\+\_\+settings\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structtime__settings__t}{time\+\_\+settings\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structseccurity__settings__t}{seccurity\+\_\+settings\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structsystem__status__t}{system\+\_\+status\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Estructura con las variables necesarias para establecer las condiciones de trabajo del motor. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structfrequency__settings___s_h1106__t}{frequency\+\_\+settings\+\_\+\+SH1106\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structtime__settings___s_h1106__t}{time\+\_\+settings\+\_\+\+SH1106\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structseccurity__settings___s_h1106__t}{seccurity\+\_\+settings\+\_\+\+SH1106\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_l_v_f_v__system_8h_a7232d1212ac2ef189a99b00d2a73f8b9}{SH1106\+\_\+\+SIZE\+\_\+1}}~0
+\item 
+\#define \mbox{\hyperlink{_l_v_f_v__system_8h_ad5d076e03ff12ef3f71967552e329489}{SH1106\+\_\+\+SIZE\+\_\+2}}~1
+\end{DoxyCompactItemize}
+\doxysubsubsection*{typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef enum \mbox{\hyperlink{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791}{system\+\_\+status\+\_\+e}} \mbox{\hyperlink{_l_v_f_v__system_8h_a59dd0e53b1918c22a681503427e5b1be}{system\+\_\+status\+\_\+e}}
+\item 
+typedef enum \mbox{\hyperlink{_l_v_f_v__system_8h_afe617d6ade6b2289b5efe09a74bb4609}{sh1106\+\_\+variable\+\_\+lines\+\_\+e}} \mbox{\hyperlink{_l_v_f_v__system_8h_ad8e9d59d760bb3f2294db36d12ff4d03}{sh1106\+\_\+variable\+\_\+lines\+\_\+e}}
+\item 
+typedef struct frequency\+\_\+settings\+\_\+t \mbox{\hyperlink{_l_v_f_v__system_8h_a11d605c8e601c10e12bb930a8cfccf66}{frequency\+\_\+settings\+\_\+t}}
+\item 
+typedef struct time\+\_\+settings\+\_\+t \mbox{\hyperlink{_l_v_f_v__system_8h_a260ae581f410f5fe85eeb1df6acd13df}{time\+\_\+settings\+\_\+t}}
+\item 
+typedef struct seccurity\+\_\+settings\+\_\+t \mbox{\hyperlink{_l_v_f_v__system_8h_a46d8fbc2d3cdf032c5836bd1af361588}{seccurity\+\_\+settings\+\_\+t}}
+\item 
+typedef struct system\+\_\+status\+\_\+t \mbox{\hyperlink{_l_v_f_v__system_8h_ad75b239708efd5dbf4be4383e32d84f8}{system\+\_\+status\+\_\+t}}
+\item 
+typedef struct frequency\+\_\+settings\+\_\+\+SH1106\+\_\+t \mbox{\hyperlink{_l_v_f_v__system_8h_a9b9173ed9b22fe140d2d5ede23faf8f5}{frequency\+\_\+settings\+\_\+\+SH1106\+\_\+t}}
+\item 
+typedef struct time\+\_\+settings\+\_\+\+SH1106\+\_\+t \mbox{\hyperlink{_l_v_f_v__system_8h_a26e8477744b5133926c8cb044893da7b}{time\+\_\+settings\+\_\+\+SH1106\+\_\+t}}
+\item 
+typedef struct seccurity\+\_\+settings\+\_\+\+SH1106\+\_\+t \mbox{\hyperlink{_l_v_f_v__system_8h_a4115d2da9b42a05d80068e0b15ef5f5d}{seccurity\+\_\+settings\+\_\+\+SH1106\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumeraciones}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796}{system\+Signal\+\_\+e}} \{ \newline
+\mbox{\hyperlink{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796ab964e5038b062d4b6d1287996db4ddd4}{BUTTON\+\_\+\+MENU}} = 1
+, \mbox{\hyperlink{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796a3534e510a800f1a3975a255756f0246d}{BUTTON\+\_\+\+OK}}
+, \mbox{\hyperlink{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796a80bbae5d9dece7dc5b0d0a45f9390770}{BUTTON\+\_\+\+BACK}}
+, \mbox{\hyperlink{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796a37666936297216dce293b0aa31c474b8}{BUTTON\+\_\+\+UP}}
+, \newline
+\mbox{\hyperlink{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796a0c7746cfbcac16484b2266e6f51e5e0b}{BUTTON\+\_\+\+DOWN}}
+, \mbox{\hyperlink{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796a55dc0d53615e28ee8af66827bee48e4e}{BUTTON\+\_\+\+LEFT}}
+, \mbox{\hyperlink{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796a13046edd6d64a0de5821b5ff4c7581ce}{BUTTON\+\_\+\+RIGHT}}
+, \mbox{\hyperlink{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796a8dcc4bb9d4e2b215128f0e14faab9d48}{BUTTON\+\_\+\+SAVE}}
+, \newline
+\mbox{\hyperlink{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796a763a5af56f6336bb097fc295c10224c6}{EMERGENCI\+\_\+\+STOP\+\_\+\+PRESSED}}
+, \mbox{\hyperlink{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796a8ecc5c208d515907194017a50654a5f0}{EMERGENCI\+\_\+\+STOP\+\_\+\+RELEASED}}
+, \mbox{\hyperlink{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796a63785524fddc6173ea49aacebd1ba9b4}{START\+\_\+\+PRESSED}}
+, \mbox{\hyperlink{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796a3ceda522fe82f4612779cbe9ffea6ddd}{START\+\_\+\+RELEASED}}
+, \newline
+\mbox{\hyperlink{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796aba2430dee359622ce93e0bc30200dbb4}{TERMO\+\_\+\+SW\+\_\+\+PRESSED}}
+, \mbox{\hyperlink{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796abcb0b2c8962fd29cc040541a0098d610}{TERMO\+\_\+\+SW\+\_\+\+RELEASED}}
+, \mbox{\hyperlink{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796aa9aca1a320269de9561c234df472939c}{STOP\+\_\+\+PRESSED}}
+, \mbox{\hyperlink{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796a5c721f64225ace40ee5401ce7bf66af1}{STOP\+\_\+\+RELEASED}}
+, \newline
+\mbox{\hyperlink{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796a358a2b2b7d5d25917484d0604b8b8c61}{SPEED\+\_\+\+SELECTOR\+\_\+0}}
+, \mbox{\hyperlink{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796ae43bf9bce9d9d974d8c49591073f07f3}{SPEED\+\_\+\+SELECTOR\+\_\+1}}
+, \mbox{\hyperlink{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796a0bbea2c20296f454237438bb42f9a60a}{SPEED\+\_\+\+SELECTOR\+\_\+2}}
+, \mbox{\hyperlink{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796abd5d9529779c1898ec0e751b73baaa11}{SPEED\+\_\+\+SELECTOR\+\_\+3}}
+, \newline
+\mbox{\hyperlink{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796a16fbe5797dd7a2ba4232942b933fbc28}{SPEED\+\_\+\+SELECTOR\+\_\+4}}
+, \mbox{\hyperlink{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796a4b6f37253b2a4bc26776c0b0ec42b497}{SPEED\+\_\+\+SELECTOR\+\_\+5}}
+, \mbox{\hyperlink{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796a83e86c5ce7c84431fc2ebd24178d2d55}{SPEED\+\_\+\+SELECTOR\+\_\+6}}
+, \mbox{\hyperlink{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796a8ef3a2e510ee1546eaa292f1cb4f48a9}{SPEED\+\_\+\+SELECTOR\+\_\+7}}
+, \newline
+\mbox{\hyperlink{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796abbea50e710109e7e6692d445362c8b48}{SPEED\+\_\+\+SELECTOR\+\_\+8}}
+, \mbox{\hyperlink{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796a68941af0ed0d68bc31c09e87a8c5490d}{SPEED\+\_\+\+SELECTOR\+\_\+9}}
+, \mbox{\hyperlink{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796a28442d6913cbeabc9ed6fe1e20a255bf}{SECURITY\+\_\+\+EXCEDED}}
+, \mbox{\hyperlink{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796af31dc398d7d8cbf4a834c81d7dfa0e82}{SECURITY\+\_\+\+OK}}
+ \}
+\begin{DoxyCompactList}\small\item\em Variable dedicada a la identificación del tipo de señal que es recibida por las entradas digitales y analógicas del sistema para que se tome una desición a nivel de sistema. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791}{system\+\_\+status\+\_\+e}} \{ \newline
+\mbox{\hyperlink{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791a20cc395940efb44d047c63108d2ef837}{SYSTEM\+\_\+\+IDLE}}
+, \mbox{\hyperlink{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791a355058bb815d40f78a343c756d58c47f}{SYSTEM\+\_\+\+ACCLE\+\_\+\+DESACCEL}}
+, \mbox{\hyperlink{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791af08242ba685ecc48c255df8932379618}{SYSTEM\+\_\+\+REGIME}}
+, \mbox{\hyperlink{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791a800775137620f33c4ba7b7810a94e365}{SYSTEM\+\_\+\+BREAKING}}
+, \newline
+\mbox{\hyperlink{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791abf715611d16f62350c373d1c4aa17547}{SYSTEM\+\_\+\+EMERGENCY}}
+, \mbox{\hyperlink{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791a51d3220cff10b80b0d524652e825bf5c}{SYSTEM\+\_\+\+EMERGENCY\+\_\+\+OK}}
+ \}
+\begin{DoxyCompactList}\small\item\em Posibles estados general que puede tomar el sistema. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{_l_v_f_v__system_8h_afe617d6ade6b2289b5efe09a74bb4609}{sh1106\+\_\+variable\+\_\+lines\+\_\+e}} \{ \newline
+\mbox{\hyperlink{_l_v_f_v__system_8h_afe617d6ade6b2289b5efe09a74bb4609aa4500e61db092c2e1719b5d68b047ec3}{first}} = VARIABLE\+\_\+\+FIRST
+, \mbox{\hyperlink{_l_v_f_v__system_8h_afe617d6ade6b2289b5efe09a74bb4609aed5e1b554d8a8c57ad81b1e7d6278cc2}{second}} = VARIABLE\+\_\+\+SECOND
+, \mbox{\hyperlink{_l_v_f_v__system_8h_afe617d6ade6b2289b5efe09a74bb4609a084d514734ca9531c812b1d49f5695b8}{third}} = VARIABLE\+\_\+\+THIRD
+, \mbox{\hyperlink{_l_v_f_v__system_8h_afe617d6ade6b2289b5efe09a74bb4609a2fa414b1321ed60700ca25cb0b285038}{fourth}} = VARIABLE\+\_\+\+FOURTH
+, \newline
+\mbox{\hyperlink{_l_v_f_v__system_8h_afe617d6ade6b2289b5efe09a74bb4609a4ead4f814c0f187705ee29aa88188af5}{fifth}} = VARIABLE\+\_\+\+FIFTH
+, \mbox{\hyperlink{_l_v_f_v__system_8h_afe617d6ade6b2289b5efe09a74bb4609af50a69e45252411508fbcfcd4b50c471}{sixth}} = VARIABLE\+\_\+\+SIXTH
+, \mbox{\hyperlink{_l_v_f_v__system_8h_afe617d6ade6b2289b5efe09a74bb4609aefdb468b3bc7f82ad7c7dae101feacc6}{seventh}} = VARIABLE\+\_\+\+SEVENTH
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Declaraciones de estructuras, variables, definiciones y estados generales del sistema utilizados en varios de los archivos. 
+
+\begin{DoxyAuthor}{Autor}
+Andrenacci -\/ Carra 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Versión}
+2.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Fecha}
+2025-\/11-\/06 
+\end{DoxyDate}
+
+
+Definición en el archivo \mbox{\hyperlink{_l_v_f_v__system_8h_source}{LVFV\+\_\+system.\+h}}.
+
+
+
+\label{doc-define-members}
+\Hypertarget{_l_v_f_v__system_8h_doc-define-members}
+\doxysubsection{Documentación de «define»}
+\Hypertarget{_l_v_f_v__system_8h_a7232d1212ac2ef189a99b00d2a73f8b9}\index{LVFV\_system.h@{LVFV\_system.h}!SH1106\_SIZE\_1@{SH1106\_SIZE\_1}}
+\index{SH1106\_SIZE\_1@{SH1106\_SIZE\_1}!LVFV\_system.h@{LVFV\_system.h}}
+\doxysubsubsection{\texorpdfstring{SH1106\_SIZE\_1}{SH1106\_SIZE\_1}}
+{\footnotesize\ttfamily \label{_l_v_f_v__system_8h_a7232d1212ac2ef189a99b00d2a73f8b9} 
+\#define SH1106\+\_\+\+SIZE\+\_\+1~0}
+
+
+
+Definición en la línea \mbox{\hyperlink{_l_v_f_v__system_8h_source_l00110}{110}} del archivo \mbox{\hyperlink{_l_v_f_v__system_8h_source}{LVFV\+\_\+system.\+h}}.
+
+\Hypertarget{_l_v_f_v__system_8h_ad5d076e03ff12ef3f71967552e329489}\index{LVFV\_system.h@{LVFV\_system.h}!SH1106\_SIZE\_2@{SH1106\_SIZE\_2}}
+\index{SH1106\_SIZE\_2@{SH1106\_SIZE\_2}!LVFV\_system.h@{LVFV\_system.h}}
+\doxysubsubsection{\texorpdfstring{SH1106\_SIZE\_2}{SH1106\_SIZE\_2}}
+{\footnotesize\ttfamily \label{_l_v_f_v__system_8h_ad5d076e03ff12ef3f71967552e329489} 
+\#define SH1106\+\_\+\+SIZE\+\_\+2~1}
+
+
+
+Definición en la línea \mbox{\hyperlink{_l_v_f_v__system_8h_source_l00111}{111}} del archivo \mbox{\hyperlink{_l_v_f_v__system_8h_source}{LVFV\+\_\+system.\+h}}.
+
+
+
+\label{doc-typedef-members}
+\Hypertarget{_l_v_f_v__system_8h_doc-typedef-members}
+\doxysubsection{Documentación de «typedef»}
+\Hypertarget{_l_v_f_v__system_8h_a9b9173ed9b22fe140d2d5ede23faf8f5}\index{LVFV\_system.h@{LVFV\_system.h}!frequency\_settings\_SH1106\_t@{frequency\_settings\_SH1106\_t}}
+\index{frequency\_settings\_SH1106\_t@{frequency\_settings\_SH1106\_t}!LVFV\_system.h@{LVFV\_system.h}}
+\doxysubsubsection{\texorpdfstring{frequency\_settings\_SH1106\_t}{frequency\_settings\_SH1106\_t}}
+{\footnotesize\ttfamily \label{_l_v_f_v__system_8h_a9b9173ed9b22fe140d2d5ede23faf8f5} 
+typedef struct frequency\+\_\+settings\+\_\+\+SH1106\+\_\+t frequency\+\_\+settings\+\_\+\+SH1106\+\_\+t}
+
+\Hypertarget{_l_v_f_v__system_8h_a11d605c8e601c10e12bb930a8cfccf66}\index{LVFV\_system.h@{LVFV\_system.h}!frequency\_settings\_t@{frequency\_settings\_t}}
+\index{frequency\_settings\_t@{frequency\_settings\_t}!LVFV\_system.h@{LVFV\_system.h}}
+\doxysubsubsection{\texorpdfstring{frequency\_settings\_t}{frequency\_settings\_t}}
+{\footnotesize\ttfamily \label{_l_v_f_v__system_8h_a11d605c8e601c10e12bb930a8cfccf66} 
+typedef struct frequency\+\_\+settings\+\_\+t frequency\+\_\+settings\+\_\+t}
+
+\Hypertarget{_l_v_f_v__system_8h_a4115d2da9b42a05d80068e0b15ef5f5d}\index{LVFV\_system.h@{LVFV\_system.h}!seccurity\_settings\_SH1106\_t@{seccurity\_settings\_SH1106\_t}}
+\index{seccurity\_settings\_SH1106\_t@{seccurity\_settings\_SH1106\_t}!LVFV\_system.h@{LVFV\_system.h}}
+\doxysubsubsection{\texorpdfstring{seccurity\_settings\_SH1106\_t}{seccurity\_settings\_SH1106\_t}}
+{\footnotesize\ttfamily \label{_l_v_f_v__system_8h_a4115d2da9b42a05d80068e0b15ef5f5d} 
+typedef struct seccurity\+\_\+settings\+\_\+\+SH1106\+\_\+t seccurity\+\_\+settings\+\_\+\+SH1106\+\_\+t}
+
+\Hypertarget{_l_v_f_v__system_8h_a46d8fbc2d3cdf032c5836bd1af361588}\index{LVFV\_system.h@{LVFV\_system.h}!seccurity\_settings\_t@{seccurity\_settings\_t}}
+\index{seccurity\_settings\_t@{seccurity\_settings\_t}!LVFV\_system.h@{LVFV\_system.h}}
+\doxysubsubsection{\texorpdfstring{seccurity\_settings\_t}{seccurity\_settings\_t}}
+{\footnotesize\ttfamily \label{_l_v_f_v__system_8h_a46d8fbc2d3cdf032c5836bd1af361588} 
+typedef struct seccurity\+\_\+settings\+\_\+t seccurity\+\_\+settings\+\_\+t}
+
+\Hypertarget{_l_v_f_v__system_8h_ad8e9d59d760bb3f2294db36d12ff4d03}\index{LVFV\_system.h@{LVFV\_system.h}!sh1106\_variable\_lines\_e@{sh1106\_variable\_lines\_e}}
+\index{sh1106\_variable\_lines\_e@{sh1106\_variable\_lines\_e}!LVFV\_system.h@{LVFV\_system.h}}
+\doxysubsubsection{\texorpdfstring{sh1106\_variable\_lines\_e}{sh1106\_variable\_lines\_e}}
+{\footnotesize\ttfamily \label{_l_v_f_v__system_8h_ad8e9d59d760bb3f2294db36d12ff4d03} 
+typedef enum \mbox{\hyperlink{_l_v_f_v__system_8h_afe617d6ade6b2289b5efe09a74bb4609}{sh1106\+\_\+variable\+\_\+lines\+\_\+e}} \mbox{\hyperlink{_l_v_f_v__system_8h_afe617d6ade6b2289b5efe09a74bb4609}{sh1106\+\_\+variable\+\_\+lines\+\_\+e}}}
+
+\Hypertarget{_l_v_f_v__system_8h_a59dd0e53b1918c22a681503427e5b1be}\index{LVFV\_system.h@{LVFV\_system.h}!system\_status\_e@{system\_status\_e}}
+\index{system\_status\_e@{system\_status\_e}!LVFV\_system.h@{LVFV\_system.h}}
+\doxysubsubsection{\texorpdfstring{system\_status\_e}{system\_status\_e}}
+{\footnotesize\ttfamily \label{_l_v_f_v__system_8h_a59dd0e53b1918c22a681503427e5b1be} 
+typedef enum \mbox{\hyperlink{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791}{system\+\_\+status\+\_\+e}} \mbox{\hyperlink{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791}{system\+\_\+status\+\_\+e}}}
+
+\Hypertarget{_l_v_f_v__system_8h_ad75b239708efd5dbf4be4383e32d84f8}\index{LVFV\_system.h@{LVFV\_system.h}!system\_status\_t@{system\_status\_t}}
+\index{system\_status\_t@{system\_status\_t}!LVFV\_system.h@{LVFV\_system.h}}
+\doxysubsubsection{\texorpdfstring{system\_status\_t}{system\_status\_t}}
+{\footnotesize\ttfamily \label{_l_v_f_v__system_8h_ad75b239708efd5dbf4be4383e32d84f8} 
+typedef struct system\+\_\+status\+\_\+t system\+\_\+status\+\_\+t}
+
+\Hypertarget{_l_v_f_v__system_8h_a26e8477744b5133926c8cb044893da7b}\index{LVFV\_system.h@{LVFV\_system.h}!time\_settings\_SH1106\_t@{time\_settings\_SH1106\_t}}
+\index{time\_settings\_SH1106\_t@{time\_settings\_SH1106\_t}!LVFV\_system.h@{LVFV\_system.h}}
+\doxysubsubsection{\texorpdfstring{time\_settings\_SH1106\_t}{time\_settings\_SH1106\_t}}
+{\footnotesize\ttfamily \label{_l_v_f_v__system_8h_a26e8477744b5133926c8cb044893da7b} 
+typedef struct time\+\_\+settings\+\_\+\+SH1106\+\_\+t time\+\_\+settings\+\_\+\+SH1106\+\_\+t}
+
+\Hypertarget{_l_v_f_v__system_8h_a260ae581f410f5fe85eeb1df6acd13df}\index{LVFV\_system.h@{LVFV\_system.h}!time\_settings\_t@{time\_settings\_t}}
+\index{time\_settings\_t@{time\_settings\_t}!LVFV\_system.h@{LVFV\_system.h}}
+\doxysubsubsection{\texorpdfstring{time\_settings\_t}{time\_settings\_t}}
+{\footnotesize\ttfamily \label{_l_v_f_v__system_8h_a260ae581f410f5fe85eeb1df6acd13df} 
+typedef struct time\+\_\+settings\+\_\+t time\+\_\+settings\+\_\+t}
+
+
+
+\label{doc-enum-members}
+\Hypertarget{_l_v_f_v__system_8h_doc-enum-members}
+\doxysubsection{Documentación de enumeraciones}
+\Hypertarget{_l_v_f_v__system_8h_afe617d6ade6b2289b5efe09a74bb4609}\index{LVFV\_system.h@{LVFV\_system.h}!sh1106\_variable\_lines\_e@{sh1106\_variable\_lines\_e}}
+\index{sh1106\_variable\_lines\_e@{sh1106\_variable\_lines\_e}!LVFV\_system.h@{LVFV\_system.h}}
+\doxysubsubsection{\texorpdfstring{sh1106\_variable\_lines\_e}{sh1106\_variable\_lines\_e}}
+{\footnotesize\ttfamily \label{_l_v_f_v__system_8h_afe617d6ade6b2289b5efe09a74bb4609} 
+enum \mbox{\hyperlink{_l_v_f_v__system_8h_afe617d6ade6b2289b5efe09a74bb4609}{sh1106\+\_\+variable\+\_\+lines\+\_\+e}}}
+
+\begin{DoxyEnumFields}[2]{Valores de enumeraciones}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{first@{first}!LVFV\_system.h@{LVFV\_system.h}}\index{LVFV\_system.h@{LVFV\_system.h}!first@{first}}}\Hypertarget{_l_v_f_v__system_8h_afe617d6ade6b2289b5efe09a74bb4609aa4500e61db092c2e1719b5d68b047ec3}\label{_l_v_f_v__system_8h_afe617d6ade6b2289b5efe09a74bb4609aa4500e61db092c2e1719b5d68b047ec3} 
+first&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{second@{second}!LVFV\_system.h@{LVFV\_system.h}}\index{LVFV\_system.h@{LVFV\_system.h}!second@{second}}}\Hypertarget{_l_v_f_v__system_8h_afe617d6ade6b2289b5efe09a74bb4609aed5e1b554d8a8c57ad81b1e7d6278cc2}\label{_l_v_f_v__system_8h_afe617d6ade6b2289b5efe09a74bb4609aed5e1b554d8a8c57ad81b1e7d6278cc2} 
+second&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{third@{third}!LVFV\_system.h@{LVFV\_system.h}}\index{LVFV\_system.h@{LVFV\_system.h}!third@{third}}}\Hypertarget{_l_v_f_v__system_8h_afe617d6ade6b2289b5efe09a74bb4609a084d514734ca9531c812b1d49f5695b8}\label{_l_v_f_v__system_8h_afe617d6ade6b2289b5efe09a74bb4609a084d514734ca9531c812b1d49f5695b8} 
+third&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{fourth@{fourth}!LVFV\_system.h@{LVFV\_system.h}}\index{LVFV\_system.h@{LVFV\_system.h}!fourth@{fourth}}}\Hypertarget{_l_v_f_v__system_8h_afe617d6ade6b2289b5efe09a74bb4609a2fa414b1321ed60700ca25cb0b285038}\label{_l_v_f_v__system_8h_afe617d6ade6b2289b5efe09a74bb4609a2fa414b1321ed60700ca25cb0b285038} 
+fourth&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{fifth@{fifth}!LVFV\_system.h@{LVFV\_system.h}}\index{LVFV\_system.h@{LVFV\_system.h}!fifth@{fifth}}}\Hypertarget{_l_v_f_v__system_8h_afe617d6ade6b2289b5efe09a74bb4609a4ead4f814c0f187705ee29aa88188af5}\label{_l_v_f_v__system_8h_afe617d6ade6b2289b5efe09a74bb4609a4ead4f814c0f187705ee29aa88188af5} 
+fifth&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{sixth@{sixth}!LVFV\_system.h@{LVFV\_system.h}}\index{LVFV\_system.h@{LVFV\_system.h}!sixth@{sixth}}}\Hypertarget{_l_v_f_v__system_8h_afe617d6ade6b2289b5efe09a74bb4609af50a69e45252411508fbcfcd4b50c471}\label{_l_v_f_v__system_8h_afe617d6ade6b2289b5efe09a74bb4609af50a69e45252411508fbcfcd4b50c471} 
+sixth&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{seventh@{seventh}!LVFV\_system.h@{LVFV\_system.h}}\index{LVFV\_system.h@{LVFV\_system.h}!seventh@{seventh}}}\Hypertarget{_l_v_f_v__system_8h_afe617d6ade6b2289b5efe09a74bb4609aefdb468b3bc7f82ad7c7dae101feacc6}\label{_l_v_f_v__system_8h_afe617d6ade6b2289b5efe09a74bb4609aefdb468b3bc7f82ad7c7dae101feacc6} 
+seventh&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definición en la línea \mbox{\hyperlink{_l_v_f_v__system_8h_source_l00065}{65}} del archivo \mbox{\hyperlink{_l_v_f_v__system_8h_source}{LVFV\+\_\+system.\+h}}.
+
+\Hypertarget{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791}\index{LVFV\_system.h@{LVFV\_system.h}!system\_status\_e@{system\_status\_e}}
+\index{system\_status\_e@{system\_status\_e}!LVFV\_system.h@{LVFV\_system.h}}
+\doxysubsubsection{\texorpdfstring{system\_status\_e}{system\_status\_e}}
+{\footnotesize\ttfamily \label{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791} 
+enum \mbox{\hyperlink{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791}{system\+\_\+status\+\_\+e}}}
+
+
+
+Posibles estados general que puede tomar el sistema. 
+
+\begin{DoxyEnumFields}[2]{Valores de enumeraciones}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_IDLE@{SYSTEM\_IDLE}!LVFV\_system.h@{LVFV\_system.h}}\index{LVFV\_system.h@{LVFV\_system.h}!SYSTEM\_IDLE@{SYSTEM\_IDLE}}}\Hypertarget{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791a20cc395940efb44d047c63108d2ef837}\label{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791a20cc395940efb44d047c63108d2ef837} 
+SYSTEM\+\_\+\+IDLE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_ACCLE\_DESACCEL@{SYSTEM\_ACCLE\_DESACCEL}!LVFV\_system.h@{LVFV\_system.h}}\index{LVFV\_system.h@{LVFV\_system.h}!SYSTEM\_ACCLE\_DESACCEL@{SYSTEM\_ACCLE\_DESACCEL}}}\Hypertarget{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791a355058bb815d40f78a343c756d58c47f}\label{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791a355058bb815d40f78a343c756d58c47f} 
+SYSTEM\+\_\+\+ACCLE\+\_\+\+DESACCEL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_REGIME@{SYSTEM\_REGIME}!LVFV\_system.h@{LVFV\_system.h}}\index{LVFV\_system.h@{LVFV\_system.h}!SYSTEM\_REGIME@{SYSTEM\_REGIME}}}\Hypertarget{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791af08242ba685ecc48c255df8932379618}\label{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791af08242ba685ecc48c255df8932379618} 
+SYSTEM\+\_\+\+REGIME&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_BREAKING@{SYSTEM\_BREAKING}!LVFV\_system.h@{LVFV\_system.h}}\index{LVFV\_system.h@{LVFV\_system.h}!SYSTEM\_BREAKING@{SYSTEM\_BREAKING}}}\Hypertarget{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791a800775137620f33c4ba7b7810a94e365}\label{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791a800775137620f33c4ba7b7810a94e365} 
+SYSTEM\+\_\+\+BREAKING&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_EMERGENCY@{SYSTEM\_EMERGENCY}!LVFV\_system.h@{LVFV\_system.h}}\index{LVFV\_system.h@{LVFV\_system.h}!SYSTEM\_EMERGENCY@{SYSTEM\_EMERGENCY}}}\Hypertarget{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791abf715611d16f62350c373d1c4aa17547}\label{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791abf715611d16f62350c373d1c4aa17547} 
+SYSTEM\+\_\+\+EMERGENCY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_EMERGENCY\_OK@{SYSTEM\_EMERGENCY\_OK}!LVFV\_system.h@{LVFV\_system.h}}\index{LVFV\_system.h@{LVFV\_system.h}!SYSTEM\_EMERGENCY\_OK@{SYSTEM\_EMERGENCY\_OK}}}\Hypertarget{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791a51d3220cff10b80b0d524652e825bf5c}\label{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791a51d3220cff10b80b0d524652e825bf5c} 
+SYSTEM\+\_\+\+EMERGENCY\+\_\+\+OK&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definición en la línea \mbox{\hyperlink{_l_v_f_v__system_8h_source_l00056}{56}} del archivo \mbox{\hyperlink{_l_v_f_v__system_8h_source}{LVFV\+\_\+system.\+h}}.
+
+\Hypertarget{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796}\index{LVFV\_system.h@{LVFV\_system.h}!systemSignal\_e@{systemSignal\_e}}
+\index{systemSignal\_e@{systemSignal\_e}!LVFV\_system.h@{LVFV\_system.h}}
+\doxysubsubsection{\texorpdfstring{systemSignal\_e}{systemSignal\_e}}
+{\footnotesize\ttfamily \label{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796} 
+enum \mbox{\hyperlink{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796}{system\+Signal\+\_\+e}}}
+
+
+
+Variable dedicada a la identificación del tipo de señal que es recibida por las entradas digitales y analógicas del sistema para que se tome una desición a nivel de sistema. 
+
+\begin{DoxyEnumFields}[2]{Valores de enumeraciones}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BUTTON\_MENU@{BUTTON\_MENU}!LVFV\_system.h@{LVFV\_system.h}}\index{LVFV\_system.h@{LVFV\_system.h}!BUTTON\_MENU@{BUTTON\_MENU}}}\Hypertarget{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796ab964e5038b062d4b6d1287996db4ddd4}\label{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796ab964e5038b062d4b6d1287996db4ddd4} 
+BUTTON\+\_\+\+MENU&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BUTTON\_OK@{BUTTON\_OK}!LVFV\_system.h@{LVFV\_system.h}}\index{LVFV\_system.h@{LVFV\_system.h}!BUTTON\_OK@{BUTTON\_OK}}}\Hypertarget{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796a3534e510a800f1a3975a255756f0246d}\label{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796a3534e510a800f1a3975a255756f0246d} 
+BUTTON\+\_\+\+OK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BUTTON\_BACK@{BUTTON\_BACK}!LVFV\_system.h@{LVFV\_system.h}}\index{LVFV\_system.h@{LVFV\_system.h}!BUTTON\_BACK@{BUTTON\_BACK}}}\Hypertarget{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796a80bbae5d9dece7dc5b0d0a45f9390770}\label{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796a80bbae5d9dece7dc5b0d0a45f9390770} 
+BUTTON\+\_\+\+BACK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BUTTON\_UP@{BUTTON\_UP}!LVFV\_system.h@{LVFV\_system.h}}\index{LVFV\_system.h@{LVFV\_system.h}!BUTTON\_UP@{BUTTON\_UP}}}\Hypertarget{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796a37666936297216dce293b0aa31c474b8}\label{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796a37666936297216dce293b0aa31c474b8} 
+BUTTON\+\_\+\+UP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BUTTON\_DOWN@{BUTTON\_DOWN}!LVFV\_system.h@{LVFV\_system.h}}\index{LVFV\_system.h@{LVFV\_system.h}!BUTTON\_DOWN@{BUTTON\_DOWN}}}\Hypertarget{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796a0c7746cfbcac16484b2266e6f51e5e0b}\label{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796a0c7746cfbcac16484b2266e6f51e5e0b} 
+BUTTON\+\_\+\+DOWN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BUTTON\_LEFT@{BUTTON\_LEFT}!LVFV\_system.h@{LVFV\_system.h}}\index{LVFV\_system.h@{LVFV\_system.h}!BUTTON\_LEFT@{BUTTON\_LEFT}}}\Hypertarget{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796a55dc0d53615e28ee8af66827bee48e4e}\label{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796a55dc0d53615e28ee8af66827bee48e4e} 
+BUTTON\+\_\+\+LEFT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BUTTON\_RIGHT@{BUTTON\_RIGHT}!LVFV\_system.h@{LVFV\_system.h}}\index{LVFV\_system.h@{LVFV\_system.h}!BUTTON\_RIGHT@{BUTTON\_RIGHT}}}\Hypertarget{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796a13046edd6d64a0de5821b5ff4c7581ce}\label{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796a13046edd6d64a0de5821b5ff4c7581ce} 
+BUTTON\+\_\+\+RIGHT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BUTTON\_SAVE@{BUTTON\_SAVE}!LVFV\_system.h@{LVFV\_system.h}}\index{LVFV\_system.h@{LVFV\_system.h}!BUTTON\_SAVE@{BUTTON\_SAVE}}}\Hypertarget{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796a8dcc4bb9d4e2b215128f0e14faab9d48}\label{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796a8dcc4bb9d4e2b215128f0e14faab9d48} 
+BUTTON\+\_\+\+SAVE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EMERGENCI\_STOP\_PRESSED@{EMERGENCI\_STOP\_PRESSED}!LVFV\_system.h@{LVFV\_system.h}}\index{LVFV\_system.h@{LVFV\_system.h}!EMERGENCI\_STOP\_PRESSED@{EMERGENCI\_STOP\_PRESSED}}}\Hypertarget{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796a763a5af56f6336bb097fc295c10224c6}\label{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796a763a5af56f6336bb097fc295c10224c6} 
+EMERGENCI\+\_\+\+STOP\+\_\+\+PRESSED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EMERGENCI\_STOP\_RELEASED@{EMERGENCI\_STOP\_RELEASED}!LVFV\_system.h@{LVFV\_system.h}}\index{LVFV\_system.h@{LVFV\_system.h}!EMERGENCI\_STOP\_RELEASED@{EMERGENCI\_STOP\_RELEASED}}}\Hypertarget{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796a8ecc5c208d515907194017a50654a5f0}\label{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796a8ecc5c208d515907194017a50654a5f0} 
+EMERGENCI\+\_\+\+STOP\+\_\+\+RELEASED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{START\_PRESSED@{START\_PRESSED}!LVFV\_system.h@{LVFV\_system.h}}\index{LVFV\_system.h@{LVFV\_system.h}!START\_PRESSED@{START\_PRESSED}}}\Hypertarget{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796a63785524fddc6173ea49aacebd1ba9b4}\label{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796a63785524fddc6173ea49aacebd1ba9b4} 
+START\+\_\+\+PRESSED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{START\_RELEASED@{START\_RELEASED}!LVFV\_system.h@{LVFV\_system.h}}\index{LVFV\_system.h@{LVFV\_system.h}!START\_RELEASED@{START\_RELEASED}}}\Hypertarget{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796a3ceda522fe82f4612779cbe9ffea6ddd}\label{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796a3ceda522fe82f4612779cbe9ffea6ddd} 
+START\+\_\+\+RELEASED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TERMO\_SW\_PRESSED@{TERMO\_SW\_PRESSED}!LVFV\_system.h@{LVFV\_system.h}}\index{LVFV\_system.h@{LVFV\_system.h}!TERMO\_SW\_PRESSED@{TERMO\_SW\_PRESSED}}}\Hypertarget{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796aba2430dee359622ce93e0bc30200dbb4}\label{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796aba2430dee359622ce93e0bc30200dbb4} 
+TERMO\+\_\+\+SW\+\_\+\+PRESSED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TERMO\_SW\_RELEASED@{TERMO\_SW\_RELEASED}!LVFV\_system.h@{LVFV\_system.h}}\index{LVFV\_system.h@{LVFV\_system.h}!TERMO\_SW\_RELEASED@{TERMO\_SW\_RELEASED}}}\Hypertarget{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796abcb0b2c8962fd29cc040541a0098d610}\label{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796abcb0b2c8962fd29cc040541a0098d610} 
+TERMO\+\_\+\+SW\+\_\+\+RELEASED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STOP\_PRESSED@{STOP\_PRESSED}!LVFV\_system.h@{LVFV\_system.h}}\index{LVFV\_system.h@{LVFV\_system.h}!STOP\_PRESSED@{STOP\_PRESSED}}}\Hypertarget{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796aa9aca1a320269de9561c234df472939c}\label{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796aa9aca1a320269de9561c234df472939c} 
+STOP\+\_\+\+PRESSED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STOP\_RELEASED@{STOP\_RELEASED}!LVFV\_system.h@{LVFV\_system.h}}\index{LVFV\_system.h@{LVFV\_system.h}!STOP\_RELEASED@{STOP\_RELEASED}}}\Hypertarget{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796a5c721f64225ace40ee5401ce7bf66af1}\label{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796a5c721f64225ace40ee5401ce7bf66af1} 
+STOP\+\_\+\+RELEASED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPEED\_SELECTOR\_0@{SPEED\_SELECTOR\_0}!LVFV\_system.h@{LVFV\_system.h}}\index{LVFV\_system.h@{LVFV\_system.h}!SPEED\_SELECTOR\_0@{SPEED\_SELECTOR\_0}}}\Hypertarget{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796a358a2b2b7d5d25917484d0604b8b8c61}\label{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796a358a2b2b7d5d25917484d0604b8b8c61} 
+SPEED\+\_\+\+SELECTOR\+\_\+0&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPEED\_SELECTOR\_1@{SPEED\_SELECTOR\_1}!LVFV\_system.h@{LVFV\_system.h}}\index{LVFV\_system.h@{LVFV\_system.h}!SPEED\_SELECTOR\_1@{SPEED\_SELECTOR\_1}}}\Hypertarget{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796ae43bf9bce9d9d974d8c49591073f07f3}\label{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796ae43bf9bce9d9d974d8c49591073f07f3} 
+SPEED\+\_\+\+SELECTOR\+\_\+1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPEED\_SELECTOR\_2@{SPEED\_SELECTOR\_2}!LVFV\_system.h@{LVFV\_system.h}}\index{LVFV\_system.h@{LVFV\_system.h}!SPEED\_SELECTOR\_2@{SPEED\_SELECTOR\_2}}}\Hypertarget{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796a0bbea2c20296f454237438bb42f9a60a}\label{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796a0bbea2c20296f454237438bb42f9a60a} 
+SPEED\+\_\+\+SELECTOR\+\_\+2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPEED\_SELECTOR\_3@{SPEED\_SELECTOR\_3}!LVFV\_system.h@{LVFV\_system.h}}\index{LVFV\_system.h@{LVFV\_system.h}!SPEED\_SELECTOR\_3@{SPEED\_SELECTOR\_3}}}\Hypertarget{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796abd5d9529779c1898ec0e751b73baaa11}\label{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796abd5d9529779c1898ec0e751b73baaa11} 
+SPEED\+\_\+\+SELECTOR\+\_\+3&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPEED\_SELECTOR\_4@{SPEED\_SELECTOR\_4}!LVFV\_system.h@{LVFV\_system.h}}\index{LVFV\_system.h@{LVFV\_system.h}!SPEED\_SELECTOR\_4@{SPEED\_SELECTOR\_4}}}\Hypertarget{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796a16fbe5797dd7a2ba4232942b933fbc28}\label{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796a16fbe5797dd7a2ba4232942b933fbc28} 
+SPEED\+\_\+\+SELECTOR\+\_\+4&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPEED\_SELECTOR\_5@{SPEED\_SELECTOR\_5}!LVFV\_system.h@{LVFV\_system.h}}\index{LVFV\_system.h@{LVFV\_system.h}!SPEED\_SELECTOR\_5@{SPEED\_SELECTOR\_5}}}\Hypertarget{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796a4b6f37253b2a4bc26776c0b0ec42b497}\label{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796a4b6f37253b2a4bc26776c0b0ec42b497} 
+SPEED\+\_\+\+SELECTOR\+\_\+5&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPEED\_SELECTOR\_6@{SPEED\_SELECTOR\_6}!LVFV\_system.h@{LVFV\_system.h}}\index{LVFV\_system.h@{LVFV\_system.h}!SPEED\_SELECTOR\_6@{SPEED\_SELECTOR\_6}}}\Hypertarget{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796a83e86c5ce7c84431fc2ebd24178d2d55}\label{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796a83e86c5ce7c84431fc2ebd24178d2d55} 
+SPEED\+\_\+\+SELECTOR\+\_\+6&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPEED\_SELECTOR\_7@{SPEED\_SELECTOR\_7}!LVFV\_system.h@{LVFV\_system.h}}\index{LVFV\_system.h@{LVFV\_system.h}!SPEED\_SELECTOR\_7@{SPEED\_SELECTOR\_7}}}\Hypertarget{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796a8ef3a2e510ee1546eaa292f1cb4f48a9}\label{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796a8ef3a2e510ee1546eaa292f1cb4f48a9} 
+SPEED\+\_\+\+SELECTOR\+\_\+7&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPEED\_SELECTOR\_8@{SPEED\_SELECTOR\_8}!LVFV\_system.h@{LVFV\_system.h}}\index{LVFV\_system.h@{LVFV\_system.h}!SPEED\_SELECTOR\_8@{SPEED\_SELECTOR\_8}}}\Hypertarget{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796abbea50e710109e7e6692d445362c8b48}\label{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796abbea50e710109e7e6692d445362c8b48} 
+SPEED\+\_\+\+SELECTOR\+\_\+8&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPEED\_SELECTOR\_9@{SPEED\_SELECTOR\_9}!LVFV\_system.h@{LVFV\_system.h}}\index{LVFV\_system.h@{LVFV\_system.h}!SPEED\_SELECTOR\_9@{SPEED\_SELECTOR\_9}}}\Hypertarget{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796a68941af0ed0d68bc31c09e87a8c5490d}\label{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796a68941af0ed0d68bc31c09e87a8c5490d} 
+SPEED\+\_\+\+SELECTOR\+\_\+9&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SECURITY\_EXCEDED@{SECURITY\_EXCEDED}!LVFV\_system.h@{LVFV\_system.h}}\index{LVFV\_system.h@{LVFV\_system.h}!SECURITY\_EXCEDED@{SECURITY\_EXCEDED}}}\Hypertarget{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796a28442d6913cbeabc9ed6fe1e20a255bf}\label{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796a28442d6913cbeabc9ed6fe1e20a255bf} 
+SECURITY\+\_\+\+EXCEDED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SECURITY\_OK@{SECURITY\_OK}!LVFV\_system.h@{LVFV\_system.h}}\index{LVFV\_system.h@{LVFV\_system.h}!SECURITY\_OK@{SECURITY\_OK}}}\Hypertarget{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796af31dc398d7d8cbf4a834c81d7dfa0e82}\label{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796af31dc398d7d8cbf4a834c81d7dfa0e82} 
+SECURITY\+\_\+\+OK&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definición en la línea \mbox{\hyperlink{_l_v_f_v__system_8h_source_l00020}{20}} del archivo \mbox{\hyperlink{_l_v_f_v__system_8h_source}{LVFV\+\_\+system.\+h}}.
+

@@ -1,0 +1,323 @@
+  % Handle batch mode
+  % to overcome problems with too many open files
+  \let\mypdfximage\pdfximage\def\pdfximage{\immediate\mypdfximage}
+  \RequirePackage{iftex}
+  \ifLuaTeX
+    \directlua{pdf.setminorversion(7)}
+  \fi
+  \ifXeTeX
+    \special{pdf:minorversion 7}
+  \fi
+  \ifPDFTeX
+    \pdfminorversion=7
+  \fi
+  % Set document class depending on configuration
+  \documentclass[twoside]{book}
+  % Packages required by doxygen
+  \makeatletter
+  \providecommand\IfFormatAtLeastTF{\@ifl@t@r\fmtversion}
+  % suppress package identification of infwarerr as it contains the word "warning"
+  \let\@@protected@wlog\protected@wlog
+  \def\protected@wlog#1{\wlog{package info suppressed}}
+  \RequirePackage{infwarerr}
+  \let\protected@wlog\@@protected@wlog
+  \makeatother
+  \IfFormatAtLeastTF{2016/01/01}{}{\usepackage{fixltx2e}} % for \textsubscript
+  \ifPDFTeX
+    \IfFormatAtLeastTF{2015/01/01}{\pdfsuppresswarningpagegroup=1}{}
+  \fi
+  \usepackage{doxygen}
+  \usepackage{graphicx}
+  \iftutex
+    \usepackage{fontspec}
+    \defaultfontfeatures{Ligatures={TeX}}
+    \usepackage{unicode-math}
+  \else
+    \usepackage[utf8]{inputenc}
+  \fi
+  \usepackage{makeidx}
+  \PassOptionsToPackage{warn}{textcomp}
+  \usepackage{textcomp}
+  \usepackage[nointegrals]{wasysym}
+  \usepackage{ifxetex}
+  % NLS support packages
+  \usepackage[spanish, es-noshorthands, shorthands=off]{babel}
+  % Define default fonts
+  % Font selection
+  \iftutex
+  \else
+    \usepackage[T1]{fontenc}
+  \fi
+  % set main and monospaced font
+  \usepackage[scaled=.90]{helvet}
+\usepackage{courier}
+\renewcommand{\familydefault}{\sfdefault}
+  \doxyallsectionsfont{%
+    \fontseries{bc}\selectfont%
+    \color{darkgray}%
+  }
+  \renewcommand{\DoxyLabelFont}{%
+    \fontseries{bc}\selectfont%
+    \color{darkgray}%
+  }
+  \newcommand{\+}{\discretionary{\mbox{\scriptsize$\hookleftarrow$}}{}{}}
+   % Arguments of doxygenemoji:
+   % 1) ':<text>:' form of the emoji, already LaTeX-escaped
+   % 2) file with the name of the emoji without the .png extension
+   % in case image exist use this otherwise use the ':<text>:' form
+   \newcommand{\doxygenemoji}[2]{%
+     \IfFileExists{./#2.png}{\raisebox{-0.1em}{\includegraphics[height=0.9em]{./#2.png}}}{#1}%
+   }
+  % Page & text layout
+  \usepackage{geometry}
+  \geometry{%
+    a4paper,%
+    top=2.5cm,%
+    bottom=2.5cm,%
+    left=2.5cm,%
+    right=2.5cm%
+  }
+  \usepackage{changepage}
+  % Allow a bit of overflow to go unnoticed by other means
+  \tolerance=750
+  \hfuzz=15pt
+  \hbadness=750
+  \setlength{\emergencystretch}{15pt}
+  \setlength{\parindent}{0cm}
+  \newcommand{\doxynormalparskip}{\setlength{\parskip}{3ex plus 2ex minus 2ex}}
+  \newcommand{\doxytocparskip}{\setlength{\parskip}{1ex plus 0ex minus 0ex}}
+  \doxynormalparskip
+  % Redefine paragraph/subparagraph environments, using sectsty fonts
+  \makeatletter
+  \renewcommand{\paragraph}{%
+    \@startsection{paragraph}{4}{0ex}{-1.0ex}{1.0ex}{%
+      \normalfont\normalsize\bfseries\SS@parafont%
+    }%
+  }
+  \renewcommand{\subparagraph}{%
+    \@startsection{subparagraph}{5}{0ex}{-1.0ex}{1.0ex}{%
+      \normalfont\normalsize\bfseries\SS@subparafont%
+    }%
+  }
+  \makeatother
+  \makeatletter
+  \newcommand\hrulefilll{\leavevmode\leaders\hrule\hskip 0pt plus 1filll\kern\z@}
+  \makeatother
+  % Headers & footers
+  \usepackage{fancyhdr}
+  \pagestyle{fancyplain}
+  \renewcommand{\footrulewidth}{0.4pt}
+  \fancypagestyle{fancyplain}{
+    \fancyhf{}
+    \fancyhead[LE, RO]{\bfseries\thepage}
+    \fancyhead[LO]{\bfseries\rightmark}
+    \fancyhead[RE]{\bfseries\leftmark}
+    \fancyfoot[LO, RE]{\bfseries\scriptsize Generado por Doxygen }
+  }
+  \fancypagestyle{plain}{
+    \fancyhf{}
+    \fancyfoot[LO, RE]{\bfseries\scriptsize Generado por Doxygen }
+    \renewcommand{\headrulewidth}{0pt}
+  }
+  \pagestyle{fancyplain}
+  \renewcommand{\chaptermark}[1]{%
+    \markboth{#1}{}%
+  }
+  \renewcommand{\sectionmark}[1]{%
+    \markright{\thesection\ #1}%
+  }
+  % ToC, LoF, LoT, bibliography, and index
+  % Indices & bibliography
+  \usepackage[numbers]{natbib}
+  \usepackage[titles]{tocloft}
+  \setcounter{tocdepth}{3}
+  \setcounter{secnumdepth}{5}
+  % creating indexes
+  \makeindex
+  \ifPDFTeX
+\usepackage{newunicodechar}
+  \makeatletter
+    \def\doxynewunicodechar#1#2{%
+    \@tempswafalse
+    \edef\nuc@tempa{\detokenize{#1}}%
+    \if\relax\nuc@tempa\relax
+      \nuc@emptyargerr
+    \else
+      \edef\@tempb{\expandafter\@car\nuc@tempa\@nil}%
+      \nuc@check
+      \if@tempswa
+        \@namedef{u8:\nuc@tempa}{#2}%
+      \fi
+    \fi
+  }
+  \makeatother
+  \doxynewunicodechar{⁻}{${}^{-}$}% Superscript minus
+  \doxynewunicodechar{²}{${}^{2}$}% Superscript two
+  \doxynewunicodechar{³}{${}^{3}$}% Superscript three
+\fi
+  % Hyperlinks
+    % Hyperlinks (required, but should be loaded last)
+    \ifPDFTeX
+      \usepackage[pdftex,pagebackref=true]{hyperref}
+    \else
+      \ifXeTeX
+        \usepackage[xetex,pagebackref=true]{hyperref}
+      \else
+        \ifLuaTeX
+          \usepackage[luatex,pagebackref=true]{hyperref}
+        \else
+          \usepackage[ps2pdf,pagebackref=true]{hyperref}
+        \fi
+      \fi
+    \fi
+    \hypersetup{%
+      colorlinks=true,%
+      linkcolor=blue,%
+      citecolor=blue,%
+      unicode,%
+      pdftitle={Low Voltage Variable Frequency Drive},%
+      pdfsubject={Proyecto final Andrenacci-\/\+Carra 2026. Variador de frecuencia de motor trifásico 1/3\+HP utilizando 12\+V de contínua como fuente de entrada de tensión.}%
+    }
+  % Custom commands used by the header
+  % Custom commands
+  \newcommand{\clearemptydoublepage}{%
+    \newpage{\pagestyle{empty}\cleardoublepage}%
+  }
+  % caption style definition
+  \usepackage{caption}
+  \captionsetup{labelsep=space,justification=centering,font={bf},singlelinecheck=off,skip=4pt,position=top}
+  % in page table of contents
+  \IfFormatAtLeastTF{2023/05/01}{\usepackage[deeplevels]{etoc}}{\usepackage[deeplevels]{etoc_doxygen}}
+  \etocsettocstyle{\doxytocparskip}{\doxynormalparskip}
+  \etocsetlevel{subsubsubsection}{4}
+  \etocsetlevel{subsubsubsubsection}{5}
+  \etocsetlevel{subsubsubsubsubsection}{6}
+  \etocsetlevel{subsubsubsubsubsubsection}{7}
+  \etocsetlevel{paragraph}{8}
+  \etocsetlevel{subparagraph}{9}
+  % prevent numbers overlap the titles in toc
+  \renewcommand{\numberline}[1]{#1~}
+% End of preamble, now comes the document contents
+%===== C O N T E N T S =====
+\begin{document}
+  \raggedbottom
+  % Titlepage & ToC
+    % To avoid duplicate page anchors due to reuse of same numbers for
+    % the index (be it as roman numbers)
+    \hypersetup{pageanchor=false,
+                bookmarksnumbered=true,
+                pdfencoding=unicode
+               }
+  \pagenumbering{alph}
+  \begin{titlepage}
+  \vspace*{7cm}
+  \begin{center}%
+  {\Large Low Voltage Variable Frequency Drive}\\
+  [1ex]\large 2.\+0 \\
+  \vspace*{1cm}
+  {\large Generado por Doxygen 1.15.0}\\
+  \end{center}
+  \end{titlepage}
+  \clearemptydoublepage
+  \pagenumbering{roman}
+  \tableofcontents
+  \clearemptydoublepage
+  \pagenumbering{arabic}
+  % re-enable anchors again
+  \hypersetup{pageanchor=true}
+%--- Begin generated contents ---
+\input{todo}
+\chapter{Jerarquía de directorios}
+\input{dirs}
+\chapter{Índice de estructuras de datos}
+\input{annotated}
+\chapter{Índice de archivos}
+\input{files}
+\chapter{Documentación de directorios}
+\input{dir_4fddad3309642be78b149daae17beced}
+\input{dir_5898438c66b62807cbfcea68fbed40da}
+\input{dir_74b0ef7cdd309c64af379d299ad1d7fe}
+\input{dir_5c982d53a68cdbcd421152b4020263a9}
+\input{dir_ff79468534f4d57a62dcb8879a1832de}
+\input{dir_8483d28aae4c613ef01d5dc505e1dd03}
+\input{dir_4ebdb2553a3894a04487b5c1cfb0e048}
+\chapter{Documentación de estructuras de datos}
+\input{structbitmap__t}
+\input{structfrequency__settings___s_h1106__t}
+\input{structfrequency__settings__t}
+\input{union_m_c_p23017___d_e_f_v_a_l__t}
+\input{union_m_c_p23017___g_p_i_n_t_e_n__t}
+\input{union_m_c_p23017___g_p_i_o__t}
+\input{union_m_c_p23017___g_p_p_u__t}
+\input{union_m_c_p23017___i_n_t_c_a_p__t}
+\input{union_m_c_p23017___i_n_t_c_o_n__t}
+\input{union_m_c_p23017___i_n_t_f__t}
+\input{union_m_c_p23017___i_o_c_o_n__t}
+\input{union_m_c_p23017___i_o_d_i_r__t}
+\input{union_m_c_p23017___i_p_o_l__t}
+\input{union_m_c_p23017___o_l_a_t__t}
+\input{structrtc__alarms__t}
+\input{structseccurity__settings___s_h1106__t}
+\input{structseccurity__settings__t}
+\input{structsh1106__t}
+\input{structspi__cmd__item__t}
+\input{structsystem__status__t}
+\input{structtime__settings___s_h1106__t}
+\input{structtime__settings__t}
+\chapter{Documentación de archivos}
+\input{adc_8c}
+\input{adc_8c_source}
+\input{adc_8h}
+\input{adc_8h_source}
+\input{display_8c}
+\input{display_8c_source}
+\input{display_8h}
+\input{display_8h_source}
+\input{sh1106__graphics_8c}
+\input{sh1106__graphics_8c_source}
+\input{sh1106__graphics_8h}
+\input{sh1106__graphics_8h_source}
+\input{sh1106__i2c_8c}
+\input{sh1106__i2c_8c_source}
+\input{sh1106__i2c_8h}
+\input{sh1106__i2c_8h_source}
+\input{io__control_8c}
+\input{io__control_8c_source}
+\input{io__control_8h}
+\input{io__control_8h_source}
+\input{_m_c_p23017_8c}
+\input{_m_c_p23017_8c_source}
+\input{_m_c_p23017_8h}
+\input{_m_c_p23017_8h_source}
+\input{mcp23017__defs_8h}
+\input{mcp23017__defs_8h_source}
+\input{_l_v_f_v__system_8h}
+\input{_l_v_f_v__system_8h_source}
+\input{main_8c}
+\input{main_8c_source}
+\input{nvs_8c}
+\input{nvs_8c_source}
+\input{nvs_8h}
+\input{nvs_8h_source}
+\input{rtc_8c}
+\input{rtc_8c_source}
+\input{rtc_8h}
+\input{rtc_8h_source}
+\input{sys_admin_8c}
+\input{sys_admin_8c_source}
+\input{sys_admin_8h}
+\input{sys_admin_8h_source}
+\input{sys_control_8c}
+\input{sys_control_8c_source}
+\input{sys_control_8h}
+\input{sys_control_8h_source}
+%--- End generated contents ---
+% Index
+  \backmatter
+  \newpage
+  \phantomsection
+  \clearemptydoublepage
+  \addcontentsline{toc}{chapter}{\indexname}
+  \printindex
+% Required for some languages (in combination with latexdocumentpre from the header)
+\end{document}

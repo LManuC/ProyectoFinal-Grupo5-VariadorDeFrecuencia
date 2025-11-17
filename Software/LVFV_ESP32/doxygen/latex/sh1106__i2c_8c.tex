@@ -1,0 +1,127 @@
+\doxysection{Referencia del archivo C\+:/\+Users/\+User/\+LVFV\+\_\+\+ESP32/main/display/sh1106\+\_\+i2c.c}
+\hypertarget{sh1106__i2c_8c}{}\label{sh1106__i2c_8c}\index{C:/Users/User/LVFV\_ESP32/main/display/sh1106\_i2c.c@{C:/Users/User/LVFV\_ESP32/main/display/sh1106\_i2c.c}}
+
+
+Funciones de hardware para el puerto I2C.  
+
+
+{\ttfamily \#include "{}freertos/\+Free\+RTOS.\+h"{}}\newline
+{\ttfamily \#include "{}esp\+\_\+err.\+h"{}}\newline
+{\ttfamily \#include "{}driver/i2c.\+h"{}}\newline
+{\ttfamily \#include "{}./sh1106\+\_\+i2c.\+h"{}}\newline
+Gráfico de dependencias incluidas en sh1106\+\_\+i2c.\+c\+:
+% FIG 0
+\doxysubsubsection*{defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{sh1106__i2c_8c_aec23a3748d5005f4f96d0a2e23fe2d12}{I2\+C\+\_\+\+DISPLAY}}~I2\+C\+\_\+\+NUM\+\_\+0
+\item 
+\#define \mbox{\hyperlink{sh1106__i2c_8c_a2fc5aed134b0a86938fbea521e512e35}{SH1106\+\_\+\+ADDR}}~0x3C
+\item 
+\#define \mbox{\hyperlink{sh1106__i2c_8c_a7d74683c370cb7ec4743f52a66ef3557}{CMD\+\_\+\+CONTROL}}~0x00
+\item 
+\#define \mbox{\hyperlink{sh1106__i2c_8c_a9610560f4235ab980fbae04b4eaabbbf}{DATA\+\_\+\+CONTROL}}~0x40
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+esp\+\_\+err\+\_\+t \mbox{\hyperlink{sh1106__i2c_8c_a1ffdff303fbfc1bd79e1f5fae7398d11}{sh1106\+\_\+write}} (const uint8\+\_\+t \texorpdfstring{$\ast$}{*}data, size\+\_\+t len, \mbox{\hyperlink{sh1106__i2c_8h_a40a3616782f6f1a961751940c1428c40}{sh1106\+\_\+comm\+\_\+type\+\_\+t}} comm\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Función que envía datos o comandos al displat SH1106 a través del puerto I2C. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Funciones de hardware para el puerto I2C. 
+
+\begin{DoxyAuthor}{Autor}
+Andrenacci -\/ Carra 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Versión}
+2.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Fecha}
+2025-\/11-\/06 
+\end{DoxyDate}
+
+
+Definición en el archivo \mbox{\hyperlink{sh1106__i2c_8c_source}{sh1106\+\_\+i2c.\+c}}.
+
+
+
+\label{doc-define-members}
+\Hypertarget{sh1106__i2c_8c_doc-define-members}
+\doxysubsection{Documentación de «define»}
+\Hypertarget{sh1106__i2c_8c_a7d74683c370cb7ec4743f52a66ef3557}\index{sh1106\_i2c.c@{sh1106\_i2c.c}!CMD\_CONTROL@{CMD\_CONTROL}}
+\index{CMD\_CONTROL@{CMD\_CONTROL}!sh1106\_i2c.c@{sh1106\_i2c.c}}
+\doxysubsubsection{\texorpdfstring{CMD\_CONTROL}{CMD\_CONTROL}}
+{\footnotesize\ttfamily \label{sh1106__i2c_8c_a7d74683c370cb7ec4743f52a66ef3557} 
+\#define CMD\+\_\+\+CONTROL~0x00}
+
+
+
+Definición en la línea \mbox{\hyperlink{sh1106__i2c_8c_source_l00016}{16}} del archivo \mbox{\hyperlink{sh1106__i2c_8c_source}{sh1106\+\_\+i2c.\+c}}.
+
+\Hypertarget{sh1106__i2c_8c_a9610560f4235ab980fbae04b4eaabbbf}\index{sh1106\_i2c.c@{sh1106\_i2c.c}!DATA\_CONTROL@{DATA\_CONTROL}}
+\index{DATA\_CONTROL@{DATA\_CONTROL}!sh1106\_i2c.c@{sh1106\_i2c.c}}
+\doxysubsubsection{\texorpdfstring{DATA\_CONTROL}{DATA\_CONTROL}}
+{\footnotesize\ttfamily \label{sh1106__i2c_8c_a9610560f4235ab980fbae04b4eaabbbf} 
+\#define DATA\+\_\+\+CONTROL~0x40}
+
+
+
+Definición en la línea \mbox{\hyperlink{sh1106__i2c_8c_source_l00017}{17}} del archivo \mbox{\hyperlink{sh1106__i2c_8c_source}{sh1106\+\_\+i2c.\+c}}.
+
+\Hypertarget{sh1106__i2c_8c_aec23a3748d5005f4f96d0a2e23fe2d12}\index{sh1106\_i2c.c@{sh1106\_i2c.c}!I2C\_DISPLAY@{I2C\_DISPLAY}}
+\index{I2C\_DISPLAY@{I2C\_DISPLAY}!sh1106\_i2c.c@{sh1106\_i2c.c}}
+\doxysubsubsection{\texorpdfstring{I2C\_DISPLAY}{I2C\_DISPLAY}}
+{\footnotesize\ttfamily \label{sh1106__i2c_8c_aec23a3748d5005f4f96d0a2e23fe2d12} 
+\#define I2\+C\+\_\+\+DISPLAY~I2\+C\+\_\+\+NUM\+\_\+0}
+
+
+
+Definición en la línea \mbox{\hyperlink{sh1106__i2c_8c_source_l00014}{14}} del archivo \mbox{\hyperlink{sh1106__i2c_8c_source}{sh1106\+\_\+i2c.\+c}}.
+
+\Hypertarget{sh1106__i2c_8c_a2fc5aed134b0a86938fbea521e512e35}\index{sh1106\_i2c.c@{sh1106\_i2c.c}!SH1106\_ADDR@{SH1106\_ADDR}}
+\index{SH1106\_ADDR@{SH1106\_ADDR}!sh1106\_i2c.c@{sh1106\_i2c.c}}
+\doxysubsubsection{\texorpdfstring{SH1106\_ADDR}{SH1106\_ADDR}}
+{\footnotesize\ttfamily \label{sh1106__i2c_8c_a2fc5aed134b0a86938fbea521e512e35} 
+\#define SH1106\+\_\+\+ADDR~0x3C}
+
+
+
+Definición en la línea \mbox{\hyperlink{sh1106__i2c_8c_source_l00015}{15}} del archivo \mbox{\hyperlink{sh1106__i2c_8c_source}{sh1106\+\_\+i2c.\+c}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{sh1106__i2c_8c_doc-func-members}
+\doxysubsection{Documentación de funciones}
+\Hypertarget{sh1106__i2c_8c_a1ffdff303fbfc1bd79e1f5fae7398d11}\index{sh1106\_i2c.c@{sh1106\_i2c.c}!sh1106\_write@{sh1106\_write}}
+\index{sh1106\_write@{sh1106\_write}!sh1106\_i2c.c@{sh1106\_i2c.c}}
+\doxysubsubsection{\texorpdfstring{sh1106\_write()}{sh1106\_write()}}
+{\footnotesize\ttfamily \label{sh1106__i2c_8c_a1ffdff303fbfc1bd79e1f5fae7398d11} 
+esp\+\_\+err\+\_\+t sh1106\+\_\+write (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{data}{, }\item[{size\+\_\+t}]{len}{, }\item[{\mbox{\hyperlink{sh1106__i2c_8h_a40a3616782f6f1a961751940c1428c40}{sh1106\+\_\+comm\+\_\+type\+\_\+t}}}]{comm\+\_\+type}{}\end{DoxyParamCaption})}
+
+
+
+Función que envía datos o comandos al displat SH1106 a través del puerto I2C. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\texttt{in}}  & {\em data} & Dato que se desea escribir en el display\\
+\hline
+\mbox{\texttt{in}}  & {\em len} & Largo del dato que se quiere escribir en el display\\
+\hline
+\mbox{\texttt{in}}  & {\em comm\+\_\+type} & Tipo de comunuicación que se desea\+: Dato o Comando\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Valores devueltos}
+{\em } & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definición en la línea \mbox{\hyperlink{sh1106__i2c_8c_source_l00019}{19}} del archivo \mbox{\hyperlink{sh1106__i2c_8c_source}{sh1106\+\_\+i2c.\+c}}.
+
+Gráfico de llamadas a esta función\+:
+% FIG 1

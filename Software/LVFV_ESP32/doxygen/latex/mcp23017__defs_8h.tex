@@ -1,0 +1,691 @@
+\doxysection{Referencia del archivo C\+:/\+Users/\+User/\+LVFV\+\_\+\+ESP32/main/io\+\_\+control/mcp23017\+\_\+defs.h}
+\hypertarget{mcp23017__defs_8h}{}\label{mcp23017__defs_8h}\index{C:/Users/User/LVFV\_ESP32/main/io\_control/mcp23017\_defs.h@{C:/Users/User/LVFV\_ESP32/main/io\_control/mcp23017\_defs.h}}
+{\ttfamily \#include $<$inttypes.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+Gráfico de dependencias incluidas en mcp23017\+\_\+defs.\+h\+:
+% FIG 0
+Gráfico de los archivos que directa o indirectamente incluyen a este archivo\+:
+% FIG 1
+\doxysubsubsection*{Estructuras de datos}
+\begin{DoxyCompactItemize}
+\item 
+union \mbox{\hyperlink{union_m_c_p23017___i_o_d_i_r__t}{MCP23017\+\_\+\+IODIR\+\_\+t}}
+\item 
+union \mbox{\hyperlink{union_m_c_p23017___i_p_o_l__t}{MCP23017\+\_\+\+IPOL\+\_\+t}}
+\item 
+union \mbox{\hyperlink{union_m_c_p23017___g_p_i_n_t_e_n__t}{MCP23017\+\_\+\+GPINTEN\+\_\+t}}
+\item 
+union \mbox{\hyperlink{union_m_c_p23017___g_p_p_u__t}{MCP23017\+\_\+\+GPPU\+\_\+t}}
+\item 
+union \mbox{\hyperlink{union_m_c_p23017___g_p_i_o__t}{MCP23017\+\_\+\+GPIO\+\_\+t}}
+\item 
+union \mbox{\hyperlink{union_m_c_p23017___o_l_a_t__t}{MCP23017\+\_\+\+OLAT\+\_\+t}}
+\item 
+union \mbox{\hyperlink{union_m_c_p23017___d_e_f_v_a_l__t}{MCP23017\+\_\+\+DEFVAL\+\_\+t}}
+\item 
+union \mbox{\hyperlink{union_m_c_p23017___i_n_t_c_o_n__t}{MCP23017\+\_\+\+INTCON\+\_\+t}}
+\item 
+union \mbox{\hyperlink{union_m_c_p23017___i_o_c_o_n__t}{MCP23017\+\_\+\+IOCON\+\_\+t}}
+\item 
+union \mbox{\hyperlink{union_m_c_p23017___i_n_t_f__t}{MCP23017\+\_\+\+INTF\+\_\+t}}
+\item 
+union \mbox{\hyperlink{union_m_c_p23017___i_n_t_c_a_p__t}{MCP23017\+\_\+\+INTCAP\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{mcp23017__defs_8h_a8255256173e0a600694a7c4694943c33}{\+\_\+\+\_\+\+MCP23017\+\_\+\+BANK\+\_\+\+SEQUENTIAL\+\_\+\+\_\+}}~0
+\item 
+\#define \mbox{\hyperlink{mcp23017__defs_8h_abe0b577eb5e3ec8f7ff85be4bcd77458}{\+\_\+\+\_\+\+MCP23017\+\_\+\+BANK\+\_\+\+SPLIT\+\_\+\+\_\+}}~1
+\item 
+\#define \mbox{\hyperlink{mcp23017__defs_8h_af9f0d2266128ff4d1ea2f0317db40844}{\+\_\+\+\_\+\+MCP23017\+\_\+\+MIRROR\+\_\+\+UNCONNECTED\+\_\+\+\_\+}}~0
+\item 
+\#define \mbox{\hyperlink{mcp23017__defs_8h_a0a70f309ce53db7502b675bd159c76fe}{\+\_\+\+\_\+\+MCP23017\+\_\+\+MIRROR\+\_\+\+CONNECTED\+\_\+\+\_\+}}~1
+\item 
+\#define \mbox{\hyperlink{mcp23017__defs_8h_a51292fbc467a58a1560609f6729fe333}{\+\_\+\+\_\+\+MCP23017\+\_\+\+SEQOP\+\_\+\+ENABLED\+\_\+\+\_\+}}~0
+\item 
+\#define \mbox{\hyperlink{mcp23017__defs_8h_a185b00387fa0714bf1c431f69bcc8e4c}{\+\_\+\+\_\+\+MCP23017\+\_\+\+SEQOP\+\_\+\+DISABLED\+\_\+\+\_\+}}~1
+\item 
+\#define \mbox{\hyperlink{mcp23017__defs_8h_a97745eb1e5fff8faa561d2d0a83caa29}{\+\_\+\+\_\+\+MCP23017\+\_\+\+DISSLW\+\_\+\+DISABLED\+\_\+\+\_\+}}~0
+\item 
+\#define \mbox{\hyperlink{mcp23017__defs_8h_adbacf836e8da60dbb98be3f62db5b110}{\+\_\+\+\_\+\+MCP23017\+\_\+\+DISSLW\+\_\+\+ENABLED\+\_\+\+\_\+}}~1
+\item 
+\#define \mbox{\hyperlink{mcp23017__defs_8h_a7113219bfda9f0308db8ef14e7848008}{\+\_\+\+\_\+\+MCP23017\+\_\+\+ODR\+\_\+\+OPEN\+\_\+\+DRAIN\+\_\+\+OUTPUT\+\_\+\+\_\+}}~1
+\item 
+\#define \mbox{\hyperlink{mcp23017__defs_8h_af9d777be87f6ae8ce6f93c9c09cc4b96}{\+\_\+\+\_\+\+MCP23017\+\_\+\+ODR\+\_\+\+ACTIVE\+\_\+\+DRIVER\+\_\+\+OUTPUT\+\_\+\+\_\+}}~0
+\item 
+\#define \mbox{\hyperlink{mcp23017__defs_8h_a22093e56fd84aa846e3ce950103ca8f8}{\+\_\+\+\_\+\+MCP23017\+\_\+\+INTPOL\+\_\+\+POLARITY\+\_\+\+LOW\+\_\+\+\_\+}}~1
+\item 
+\#define \mbox{\hyperlink{mcp23017__defs_8h_ad94d0708ee4c4825ccaf6f1a999edc54}{\+\_\+\+\_\+\+MCP23017\+\_\+\+INTPOL\+\_\+\+POLARITY\+\_\+\+HIGH\+\_\+\+\_\+}}~0
+\item 
+\#define \mbox{\hyperlink{mcp23017__defs_8h_ac1ced3bf8e3f68e5340993183cdcf610}{\+\_\+\+\_\+\+MCP23017\+\_\+\+GPPU\+\_\+\+PULL\+\_\+\+UP\+\_\+\+ENABLE\+\_\+\+\_\+}}~1
+\item 
+\#define \mbox{\hyperlink{mcp23017__defs_8h_aa1a942b0d3628b255b0e99806530f669}{\+\_\+\+\_\+\+MCP23017\+\_\+\+GPPU\+\_\+\+PULL\+\_\+\+UP\+\_\+\+DISABLE\+\_\+\+\_\+}}~0
+\item 
+\#define \mbox{\hyperlink{mcp23017__defs_8h_af715b33088e1a01ec833c09ded0ceb62}{\+\_\+\+\_\+\+MCP23017\+\_\+\+IODIR\+\_\+\+INPUT\+\_\+\+\_\+}}~1
+\item 
+\#define \mbox{\hyperlink{mcp23017__defs_8h_acecc30ea013d372aa1ee9a3a49e9195b}{\+\_\+\+\_\+\+MCP23017\+\_\+\+IODIR\+\_\+\+OUTPUT\+\_\+\+\_\+}}~0
+\item 
+\#define \mbox{\hyperlink{mcp23017__defs_8h_a35b6bdd46f6333a7f7113c28844df09e}{\+\_\+\+\_\+\+MCP23017\+\_\+\+GPINTEN\+\_\+\+ENABLE\+\_\+\+\_\+}}~1
+\item 
+\#define \mbox{\hyperlink{mcp23017__defs_8h_a6595deb94d8925ab836f21321dbb1f8e}{\+\_\+\+\_\+\+MCP23017\+\_\+\+GPINTEN\+\_\+\+DISABLE\+\_\+\+\_\+}}~0
+\item 
+\#define \mbox{\hyperlink{mcp23017__defs_8h_a694f859e3969fd78bb50350a01ca4c23}{\+\_\+\+\_\+\+MCP23017\+\_\+\+INTCON\+\_\+\+DEFVAL\+\_\+\+\_\+}}~1
+\item 
+\#define \mbox{\hyperlink{mcp23017__defs_8h_a484a50281fa81f4c3c0558b37337bc05}{\+\_\+\+\_\+\+MCP23017\+\_\+\+INTCON\+\_\+\+CHANGE\+\_\+\+\_\+}}~0
+\item 
+\#define \mbox{\hyperlink{mcp23017__defs_8h_a4906928b19905cc69faa3fe249bf60b6}{\+\_\+\+\_\+\+MCP23017\+\_\+\+WRITE\+\_\+\+\_\+}}~0
+\item 
+\#define \mbox{\hyperlink{mcp23017__defs_8h_a8d609dfb3b3d5137bb93775d74ee47e8}{\+\_\+\+\_\+\+MCP23017\+\_\+\+READ\+\_\+\+\_\+}}~1
+\item 
+\#define \mbox{\hyperlink{mcp23017__defs_8h_a5eef073627734d21132edd8225efb935}{\+\_\+\+\_\+\+MCP23017\+\_\+\+POSITIVE\+\_\+\+LOGIC\+\_\+\+\_\+}}~0
+\item 
+\#define \mbox{\hyperlink{mcp23017__defs_8h_ae2d155897147b673fd789e38f2b81b3e}{\+\_\+\+\_\+\+MCP23017\+\_\+\+OPPOSITE\+\_\+\+LOGIC\+\_\+\+\_\+}}~1
+\item 
+\#define \mbox{\hyperlink{mcp23017__defs_8h_a0fbbb0d11e9fbafe95db02aee0209465}{\+\_\+\+\_\+\+MCP23017\+\_\+\+INTERRUPT\+\_\+\+ENABLE\+\_\+\+\_\+}}~0
+\item 
+\#define \mbox{\hyperlink{mcp23017__defs_8h_abe563d2ae4332ff541e811b3a911a57b}{\+\_\+\+\_\+\+MCP23017\+\_\+\+INTERRUPT\+\_\+\+DISABLE\+\_\+\+\_\+}}~1
+\item 
+\#define \mbox{\hyperlink{mcp23017__defs_8h_a49e8cee695e25aac4f587d3282834048}{\+\_\+\+\_\+\+MCP23017\+\_\+\+ADDRESS\+\_\+\+\_\+}}~0b010
+\item 
+\#define \mbox{\hyperlink{mcp23017__defs_8h_a9ccd0e3d1c60c31baa0ded4256006b1d}{\+\_\+\+\_\+\+MCP23017\+\_\+\+READ\+\_\+\+OPPCODE\+\_\+\+\_\+}}~0b0100 $<$$<$ 4 \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{mcp23017__defs_8h_a49e8cee695e25aac4f587d3282834048}{\+\_\+\+\_\+\+MCP23017\+\_\+\+ADDRESS\+\_\+\+\_\+}} $<$$<$ 1 \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{mcp23017__defs_8h_a8d609dfb3b3d5137bb93775d74ee47e8}{\+\_\+\+\_\+\+MCP23017\+\_\+\+READ\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{mcp23017__defs_8h_a21d4f61cf1af5c1e74fa1077dd5b153c}{\+\_\+\+\_\+\+MCP23017\+\_\+\+WRITE\+\_\+\+OPPCODE\+\_\+\+\_\+}}~0b0100 $<$$<$ 4 \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{mcp23017__defs_8h_a49e8cee695e25aac4f587d3282834048}{\+\_\+\+\_\+\+MCP23017\+\_\+\+ADDRESS\+\_\+\+\_\+}} $<$$<$ 1 \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{mcp23017__defs_8h_a4906928b19905cc69faa3fe249bf60b6}{\+\_\+\+\_\+\+MCP23017\+\_\+\+WRITE\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{mcp23017__defs_8h_a7be1ce9abc7ea4bacc380ae5af2699bd}{\+\_\+\+\_\+\+MCP23017\+\_\+\+FUNC\+\_\+\+MODE\+\_\+\+\_\+}}~\mbox{\hyperlink{mcp23017__defs_8h_a8255256173e0a600694a7c4694943c33}{\+\_\+\+\_\+\+MCP23017\+\_\+\+BANK\+\_\+\+SEQUENTIAL\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{mcp23017__defs_8h_a362db1a2c8d281c17b5257f96519a249}{MCP23017\+\_\+\+IODIRA\+\_\+\+REGISTER}}~0x00
+\item 
+\#define \mbox{\hyperlink{mcp23017__defs_8h_a37178675c1844596f5914680c5159fc6}{MCP23017\+\_\+\+IODIRB\+\_\+\+REGISTER}}~0x01
+\item 
+\#define \mbox{\hyperlink{mcp23017__defs_8h_af9c4a57ec712faad131714cfe7017435}{MCP23017\+\_\+\+IPOLA\+\_\+\+REGISTER}}~0x02
+\item 
+\#define \mbox{\hyperlink{mcp23017__defs_8h_a6aaabf5e90d7428c10a62599e1ecacea}{MCP23017\+\_\+\+IPOLB\+\_\+\+REGISTER}}~0x03
+\item 
+\#define \mbox{\hyperlink{mcp23017__defs_8h_a2880420e63715f711bf3384af318f577}{MCP23017\+\_\+\+GPINTENA\+\_\+\+REGISTER}}~0x04
+\item 
+\#define \mbox{\hyperlink{mcp23017__defs_8h_a676e2e695c779fa8a4106675fa6f092f}{MCP23017\+\_\+\+GPINTENB\+\_\+\+REGISTER}}~0x05
+\item 
+\#define \mbox{\hyperlink{mcp23017__defs_8h_aaa6a5a611e0b814bf114602c3c9e946e}{MCP23017\+\_\+\+DEFVALA\+\_\+\+REGISTER}}~0x06
+\item 
+\#define \mbox{\hyperlink{mcp23017__defs_8h_aa13debe626af2c4eebe490d12e3eed72}{MCP23017\+\_\+\+DEFVALB\+\_\+\+REGISTER}}~0x07
+\item 
+\#define \mbox{\hyperlink{mcp23017__defs_8h_a4394afa9f75cd51c83afe734a3ef4247}{MCP23017\+\_\+\+INTCONA\+\_\+\+REGISTER}}~0x08
+\item 
+\#define \mbox{\hyperlink{mcp23017__defs_8h_ab14c5842a39d04d8a89575aabebb672c}{MCP23017\+\_\+\+INTCONB\+\_\+\+REGISTER}}~0x09
+\item 
+\#define \mbox{\hyperlink{mcp23017__defs_8h_a718690109e687f983e2fe0ed3a503193}{MCP23017\+\_\+\+IOCON\+\_\+\+REGISTER}}~0x0A
+\item 
+\#define \mbox{\hyperlink{mcp23017__defs_8h_a11c211255ed4a384aaec6b0eceef6dd9}{MCP23017\+\_\+\+GPPUA\+\_\+\+REGISTER}}~0x0C
+\item 
+\#define \mbox{\hyperlink{mcp23017__defs_8h_a6d4ecbb69d1d7389a6fa0e2ef9427aa0}{MCP23017\+\_\+\+GPPUB\+\_\+\+REGISTER}}~0x0D
+\item 
+\#define \mbox{\hyperlink{mcp23017__defs_8h_a3ee740f9694356cc24cd00a2cbef8785}{MCP23017\+\_\+\+INTFA\+\_\+\+REGISTER}}~0x0E
+\item 
+\#define \mbox{\hyperlink{mcp23017__defs_8h_a417b6274a79fe4a470993de424b6aee3}{MCP23017\+\_\+\+INTFB\+\_\+\+REGISTER}}~0x0F
+\item 
+\#define \mbox{\hyperlink{mcp23017__defs_8h_a2e886bb1accf6b2aa45f05e93c554b96}{MCP23017\+\_\+\+INTCAPA\+\_\+\+REGISTER}}~0x10
+\item 
+\#define \mbox{\hyperlink{mcp23017__defs_8h_af9ef65e81f852d1fc1b46488812af8cc}{MCP23017\+\_\+\+INTCAPB\+\_\+\+REGISTER}}~0x11
+\item 
+\#define \mbox{\hyperlink{mcp23017__defs_8h_a4c1248c1f851ae7e4b4404ac31e9f3ba}{MCP23017\+\_\+\+GPIOA\+\_\+\+REGISTER}}~0x12
+\item 
+\#define \mbox{\hyperlink{mcp23017__defs_8h_aa8ce902086f9c9572e5a92376f672158}{MCP23017\+\_\+\+GPIOB\+\_\+\+REGISTER}}~0x13
+\item 
+\#define \mbox{\hyperlink{mcp23017__defs_8h_a08269b9381dd6083fb50168a14ed8904}{MCP23017\+\_\+\+OLATA\+\_\+\+REGISTER}}~0x14
+\item 
+\#define \mbox{\hyperlink{mcp23017__defs_8h_ad55f843bd110a09a825d107770ae083d}{MCP23017\+\_\+\+OLATB\+\_\+\+REGISTER}}~0x15
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumeraciones}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{mcp23017__defs_8h_a7b7476975849505bba2c9b211b62d5bd}{mcp\+\_\+port\+\_\+e}} \{ \mbox{\hyperlink{mcp23017__defs_8h_a7b7476975849505bba2c9b211b62d5bdae3201f6e0d0c1e138c60903276bb3859}{PORTA}} = 0
+, \mbox{\hyperlink{mcp23017__defs_8h_a7b7476975849505bba2c9b211b62d5bdae51dea4a37f3e2ede7ba6f27c563f6a4}{PORTB}} = 1
+ \}
+\begin{DoxyCompactList}\small\item\em Selector de puertos del MCP23017. Puede ser PORTA (0) o PORTB (1). De esta manera el usuario se abtrae en conocer como se llaman los registros del chip, solo con las funciones específicas de lectura y escritura, datos, pines y esta definición de puerto. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{doc-define-members}
+\Hypertarget{mcp23017__defs_8h_doc-define-members}
+\doxysubsection{Documentación de «define»}
+\Hypertarget{mcp23017__defs_8h_a49e8cee695e25aac4f587d3282834048}\index{mcp23017\_defs.h@{mcp23017\_defs.h}!\_\_MCP23017\_ADDRESS\_\_@{\_\_MCP23017\_ADDRESS\_\_}}
+\index{\_\_MCP23017\_ADDRESS\_\_@{\_\_MCP23017\_ADDRESS\_\_}!mcp23017\_defs.h@{mcp23017\_defs.h}}
+\doxysubsubsection{\texorpdfstring{\_\_MCP23017\_ADDRESS\_\_}{\_\_MCP23017\_ADDRESS\_\_}}
+{\footnotesize\ttfamily \label{mcp23017__defs_8h_a49e8cee695e25aac4f587d3282834048} 
+\#define \+\_\+\+\_\+\+MCP23017\+\_\+\+ADDRESS\+\_\+\+\_\+~0b010}
+
+CONFIGURADO POR HARDWARE\+: Address del MCP23017 = 0b010 -\/-\/-\/-\/\texorpdfstring{$>$}{>} OPCODE\+: 0100AAA0 -\/\texorpdfstring{$>$}{>} 01000000 \texorpdfstring{$\vert$}{|} {\bfseries{MCP23017\+\_\+\+ADDRESS}} \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 1 \texorpdfstring{$\vert$}{|} R/W 
+
+Definición en la línea \mbox{\hyperlink{mcp23017__defs_8h_source_l00050}{50}} del archivo \mbox{\hyperlink{mcp23017__defs_8h_source}{mcp23017\+\_\+defs.\+h}}.
+
+\Hypertarget{mcp23017__defs_8h_a8255256173e0a600694a7c4694943c33}\index{mcp23017\_defs.h@{mcp23017\_defs.h}!\_\_MCP23017\_BANK\_SEQUENTIAL\_\_@{\_\_MCP23017\_BANK\_SEQUENTIAL\_\_}}
+\index{\_\_MCP23017\_BANK\_SEQUENTIAL\_\_@{\_\_MCP23017\_BANK\_SEQUENTIAL\_\_}!mcp23017\_defs.h@{mcp23017\_defs.h}}
+\doxysubsubsection{\texorpdfstring{\_\_MCP23017\_BANK\_SEQUENTIAL\_\_}{\_\_MCP23017\_BANK\_SEQUENTIAL\_\_}}
+{\footnotesize\ttfamily \label{mcp23017__defs_8h_a8255256173e0a600694a7c4694943c33} 
+\#define \+\_\+\+\_\+\+MCP23017\+\_\+\+BANK\+\_\+\+SEQUENTIAL\+\_\+\+\_\+~0}
+
+Modo de banqueo de moemora separado por puertos 
+
+Definición en la línea \mbox{\hyperlink{mcp23017__defs_8h_source_l00011}{11}} del archivo \mbox{\hyperlink{mcp23017__defs_8h_source}{mcp23017\+\_\+defs.\+h}}.
+
+\Hypertarget{mcp23017__defs_8h_abe0b577eb5e3ec8f7ff85be4bcd77458}\index{mcp23017\_defs.h@{mcp23017\_defs.h}!\_\_MCP23017\_BANK\_SPLIT\_\_@{\_\_MCP23017\_BANK\_SPLIT\_\_}}
+\index{\_\_MCP23017\_BANK\_SPLIT\_\_@{\_\_MCP23017\_BANK\_SPLIT\_\_}!mcp23017\_defs.h@{mcp23017\_defs.h}}
+\doxysubsubsection{\texorpdfstring{\_\_MCP23017\_BANK\_SPLIT\_\_}{\_\_MCP23017\_BANK\_SPLIT\_\_}}
+{\footnotesize\ttfamily \label{mcp23017__defs_8h_abe0b577eb5e3ec8f7ff85be4bcd77458} 
+\#define \+\_\+\+\_\+\+MCP23017\+\_\+\+BANK\+\_\+\+SPLIT\+\_\+\+\_\+~1}
+
+Modo de banqueo de moemora entrelazando puertos para manejo con entreos de 16 bits 
+
+Definición en la línea \mbox{\hyperlink{mcp23017__defs_8h_source_l00012}{12}} del archivo \mbox{\hyperlink{mcp23017__defs_8h_source}{mcp23017\+\_\+defs.\+h}}.
+
+\Hypertarget{mcp23017__defs_8h_a97745eb1e5fff8faa561d2d0a83caa29}\index{mcp23017\_defs.h@{mcp23017\_defs.h}!\_\_MCP23017\_DISSLW\_DISABLED\_\_@{\_\_MCP23017\_DISSLW\_DISABLED\_\_}}
+\index{\_\_MCP23017\_DISSLW\_DISABLED\_\_@{\_\_MCP23017\_DISSLW\_DISABLED\_\_}!mcp23017\_defs.h@{mcp23017\_defs.h}}
+\doxysubsubsection{\texorpdfstring{\_\_MCP23017\_DISSLW\_DISABLED\_\_}{\_\_MCP23017\_DISSLW\_DISABLED\_\_}}
+{\footnotesize\ttfamily \label{mcp23017__defs_8h_a97745eb1e5fff8faa561d2d0a83caa29} 
+\#define \+\_\+\+\_\+\+MCP23017\+\_\+\+DISSLW\+\_\+\+DISABLED\+\_\+\+\_\+~0}
+
+Slew rate deshabilitado 
+
+Definición en la línea \mbox{\hyperlink{mcp23017__defs_8h_source_l00020}{20}} del archivo \mbox{\hyperlink{mcp23017__defs_8h_source}{mcp23017\+\_\+defs.\+h}}.
+
+\Hypertarget{mcp23017__defs_8h_adbacf836e8da60dbb98be3f62db5b110}\index{mcp23017\_defs.h@{mcp23017\_defs.h}!\_\_MCP23017\_DISSLW\_ENABLED\_\_@{\_\_MCP23017\_DISSLW\_ENABLED\_\_}}
+\index{\_\_MCP23017\_DISSLW\_ENABLED\_\_@{\_\_MCP23017\_DISSLW\_ENABLED\_\_}!mcp23017\_defs.h@{mcp23017\_defs.h}}
+\doxysubsubsection{\texorpdfstring{\_\_MCP23017\_DISSLW\_ENABLED\_\_}{\_\_MCP23017\_DISSLW\_ENABLED\_\_}}
+{\footnotesize\ttfamily \label{mcp23017__defs_8h_adbacf836e8da60dbb98be3f62db5b110} 
+\#define \+\_\+\+\_\+\+MCP23017\+\_\+\+DISSLW\+\_\+\+ENABLED\+\_\+\+\_\+~1}
+
+Slew rate habilitado 
+
+Definición en la línea \mbox{\hyperlink{mcp23017__defs_8h_source_l00021}{21}} del archivo \mbox{\hyperlink{mcp23017__defs_8h_source}{mcp23017\+\_\+defs.\+h}}.
+
+\Hypertarget{mcp23017__defs_8h_a7be1ce9abc7ea4bacc380ae5af2699bd}\index{mcp23017\_defs.h@{mcp23017\_defs.h}!\_\_MCP23017\_FUNC\_MODE\_\_@{\_\_MCP23017\_FUNC\_MODE\_\_}}
+\index{\_\_MCP23017\_FUNC\_MODE\_\_@{\_\_MCP23017\_FUNC\_MODE\_\_}!mcp23017\_defs.h@{mcp23017\_defs.h}}
+\doxysubsubsection{\texorpdfstring{\_\_MCP23017\_FUNC\_MODE\_\_}{\_\_MCP23017\_FUNC\_MODE\_\_}}
+{\footnotesize\ttfamily \label{mcp23017__defs_8h_a7be1ce9abc7ea4bacc380ae5af2699bd} 
+\#define \+\_\+\+\_\+\+MCP23017\+\_\+\+FUNC\+\_\+\+MODE\+\_\+\+\_\+~\mbox{\hyperlink{mcp23017__defs_8h_a8255256173e0a600694a7c4694943c33}{\+\_\+\+\_\+\+MCP23017\+\_\+\+BANK\+\_\+\+SEQUENTIAL\+\_\+\+\_\+}}}
+
+Modo de funcionamieto del MCP23017 que funcionará en el sistema 
+
+Definición en la línea \mbox{\hyperlink{mcp23017__defs_8h_source_l00054}{54}} del archivo \mbox{\hyperlink{mcp23017__defs_8h_source}{mcp23017\+\_\+defs.\+h}}.
+
+\Hypertarget{mcp23017__defs_8h_a6595deb94d8925ab836f21321dbb1f8e}\index{mcp23017\_defs.h@{mcp23017\_defs.h}!\_\_MCP23017\_GPINTEN\_DISABLE\_\_@{\_\_MCP23017\_GPINTEN\_DISABLE\_\_}}
+\index{\_\_MCP23017\_GPINTEN\_DISABLE\_\_@{\_\_MCP23017\_GPINTEN\_DISABLE\_\_}!mcp23017\_defs.h@{mcp23017\_defs.h}}
+\doxysubsubsection{\texorpdfstring{\_\_MCP23017\_GPINTEN\_DISABLE\_\_}{\_\_MCP23017\_GPINTEN\_DISABLE\_\_}}
+{\footnotesize\ttfamily \label{mcp23017__defs_8h_a6595deb94d8925ab836f21321dbb1f8e} 
+\#define \+\_\+\+\_\+\+MCP23017\+\_\+\+GPINTEN\+\_\+\+DISABLE\+\_\+\+\_\+~0}
+
+Interrupción de GPIO deshabilitada 
+
+Definición en la línea \mbox{\hyperlink{mcp23017__defs_8h_source_l00036}{36}} del archivo \mbox{\hyperlink{mcp23017__defs_8h_source}{mcp23017\+\_\+defs.\+h}}.
+
+\Hypertarget{mcp23017__defs_8h_a35b6bdd46f6333a7f7113c28844df09e}\index{mcp23017\_defs.h@{mcp23017\_defs.h}!\_\_MCP23017\_GPINTEN\_ENABLE\_\_@{\_\_MCP23017\_GPINTEN\_ENABLE\_\_}}
+\index{\_\_MCP23017\_GPINTEN\_ENABLE\_\_@{\_\_MCP23017\_GPINTEN\_ENABLE\_\_}!mcp23017\_defs.h@{mcp23017\_defs.h}}
+\doxysubsubsection{\texorpdfstring{\_\_MCP23017\_GPINTEN\_ENABLE\_\_}{\_\_MCP23017\_GPINTEN\_ENABLE\_\_}}
+{\footnotesize\ttfamily \label{mcp23017__defs_8h_a35b6bdd46f6333a7f7113c28844df09e} 
+\#define \+\_\+\+\_\+\+MCP23017\+\_\+\+GPINTEN\+\_\+\+ENABLE\+\_\+\+\_\+~1}
+
+Interrupción de GPIO habilitada 
+
+Definición en la línea \mbox{\hyperlink{mcp23017__defs_8h_source_l00035}{35}} del archivo \mbox{\hyperlink{mcp23017__defs_8h_source}{mcp23017\+\_\+defs.\+h}}.
+
+\Hypertarget{mcp23017__defs_8h_aa1a942b0d3628b255b0e99806530f669}\index{mcp23017\_defs.h@{mcp23017\_defs.h}!\_\_MCP23017\_GPPU\_PULL\_UP\_DISABLE\_\_@{\_\_MCP23017\_GPPU\_PULL\_UP\_DISABLE\_\_}}
+\index{\_\_MCP23017\_GPPU\_PULL\_UP\_DISABLE\_\_@{\_\_MCP23017\_GPPU\_PULL\_UP\_DISABLE\_\_}!mcp23017\_defs.h@{mcp23017\_defs.h}}
+\doxysubsubsection{\texorpdfstring{\_\_MCP23017\_GPPU\_PULL\_UP\_DISABLE\_\_}{\_\_MCP23017\_GPPU\_PULL\_UP\_DISABLE\_\_}}
+{\footnotesize\ttfamily \label{mcp23017__defs_8h_aa1a942b0d3628b255b0e99806530f669} 
+\#define \+\_\+\+\_\+\+MCP23017\+\_\+\+GPPU\+\_\+\+PULL\+\_\+\+UP\+\_\+\+DISABLE\+\_\+\+\_\+~0}
+
+DESctivación de pull up de GPIO 
+
+Definición en la línea \mbox{\hyperlink{mcp23017__defs_8h_source_l00030}{30}} del archivo \mbox{\hyperlink{mcp23017__defs_8h_source}{mcp23017\+\_\+defs.\+h}}.
+
+\Hypertarget{mcp23017__defs_8h_ac1ced3bf8e3f68e5340993183cdcf610}\index{mcp23017\_defs.h@{mcp23017\_defs.h}!\_\_MCP23017\_GPPU\_PULL\_UP\_ENABLE\_\_@{\_\_MCP23017\_GPPU\_PULL\_UP\_ENABLE\_\_}}
+\index{\_\_MCP23017\_GPPU\_PULL\_UP\_ENABLE\_\_@{\_\_MCP23017\_GPPU\_PULL\_UP\_ENABLE\_\_}!mcp23017\_defs.h@{mcp23017\_defs.h}}
+\doxysubsubsection{\texorpdfstring{\_\_MCP23017\_GPPU\_PULL\_UP\_ENABLE\_\_}{\_\_MCP23017\_GPPU\_PULL\_UP\_ENABLE\_\_}}
+{\footnotesize\ttfamily \label{mcp23017__defs_8h_ac1ced3bf8e3f68e5340993183cdcf610} 
+\#define \+\_\+\+\_\+\+MCP23017\+\_\+\+GPPU\+\_\+\+PULL\+\_\+\+UP\+\_\+\+ENABLE\+\_\+\+\_\+~1}
+
+Activación de pull up de GPIO 
+
+Definición en la línea \mbox{\hyperlink{mcp23017__defs_8h_source_l00029}{29}} del archivo \mbox{\hyperlink{mcp23017__defs_8h_source}{mcp23017\+\_\+defs.\+h}}.
+
+\Hypertarget{mcp23017__defs_8h_a484a50281fa81f4c3c0558b37337bc05}\index{mcp23017\_defs.h@{mcp23017\_defs.h}!\_\_MCP23017\_INTCON\_CHANGE\_\_@{\_\_MCP23017\_INTCON\_CHANGE\_\_}}
+\index{\_\_MCP23017\_INTCON\_CHANGE\_\_@{\_\_MCP23017\_INTCON\_CHANGE\_\_}!mcp23017\_defs.h@{mcp23017\_defs.h}}
+\doxysubsubsection{\texorpdfstring{\_\_MCP23017\_INTCON\_CHANGE\_\_}{\_\_MCP23017\_INTCON\_CHANGE\_\_}}
+{\footnotesize\ttfamily \label{mcp23017__defs_8h_a484a50281fa81f4c3c0558b37337bc05} 
+\#define \+\_\+\+\_\+\+MCP23017\+\_\+\+INTCON\+\_\+\+CHANGE\+\_\+\+\_\+~0}
+
+Interrupción dispara por diferencia con útlimo valor 
+
+Definición en la línea \mbox{\hyperlink{mcp23017__defs_8h_source_l00039}{39}} del archivo \mbox{\hyperlink{mcp23017__defs_8h_source}{mcp23017\+\_\+defs.\+h}}.
+
+\Hypertarget{mcp23017__defs_8h_a694f859e3969fd78bb50350a01ca4c23}\index{mcp23017\_defs.h@{mcp23017\_defs.h}!\_\_MCP23017\_INTCON\_DEFVAL\_\_@{\_\_MCP23017\_INTCON\_DEFVAL\_\_}}
+\index{\_\_MCP23017\_INTCON\_DEFVAL\_\_@{\_\_MCP23017\_INTCON\_DEFVAL\_\_}!mcp23017\_defs.h@{mcp23017\_defs.h}}
+\doxysubsubsection{\texorpdfstring{\_\_MCP23017\_INTCON\_DEFVAL\_\_}{\_\_MCP23017\_INTCON\_DEFVAL\_\_}}
+{\footnotesize\ttfamily \label{mcp23017__defs_8h_a694f859e3969fd78bb50350a01ca4c23} 
+\#define \+\_\+\+\_\+\+MCP23017\+\_\+\+INTCON\+\_\+\+DEFVAL\+\_\+\+\_\+~1}
+
+Interrupción dispara por diferencia con valor default 
+
+Definición en la línea \mbox{\hyperlink{mcp23017__defs_8h_source_l00038}{38}} del archivo \mbox{\hyperlink{mcp23017__defs_8h_source}{mcp23017\+\_\+defs.\+h}}.
+
+\Hypertarget{mcp23017__defs_8h_abe563d2ae4332ff541e811b3a911a57b}\index{mcp23017\_defs.h@{mcp23017\_defs.h}!\_\_MCP23017\_INTERRUPT\_DISABLE\_\_@{\_\_MCP23017\_INTERRUPT\_DISABLE\_\_}}
+\index{\_\_MCP23017\_INTERRUPT\_DISABLE\_\_@{\_\_MCP23017\_INTERRUPT\_DISABLE\_\_}!mcp23017\_defs.h@{mcp23017\_defs.h}}
+\doxysubsubsection{\texorpdfstring{\_\_MCP23017\_INTERRUPT\_DISABLE\_\_}{\_\_MCP23017\_INTERRUPT\_DISABLE\_\_}}
+{\footnotesize\ttfamily \label{mcp23017__defs_8h_abe563d2ae4332ff541e811b3a911a57b} 
+\#define \+\_\+\+\_\+\+MCP23017\+\_\+\+INTERRUPT\+\_\+\+DISABLE\+\_\+\+\_\+~1}
+
+Habilitación de la interrupción del GPIO 
+
+Definición en la línea \mbox{\hyperlink{mcp23017__defs_8h_source_l00048}{48}} del archivo \mbox{\hyperlink{mcp23017__defs_8h_source}{mcp23017\+\_\+defs.\+h}}.
+
+\Hypertarget{mcp23017__defs_8h_a0fbbb0d11e9fbafe95db02aee0209465}\index{mcp23017\_defs.h@{mcp23017\_defs.h}!\_\_MCP23017\_INTERRUPT\_ENABLE\_\_@{\_\_MCP23017\_INTERRUPT\_ENABLE\_\_}}
+\index{\_\_MCP23017\_INTERRUPT\_ENABLE\_\_@{\_\_MCP23017\_INTERRUPT\_ENABLE\_\_}!mcp23017\_defs.h@{mcp23017\_defs.h}}
+\doxysubsubsection{\texorpdfstring{\_\_MCP23017\_INTERRUPT\_ENABLE\_\_}{\_\_MCP23017\_INTERRUPT\_ENABLE\_\_}}
+{\footnotesize\ttfamily \label{mcp23017__defs_8h_a0fbbb0d11e9fbafe95db02aee0209465} 
+\#define \+\_\+\+\_\+\+MCP23017\+\_\+\+INTERRUPT\+\_\+\+ENABLE\+\_\+\+\_\+~0}
+
+Deshabilitación de la interrupción del GPIO 
+
+Definición en la línea \mbox{\hyperlink{mcp23017__defs_8h_source_l00047}{47}} del archivo \mbox{\hyperlink{mcp23017__defs_8h_source}{mcp23017\+\_\+defs.\+h}}.
+
+\Hypertarget{mcp23017__defs_8h_ad94d0708ee4c4825ccaf6f1a999edc54}\index{mcp23017\_defs.h@{mcp23017\_defs.h}!\_\_MCP23017\_INTPOL\_POLARITY\_HIGH\_\_@{\_\_MCP23017\_INTPOL\_POLARITY\_HIGH\_\_}}
+\index{\_\_MCP23017\_INTPOL\_POLARITY\_HIGH\_\_@{\_\_MCP23017\_INTPOL\_POLARITY\_HIGH\_\_}!mcp23017\_defs.h@{mcp23017\_defs.h}}
+\doxysubsubsection{\texorpdfstring{\_\_MCP23017\_INTPOL\_POLARITY\_HIGH\_\_}{\_\_MCP23017\_INTPOL\_POLARITY\_HIGH\_\_}}
+{\footnotesize\ttfamily \label{mcp23017__defs_8h_ad94d0708ee4c4825ccaf6f1a999edc54} 
+\#define \+\_\+\+\_\+\+MCP23017\+\_\+\+INTPOL\+\_\+\+POLARITY\+\_\+\+HIGH\+\_\+\+\_\+~0}
+
+Flags de interrupción de los puerto A y B en 1 significa una nueva interrupción 
+
+Definición en la línea \mbox{\hyperlink{mcp23017__defs_8h_source_l00027}{27}} del archivo \mbox{\hyperlink{mcp23017__defs_8h_source}{mcp23017\+\_\+defs.\+h}}.
+
+\Hypertarget{mcp23017__defs_8h_a22093e56fd84aa846e3ce950103ca8f8}\index{mcp23017\_defs.h@{mcp23017\_defs.h}!\_\_MCP23017\_INTPOL\_POLARITY\_LOW\_\_@{\_\_MCP23017\_INTPOL\_POLARITY\_LOW\_\_}}
+\index{\_\_MCP23017\_INTPOL\_POLARITY\_LOW\_\_@{\_\_MCP23017\_INTPOL\_POLARITY\_LOW\_\_}!mcp23017\_defs.h@{mcp23017\_defs.h}}
+\doxysubsubsection{\texorpdfstring{\_\_MCP23017\_INTPOL\_POLARITY\_LOW\_\_}{\_\_MCP23017\_INTPOL\_POLARITY\_LOW\_\_}}
+{\footnotesize\ttfamily \label{mcp23017__defs_8h_a22093e56fd84aa846e3ce950103ca8f8} 
+\#define \+\_\+\+\_\+\+MCP23017\+\_\+\+INTPOL\+\_\+\+POLARITY\+\_\+\+LOW\+\_\+\+\_\+~1}
+
+Flags de interrupción de los puerto A y B en 0 significa una nueva interrupción 
+
+Definición en la línea \mbox{\hyperlink{mcp23017__defs_8h_source_l00026}{26}} del archivo \mbox{\hyperlink{mcp23017__defs_8h_source}{mcp23017\+\_\+defs.\+h}}.
+
+\Hypertarget{mcp23017__defs_8h_af715b33088e1a01ec833c09ded0ceb62}\index{mcp23017\_defs.h@{mcp23017\_defs.h}!\_\_MCP23017\_IODIR\_INPUT\_\_@{\_\_MCP23017\_IODIR\_INPUT\_\_}}
+\index{\_\_MCP23017\_IODIR\_INPUT\_\_@{\_\_MCP23017\_IODIR\_INPUT\_\_}!mcp23017\_defs.h@{mcp23017\_defs.h}}
+\doxysubsubsection{\texorpdfstring{\_\_MCP23017\_IODIR\_INPUT\_\_}{\_\_MCP23017\_IODIR\_INPUT\_\_}}
+{\footnotesize\ttfamily \label{mcp23017__defs_8h_af715b33088e1a01ec833c09ded0ceb62} 
+\#define \+\_\+\+\_\+\+MCP23017\+\_\+\+IODIR\+\_\+\+INPUT\+\_\+\+\_\+~1}
+
+GPIO configurada como entrada 
+
+Definición en la línea \mbox{\hyperlink{mcp23017__defs_8h_source_l00032}{32}} del archivo \mbox{\hyperlink{mcp23017__defs_8h_source}{mcp23017\+\_\+defs.\+h}}.
+
+\Hypertarget{mcp23017__defs_8h_acecc30ea013d372aa1ee9a3a49e9195b}\index{mcp23017\_defs.h@{mcp23017\_defs.h}!\_\_MCP23017\_IODIR\_OUTPUT\_\_@{\_\_MCP23017\_IODIR\_OUTPUT\_\_}}
+\index{\_\_MCP23017\_IODIR\_OUTPUT\_\_@{\_\_MCP23017\_IODIR\_OUTPUT\_\_}!mcp23017\_defs.h@{mcp23017\_defs.h}}
+\doxysubsubsection{\texorpdfstring{\_\_MCP23017\_IODIR\_OUTPUT\_\_}{\_\_MCP23017\_IODIR\_OUTPUT\_\_}}
+{\footnotesize\ttfamily \label{mcp23017__defs_8h_acecc30ea013d372aa1ee9a3a49e9195b} 
+\#define \+\_\+\+\_\+\+MCP23017\+\_\+\+IODIR\+\_\+\+OUTPUT\+\_\+\+\_\+~0}
+
+GPIO configurada como salida 
+
+Definición en la línea \mbox{\hyperlink{mcp23017__defs_8h_source_l00033}{33}} del archivo \mbox{\hyperlink{mcp23017__defs_8h_source}{mcp23017\+\_\+defs.\+h}}.
+
+\Hypertarget{mcp23017__defs_8h_a0a70f309ce53db7502b675bd159c76fe}\index{mcp23017\_defs.h@{mcp23017\_defs.h}!\_\_MCP23017\_MIRROR\_CONNECTED\_\_@{\_\_MCP23017\_MIRROR\_CONNECTED\_\_}}
+\index{\_\_MCP23017\_MIRROR\_CONNECTED\_\_@{\_\_MCP23017\_MIRROR\_CONNECTED\_\_}!mcp23017\_defs.h@{mcp23017\_defs.h}}
+\doxysubsubsection{\texorpdfstring{\_\_MCP23017\_MIRROR\_CONNECTED\_\_}{\_\_MCP23017\_MIRROR\_CONNECTED\_\_}}
+{\footnotesize\ttfamily \label{mcp23017__defs_8h_a0a70f309ce53db7502b675bd159c76fe} 
+\#define \+\_\+\+\_\+\+MCP23017\+\_\+\+MIRROR\+\_\+\+CONNECTED\+\_\+\+\_\+~1}
+
+Los pines de interrupción están internamente conectados 
+
+Definición en la línea \mbox{\hyperlink{mcp23017__defs_8h_source_l00015}{15}} del archivo \mbox{\hyperlink{mcp23017__defs_8h_source}{mcp23017\+\_\+defs.\+h}}.
+
+\Hypertarget{mcp23017__defs_8h_af9f0d2266128ff4d1ea2f0317db40844}\index{mcp23017\_defs.h@{mcp23017\_defs.h}!\_\_MCP23017\_MIRROR\_UNCONNECTED\_\_@{\_\_MCP23017\_MIRROR\_UNCONNECTED\_\_}}
+\index{\_\_MCP23017\_MIRROR\_UNCONNECTED\_\_@{\_\_MCP23017\_MIRROR\_UNCONNECTED\_\_}!mcp23017\_defs.h@{mcp23017\_defs.h}}
+\doxysubsubsection{\texorpdfstring{\_\_MCP23017\_MIRROR\_UNCONNECTED\_\_}{\_\_MCP23017\_MIRROR\_UNCONNECTED\_\_}}
+{\footnotesize\ttfamily \label{mcp23017__defs_8h_af9f0d2266128ff4d1ea2f0317db40844} 
+\#define \+\_\+\+\_\+\+MCP23017\+\_\+\+MIRROR\+\_\+\+UNCONNECTED\+\_\+\+\_\+~0}
+
+Los pines de interrupción no están internamente conectados 
+
+Definición en la línea \mbox{\hyperlink{mcp23017__defs_8h_source_l00014}{14}} del archivo \mbox{\hyperlink{mcp23017__defs_8h_source}{mcp23017\+\_\+defs.\+h}}.
+
+\Hypertarget{mcp23017__defs_8h_af9d777be87f6ae8ce6f93c9c09cc4b96}\index{mcp23017\_defs.h@{mcp23017\_defs.h}!\_\_MCP23017\_ODR\_ACTIVE\_DRIVER\_OUTPUT\_\_@{\_\_MCP23017\_ODR\_ACTIVE\_DRIVER\_OUTPUT\_\_}}
+\index{\_\_MCP23017\_ODR\_ACTIVE\_DRIVER\_OUTPUT\_\_@{\_\_MCP23017\_ODR\_ACTIVE\_DRIVER\_OUTPUT\_\_}!mcp23017\_defs.h@{mcp23017\_defs.h}}
+\doxysubsubsection{\texorpdfstring{\_\_MCP23017\_ODR\_ACTIVE\_DRIVER\_OUTPUT\_\_}{\_\_MCP23017\_ODR\_ACTIVE\_DRIVER\_OUTPUT\_\_}}
+{\footnotesize\ttfamily \label{mcp23017__defs_8h_af9d777be87f6ae8ce6f93c9c09cc4b96} 
+\#define \+\_\+\+\_\+\+MCP23017\+\_\+\+ODR\+\_\+\+ACTIVE\+\_\+\+DRIVER\+\_\+\+OUTPUT\+\_\+\+\_\+~0}
+
+Flags de interrupción de los puerto A y B configuradas como salidas activas 
+
+Definición en la línea \mbox{\hyperlink{mcp23017__defs_8h_source_l00024}{24}} del archivo \mbox{\hyperlink{mcp23017__defs_8h_source}{mcp23017\+\_\+defs.\+h}}.
+
+\Hypertarget{mcp23017__defs_8h_a7113219bfda9f0308db8ef14e7848008}\index{mcp23017\_defs.h@{mcp23017\_defs.h}!\_\_MCP23017\_ODR\_OPEN\_DRAIN\_OUTPUT\_\_@{\_\_MCP23017\_ODR\_OPEN\_DRAIN\_OUTPUT\_\_}}
+\index{\_\_MCP23017\_ODR\_OPEN\_DRAIN\_OUTPUT\_\_@{\_\_MCP23017\_ODR\_OPEN\_DRAIN\_OUTPUT\_\_}!mcp23017\_defs.h@{mcp23017\_defs.h}}
+\doxysubsubsection{\texorpdfstring{\_\_MCP23017\_ODR\_OPEN\_DRAIN\_OUTPUT\_\_}{\_\_MCP23017\_ODR\_OPEN\_DRAIN\_OUTPUT\_\_}}
+{\footnotesize\ttfamily \label{mcp23017__defs_8h_a7113219bfda9f0308db8ef14e7848008} 
+\#define \+\_\+\+\_\+\+MCP23017\+\_\+\+ODR\+\_\+\+OPEN\+\_\+\+DRAIN\+\_\+\+OUTPUT\+\_\+\+\_\+~1}
+
+Flags de interrupción de los puerto A y B configuradas open drain 
+
+Definición en la línea \mbox{\hyperlink{mcp23017__defs_8h_source_l00023}{23}} del archivo \mbox{\hyperlink{mcp23017__defs_8h_source}{mcp23017\+\_\+defs.\+h}}.
+
+\Hypertarget{mcp23017__defs_8h_ae2d155897147b673fd789e38f2b81b3e}\index{mcp23017\_defs.h@{mcp23017\_defs.h}!\_\_MCP23017\_OPPOSITE\_LOGIC\_\_@{\_\_MCP23017\_OPPOSITE\_LOGIC\_\_}}
+\index{\_\_MCP23017\_OPPOSITE\_LOGIC\_\_@{\_\_MCP23017\_OPPOSITE\_LOGIC\_\_}!mcp23017\_defs.h@{mcp23017\_defs.h}}
+\doxysubsubsection{\texorpdfstring{\_\_MCP23017\_OPPOSITE\_LOGIC\_\_}{\_\_MCP23017\_OPPOSITE\_LOGIC\_\_}}
+{\footnotesize\ttfamily \label{mcp23017__defs_8h_ae2d155897147b673fd789e38f2b81b3e} 
+\#define \+\_\+\+\_\+\+MCP23017\+\_\+\+OPPOSITE\+\_\+\+LOGIC\+\_\+\+\_\+~1}
+
+Configuración de la lógica de los GPIO como negativa 
+
+Definición en la línea \mbox{\hyperlink{mcp23017__defs_8h_source_l00045}{45}} del archivo \mbox{\hyperlink{mcp23017__defs_8h_source}{mcp23017\+\_\+defs.\+h}}.
+
+\Hypertarget{mcp23017__defs_8h_a5eef073627734d21132edd8225efb935}\index{mcp23017\_defs.h@{mcp23017\_defs.h}!\_\_MCP23017\_POSITIVE\_LOGIC\_\_@{\_\_MCP23017\_POSITIVE\_LOGIC\_\_}}
+\index{\_\_MCP23017\_POSITIVE\_LOGIC\_\_@{\_\_MCP23017\_POSITIVE\_LOGIC\_\_}!mcp23017\_defs.h@{mcp23017\_defs.h}}
+\doxysubsubsection{\texorpdfstring{\_\_MCP23017\_POSITIVE\_LOGIC\_\_}{\_\_MCP23017\_POSITIVE\_LOGIC\_\_}}
+{\footnotesize\ttfamily \label{mcp23017__defs_8h_a5eef073627734d21132edd8225efb935} 
+\#define \+\_\+\+\_\+\+MCP23017\+\_\+\+POSITIVE\+\_\+\+LOGIC\+\_\+\+\_\+~0}
+
+Configuración de la lógica de los GPIO como positiva 
+
+Definición en la línea \mbox{\hyperlink{mcp23017__defs_8h_source_l00044}{44}} del archivo \mbox{\hyperlink{mcp23017__defs_8h_source}{mcp23017\+\_\+defs.\+h}}.
+
+\Hypertarget{mcp23017__defs_8h_a8d609dfb3b3d5137bb93775d74ee47e8}\index{mcp23017\_defs.h@{mcp23017\_defs.h}!\_\_MCP23017\_READ\_\_@{\_\_MCP23017\_READ\_\_}}
+\index{\_\_MCP23017\_READ\_\_@{\_\_MCP23017\_READ\_\_}!mcp23017\_defs.h@{mcp23017\_defs.h}}
+\doxysubsubsection{\texorpdfstring{\_\_MCP23017\_READ\_\_}{\_\_MCP23017\_READ\_\_}}
+{\footnotesize\ttfamily \label{mcp23017__defs_8h_a8d609dfb3b3d5137bb93775d74ee47e8} 
+\#define \+\_\+\+\_\+\+MCP23017\+\_\+\+READ\+\_\+\+\_\+~1}
+
+Función de lectura del MCP23017 -\/ Se inserta en el opcode 
+
+Definición en la línea \mbox{\hyperlink{mcp23017__defs_8h_source_l00042}{42}} del archivo \mbox{\hyperlink{mcp23017__defs_8h_source}{mcp23017\+\_\+defs.\+h}}.
+
+\Hypertarget{mcp23017__defs_8h_a9ccd0e3d1c60c31baa0ded4256006b1d}\index{mcp23017\_defs.h@{mcp23017\_defs.h}!\_\_MCP23017\_READ\_OPPCODE\_\_@{\_\_MCP23017\_READ\_OPPCODE\_\_}}
+\index{\_\_MCP23017\_READ\_OPPCODE\_\_@{\_\_MCP23017\_READ\_OPPCODE\_\_}!mcp23017\_defs.h@{mcp23017\_defs.h}}
+\doxysubsubsection{\texorpdfstring{\_\_MCP23017\_READ\_OPPCODE\_\_}{\_\_MCP23017\_READ\_OPPCODE\_\_}}
+{\footnotesize\ttfamily \label{mcp23017__defs_8h_a9ccd0e3d1c60c31baa0ded4256006b1d} 
+\#define \+\_\+\+\_\+\+MCP23017\+\_\+\+READ\+\_\+\+OPPCODE\+\_\+\+\_\+~0b0100 $<$$<$ 4 \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{mcp23017__defs_8h_a49e8cee695e25aac4f587d3282834048}{\+\_\+\+\_\+\+MCP23017\+\_\+\+ADDRESS\+\_\+\+\_\+}} $<$$<$ 1 \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{mcp23017__defs_8h_a8d609dfb3b3d5137bb93775d74ee47e8}{\+\_\+\+\_\+\+MCP23017\+\_\+\+READ\+\_\+\+\_\+}}}
+
+Código de operación para lectura en el MCP23017 
+
+Definición en la línea \mbox{\hyperlink{mcp23017__defs_8h_source_l00052}{52}} del archivo \mbox{\hyperlink{mcp23017__defs_8h_source}{mcp23017\+\_\+defs.\+h}}.
+
+\Hypertarget{mcp23017__defs_8h_a185b00387fa0714bf1c431f69bcc8e4c}\index{mcp23017\_defs.h@{mcp23017\_defs.h}!\_\_MCP23017\_SEQOP\_DISABLED\_\_@{\_\_MCP23017\_SEQOP\_DISABLED\_\_}}
+\index{\_\_MCP23017\_SEQOP\_DISABLED\_\_@{\_\_MCP23017\_SEQOP\_DISABLED\_\_}!mcp23017\_defs.h@{mcp23017\_defs.h}}
+\doxysubsubsection{\texorpdfstring{\_\_MCP23017\_SEQOP\_DISABLED\_\_}{\_\_MCP23017\_SEQOP\_DISABLED\_\_}}
+{\footnotesize\ttfamily \label{mcp23017__defs_8h_a185b00387fa0714bf1c431f69bcc8e4c} 
+\#define \+\_\+\+\_\+\+MCP23017\+\_\+\+SEQOP\+\_\+\+DISABLED\+\_\+\+\_\+~1}
+
+El puntero de direccionamiento de memoria no incrementa en cada acceso 
+
+Definición en la línea \mbox{\hyperlink{mcp23017__defs_8h_source_l00018}{18}} del archivo \mbox{\hyperlink{mcp23017__defs_8h_source}{mcp23017\+\_\+defs.\+h}}.
+
+\Hypertarget{mcp23017__defs_8h_a51292fbc467a58a1560609f6729fe333}\index{mcp23017\_defs.h@{mcp23017\_defs.h}!\_\_MCP23017\_SEQOP\_ENABLED\_\_@{\_\_MCP23017\_SEQOP\_ENABLED\_\_}}
+\index{\_\_MCP23017\_SEQOP\_ENABLED\_\_@{\_\_MCP23017\_SEQOP\_ENABLED\_\_}!mcp23017\_defs.h@{mcp23017\_defs.h}}
+\doxysubsubsection{\texorpdfstring{\_\_MCP23017\_SEQOP\_ENABLED\_\_}{\_\_MCP23017\_SEQOP\_ENABLED\_\_}}
+{\footnotesize\ttfamily \label{mcp23017__defs_8h_a51292fbc467a58a1560609f6729fe333} 
+\#define \+\_\+\+\_\+\+MCP23017\+\_\+\+SEQOP\+\_\+\+ENABLED\+\_\+\+\_\+~0}
+
+El puntero de direccionamiento de memoria incrementa en cada acceso 
+
+Definición en la línea \mbox{\hyperlink{mcp23017__defs_8h_source_l00017}{17}} del archivo \mbox{\hyperlink{mcp23017__defs_8h_source}{mcp23017\+\_\+defs.\+h}}.
+
+\Hypertarget{mcp23017__defs_8h_a4906928b19905cc69faa3fe249bf60b6}\index{mcp23017\_defs.h@{mcp23017\_defs.h}!\_\_MCP23017\_WRITE\_\_@{\_\_MCP23017\_WRITE\_\_}}
+\index{\_\_MCP23017\_WRITE\_\_@{\_\_MCP23017\_WRITE\_\_}!mcp23017\_defs.h@{mcp23017\_defs.h}}
+\doxysubsubsection{\texorpdfstring{\_\_MCP23017\_WRITE\_\_}{\_\_MCP23017\_WRITE\_\_}}
+{\footnotesize\ttfamily \label{mcp23017__defs_8h_a4906928b19905cc69faa3fe249bf60b6} 
+\#define \+\_\+\+\_\+\+MCP23017\+\_\+\+WRITE\+\_\+\+\_\+~0}
+
+Función de escritura del MCP23017 -\/ Se inserta en el opcode 
+
+Definición en la línea \mbox{\hyperlink{mcp23017__defs_8h_source_l00041}{41}} del archivo \mbox{\hyperlink{mcp23017__defs_8h_source}{mcp23017\+\_\+defs.\+h}}.
+
+\Hypertarget{mcp23017__defs_8h_a21d4f61cf1af5c1e74fa1077dd5b153c}\index{mcp23017\_defs.h@{mcp23017\_defs.h}!\_\_MCP23017\_WRITE\_OPPCODE\_\_@{\_\_MCP23017\_WRITE\_OPPCODE\_\_}}
+\index{\_\_MCP23017\_WRITE\_OPPCODE\_\_@{\_\_MCP23017\_WRITE\_OPPCODE\_\_}!mcp23017\_defs.h@{mcp23017\_defs.h}}
+\doxysubsubsection{\texorpdfstring{\_\_MCP23017\_WRITE\_OPPCODE\_\_}{\_\_MCP23017\_WRITE\_OPPCODE\_\_}}
+{\footnotesize\ttfamily \label{mcp23017__defs_8h_a21d4f61cf1af5c1e74fa1077dd5b153c} 
+\#define \+\_\+\+\_\+\+MCP23017\+\_\+\+WRITE\+\_\+\+OPPCODE\+\_\+\+\_\+~0b0100 $<$$<$ 4 \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{mcp23017__defs_8h_a49e8cee695e25aac4f587d3282834048}{\+\_\+\+\_\+\+MCP23017\+\_\+\+ADDRESS\+\_\+\+\_\+}} $<$$<$ 1 \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{mcp23017__defs_8h_a4906928b19905cc69faa3fe249bf60b6}{\+\_\+\+\_\+\+MCP23017\+\_\+\+WRITE\+\_\+\+\_\+}}}
+
+Código de operación para escritura en el MCP23017 
+
+Definición en la línea \mbox{\hyperlink{mcp23017__defs_8h_source_l00053}{53}} del archivo \mbox{\hyperlink{mcp23017__defs_8h_source}{mcp23017\+\_\+defs.\+h}}.
+
+\Hypertarget{mcp23017__defs_8h_aaa6a5a611e0b814bf114602c3c9e946e}\index{mcp23017\_defs.h@{mcp23017\_defs.h}!MCP23017\_DEFVALA\_REGISTER@{MCP23017\_DEFVALA\_REGISTER}}
+\index{MCP23017\_DEFVALA\_REGISTER@{MCP23017\_DEFVALA\_REGISTER}!mcp23017\_defs.h@{mcp23017\_defs.h}}
+\doxysubsubsection{\texorpdfstring{MCP23017\_DEFVALA\_REGISTER}{MCP23017\_DEFVALA\_REGISTER}}
+{\footnotesize\ttfamily \label{mcp23017__defs_8h_aaa6a5a611e0b814bf114602c3c9e946e} 
+\#define MCP23017\+\_\+\+DEFVALA\+\_\+\+REGISTER~0x06}
+
+Dirección de memoria del registro DEFVALA 
+
+Definición en la línea \mbox{\hyperlink{mcp23017__defs_8h_source_l00063}{63}} del archivo \mbox{\hyperlink{mcp23017__defs_8h_source}{mcp23017\+\_\+defs.\+h}}.
+
+\Hypertarget{mcp23017__defs_8h_aa13debe626af2c4eebe490d12e3eed72}\index{mcp23017\_defs.h@{mcp23017\_defs.h}!MCP23017\_DEFVALB\_REGISTER@{MCP23017\_DEFVALB\_REGISTER}}
+\index{MCP23017\_DEFVALB\_REGISTER@{MCP23017\_DEFVALB\_REGISTER}!mcp23017\_defs.h@{mcp23017\_defs.h}}
+\doxysubsubsection{\texorpdfstring{MCP23017\_DEFVALB\_REGISTER}{MCP23017\_DEFVALB\_REGISTER}}
+{\footnotesize\ttfamily \label{mcp23017__defs_8h_aa13debe626af2c4eebe490d12e3eed72} 
+\#define MCP23017\+\_\+\+DEFVALB\+\_\+\+REGISTER~0x07}
+
+Dirección de memoria del registro DEFVALB 
+
+Definición en la línea \mbox{\hyperlink{mcp23017__defs_8h_source_l00064}{64}} del archivo \mbox{\hyperlink{mcp23017__defs_8h_source}{mcp23017\+\_\+defs.\+h}}.
+
+\Hypertarget{mcp23017__defs_8h_a2880420e63715f711bf3384af318f577}\index{mcp23017\_defs.h@{mcp23017\_defs.h}!MCP23017\_GPINTENA\_REGISTER@{MCP23017\_GPINTENA\_REGISTER}}
+\index{MCP23017\_GPINTENA\_REGISTER@{MCP23017\_GPINTENA\_REGISTER}!mcp23017\_defs.h@{mcp23017\_defs.h}}
+\doxysubsubsection{\texorpdfstring{MCP23017\_GPINTENA\_REGISTER}{MCP23017\_GPINTENA\_REGISTER}}
+{\footnotesize\ttfamily \label{mcp23017__defs_8h_a2880420e63715f711bf3384af318f577} 
+\#define MCP23017\+\_\+\+GPINTENA\+\_\+\+REGISTER~0x04}
+
+Dirección de memoria del registro GPINTENA 
+
+Definición en la línea \mbox{\hyperlink{mcp23017__defs_8h_source_l00061}{61}} del archivo \mbox{\hyperlink{mcp23017__defs_8h_source}{mcp23017\+\_\+defs.\+h}}.
+
+\Hypertarget{mcp23017__defs_8h_a676e2e695c779fa8a4106675fa6f092f}\index{mcp23017\_defs.h@{mcp23017\_defs.h}!MCP23017\_GPINTENB\_REGISTER@{MCP23017\_GPINTENB\_REGISTER}}
+\index{MCP23017\_GPINTENB\_REGISTER@{MCP23017\_GPINTENB\_REGISTER}!mcp23017\_defs.h@{mcp23017\_defs.h}}
+\doxysubsubsection{\texorpdfstring{MCP23017\_GPINTENB\_REGISTER}{MCP23017\_GPINTENB\_REGISTER}}
+{\footnotesize\ttfamily \label{mcp23017__defs_8h_a676e2e695c779fa8a4106675fa6f092f} 
+\#define MCP23017\+\_\+\+GPINTENB\+\_\+\+REGISTER~0x05}
+
+Dirección de memoria del registro GPINTENB 
+
+Definición en la línea \mbox{\hyperlink{mcp23017__defs_8h_source_l00062}{62}} del archivo \mbox{\hyperlink{mcp23017__defs_8h_source}{mcp23017\+\_\+defs.\+h}}.
+
+\Hypertarget{mcp23017__defs_8h_a4c1248c1f851ae7e4b4404ac31e9f3ba}\index{mcp23017\_defs.h@{mcp23017\_defs.h}!MCP23017\_GPIOA\_REGISTER@{MCP23017\_GPIOA\_REGISTER}}
+\index{MCP23017\_GPIOA\_REGISTER@{MCP23017\_GPIOA\_REGISTER}!mcp23017\_defs.h@{mcp23017\_defs.h}}
+\doxysubsubsection{\texorpdfstring{MCP23017\_GPIOA\_REGISTER}{MCP23017\_GPIOA\_REGISTER}}
+{\footnotesize\ttfamily \label{mcp23017__defs_8h_a4c1248c1f851ae7e4b4404ac31e9f3ba} 
+\#define MCP23017\+\_\+\+GPIOA\+\_\+\+REGISTER~0x12}
+
+Dirección de memoria del registro GPIOA 
+
+Definición en la línea \mbox{\hyperlink{mcp23017__defs_8h_source_l00075}{75}} del archivo \mbox{\hyperlink{mcp23017__defs_8h_source}{mcp23017\+\_\+defs.\+h}}.
+
+\Hypertarget{mcp23017__defs_8h_aa8ce902086f9c9572e5a92376f672158}\index{mcp23017\_defs.h@{mcp23017\_defs.h}!MCP23017\_GPIOB\_REGISTER@{MCP23017\_GPIOB\_REGISTER}}
+\index{MCP23017\_GPIOB\_REGISTER@{MCP23017\_GPIOB\_REGISTER}!mcp23017\_defs.h@{mcp23017\_defs.h}}
+\doxysubsubsection{\texorpdfstring{MCP23017\_GPIOB\_REGISTER}{MCP23017\_GPIOB\_REGISTER}}
+{\footnotesize\ttfamily \label{mcp23017__defs_8h_aa8ce902086f9c9572e5a92376f672158} 
+\#define MCP23017\+\_\+\+GPIOB\+\_\+\+REGISTER~0x13}
+
+Dirección de memoria del registro GPIOB 
+
+Definición en la línea \mbox{\hyperlink{mcp23017__defs_8h_source_l00076}{76}} del archivo \mbox{\hyperlink{mcp23017__defs_8h_source}{mcp23017\+\_\+defs.\+h}}.
+
+\Hypertarget{mcp23017__defs_8h_a11c211255ed4a384aaec6b0eceef6dd9}\index{mcp23017\_defs.h@{mcp23017\_defs.h}!MCP23017\_GPPUA\_REGISTER@{MCP23017\_GPPUA\_REGISTER}}
+\index{MCP23017\_GPPUA\_REGISTER@{MCP23017\_GPPUA\_REGISTER}!mcp23017\_defs.h@{mcp23017\_defs.h}}
+\doxysubsubsection{\texorpdfstring{MCP23017\_GPPUA\_REGISTER}{MCP23017\_GPPUA\_REGISTER}}
+{\footnotesize\ttfamily \label{mcp23017__defs_8h_a11c211255ed4a384aaec6b0eceef6dd9} 
+\#define MCP23017\+\_\+\+GPPUA\+\_\+\+REGISTER~0x0C}
+
+Dirección de memoria del registro GPPUA 
+
+Definición en la línea \mbox{\hyperlink{mcp23017__defs_8h_source_l00069}{69}} del archivo \mbox{\hyperlink{mcp23017__defs_8h_source}{mcp23017\+\_\+defs.\+h}}.
+
+\Hypertarget{mcp23017__defs_8h_a6d4ecbb69d1d7389a6fa0e2ef9427aa0}\index{mcp23017\_defs.h@{mcp23017\_defs.h}!MCP23017\_GPPUB\_REGISTER@{MCP23017\_GPPUB\_REGISTER}}
+\index{MCP23017\_GPPUB\_REGISTER@{MCP23017\_GPPUB\_REGISTER}!mcp23017\_defs.h@{mcp23017\_defs.h}}
+\doxysubsubsection{\texorpdfstring{MCP23017\_GPPUB\_REGISTER}{MCP23017\_GPPUB\_REGISTER}}
+{\footnotesize\ttfamily \label{mcp23017__defs_8h_a6d4ecbb69d1d7389a6fa0e2ef9427aa0} 
+\#define MCP23017\+\_\+\+GPPUB\+\_\+\+REGISTER~0x0D}
+
+Dirección de memoria del registro GPPUB 
+
+Definición en la línea \mbox{\hyperlink{mcp23017__defs_8h_source_l00070}{70}} del archivo \mbox{\hyperlink{mcp23017__defs_8h_source}{mcp23017\+\_\+defs.\+h}}.
+
+\Hypertarget{mcp23017__defs_8h_a2e886bb1accf6b2aa45f05e93c554b96}\index{mcp23017\_defs.h@{mcp23017\_defs.h}!MCP23017\_INTCAPA\_REGISTER@{MCP23017\_INTCAPA\_REGISTER}}
+\index{MCP23017\_INTCAPA\_REGISTER@{MCP23017\_INTCAPA\_REGISTER}!mcp23017\_defs.h@{mcp23017\_defs.h}}
+\doxysubsubsection{\texorpdfstring{MCP23017\_INTCAPA\_REGISTER}{MCP23017\_INTCAPA\_REGISTER}}
+{\footnotesize\ttfamily \label{mcp23017__defs_8h_a2e886bb1accf6b2aa45f05e93c554b96} 
+\#define MCP23017\+\_\+\+INTCAPA\+\_\+\+REGISTER~0x10}
+
+Dirección de memoria del registro INTCAPA 
+
+Definición en la línea \mbox{\hyperlink{mcp23017__defs_8h_source_l00073}{73}} del archivo \mbox{\hyperlink{mcp23017__defs_8h_source}{mcp23017\+\_\+defs.\+h}}.
+
+\Hypertarget{mcp23017__defs_8h_af9ef65e81f852d1fc1b46488812af8cc}\index{mcp23017\_defs.h@{mcp23017\_defs.h}!MCP23017\_INTCAPB\_REGISTER@{MCP23017\_INTCAPB\_REGISTER}}
+\index{MCP23017\_INTCAPB\_REGISTER@{MCP23017\_INTCAPB\_REGISTER}!mcp23017\_defs.h@{mcp23017\_defs.h}}
+\doxysubsubsection{\texorpdfstring{MCP23017\_INTCAPB\_REGISTER}{MCP23017\_INTCAPB\_REGISTER}}
+{\footnotesize\ttfamily \label{mcp23017__defs_8h_af9ef65e81f852d1fc1b46488812af8cc} 
+\#define MCP23017\+\_\+\+INTCAPB\+\_\+\+REGISTER~0x11}
+
+Dirección de memoria del registro INTCAPB 
+
+Definición en la línea \mbox{\hyperlink{mcp23017__defs_8h_source_l00074}{74}} del archivo \mbox{\hyperlink{mcp23017__defs_8h_source}{mcp23017\+\_\+defs.\+h}}.
+
+\Hypertarget{mcp23017__defs_8h_a4394afa9f75cd51c83afe734a3ef4247}\index{mcp23017\_defs.h@{mcp23017\_defs.h}!MCP23017\_INTCONA\_REGISTER@{MCP23017\_INTCONA\_REGISTER}}
+\index{MCP23017\_INTCONA\_REGISTER@{MCP23017\_INTCONA\_REGISTER}!mcp23017\_defs.h@{mcp23017\_defs.h}}
+\doxysubsubsection{\texorpdfstring{MCP23017\_INTCONA\_REGISTER}{MCP23017\_INTCONA\_REGISTER}}
+{\footnotesize\ttfamily \label{mcp23017__defs_8h_a4394afa9f75cd51c83afe734a3ef4247} 
+\#define MCP23017\+\_\+\+INTCONA\+\_\+\+REGISTER~0x08}
+
+Dirección de memoria del registro INTCONA 
+
+Definición en la línea \mbox{\hyperlink{mcp23017__defs_8h_source_l00065}{65}} del archivo \mbox{\hyperlink{mcp23017__defs_8h_source}{mcp23017\+\_\+defs.\+h}}.
+
+\Hypertarget{mcp23017__defs_8h_ab14c5842a39d04d8a89575aabebb672c}\index{mcp23017\_defs.h@{mcp23017\_defs.h}!MCP23017\_INTCONB\_REGISTER@{MCP23017\_INTCONB\_REGISTER}}
+\index{MCP23017\_INTCONB\_REGISTER@{MCP23017\_INTCONB\_REGISTER}!mcp23017\_defs.h@{mcp23017\_defs.h}}
+\doxysubsubsection{\texorpdfstring{MCP23017\_INTCONB\_REGISTER}{MCP23017\_INTCONB\_REGISTER}}
+{\footnotesize\ttfamily \label{mcp23017__defs_8h_ab14c5842a39d04d8a89575aabebb672c} 
+\#define MCP23017\+\_\+\+INTCONB\+\_\+\+REGISTER~0x09}
+
+Dirección de memoria del registro INTCONB 
+
+Definición en la línea \mbox{\hyperlink{mcp23017__defs_8h_source_l00066}{66}} del archivo \mbox{\hyperlink{mcp23017__defs_8h_source}{mcp23017\+\_\+defs.\+h}}.
+
+\Hypertarget{mcp23017__defs_8h_a3ee740f9694356cc24cd00a2cbef8785}\index{mcp23017\_defs.h@{mcp23017\_defs.h}!MCP23017\_INTFA\_REGISTER@{MCP23017\_INTFA\_REGISTER}}
+\index{MCP23017\_INTFA\_REGISTER@{MCP23017\_INTFA\_REGISTER}!mcp23017\_defs.h@{mcp23017\_defs.h}}
+\doxysubsubsection{\texorpdfstring{MCP23017\_INTFA\_REGISTER}{MCP23017\_INTFA\_REGISTER}}
+{\footnotesize\ttfamily \label{mcp23017__defs_8h_a3ee740f9694356cc24cd00a2cbef8785} 
+\#define MCP23017\+\_\+\+INTFA\+\_\+\+REGISTER~0x0E}
+
+Dirección de memoria del registro INTFA 
+
+Definición en la línea \mbox{\hyperlink{mcp23017__defs_8h_source_l00071}{71}} del archivo \mbox{\hyperlink{mcp23017__defs_8h_source}{mcp23017\+\_\+defs.\+h}}.
+
+\Hypertarget{mcp23017__defs_8h_a417b6274a79fe4a470993de424b6aee3}\index{mcp23017\_defs.h@{mcp23017\_defs.h}!MCP23017\_INTFB\_REGISTER@{MCP23017\_INTFB\_REGISTER}}
+\index{MCP23017\_INTFB\_REGISTER@{MCP23017\_INTFB\_REGISTER}!mcp23017\_defs.h@{mcp23017\_defs.h}}
+\doxysubsubsection{\texorpdfstring{MCP23017\_INTFB\_REGISTER}{MCP23017\_INTFB\_REGISTER}}
+{\footnotesize\ttfamily \label{mcp23017__defs_8h_a417b6274a79fe4a470993de424b6aee3} 
+\#define MCP23017\+\_\+\+INTFB\+\_\+\+REGISTER~0x0F}
+
+Dirección de memoria del registro INTFB 
+
+Definición en la línea \mbox{\hyperlink{mcp23017__defs_8h_source_l00072}{72}} del archivo \mbox{\hyperlink{mcp23017__defs_8h_source}{mcp23017\+\_\+defs.\+h}}.
+
+\Hypertarget{mcp23017__defs_8h_a718690109e687f983e2fe0ed3a503193}\index{mcp23017\_defs.h@{mcp23017\_defs.h}!MCP23017\_IOCON\_REGISTER@{MCP23017\_IOCON\_REGISTER}}
+\index{MCP23017\_IOCON\_REGISTER@{MCP23017\_IOCON\_REGISTER}!mcp23017\_defs.h@{mcp23017\_defs.h}}
+\doxysubsubsection{\texorpdfstring{MCP23017\_IOCON\_REGISTER}{MCP23017\_IOCON\_REGISTER}}
+{\footnotesize\ttfamily \label{mcp23017__defs_8h_a718690109e687f983e2fe0ed3a503193} 
+\#define MCP23017\+\_\+\+IOCON\+\_\+\+REGISTER~0x0A}
+
+Dirección de memoria del registro IOCON 
+
+Definición en la línea \mbox{\hyperlink{mcp23017__defs_8h_source_l00067}{67}} del archivo \mbox{\hyperlink{mcp23017__defs_8h_source}{mcp23017\+\_\+defs.\+h}}.
+
+\Hypertarget{mcp23017__defs_8h_a362db1a2c8d281c17b5257f96519a249}\index{mcp23017\_defs.h@{mcp23017\_defs.h}!MCP23017\_IODIRA\_REGISTER@{MCP23017\_IODIRA\_REGISTER}}
+\index{MCP23017\_IODIRA\_REGISTER@{MCP23017\_IODIRA\_REGISTER}!mcp23017\_defs.h@{mcp23017\_defs.h}}
+\doxysubsubsection{\texorpdfstring{MCP23017\_IODIRA\_REGISTER}{MCP23017\_IODIRA\_REGISTER}}
+{\footnotesize\ttfamily \label{mcp23017__defs_8h_a362db1a2c8d281c17b5257f96519a249} 
+\#define MCP23017\+\_\+\+IODIRA\+\_\+\+REGISTER~0x00}
+
+Dirección de memoria del registro IODIRA 
+
+Definición en la línea \mbox{\hyperlink{mcp23017__defs_8h_source_l00057}{57}} del archivo \mbox{\hyperlink{mcp23017__defs_8h_source}{mcp23017\+\_\+defs.\+h}}.
+
+\Hypertarget{mcp23017__defs_8h_a37178675c1844596f5914680c5159fc6}\index{mcp23017\_defs.h@{mcp23017\_defs.h}!MCP23017\_IODIRB\_REGISTER@{MCP23017\_IODIRB\_REGISTER}}
+\index{MCP23017\_IODIRB\_REGISTER@{MCP23017\_IODIRB\_REGISTER}!mcp23017\_defs.h@{mcp23017\_defs.h}}
+\doxysubsubsection{\texorpdfstring{MCP23017\_IODIRB\_REGISTER}{MCP23017\_IODIRB\_REGISTER}}
+{\footnotesize\ttfamily \label{mcp23017__defs_8h_a37178675c1844596f5914680c5159fc6} 
+\#define MCP23017\+\_\+\+IODIRB\+\_\+\+REGISTER~0x01}
+
+Dirección de memoria del registro IODIRB 
+
+Definición en la línea \mbox{\hyperlink{mcp23017__defs_8h_source_l00058}{58}} del archivo \mbox{\hyperlink{mcp23017__defs_8h_source}{mcp23017\+\_\+defs.\+h}}.
+
+\Hypertarget{mcp23017__defs_8h_af9c4a57ec712faad131714cfe7017435}\index{mcp23017\_defs.h@{mcp23017\_defs.h}!MCP23017\_IPOLA\_REGISTER@{MCP23017\_IPOLA\_REGISTER}}
+\index{MCP23017\_IPOLA\_REGISTER@{MCP23017\_IPOLA\_REGISTER}!mcp23017\_defs.h@{mcp23017\_defs.h}}
+\doxysubsubsection{\texorpdfstring{MCP23017\_IPOLA\_REGISTER}{MCP23017\_IPOLA\_REGISTER}}
+{\footnotesize\ttfamily \label{mcp23017__defs_8h_af9c4a57ec712faad131714cfe7017435} 
+\#define MCP23017\+\_\+\+IPOLA\+\_\+\+REGISTER~0x02}
+
+Dirección de memoria del registro IPOLA 
+
+Definición en la línea \mbox{\hyperlink{mcp23017__defs_8h_source_l00059}{59}} del archivo \mbox{\hyperlink{mcp23017__defs_8h_source}{mcp23017\+\_\+defs.\+h}}.
+
+\Hypertarget{mcp23017__defs_8h_a6aaabf5e90d7428c10a62599e1ecacea}\index{mcp23017\_defs.h@{mcp23017\_defs.h}!MCP23017\_IPOLB\_REGISTER@{MCP23017\_IPOLB\_REGISTER}}
+\index{MCP23017\_IPOLB\_REGISTER@{MCP23017\_IPOLB\_REGISTER}!mcp23017\_defs.h@{mcp23017\_defs.h}}
+\doxysubsubsection{\texorpdfstring{MCP23017\_IPOLB\_REGISTER}{MCP23017\_IPOLB\_REGISTER}}
+{\footnotesize\ttfamily \label{mcp23017__defs_8h_a6aaabf5e90d7428c10a62599e1ecacea} 
+\#define MCP23017\+\_\+\+IPOLB\+\_\+\+REGISTER~0x03}
+
+Dirección de memoria del registro IPOLB 
+
+Definición en la línea \mbox{\hyperlink{mcp23017__defs_8h_source_l00060}{60}} del archivo \mbox{\hyperlink{mcp23017__defs_8h_source}{mcp23017\+\_\+defs.\+h}}.
+
+\Hypertarget{mcp23017__defs_8h_a08269b9381dd6083fb50168a14ed8904}\index{mcp23017\_defs.h@{mcp23017\_defs.h}!MCP23017\_OLATA\_REGISTER@{MCP23017\_OLATA\_REGISTER}}
+\index{MCP23017\_OLATA\_REGISTER@{MCP23017\_OLATA\_REGISTER}!mcp23017\_defs.h@{mcp23017\_defs.h}}
+\doxysubsubsection{\texorpdfstring{MCP23017\_OLATA\_REGISTER}{MCP23017\_OLATA\_REGISTER}}
+{\footnotesize\ttfamily \label{mcp23017__defs_8h_a08269b9381dd6083fb50168a14ed8904} 
+\#define MCP23017\+\_\+\+OLATA\+\_\+\+REGISTER~0x14}
+
+Dirección de memoria del registro OLATA 
+
+Definición en la línea \mbox{\hyperlink{mcp23017__defs_8h_source_l00077}{77}} del archivo \mbox{\hyperlink{mcp23017__defs_8h_source}{mcp23017\+\_\+defs.\+h}}.
+
+\Hypertarget{mcp23017__defs_8h_ad55f843bd110a09a825d107770ae083d}\index{mcp23017\_defs.h@{mcp23017\_defs.h}!MCP23017\_OLATB\_REGISTER@{MCP23017\_OLATB\_REGISTER}}
+\index{MCP23017\_OLATB\_REGISTER@{MCP23017\_OLATB\_REGISTER}!mcp23017\_defs.h@{mcp23017\_defs.h}}
+\doxysubsubsection{\texorpdfstring{MCP23017\_OLATB\_REGISTER}{MCP23017\_OLATB\_REGISTER}}
+{\footnotesize\ttfamily \label{mcp23017__defs_8h_ad55f843bd110a09a825d107770ae083d} 
+\#define MCP23017\+\_\+\+OLATB\+\_\+\+REGISTER~0x15}
+
+Dirección de memoria del registro OLATB 
+
+Definición en la línea \mbox{\hyperlink{mcp23017__defs_8h_source_l00078}{78}} del archivo \mbox{\hyperlink{mcp23017__defs_8h_source}{mcp23017\+\_\+defs.\+h}}.
+
+
+
+\label{doc-enum-members}
+\Hypertarget{mcp23017__defs_8h_doc-enum-members}
+\doxysubsection{Documentación de enumeraciones}
+\Hypertarget{mcp23017__defs_8h_a7b7476975849505bba2c9b211b62d5bd}\index{mcp23017\_defs.h@{mcp23017\_defs.h}!mcp\_port\_e@{mcp\_port\_e}}
+\index{mcp\_port\_e@{mcp\_port\_e}!mcp23017\_defs.h@{mcp23017\_defs.h}}
+\doxysubsubsection{\texorpdfstring{mcp\_port\_e}{mcp\_port\_e}}
+{\footnotesize\ttfamily \label{mcp23017__defs_8h_a7b7476975849505bba2c9b211b62d5bd} 
+enum \mbox{\hyperlink{mcp23017__defs_8h_a7b7476975849505bba2c9b211b62d5bd}{mcp\+\_\+port\+\_\+e}}}
+
+
+
+Selector de puertos del MCP23017. Puede ser PORTA (0) o PORTB (1). De esta manera el usuario se abtrae en conocer como se llaman los registros del chip, solo con las funciones específicas de lectura y escritura, datos, pines y esta definición de puerto. 
+
+\begin{DoxyEnumFields}[2]{Valores de enumeraciones}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PORTA@{PORTA}!mcp23017\_defs.h@{mcp23017\_defs.h}}\index{mcp23017\_defs.h@{mcp23017\_defs.h}!PORTA@{PORTA}}}\Hypertarget{mcp23017__defs_8h_a7b7476975849505bba2c9b211b62d5bdae3201f6e0d0c1e138c60903276bb3859}\label{mcp23017__defs_8h_a7b7476975849505bba2c9b211b62d5bdae3201f6e0d0c1e138c60903276bb3859} 
+PORTA&Puerto A del MCP23017 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PORTB@{PORTB}!mcp23017\_defs.h@{mcp23017\_defs.h}}\index{mcp23017\_defs.h@{mcp23017\_defs.h}!PORTB@{PORTB}}}\Hypertarget{mcp23017__defs_8h_a7b7476975849505bba2c9b211b62d5bdae51dea4a37f3e2ede7ba6f27c563f6a4}\label{mcp23017__defs_8h_a7b7476975849505bba2c9b211b62d5bdae51dea4a37f3e2ede7ba6f27c563f6a4} 
+PORTB&Puerto B del MCP23017 \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definición en la línea \mbox{\hyperlink{mcp23017__defs_8h_source_l00340}{340}} del archivo \mbox{\hyperlink{mcp23017__defs_8h_source}{mcp23017\+\_\+defs.\+h}}.
+

@@ -1,0 +1,553 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Low Voltage Variable Frequency Drive: Referencia del archivo C:/Users/User/LVFV_ESP32/main/rtc/rtc.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="DoxyPic.jpeg"/></td>
+  <td id="projectalign">
+   <div id="projectname">Low Voltage Variable Frequency Drive<span id="projectnumber">&#160;2.0</span>
+   </div>
+   <div id="projectbrief">Proyecto final Andrenacci-Carra 2026. Variador de frecuencia de motor trifásico 1/3HP utilizando 12V de contínua como fuente de entrada de tensión.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('rtc_8c.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia del archivo rtc.c</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Funciones de lectura y escritura del RTC y alarmas.  
+<a href="#details">Más...</a></p>
+<div class="textblock"><code>#include &lt;sys/time.h&gt;</code><br />
+<code>#include &quot;sdkconfig.h&quot;</code><br />
+<code>#include &quot;esp_err.h&quot;</code><br />
+<code>#include &quot;esp_timer.h&quot;</code><br />
+<code>#include &quot;esp_log.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="sys_control_8h_source.html">../system/sysControl.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rtc_8h_source.html">RTC.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Gráfico de dependencias incluidas en rtc.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="rtc_8c__incl.png" border="0" usemap="#a_c_1_2_users_2_user_2_l_v_f_v___e_s_p32_2main_2rtc_2rtc_8c" loading="lazy" alt=""/></div>
+</div>
+</div>
+<p><a href="rtc_8c_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Estructuras de datos</h2></td></tr>
+<tr class="memitem:rtc_5Falarms_5Ft" id="r_rtc_5Falarms_5Ft"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrtc__alarms__t.html">rtc_alarms_t</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:ab576cf2b5649a8f5af8c1eca26c1e01a" id="r_ab576cf2b5649a8f5af8c1eca26c1e01a"><td class="memItemLeft" align="right" valign="top">static esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab576cf2b5649a8f5af8c1eca26c1e01a">program_alarm</a> (esp_timer_handle_t *timer_handle, void(*callback)(void *), int hour, int minute, const char *name)</td></tr>
+<tr class="memdesc:ab576cf2b5649a8f5af8c1eca26c1e01a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Función dedicada a programar la alarma según hour y minute.  <br /></td></tr>
+<tr class="memitem:ae9adc0a6f5c490088bf65676a23ef49e" id="r_ae9adc0a6f5c490088bf65676a23ef49e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae9adc0a6f5c490088bf65676a23ef49e">alarm_start_cb</a> (void *arg)</td></tr>
+<tr class="memdesc:ae9adc0a6f5c490088bf65676a23ef49e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Función programada como alarma para iniciar el funcionamiento del motor.  <br /></td></tr>
+<tr class="memitem:ae1c6ac7aa77f0274bbdb795eab58f081" id="r_ae1c6ac7aa77f0274bbdb795eab58f081"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae1c6ac7aa77f0274bbdb795eab58f081">alarm_stop_cb</a> (void *arg)</td></tr>
+<tr class="memdesc:ae1c6ac7aa77f0274bbdb795eab58f081"><td class="mdescLeft">&#160;</td><td class="mdescRight">Función programada como alarma para finalizar el funcionamiento del motor.  <br /></td></tr>
+<tr class="memitem:ae110c54d6d4dcbd67211a1ac02cdc222" id="r_ae110c54d6d4dcbd67211a1ac02cdc222"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae110c54d6d4dcbd67211a1ac02cdc222">initRTC</a> ()</td></tr>
+<tr class="memdesc:ae110c54d6d4dcbd67211a1ac02cdc222"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicializa el RTC en la hora 00:00:00.  <br /></td></tr>
+<tr class="memitem:a18ec0d194dc994434090b873251093b0" id="r_a18ec0d194dc994434090b873251093b0"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a18ec0d194dc994434090b873251093b0">setTime</a> (struct tm *setting_time)</td></tr>
+<tr class="memdesc:a18ec0d194dc994434090b873251093b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicializa el RTC en la hora cargada en setting_time.  <br /></td></tr>
+<tr class="memitem:a044acdfeee0cbf154bb9679e46b9bcf9" id="r_a044acdfeee0cbf154bb9679e46b9bcf9"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a044acdfeee0cbf154bb9679e46b9bcf9">getTime</a> (struct tm *current_timeinfo)</td></tr>
+<tr class="memdesc:a044acdfeee0cbf154bb9679e46b9bcf9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Carga la hora actuak desde el RTC del ESP32.  <br /></td></tr>
+<tr class="memitem:adb9ac05b0bcd1cc3769f8a9931d90c06" id="r_adb9ac05b0bcd1cc3769f8a9931d90c06"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adb9ac05b0bcd1cc3769f8a9931d90c06">rtc_schedule_alarms</a> (<a class="el" href="structtime__settings__t.html">time_settings_t</a> *time_settings)</td></tr>
+<tr class="memdesc:adb9ac05b0bcd1cc3769f8a9931d90c06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicializa las alarmas de inicio y fin de funcionamiento del motor.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a5a85b9c772bbeb480b209a3e6ea92b4c" id="r_a5a85b9c772bbeb480b209a3e6ea92b4c"><td class="memItemLeft" align="right" valign="top">static const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5a85b9c772bbeb480b209a3e6ea92b4c">TAG</a> = &quot;RTC&quot;</td></tr>
+<tr class="memitem:a27b710d06dd027d535da94e798d0a819" id="r_a27b710d06dd027d535da94e798d0a819"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structrtc__alarms__t.html">rtc_alarms_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a27b710d06dd027d535da94e798d0a819">rtc_alarms</a></td></tr>
+<tr class="memitem:ab2199ad93a3c4b4fa1de3d486346cba7" id="r_ab2199ad93a3c4b4fa1de3d486346cba7"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structtime__settings__t.html">time_settings_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab2199ad93a3c4b4fa1de3d486346cba7">alarm_settings</a></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Funciones de lectura y escritura del RTC y alarmas. </p>
+<dl class="section author"><dt>Autor</dt><dd>Andrenacci - Carra </dd></dl>
+<dl class="section version"><dt>Versión</dt><dd>2.0 </dd></dl>
+<dl class="section date"><dt>Fecha</dt><dd>2025-11-06 </dd></dl>
+
+<p class="definition">Definición en el archivo <a class="el" href="rtc_8c_source.html">rtc.c</a>.</p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones</h2>
+<a id="ae9adc0a6f5c490088bf65676a23ef49e" name="ae9adc0a6f5c490088bf65676a23ef49e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9adc0a6f5c490088bf65676a23ef49e">&#9670;&#160;</a></span>alarm_start_cb()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void alarm_start_cb </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>arg</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Función programada como alarma para iniciar el funcionamiento del motor. </p>
+<p>Envía la señal al sistema para poder iniciar el funcionamiento del motor según la frecuencia de régimen, aceleración configuradas.</p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">arg</td><td>Sin uso. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="rtc_8c_source.html#l00207">207</a> del archivo <a class="el" href="rtc_8c_source.html">rtc.c</a>.</p>
+<div class="dynheader">
+Gráfico de llamadas de esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="rtc_8c_ae9adc0a6f5c490088bf65676a23ef49e_cgraph.png" border="0" usemap="#artc_8c_ae9adc0a6f5c490088bf65676a23ef49e_cgraph" loading="lazy" alt=""/></div>
+</div>
+<div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="rtc_8c_ae9adc0a6f5c490088bf65676a23ef49e_icgraph.png" border="0" usemap="#artc_8c_ae9adc0a6f5c490088bf65676a23ef49e_icgraph" loading="lazy" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="ae1c6ac7aa77f0274bbdb795eab58f081" name="ae1c6ac7aa77f0274bbdb795eab58f081"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1c6ac7aa77f0274bbdb795eab58f081">&#9670;&#160;</a></span>alarm_stop_cb()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void alarm_stop_cb </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>arg</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Función programada como alarma para finalizar el funcionamiento del motor. </p>
+<p>Envía la señal al sistema para poder finalizar el funcionamiento del motor según la desaceleración configurada.</p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">arg</td><td>Sin uso. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="rtc_8c_source.html#l00228">228</a> del archivo <a class="el" href="rtc_8c_source.html">rtc.c</a>.</p>
+<div class="dynheader">
+Gráfico de llamadas de esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="rtc_8c_ae1c6ac7aa77f0274bbdb795eab58f081_cgraph.png" border="0" usemap="#artc_8c_ae1c6ac7aa77f0274bbdb795eab58f081_cgraph" loading="lazy" alt=""/></div>
+</div>
+<div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="rtc_8c_ae1c6ac7aa77f0274bbdb795eab58f081_icgraph.png" border="0" usemap="#artc_8c_ae1c6ac7aa77f0274bbdb795eab58f081_icgraph" loading="lazy" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a044acdfeee0cbf154bb9679e46b9bcf9" name="a044acdfeee0cbf154bb9679e46b9bcf9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a044acdfeee0cbf154bb9679e46b9bcf9">&#9670;&#160;</a></span>getTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">esp_err_t getTime </td>
+          <td>(</td>
+          <td class="paramtype">struct tm *</td>          <td class="paramname"><span class="paramname"><em>current_timeinfo</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Carga la hora actuak desde el RTC del ESP32. </p>
+<p>Lee la hora del RTC del ESP32 expresada en unix time y la convierte en un formato entendible por el usuario en la estructura <code class="param">current_timeinfo</code> </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">current_timeinfo</td><td>Esturctura tm en donde se cargará la fecha y hora del sistema.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd><ul>
+<li>ESP_OK si carga la hora exitosamente.</li>
+<li>ESP_ERR_INVALID_ARG si <code class="param">current_timeinfo</code> es NULL </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="rtc_8c_source.html#l00119">119</a> del archivo <a class="el" href="rtc_8c_source.html">rtc.c</a>.</p>
+<div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="rtc_8c_a044acdfeee0cbf154bb9679e46b9bcf9_icgraph.png" border="0" usemap="#artc_8c_a044acdfeee0cbf154bb9679e46b9bcf9_icgraph" loading="lazy" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="ae110c54d6d4dcbd67211a1ac02cdc222" name="ae110c54d6d4dcbd67211a1ac02cdc222"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae110c54d6d4dcbd67211a1ac02cdc222">&#9670;&#160;</a></span>initRTC()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">esp_err_t initRTC </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Inicializa el RTC en la hora 00:00:00. </p>
+<p>No es importante el día configurado para el sistema, pero carga la hora 0 de UNIX_TIME.</p>
+<dl class="section return"><dt>Devuelve</dt><dd><ul>
+<li>ESP_OK siempre. </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="rtc_8c_source.html#l00089">89</a> del archivo <a class="el" href="rtc_8c_source.html">rtc.c</a>.</p>
+<div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="rtc_8c_ae110c54d6d4dcbd67211a1ac02cdc222_icgraph.png" border="0" usemap="#artc_8c_ae110c54d6d4dcbd67211a1ac02cdc222_icgraph" loading="lazy" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="ab576cf2b5649a8f5af8c1eca26c1e01a" name="ab576cf2b5649a8f5af8c1eca26c1e01a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab576cf2b5649a8f5af8c1eca26c1e01a">&#9670;&#160;</a></span>program_alarm()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">esp_err_t program_alarm </td>
+          <td>(</td>
+          <td class="paramtype">esp_timer_handle_t *</td>          <td class="paramname"><span class="paramname"><em>timer_handle</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void(*</td>          <td class="paramname"><span class="paramname"><em>callback&#160;</em></span>)(void *), </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>hour</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>minute</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>name</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Función dedicada a programar la alarma según hour y minute. </p>
+<p>No distingue de inicio o fin de marcha, para ello se le pasa el puntero a función 'callback' para la función de inicio o fin de marcha, el handler 'timer_handeler' y un nombre descriptivo. Los handlers de los timers son creados como tareas y no como interrupciones para poder utilizar las funciones .</p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">timer_handle</td><td>Puntero de salida donde se devuelve el handle del timer creado. Debe ser no-NULL. El caller es responsable de detener y destruir el timer cuando ya no se utilice (esp_timer_stop / esp_timer_delete).</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>Puntero a función de tipo <span class="tt">void (*)(void *)</span> que se invocará cuando la alarma dispare. Se ejecuta en el contexto de la tarea interna de esp_timer (no en ISR). Puede usar APIs no-ISR (colas, logs, etc.).</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">hour</td><td>Hora en formato 24 h. Rango válido: 0–23.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">minute</td><td>Minutos. Rango válido: 0–59.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>Nombre descriptivo del timer (aparece en logs/diagnóstico). Debe apuntar a memoria de duración estática (p. ej., literal o <span class="tt">static const</span>).</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd><ul>
+<li>ESP_OK en caso de éxito.</li>
+<li>ESP_ERR_INVALID_ARG si <code class="param">timer_handle</code> es NULL, <code class="param">callback</code> es NULL o <code class="param">hour/<code class="param">minute</code> están</code> fuera de rango.</li>
+<li>ESP_ERR_INVALID_STATE Si el RTC aún no fue inicializado</li>
+<li>ESP_ERR_NO_MEM si la allocación de memoria para los handlers falla </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="rtc_8c_source.html#l00166">166</a> del archivo <a class="el" href="rtc_8c_source.html">rtc.c</a>.</p>
+<div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="rtc_8c_ab576cf2b5649a8f5af8c1eca26c1e01a_icgraph.png" border="0" usemap="#artc_8c_ab576cf2b5649a8f5af8c1eca26c1e01a_icgraph" loading="lazy" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="adb9ac05b0bcd1cc3769f8a9931d90c06" name="adb9ac05b0bcd1cc3769f8a9931d90c06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb9ac05b0bcd1cc3769f8a9931d90c06">&#9670;&#160;</a></span>rtc_schedule_alarms()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">esp_err_t rtc_schedule_alarms </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structtime__settings__t.html">time_settings_t</a> *</td>          <td class="paramname"><span class="paramname"><em>time_settings</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Inicializa las alarmas de inicio y fin de funcionamiento del motor. </p>
+<p>La hora y minuto cargada en time_start es la que dará inicio al funcionamiento del motor, mientas que la cargada en time_stop será la que finalizará el mismo.</p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">time_settings</td><td>Esturctura <a class="el" href="structtime__settings__t.html">time_settings_t</a> que contiene los horarios de alarma de inicio y fin. Además contiene la hora actual, una variable que no es utilizada por la función.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd><ul>
+<li>ESP_OK si Configura las alarmas exitosamente.</li>
+<li>ESP_FAIL si falla en la creación de las alarmas. </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="rtc_8c_source.html#l00132">132</a> del archivo <a class="el" href="rtc_8c_source.html">rtc.c</a>.</p>
+<div class="dynheader">
+Gráfico de llamadas de esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="rtc_8c_adb9ac05b0bcd1cc3769f8a9931d90c06_cgraph.png" border="0" usemap="#artc_8c_adb9ac05b0bcd1cc3769f8a9931d90c06_cgraph" loading="lazy" alt=""/></div>
+</div>
+<div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="rtc_8c_adb9ac05b0bcd1cc3769f8a9931d90c06_icgraph.png" border="0" usemap="#artc_8c_adb9ac05b0bcd1cc3769f8a9931d90c06_icgraph" loading="lazy" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a18ec0d194dc994434090b873251093b0" name="a18ec0d194dc994434090b873251093b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18ec0d194dc994434090b873251093b0">&#9670;&#160;</a></span>setTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">esp_err_t setTime </td>
+          <td>(</td>
+          <td class="paramtype">struct tm *</td>          <td class="paramname"><span class="paramname"><em>setting_time</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Inicializa el RTC en la hora cargada en setting_time. </p>
+<p>No es importante el día configurado para el sistema, pero carga la hora 0 de UNIX_TIME.</p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">setting_time</td><td>Esturctura tm que es cargada en el RTC del ESP32 según su año, mes, día, hora, minuto y segundo.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd><ul>
+<li>ESP_OK si carga el horario correctamente.</li>
+<li>ESP_ERR_INVALID_ARG en caso de recibir un puntero NULL </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="rtc_8c_source.html#l00101">101</a> del archivo <a class="el" href="rtc_8c_source.html">rtc.c</a>.</p>
+<div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="rtc_8c_a18ec0d194dc994434090b873251093b0_icgraph.png" border="0" usemap="#artc_8c_a18ec0d194dc994434090b873251093b0_icgraph" loading="lazy" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Documentación de variables</h2>
+<a id="ab2199ad93a3c4b4fa1de3d486346cba7" name="ab2199ad93a3c4b4fa1de3d486346cba7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2199ad93a3c4b4fa1de3d486346cba7">&#9670;&#160;</a></span>alarm_settings</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structtime__settings__t.html">time_settings_t</a> alarm_settings</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="rtc_8c_source.html#l00031">31</a> del archivo <a class="el" href="rtc_8c_source.html">rtc.c</a>.</p>
+
+</div>
+</div>
+<a id="a27b710d06dd027d535da94e798d0a819" name="a27b710d06dd027d535da94e798d0a819"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27b710d06dd027d535da94e798d0a819">&#9670;&#160;</a></span>rtc_alarms</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structrtc__alarms__t.html">rtc_alarms_t</a> rtc_alarms</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="rtc_8c_source.html#l00030">30</a> del archivo <a class="el" href="rtc_8c_source.html">rtc.c</a>.</p>
+
+</div>
+</div>
+<a id="a5a85b9c772bbeb480b209a3e6ea92b4c" name="a5a85b9c772bbeb480b209a3e6ea92b4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a85b9c772bbeb480b209a3e6ea92b4c">&#9670;&#160;</a></span>TAG</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* TAG = &quot;RTC&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="rtc_8c_source.html#l00029">29</a> del archivo <a class="el" href="rtc_8c_source.html">rtc.c</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_5c982d53a68cdbcd421152b4020263a9.html">main</a></li><li class="navelem"><a href="dir_8483d28aae4c613ef01d5dc505e1dd03.html">rtc</a></li><li class="navelem"><a href="rtc_8c.html">rtc.c</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>
