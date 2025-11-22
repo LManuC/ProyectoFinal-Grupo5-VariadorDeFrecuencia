@@ -12,8 +12,6 @@ Funciones de lectura y escritura del RTC y alarmas.
 {\ttfamily \#include "{}esp\+\_\+log.\+h"{}}\newline
 {\ttfamily \#include "{}../system/sys\+Control.\+h"{}}\newline
 {\ttfamily \#include "{}RTC.\+h"{}}\newline
-Gráfico de dependencias incluidas en rtc.\+c\+:
-% FIG 0
 \doxysubsubsection*{Estructuras de datos}
 \begin{DoxyCompactItemize}
 \item 
@@ -44,6 +42,10 @@ static const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{rtc_8c_a5a85b9c772
 static \mbox{\hyperlink{structrtc__alarms__t}{rtc\+\_\+alarms\+\_\+t}} \mbox{\hyperlink{rtc_8c_a27b710d06dd027d535da94e798d0a819}{rtc\+\_\+alarms}}
 \item 
 static \mbox{\hyperlink{structtime__settings__t}{time\+\_\+settings\+\_\+t}} \mbox{\hyperlink{rtc_8c_ab2199ad93a3c4b4fa1de3d486346cba7}{alarm\+\_\+settings}}
+\item 
+static struct tm \mbox{\hyperlink{rtc_8c_a4b2b47c8b14e716db2bb270503eb09d2}{time\+\_\+start}}
+\item 
+static struct tm \mbox{\hyperlink{rtc_8c_a12c22a2f47ab452be111d558be82ac3d}{time\+\_\+stop}}
 \end{DoxyCompactItemize}
 
 
@@ -87,12 +89,8 @@ Envía la señal al sistema para poder iniciar el funcionamiento del motor segú
 \end{DoxyParams}
 
 
-Definición en la línea \mbox{\hyperlink{rtc_8c_source_l00207}{207}} del archivo \mbox{\hyperlink{rtc_8c_source}{rtc.\+c}}.
+Definición en la línea \mbox{\hyperlink{rtc_8c_source_l00212}{212}} del archivo \mbox{\hyperlink{rtc_8c_source}{rtc.\+c}}.
 
-Gráfico de llamadas de esta función\+:
-% FIG 1
-Gráfico de llamadas a esta función\+:
-% FIG 2
 \Hypertarget{rtc_8c_ae1c6ac7aa77f0274bbdb795eab58f081}\index{rtc.c@{rtc.c}!alarm\_stop\_cb@{alarm\_stop\_cb}}
 \index{alarm\_stop\_cb@{alarm\_stop\_cb}!rtc.c@{rtc.c}}
 \doxysubsubsection{\texorpdfstring{alarm\_stop\_cb()}{alarm\_stop\_cb()}}
@@ -112,12 +110,8 @@ Envía la señal al sistema para poder finalizar el funcionamiento del motor seg
 \end{DoxyParams}
 
 
-Definición en la línea \mbox{\hyperlink{rtc_8c_source_l00228}{228}} del archivo \mbox{\hyperlink{rtc_8c_source}{rtc.\+c}}.
+Definición en la línea \mbox{\hyperlink{rtc_8c_source_l00233}{233}} del archivo \mbox{\hyperlink{rtc_8c_source}{rtc.\+c}}.
 
-Gráfico de llamadas de esta función\+:
-% FIG 3
-Gráfico de llamadas a esta función\+:
-% FIG 4
 \Hypertarget{rtc_8c_a044acdfeee0cbf154bb9679e46b9bcf9}\index{rtc.c@{rtc.c}!getTime@{getTime}}
 \index{getTime@{getTime}!rtc.c@{rtc.c}}
 \doxysubsubsection{\texorpdfstring{getTime()}{getTime()}}
@@ -144,10 +138,8 @@ Lee la hora del RTC del ESP32 expresada en unix time y la convierte en un format
 \end{DoxyReturn}
 
 
-Definición en la línea \mbox{\hyperlink{rtc_8c_source_l00119}{119}} del archivo \mbox{\hyperlink{rtc_8c_source}{rtc.\+c}}.
+Definición en la línea \mbox{\hyperlink{rtc_8c_source_l00124}{124}} del archivo \mbox{\hyperlink{rtc_8c_source}{rtc.\+c}}.
 
-Gráfico de llamadas a esta función\+:
-% FIG 5
 \Hypertarget{rtc_8c_ae110c54d6d4dcbd67211a1ac02cdc222}\index{rtc.c@{rtc.c}!initRTC@{initRTC}}
 \index{initRTC@{initRTC}!rtc.c@{rtc.c}}
 \doxysubsubsection{\texorpdfstring{initRTC()}{initRTC()}}
@@ -168,10 +160,8 @@ No es importante el día configurado para el sistema, pero carga la hora 0 de UN
 \end{DoxyReturn}
 
 
-Definición en la línea \mbox{\hyperlink{rtc_8c_source_l00089}{89}} del archivo \mbox{\hyperlink{rtc_8c_source}{rtc.\+c}}.
+Definición en la línea \mbox{\hyperlink{rtc_8c_source_l00092}{92}} del archivo \mbox{\hyperlink{rtc_8c_source}{rtc.\+c}}.
 
-Gráfico de llamadas a esta función\+:
-% FIG 6
 \Hypertarget{rtc_8c_ab576cf2b5649a8f5af8c1eca26c1e01a}\index{rtc.c@{rtc.c}!program\_alarm@{program\_alarm}}
 \index{program\_alarm@{program\_alarm}!rtc.c@{rtc.c}}
 \doxysubsubsection{\texorpdfstring{program\_alarm()}{program\_alarm()}}
@@ -208,10 +198,8 @@ No distingue de inicio o fin de marcha, para ello se le pasa el puntero a funci�
 \end{DoxyReturn}
 
 
-Definición en la línea \mbox{\hyperlink{rtc_8c_source_l00166}{166}} del archivo \mbox{\hyperlink{rtc_8c_source}{rtc.\+c}}.
+Definición en la línea \mbox{\hyperlink{rtc_8c_source_l00171}{171}} del archivo \mbox{\hyperlink{rtc_8c_source}{rtc.\+c}}.
 
-Gráfico de llamadas a esta función\+:
-% FIG 7
 \Hypertarget{rtc_8c_adb9ac05b0bcd1cc3769f8a9931d90c06}\index{rtc.c@{rtc.c}!rtc\_schedule\_alarms@{rtc\_schedule\_alarms}}
 \index{rtc\_schedule\_alarms@{rtc\_schedule\_alarms}!rtc.c@{rtc.c}}
 \doxysubsubsection{\texorpdfstring{rtc\_schedule\_alarms()}{rtc\_schedule\_alarms()}}
@@ -238,12 +226,8 @@ La hora y minuto cargada en time\+\_\+start es la que dará inicio al funcionami
 \end{DoxyReturn}
 
 
-Definición en la línea \mbox{\hyperlink{rtc_8c_source_l00132}{132}} del archivo \mbox{\hyperlink{rtc_8c_source}{rtc.\+c}}.
+Definición en la línea \mbox{\hyperlink{rtc_8c_source_l00137}{137}} del archivo \mbox{\hyperlink{rtc_8c_source}{rtc.\+c}}.
 
-Gráfico de llamadas de esta función\+:
-% FIG 8
-Gráfico de llamadas a esta función\+:
-% FIG 9
 \Hypertarget{rtc_8c_a18ec0d194dc994434090b873251093b0}\index{rtc.c@{rtc.c}!setTime@{setTime}}
 \index{setTime@{setTime}!rtc.c@{rtc.c}}
 \doxysubsubsection{\texorpdfstring{setTime()}{setTime()}}
@@ -270,10 +254,8 @@ No es importante el día configurado para el sistema, pero carga la hora 0 de UN
 \end{DoxyReturn}
 
 
-Definición en la línea \mbox{\hyperlink{rtc_8c_source_l00101}{101}} del archivo \mbox{\hyperlink{rtc_8c_source}{rtc.\+c}}.
+Definición en la línea \mbox{\hyperlink{rtc_8c_source_l00107}{107}} del archivo \mbox{\hyperlink{rtc_8c_source}{rtc.\+c}}.
 
-Gráfico de llamadas a esta función\+:
-% FIG 10
 
 
 \label{doc-var-members}
@@ -308,4 +290,24 @@ const char\texorpdfstring{$\ast$}{*} TAG = "{}RTC"{}\hspace{0.3cm}{\ttfamily [st
 
 
 Definición en la línea \mbox{\hyperlink{rtc_8c_source_l00029}{29}} del archivo \mbox{\hyperlink{rtc_8c_source}{rtc.\+c}}.
+
+\Hypertarget{rtc_8c_a4b2b47c8b14e716db2bb270503eb09d2}\index{rtc.c@{rtc.c}!time\_start@{time\_start}}
+\index{time\_start@{time\_start}!rtc.c@{rtc.c}}
+\doxysubsubsection{\texorpdfstring{time\_start}{time\_start}}
+{\footnotesize\ttfamily \label{rtc_8c_a4b2b47c8b14e716db2bb270503eb09d2} 
+struct tm time\+\_\+start\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{rtc_8c_source_l00033}{33}} del archivo \mbox{\hyperlink{rtc_8c_source}{rtc.\+c}}.
+
+\Hypertarget{rtc_8c_a12c22a2f47ab452be111d558be82ac3d}\index{rtc.c@{rtc.c}!time\_stop@{time\_stop}}
+\index{time\_stop@{time\_stop}!rtc.c@{rtc.c}}
+\doxysubsubsection{\texorpdfstring{time\_stop}{time\_stop}}
+{\footnotesize\ttfamily \label{rtc_8c_a12c22a2f47ab452be111d558be82ac3d} 
+struct tm time\+\_\+stop\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{rtc_8c_source_l00034}{34}} del archivo \mbox{\hyperlink{rtc_8c_source}{rtc.\+c}}.
 

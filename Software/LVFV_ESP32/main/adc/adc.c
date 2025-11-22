@@ -247,7 +247,7 @@ system_status_e readADC(void) {
     }
 
     if ( s_e.status == SYSTEM_EMERGENCY ) {
-        s_e.status = SYSTEM_EMERGENCY_OK;
+        s_e.status = SYSTEM_EMERGENCY_SENT;
     }
 
     return s_e.status;

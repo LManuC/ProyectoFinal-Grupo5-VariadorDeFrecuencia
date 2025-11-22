@@ -49,6 +49,13 @@ uint16_t engine_start();
 uint16_t engine_stop();
 
 /**
+ * @fn void engine_emergency_stop_release();
+ *
+ * @brief Pasa a estado SYSTEM_EMERGENCY_OK para que el usuario pueda enviar la señal de stop al STM32 necesaria para poder arrancar nuevamente el motor.
+ */
+void engine_emergency_stop_release();
+
+/**
  * @fn void engine_emergency_stop();
  *
  * @brief Pasa la frecuencia de regimen a 0Hz y pasa a estado SYSTEM_EMERGENCY
@@ -90,7 +97,7 @@ uint16_t change_frequency(uint8_t speed_slector);
  *      - SYSTEM_REGIME: El sistema está con el motor girando a régimen
  *      - SYSTEM_BREAKING: El sistema está frenando
  *      - SYSTEM_EMERGENCY: El sistema entra por primera vez en estado de emergencia
- *      - SYSTEM_EMERGENCY_OK: El sistema continúa en estado de emergencia
+ *      - SYSTEM_EMERGENCY_SENT: El sistema continúa en estado de emergencia
  */
 system_status_e update_meas(uint16_t vbus_meas, uint16_t ibus_meas);
 

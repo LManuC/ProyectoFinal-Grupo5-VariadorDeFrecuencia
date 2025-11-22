@@ -52,6 +52,7 @@ var searchData=
   ['system_5fbreaking_49',['SYSTEM_BREAKING',['../_l_v_f_v__system_8h.html#a175b5f4c0244bf0bde30789366d31791a800775137620f33c4ba7b7810a94e365',1,'LVFV_system.h']]],
   ['system_5femergency_50',['SYSTEM_EMERGENCY',['../_l_v_f_v__system_8h.html#a175b5f4c0244bf0bde30789366d31791abf715611d16f62350c373d1c4aa17547',1,'LVFV_system.h']]],
   ['system_5femergency_5fok_51',['SYSTEM_EMERGENCY_OK',['../_l_v_f_v__system_8h.html#a175b5f4c0244bf0bde30789366d31791a51d3220cff10b80b0d524652e825bf5c',1,'LVFV_system.h']]],
-  ['system_5fidle_52',['SYSTEM_IDLE',['../_l_v_f_v__system_8h.html#a175b5f4c0244bf0bde30789366d31791a20cc395940efb44d047c63108d2ef837',1,'LVFV_system.h']]],
-  ['system_5fregime_53',['SYSTEM_REGIME',['../_l_v_f_v__system_8h.html#a175b5f4c0244bf0bde30789366d31791af08242ba685ecc48c255df8932379618',1,'LVFV_system.h']]]
+  ['system_5femergency_5fsent_52',['SYSTEM_EMERGENCY_SENT',['../_l_v_f_v__system_8h.html#a175b5f4c0244bf0bde30789366d31791afa44959cbb89c7f6c3da69da5f014a08',1,'LVFV_system.h']]],
+  ['system_5fidle_53',['SYSTEM_IDLE',['../_l_v_f_v__system_8h.html#a175b5f4c0244bf0bde30789366d31791a20cc395940efb44d047c63108d2ef837',1,'LVFV_system.h']]],
+  ['system_5fregime_54',['SYSTEM_REGIME',['../_l_v_f_v__system_8h.html#a175b5f4c0244bf0bde30789366d31791af08242ba685ecc48c255df8932379618',1,'LVFV_system.h']]]
 ];

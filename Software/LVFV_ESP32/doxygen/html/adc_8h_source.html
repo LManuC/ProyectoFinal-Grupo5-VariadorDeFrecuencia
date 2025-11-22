@@ -27,7 +27,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="DoxyPic.jpeg"/></td>
   <td id="projectalign">
-   <div id="projectname">Low Voltage Variable Frequency Drive<span id="projectnumber">&#160;2.0</span>
+   <div id="projectname">Low Voltage Variable Frequency Drive<span id="projectnumber">&#160;2.1</span>
    </div>
    <div id="projectbrief">Proyecto final Andrenacci-Carra 2026. Variador de frecuencia de motor trifásico 1/3HP utilizando 12V de contínua como fuente de entrada de tensión.</div>
   </td>
@@ -102,16 +102,16 @@ $(function(){initNavTree('adc_8h_source.html','',''); });
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span></div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keywordtype">void</span> <a class="code hl_function" href="adc_8h.html#a1b78b89977b7b9e5ebc32e9456337379">adc_task</a>(<span class="keywordtype">void</span> *arg);</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>esp_err_t <a class="code hl_function" href="adc_8h.html#aeead0f2e9c35b7a2e452349b5c672eca">adc_init_two_channels</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>esp_err_t <a class="code hl_function" href="adc_8h.html#a3cfa671db431099a0d91bd8bcfe935f8">adc_init</a>(<span class="keywordtype">void</span>);</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span></div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><a class="code hl_enumeration" href="_l_v_f_v__system_8h.html#a175b5f4c0244bf0bde30789366d31791">system_status_e</a> <a class="code hl_function" href="adc_8h.html#aa1581e2212cf6853c63ae97147e9ed1f">readADC</a>(<span class="keywordtype">void</span>);</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="a_l_v_f_v__system_8h_html"><div class="ttname"><a href="_l_v_f_v__system_8h.html">LVFV_system.h</a></div><div class="ttdoc">Declaraciones de estructuras, variables, definiciones y estados generales del sistema utilizados en v...</div></div>
-<div class="ttc" id="a_l_v_f_v__system_8h_html_a175b5f4c0244bf0bde30789366d31791"><div class="ttname"><a href="_l_v_f_v__system_8h.html#a175b5f4c0244bf0bde30789366d31791">system_status_e</a></div><div class="ttdeci">system_status_e</div><div class="ttdoc">Posibles estados general que puede tomar el sistema.</div><div class="ttdef"><b>Definition</b> <a href="_l_v_f_v__system_8h_source.html#l00056">LVFV_system.h:56</a></div></div>
+<div class="ttc" id="a_l_v_f_v__system_8h_html_a175b5f4c0244bf0bde30789366d31791"><div class="ttname"><a href="_l_v_f_v__system_8h.html#a175b5f4c0244bf0bde30789366d31791">system_status_e</a></div><div class="ttdeci">system_status_e</div><div class="ttdoc">Posibles estados general que puede tomar el sistema.</div><div class="ttdef"><b>Definition</b> <a href="_l_v_f_v__system_8h_source.html#l00067">LVFV_system.h:67</a></div></div>
 <div class="ttc" id="aadc_8h_html_a1b78b89977b7b9e5ebc32e9456337379"><div class="ttname"><a href="adc_8h.html#a1b78b89977b7b9e5ebc32e9456337379">adc_task</a></div><div class="ttdeci">void adc_task(void *arg)</div><div class="ttdoc">Función programada como alarma para finalizar el funcionamiento del motor.</div><div class="ttdef"><b>Definition</b> <a href="adc_8c_source.html#l00146">adc.c:146</a></div></div>
-<div class="ttc" id="aadc_8h_html_aa1581e2212cf6853c63ae97147e9ed1f"><div class="ttname"><a href="adc_8h.html#aa1581e2212cf6853c63ae97147e9ed1f">readADC</a></div><div class="ttdeci">system_status_e readADC(void)</div><div class="ttdoc">Desencola mediciones obtenidas desde el ADC para tensión y corriente del bus de contínua,...</div><div class="ttdef"><b>Definition</b> <a href="adc_8c_source.html#l00227">adc.c:227</a></div></div>
-<div class="ttc" id="aadc_8h_html_aeead0f2e9c35b7a2e452349b5c672eca"><div class="ttname"><a href="adc_8h.html#aeead0f2e9c35b7a2e452349b5c672eca">adc_init_two_channels</a></div><div class="ttdeci">esp_err_t adc_init_two_channels(void)</div><div class="ttdoc">Configura los 4 ADC necesarios para el sistema y los calibra para obtener las mediciones en desde 0 a...</div><div class="ttdef"><b>Definition</b> <a href="adc_8c_source.html#l00097">adc.c:97</a></div></div>
+<div class="ttc" id="aadc_8h_html_a3cfa671db431099a0d91bd8bcfe935f8"><div class="ttname"><a href="adc_8h.html#a3cfa671db431099a0d91bd8bcfe935f8">adc_init</a></div><div class="ttdeci">esp_err_t adc_init(void)</div><div class="ttdoc">Configura los 4 ADC necesarios para el sistema y los calibra para obtener las mediciones en desde 0 a...</div><div class="ttdef"><b>Definition</b> <a href="adc_8c_source.html#l00097">adc.c:97</a></div></div>
+<div class="ttc" id="aadc_8h_html_aa1581e2212cf6853c63ae97147e9ed1f"><div class="ttname"><a href="adc_8h.html#aa1581e2212cf6853c63ae97147e9ed1f">readADC</a></div><div class="ttdeci">system_status_e readADC(void)</div><div class="ttdoc">Desencola mediciones obtenidas desde el ADC para tensión y corriente del bus de contínua,...</div><div class="ttdef"><b>Definition</b> <a href="adc_8c_source.html#l00239">adc.c:239</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

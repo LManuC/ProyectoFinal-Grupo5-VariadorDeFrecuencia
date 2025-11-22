@@ -2,7 +2,7 @@ var searchData=
 [
   ['accelerating_0',['accelerating',['../sys_admin_8c.html#abe28e281ca81cf401dbd8b06f719d606',1,'sysAdmin.c']]],
   ['accelerating_5fhandle_1',['accelerating_handle',['../sys_admin_8c.html#aa37a6d8617ec99a22272a0445cfe9a08',1,'sysAdmin.c']]],
-  ['acceleration_2',['acceleration',['../structfrequency__settings__t.html#a44e11b804280aecf19f944765588d26f',1,'frequency_settings_t']]],
+  ['acceleration_2',['acceleration',['../structfrequency__settings__t.html#a44e11b804280aecf19f944765588d26f',1,'frequency_settings_t::acceleration'],['../structsystem__status__t.html#a44e11b804280aecf19f944765588d26f',1,'system_status_t::acceleration']]],
   ['adc_2ec_3',['adc.c',['../adc_8c.html',1,'']]],
   ['adc_2eh_4',['adc.h',['../adc_8h.html',1,'']]],
   ['adc_5fatten_5fused_5',['ADC_ATTEN_USED',['../adc_8c.html#a764b64d78324053bd17ae2654f080658',1,'adc.c']]],
@@ -11,7 +11,7 @@ var searchData=
   ['adc_5fch_5fgpio35_8',['ADC_CH_GPIO35',['../adc_8c.html#ac5b49a253e8fc48859dce8e9fdd8cf6f',1,'adc.c']]],
   ['adc_5fch_5fgpio36_9',['ADC_CH_GPIO36',['../adc_8c.html#a56a4bd2cb7afd6db44ef55a1d4587c89',1,'adc.c']]],
   ['adc_5fch_5fgpio39_10',['ADC_CH_GPIO39',['../adc_8c.html#a58b5c420b69ca6aba810ff90b81150f3',1,'adc.c']]],
-  ['adc_5finit_5ftwo_5fchannels_11',['adc_init_two_channels',['../adc_8c.html#aeead0f2e9c35b7a2e452349b5c672eca',1,'adc_init_two_channels(void):&#160;adc.c'],['../adc_8h.html#aeead0f2e9c35b7a2e452349b5c672eca',1,'adc_init_two_channels(void):&#160;adc.c']]],
+  ['adc_5finit_11',['adc_init',['../adc_8c.html#a3cfa671db431099a0d91bd8bcfe935f8',1,'adc_init(void):&#160;adc.c'],['../adc_8h.html#a3cfa671db431099a0d91bd8bcfe935f8',1,'adc_init(void):&#160;adc.c']]],
   ['adc_5fperiod_5fms_12',['ADC_PERIOD_MS',['../adc_8c.html#af54819f3e0f7360f21de8b3f9d803c08',1,'adc.c']]],
   ['adc_5ftask_13',['adc_task',['../adc_8c.html#a1b78b89977b7b9e5ebc32e9456337379',1,'adc_task(void *arg):&#160;adc.c'],['../adc_8h.html#a1b78b89977b7b9e5ebc32e9456337379',1,'adc_task(void *arg):&#160;adc.c']]],
   ['adc_5funit_5fused_14',['ADC_UNIT_USED',['../adc_8c.html#ab8818cc3918e2a7d8d5858cb1ef86364',1,'adc.c']]],

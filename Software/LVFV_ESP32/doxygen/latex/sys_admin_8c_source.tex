@@ -13,190 +13,215 @@
 \DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00016}00016\ \textcolor{preprocessor}{\#include\ "{}esp\_system.h"{}}}
 \DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00017}00017\ }
 \DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00018}00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{sys_admin_8h}{SysAdmin.h}}"{}}}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00019}00019\ }
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00020}\mbox{\hyperlink{sys_admin_8c_a5a85b9c772bbeb480b209a3e6ea92b4c}{00020}}\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{adc_8c_a5a85b9c772bbeb480b209a3e6ea92b4c}{TAG}}\ =\ \textcolor{stringliteral}{"{}sysAdmin"{}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00021}\mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{00021}}\ \textcolor{keyword}{static}\ \mbox{\hyperlink{structsystem__status__t}{system\_status\_t}}\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00022}\mbox{\hyperlink{sys_admin_8c_a45b4049988bafe92214f32fd28019e30}{00022}}\ \textcolor{keyword}{static}\ \mbox{\hyperlink{structseccurity__settings__t}{seccurity\_settings\_t}}\ \mbox{\hyperlink{display_8c_a45b4049988bafe92214f32fd28019e30}{system\_seccurity\_settings}};\ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00023}\mbox{\hyperlink{sys_admin_8c_aa12e414b0919881d870f6596c2250185}{00023}}\ \textcolor{keyword}{static}\ uint16\_t\ \mbox{\hyperlink{sys_admin_8c_aa12e414b0919881d870f6596c2250185}{frequency\_table}}[8];\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00024}\mbox{\hyperlink{sys_admin_8c_aa37a6d8617ec99a22272a0445cfe9a08}{00024}}\ \textcolor{keyword}{static}\ TaskHandle\_t\ \mbox{\hyperlink{sys_admin_8c_aa37a6d8617ec99a22272a0445cfe9a08}{accelerating\_handle}}\ =\ NULL;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00025}\mbox{\hyperlink{sys_admin_8c_aef1cbb22108ca96e11c5f161d31bda51}{00025}}\ \textcolor{keyword}{static}\ TaskHandle\_t\ \mbox{\hyperlink{sys_admin_8c_aef1cbb22108ca96e11c5f161d31bda51}{desaccelerating\_handle}}\ =\ NULL;\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00026}00026\ }
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00037}00037\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{sys_admin_8c_abe28e281ca81cf401dbd8b06f719d606}{accelerating}}(\textcolor{keywordtype}{void}\ *pvParameters\ );}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00038}00038\ }
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00049}00049\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{sys_admin_8c_a16593ac6c0abf6f65c696373af621487}{desaccelerating}}(\ \textcolor{keywordtype}{void}\ *pvParameters\ );}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00050}00050\ }
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00051}\mbox{\hyperlink{sys_admin_8c_abe28e281ca81cf401dbd8b06f719d606}{00051}}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{sys_admin_8c_abe28e281ca81cf401dbd8b06f719d606}{accelerating}}(\textcolor{keywordtype}{void}\ *pvParameters\ )\ \{}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00052}00052\ \ \ \ \ uint16\_t\ acceleration\ =\ *((uint16\_t*)pvParameters);}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00053}00053\ \ \ \ \ vTaskDelay(pdMS\_TO\_TICKS(200));}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00054}00054\ \ \ \ \ \textcolor{keywordflow}{while}(\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.frequency\ !=\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.frequency\_destiny\ )\ \{}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00055}00055\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ (\mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.frequency\ +\ acceleration\ )\ >\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.frequency\_destiny\ )\ \{}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.frequency\ =\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.frequency\_destiny;}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00057}00057\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.frequency\ +=\ acceleration;}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00059}00059\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00060}00060\ \ \ \ \ \ \ \ \ vTaskDelay(pdMS\_TO\_TICKS(1000));}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00061}00061\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00062}00062\ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.status\ =\ \mbox{\hyperlink{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791af08242ba685ecc48c255df8932379618}{SYSTEM\_REGIME}};}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00063}00063\ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_aa37a6d8617ec99a22272a0445cfe9a08}{accelerating\_handle}}\ =\ NULL;}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00064}00064\ \ \ \ \ vTaskDelete(NULL);}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00065}00065\ \}}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00066}00066\ }
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00067}\mbox{\hyperlink{sys_admin_8c_a16593ac6c0abf6f65c696373af621487}{00067}}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{sys_admin_8c_a16593ac6c0abf6f65c696373af621487}{desaccelerating}}(\ \textcolor{keywordtype}{void}\ *pvParameters\ )\ \{}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00068}00068\ \ \ \ \ uint16\_t\ desacceleration\ =\ *((uint16\_t*)pvParameters);}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00069}00069\ \ \ \ \ vTaskDelay(pdMS\_TO\_TICKS(200));}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00070}00070\ \ \ \ \ \textcolor{keywordflow}{while}(\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.frequency\ !=\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.frequency\_destiny\ )\ \{}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00071}00071\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.frequency\ -\/\ desacceleration\ <\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.frequency\_destiny\ )\ \{}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.frequency\ =\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.frequency\_destiny;}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00073}00073\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.frequency\ >\ desacceleration\ )\ \{}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.frequency\ -\/=\ desacceleration;}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00075}00075\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.frequency\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00077}00077\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00078}00078\ \ \ \ \ \ \ \ \ vTaskDelay(pdMS\_TO\_TICKS(1000));}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00079}00079\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00080}00080\ \ \ \ \ \textcolor{keywordflow}{if}\ (\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.status\ !=\ \mbox{\hyperlink{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791abf715611d16f62350c373d1c4aa17547}{SYSTEM\_EMERGENCY}}\ )\ \{}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00081}00081\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.status\ !=\ \mbox{\hyperlink{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791a800775137620f33c4ba7b7810a94e365}{SYSTEM\_BREAKING}}\ )\ \{}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.status\ =\ \mbox{\hyperlink{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791af08242ba685ecc48c255df8932379618}{SYSTEM\_REGIME}};}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00083}00083\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.status\ =\ \mbox{\hyperlink{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791a20cc395940efb44d047c63108d2ef837}{SYSTEM\_IDLE}};}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00085}00085\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00086}00086\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00087}00087\ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_aef1cbb22108ca96e11c5f161d31bda51}{desaccelerating\_handle}}\ =\ NULL;}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00088}00088\ \ \ \ \ vTaskDelete(NULL);}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00089}00089\ \}}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00090}00090\ }
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00091}\mbox{\hyperlink{sys_admin_8c_a62e7c27f84d0db690242eeb717c4e17b}{00091}}\ uint16\_t\ \mbox{\hyperlink{sys_admin_8c_a62e7c27f84d0db690242eeb717c4e17b}{engine\_start}}()\ \{}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00092}00092\ \ \ \ \ \textcolor{keywordflow}{if}\ (\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.status\ !=\ \mbox{\hyperlink{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791abf715611d16f62350c373d1c4aa17547}{SYSTEM\_EMERGENCY}}\ )\ \{}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00093}00093\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.frequency\_destiny\ =\ \mbox{\hyperlink{sys_admin_8c_aa12e414b0919881d870f6596c2250185}{frequency\_table}}[\mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.inputs\_status];}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00094}00094\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.status\ =\ \mbox{\hyperlink{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791a355058bb815d40f78a343c756d58c47f}{SYSTEM\_ACCLE\_DESACCEL}};}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00095}00095\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ \mbox{\hyperlink{sys_admin_8c_aef1cbb22108ca96e11c5f161d31bda51}{desaccelerating\_handle}}\ !=\ NULL\ )\ \{}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ vTaskDelete(\ \mbox{\hyperlink{sys_admin_8c_aef1cbb22108ca96e11c5f161d31bda51}{desaccelerating\_handle}}\ );}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_aef1cbb22108ca96e11c5f161d31bda51}{desaccelerating\_handle}}\ =\ NULL;}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00098}00098\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00099}00099\ \ \ \ \ \ \ \ \ xTaskCreatePinnedToCore(\mbox{\hyperlink{sys_admin_8c_abe28e281ca81cf401dbd8b06f719d606}{accelerating}},\ \textcolor{stringliteral}{"{}accelerating"{}},\ 1024,\ NULL,\ 9,\ \&\mbox{\hyperlink{sys_admin_8c_aa37a6d8617ec99a22272a0445cfe9a08}{accelerating\_handle}},\ tskNO\_AFFINITY);}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00100}00100\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00101}00101\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.frequency\_destiny;}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00102}00102\ \}}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00103}00103\ }
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00104}\mbox{\hyperlink{sys_admin_8c_abb59808fe42c3d4dd43e0f91d1f699a9}{00104}}\ uint16\_t\ \mbox{\hyperlink{sys_admin_8c_abb59808fe42c3d4dd43e0f91d1f699a9}{engine\_stop}}()\ \{}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00105}00105\ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.frequency\_destiny\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00106}00106\ \ \ \ \ \textcolor{keywordflow}{if}\ (\ \mbox{\hyperlink{sys_admin_8c_aa37a6d8617ec99a22272a0445cfe9a08}{accelerating\_handle}}\ !=\ NULL\ )\ \{}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00107}00107\ \ \ \ \ \ \ \ \ vTaskDelete(\ \mbox{\hyperlink{sys_admin_8c_aa37a6d8617ec99a22272a0445cfe9a08}{accelerating\_handle}}\ );}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00108}00108\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_aa37a6d8617ec99a22272a0445cfe9a08}{accelerating\_handle}}\ =\ NULL;}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00109}00109\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00110}00110\ \ \ \ \ \textcolor{keywordflow}{if}\ (\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.status\ ==\ \mbox{\hyperlink{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791abf715611d16f62350c373d1c4aa17547}{SYSTEM\_EMERGENCY}}\ )\ \{}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00111}00111\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.status\ =\ \mbox{\hyperlink{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791a20cc395940efb44d047c63108d2ef837}{SYSTEM\_IDLE}};}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00112}00112\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00113}00113\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.status\ =\ \mbox{\hyperlink{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791a800775137620f33c4ba7b7810a94e365}{SYSTEM\_BREAKING}};}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00114}00114\ \ \ \ \ \ \ \ \ xTaskCreatePinnedToCore(\mbox{\hyperlink{sys_admin_8c_a16593ac6c0abf6f65c696373af621487}{desaccelerating}},\ \textcolor{stringliteral}{"{}desaccelerating"{}},\ 1024,\ NULL,\ 9,\ \&\mbox{\hyperlink{sys_admin_8c_aef1cbb22108ca96e11c5f161d31bda51}{desaccelerating\_handle}},\ tskNO\_AFFINITY);}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00115}00115\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00116}00116\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.frequency\_destiny;}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00117}00117\ \}}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00118}00118\ }
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00119}\mbox{\hyperlink{sys_admin_8c_aa6c33be7b7273385ae39a1f682f28f75}{00119}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{sys_admin_8c_aa6c33be7b7273385ae39a1f682f28f75}{engine\_emergency\_stop}}()\ \{}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00120}00120\ \ \ \ \ \textcolor{keywordflow}{if}\ (\ \mbox{\hyperlink{sys_admin_8c_aa37a6d8617ec99a22272a0445cfe9a08}{accelerating\_handle}}\ !=\ NULL\ )\ \{}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00121}00121\ \ \ \ \ \ \ \ \ vTaskDelete(\ \mbox{\hyperlink{sys_admin_8c_aa37a6d8617ec99a22272a0445cfe9a08}{accelerating\_handle}}\ );}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00122}00122\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_aa37a6d8617ec99a22272a0445cfe9a08}{accelerating\_handle}}\ =\ NULL;}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00123}00123\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00124}00124\ \ \ \ \ \textcolor{keywordflow}{if}\ (\ \mbox{\hyperlink{sys_admin_8c_aef1cbb22108ca96e11c5f161d31bda51}{desaccelerating\_handle}}\ !=\ NULL\ )\ \{}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00125}00125\ \ \ \ \ \ \ \ \ vTaskDelete(\ \mbox{\hyperlink{sys_admin_8c_aef1cbb22108ca96e11c5f161d31bda51}{desaccelerating\_handle}}\ );}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00126}00126\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_aef1cbb22108ca96e11c5f161d31bda51}{desaccelerating\_handle}}\ =\ NULL;}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00127}00127\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00128}00128\ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.frequency\_destiny\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00129}00129\ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.frequency\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00130}00130\ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.status\ =\ \mbox{\hyperlink{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791abf715611d16f62350c373d1c4aa17547}{SYSTEM\_EMERGENCY}};}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00131}00131\ \}}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00132}00132\ }
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00133}\mbox{\hyperlink{sys_admin_8c_a6b7a46f08b0f4ed784a8001e221a32a8}{00133}}\ uint16\_t\ \mbox{\hyperlink{sys_admin_8c_a6b7a46f08b0f4ed784a8001e221a32a8}{change\_frequency}}(uint8\_t\ speed\_slector)\ \{}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00134}00134\ \ \ \ \ \textcolor{keywordflow}{if}\ (speed\_slector\ >\ 8\ )\ \{}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00135}00135\ \ \ \ \ \ \ \ \ ESP\_LOGE(\mbox{\hyperlink{adc_8c_a5a85b9c772bbeb480b209a3e6ea92b4c}{TAG}},\ \textcolor{stringliteral}{"{}El\ numero\ del\ indice\ del\ selector\ de\ velocidad\ es\ muy\ grnade\ \%d"{}},\ speed\_slector);}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00136}00136\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00137}00137\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00138}00138\ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.inputs\_status\ =\ speed\_slector;}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00139}00139\ \ \ \ \ \textcolor{keywordflow}{if}\ (\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.frequency\_destiny\ >\ \mbox{\hyperlink{sys_admin_8c_aa12e414b0919881d870f6596c2250185}{frequency\_table}}[\mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.inputs\_status]\ )\ \{}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00140}00140\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.frequency\_destiny\ =\ \mbox{\hyperlink{sys_admin_8c_aa12e414b0919881d870f6596c2250185}{frequency\_table}}[\mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.inputs\_status];}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00141}00141\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ \mbox{\hyperlink{sys_admin_8c_aa37a6d8617ec99a22272a0445cfe9a08}{accelerating\_handle}}\ !=\ NULL\ )\ \{}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ vTaskDelete(\ \mbox{\hyperlink{sys_admin_8c_aa37a6d8617ec99a22272a0445cfe9a08}{accelerating\_handle}}\ );}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_aa37a6d8617ec99a22272a0445cfe9a08}{accelerating\_handle}}\ =\ NULL;}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00144}00144\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00145}00145\ \ \ \ \ \ \ \ \ xTaskCreatePinnedToCore(\mbox{\hyperlink{sys_admin_8c_a16593ac6c0abf6f65c696373af621487}{desaccelerating}},\ \textcolor{stringliteral}{"{}desaccelerating"{}},\ 1024,\ NULL,\ 9,\ \&\mbox{\hyperlink{sys_admin_8c_aef1cbb22108ca96e11c5f161d31bda51}{desaccelerating\_handle}},\ tskNO\_AFFINITY);}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00146}00146\ \ \ \ \ \ \ \ \ ESP\_LOGI(\ \mbox{\hyperlink{adc_8c_a5a85b9c772bbeb480b209a3e6ea92b4c}{TAG}},\ \textcolor{stringliteral}{"{}Cambiando\ la\ frecuencia\ de\ regimen\ a\ \%d.\ Desacelerando"{}},\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.frequency\_destiny);}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00147}00147\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.frequency\_destiny\ <\ \mbox{\hyperlink{sys_admin_8c_aa12e414b0919881d870f6596c2250185}{frequency\_table}}[\mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.inputs\_status]\ )\ \{}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00148}00148\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.frequency\_destiny\ =\ \mbox{\hyperlink{sys_admin_8c_aa12e414b0919881d870f6596c2250185}{frequency\_table}}[\mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.inputs\_status];}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00149}00149\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ \mbox{\hyperlink{sys_admin_8c_aef1cbb22108ca96e11c5f161d31bda51}{desaccelerating\_handle}}\ !=\ NULL\ )\ \{}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ vTaskDelete(\ \mbox{\hyperlink{sys_admin_8c_aef1cbb22108ca96e11c5f161d31bda51}{desaccelerating\_handle}}\ );}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_aef1cbb22108ca96e11c5f161d31bda51}{desaccelerating\_handle}}\ =\ NULL;}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00152}00152\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00153}00153\ \ \ \ \ \ \ \ \ xTaskCreatePinnedToCore(\mbox{\hyperlink{sys_admin_8c_abe28e281ca81cf401dbd8b06f719d606}{accelerating}},\ \textcolor{stringliteral}{"{}accelerating"{}},\ 1024,\ NULL,\ 9,\ \&\mbox{\hyperlink{sys_admin_8c_aa37a6d8617ec99a22272a0445cfe9a08}{accelerating\_handle}},\ tskNO\_AFFINITY);}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00154}00154\ \ \ \ \ \ \ \ \ ESP\_LOGI(\ \mbox{\hyperlink{adc_8c_a5a85b9c772bbeb480b209a3e6ea92b4c}{TAG}},\ \textcolor{stringliteral}{"{}Cambiando\ la\ frecuencia\ de\ regimen\ a\ \%d.\ Acelerando"{}},\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.frequency\_destiny);}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00155}00155\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00156}00156\ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.status\ =\ \mbox{\hyperlink{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791a355058bb815d40f78a343c756d58c47f}{SYSTEM\_ACCLE\_DESACCEL}};}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00157}00157\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.frequency\_destiny;}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00158}00158\ \}}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00159}00159\ }
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00160}\mbox{\hyperlink{sys_admin_8c_a7bf3fbe77325da35d54220bf89fb26ce}{00160}}\ esp\_err\_t\ \mbox{\hyperlink{sys_admin_8c_a7bf3fbe77325da35d54220bf89fb26ce}{get\_status}}(\mbox{\hyperlink{structsystem__status__t}{system\_status\_t}}\ *s\_e)\ \{}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00161}00161\ \ \ \ \ \textcolor{keywordflow}{if}\ (s\_e\ ==\ NULL)}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00162}00162\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ESP\_ERR\_NOT\_ALLOWED;}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00163}00163\ \ \ \ \ s\_e-\/>\mbox{\hyperlink{structsystem__status__t_aea762e0e67fcafaf5b3cd61201769926}{frequency}}\ =\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.frequency;}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00164}00164\ \ \ \ \ s\_e-\/>\mbox{\hyperlink{structsystem__status__t_ab5bef34d4fc6d4cdeb782a63d32234f4}{frequency\_destiny}}\ =\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.frequency\_destiny;}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00165}00165\ \ \ \ \ s\_e-\/>\mbox{\hyperlink{structsystem__status__t_a58033d9c9f897d33e98d9686d7cf78b5}{vbus\_min}}\ =\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.vbus\_min;}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00166}00166\ \ \ \ \ s\_e-\/>\mbox{\hyperlink{structsystem__status__t_a69f28b5a90c9b33472fb9b8e7d530cb1}{ibus\_max}}\ =\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.ibus\_max;}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00167}00167\ \ \ \ \ s\_e-\/>\mbox{\hyperlink{structsystem__status__t_a9206201182a1a041892e8e8b302c08c2}{inputs\_status}}\ =\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.inputs\_status;}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00168}00168\ \ \ \ \ s\_e-\/>\mbox{\hyperlink{structsystem__status__t_a255e9638fdd08fc3c12bd74ce8893217}{status}}\ =\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.status;}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00169}00169\ \ \ \ \ \textcolor{keywordflow}{return}\ ESP\_OK;}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00170}00170\ \}}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00171}00171\ }
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00172}\mbox{\hyperlink{sys_admin_8c_ab7f234b01f6a10381a179c5dbfa5a3be}{00172}}\ \mbox{\hyperlink{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791}{system\_status\_e}}\ \mbox{\hyperlink{sys_admin_8c_ab7f234b01f6a10381a179c5dbfa5a3be}{update\_meas}}(uint16\_t\ vbus\_meas,\ uint16\_t\ ibus\_meas)\ \{}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00173}00173\ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.vbus\_min\ =\ vbus\_meas;}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00174}00174\ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.ibus\_max\ =\ ibus\_meas;}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00019}00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{sys_control_8h}{SysControl.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00020}00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{display_8h}{../display/display.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00022}\mbox{\hyperlink{sys_admin_8c_a5a85b9c772bbeb480b209a3e6ea92b4c}{00022}}\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{adc_8c_a5a85b9c772bbeb480b209a3e6ea92b4c}{TAG}}\ =\ \textcolor{stringliteral}{"{}sysAdmin"{}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00023}\mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{00023}}\ \textcolor{keyword}{static}\ \mbox{\hyperlink{structsystem__status__t}{system\_status\_t}}\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00024}\mbox{\hyperlink{sys_admin_8c_a45b4049988bafe92214f32fd28019e30}{00024}}\ \textcolor{keyword}{static}\ \mbox{\hyperlink{structseccurity__settings__t}{seccurity\_settings\_t}}\ \mbox{\hyperlink{display_8c_a45b4049988bafe92214f32fd28019e30}{system\_seccurity\_settings}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00025}\mbox{\hyperlink{sys_admin_8c_aa12e414b0919881d870f6596c2250185}{00025}}\ \textcolor{keyword}{static}\ uint16\_t\ \mbox{\hyperlink{sys_admin_8c_aa12e414b0919881d870f6596c2250185}{frequency\_table}}[8];\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00026}\mbox{\hyperlink{sys_admin_8c_aa37a6d8617ec99a22272a0445cfe9a08}{00026}}\ \textcolor{keyword}{static}\ TaskHandle\_t\ \mbox{\hyperlink{sys_admin_8c_aa37a6d8617ec99a22272a0445cfe9a08}{accelerating\_handle}}\ =\ NULL;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00027}\mbox{\hyperlink{sys_admin_8c_aef1cbb22108ca96e11c5f161d31bda51}{00027}}\ \textcolor{keyword}{static}\ TaskHandle\_t\ \mbox{\hyperlink{sys_admin_8c_aef1cbb22108ca96e11c5f161d31bda51}{desaccelerating\_handle}}\ =\ NULL;\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00039}00039\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{sys_admin_8c_abe28e281ca81cf401dbd8b06f719d606}{accelerating}}(\textcolor{keywordtype}{void}\ *pvParameters\ );}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00051}00051\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{sys_admin_8c_a16593ac6c0abf6f65c696373af621487}{desaccelerating}}(\ \textcolor{keywordtype}{void}\ *pvParameters\ );}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00053}\mbox{\hyperlink{sys_admin_8c_abe28e281ca81cf401dbd8b06f719d606}{00053}}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{sys_admin_8c_abe28e281ca81cf401dbd8b06f719d606}{accelerating}}(\textcolor{keywordtype}{void}\ *pvParameters\ )\ \{}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00054}00054\ \ \ \ \ \textcolor{comment}{//\ uint16\_t\ acceleration\ =\ *((uint16\_t*)pvParameters);}}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00055}00055\ \ \ \ \ vTaskDelay(pdMS\_TO\_TICKS(200));}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00056}00056\ \ \ \ \ \textcolor{keywordflow}{while}(\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.frequency\ !=\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.frequency\_destiny\ )\ \{}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00057}00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ (\mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.frequency\ +\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.acceleration\ )\ >\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.frequency\_destiny\ )\ \{}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.frequency\ =\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.frequency\_destiny;}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00059}00059\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.frequency\ +=\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.acceleration;}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00061}00061\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00062}00062\ \ \ \ \ \ \ \ \ vTaskDelay(pdMS\_TO\_TICKS(1000));}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00063}00063\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00064}00064\ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.status\ =\ \mbox{\hyperlink{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791af08242ba685ecc48c255df8932379618}{SYSTEM\_REGIME}};}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00065}00065\ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_aa37a6d8617ec99a22272a0445cfe9a08}{accelerating\_handle}}\ =\ NULL;}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00066}00066\ \ \ \ \ vTaskDelete(NULL);}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00067}00067\ \}}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00069}\mbox{\hyperlink{sys_admin_8c_a16593ac6c0abf6f65c696373af621487}{00069}}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{sys_admin_8c_a16593ac6c0abf6f65c696373af621487}{desaccelerating}}(\ \textcolor{keywordtype}{void}\ *pvParameters\ )\ \{}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00070}00070\ \ \ \ \ \textcolor{comment}{//\ uint16\_t\ desacceleration\ =\ *((uint16\_t*)pvParameters);}}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00071}00071\ \ \ \ \ vTaskDelay(pdMS\_TO\_TICKS(200));}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00072}00072\ \ \ \ \ \textcolor{keywordflow}{while}(\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.frequency\ !=\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.frequency\_destiny\ )\ \{}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00073}00073\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.frequency\ -\/\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.desacceleration\ <\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.frequency\_destiny\ )\ \{}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.frequency\ =\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.frequency\_destiny;}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00075}00075\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.frequency\ >\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.desacceleration\ )\ \{}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.frequency\ -\/=\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.desacceleration;}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00077}00077\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.frequency\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00079}00079\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00080}00080\ \ \ \ \ \ \ \ \ vTaskDelay(pdMS\_TO\_TICKS(1000));}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00081}00081\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00082}00082\ \ \ \ \ \textcolor{keywordflow}{if}\ (\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.status\ !=\ \mbox{\hyperlink{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791abf715611d16f62350c373d1c4aa17547}{SYSTEM\_EMERGENCY}}\ )\ \{}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00083}00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.status\ !=\ \mbox{\hyperlink{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791a800775137620f33c4ba7b7810a94e365}{SYSTEM\_BREAKING}}\ )\ \{}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.status\ =\ \mbox{\hyperlink{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791af08242ba685ecc48c255df8932379618}{SYSTEM\_REGIME}};}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00085}00085\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.status\ =\ \mbox{\hyperlink{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791a20cc395940efb44d047c63108d2ef837}{SYSTEM\_IDLE}};}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00087}00087\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00088}00088\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00089}00089\ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_aef1cbb22108ca96e11c5f161d31bda51}{desaccelerating\_handle}}\ =\ NULL;}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00090}00090\ \ \ \ \ vTaskDelete(NULL);}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00091}00091\ \}}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00093}\mbox{\hyperlink{sys_admin_8c_a62e7c27f84d0db690242eeb717c4e17b}{00093}}\ uint16\_t\ \mbox{\hyperlink{sys_admin_8c_a62e7c27f84d0db690242eeb717c4e17b}{engine\_start}}()\ \{}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00094}00094\ \ \ \ \ \textcolor{keywordflow}{if}\ (\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.status\ !=\ \mbox{\hyperlink{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791abf715611d16f62350c373d1c4aa17547}{SYSTEM\_EMERGENCY}}\ )\ \{}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00095}00095\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.frequency\_destiny\ =\ \mbox{\hyperlink{sys_admin_8c_aa12e414b0919881d870f6596c2250185}{frequency\_table}}[\mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.inputs\_status];}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00096}00096\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.status\ =\ \mbox{\hyperlink{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791a355058bb815d40f78a343c756d58c47f}{SYSTEM\_ACCLE\_DESACCEL}};}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00097}00097\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ \mbox{\hyperlink{sys_admin_8c_aef1cbb22108ca96e11c5f161d31bda51}{desaccelerating\_handle}}\ !=\ NULL\ )\ \{}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ vTaskDelete(\ \mbox{\hyperlink{sys_admin_8c_aef1cbb22108ca96e11c5f161d31bda51}{desaccelerating\_handle}}\ );}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_aef1cbb22108ca96e11c5f161d31bda51}{desaccelerating\_handle}}\ =\ NULL;}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00100}00100\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00101}00101\ \ \ \ \ \ \ \ \ xTaskCreatePinnedToCore(\mbox{\hyperlink{sys_admin_8c_abe28e281ca81cf401dbd8b06f719d606}{accelerating}},\ \textcolor{stringliteral}{"{}accelerating"{}},\ 1024,\ (\textcolor{keywordtype}{void}*)\ \&\mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.acceleration,\ 9,\ \&\mbox{\hyperlink{sys_admin_8c_aa37a6d8617ec99a22272a0445cfe9a08}{accelerating\_handle}},\ 1);}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00102}00102\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00103}00103\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.frequency\_destiny;}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00104}00104\ \}}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00106}\mbox{\hyperlink{sys_admin_8c_abb59808fe42c3d4dd43e0f91d1f699a9}{00106}}\ uint16\_t\ \mbox{\hyperlink{sys_admin_8c_abb59808fe42c3d4dd43e0f91d1f699a9}{engine\_stop}}()\ \{}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00107}00107\ \ \ \ \ \textcolor{keywordflow}{if}\ (\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.status\ ==\ \mbox{\hyperlink{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791abf715611d16f62350c373d1c4aa17547}{SYSTEM\_EMERGENCY}}\ ||\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.status\ ==\ \mbox{\hyperlink{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791afa44959cbb89c7f6c3da69da5f014a08}{SYSTEM\_EMERGENCY\_SENT}})\ \{}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00108}00108\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.status\ ==\ \mbox{\hyperlink{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791a51d3220cff10b80b0d524652e825bf5c}{SYSTEM\_EMERGENCY\_OK}}\ )\ \{}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00109}00109\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.status\ =\ \mbox{\hyperlink{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791a20cc395940efb44d047c63108d2ef837}{SYSTEM\_IDLE}};}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00110}00110\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00111}00111\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.acceleration\ =\ \mbox{\hyperlink{display_8c_a66d26ed49b8196ba0498d8a553167ec3}{get\_system\_acceleration}}();}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00112}00112\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.desacceleration\ =\ \mbox{\hyperlink{display_8c_afa6a8bd839cfecfb389e75fc3946a6b7}{get\_system\_desacceleration}}();}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00113}00113\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.frequency\_destiny\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00114}00114\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ \mbox{\hyperlink{sys_admin_8c_aa37a6d8617ec99a22272a0445cfe9a08}{accelerating\_handle}}\ !=\ NULL\ )\ \{}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ vTaskDelete(\ \mbox{\hyperlink{sys_admin_8c_aa37a6d8617ec99a22272a0445cfe9a08}{accelerating\_handle}}\ );}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_aa37a6d8617ec99a22272a0445cfe9a08}{accelerating\_handle}}\ =\ NULL;}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00117}00117\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00118}00118\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.status\ =\ \mbox{\hyperlink{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791a800775137620f33c4ba7b7810a94e365}{SYSTEM\_BREAKING}};}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00119}00119\ \ \ \ \ \ \ \ \ xTaskCreatePinnedToCore(\mbox{\hyperlink{sys_admin_8c_a16593ac6c0abf6f65c696373af621487}{desaccelerating}},\ \textcolor{stringliteral}{"{}desaccelerating"{}},\ 1024,\ (\textcolor{keywordtype}{void}*)\ \&\mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.desacceleration,\ 9,\ \&\mbox{\hyperlink{sys_admin_8c_aef1cbb22108ca96e11c5f161d31bda51}{desaccelerating\_handle}},\ 1);}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00120}00120\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00121}00121\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.frequency\_destiny;}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00122}00122\ \}}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00123}00123\ }
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00124}\mbox{\hyperlink{sys_admin_8c_abd5d6163d42e21cfc63ce12acbb3cb64}{00124}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{sys_admin_8c_abd5d6163d42e21cfc63ce12acbb3cb64}{engine\_emergency\_stop\_release}}()\ \{}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00125}00125\ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.status\ =\ \mbox{\hyperlink{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791a51d3220cff10b80b0d524652e825bf5c}{SYSTEM\_EMERGENCY\_OK}};}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00126}00126\ \}}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00127}00127\ }
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00128}\mbox{\hyperlink{sys_admin_8c_aa6c33be7b7273385ae39a1f682f28f75}{00128}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{sys_admin_8c_aa6c33be7b7273385ae39a1f682f28f75}{engine\_emergency\_stop}}()\ \{}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00129}00129\ \ \ \ \ \textcolor{keywordflow}{if}\ (\ \mbox{\hyperlink{sys_admin_8c_aa37a6d8617ec99a22272a0445cfe9a08}{accelerating\_handle}}\ !=\ NULL\ )\ \{}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00130}00130\ \ \ \ \ \ \ \ \ vTaskDelete(\ \mbox{\hyperlink{sys_admin_8c_aa37a6d8617ec99a22272a0445cfe9a08}{accelerating\_handle}}\ );}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00131}00131\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_aa37a6d8617ec99a22272a0445cfe9a08}{accelerating\_handle}}\ =\ NULL;}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00132}00132\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00133}00133\ \ \ \ \ \textcolor{keywordflow}{if}\ (\ \mbox{\hyperlink{sys_admin_8c_aef1cbb22108ca96e11c5f161d31bda51}{desaccelerating\_handle}}\ !=\ NULL\ )\ \{}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00134}00134\ \ \ \ \ \ \ \ \ vTaskDelete(\ \mbox{\hyperlink{sys_admin_8c_aef1cbb22108ca96e11c5f161d31bda51}{desaccelerating\_handle}}\ );}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00135}00135\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_aef1cbb22108ca96e11c5f161d31bda51}{desaccelerating\_handle}}\ =\ NULL;}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00136}00136\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00137}00137\ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.frequency\_destiny\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00138}00138\ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.frequency\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00139}00139\ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.status\ =\ \mbox{\hyperlink{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791abf715611d16f62350c373d1c4aa17547}{SYSTEM\_EMERGENCY}};}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00140}00140\ \}}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00141}00141\ }
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00142}\mbox{\hyperlink{sys_admin_8c_a6b7a46f08b0f4ed784a8001e221a32a8}{00142}}\ uint16\_t\ \mbox{\hyperlink{sys_admin_8c_a6b7a46f08b0f4ed784a8001e221a32a8}{change\_frequency}}(uint8\_t\ speed\_slector)\ \{}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00143}00143\ \ \ \ \ \textcolor{keywordflow}{if}\ (speed\_slector\ >\ 8\ )\ \{}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00144}00144\ \ \ \ \ \ \ \ \ ESP\_LOGE(\mbox{\hyperlink{adc_8c_a5a85b9c772bbeb480b209a3e6ea92b4c}{TAG}},\ \textcolor{stringliteral}{"{}El\ numero\ del\ indice\ del\ selector\ de\ velocidad\ es\ muy\ grnade\ \%d"{}},\ speed\_slector);}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00145}00145\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00146}00146\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00147}00147\ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.inputs\_status\ =\ speed\_slector;}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00148}00148\ \ \ \ \ \textcolor{keywordflow}{if}\ (\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.frequency\ >\ \mbox{\hyperlink{sys_admin_8c_aa12e414b0919881d870f6596c2250185}{frequency\_table}}[\mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.inputs\_status]\ )\ \{}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00149}00149\ }
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00150}00150\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ \mbox{\hyperlink{sys_admin_8c_aa37a6d8617ec99a22272a0445cfe9a08}{accelerating\_handle}}\ !=\ NULL\ )\ \{}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ vTaskDelete(\ \mbox{\hyperlink{sys_admin_8c_aa37a6d8617ec99a22272a0445cfe9a08}{accelerating\_handle}}\ );}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_aa37a6d8617ec99a22272a0445cfe9a08}{accelerating\_handle}}\ =\ NULL;}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00153}00153\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00154}00154\ \ \ \ \ \ \ \ \ uint16\_t\ desacceleration\ =\ \mbox{\hyperlink{display_8c_a66d26ed49b8196ba0498d8a553167ec3}{get\_system\_acceleration}}();}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00155}00155\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.frequency\_destiny\ =\ \mbox{\hyperlink{sys_admin_8c_aa12e414b0919881d870f6596c2250185}{frequency\_table}}[\mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.inputs\_status];}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00156}00156\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ \mbox{\hyperlink{sys_admin_8c_aef1cbb22108ca96e11c5f161d31bda51}{desaccelerating\_handle}}\ ==\ NULL\ )\ \{}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00157}00157\ \ \ \ \ \ \ \ \ \ \ \ \ xTaskCreatePinnedToCore(\mbox{\hyperlink{sys_admin_8c_a16593ac6c0abf6f65c696373af621487}{desaccelerating}},\ \textcolor{stringliteral}{"{}desaccelerating"{}},\ 1024,\ (\textcolor{keywordtype}{void}*)\ \&desacceleration,\ 9,\ \&\mbox{\hyperlink{sys_admin_8c_aef1cbb22108ca96e11c5f161d31bda51}{desaccelerating\_handle}},\ 1);}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00158}00158\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00159}00159\ \ \ \ \ \ \ \ \ ESP\_LOGI(\ \mbox{\hyperlink{adc_8c_a5a85b9c772bbeb480b209a3e6ea92b4c}{TAG}},\ \textcolor{stringliteral}{"{}Cambiando\ la\ frecuencia\ de\ regimen\ a\ \%d.\ Desacelerando"{}},\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.frequency\_destiny);}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00160}00160\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.frequency\ <\ \mbox{\hyperlink{sys_admin_8c_aa12e414b0919881d870f6596c2250185}{frequency\_table}}[\mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.inputs\_status]\ )\ \{}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00161}00161\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ \mbox{\hyperlink{sys_admin_8c_aef1cbb22108ca96e11c5f161d31bda51}{desaccelerating\_handle}}\ !=\ NULL\ )\ \{}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ vTaskDelete(\ \mbox{\hyperlink{sys_admin_8c_aef1cbb22108ca96e11c5f161d31bda51}{desaccelerating\_handle}}\ );}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00163}00163\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_aef1cbb22108ca96e11c5f161d31bda51}{desaccelerating\_handle}}\ =\ NULL;}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00164}00164\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00165}00165\ \ \ \ \ \ \ \ \ uint16\_t\ acceleration\ =\ \mbox{\hyperlink{display_8c_a66d26ed49b8196ba0498d8a553167ec3}{get\_system\_acceleration}}();}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00166}00166\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.frequency\_destiny\ =\ \mbox{\hyperlink{sys_admin_8c_aa12e414b0919881d870f6596c2250185}{frequency\_table}}[\mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.inputs\_status];}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00167}00167\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ \mbox{\hyperlink{sys_admin_8c_aa37a6d8617ec99a22272a0445cfe9a08}{accelerating\_handle}}\ ==\ NULL\ )\ \{}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00168}00168\ \ \ \ \ \ \ \ \ \ \ \ \ xTaskCreatePinnedToCore(\mbox{\hyperlink{sys_admin_8c_abe28e281ca81cf401dbd8b06f719d606}{accelerating}},\ \textcolor{stringliteral}{"{}accelerating"{}},\ 1024,\ (\textcolor{keywordtype}{void}*)\ \&(acceleration),\ 9,\ \&\mbox{\hyperlink{sys_admin_8c_aa37a6d8617ec99a22272a0445cfe9a08}{accelerating\_handle}},\ 1);}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00169}00169\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00170}00170\ \ \ \ \ \ \ \ \ ESP\_LOGI(\ \mbox{\hyperlink{adc_8c_a5a85b9c772bbeb480b209a3e6ea92b4c}{TAG}},\ \textcolor{stringliteral}{"{}Cambiando\ la\ frecuencia\ de\ regimen\ a\ \%d.\ Acelerando"{}},\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.frequency\_destiny);}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00171}00171\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00172}00172\ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.status\ =\ \mbox{\hyperlink{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791a355058bb815d40f78a343c756d58c47f}{SYSTEM\_ACCLE\_DESACCEL}};}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00173}00173\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.frequency\_destiny;}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00174}00174\ \}}
 \DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00175}00175\ }
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00176}00176\ \ \ \ \ \textcolor{keywordflow}{if}\ (\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.ibus\_max\ >\ \mbox{\hyperlink{display_8c_a45b4049988bafe92214f32fd28019e30}{system\_seccurity\_settings}}.ibus\_max\ )\ \{}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00177}00177\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.status\ !=\ \mbox{\hyperlink{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791abf715611d16f62350c373d1c4aa17547}{SYSTEM\_EMERGENCY}}\ )\ \{}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ ESP\_LOGE(\ \mbox{\hyperlink{adc_8c_a5a85b9c772bbeb480b209a3e6ea92b4c}{TAG}},\ \textcolor{stringliteral}{"{}Disparo\ de\ emergencia\ por\ sobre\ corriente.\ Mando\ senal"{}});}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00179}00179\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.status\ =\ \mbox{\hyperlink{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791abf715611d16f62350c373d1c4aa17547}{SYSTEM\_EMERGENCY}};}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00180}00180\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.status;}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00181}00181\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00182}00182\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791a51d3220cff10b80b0d524652e825bf5c}{SYSTEM\_EMERGENCY\_OK}};}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00183}00183\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00184}00184\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00185}00185\ }
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00186}00186\ \ \ \ \ \textcolor{keywordflow}{if}\ (\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.vbus\_min\ <\ \mbox{\hyperlink{display_8c_a45b4049988bafe92214f32fd28019e30}{system\_seccurity\_settings}}.vbus\_min\ )\ \{}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00187}00187\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.status\ !=\ \mbox{\hyperlink{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791abf715611d16f62350c373d1c4aa17547}{SYSTEM\_EMERGENCY}}\ )\ \{}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00188}00188\ \ \ \ \ \ \ \ \ \ \ \ \ ESP\_LOGE(\ \mbox{\hyperlink{adc_8c_a5a85b9c772bbeb480b209a3e6ea92b4c}{TAG}},\ \textcolor{stringliteral}{"{}Disparo\ de\ emergencia\ por\ baja\ tensión.\ Mando\ senal"{}});}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00189}00189\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.status\ =\ \mbox{\hyperlink{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791abf715611d16f62350c373d1c4aa17547}{SYSTEM\_EMERGENCY}};}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00190}00190\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.status;}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00191}00191\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00192}00192\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791a51d3220cff10b80b0d524652e825bf5c}{SYSTEM\_EMERGENCY\_OK}};}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00193}00193\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00194}00194\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00195}00195\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.status;}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00196}00196\ \}}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00197}00197\ }
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00198}\mbox{\hyperlink{sys_admin_8c_a4c6328d6bdb3ae404b65b9046dc71446}{00198}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{sys_admin_8c_a4c6328d6bdb3ae404b65b9046dc71446}{set\_frequency\_table}}(\ uint16\_t\ input\_variable,\ uint16\_t\ freq\_regime\ )\ \{}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00199}00199\ \ \ \ \ \textcolor{keywordflow}{if}\ (\ input\_variable\ ==\ 1\ )\ \{\ \textcolor{comment}{//lineal}}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00200}00200\ \ \ \ \ \ \ \ \ uint16\_t\ frequency\_gap\ =\ freq\_regime\ /8;}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00201}00201\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_aa12e414b0919881d870f6596c2250185}{frequency\_table}}[7]\ =\ frequency\_gap;}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00202}00202\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (uint8\_t\ i\ =\ 7;\ i\ >\ 0;\ i-\/-\/\ )\ \{}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_aa12e414b0919881d870f6596c2250185}{frequency\_table}}[i]\ =\ frequency\_gap\ +\ \mbox{\hyperlink{sys_admin_8c_aa12e414b0919881d870f6596c2250185}{frequency\_table}}[i\ +\ 1];}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00204}00204\ \ \ \ \ \ \ \ \ \ \ \ \ ESP\_LOGI(\mbox{\hyperlink{adc_8c_a5a85b9c772bbeb480b209a3e6ea92b4c}{TAG}},\ \textcolor{stringliteral}{"{}frequency\_table[\%d]\ =\ \%d"{}},\ i,\ \mbox{\hyperlink{sys_admin_8c_aa12e414b0919881d870f6596c2250185}{frequency\_table}}[i]);}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00205}00205\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00206}00206\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_aa12e414b0919881d870f6596c2250185}{frequency\_table}}[0]\ =\ freq\_regime;}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00207}00207\ \ \ \ \ \ \ \ \ ESP\_LOGI(\mbox{\hyperlink{adc_8c_a5a85b9c772bbeb480b209a3e6ea92b4c}{TAG}},\ \textcolor{stringliteral}{"{}frequency\_table[0]\ =\ \%d"{}},\ \mbox{\hyperlink{sys_admin_8c_aa12e414b0919881d870f6596c2250185}{frequency\_table}}[0]);}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00208}00208\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\ input\_variable\ ==\ 2\ )\ \{\ \textcolor{comment}{//Cuadratica}}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00209}00209\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (uint8\_t\ i\ =\ 0;\ i\ <\ 8;\ i++)\ \{}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00210}00210\ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ num\ =\ (uint32\_t)freq\_regime\ *\ (uint32\_t)(i\ +\ 1)\ *\ (uint32\_t)(i\ +\ 1);}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00211}00211\ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ fi\ \ =\ (uint16\_t)((num\ +\ 32)\ /\ 64);\ \ \ \ \ \ \textcolor{comment}{//\ +32\ para\ redondeo}}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00212}00212\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (fi\ ==\ 0)}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00213}00213\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fi\ =\ 1;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ evita\ 0\ si\ querés}}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00214}00214\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_aa12e414b0919881d870f6596c2250185}{frequency\_table}}[7\ -\/\ i]\ =\ fi;}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00215}00215\ \ \ \ \ \ \ \ \ \ \ \ \ ESP\_LOGI(\mbox{\hyperlink{adc_8c_a5a85b9c772bbeb480b209a3e6ea92b4c}{TAG}},\ \textcolor{stringliteral}{"{}frequency\_table[\%d]\ =\ \%d"{}},\ 7\ -\/\ i,\ \mbox{\hyperlink{sys_admin_8c_aa12e414b0919881d870f6596c2250185}{frequency\_table}}[7\ -\/\ i]);}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00216}00216\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00217}00217\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00176}\mbox{\hyperlink{sys_admin_8c_a7bf3fbe77325da35d54220bf89fb26ce}{00176}}\ esp\_err\_t\ \mbox{\hyperlink{sys_admin_8c_a7bf3fbe77325da35d54220bf89fb26ce}{get\_status}}(\mbox{\hyperlink{structsystem__status__t}{system\_status\_t}}\ *s\_e)\ \{}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00177}00177\ \ \ \ \ \textcolor{keywordflow}{if}\ (s\_e\ ==\ NULL)}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00178}00178\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ESP\_ERR\_NOT\_ALLOWED;}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00179}00179\ \ \ \ \ s\_e-\/>\mbox{\hyperlink{structsystem__status__t_aea762e0e67fcafaf5b3cd61201769926}{frequency}}\ =\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.frequency;}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00180}00180\ \ \ \ \ s\_e-\/>\mbox{\hyperlink{structsystem__status__t_ab5bef34d4fc6d4cdeb782a63d32234f4}{frequency\_destiny}}\ =\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.frequency\_destiny;}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00181}00181\ \ \ \ \ s\_e-\/>\mbox{\hyperlink{structsystem__status__t_a58033d9c9f897d33e98d9686d7cf78b5}{vbus\_min}}\ =\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.vbus\_min;}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00182}00182\ \ \ \ \ s\_e-\/>\mbox{\hyperlink{structsystem__status__t_a69f28b5a90c9b33472fb9b8e7d530cb1}{ibus\_max}}\ =\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.ibus\_max;}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00183}00183\ \ \ \ \ s\_e-\/>\mbox{\hyperlink{structsystem__status__t_a9206201182a1a041892e8e8b302c08c2}{inputs\_status}}\ =\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.inputs\_status;}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00184}00184\ \ \ \ \ s\_e-\/>\mbox{\hyperlink{structsystem__status__t_a255e9638fdd08fc3c12bd74ce8893217}{status}}\ =\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.status;}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00185}00185\ \ \ \ \ \textcolor{keywordflow}{return}\ ESP\_OK;}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00186}00186\ \}}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00187}00187\ }
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00188}\mbox{\hyperlink{sys_admin_8c_ab7f234b01f6a10381a179c5dbfa5a3be}{00188}}\ \mbox{\hyperlink{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791}{system\_status\_e}}\ \mbox{\hyperlink{sys_admin_8c_ab7f234b01f6a10381a179c5dbfa5a3be}{update\_meas}}(uint16\_t\ vbus\_meas,\ uint16\_t\ ibus\_meas)\ \{}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00189}00189\ \ \ \ \ \textcolor{keywordtype}{bool}\ in\_emergency\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00190}00190\ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.vbus\_min\ =\ vbus\_meas;}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00191}00191\ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.ibus\_max\ =\ ibus\_meas;}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00192}00192\ }
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00193}00193\ \ \ \ \ \textcolor{keywordflow}{if}\ (\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.ibus\_max\ >\ \mbox{\hyperlink{display_8c_a45b4049988bafe92214f32fd28019e30}{system\_seccurity\_settings}}.ibus\_max\ )\ \{}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00194}00194\ \ \ \ \ \ \ \ \ in\_emergency\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00195}00195\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.status\ !=\ \mbox{\hyperlink{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791abf715611d16f62350c373d1c4aa17547}{SYSTEM\_EMERGENCY}}\ )\ \{}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00196}00196\ \ \ \ \ \ \ \ \ \ \ \ \ ESP\_LOGE(\ \mbox{\hyperlink{adc_8c_a5a85b9c772bbeb480b209a3e6ea92b4c}{TAG}},\ \textcolor{stringliteral}{"{}Disparo\ de\ emergencia\ por\ sobre\ corriente."{}});}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00197}00197\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00198}00198\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00199}00199\ }
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00200}00200\ \ \ \ \ \textcolor{keywordflow}{if}\ (\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.vbus\_min\ <\ \mbox{\hyperlink{display_8c_a45b4049988bafe92214f32fd28019e30}{system\_seccurity\_settings}}.vbus\_min\ )\ \{}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00201}00201\ \ \ \ \ \ \ \ \ in\_emergency\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00202}00202\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.status\ !=\ \mbox{\hyperlink{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791abf715611d16f62350c373d1c4aa17547}{SYSTEM\_EMERGENCY}}\ )\ \{}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ \ \ ESP\_LOGE(\ \mbox{\hyperlink{adc_8c_a5a85b9c772bbeb480b209a3e6ea92b4c}{TAG}},\ \textcolor{stringliteral}{"{}Disparo\ de\ emergencia\ por\ baja\ tensión."{}});}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00204}00204\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00205}00205\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00206}00206\ }
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00207}00207\ \ \ \ \ \textcolor{keywordflow}{if}\ (\ in\_emergency\ ==\ \textcolor{keyword}{true}\ )\ \{}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00208}00208\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.status\ ==\ \mbox{\hyperlink{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791abf715611d16f62350c373d1c4aa17547}{SYSTEM\_EMERGENCY}}\ )\ \{}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00209}00209\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_control_8c_aba4a84160e22ceea0cedd0ddcd454af4}{SystemEventPost}}(\mbox{\hyperlink{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796a28442d6913cbeabc9ed6fe1e20a255bf}{SECURITY\_EXCEDED}});}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00210}00210\ \ \ \ \ \ \ \ \ \ \ \ \ ESP\_LOGI(\ \mbox{\hyperlink{adc_8c_a5a85b9c772bbeb480b209a3e6ea92b4c}{TAG}},\ \textcolor{stringliteral}{"{}Mando\ senal."{}});}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00211}00211\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00212}00212\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.status\ =\ \mbox{\hyperlink{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791afa44959cbb89c7f6c3da69da5f014a08}{SYSTEM\_EMERGENCY\_SENT}};}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00213}00213\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.status\ ==\ \mbox{\hyperlink{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791afa44959cbb89c7f6c3da69da5f014a08}{SYSTEM\_EMERGENCY\_SENT}}\ )\ \{}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00214}00214\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_control_8c_aba4a84160e22ceea0cedd0ddcd454af4}{SystemEventPost}}(\mbox{\hyperlink{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796af31dc398d7d8cbf4a834c81d7dfa0e82}{SECURITY\_OK}});}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00215}00215\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00216}00216\ }
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00217}00217\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.status;}
 \DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00218}00218\ \}}
 \DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00219}00219\ }
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00220}\mbox{\hyperlink{sys_admin_8c_a5f1c91f368c1994714cc10c041120367}{00220}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{sys_admin_8c_a5f1c91f368c1994714cc10c041120367}{set\_seccurity\_settings}}(\ \mbox{\hyperlink{structseccurity__settings__t}{seccurity\_settings\_t}}\ *s\_s\ )\ \{}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00221}00221\ \ \ \ \ \mbox{\hyperlink{display_8c_a45b4049988bafe92214f32fd28019e30}{system\_seccurity\_settings}}.vbus\_min\ =\ s\_s-\/>\mbox{\hyperlink{structseccurity__settings__t_a58033d9c9f897d33e98d9686d7cf78b5}{vbus\_min}};}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00222}00222\ \ \ \ \ \mbox{\hyperlink{display_8c_a45b4049988bafe92214f32fd28019e30}{system\_seccurity\_settings}}.ibus\_max\ =\ s\_s-\/>\mbox{\hyperlink{structseccurity__settings__t_a69f28b5a90c9b33472fb9b8e7d530cb1}{ibus\_max}};}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00223}00223\ \}}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00220}\mbox{\hyperlink{sys_admin_8c_a4c6328d6bdb3ae404b65b9046dc71446}{00220}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{sys_admin_8c_a4c6328d6bdb3ae404b65b9046dc71446}{set\_frequency\_table}}(\ uint16\_t\ input\_variable,\ uint16\_t\ freq\_regime\ )\ \{}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00221}00221\ \ \ \ \ \textcolor{keywordflow}{if}\ (\ input\_variable\ ==\ 1\ )\ \{\ \textcolor{comment}{//lineal}}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00222}00222\ \ \ \ \ \ \ \ \ uint16\_t\ frequency\_gap\ =\ freq\_regime\ /\ 8;}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00223}00223\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_aa12e414b0919881d870f6596c2250185}{frequency\_table}}[7]\ =\ frequency\_gap;}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00224}00224\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (uint8\_t\ i\ =\ 6;\ i\ >\ 0;\ i-\/-\/\ )\ \{}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00225}00225\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_aa12e414b0919881d870f6596c2250185}{frequency\_table}}[i]\ =\ \mbox{\hyperlink{sys_admin_8c_aa12e414b0919881d870f6596c2250185}{frequency\_table}}[i\ +\ 1]\ +\ frequency\_gap;}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00226}00226\ \ \ \ \ \ \ \ \ \ \ \ \ ESP\_LOGI(\mbox{\hyperlink{adc_8c_a5a85b9c772bbeb480b209a3e6ea92b4c}{TAG}},\ \textcolor{stringliteral}{"{}frequency\_table[\%d]\ =\ \%d"{}},\ i,\ \mbox{\hyperlink{sys_admin_8c_aa12e414b0919881d870f6596c2250185}{frequency\_table}}[i]);}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00227}00227\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00228}00228\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_aa12e414b0919881d870f6596c2250185}{frequency\_table}}[0]\ =\ freq\_regime;}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00229}00229\ \ \ \ \ \ \ \ \ ESP\_LOGI(\mbox{\hyperlink{adc_8c_a5a85b9c772bbeb480b209a3e6ea92b4c}{TAG}},\ \textcolor{stringliteral}{"{}frequency\_table[0]\ =\ \%d"{}},\ \mbox{\hyperlink{sys_admin_8c_aa12e414b0919881d870f6596c2250185}{frequency\_table}}[0]);}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00230}00230\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\ input\_variable\ ==\ 2\ )\ \{\ \textcolor{comment}{//Cuadratica}}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00231}00231\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (uint8\_t\ i\ =\ 0;\ i\ <\ 8;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00232}00232\ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ num\ =\ (uint32\_t)freq\_regime\ *\ (uint32\_t)(i\ +\ 1)\ *\ (uint32\_t)(i\ +\ 1);}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00233}00233\ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ fi\ \ =\ (uint16\_t)((num\ +\ 32)\ /\ 64);}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00234}00234\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (fi\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00235}00235\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fi\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00236}00236\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_aa12e414b0919881d870f6596c2250185}{frequency\_table}}[7\ -\/\ i]\ =\ fi;}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00237}00237\ \ \ \ \ \ \ \ \ \ \ \ \ ESP\_LOGI(\mbox{\hyperlink{adc_8c_a5a85b9c772bbeb480b209a3e6ea92b4c}{TAG}},\ \textcolor{stringliteral}{"{}frequency\_table[\%d]\ =\ \%d"{}},\ 7\ -\/\ i,\ \mbox{\hyperlink{sys_admin_8c_aa12e414b0919881d870f6596c2250185}{frequency\_table}}[7\ -\/\ i]);}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00238}00238\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00239}00239\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00240}00240\ \}}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00241}00241\ }
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00242}\mbox{\hyperlink{sys_admin_8c_a76880514447931f4c7457ce0407a6349}{00242}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{sys_admin_8c_a76880514447931f4c7457ce0407a6349}{set\_system\_settings}}(\ \mbox{\hyperlink{structfrequency__settings__t}{frequency\_settings\_t}}\ *f\_s,\ \mbox{\hyperlink{structseccurity__settings__t}{seccurity\_settings\_t}}\ *s\_s\ )\ \{}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00243}00243\ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.acceleration\ =\ f\_s-\/>\mbox{\hyperlink{structfrequency__settings__t_a44e11b804280aecf19f944765588d26f}{acceleration}};}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00244}00244\ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.desacceleration\ =\ f\_s-\/>\mbox{\hyperlink{structfrequency__settings__t_a8d753b012e5099230395ba6421d5d35b}{desacceleration}};}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00245}00245\ \ \ \ \ \mbox{\hyperlink{display_8c_a45b4049988bafe92214f32fd28019e30}{system\_seccurity\_settings}}.vbus\_min\ =\ s\_s-\/>\mbox{\hyperlink{structseccurity__settings__t_a58033d9c9f897d33e98d9686d7cf78b5}{vbus\_min}};}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00246}00246\ \ \ \ \ \mbox{\hyperlink{display_8c_a45b4049988bafe92214f32fd28019e30}{system\_seccurity\_settings}}.ibus\_max\ =\ s\_s-\/>\mbox{\hyperlink{structseccurity__settings__t_a69f28b5a90c9b33472fb9b8e7d530cb1}{ibus\_max}};}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00247}00247\ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_a4c6328d6bdb3ae404b65b9046dc71446}{set\_frequency\_table}}(\ f\_s-\/>\mbox{\hyperlink{structfrequency__settings__t_adbc9bfdd34cf261290d0c07e20756985}{input\_variable}},\ f\_s-\/>\mbox{\hyperlink{structfrequency__settings__t_a926d6368e65c23d77658fd6fd2c08af9}{freq\_regime}}\ );}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00248}00248\ \}}
 
 \end{DoxyCode}

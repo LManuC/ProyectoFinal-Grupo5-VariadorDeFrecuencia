@@ -39,7 +39,7 @@ var io__control_8c =
     [ "SWITCH_BUTTON_UP", "io__control_8c.html#a298194afd3f1c0e54eb4cc6b08c02714", null ],
     [ "TERMO_SW_MASK", "io__control_8c.html#a1b26a96e962ed1dc2e1085e7b0d008cb", null ],
     [ "TERMO_SW_PIN", "io__control_8c.html#a9907ce901fe5895205842817516ce0e7", null ],
-    [ "BuzzerEvantPost", "io__control_8c.html#a5547e302022fe72e4e2e7e3d58d4508f", null ],
+    [ "BuzzerEvantPost", "io__control_8c.html#aed21490f8fc34ffb3d9021ed1cf7214a", null ],
     [ "freq_0_10V_output", "io__control_8c.html#af82b8f1ed0782934f29e1b35958aac7f", null ],
     [ "gpio_init_interrupts", "io__control_8c.html#abae7d7c2e12b86eb5145cea5a283e2c0", null ],
     [ "GPIO_interrupt_attendance_task", "io__control_8c.html#af7133eb911ac63b8e81d756ec399ff78", null ],

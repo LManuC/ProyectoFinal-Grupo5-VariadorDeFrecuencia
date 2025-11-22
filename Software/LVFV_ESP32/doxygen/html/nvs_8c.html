@@ -27,7 +27,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="DoxyPic.jpeg"/></td>
   <td id="projectalign">
-   <div id="projectname">Low Voltage Variable Frequency Drive<span id="projectnumber">&#160;2.0</span>
+   <div id="projectname">Low Voltage Variable Frequency Drive<span id="projectnumber">&#160;2.1</span>
    </div>
    <div id="projectbrief">Proyecto final Andrenacci-Carra 2026. Variador de frecuencia de motor trifásico 1/3HP utilizando 12V de contínua como fuente de entrada de tensión.</div>
   </td>
@@ -100,12 +100,6 @@ $(function(){initNavTree('nvs_8c.html','',''); });
 <code>#include &quot;<a class="el" href="nvs_8h_source.html">nvs.h</a>&quot;</code><br />
 <code>#include &quot;esp_log.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="_l_v_f_v__system_8h_source.html">../LVFV_system.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="sys_admin_8h_source.html">../system/sysAdmin.h</a>&quot;</code><br />
-</div><div class="textblock"><div class="dynheader">
-Gráfico de dependencias incluidas en nvs.c:</div>
-<div class="dyncontent">
-<div class="center"><img src="nvs_8c__incl.png" border="0" usemap="#a_c_1_2_users_2_user_2_l_v_f_v___e_s_p32_2main_2nvs_2nvs_8c" loading="lazy" alt=""/></div>
-</div>
 </div>
 <p><a href="nvs_8c_source.html">Ir al código fuente de este archivo.</a></p>
 <table class="memberdecls">
@@ -172,9 +166,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Valor:</b><div class="fragment"><div class="line"><a class="code hl_function" href="#aa3660d5ae265546ff8a232ae0c14c663">load_16</a>(<span class="stringliteral">&quot;freq_acce&quot;</span>, (freq_acceleration), 5 )</div>
-<div class="ttc" id="anvs_8c_html_aa3660d5ae265546ff8a232ae0c14c663"><div class="ttname"><a href="#aa3660d5ae265546ff8a232ae0c14c663">load_16</a></div><div class="ttdeci">static esp_err_t load_16(const char *var_tag, int16_t *value, int16_t defval)</div><div class="ttdoc">Accede a la memoria NVS para obtener un dato de 16 bits guardado en memoria no volatil.</div><div class="ttdef"><b>Definition</b> <a href="nvs_8c_source.html#l00204">nvs.c:204</a></div></div>
+<div class="ttc" id="anvs_8c_html_aa3660d5ae265546ff8a232ae0c14c663"><div class="ttname"><a href="#aa3660d5ae265546ff8a232ae0c14c663">load_16</a></div><div class="ttdeci">static esp_err_t load_16(const char *var_tag, int16_t *value, int16_t defval)</div><div class="ttdoc">Accede a la memoria NVS para obtener un dato de 16 bits guardado en memoria no volatil.</div><div class="ttdef"><b>Definition</b> <a href="nvs_8c_source.html#l00203">nvs.c:203</a></div></div>
 </div><!-- fragment -->
-<p class="definition">Definición en la línea <a class="el" href="nvs_8c_source.html#l00029">29</a> del archivo <a class="el" href="nvs_8c_source.html">nvs.c</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="nvs_8c_source.html#l00028">28</a> del archivo <a class="el" href="nvs_8c_source.html">nvs.c</a>.</p>
 
 </div>
 </div>
@@ -194,7 +188,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <b>Valor:</b><div class="fragment"><div class="line"><a class="code hl_function" href="#aa3660d5ae265546ff8a232ae0c14c663">load_16</a>(<span class="stringliteral">&quot;freq_desa&quot;</span>, (freq_desacceleration), 3 )</div>
 </div><!-- fragment -->
-<p class="definition">Definición en la línea <a class="el" href="nvs_8c_source.html#l00030">30</a> del archivo <a class="el" href="nvs_8c_source.html">nvs.c</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="nvs_8c_source.html#l00029">29</a> del archivo <a class="el" href="nvs_8c_source.html">nvs.c</a>.</p>
 
 </div>
 </div>
@@ -214,7 +208,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <b>Valor:</b><div class="fragment"><div class="line"><a class="code hl_function" href="#aa3660d5ae265546ff8a232ae0c14c663">load_16</a>(<span class="stringliteral">&quot;freq_freq&quot;</span>, (freq_op), 50 )</div>
 </div><!-- fragment -->
-<p class="definition">Definición en la línea <a class="el" href="nvs_8c_source.html#l00028">28</a> del archivo <a class="el" href="nvs_8c_source.html">nvs.c</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="nvs_8c_source.html#l00027">27</a> del archivo <a class="el" href="nvs_8c_source.html">nvs.c</a>.</p>
 
 </div>
 </div>
@@ -234,7 +228,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <b>Valor:</b><div class="fragment"><div class="line"><a class="code hl_function" href="#aa3660d5ae265546ff8a232ae0c14c663">load_16</a>(<span class="stringliteral">&quot;hour_fin&quot;</span>, (hour_fin), 20 )</div>
 </div><!-- fragment -->
-<p class="definition">Definición en la línea <a class="el" href="nvs_8c_source.html#l00036">36</a> del archivo <a class="el" href="nvs_8c_source.html">nvs.c</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="nvs_8c_source.html#l00035">35</a> del archivo <a class="el" href="nvs_8c_source.html">nvs.c</a>.</p>
 
 </div>
 </div>
@@ -254,7 +248,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <b>Valor:</b><div class="fragment"><div class="line"><a class="code hl_function" href="#aa3660d5ae265546ff8a232ae0c14c663">load_16</a>(<span class="stringliteral">&quot;hour_ini&quot;</span>, (hour_ini), 20 )</div>
 </div><!-- fragment -->
-<p class="definition">Definición en la línea <a class="el" href="nvs_8c_source.html#l00034">34</a> del archivo <a class="el" href="nvs_8c_source.html">nvs.c</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="nvs_8c_source.html#l00033">33</a> del archivo <a class="el" href="nvs_8c_source.html">nvs.c</a>.</p>
 
 </div>
 </div>
@@ -274,7 +268,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <b>Valor:</b><div class="fragment"><div class="line"><a class="code hl_function" href="#aa3660d5ae265546ff8a232ae0c14c663">load_16</a>(<span class="stringliteral">&quot;ibus_max&quot;</span>, (ibus_max), 2000 )</div>
 </div><!-- fragment -->
-<p class="definition">Definición en la línea <a class="el" href="nvs_8c_source.html#l00033">33</a> del archivo <a class="el" href="nvs_8c_source.html">nvs.c</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="nvs_8c_source.html#l00032">32</a> del archivo <a class="el" href="nvs_8c_source.html">nvs.c</a>.</p>
 
 </div>
 </div>
@@ -294,7 +288,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <b>Valor:</b><div class="fragment"><div class="line"><a class="code hl_function" href="#aa3660d5ae265546ff8a232ae0c14c663">load_16</a>(<span class="stringliteral">&quot;freq_input&quot;</span>, (freq_input_variable), 1 )</div>
 </div><!-- fragment -->
-<p class="definition">Definición en la línea <a class="el" href="nvs_8c_source.html#l00031">31</a> del archivo <a class="el" href="nvs_8c_source.html">nvs.c</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="nvs_8c_source.html#l00030">30</a> del archivo <a class="el" href="nvs_8c_source.html">nvs.c</a>.</p>
 
 </div>
 </div>
@@ -314,7 +308,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <b>Valor:</b><div class="fragment"><div class="line"><a class="code hl_function" href="#aa3660d5ae265546ff8a232ae0c14c663">load_16</a>(<span class="stringliteral">&quot;min_fin&quot;</span>, (min_fin), 35 )</div>
 </div><!-- fragment -->
-<p class="definition">Definición en la línea <a class="el" href="nvs_8c_source.html#l00037">37</a> del archivo <a class="el" href="nvs_8c_source.html">nvs.c</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="nvs_8c_source.html#l00036">36</a> del archivo <a class="el" href="nvs_8c_source.html">nvs.c</a>.</p>
 
 </div>
 </div>
@@ -334,7 +328,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <b>Valor:</b><div class="fragment"><div class="line"><a class="code hl_function" href="#aa3660d5ae265546ff8a232ae0c14c663">load_16</a>(<span class="stringliteral">&quot;min_ini&quot;</span>, (min_ini), 30 )</div>
 </div><!-- fragment -->
-<p class="definition">Definición en la línea <a class="el" href="nvs_8c_source.html#l00035">35</a> del archivo <a class="el" href="nvs_8c_source.html">nvs.c</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="nvs_8c_source.html#l00034">34</a> del archivo <a class="el" href="nvs_8c_source.html">nvs.c</a>.</p>
 
 </div>
 </div>
@@ -354,7 +348,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <b>Valor:</b><div class="fragment"><div class="line"><a class="code hl_function" href="#aa3660d5ae265546ff8a232ae0c14c663">load_16</a>(<span class="stringliteral">&quot;vbus_min&quot;</span>, (vbus_min), 310 )</div>
 </div><!-- fragment -->
-<p class="definition">Definición en la línea <a class="el" href="nvs_8c_source.html#l00032">32</a> del archivo <a class="el" href="nvs_8c_source.html">nvs.c</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="nvs_8c_source.html#l00031">31</a> del archivo <a class="el" href="nvs_8c_source.html">nvs.c</a>.</p>
 
 </div>
 </div>
@@ -373,9 +367,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Valor:</b><div class="fragment"><div class="line"><a class="code hl_function" href="#a05e32ed837064f05bc00ec4e5e67e2e4">save_16</a>(<span class="stringliteral">&quot;freq_acce&quot;</span>, (freq_acceleration) )</div>
-<div class="ttc" id="anvs_8c_html_a05e32ed837064f05bc00ec4e5e67e2e4"><div class="ttname"><a href="#a05e32ed837064f05bc00ec4e5e67e2e4">save_16</a></div><div class="ttdeci">static esp_err_t save_16(const char *var_tag, int16_t value)</div><div class="ttdoc">Accede a la memoria NVS para guardar un dato de 16 bits en memoria no volatil.</div><div class="ttdef"><b>Definition</b> <a href="nvs_8c_source.html#l00105">nvs.c:105</a></div></div>
+<div class="ttc" id="anvs_8c_html_a05e32ed837064f05bc00ec4e5e67e2e4"><div class="ttname"><a href="#a05e32ed837064f05bc00ec4e5e67e2e4">save_16</a></div><div class="ttdeci">static esp_err_t save_16(const char *var_tag, int16_t value)</div><div class="ttdoc">Accede a la memoria NVS para guardar un dato de 16 bits en memoria no volatil.</div><div class="ttdef"><b>Definition</b> <a href="nvs_8c_source.html#l00104">nvs.c:104</a></div></div>
 </div><!-- fragment -->
-<p class="definition">Definición en la línea <a class="el" href="nvs_8c_source.html#l00018">18</a> del archivo <a class="el" href="nvs_8c_source.html">nvs.c</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="nvs_8c_source.html#l00017">17</a> del archivo <a class="el" href="nvs_8c_source.html">nvs.c</a>.</p>
 
 </div>
 </div>
@@ -395,7 +389,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <b>Valor:</b><div class="fragment"><div class="line"><a class="code hl_function" href="#a05e32ed837064f05bc00ec4e5e67e2e4">save_16</a>(<span class="stringliteral">&quot;freq_desa&quot;</span>, (freq_desacceleration) )</div>
 </div><!-- fragment -->
-<p class="definition">Definición en la línea <a class="el" href="nvs_8c_source.html#l00019">19</a> del archivo <a class="el" href="nvs_8c_source.html">nvs.c</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="nvs_8c_source.html#l00018">18</a> del archivo <a class="el" href="nvs_8c_source.html">nvs.c</a>.</p>
 
 </div>
 </div>
@@ -415,7 +409,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <b>Valor:</b><div class="fragment"><div class="line"><a class="code hl_function" href="#a05e32ed837064f05bc00ec4e5e67e2e4">save_16</a>(<span class="stringliteral">&quot;freq_freq&quot;</span>, (freq_op) )</div>
 </div><!-- fragment -->
-<p class="definition">Definición en la línea <a class="el" href="nvs_8c_source.html#l00017">17</a> del archivo <a class="el" href="nvs_8c_source.html">nvs.c</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="nvs_8c_source.html#l00016">16</a> del archivo <a class="el" href="nvs_8c_source.html">nvs.c</a>.</p>
 
 </div>
 </div>
@@ -435,7 +429,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <b>Valor:</b><div class="fragment"><div class="line"><a class="code hl_function" href="#a05e32ed837064f05bc00ec4e5e67e2e4">save_16</a>(<span class="stringliteral">&quot;hour_fin&quot;</span>, (hour_fin) )</div>
 </div><!-- fragment -->
-<p class="definition">Definición en la línea <a class="el" href="nvs_8c_source.html#l00025">25</a> del archivo <a class="el" href="nvs_8c_source.html">nvs.c</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="nvs_8c_source.html#l00024">24</a> del archivo <a class="el" href="nvs_8c_source.html">nvs.c</a>.</p>
 
 </div>
 </div>
@@ -455,7 +449,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <b>Valor:</b><div class="fragment"><div class="line"><a class="code hl_function" href="#a05e32ed837064f05bc00ec4e5e67e2e4">save_16</a>(<span class="stringliteral">&quot;hour_ini&quot;</span>, (hour_ini) )</div>
 </div><!-- fragment -->
-<p class="definition">Definición en la línea <a class="el" href="nvs_8c_source.html#l00023">23</a> del archivo <a class="el" href="nvs_8c_source.html">nvs.c</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="nvs_8c_source.html#l00022">22</a> del archivo <a class="el" href="nvs_8c_source.html">nvs.c</a>.</p>
 
 </div>
 </div>
@@ -475,7 +469,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <b>Valor:</b><div class="fragment"><div class="line"><a class="code hl_function" href="#a05e32ed837064f05bc00ec4e5e67e2e4">save_16</a>(<span class="stringliteral">&quot;ibus_max&quot;</span>, (ibus_max) )</div>
 </div><!-- fragment -->
-<p class="definition">Definición en la línea <a class="el" href="nvs_8c_source.html#l00022">22</a> del archivo <a class="el" href="nvs_8c_source.html">nvs.c</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="nvs_8c_source.html#l00021">21</a> del archivo <a class="el" href="nvs_8c_source.html">nvs.c</a>.</p>
 
 </div>
 </div>
@@ -495,7 +489,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <b>Valor:</b><div class="fragment"><div class="line"><a class="code hl_function" href="#a05e32ed837064f05bc00ec4e5e67e2e4">save_16</a>(<span class="stringliteral">&quot;freq_input&quot;</span>, (freq_input_variable) )</div>
 </div><!-- fragment -->
-<p class="definition">Definición en la línea <a class="el" href="nvs_8c_source.html#l00020">20</a> del archivo <a class="el" href="nvs_8c_source.html">nvs.c</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="nvs_8c_source.html#l00019">19</a> del archivo <a class="el" href="nvs_8c_source.html">nvs.c</a>.</p>
 
 </div>
 </div>
@@ -515,7 +509,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <b>Valor:</b><div class="fragment"><div class="line"><a class="code hl_function" href="#a05e32ed837064f05bc00ec4e5e67e2e4">save_16</a>(<span class="stringliteral">&quot;min_fin&quot;</span>, (min_fin) )</div>
 </div><!-- fragment -->
-<p class="definition">Definición en la línea <a class="el" href="nvs_8c_source.html#l00026">26</a> del archivo <a class="el" href="nvs_8c_source.html">nvs.c</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="nvs_8c_source.html#l00025">25</a> del archivo <a class="el" href="nvs_8c_source.html">nvs.c</a>.</p>
 
 </div>
 </div>
@@ -535,7 +529,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <b>Valor:</b><div class="fragment"><div class="line"><a class="code hl_function" href="#a05e32ed837064f05bc00ec4e5e67e2e4">save_16</a>(<span class="stringliteral">&quot;min_ini&quot;</span>, (min_ini) )</div>
 </div><!-- fragment -->
-<p class="definition">Definición en la línea <a class="el" href="nvs_8c_source.html#l00024">24</a> del archivo <a class="el" href="nvs_8c_source.html">nvs.c</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="nvs_8c_source.html#l00023">23</a> del archivo <a class="el" href="nvs_8c_source.html">nvs.c</a>.</p>
 
 </div>
 </div>
@@ -555,7 +549,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <b>Valor:</b><div class="fragment"><div class="line"><a class="code hl_function" href="#a05e32ed837064f05bc00ec4e5e67e2e4">save_16</a>(<span class="stringliteral">&quot;vbus_min&quot;</span>, (vbus_min) )</div>
 </div><!-- fragment -->
-<p class="definition">Definición en la línea <a class="el" href="nvs_8c_source.html#l00021">21</a> del archivo <a class="el" href="nvs_8c_source.html">nvs.c</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="nvs_8c_source.html#l00020">20</a> del archivo <a class="el" href="nvs_8c_source.html">nvs.c</a>.</p>
 
 </div>
 </div>
@@ -620,7 +614,7 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definición en la línea <a class="el" href="nvs_8c_source.html#l00204">204</a> del archivo <a class="el" href="nvs_8c_source.html">nvs.c</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="nvs_8c_source.html#l00203">203</a> del archivo <a class="el" href="nvs_8c_source.html">nvs.c</a>.</p>
 
 </div>
 </div>
@@ -674,7 +668,7 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definición en la línea <a class="el" href="nvs_8c_source.html#l00246">246</a> del archivo <a class="el" href="nvs_8c_source.html">nvs.c</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="nvs_8c_source.html#l00245">245</a> del archivo <a class="el" href="nvs_8c_source.html">nvs.c</a>.</p>
 
 </div>
 </div>
@@ -710,12 +704,7 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definición en la línea <a class="el" href="nvs_8c_source.html#l00237">237</a> del archivo <a class="el" href="nvs_8c_source.html">nvs.c</a>.</p>
-<div class="dynheader">
-Gráfico de llamadas a esta función:</div>
-<div class="dyncontent">
-<div class="center"><img src="nvs_8c_a3da2b2c6e021ca7b976168dc8308b254_icgraph.png" border="0" usemap="#anvs_8c_a3da2b2c6e021ca7b976168dc8308b254_icgraph" loading="lazy" alt=""/></div>
-</div>
+<p class="definition">Definición en la línea <a class="el" href="nvs_8c_source.html#l00236">236</a> del archivo <a class="el" href="nvs_8c_source.html">nvs.c</a>.</p>
 
 </div>
 </div>
@@ -773,7 +762,7 @@ Gráfico de llamadas a esta función:</div>
   </dd>
 </dl>
 
-<p class="definition">Definición en la línea <a class="el" href="nvs_8c_source.html#l00105">105</a> del archivo <a class="el" href="nvs_8c_source.html">nvs.c</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="nvs_8c_source.html#l00104">104</a> del archivo <a class="el" href="nvs_8c_source.html">nvs.c</a>.</p>
 
 </div>
 </div>
@@ -827,12 +816,7 @@ Gráfico de llamadas a esta función:</div>
   </dd>
 </dl>
 
-<p class="definition">Definición en la línea <a class="el" href="nvs_8c_source.html#l00310">310</a> del archivo <a class="el" href="nvs_8c_source.html">nvs.c</a>.</p>
-<div class="dynheader">
-Gráfico de llamadas de esta función:</div>
-<div class="dyncontent">
-<div class="center"><img src="nvs_8c_ab46a7fb052466c1648288b24eced88f2_cgraph.png" border="0" usemap="#anvs_8c_ab46a7fb052466c1648288b24eced88f2_cgraph" loading="lazy" alt=""/></div>
-</div>
+<p class="definition">Definición en la línea <a class="el" href="nvs_8c_source.html#l00309">309</a> del archivo <a class="el" href="nvs_8c_source.html">nvs.c</a>.</p>
 
 </div>
 </div>
@@ -857,7 +841,7 @@ Gráfico de llamadas de esta función:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definición en la línea <a class="el" href="nvs_8c_source.html#l00039">39</a> del archivo <a class="el" href="nvs_8c_source.html">nvs.c</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="nvs_8c_source.html#l00038">38</a> del archivo <a class="el" href="nvs_8c_source.html">nvs.c</a>.</p>
 
 </div>
 </div>

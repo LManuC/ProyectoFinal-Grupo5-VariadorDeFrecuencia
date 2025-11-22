@@ -70,6 +70,7 @@ typedef enum system_status_e {
     SYSTEM_REGIME,
     SYSTEM_BREAKING,
     SYSTEM_EMERGENCY,
+    SYSTEM_EMERGENCY_SENT,
     SYSTEM_EMERGENCY_OK
 } system_status_e;
 
@@ -77,8 +78,8 @@ typedef enum sh1106_variable_lines_e{
     first = VARIABLE_FIRST,
     second = VARIABLE_SECOND,
     third = VARIABLE_THIRD,
-    fourth = VARIABLE_FOURTH,
-    fifth = VARIABLE_FIFTH,
+    fourth = VARIABLE_FOURTH,   
+    fifth = VARIABLE_FIFTH, 
     sixth = VARIABLE_SIXTH,
     seventh = VARIABLE_SEVENTH
 } sh1106_variable_lines_e;

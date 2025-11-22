@@ -10,5 +10,7 @@ var rtc_8c =
     [ "setTime", "rtc_8c.html#a18ec0d194dc994434090b873251093b0", null ],
     [ "alarm_settings", "rtc_8c.html#ab2199ad93a3c4b4fa1de3d486346cba7", null ],
     [ "rtc_alarms", "rtc_8c.html#a27b710d06dd027d535da94e798d0a819", null ],
-    [ "TAG", "rtc_8c.html#a5a85b9c772bbeb480b209a3e6ea92b4c", null ]
+    [ "TAG", "rtc_8c.html#a5a85b9c772bbeb480b209a3e6ea92b4c", null ],
+    [ "time_start", "rtc_8c.html#a4b2b47c8b14e716db2bb270503eb09d2", null ],
+    [ "time_stop", "rtc_8c.html#a12c22a2f47ab452be111d558be82ac3d", null ]
 ];

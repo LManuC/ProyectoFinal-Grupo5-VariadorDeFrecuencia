@@ -18,5 +18,5 @@ var searchData=
   ['button_5fup_15',['BUTTON_UP',['../_l_v_f_v__system_8h.html#ab7a290ebff8e2a3230e8085ee87d4796a37666936297216dce293b0aa31c474b8',1,'LVFV_system.h']]],
   ['buzzer_5fevt_5fqueue_16',['buzzer_evt_queue',['../io__control_8c.html#aedd7b01d9ead80d106e8ab03f60593cd',1,'io_control.c']]],
   ['buzzer_5fpin_17',['BUZZER_PIN',['../io__control_8c.html#ab61d0981ed42df9e18211b273d22cfcd',1,'io_control.c']]],
-  ['buzzerevantpost_18',['BuzzerEvantPost',['../io__control_8c.html#a5547e302022fe72e4e2e7e3d58d4508f',1,'BuzzerEvantPost(uint8_t buzzer_time_on):&#160;io_control.c'],['../io__control_8h.html#a5547e302022fe72e4e2e7e3d58d4508f',1,'BuzzerEvantPost(uint8_t buzzer_time_on):&#160;io_control.c']]]
+  ['buzzerevantpost_18',['BuzzerEvantPost',['../io__control_8c.html#aed21490f8fc34ffb3d9021ed1cf7214a',1,'BuzzerEvantPost(uint32_t buzzer_time_on):&#160;io_control.c'],['../io__control_8h.html#aed21490f8fc34ffb3d9021ed1cf7214a',1,'BuzzerEvantPost(uint32_t buzzer_time_on):&#160;io_control.c']]]
 ];

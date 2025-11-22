@@ -1,5 +1,7 @@
 var structsystem__status__t =
 [
+    [ "acceleration", "structsystem__status__t.html#a44e11b804280aecf19f944765588d26f", null ],
+    [ "desacceleration", "structsystem__status__t.html#a8d753b012e5099230395ba6421d5d35b", null ],
     [ "frequency", "structsystem__status__t.html#aea762e0e67fcafaf5b3cd61201769926", null ],
     [ "frequency_destiny", "structsystem__status__t.html#ab5bef34d4fc6d4cdeb782a63d32234f4", null ],
     [ "ibus_max", "structsystem__status__t.html#a69f28b5a90c9b33472fb9b8e7d530cb1", null ],

@@ -53,7 +53,7 @@ var NAVTREEINDEX =
 [
 "_l_v_f_v__system_8h.html",
 "io__control_8c.html#a8d59f9677b119c8ad6511443709e0b54",
-"structsystem__status__t.html#a58033d9c9f897d33e98d9686d7cf78b5"
+"structspi__cmd__item__t.html#a8e022ff634b33af641a97b0e25f460b4"
 ];
 
 var SYNCONMSG = 'pulsar para deshabilitar sincronización';

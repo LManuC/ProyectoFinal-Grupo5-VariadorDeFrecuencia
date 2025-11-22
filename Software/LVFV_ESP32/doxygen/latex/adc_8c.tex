@@ -19,12 +19,10 @@ Funcion de inicialización y tarea lectura del ADC.
 {\ttfamily \#include "{}../\+LVFV\+\_\+system.\+h"{}}\newline
 {\ttfamily \#include "{}../adc/adc.\+h"{}}\newline
 {\ttfamily \#include "{}../\+System/\+Sys\+Admin.\+h"{}}\newline
-Gráfico de dependencias incluidas en adc.\+c\+:
-% FIG 0
 \doxysubsubsection*{defines}
 \begin{DoxyCompactItemize}
 \item 
-\#define \mbox{\hyperlink{adc_8c_af54819f3e0f7360f21de8b3f9d803c08}{ADC\+\_\+\+PERIOD\+\_\+\+MS}}~50
+\#define \mbox{\hyperlink{adc_8c_af54819f3e0f7360f21de8b3f9d803c08}{ADC\+\_\+\+PERIOD\+\_\+\+MS}}~100
 \item 
 \#define \mbox{\hyperlink{adc_8c_ab8818cc3918e2a7d8d5858cb1ef86364}{ADC\+\_\+\+UNIT\+\_\+\+USED}}~ADC\+\_\+\+UNIT\+\_\+1
 \item 
@@ -43,7 +41,7 @@ Gráfico de dependencias incluidas en adc.\+c\+:
 \item 
 static esp\+\_\+err\+\_\+t \mbox{\hyperlink{adc_8c_a3862aae06b5dfd4b6a23b569a4540fe2}{adc\+\_\+cali\+\_\+try\+\_\+init}} (adc\+\_\+unit\+\_\+t unit, adc\+\_\+channel\+\_\+t ch, adc\+\_\+atten\+\_\+t atten, adc\+\_\+cali\+\_\+handle\+\_\+t \texorpdfstring{$\ast$}{*}out)
 \begin{DoxyCompactList}\small\item\em Estandariza las mediciones del ADC en función de la tensión que representa el pin físico en mili volts. \end{DoxyCompactList}\item 
-esp\+\_\+err\+\_\+t \mbox{\hyperlink{adc_8c_aeead0f2e9c35b7a2e452349b5c672eca}{adc\+\_\+init\+\_\+two\+\_\+channels}} (void)
+esp\+\_\+err\+\_\+t \mbox{\hyperlink{adc_8c_a3cfa671db431099a0d91bd8bcfe935f8}{adc\+\_\+init}} (void)
 \begin{DoxyCompactList}\small\item\em Configura los 4 ADC necesarios para el sistema y los calibra para obtener las mediciones en desde 0 a 3125mV. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{adc_8c_a1b78b89977b7b9e5ebc32e9456337379}{adc\+\_\+task}} (void \texorpdfstring{$\ast$}{*}arg)
 \begin{DoxyCompactList}\small\item\em Función programada como alarma para finalizar el funcionamiento del motor. \end{DoxyCompactList}\item 
@@ -52,7 +50,7 @@ void \mbox{\hyperlink{adc_8c_a1b78b89977b7b9e5ebc32e9456337379}{adc\+\_\+task}} 
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-static const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{adc_8c_a5a85b9c772bbeb480b209a3e6ea92b4c}{TAG}} = "{}ADC\+\_\+\+ESPADC"{}
+static const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{adc_8c_a5a85b9c772bbeb480b209a3e6ea92b4c}{TAG}} = "{}ADC"{}
 \item 
 static adc\+\_\+oneshot\+\_\+unit\+\_\+handle\+\_\+t \mbox{\hyperlink{adc_8c_a60ac5e86633367adafa2e5e7722a5f1d}{s\+\_\+adc}} = NULL
 \item 
@@ -151,7 +149,7 @@ Definición en la línea \mbox{\hyperlink{adc_8c_source_l00034}{34}} del archivo
 \index{ADC\_PERIOD\_MS@{ADC\_PERIOD\_MS}!adc.c@{adc.c}}
 \doxysubsubsection{\texorpdfstring{ADC\_PERIOD\_MS}{ADC\_PERIOD\_MS}}
 {\footnotesize\ttfamily \label{adc_8c_af54819f3e0f7360f21de8b3f9d803c08} 
-\#define ADC\+\_\+\+PERIOD\+\_\+\+MS~50}
+\#define ADC\+\_\+\+PERIOD\+\_\+\+MS~100}
 
 
 \begin{DoxyParams}[1]{Parámetros}
@@ -224,13 +222,11 @@ Denera la configuración necesaria para que las mediciones pasen de cuentas a mi
 
 Definición en la línea \mbox{\hyperlink{adc_8c_source_l00080}{80}} del archivo \mbox{\hyperlink{adc_8c_source}{adc.\+c}}.
 
-Gráfico de llamadas a esta función\+:
-% FIG 1
-\Hypertarget{adc_8c_aeead0f2e9c35b7a2e452349b5c672eca}\index{adc.c@{adc.c}!adc\_init\_two\_channels@{adc\_init\_two\_channels}}
-\index{adc\_init\_two\_channels@{adc\_init\_two\_channels}!adc.c@{adc.c}}
-\doxysubsubsection{\texorpdfstring{adc\_init\_two\_channels()}{adc\_init\_two\_channels()}}
-{\footnotesize\ttfamily \label{adc_8c_aeead0f2e9c35b7a2e452349b5c672eca} 
-esp\+\_\+err\+\_\+t adc\+\_\+init\+\_\+two\+\_\+channels (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+\Hypertarget{adc_8c_a3cfa671db431099a0d91bd8bcfe935f8}\index{adc.c@{adc.c}!adc\_init@{adc\_init}}
+\index{adc\_init@{adc\_init}!adc.c@{adc.c}}
+\doxysubsubsection{\texorpdfstring{adc\_init()}{adc\_init()}}
+{\footnotesize\ttfamily \label{adc_8c_a3cfa671db431099a0d91bd8bcfe935f8} 
+esp\+\_\+err\+\_\+t adc\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
 
 
 
@@ -240,10 +236,6 @@ Configura por las entradas el canal 0 (GPIO36) el nivel de tensión de fuente de
 
 Definición en la línea \mbox{\hyperlink{adc_8c_source_l00097}{97}} del archivo \mbox{\hyperlink{adc_8c_source}{adc.\+c}}.
 
-Gráfico de llamadas de esta función\+:
-% FIG 2
-Gráfico de llamadas a esta función\+:
-% FIG 3
 \Hypertarget{adc_8c_a1b78b89977b7b9e5ebc32e9456337379}\index{adc.c@{adc.c}!adc\_task@{adc\_task}}
 \index{adc\_task@{adc\_task}!adc.c@{adc.c}}
 \doxysubsubsection{\texorpdfstring{adc\_task()}{adc\_task()}}
@@ -258,10 +250,6 @@ Lee por las entradas el canal 0 (GPIO36) el nivel de tensión de fuente de 5V, 3
 
 Definición en la línea \mbox{\hyperlink{adc_8c_source_l00146}{146}} del archivo \mbox{\hyperlink{adc_8c_source}{adc.\+c}}.
 
-Gráfico de llamadas de esta función\+:
-% FIG 4
-Gráfico de llamadas a esta función\+:
-% FIG 5
 \Hypertarget{adc_8c_aa1581e2212cf6853c63ae97147e9ed1f}\index{adc.c@{adc.c}!readADC@{readADC}}
 \index{readADC@{readADC}!adc.c@{adc.c}}
 \doxysubsubsection{\texorpdfstring{readADC()}{readADC()}}
@@ -278,19 +266,15 @@ Consulta si existe alguna medición encolada en bus\+\_\+meas\+\_\+evt\+\_\+queu
 \begin{DoxyRetVals}{Valores devueltos}
 {\em -\/} & SYSTEM\+\_\+\+EMERGENCY\+: Si las mediciones de tensión o corriente del bus de DC está fuera de los parámetros esperados
 \begin{DoxyItemize}
-\item SYSTEM\+\_\+\+EMERGENCY\+\_\+\+OK\+: Si las mediciones de tensión o corriente del bus de DC continúan por fuera de los parámetros esperados
+\item SYSTEM\+\_\+\+EMERGENCY\+\_\+\+SENT\+: Si las mediciones de tensión o corriente del bus de DC continúan por fuera de los parámetros esperados
 \item Otros estados\+: Si la medición está dentro de los parámetros aceptables 
 \end{DoxyItemize}\\
 \hline
 \end{DoxyRetVals}
 
 
-Definición en la línea \mbox{\hyperlink{adc_8c_source_l00227}{227}} del archivo \mbox{\hyperlink{adc_8c_source}{adc.\+c}}.
+Definición en la línea \mbox{\hyperlink{adc_8c_source_l00239}{239}} del archivo \mbox{\hyperlink{adc_8c_source}{adc.\+c}}.
 
-Gráfico de llamadas de esta función\+:
-% FIG 6
-Gráfico de llamadas a esta función\+:
-% FIG 7
 
 
 \label{doc-var-members}
@@ -400,7 +384,7 @@ Definición en la línea \mbox{\hyperlink{adc_8c_source_l00040}{40}} del archivo
 \index{TAG@{TAG}!adc.c@{adc.c}}
 \doxysubsubsection{\texorpdfstring{TAG}{TAG}}
 {\footnotesize\ttfamily \label{adc_8c_a5a85b9c772bbeb480b209a3e6ea92b4c} 
-const char\texorpdfstring{$\ast$}{*} TAG = "{}ADC\+\_\+\+ESPADC"{}\hspace{0.3cm}{\ttfamily [static]}}
+const char\texorpdfstring{$\ast$}{*} TAG = "{}ADC"{}\hspace{0.3cm}{\ttfamily [static]}}
 
 
 

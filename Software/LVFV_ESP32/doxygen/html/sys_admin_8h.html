@@ -27,7 +27,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="DoxyPic.jpeg"/></td>
   <td id="projectalign">
-   <div id="projectname">Low Voltage Variable Frequency Drive<span id="projectnumber">&#160;2.0</span>
+   <div id="projectname">Low Voltage Variable Frequency Drive<span id="projectnumber">&#160;2.1</span>
    </div>
    <div id="projectbrief">Proyecto final Andrenacci-Carra 2026. Variador de frecuencia de motor trifásico 1/3HP utilizando 12V de contínua como fuente de entrada de tensión.</div>
   </td>
@@ -97,16 +97,6 @@ $(function(){initNavTree('sys_admin_8h.html','',''); });
 <p>Header con las funciones de funcionamiento del sistema.  
 <a href="#details">Más...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="_l_v_f_v__system_8h_source.html">../LVFV_system.h</a>&quot;</code><br />
-</div><div class="textblock"><div class="dynheader">
-Gráfico de dependencias incluidas en sysAdmin.h:</div>
-<div class="dyncontent">
-<div class="center"><img src="sys_admin_8h__incl.png" border="0" usemap="#a_c_1_2_users_2_user_2_l_v_f_v___e_s_p32_2main_2system_2sys_admin_8h" loading="lazy" alt=""/></div>
-</div>
-</div><div class="textblock"><div class="dynheader">
-Gráfico de los archivos que directa o indirectamente incluyen a este archivo:</div>
-<div class="dyncontent">
-<div class="center"><img src="sys_admin_8h__dep__incl.png" border="0" usemap="#a_c_1_2_users_2_user_2_l_v_f_v___e_s_p32_2main_2system_2sys_admin_8hdep" loading="lazy" alt=""/></div>
-</div>
 </div>
 <p><a href="sys_admin_8h_source.html">Ir al código fuente de este archivo.</a></p>
 <table class="memberdecls">
@@ -118,6 +108,8 @@ Funciones</h2></td></tr>
 <tr class="memdesc:a62e7c27f84d0db690242eeb717c4e17b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Función que setea la frecuencia de régimen de acuerdo a lo configurado por el usuario y ejecuta la tarea accelerating.  <br /></td></tr>
 <tr class="memitem:abb59808fe42c3d4dd43e0f91d1f699a9" id="r_abb59808fe42c3d4dd43e0f91d1f699a9"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abb59808fe42c3d4dd43e0f91d1f699a9">engine_stop</a> ()</td></tr>
 <tr class="memdesc:abb59808fe42c3d4dd43e0f91d1f699a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Función que setea la frecuencia de régimen de acuerdo a lo configurado por el usuario y ejecuta la tarea desaccelerating.  <br /></td></tr>
+<tr class="memitem:abd5d6163d42e21cfc63ce12acbb3cb64" id="r_abd5d6163d42e21cfc63ce12acbb3cb64"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abd5d6163d42e21cfc63ce12acbb3cb64">engine_emergency_stop_release</a> ()</td></tr>
+<tr class="memdesc:abd5d6163d42e21cfc63ce12acbb3cb64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pasa a estado SYSTEM_EMERGENCY_OK para que el usuario pueda enviar la señal de stop al STM32 necesaria para poder arrancar nuevamente el motor.  <br /></td></tr>
 <tr class="memitem:aa6c33be7b7273385ae39a1f682f28f75" id="r_aa6c33be7b7273385ae39a1f682f28f75"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa6c33be7b7273385ae39a1f682f28f75">engine_emergency_stop</a> ()</td></tr>
 <tr class="memdesc:aa6c33be7b7273385ae39a1f682f28f75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pasa la frecuencia de regimen a 0Hz y pasa a estado SYSTEM_EMERGENCY.  <br /></td></tr>
 <tr class="memitem:a6b7a46f08b0f4ed784a8001e221a32a8" id="r_a6b7a46f08b0f4ed784a8001e221a32a8"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6b7a46f08b0f4ed784a8001e221a32a8">change_frequency</a> (uint8_t speed_slector)</td></tr>
@@ -126,8 +118,8 @@ Funciones</h2></td></tr>
 <tr class="memdesc:ab7f234b01f6a10381a179c5dbfa5a3be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Actualiza las mediciones de tensión y corriente del bus de contínua.  <br /></td></tr>
 <tr class="memitem:a4c6328d6bdb3ae404b65b9046dc71446" id="r_a4c6328d6bdb3ae404b65b9046dc71446"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4c6328d6bdb3ae404b65b9046dc71446">set_frequency_table</a> (uint16_t input_variable, uint16_t freq_regime)</td></tr>
 <tr class="memdesc:a4c6328d6bdb3ae404b65b9046dc71446"><td class="mdescLeft">&#160;</td><td class="mdescRight">Carga en el vector de velocidades configurables por entradas, las diferentes frecuencias de trabajo.  <br /></td></tr>
-<tr class="memitem:a5f1c91f368c1994714cc10c041120367" id="r_a5f1c91f368c1994714cc10c041120367"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5f1c91f368c1994714cc10c041120367">set_seccurity_settings</a> (<a class="el" href="structseccurity__settings__t.html">seccurity_settings_t</a> *s_s)</td></tr>
-<tr class="memdesc:a5f1c91f368c1994714cc10c041120367"><td class="mdescLeft">&#160;</td><td class="mdescRight">Actualiza las variables de seguridad del sistema.  <br /></td></tr>
+<tr class="memitem:a76880514447931f4c7457ce0407a6349" id="r_a76880514447931f4c7457ce0407a6349"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a76880514447931f4c7457ce0407a6349">set_system_settings</a> (<a class="el" href="structfrequency__settings__t.html">frequency_settings_t</a> *f_s, <a class="el" href="structseccurity__settings__t.html">seccurity_settings_t</a> *s_s)</td></tr>
+<tr class="memdesc:a76880514447931f4c7457ce0407a6349"><td class="mdescLeft">&#160;</td><td class="mdescRight">Actualiza las variables de seguridad del sistema.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descripción detallada</h2>
 <div class="textblock"><p>Header con las funciones de funcionamiento del sistema. </p>
@@ -162,17 +154,7 @@ Funciones</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Devuelve</dt><dd>0Hz si <code class="param">speed_selector</code> fue mal pasada como argumento, sino la frecuencia de destino </dd></dl>
 
-<p class="definition">Definición en la línea <a class="el" href="sys_admin_8c_source.html#l00133">133</a> del archivo <a class="el" href="sys_admin_8c_source.html">sysAdmin.c</a>.</p>
-<div class="dynheader">
-Gráfico de llamadas de esta función:</div>
-<div class="dyncontent">
-<div class="center"><img src="sys_admin_8h_a6b7a46f08b0f4ed784a8001e221a32a8_cgraph.png" border="0" usemap="#asys_admin_8h_a6b7a46f08b0f4ed784a8001e221a32a8_cgraph" loading="lazy" alt=""/></div>
-</div>
-<div class="dynheader">
-Gráfico de llamadas a esta función:</div>
-<div class="dyncontent">
-<div class="center"><img src="sys_admin_8h_a6b7a46f08b0f4ed784a8001e221a32a8_icgraph.png" border="0" usemap="#asys_admin_8h_a6b7a46f08b0f4ed784a8001e221a32a8_icgraph" loading="lazy" alt=""/></div>
-</div>
+<p class="definition">Definición en la línea <a class="el" href="sys_admin_8c_source.html#l00142">142</a> del archivo <a class="el" href="sys_admin_8c_source.html">sysAdmin.c</a>.</p>
 
 </div>
 </div>
@@ -194,12 +176,28 @@ Gráfico de llamadas a esta función:</div>
 <p>Pasa la frecuencia de regimen a 0Hz y pasa a estado SYSTEM_EMERGENCY. </p>
 <p>Termina las tareas accelerating y desaccelerating </p>
 
-<p class="definition">Definición en la línea <a class="el" href="sys_admin_8c_source.html#l00119">119</a> del archivo <a class="el" href="sys_admin_8c_source.html">sysAdmin.c</a>.</p>
-<div class="dynheader">
-Gráfico de llamadas a esta función:</div>
-<div class="dyncontent">
-<div class="center"><img src="sys_admin_8h_aa6c33be7b7273385ae39a1f682f28f75_icgraph.png" border="0" usemap="#asys_admin_8h_aa6c33be7b7273385ae39a1f682f28f75_icgraph" loading="lazy" alt=""/></div>
+<p class="definition">Definición en la línea <a class="el" href="sys_admin_8c_source.html#l00128">128</a> del archivo <a class="el" href="sys_admin_8c_source.html">sysAdmin.c</a>.</p>
+
 </div>
+</div>
+<a id="abd5d6163d42e21cfc63ce12acbb3cb64" name="abd5d6163d42e21cfc63ce12acbb3cb64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd5d6163d42e21cfc63ce12acbb3cb64">&#9670;&#160;</a></span>engine_emergency_stop_release()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void engine_emergency_stop_release </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Pasa a estado SYSTEM_EMERGENCY_OK para que el usuario pueda enviar la señal de stop al STM32 necesaria para poder arrancar nuevamente el motor. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="sys_admin_8c_source.html#l00124">124</a> del archivo <a class="el" href="sys_admin_8c_source.html">sysAdmin.c</a>.</p>
 
 </div>
 </div>
@@ -222,17 +220,7 @@ Gráfico de llamadas a esta función:</div>
 <p>En caso de que desaccelerating esté corriendo, antes de ejecutar accelerating, la cierra para no generar un efecto de subida y bajada de frecuencia. El status pasará a SYSTEM_ACCLE_DESACCEL</p>
 <dl class="section return"><dt>Devuelve</dt><dd>Frecuencia de destino configurada </dd></dl>
 
-<p class="definition">Definición en la línea <a class="el" href="sys_admin_8c_source.html#l00091">91</a> del archivo <a class="el" href="sys_admin_8c_source.html">sysAdmin.c</a>.</p>
-<div class="dynheader">
-Gráfico de llamadas de esta función:</div>
-<div class="dyncontent">
-<div class="center"><img src="sys_admin_8h_a62e7c27f84d0db690242eeb717c4e17b_cgraph.png" border="0" usemap="#asys_admin_8h_a62e7c27f84d0db690242eeb717c4e17b_cgraph" loading="lazy" alt=""/></div>
-</div>
-<div class="dynheader">
-Gráfico de llamadas a esta función:</div>
-<div class="dyncontent">
-<div class="center"><img src="sys_admin_8h_a62e7c27f84d0db690242eeb717c4e17b_icgraph.png" border="0" usemap="#asys_admin_8h_a62e7c27f84d0db690242eeb717c4e17b_icgraph" loading="lazy" alt=""/></div>
-</div>
+<p class="definition">Definición en la línea <a class="el" href="sys_admin_8c_source.html#l00093">93</a> del archivo <a class="el" href="sys_admin_8c_source.html">sysAdmin.c</a>.</p>
 
 </div>
 </div>
@@ -255,17 +243,7 @@ Gráfico de llamadas a esta función:</div>
 <p>En caso de que accelerating esté corriendo, antes de ejecutar desaccelerating, la cierra para no generar un efecto de subida y bajada de frecuencia. El status pasará a SYSTEM_ACCLE_DESACCEL o SYSTEM_BREAKING de a cuerdo a la acción que haya ocurrido</p>
 <dl class="section return"><dt>Devuelve</dt><dd>Frecuencia de destino configurada </dd></dl>
 
-<p class="definition">Definición en la línea <a class="el" href="sys_admin_8c_source.html#l00104">104</a> del archivo <a class="el" href="sys_admin_8c_source.html">sysAdmin.c</a>.</p>
-<div class="dynheader">
-Gráfico de llamadas de esta función:</div>
-<div class="dyncontent">
-<div class="center"><img src="sys_admin_8h_abb59808fe42c3d4dd43e0f91d1f699a9_cgraph.png" border="0" usemap="#asys_admin_8h_abb59808fe42c3d4dd43e0f91d1f699a9_cgraph" loading="lazy" alt=""/></div>
-</div>
-<div class="dynheader">
-Gráfico de llamadas a esta función:</div>
-<div class="dyncontent">
-<div class="center"><img src="sys_admin_8h_abb59808fe42c3d4dd43e0f91d1f699a9_icgraph.png" border="0" usemap="#asys_admin_8h_abb59808fe42c3d4dd43e0f91d1f699a9_icgraph" loading="lazy" alt=""/></div>
-</div>
+<p class="definition">Definición en la línea <a class="el" href="sys_admin_8c_source.html#l00106">106</a> del archivo <a class="el" href="sys_admin_8c_source.html">sysAdmin.c</a>.</p>
 
 </div>
 </div>
@@ -297,12 +275,7 @@ Gráfico de llamadas a esta función:</div>
 </ul>
 </dd></dl>
 
-<p class="definition">Definición en la línea <a class="el" href="sys_admin_8c_source.html#l00160">160</a> del archivo <a class="el" href="sys_admin_8c_source.html">sysAdmin.c</a>.</p>
-<div class="dynheader">
-Gráfico de llamadas a esta función:</div>
-<div class="dyncontent">
-<div class="center"><img src="sys_admin_8h_a7bf3fbe77325da35d54220bf89fb26ce_icgraph.png" border="0" usemap="#asys_admin_8h_a7bf3fbe77325da35d54220bf89fb26ce_icgraph" loading="lazy" alt=""/></div>
-</div>
+<p class="definition">Definición en la línea <a class="el" href="sys_admin_8c_source.html#l00176">176</a> del archivo <a class="el" href="sys_admin_8c_source.html">sysAdmin.c</a>.</p>
 
 </div>
 </div>
@@ -335,26 +308,25 @@ Gráfico de llamadas a esta función:</div>
   </dd>
 </dl>
 
-<p class="definition">Definición en la línea <a class="el" href="sys_admin_8c_source.html#l00198">198</a> del archivo <a class="el" href="sys_admin_8c_source.html">sysAdmin.c</a>.</p>
-<div class="dynheader">
-Gráfico de llamadas a esta función:</div>
-<div class="dyncontent">
-<div class="center"><img src="sys_admin_8h_a4c6328d6bdb3ae404b65b9046dc71446_icgraph.png" border="0" usemap="#asys_admin_8h_a4c6328d6bdb3ae404b65b9046dc71446_icgraph" loading="lazy" alt=""/></div>
-</div>
+<p class="definition">Definición en la línea <a class="el" href="sys_admin_8c_source.html#l00220">220</a> del archivo <a class="el" href="sys_admin_8c_source.html">sysAdmin.c</a>.</p>
 
 </div>
 </div>
-<a id="a5f1c91f368c1994714cc10c041120367" name="a5f1c91f368c1994714cc10c041120367"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5f1c91f368c1994714cc10c041120367">&#9670;&#160;</a></span>set_seccurity_settings()</h2>
+<a id="a76880514447931f4c7457ce0407a6349" name="a76880514447931f4c7457ce0407a6349"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76880514447931f4c7457ce0407a6349">&#9670;&#160;</a></span>set_system_settings()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void set_seccurity_settings </td>
+          <td class="memname">void set_system_settings </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structseccurity__settings__t.html">seccurity_settings_t</a> *</td>          <td class="paramname"><span class="paramname"><em>s_s</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="structfrequency__settings__t.html">frequency_settings_t</a> *</td>          <td class="paramname"><span class="paramname"><em>f_s</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="structseccurity__settings__t.html">seccurity_settings_t</a> *</td>          <td class="paramname"><span class="paramname"><em>s_s</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -362,17 +334,13 @@ Gráfico de llamadas a esta función:</div>
 <p>Actualiza las variables de seguridad del sistema. </p>
 <dl class="params"><dt>Parámetros</dt><dd>
   <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">f_s</td><td>Puntero a la estructura con las variables de frecuencia a actualizar</td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">s_s</td><td>Puntero a la estructura con las variables de seguridad a actualizar </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definición en la línea <a class="el" href="sys_admin_8c_source.html#l00220">220</a> del archivo <a class="el" href="sys_admin_8c_source.html">sysAdmin.c</a>.</p>
-<div class="dynheader">
-Gráfico de llamadas a esta función:</div>
-<div class="dyncontent">
-<div class="center"><img src="sys_admin_8h_a5f1c91f368c1994714cc10c041120367_icgraph.png" border="0" usemap="#asys_admin_8h_a5f1c91f368c1994714cc10c041120367_icgraph" loading="lazy" alt=""/></div>
-</div>
+<p class="definition">Definición en la línea <a class="el" href="sys_admin_8c_source.html#l00242">242</a> del archivo <a class="el" href="sys_admin_8c_source.html">sysAdmin.c</a>.</p>
 
 </div>
 </div>
@@ -416,16 +384,11 @@ Gráfico de llamadas a esta función:</div>
 <li>SYSTEM_REGIME: El sistema está con el motor girando a régimen</li>
 <li>SYSTEM_BREAKING: El sistema está frenando</li>
 <li>SYSTEM_EMERGENCY: El sistema entra por primera vez en estado de emergencia</li>
-<li>SYSTEM_EMERGENCY_OK: El sistema continúa en estado de emergencia </li>
+<li>SYSTEM_EMERGENCY_SENT: El sistema continúa en estado de emergencia </li>
 </ul>
 </dd></dl>
 
-<p class="definition">Definición en la línea <a class="el" href="sys_admin_8c_source.html#l00172">172</a> del archivo <a class="el" href="sys_admin_8c_source.html">sysAdmin.c</a>.</p>
-<div class="dynheader">
-Gráfico de llamadas a esta función:</div>
-<div class="dyncontent">
-<div class="center"><img src="sys_admin_8h_ab7f234b01f6a10381a179c5dbfa5a3be_icgraph.png" border="0" usemap="#asys_admin_8h_ab7f234b01f6a10381a179c5dbfa5a3be_icgraph" loading="lazy" alt=""/></div>
-</div>
+<p class="definition">Definición en la línea <a class="el" href="sys_admin_8c_source.html#l00188">188</a> del archivo <a class="el" href="sys_admin_8c_source.html">sysAdmin.c</a>.</p>
 
 </div>
 </div>

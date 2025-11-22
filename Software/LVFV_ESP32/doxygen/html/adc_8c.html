@@ -27,7 +27,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="DoxyPic.jpeg"/></td>
   <td id="projectalign">
-   <div id="projectname">Low Voltage Variable Frequency Drive<span id="projectnumber">&#160;2.0</span>
+   <div id="projectname">Low Voltage Variable Frequency Drive<span id="projectnumber">&#160;2.1</span>
    </div>
    <div id="projectbrief">Proyecto final Andrenacci-Carra 2026. Variador de frecuencia de motor trifásico 1/3HP utilizando 12V de contínua como fuente de entrada de tensión.</div>
   </td>
@@ -110,17 +110,12 @@ $(function(){initNavTree('adc_8c.html','',''); });
 <code>#include &quot;<a class="el" href="_l_v_f_v__system_8h_source.html">../LVFV_system.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="adc_8h_source.html">../adc/adc.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="sys_admin_8h_source.html">../System/SysAdmin.h</a>&quot;</code><br />
-</div><div class="textblock"><div class="dynheader">
-Gráfico de dependencias incluidas en adc.c:</div>
-<div class="dyncontent">
-<div class="center"><img src="adc_8c__incl.png" border="0" usemap="#a_c_1_2_users_2_user_2_l_v_f_v___e_s_p32_2main_2adc_2adc_8c" loading="lazy" alt=""/></div>
-</div>
 </div>
 <p><a href="adc_8c_source.html">Ir al código fuente de este archivo.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
 defines</h2></td></tr>
-<tr class="memitem:af54819f3e0f7360f21de8b3f9d803c08" id="r_af54819f3e0f7360f21de8b3f9d803c08"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af54819f3e0f7360f21de8b3f9d803c08">ADC_PERIOD_MS</a>&#160;&#160;&#160;50</td></tr>
+<tr class="memitem:af54819f3e0f7360f21de8b3f9d803c08" id="r_af54819f3e0f7360f21de8b3f9d803c08"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af54819f3e0f7360f21de8b3f9d803c08">ADC_PERIOD_MS</a>&#160;&#160;&#160;100</td></tr>
 <tr class="memitem:ab8818cc3918e2a7d8d5858cb1ef86364" id="r_ab8818cc3918e2a7d8d5858cb1ef86364"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab8818cc3918e2a7d8d5858cb1ef86364">ADC_UNIT_USED</a>&#160;&#160;&#160;ADC_UNIT_1</td></tr>
 <tr class="memitem:aab4df6cb3f9222a5b0098063eade262c" id="r_aab4df6cb3f9222a5b0098063eade262c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aab4df6cb3f9222a5b0098063eade262c">ADC_CH_GPIO34</a>&#160;&#160;&#160;ADC_CHANNEL_6</td></tr>
 <tr class="memitem:ac5b49a253e8fc48859dce8e9fdd8cf6f" id="r_ac5b49a253e8fc48859dce8e9fdd8cf6f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac5b49a253e8fc48859dce8e9fdd8cf6f">ADC_CH_GPIO35</a>&#160;&#160;&#160;ADC_CHANNEL_7</td></tr>
@@ -132,8 +127,8 @@ defines</h2></td></tr>
 Funciones</h2></td></tr>
 <tr class="memitem:a3862aae06b5dfd4b6a23b569a4540fe2" id="r_a3862aae06b5dfd4b6a23b569a4540fe2"><td class="memItemLeft" align="right" valign="top">static esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3862aae06b5dfd4b6a23b569a4540fe2">adc_cali_try_init</a> (adc_unit_t unit, adc_channel_t ch, adc_atten_t atten, adc_cali_handle_t *out)</td></tr>
 <tr class="memdesc:a3862aae06b5dfd4b6a23b569a4540fe2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estandariza las mediciones del ADC en función de la tensión que representa el pin físico en mili volts.  <br /></td></tr>
-<tr class="memitem:aeead0f2e9c35b7a2e452349b5c672eca" id="r_aeead0f2e9c35b7a2e452349b5c672eca"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeead0f2e9c35b7a2e452349b5c672eca">adc_init_two_channels</a> (void)</td></tr>
-<tr class="memdesc:aeead0f2e9c35b7a2e452349b5c672eca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configura los 4 ADC necesarios para el sistema y los calibra para obtener las mediciones en desde 0 a 3125mV.  <br /></td></tr>
+<tr class="memitem:a3cfa671db431099a0d91bd8bcfe935f8" id="r_a3cfa671db431099a0d91bd8bcfe935f8"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3cfa671db431099a0d91bd8bcfe935f8">adc_init</a> (void)</td></tr>
+<tr class="memdesc:a3cfa671db431099a0d91bd8bcfe935f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configura los 4 ADC necesarios para el sistema y los calibra para obtener las mediciones en desde 0 a 3125mV.  <br /></td></tr>
 <tr class="memitem:a1b78b89977b7b9e5ebc32e9456337379" id="r_a1b78b89977b7b9e5ebc32e9456337379"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1b78b89977b7b9e5ebc32e9456337379">adc_task</a> (void *arg)</td></tr>
 <tr class="memdesc:a1b78b89977b7b9e5ebc32e9456337379"><td class="mdescLeft">&#160;</td><td class="mdescRight">Función programada como alarma para finalizar el funcionamiento del motor.  <br /></td></tr>
 <tr class="memitem:aa1581e2212cf6853c63ae97147e9ed1f" id="r_aa1581e2212cf6853c63ae97147e9ed1f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_l_v_f_v__system_8h.html#a175b5f4c0244bf0bde30789366d31791">system_status_e</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa1581e2212cf6853c63ae97147e9ed1f">readADC</a> (void)</td></tr>
@@ -141,7 +136,7 @@ Funciones</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a5a85b9c772bbeb480b209a3e6ea92b4c" id="r_a5a85b9c772bbeb480b209a3e6ea92b4c"><td class="memItemLeft" align="right" valign="top">static const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5a85b9c772bbeb480b209a3e6ea92b4c">TAG</a> = &quot;ADC_ESPADC&quot;</td></tr>
+<tr class="memitem:a5a85b9c772bbeb480b209a3e6ea92b4c" id="r_a5a85b9c772bbeb480b209a3e6ea92b4c"><td class="memItemLeft" align="right" valign="top">static const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5a85b9c772bbeb480b209a3e6ea92b4c">TAG</a> = &quot;ADC&quot;</td></tr>
 <tr class="memitem:a60ac5e86633367adafa2e5e7722a5f1d" id="r_a60ac5e86633367adafa2e5e7722a5f1d"><td class="memItemLeft" align="right" valign="top">static adc_oneshot_unit_handle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a60ac5e86633367adafa2e5e7722a5f1d">s_adc</a> = NULL</td></tr>
 <tr class="memitem:a851532613e9b788ef5cdaae8a793293b" id="r_a851532613e9b788ef5cdaae8a793293b"><td class="memItemLeft" align="right" valign="top">static adc_cali_handle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a851532613e9b788ef5cdaae8a793293b">calibration_bus_voltage</a> = NULL</td></tr>
 <tr class="memitem:a1932e503ef7786f06b766fba9f8151b6" id="r_a1932e503ef7786f06b766fba9f8151b6"><td class="memItemLeft" align="right" valign="top">static adc_cali_handle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1932e503ef7786f06b766fba9f8151b6">calibration_current</a> = NULL</td></tr>
@@ -248,7 +243,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define ADC_PERIOD_MS&#160;&#160;&#160;50</td>
+          <td class="memname">#define ADC_PERIOD_MS&#160;&#160;&#160;100</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -352,22 +347,17 @@ Variables</h2></td></tr>
 </dl>
 
 <p class="definition">Definición en la línea <a class="el" href="adc_8c_source.html#l00080">80</a> del archivo <a class="el" href="adc_8c_source.html">adc.c</a>.</p>
-<div class="dynheader">
-Gráfico de llamadas a esta función:</div>
-<div class="dyncontent">
-<div class="center"><img src="adc_8c_a3862aae06b5dfd4b6a23b569a4540fe2_icgraph.png" border="0" usemap="#aadc_8c_a3862aae06b5dfd4b6a23b569a4540fe2_icgraph" loading="lazy" alt=""/></div>
-</div>
 
 </div>
 </div>
-<a id="aeead0f2e9c35b7a2e452349b5c672eca" name="aeead0f2e9c35b7a2e452349b5c672eca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeead0f2e9c35b7a2e452349b5c672eca">&#9670;&#160;</a></span>adc_init_two_channels()</h2>
+<a id="a3cfa671db431099a0d91bd8bcfe935f8" name="a3cfa671db431099a0d91bd8bcfe935f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3cfa671db431099a0d91bd8bcfe935f8">&#9670;&#160;</a></span>adc_init()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">esp_err_t adc_init_two_channels </td>
+          <td class="memname">esp_err_t adc_init </td>
           <td>(</td>
           <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -379,16 +369,6 @@ Gráfico de llamadas a esta función:</div>
 <p>Configura por las entradas el canal 0 (GPIO36) el nivel de tensión de fuente de 5V, 3 (GPIO39) el nivel de tensión de fuente de 3.3V, 6 (GPIO34) tensión de bus de contínua y 7 (GPIO35) corriente de bus de contínua cada </p>
 
 <p class="definition">Definición en la línea <a class="el" href="adc_8c_source.html#l00097">97</a> del archivo <a class="el" href="adc_8c_source.html">adc.c</a>.</p>
-<div class="dynheader">
-Gráfico de llamadas de esta función:</div>
-<div class="dyncontent">
-<div class="center"><img src="adc_8c_aeead0f2e9c35b7a2e452349b5c672eca_cgraph.png" border="0" usemap="#aadc_8c_aeead0f2e9c35b7a2e452349b5c672eca_cgraph" loading="lazy" alt=""/></div>
-</div>
-<div class="dynheader">
-Gráfico de llamadas a esta función:</div>
-<div class="dyncontent">
-<div class="center"><img src="adc_8c_aeead0f2e9c35b7a2e452349b5c672eca_icgraph.png" border="0" usemap="#aadc_8c_aeead0f2e9c35b7a2e452349b5c672eca_icgraph" loading="lazy" alt=""/></div>
-</div>
 
 </div>
 </div>
@@ -411,16 +391,6 @@ Gráfico de llamadas a esta función:</div>
 <p>Lee por las entradas el canal 0 (GPIO36) el nivel de tensión de fuente de 5V, 3 (GPIO39) el nivel de tensión de fuente de 3.3V, 6 (GPIO34) tensión de bus de contínua y 7 (GPIO35) corriente de bus de contínua cada </p>
 
 <p class="definition">Definición en la línea <a class="el" href="adc_8c_source.html#l00146">146</a> del archivo <a class="el" href="adc_8c_source.html">adc.c</a>.</p>
-<div class="dynheader">
-Gráfico de llamadas de esta función:</div>
-<div class="dyncontent">
-<div class="center"><img src="adc_8c_a1b78b89977b7b9e5ebc32e9456337379_cgraph.png" border="0" usemap="#aadc_8c_a1b78b89977b7b9e5ebc32e9456337379_cgraph" loading="lazy" alt=""/></div>
-</div>
-<div class="dynheader">
-Gráfico de llamadas a esta función:</div>
-<div class="dyncontent">
-<div class="center"><img src="adc_8c_a1b78b89977b7b9e5ebc32e9456337379_icgraph.png" border="0" usemap="#aadc_8c_a1b78b89977b7b9e5ebc32e9456337379_icgraph" loading="lazy" alt=""/></div>
-</div>
 
 </div>
 </div>
@@ -444,7 +414,7 @@ Gráfico de llamadas a esta función:</div>
 <dl class="retval"><dt>Valores devueltos</dt><dd>
   <table class="retval">
     <tr><td class="paramname">-</td><td>SYSTEM_EMERGENCY: Si las mediciones de tensión o corriente del bus de DC está fuera de los parámetros esperados<ul>
-<li>SYSTEM_EMERGENCY_OK: Si las mediciones de tensión o corriente del bus de DC continúan por fuera de los parámetros esperados</li>
+<li>SYSTEM_EMERGENCY_SENT: Si las mediciones de tensión o corriente del bus de DC continúan por fuera de los parámetros esperados</li>
 <li>Otros estados: Si la medición está dentro de los parámetros aceptables </li>
 </ul>
 </td></tr>
@@ -452,17 +422,7 @@ Gráfico de llamadas a esta función:</div>
   </dd>
 </dl>
 
-<p class="definition">Definición en la línea <a class="el" href="adc_8c_source.html#l00227">227</a> del archivo <a class="el" href="adc_8c_source.html">adc.c</a>.</p>
-<div class="dynheader">
-Gráfico de llamadas de esta función:</div>
-<div class="dyncontent">
-<div class="center"><img src="adc_8c_aa1581e2212cf6853c63ae97147e9ed1f_cgraph.png" border="0" usemap="#aadc_8c_aa1581e2212cf6853c63ae97147e9ed1f_cgraph" loading="lazy" alt=""/></div>
-</div>
-<div class="dynheader">
-Gráfico de llamadas a esta función:</div>
-<div class="dyncontent">
-<div class="center"><img src="adc_8c_aa1581e2212cf6853c63ae97147e9ed1f_icgraph.png" border="0" usemap="#aadc_8c_aa1581e2212cf6853c63ae97147e9ed1f_icgraph" loading="lazy" alt=""/></div>
-</div>
+<p class="definition">Definición en la línea <a class="el" href="adc_8c_source.html#l00239">239</a> del archivo <a class="el" href="adc_8c_source.html">adc.c</a>.</p>
 
 </div>
 </div>
@@ -709,7 +669,7 @@ Gráfico de llamadas a esta función:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char* TAG = &quot;ADC_ESPADC&quot;</td>
+          <td class="memname">const char* TAG = &quot;ADC&quot;</td>
         </tr>
       </table>
   </td>

@@ -104,20 +104,25 @@ uint16_t engine_start() {
 }
 
 uint16_t engine_stop() {
-    system_status.acceleration = get_system_acceleration();
-    system_status.desacceleration = get_system_desacceleration();
-    system_status.frequency_destiny = 0;
-    if ( accelerating_handle != NULL ) {
-        vTaskDelete( accelerating_handle );
-        accelerating_handle = NULL;
-    }
-    if ( system_status.status == SYSTEM_EMERGENCY ) {
+    if ( system_status.status == SYSTEM_EMERGENCY || system_status.status == SYSTEM_EMERGENCY_SENT) {
+    } else if ( system_status.status == SYSTEM_EMERGENCY_OK ) {
         system_status.status = SYSTEM_IDLE;
     } else {
+        system_status.acceleration = get_system_acceleration();
+        system_status.desacceleration = get_system_desacceleration();
+        system_status.frequency_destiny = 0;
+        if ( accelerating_handle != NULL ) {
+            vTaskDelete( accelerating_handle );
+            accelerating_handle = NULL;
+        }
         system_status.status = SYSTEM_BREAKING;
         xTaskCreatePinnedToCore(desaccelerating, "desaccelerating", 1024, (void*) &system_status.desacceleration, 9, &desaccelerating_handle, 1);
     }
     return system_status.frequency_destiny;
+}
+
+void engine_emergency_stop_release() {
+    system_status.status = SYSTEM_EMERGENCY_OK;
 }
 
 void engine_emergency_stop() {
@@ -181,28 +186,34 @@ esp_err_t get_status(system_status_t *s_e) {
 }
 
 system_status_e update_meas(uint16_t vbus_meas, uint16_t ibus_meas) {
+    bool in_emergency = false;
     system_status.vbus_min = vbus_meas;
     system_status.ibus_max = ibus_meas;
 
     if ( system_status.ibus_max > system_seccurity_settings.ibus_max ) {
-        if ( system_status.status != SYSTEM_EMERGENCY && system_status.status != SYSTEM_EMERGENCY_OK ) {
-            ESP_LOGE( TAG, "Disparo de emergencia por sobre corriente. Mando senal");
-            system_status.status = SYSTEM_EMERGENCY;
-            SystemEventPost(SECURITY_EXCEDED);
-        } else if ( system_status.status == SYSTEM_EMERGENCY ) {
-            system_status.status = SYSTEM_EMERGENCY_OK;
+        in_emergency = true;
+        if ( system_status.status != SYSTEM_EMERGENCY ) {
+            ESP_LOGE( TAG, "Disparo de emergencia por sobre corriente.");
         }
     }
 
     if ( system_status.vbus_min < system_seccurity_settings.vbus_min ) {
-        if ( system_status.status != SYSTEM_EMERGENCY && system_status.status != SYSTEM_EMERGENCY_OK ) {
-            ESP_LOGE( TAG, "Disparo de emergencia por baja tensión. Mando senal");
-            system_status.status = SYSTEM_EMERGENCY;
-            SystemEventPost(SECURITY_EXCEDED);
-        } else if ( system_status.status == SYSTEM_EMERGENCY ) {
-            system_status.status = SYSTEM_EMERGENCY_OK;
+        in_emergency = true;
+        if ( system_status.status != SYSTEM_EMERGENCY ) {
+            ESP_LOGE( TAG, "Disparo de emergencia por baja tensión.");
         }
     }
+
+    if ( in_emergency == true ) {
+        if ( system_status.status == SYSTEM_EMERGENCY ) {
+            SystemEventPost(SECURITY_EXCEDED);
+            ESP_LOGI( TAG, "Mando senal.");
+        }
+        system_status.status = SYSTEM_EMERGENCY_SENT;
+    } else if ( system_status.status == SYSTEM_EMERGENCY_SENT ) {
+        SystemEventPost(SECURITY_OK);
+    }
+
     return system_status.status;
 }
 

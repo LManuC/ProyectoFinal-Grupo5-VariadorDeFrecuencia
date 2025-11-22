@@ -234,18 +234,28 @@ void SPI_communication(void *arg) {
                     engine_emergency_stop();
                     break;
                 case STOP_PRESSED:
-                    engine_stop();
-                    ESP_LOGI(TAG, "Botón de Parada presionado");
-                    item.request = SPI_REQUEST_STOP;
-                    item.setValue = 0;
-                    item.getValue = 0;
-                    SPI_SendRequest(&item);
+                    if ( s_e.status != SYSTEM_EMERGENCY || s_e.status != SYSTEM_EMERGENCY_SENT ) {
+                        engine_stop();
+                        ESP_LOGI(TAG, "Botón de Parada presionado");
+                        item.request = SPI_REQUEST_STOP;
+                        item.setValue = 0;
+                        item.getValue = 0;
+                        SPI_SendRequest(&item);
+                    } else {
+                        ESP_LOGI(TAG,"Primero salir de estado de emergencia");
+                    }
+                    break;
+                case SECURITY_OK:
+                    ESP_LOGI(TAG, "Tensión y corriente normalizadas");
+                    engine_emergency_stop_release();
                     break;
                 case TERMO_SW_RELEASED:
                     ESP_LOGI(TAG, "Termoswitch desactivado");
+                    engine_emergency_stop_release();
                     break;
                 case EMERGENCI_STOP_RELEASED:
                     ESP_LOGI(TAG, "Botón de EMERGENCIA liberado");
+                    engine_emergency_stop_release();
                     break;
                 case START_PRESSED:
 

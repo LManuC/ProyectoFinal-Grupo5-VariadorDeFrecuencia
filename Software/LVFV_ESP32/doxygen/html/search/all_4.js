@@ -12,7 +12,7 @@ var searchData=
   ['def7_9',['DEF7',['../union_m_c_p23017___d_e_f_v_a_l__t.html#aa5b413bef249e535cc2c1eaa45a05a7f',1,'MCP23017_DEFVAL_t']]],
   ['desaccelerating_10',['desaccelerating',['../sys_admin_8c.html#a16593ac6c0abf6f65c696373af621487',1,'sysAdmin.c']]],
   ['desaccelerating_5fhandle_11',['desaccelerating_handle',['../sys_admin_8c.html#aef1cbb22108ca96e11c5f161d31bda51',1,'sysAdmin.c']]],
-  ['desacceleration_12',['desacceleration',['../structfrequency__settings__t.html#a8d753b012e5099230395ba6421d5d35b',1,'frequency_settings_t']]],
+  ['desacceleration_12',['desacceleration',['../structfrequency__settings__t.html#a8d753b012e5099230395ba6421d5d35b',1,'frequency_settings_t::desacceleration'],['../structsystem__status__t.html#a8d753b012e5099230395ba6421d5d35b',1,'system_status_t::desacceleration']]],
   ['display_2ec_13',['display.c',['../display_8c.html',1,'']]],
   ['display_2eh_14',['display.h',['../display_8h.html',1,'']]],
   ['displayeventpost_15',['DisplayEventPost',['../display_8c.html#ac70cfc639d4afbd5116d8361b1b25b41',1,'DisplayEventPost(systemSignal_e event):&#160;display.c'],['../display_8h.html#ac70cfc639d4afbd5116d8361b1b25b41',1,'DisplayEventPost(systemSignal_e event):&#160;display.c']]],

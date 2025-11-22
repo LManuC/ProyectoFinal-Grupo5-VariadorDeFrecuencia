@@ -8,7 +8,7 @@ var adc_8c =
     [ "ADC_PERIOD_MS", "adc_8c.html#af54819f3e0f7360f21de8b3f9d803c08", null ],
     [ "ADC_UNIT_USED", "adc_8c.html#ab8818cc3918e2a7d8d5858cb1ef86364", null ],
     [ "adc_cali_try_init", "adc_8c.html#a3862aae06b5dfd4b6a23b569a4540fe2", null ],
-    [ "adc_init_two_channels", "adc_8c.html#aeead0f2e9c35b7a2e452349b5c672eca", null ],
+    [ "adc_init", "adc_8c.html#a3cfa671db431099a0d91bd8bcfe935f8", null ],
     [ "adc_task", "adc_8c.html#a1b78b89977b7b9e5ebc32e9456337379", null ],
     [ "readADC", "adc_8c.html#aa1581e2212cf6853c63ae97147e9ed1f", null ],
     [ "bus_meas_evt_queue", "adc_8c.html#a6180364ad07572b6a621ab10c902c3ee", null ],

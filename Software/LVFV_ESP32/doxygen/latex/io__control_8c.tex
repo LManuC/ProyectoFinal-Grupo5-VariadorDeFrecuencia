@@ -22,8 +22,7 @@ Funciones de control del relay, buzzer y tarea del uso del expansor de entradas 
 {\ttfamily \#include "{}./\+MCP23017.\+h"{}}\newline
 {\ttfamily \#include "{}./io\+\_\+control.\+h"{}}\newline
 {\ttfamily \#include "{}../system/sys\+Admin.\+h"{}}\newline
-Gráfico de dependencias incluidas en io\+\_\+control.\+c\+:
-% FIG 0
+{\ttfamily \#include "{}../system/sys\+Control.\+h"{}}\newline
 \doxysubsubsection*{defines}
 \begin{DoxyCompactItemize}
 \item 
@@ -126,7 +125,7 @@ void \mbox{\hyperlink{io__control_8c_af7133eb911ac63b8e81d756ec399ff78}{GPIO\+\_
 \begin{DoxyCompactList}\small\item\em Tarea que en función de las interrupciones recibidas permite obtener cual de los pulsadores del teclado, entradas aisladas, termo switch o entradas del MCP2307 fue presionado. \end{DoxyCompactList}\item 
 esp\+\_\+err\+\_\+t \mbox{\hyperlink{io__control_8c_a99f1c5e09ded6ba05fdd6b1f9d76db99}{Relay\+Evant\+Post}} (uint8\+\_\+t relay\+\_\+event)
 \begin{DoxyCompactList}\small\item\em Crea un evento para que el relay se activo o desactive de acuerdo a la variable {\ttfamily relay\+\_\+event}. \end{DoxyCompactList}\item 
-esp\+\_\+err\+\_\+t \mbox{\hyperlink{io__control_8c_a5547e302022fe72e4e2e7e3d58d4508f}{Buzzer\+Evant\+Post}} (uint8\+\_\+t buzzer\+\_\+time\+\_\+on)
+esp\+\_\+err\+\_\+t \mbox{\hyperlink{io__control_8c_aed21490f8fc34ffb3d9021ed1cf7214a}{Buzzer\+Evant\+Post}} (uint32\+\_\+t buzzer\+\_\+time\+\_\+on)
 \begin{DoxyCompactList}\small\item\em Envía una señal para hacer sonar el buzzer durante {\ttfamily buzzer\+\_\+time\+\_\+on} mili segundos. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
@@ -174,7 +173,7 @@ Definición en el archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+contro
 
 Pin del puerto A que controla el buzzer de la HMI 
 
-Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00040}{40}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
+Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00041}{41}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
 
 \Hypertarget{io__control_8c_afc7bf886480fa4d59ba284790961716f}\index{io\_control.c@{io\_control.c}!DUTY\_MAX\_PCT@{DUTY\_MAX\_PCT}}
 \index{DUTY\_MAX\_PCT@{DUTY\_MAX\_PCT}!io\_control.c@{io\_control.c}}
@@ -184,7 +183,7 @@ Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00040}{40}} del
 
 Máximo duty que puede alcanzar el PWM para lograr los 0V de salida 
 
-Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00083}{83}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
+Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00084}{84}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
 
 \Hypertarget{io__control_8c_ac6e2a8baccf1848233315c6a640cb35e}\index{io\_control.c@{io\_control.c}!DUTY\_MIN\_PCT@{DUTY\_MIN\_PCT}}
 \index{DUTY\_MIN\_PCT@{DUTY\_MIN\_PCT}!io\_control.c@{io\_control.c}}
@@ -194,7 +193,7 @@ Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00083}{83}} del
 
 Mínimo duty que puede alcanzar el PWM para lograr los 10V de salida 
 
-Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00082}{82}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
+Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00083}{83}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
 
 \Hypertarget{io__control_8c_a3c40b6f2759ac9a791c15a236ed42072}\index{io\_control.c@{io\_control.c}!FREQ\_SEL\_1\_PIN@{FREQ\_SEL\_1\_PIN}}
 \index{FREQ\_SEL\_1\_PIN@{FREQ\_SEL\_1\_PIN}!io\_control.c@{io\_control.c}}
@@ -204,7 +203,7 @@ Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00082}{82}} del
 
 Pin del puerto A que controla la selección de frecuencia 1 del variador de frecuencia 
 
-Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00042}{42}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
+Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00043}{43}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
 
 \Hypertarget{io__control_8c_ac6dd224b046cc28dfda7479c411971a3}\index{io\_control.c@{io\_control.c}!FREQ\_SEL\_2\_PIN@{FREQ\_SEL\_2\_PIN}}
 \index{FREQ\_SEL\_2\_PIN@{FREQ\_SEL\_2\_PIN}!io\_control.c@{io\_control.c}}
@@ -214,7 +213,7 @@ Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00042}{42}} del
 
 Pin del puerto A que controla la selección de frecuencia 2 del variador de frecuencia 
 
-Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00043}{43}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
+Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00044}{44}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
 
 \Hypertarget{io__control_8c_a162e1e6d4511272d829d87b25433d651}\index{io\_control.c@{io\_control.c}!FREQ\_SEL\_3\_PIN@{FREQ\_SEL\_3\_PIN}}
 \index{FREQ\_SEL\_3\_PIN@{FREQ\_SEL\_3\_PIN}!io\_control.c@{io\_control.c}}
@@ -224,7 +223,7 @@ Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00043}{43}} del
 
 Pin del puerto A que controla la selección de frecuencia 3 del variador de frecuencia 
 
-Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00044}{44}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
+Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00045}{45}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
 
 \Hypertarget{io__control_8c_a2161dbbc9458cc9a4e2fb5fb1d43984d}\index{io\_control.c@{io\_control.c}!FREQ\_SEL\_MASK@{FREQ\_SEL\_MASK}}
 \index{FREQ\_SEL\_MASK@{FREQ\_SEL\_MASK}!io\_control.c@{io\_control.c}}
@@ -234,7 +233,7 @@ Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00044}{44}} del
 
 Máscara que, comparada con el registro de flags de interrupción, permite identificar cambios en las entradas del variador de frecuencia 
 
-Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00048}{48}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
+Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00049}{49}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
 
 \Hypertarget{io__control_8c_aa4c8164303a6278c743c5b391e36d887}\index{io\_control.c@{io\_control.c}!INT\_A\_PIN@{INT\_A\_PIN}}
 \index{INT\_A\_PIN@{INT\_A\_PIN}!io\_control.c@{io\_control.c}}
@@ -244,7 +243,7 @@ Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00048}{48}} del
 
 Configuración de pin físico correspondiente al flag de interrupciones del puerto A del MCP23017 
 
-Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00038}{38}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
+Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00039}{39}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
 
 \Hypertarget{io__control_8c_aeb122726ffb667b61d0a0982f1183b4e}\index{io\_control.c@{io\_control.c}!INT\_B\_PIN@{INT\_B\_PIN}}
 \index{INT\_B\_PIN@{INT\_B\_PIN}!io\_control.c@{io\_control.c}}
@@ -254,7 +253,7 @@ Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00038}{38}} del
 
 Configuración de pin físico correspondiente al flag de interrupciones del puerto B del MCP23017 
 
-Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00052}{52}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
+Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00053}{53}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
 
 \Hypertarget{io__control_8c_ab90236cd20165e0c5710418214be2f16}\index{io\_control.c@{io\_control.c}!MATRIX\_SW1@{MATRIX\_SW1}}
 \index{MATRIX\_SW1@{MATRIX\_SW1}!io\_control.c@{io\_control.c}}
@@ -264,7 +263,7 @@ Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00052}{52}} del
 
 Representación de switch impreso como SW1 en la serigrafía por 0x17 
 
-Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00054}{54}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
+Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00055}{55}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
 
 \Hypertarget{io__control_8c_a8d59f9677b119c8ad6511443709e0b54}\index{io\_control.c@{io\_control.c}!MATRIX\_SW2@{MATRIX\_SW2}}
 \index{MATRIX\_SW2@{MATRIX\_SW2}!io\_control.c@{io\_control.c}}
@@ -274,7 +273,7 @@ Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00054}{54}} del
 
 Representación de switch impreso como SW2 en la serigrafía por 0x27 
 
-Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00055}{55}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
+Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00056}{56}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
 
 \Hypertarget{io__control_8c_ad6120b8569d068f6bf36852362632456}\index{io\_control.c@{io\_control.c}!MATRIX\_SW3@{MATRIX\_SW3}}
 \index{MATRIX\_SW3@{MATRIX\_SW3}!io\_control.c@{io\_control.c}}
@@ -284,7 +283,7 @@ Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00055}{55}} del
 
 Representación de switch impreso como SW3 en la serigrafía por 0x1B 
 
-Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00056}{56}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
+Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00057}{57}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
 
 \Hypertarget{io__control_8c_a66a38060276e502c67da74140584fcfa}\index{io\_control.c@{io\_control.c}!MATRIX\_SW4@{MATRIX\_SW4}}
 \index{MATRIX\_SW4@{MATRIX\_SW4}!io\_control.c@{io\_control.c}}
@@ -294,7 +293,7 @@ Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00056}{56}} del
 
 Representación de switch impreso como SW4 en la serigrafía por 0x2B 
 
-Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00057}{57}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
+Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00058}{58}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
 
 \Hypertarget{io__control_8c_ad450221699f51d426a6bcacd2e27a249}\index{io\_control.c@{io\_control.c}!MATRIX\_SW5@{MATRIX\_SW5}}
 \index{MATRIX\_SW5@{MATRIX\_SW5}!io\_control.c@{io\_control.c}}
@@ -304,7 +303,7 @@ Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00057}{57}} del
 
 Representación de switch impreso como SW5 en la serigrafía por 0x1D 
 
-Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00058}{58}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
+Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00059}{59}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
 
 \Hypertarget{io__control_8c_acbbd81b17d9243ec82365265308df68e}\index{io\_control.c@{io\_control.c}!MATRIX\_SW6@{MATRIX\_SW6}}
 \index{MATRIX\_SW6@{MATRIX\_SW6}!io\_control.c@{io\_control.c}}
@@ -314,7 +313,7 @@ Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00058}{58}} del
 
 Representación de switch impreso como SW6 en la serigrafía por 0x2D 
 
-Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00059}{59}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
+Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00060}{60}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
 
 \Hypertarget{io__control_8c_a4014810b535ff216dbf931f7c7b9422d}\index{io\_control.c@{io\_control.c}!MATRIX\_SW7@{MATRIX\_SW7}}
 \index{MATRIX\_SW7@{MATRIX\_SW7}!io\_control.c@{io\_control.c}}
@@ -324,7 +323,7 @@ Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00059}{59}} del
 
 Representación de switch impreso como SW7 en la serigrafía por 0x1E 
 
-Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00060}{60}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
+Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00061}{61}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
 
 \Hypertarget{io__control_8c_a59c392fac5da2e5cf56b4adf4f4ff2c3}\index{io\_control.c@{io\_control.c}!MATRIX\_SW8@{MATRIX\_SW8}}
 \index{MATRIX\_SW8@{MATRIX\_SW8}!io\_control.c@{io\_control.c}}
@@ -334,7 +333,7 @@ Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00060}{60}} del
 
 Representación de switch impreso como SW8 en la serigrafía por 0x2E 
 
-Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00061}{61}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
+Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00062}{62}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
 
 \Hypertarget{io__control_8c_acd1dba11989277eab79a76f9f2731bf9}\index{io\_control.c@{io\_control.c}!PWM\_CHANNEL@{PWM\_CHANNEL}}
 \index{PWM\_CHANNEL@{PWM\_CHANNEL}!io\_control.c@{io\_control.c}}
@@ -344,7 +343,7 @@ Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00061}{61}} del
 
 Canal del timer utilizado para el PWM que controla la salida 0-\/10V 
 
-Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00079}{79}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
+Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00080}{80}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
 
 \Hypertarget{io__control_8c_a56e165627f596c2f42f843ae6571de0e}\index{io\_control.c@{io\_control.c}!PWM\_FREQ\_HZ@{PWM\_FREQ\_HZ}}
 \index{PWM\_FREQ\_HZ@{PWM\_FREQ\_HZ}!io\_control.c@{io\_control.c}}
@@ -354,7 +353,7 @@ Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00079}{79}} del
 
 Frecuencia de operación del timer para la salida 0-\/10V en 1KHz 
 
-Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00076}{76}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
+Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00077}{77}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
 
 \Hypertarget{io__control_8c_a7905077bb6cb0ce86fad25d4db2e884d}\index{io\_control.c@{io\_control.c}!PWM\_GPIO@{PWM\_GPIO}}
 \index{PWM\_GPIO@{PWM\_GPIO}!io\_control.c@{io\_control.c}}
@@ -364,7 +363,7 @@ Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00076}{76}} del
 
 GPIO4 es la utilizada para la salida de 0-\/10V en el PCB 
 
-Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00075}{75}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
+Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00076}{76}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
 
 \Hypertarget{io__control_8c_ab5e3533bab20d16e08c7370af5a44222}\index{io\_control.c@{io\_control.c}!PWM\_MODE@{PWM\_MODE}}
 \index{PWM\_MODE@{PWM\_MODE}!io\_control.c@{io\_control.c}}
@@ -374,7 +373,7 @@ Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00075}{75}} del
 
 El requerimiento del timer para el control de los 0-\/10V no amerita un timer de alta velocidad 
 
-Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00078}{78}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
+Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00079}{79}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
 
 \Hypertarget{io__control_8c_a4ff4dc1e0eb4081e51c557b1233c3e63}\index{io\_control.c@{io\_control.c}!PWM\_RES@{PWM\_RES}}
 \index{PWM\_RES@{PWM\_RES}!io\_control.c@{io\_control.c}}
@@ -384,7 +383,7 @@ Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00078}{78}} del
 
 Resolución de 10 bits (0–1023) para el ADC que 
 
-Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00080}{80}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
+Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00081}{81}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
 
 \Hypertarget{io__control_8c_ae742f25f16729d7e683f05a6ffb8d72a}\index{io\_control.c@{io\_control.c}!PWM\_STEP\_MS@{PWM\_STEP\_MS}}
 \index{PWM\_STEP\_MS@{PWM\_STEP\_MS}!io\_control.c@{io\_control.c}}
@@ -394,7 +393,7 @@ Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00080}{80}} del
 
 Cambio cada 500 ms 
 
-Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00081}{81}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
+Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00082}{82}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
 
 \Hypertarget{io__control_8c_aa5696c49e88a24e3144fd1433c7d20e5}\index{io\_control.c@{io\_control.c}!PWM\_TIMER@{PWM\_TIMER}}
 \index{PWM\_TIMER@{PWM\_TIMER}!io\_control.c@{io\_control.c}}
@@ -404,7 +403,7 @@ Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00081}{81}} del
 
 Timer utilizado para el PWM que controla la salida 0-\/10V 
 
-Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00077}{77}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
+Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00078}{78}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
 
 \Hypertarget{io__control_8c_a5c2c8c24f2085fc8445d70fa9b89eef3}\index{io\_control.c@{io\_control.c}!RELAY\_PIN@{RELAY\_PIN}}
 \index{RELAY\_PIN@{RELAY\_PIN}!io\_control.c@{io\_control.c}}
@@ -414,7 +413,7 @@ Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00077}{77}} del
 
 Pin del puerto A que controla el relé de la HMI 
 
-Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00041}{41}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
+Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00042}{42}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
 
 \Hypertarget{io__control_8c_af727d34dc72e3f32bd32754111724a0b}\index{io\_control.c@{io\_control.c}!START\_BUTTON\_PIN@{START\_BUTTON\_PIN}}
 \index{START\_BUTTON\_PIN@{START\_BUTTON\_PIN}!io\_control.c@{io\_control.c}}
@@ -424,7 +423,7 @@ Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00041}{41}} del
 
 Configuración de pin físico correspondiente al pulsado exterior de arranque del motor 
 
-Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00073}{73}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
+Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00074}{74}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
 
 \Hypertarget{io__control_8c_a9da436c5bf6a3ce86e3c4a178ca6a862}\index{io\_control.c@{io\_control.c}!STOP\_BUTTON\_PIN@{STOP\_BUTTON\_PIN}}
 \index{STOP\_BUTTON\_PIN@{STOP\_BUTTON\_PIN}!io\_control.c@{io\_control.c}}
@@ -434,7 +433,7 @@ Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00073}{73}} del
 
 Configuración de pin físico correspondiente al pulsado exterior de parada del motor 
 
-Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00072}{72}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
+Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00073}{73}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
 
 \Hypertarget{io__control_8c_a5751c255a711f1d6bf6f22f1bdf27243}\index{io\_control.c@{io\_control.c}!STOP\_PIN@{STOP\_PIN}}
 \index{STOP\_PIN@{STOP\_PIN}!io\_control.c@{io\_control.c}}
@@ -444,7 +443,7 @@ Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00072}{72}} del
 
 Pin del puerto A que controla el botón de parada delvariador de frecuencia 
 
-Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00045}{45}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
+Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00046}{46}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
 
 \Hypertarget{io__control_8c_a9dcd1ad76cfff992a7e30b8f4ec177cc}\index{io\_control.c@{io\_control.c}!STOP\_SW\_MASK@{STOP\_SW\_MASK}}
 \index{STOP\_SW\_MASK@{STOP\_SW\_MASK}!io\_control.c@{io\_control.c}}
@@ -454,7 +453,7 @@ Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00045}{45}} del
 
 Máscara que, comparada con el registro de flags de interrupción, permite identificar cambios en el botón de parada del variador de frecuencia 
 
-Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00050}{50}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
+Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00051}{51}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
 
 \Hypertarget{io__control_8c_ae8d8bdc80eb643813f9cd2006d0982e2}\index{io\_control.c@{io\_control.c}!SWITCH\_BUTTON\_BACK@{SWITCH\_BUTTON\_BACK}}
 \index{SWITCH\_BUTTON\_BACK@{SWITCH\_BUTTON\_BACK}!io\_control.c@{io\_control.c}}
@@ -464,7 +463,7 @@ Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00050}{50}} del
 
 Asignación de boton al SW1 representado por 0x17 
 
-Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00063}{63}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
+Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00064}{64}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
 
 \Hypertarget{io__control_8c_a9807cf28ac3ee350a20a07d1e07ac6d9}\index{io\_control.c@{io\_control.c}!SWITCH\_BUTTON\_DOWN@{SWITCH\_BUTTON\_DOWN}}
 \index{SWITCH\_BUTTON\_DOWN@{SWITCH\_BUTTON\_DOWN}!io\_control.c@{io\_control.c}}
@@ -474,7 +473,7 @@ Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00063}{63}} del
 
 Asignación de boton al SW5 representado por 0x1D 
 
-Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00067}{67}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
+Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00068}{68}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
 
 \Hypertarget{io__control_8c_a95ca6a6bf7cee54ffda97f1dc0cdd25c}\index{io\_control.c@{io\_control.c}!SWITCH\_BUTTON\_LEFT@{SWITCH\_BUTTON\_LEFT}}
 \index{SWITCH\_BUTTON\_LEFT@{SWITCH\_BUTTON\_LEFT}!io\_control.c@{io\_control.c}}
@@ -484,7 +483,7 @@ Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00067}{67}} del
 
 Asignación de boton al SW3 representado por 0x1B 
 
-Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00065}{65}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
+Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00066}{66}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
 
 \Hypertarget{io__control_8c_a606428ac54f2b512691ba142b5faffde}\index{io\_control.c@{io\_control.c}!SWITCH\_BUTTON\_MENU@{SWITCH\_BUTTON\_MENU}}
 \index{SWITCH\_BUTTON\_MENU@{SWITCH\_BUTTON\_MENU}!io\_control.c@{io\_control.c}}
@@ -494,7 +493,7 @@ Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00065}{65}} del
 
 Asignación de boton al SW8 representado por 0x2E 
 
-Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00070}{70}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
+Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00071}{71}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
 
 \Hypertarget{io__control_8c_a356c64d23dd9abd4eee02a8682698ea3}\index{io\_control.c@{io\_control.c}!SWITCH\_BUTTON\_OK@{SWITCH\_BUTTON\_OK}}
 \index{SWITCH\_BUTTON\_OK@{SWITCH\_BUTTON\_OK}!io\_control.c@{io\_control.c}}
@@ -504,7 +503,7 @@ Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00070}{70}} del
 
 Asignación de boton al SW7 representado por 0x1E 
 
-Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00069}{69}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
+Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00070}{70}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
 
 \Hypertarget{io__control_8c_aab1eba452d99a4622ef544f9e4ab7ff5}\index{io\_control.c@{io\_control.c}!SWITCH\_BUTTON\_RIGHT@{SWITCH\_BUTTON\_RIGHT}}
 \index{SWITCH\_BUTTON\_RIGHT@{SWITCH\_BUTTON\_RIGHT}!io\_control.c@{io\_control.c}}
@@ -514,7 +513,7 @@ Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00069}{69}} del
 
 Asignación de boton al SW4 representado por 0x2B 
 
-Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00066}{66}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
+Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00067}{67}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
 
 \Hypertarget{io__control_8c_a16cb1b451588ee4ff9ce835d2f14edaf}\index{io\_control.c@{io\_control.c}!SWITCH\_BUTTON\_SAVE@{SWITCH\_BUTTON\_SAVE}}
 \index{SWITCH\_BUTTON\_SAVE@{SWITCH\_BUTTON\_SAVE}!io\_control.c@{io\_control.c}}
@@ -524,7 +523,7 @@ Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00066}{66}} del
 
 Asignación de boton al SW6 representado por 0x2D 
 
-Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00068}{68}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
+Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00069}{69}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
 
 \Hypertarget{io__control_8c_a298194afd3f1c0e54eb4cc6b08c02714}\index{io\_control.c@{io\_control.c}!SWITCH\_BUTTON\_UP@{SWITCH\_BUTTON\_UP}}
 \index{SWITCH\_BUTTON\_UP@{SWITCH\_BUTTON\_UP}!io\_control.c@{io\_control.c}}
@@ -534,7 +533,7 @@ Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00068}{68}} del
 
 Asignación de boton al SW2 representado por 0x27 
 
-Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00064}{64}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
+Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00065}{65}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
 
 \Hypertarget{io__control_8c_a1b26a96e962ed1dc2e1085e7b0d008cb}\index{io\_control.c@{io\_control.c}!TERMO\_SW\_MASK@{TERMO\_SW\_MASK}}
 \index{TERMO\_SW\_MASK@{TERMO\_SW\_MASK}!io\_control.c@{io\_control.c}}
@@ -544,7 +543,7 @@ Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00064}{64}} del
 
 Máscara que, comparada con el registro de flags de interrupción, permite identificar cambios en el interruptor térmico del variador de frecuencia 
 
-Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00049}{49}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
+Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00050}{50}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
 
 \Hypertarget{io__control_8c_a9907ce901fe5895205842817516ce0e7}\index{io\_control.c@{io\_control.c}!TERMO\_SW\_PIN@{TERMO\_SW\_PIN}}
 \index{TERMO\_SW\_PIN@{TERMO\_SW\_PIN}!io\_control.c@{io\_control.c}}
@@ -554,18 +553,18 @@ Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00049}{49}} del
 
 Pin del puerto A que controla el interruptor térmico del variador de frecuencia 
 
-Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00046}{46}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
+Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00047}{47}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
 
 
 
 \label{doc-func-members}
 \Hypertarget{io__control_8c_doc-func-members}
 \doxysubsection{Documentación de funciones}
-\Hypertarget{io__control_8c_a5547e302022fe72e4e2e7e3d58d4508f}\index{io\_control.c@{io\_control.c}!BuzzerEvantPost@{BuzzerEvantPost}}
+\Hypertarget{io__control_8c_aed21490f8fc34ffb3d9021ed1cf7214a}\index{io\_control.c@{io\_control.c}!BuzzerEvantPost@{BuzzerEvantPost}}
 \index{BuzzerEvantPost@{BuzzerEvantPost}!io\_control.c@{io\_control.c}}
 \doxysubsubsection{\texorpdfstring{BuzzerEvantPost()}{BuzzerEvantPost()}}
-{\footnotesize\ttfamily \label{io__control_8c_a5547e302022fe72e4e2e7e3d58d4508f} 
-esp\+\_\+err\+\_\+t Buzzer\+Evant\+Post (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{buzzer\+\_\+time\+\_\+on}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{io__control_8c_aed21490f8fc34ffb3d9021ed1cf7214a} 
+esp\+\_\+err\+\_\+t Buzzer\+Evant\+Post (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{buzzer\+\_\+time\+\_\+on}{}\end{DoxyParamCaption})}
 
 
 
@@ -585,10 +584,8 @@ Envía una señal para hacer sonar el buzzer durante {\ttfamily buzzer\+\_\+time
 \end{DoxyReturn}
 
 
-Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00543}{543}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
+Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00604}{604}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
 
-Gráfico de llamadas a esta función\+:
-% FIG 1
 \Hypertarget{io__control_8c_af82b8f1ed0782934f29e1b35958aac7f}\index{io\_control.c@{io\_control.c}!freq\_0\_10V\_output@{freq\_0\_10V\_output}}
 \index{freq\_0\_10V\_output@{freq\_0\_10V\_output}!io\_control.c@{io\_control.c}}
 \doxysubsubsection{\texorpdfstring{freq\_0\_10V\_output()}{freq\_0\_10V\_output()}}
@@ -610,10 +607,8 @@ Inicializa el timer para el correcto funcionamiento del PWM que permite obtener 
 \end{DoxyReturn}
 
 
-Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00173}{173}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
+Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00174}{174}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
 
-Gráfico de llamadas a esta función\+:
-% FIG 2
 \Hypertarget{io__control_8c_abae7d7c2e12b86eb5145cea5a283e2c0}\index{io\_control.c@{io\_control.c}!gpio\_init\_interrupts@{gpio\_init\_interrupts}}
 \index{gpio\_init\_interrupts@{gpio\_init\_interrupts}!io\_control.c@{io\_control.c}}
 \doxysubsubsection{\texorpdfstring{gpio\_init\_interrupts()}{gpio\_init\_interrupts()}}
@@ -643,12 +638,8 @@ Las interrupciones de INTA y INTB se dispararán cada vez que los pines pasen de
 \texorpdfstring{$<$}{<} ~\newline
 
 
-Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00210}{210}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
+Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00211}{211}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
 
-Gráfico de llamadas de esta función\+:
-% FIG 3
-Gráfico de llamadas a esta función\+:
-% FIG 4
 \Hypertarget{io__control_8c_af7133eb911ac63b8e81d756ec399ff78}\index{io\_control.c@{io\_control.c}!GPIO\_interrupt\_attendance\_task@{GPIO\_interrupt\_attendance\_task}}
 \index{GPIO\_interrupt\_attendance\_task@{GPIO\_interrupt\_attendance\_task}!io\_control.c@{io\_control.c}}
 \doxysubsubsection{\texorpdfstring{GPIO\_interrupt\_attendance\_task()}{GPIO\_interrupt\_attendance\_task()}}
@@ -665,12 +656,8 @@ Trabaja con un antirrebote de 200ms. Cuando una entrada cabia su estado, la tare
 \item[\mbox{\hyperlink{todo__todo000001}{Tareas pendientes}}]Revisar correctamente el funcionamiento del filtro antirebote.\end{DoxyRefDesc}
 
 
-Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00382}{382}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
+Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00386}{386}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
 
-Gráfico de llamadas de esta función\+:
-% FIG 5
-Gráfico de llamadas a esta función\+:
-% FIG 6
 \Hypertarget{io__control_8c_ab2d3777d88090e7626f751901e3ada78}\index{io\_control.c@{io\_control.c}!gpio\_isr\_handler@{gpio\_isr\_handler}}
 \index{gpio\_isr\_handler@{gpio\_isr\_handler}!io\_control.c@{io\_control.c}}
 \doxysubsubsection{\texorpdfstring{gpio\_isr\_handler()}{gpio\_isr\_handler()}}
@@ -679,10 +666,8 @@ void IRAM\+\_\+\+ATTR gpio\+\_\+isr\+\_\+handler (\begin{DoxyParamCaption}\item[
 
 
 
-Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00163}{163}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
+Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00164}{164}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
 
-Gráfico de llamadas a esta función\+:
-% FIG 7
 \Hypertarget{io__control_8c_ac926bfc46245d8567a5603aeb1543944}\index{io\_control.c@{io\_control.c}!MCP23017\_buzzer\_control@{MCP23017\_buzzer\_control}}
 \index{MCP23017\_buzzer\_control@{MCP23017\_buzzer\_control}!io\_control.c@{io\_control.c}}
 \doxysubsubsection{\texorpdfstring{MCP23017\_buzzer\_control()}{MCP23017\_buzzer\_control()}}
@@ -695,12 +680,8 @@ Tarea que espera comandos a través de la cola buzzer\+\_\+evt\+\_\+queue para h
 
 Lo que espera la tarea a través de la cola, es el tiempo en milisegundos que hará sonar el buzzer. 
 
-Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00288}{288}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
+Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00289}{289}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
 
-Gráfico de llamadas de esta función\+:
-% FIG 8
-Gráfico de llamadas a esta función\+:
-% FIG 9
 \Hypertarget{io__control_8c_add33b8521581fbc9c97daf332f36491f}\index{io\_control.c@{io\_control.c}!MCP23017\_keyboard\_control@{MCP23017\_keyboard\_control}}
 \index{MCP23017\_keyboard\_control@{MCP23017\_keyboard\_control}!io\_control.c@{io\_control.c}}
 \doxysubsubsection{\texorpdfstring{MCP23017\_keyboard\_control()}{MCP23017\_keyboard\_control()}}
@@ -713,12 +694,8 @@ Tarea que controla las salidas del MCP23017 para hacer funcionar al teclado.
 
 Alternadamente activa y desactiva los pines 4 y 5 del puerto B siempre y cuando ninguna tecla esté siendo presionada. 
 
-Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00312}{312}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
+Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00313}{313}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
 
-Gráfico de llamadas de esta función\+:
-% FIG 10
-Gráfico de llamadas a esta función\+:
-% FIG 11
 \Hypertarget{io__control_8c_aeddc02ca25ecb0eb02eab9b4bc8d2953}\index{io\_control.c@{io\_control.c}!MCP23017\_relay\_control@{MCP23017\_relay\_control}}
 \index{MCP23017\_relay\_control@{MCP23017\_relay\_control}!io\_control.c@{io\_control.c}}
 \doxysubsubsection{\texorpdfstring{MCP23017\_relay\_control()}{MCP23017\_relay\_control()}}
@@ -731,12 +708,8 @@ Tarea que espera comandos a través de la cola relay\+\_\+evt\+\_\+queue para ac
 
 Lo que espera la tarea a través de la cola, es un uno para activar el relay; cualquier otro número recibido desenergizará la bobina del relay. 
 
-Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00333}{333}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
+Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00334}{334}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
 
-Gráfico de llamadas de esta función\+:
-% FIG 12
-Gráfico de llamadas a esta función\+:
-% FIG 13
 \Hypertarget{io__control_8c_a99f1c5e09ded6ba05fdd6b1f9d76db99}\index{io\_control.c@{io\_control.c}!RelayEvantPost@{RelayEvantPost}}
 \index{RelayEvantPost@{RelayEvantPost}!io\_control.c@{io\_control.c}}
 \doxysubsubsection{\texorpdfstring{RelayEvantPost()}{RelayEvantPost()}}
@@ -763,10 +736,8 @@ Con {\ttfamily relay\+\_\+event} en 1 activa el ralay, con 0 desactiva el relay.
 \end{DoxyReturn}
 
 
-Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00536}{536}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
+Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00595}{595}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
 
-Gráfico de llamadas a esta función\+:
-% FIG 14
 \Hypertarget{io__control_8c_aa4fbc272de389e539360bb6b7876dd7d}\index{io\_control.c@{io\_control.c}!set\_freq\_output@{set\_freq\_output}}
 \index{set\_freq\_output@{set\_freq\_output}!io\_control.c@{io\_control.c}}
 \doxysubsubsection{\texorpdfstring{set\_freq\_output()}{set\_freq\_output()}}
@@ -793,10 +764,8 @@ Permite configurar el duty del PWM desde 0 a 450Hz siendo que, para 0Hz la salid
 \end{DoxyReturn}
 
 
-Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00357}{357}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
+Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00359}{359}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
 
-Gráfico de llamadas a esta función\+:
-% FIG 15
 
 
 \label{doc-var-members}
@@ -810,7 +779,7 @@ Queue\+Handle\+\_\+t buzzer\+\_\+evt\+\_\+queue = NULL}
 
 Cola de eventos para el control del buzzer. Espera tiempo de activación del buzzer, tiempo en el que se lo escuchará sonar 
 
-Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00085}{85}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
+Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00086}{86}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
 
 \Hypertarget{io__control_8c_ae651902dce58637fa5a4c29ce35578d7}\index{io\_control.c@{io\_control.c}!GPIO\_evt\_queue@{GPIO\_evt\_queue}}
 \index{GPIO\_evt\_queue@{GPIO\_evt\_queue}!io\_control.c@{io\_control.c}}
@@ -820,7 +789,7 @@ Queue\+Handle\+\_\+t GPIO\+\_\+evt\+\_\+queue = NULL}
 
 Cola de eventos para las entradas digitales aisladas y directas sobre el ESP32 y las que llegan al MCP23017. Solo puede encolar una acción desde dentro de este archivo 
 
-Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00087}{87}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
+Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00088}{88}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
 
 \Hypertarget{io__control_8c_a0cf183b105c6ce6cf83ef2f2ff16cad4}\index{io\_control.c@{io\_control.c}!mcp\_porta@{mcp\_porta}}
 \index{mcp\_porta@{mcp\_porta}!io\_control.c@{io\_control.c}}
@@ -830,7 +799,7 @@ uint8\+\_\+t mcp\+\_\+porta}
 
 Estado de entradas del puerto A del MCP23017 
 
-Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00089}{89}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
+Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00090}{90}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
 
 \Hypertarget{io__control_8c_aa34f05c6e4f239a03e67ead4c9081773}\index{io\_control.c@{io\_control.c}!mcp\_portb@{mcp\_portb}}
 \index{mcp\_portb@{mcp\_portb}!io\_control.c@{io\_control.c}}
@@ -840,7 +809,7 @@ uint8\+\_\+t mcp\+\_\+portb}
 
 Estado de entradas del puerto B del MCP23017 
 
-Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00090}{90}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
+Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00091}{91}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
 
 \Hypertarget{io__control_8c_aac3c2758bf842cba44442e18e8a5dd77}\index{io\_control.c@{io\_control.c}!relay\_evt\_queue@{relay\_evt\_queue}}
 \index{relay\_evt\_queue@{relay\_evt\_queue}!io\_control.c@{io\_control.c}}
@@ -850,7 +819,7 @@ Queue\+Handle\+\_\+t relay\+\_\+evt\+\_\+queue = NULL}
 
 Cola de eventos para el control del relay. Admite solo 1 para energizarlo y 0 para desenergizarlo 
 
-Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00086}{86}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
+Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00087}{87}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
 
 \Hypertarget{io__control_8c_a5a85b9c772bbeb480b209a3e6ea92b4c}\index{io\_control.c@{io\_control.c}!TAG@{TAG}}
 \index{TAG@{TAG}!io\_control.c@{io\_control.c}}
@@ -860,5 +829,5 @@ const char\texorpdfstring{$\ast$}{*} TAG = "{}IO\+\_\+\+CTRL"{}\hspace{0.3cm}{\t
 
 Varaible que se imprime en los ESP\+\_\+\+LOG 
 
-Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00036}{36}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
+Definición en la línea \mbox{\hyperlink{io__control_8c_source_l00037}{37}} del archivo \mbox{\hyperlink{io__control_8c_source}{io\+\_\+control.\+c}}.
 

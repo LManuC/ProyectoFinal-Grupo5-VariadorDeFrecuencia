@@ -47,7 +47,7 @@ esp_err_t adc_init(void);
  *
  * @retval 
  *      - SYSTEM_EMERGENCY: Si las mediciones de tensión o corriente del bus de DC está fuera de los parámetros esperados
- *      - SYSTEM_EMERGENCY_OK: Si las mediciones de tensión o corriente del bus de DC continúan por fuera de los parámetros esperados
+ *      - SYSTEM_EMERGENCY_SENT: Si las mediciones de tensión o corriente del bus de DC continúan por fuera de los parámetros esperados
  *      - Otros estados: Si la medición está dentro de los parámetros aceptables
  */
 system_status_e readADC(void);

@@ -9,6 +9,6 @@ var searchData=
   ['def6_6',['DEF6',['../union_m_c_p23017___d_e_f_v_a_l__t.html#afeeebe4bc7ded9fb4faa553656cc8492',1,'MCP23017_DEFVAL_t']]],
   ['def7_7',['DEF7',['../union_m_c_p23017___d_e_f_v_a_l__t.html#aa5b413bef249e535cc2c1eaa45a05a7f',1,'MCP23017_DEFVAL_t']]],
   ['desaccelerating_5fhandle_8',['desaccelerating_handle',['../sys_admin_8c.html#aef1cbb22108ca96e11c5f161d31bda51',1,'sysAdmin.c']]],
-  ['desacceleration_9',['desacceleration',['../structfrequency__settings__t.html#a8d753b012e5099230395ba6421d5d35b',1,'frequency_settings_t']]],
+  ['desacceleration_9',['desacceleration',['../structfrequency__settings__t.html#a8d753b012e5099230395ba6421d5d35b',1,'frequency_settings_t::desacceleration'],['../structsystem__status__t.html#a8d753b012e5099230395ba6421d5d35b',1,'system_status_t::desacceleration']]],
   ['disslw_10',['DISSLW',['../union_m_c_p23017___i_o_c_o_n__t.html#a225a8f6bd3afd9f25625e92f52db2307',1,'MCP23017_IOCON_t']]]
 ];

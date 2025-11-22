@@ -10,8 +10,6 @@ Declaración de funciones de inicialización, lectura y escritura a través del 
 {\ttfamily \#include "{}esp\+\_\+err.\+h"{}}\newline
 {\ttfamily \#include "{}driver/i2c.\+h"{}}\newline
 {\ttfamily \#include "{}freertos/semphr.\+h"{}}\newline
-Gráfico de dependencias incluidas en MCP23017.\+c\+:
-% FIG 0
 \doxysubsubsection*{defines}
 \begin{DoxyCompactItemize}
 \item 
@@ -184,8 +182,6 @@ Función bloqueante
 
 Definición en la línea \mbox{\hyperlink{_m_c_p23017_8c_source_l00134}{134}} del archivo \mbox{\hyperlink{_m_c_p23017_8c_source}{MCP23017.\+c}}.
 
-Gráfico de llamadas a esta función\+:
-% FIG 1
 \Hypertarget{_m_c_p23017_8c_aa09875b3891e4aac12cbf97edca60a00}\index{MCP23017.c@{MCP23017.c}!i2c\_master\_init@{i2c\_master\_init}}
 \index{i2c\_master\_init@{i2c\_master\_init}!MCP23017.c@{MCP23017.c}}
 \doxysubsubsection{\texorpdfstring{i2c\_master\_init()}{i2c\_master\_init()}}
@@ -217,8 +213,6 @@ Función que inicializa el puerto I2C y el mutex para acceder ordenadamente al h
 
 Definición en la línea \mbox{\hyperlink{_m_c_p23017_8c_source_l00111}{111}} del archivo \mbox{\hyperlink{_m_c_p23017_8c_source}{MCP23017.\+c}}.
 
-Gráfico de llamadas a esta función\+:
-% FIG 2
 \Hypertarget{_m_c_p23017_8c_a94e4dde496c85e131f1010dcbd8cdb17}\index{MCP23017.c@{MCP23017.c}!i2c\_release\_hardware@{i2c\_release\_hardware}}
 \index{i2c\_release\_hardware@{i2c\_release\_hardware}!MCP23017.c@{MCP23017.c}}
 \doxysubsubsection{\texorpdfstring{i2c\_release\_hardware()}{i2c\_release\_hardware()}}
@@ -233,8 +227,6 @@ Función que devuelve recursos de hardware luego de realizar una operación para
 
 Definición en la línea \mbox{\hyperlink{_m_c_p23017_8c_source_l00142}{142}} del archivo \mbox{\hyperlink{_m_c_p23017_8c_source}{MCP23017.\+c}}.
 
-Gráfico de llamadas a esta función\+:
-% FIG 3
 \Hypertarget{_m_c_p23017_8c_ae831de4438e6f78cb8fb8d57b90960a5}\index{MCP23017.c@{MCP23017.c}!MCP23017\_INIT@{MCP23017\_INIT}}
 \index{MCP23017\_INIT@{MCP23017\_INIT}!MCP23017.c@{MCP23017.c}}
 \doxysubsubsection{\texorpdfstring{MCP23017\_INIT()}{MCP23017\_INIT()}}
@@ -261,10 +253,6 @@ Inicializa el MCP32017. Configura las entradas IO2, IO3, IO4, IO5 y IO6 del puer
 
 Definición en la línea \mbox{\hyperlink{_m_c_p23017_8c_source_l00174}{174}} del archivo \mbox{\hyperlink{_m_c_p23017_8c_source}{MCP23017.\+c}}.
 
-Gráfico de llamadas de esta función\+:
-% FIG 4
-Gráfico de llamadas a esta función\+:
-% FIG 5
 \Hypertarget{_m_c_p23017_8c_a4c24408bad301abb52a111226e57466d}\index{MCP23017.c@{MCP23017.c}!mcp\_get\_on\_interrupt\_input@{mcp\_get\_on\_interrupt\_input}}
 \index{mcp\_get\_on\_interrupt\_input@{mcp\_get\_on\_interrupt\_input}!MCP23017.c@{MCP23017.c}}
 \doxysubsubsection{\texorpdfstring{mcp\_get\_on\_interrupt\_input()}{mcp\_get\_on\_interrupt\_input()}}
@@ -298,10 +286,6 @@ El registro INTCAP retiene el valor de las entradas al generarse una interrupci�
 
 Definición en la línea \mbox{\hyperlink{_m_c_p23017_8c_source_l00312}{312}} del archivo \mbox{\hyperlink{_m_c_p23017_8c_source}{MCP23017.\+c}}.
 
-Gráfico de llamadas de esta función\+:
-% FIG 6
-Gráfico de llamadas a esta función\+:
-% FIG 7
 \Hypertarget{_m_c_p23017_8c_a7b2284a2d02ab4515e7742720352c1ed}\index{MCP23017.c@{MCP23017.c}!mcp\_interrupt\_flag@{mcp\_interrupt\_flag}}
 \index{mcp\_interrupt\_flag@{mcp\_interrupt\_flag}!MCP23017.c@{MCP23017.c}}
 \doxysubsubsection{\texorpdfstring{mcp\_interrupt\_flag()}{mcp\_interrupt\_flag()}}
@@ -335,10 +319,6 @@ El registro INTF retiene el valor de la entrada que generó la interrupción. Lu
 
 Definición en la línea \mbox{\hyperlink{_m_c_p23017_8c_source_l00387}{387}} del archivo \mbox{\hyperlink{_m_c_p23017_8c_source}{MCP23017.\+c}}.
 
-Gráfico de llamadas de esta función\+:
-% FIG 8
-Gráfico de llamadas a esta función\+:
-% FIG 9
 \Hypertarget{_m_c_p23017_8c_a22dd18f78e093af119af2aaa0ef2bd6d}\index{MCP23017.c@{MCP23017.c}!mcp\_read\_port@{mcp\_read\_port}}
 \index{mcp\_read\_port@{mcp\_read\_port}!MCP23017.c@{MCP23017.c}}
 \doxysubsubsection{\texorpdfstring{mcp\_read\_port()}{mcp\_read\_port()}}
@@ -372,10 +352,6 @@ El registro GPIO es el que representa la exteriorización de los estados de los 
 
 Definición en la línea \mbox{\hyperlink{_m_c_p23017_8c_source_l00370}{370}} del archivo \mbox{\hyperlink{_m_c_p23017_8c_source}{MCP23017.\+c}}.
 
-Gráfico de llamadas de esta función\+:
-% FIG 10
-Gráfico de llamadas a esta función\+:
-% FIG 11
 \Hypertarget{_m_c_p23017_8c_af42886d0f61b87ce537e1f79cd394d15}\index{MCP23017.c@{MCP23017.c}!mcp\_register\_read@{mcp\_register\_read}}
 \index{mcp\_register\_read@{mcp\_register\_read}!MCP23017.c@{MCP23017.c}}
 \doxysubsubsection{\texorpdfstring{mcp\_register\_read()}{mcp\_register\_read()}}
@@ -407,8 +383,6 @@ Función que lee {\ttfamily register\+\_\+address} del MCP23017. La información
 
 Definición en la línea \mbox{\hyperlink{_m_c_p23017_8c_source_l00146}{146}} del archivo \mbox{\hyperlink{_m_c_p23017_8c_source}{MCP23017.\+c}}.
 
-Gráfico de llamadas a esta función\+:
-% FIG 12
 \Hypertarget{_m_c_p23017_8c_a6ea3e64f6d309838ac0dce7e0208ed80}\index{MCP23017.c@{MCP23017.c}!mcp\_register\_write@{mcp\_register\_write}}
 \index{mcp\_register\_write@{mcp\_register\_write}!MCP23017.c@{MCP23017.c}}
 \doxysubsubsection{\texorpdfstring{mcp\_register\_write()}{mcp\_register\_write()}}
@@ -440,8 +414,6 @@ Función que escribe en {\ttfamily register\+\_\+address} del MCP23017 el dato {
 
 Definición en la línea \mbox{\hyperlink{_m_c_p23017_8c_source_l00161}{161}} del archivo \mbox{\hyperlink{_m_c_p23017_8c_source}{MCP23017.\+c}}.
 
-Gráfico de llamadas a esta función\+:
-% FIG 13
 \Hypertarget{_m_c_p23017_8c_ab0b70ff25556234d7ab76b16f1cc1534}\index{MCP23017.c@{MCP23017.c}!mcp\_write\_output\_pin@{mcp\_write\_output\_pin}}
 \index{mcp\_write\_output\_pin@{mcp\_write\_output\_pin}!MCP23017.c@{MCP23017.c}}
 \doxysubsubsection{\texorpdfstring{mcp\_write\_output\_pin()}{mcp\_write\_output\_pin()}}
@@ -477,10 +449,6 @@ El registro OLAT es el que exterioriza el estado del pin en etados lógicos alto
 
 Definición en la línea \mbox{\hyperlink{_m_c_p23017_8c_source_l00328}{328}} del archivo \mbox{\hyperlink{_m_c_p23017_8c_source}{MCP23017.\+c}}.
 
-Gráfico de llamadas de esta función\+:
-% FIG 14
-Gráfico de llamadas a esta función\+:
-% FIG 15
 \Hypertarget{_m_c_p23017_8c_a8b3a939458d2c4d94598667bec9af9dd}\index{MCP23017.c@{MCP23017.c}!mcp\_write\_output\_port@{mcp\_write\_output\_port}}
 \index{mcp\_write\_output\_port@{mcp\_write\_output\_port}!MCP23017.c@{MCP23017.c}}
 \doxysubsubsection{\texorpdfstring{mcp\_write\_output\_port()}{mcp\_write\_output\_port()}}
@@ -514,10 +482,6 @@ Escribe {\ttfamily data} entero, no pin a pin.
 
 Definición en la línea \mbox{\hyperlink{_m_c_p23017_8c_source_l00353}{353}} del archivo \mbox{\hyperlink{_m_c_p23017_8c_source}{MCP23017.\+c}}.
 
-Gráfico de llamadas de esta función\+:
-% FIG 16
-Gráfico de llamadas a esta función\+:
-% FIG 17
 
 
 \label{doc-var-members}

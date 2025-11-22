@@ -27,7 +27,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="DoxyPic.jpeg"/></td>
   <td id="projectalign">
-   <div id="projectname">Low Voltage Variable Frequency Drive<span id="projectnumber">&#160;2.0</span>
+   <div id="projectname">Low Voltage Variable Frequency Drive<span id="projectnumber">&#160;2.1</span>
    </div>
    <div id="projectbrief">Proyecto final Andrenacci-Carra 2026. Variador de frecuencia de motor trifásico 1/3HP utilizando 12V de contínua como fuente de entrada de tensión.</div>
   </td>
@@ -94,7 +94,7 @@ $(function(){initNavTree('display_8c.html','',''); });
 </div><!--header-->
 <div class="contents">
 
-<p>Funciones que de consulta de los seteos hechos por el usuario, tarea que controla el display y posteo de eventos para controlar el display.  
+<p>Funciones de consulta de los seteos hechos por el usuario, tarea que controla el display y posteo de eventos para controlar el display.  
 <a href="#details">Más...</a></p>
 <div class="textblock"><code>#include &quot;esp_log.h&quot;</code><br />
 <code>#include &quot;esp_err.h&quot;</code><br />
@@ -113,11 +113,7 @@ $(function(){initNavTree('display_8c.html','',''); });
 <code>#include &quot;<a class="el" href="sys_control_8h_source.html">../system/SysControl.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="sys_admin_8h_source.html">../system/SysAdmin.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="rtc_8h_source.html">../rtc/rtc.h</a>&quot;</code><br />
-</div><div class="textblock"><div class="dynheader">
-Gráfico de dependencias incluidas en display.c:</div>
-<div class="dyncontent">
-<div class="center"><img src="display_8c__incl.png" border="0" usemap="#a_c_1_2_users_2_user_2_l_v_f_v___e_s_p32_2main_2display_2display_8c" loading="lazy" alt=""/></div>
-</div>
+<code>#include &quot;<a class="el" href="nvs_8h_source.html">../nvs/nvs.h</a>&quot;</code><br />
 </div>
 <p><a href="display_8c_source.html">Ir al código fuente de este archivo.</a></p>
 <table class="memberdecls">
@@ -131,29 +127,20 @@ defines</h2></td></tr>
 <tr class="memitem:a37a0707200e50e3b3e9ab28b1b8d6777" id="r_a37a0707200e50e3b3e9ab28b1b8d6777"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a37a0707200e50e3b3e9ab28b1b8d6777">I2C_MASTER_RX_BUF_DISABLE</a>&#160;&#160;&#160;0</td></tr>
 <tr class="memitem:ac87b675c89094be89ef3a3457b1a6f8a" id="r_ac87b675c89094be89ef3a3457b1a6f8a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac87b675c89094be89ef3a3457b1a6f8a">FREQUENCY_LINEAR_VARIABLE</a>&#160;&#160;&#160;0</td></tr>
 <tr class="memitem:ac0c30114334f9cb26769a8ecf5b9035a" id="r_ac0c30114334f9cb26769a8ecf5b9035a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac0c30114334f9cb26769a8ecf5b9035a">FREQUENCY_CUADRATIC_VARIABLE</a>&#160;&#160;&#160;1</td></tr>
-<tr class="memitem:a577f043908355fedd12b09fe6e82e529" id="r_a577f043908355fedd12b09fe6e82e529"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a577f043908355fedd12b09fe6e82e529">LINE_INCREMENT</a>&#160;&#160;&#160;9</td></tr>
-<tr class="memitem:a7dfcd7551f788617eacaa5849ce2e654" id="r_a7dfcd7551f788617eacaa5849ce2e654"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7dfcd7551f788617eacaa5849ce2e654">VARIABLE_FIRST</a>&#160;&#160;&#160;20</td></tr>
-<tr class="memitem:a77a75b687bba542225a0aa8ff1111503" id="r_a77a75b687bba542225a0aa8ff1111503"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a77a75b687bba542225a0aa8ff1111503">VARIABLE_SECOND</a>&#160;&#160;&#160;29</td></tr>
-<tr class="memitem:a13faf6e042f9cdde50516319eabba0ee" id="r_a13faf6e042f9cdde50516319eabba0ee"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a13faf6e042f9cdde50516319eabba0ee">VARIABLE_THIRD</a>&#160;&#160;&#160;38</td></tr>
-<tr class="memitem:aad326ddd976b3db59bbb437c0cd2e7df" id="r_aad326ddd976b3db59bbb437c0cd2e7df"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aad326ddd976b3db59bbb437c0cd2e7df">VARIABLE_FOURTH</a>&#160;&#160;&#160;47</td></tr>
-<tr class="memitem:ae35ee24046a1ba0de5c09fc736bcc4c6" id="r_ae35ee24046a1ba0de5c09fc736bcc4c6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae35ee24046a1ba0de5c09fc736bcc4c6">VARIABLE_FIFTH</a>&#160;&#160;&#160;56</td></tr>
-<tr class="memitem:ad99585404a632d80fe89b4ee45653403" id="r_ad99585404a632d80fe89b4ee45653403"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad99585404a632d80fe89b4ee45653403">VARIABLE_SIXTH</a>&#160;&#160;&#160;65</td></tr>
-<tr class="memitem:a260ce7e6c6c283f570a2f8aa90f98978" id="r_a260ce7e6c6c283f570a2f8aa90f98978"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a260ce7e6c6c283f570a2f8aa90f98978">VARIABLE_SEVENTH</a>&#160;&#160;&#160;74</td></tr>
-<tr class="memitem:a3487748d514085e5ac42bb73cc39f1ab" id="r_a3487748d514085e5ac42bb73cc39f1ab"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3487748d514085e5ac42bb73cc39f1ab">VARIABLE_EIGTH</a>&#160;&#160;&#160;83</td></tr>
-<tr class="memitem:a9134c2912280321dcfcfcb7f13848f8f" id="r_a9134c2912280321dcfcfcb7f13848f8f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9134c2912280321dcfcfcb7f13848f8f">FREC_LINE_INDX</a>&#160;&#160;&#160;<a class="el" href="#a7dfcd7551f788617eacaa5849ce2e654">VARIABLE_FIRST</a></td></tr>
-<tr class="memitem:ab79b4daef4d2399ae9f653511f2b6e44" id="r_ab79b4daef4d2399ae9f653511f2b6e44"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab79b4daef4d2399ae9f653511f2b6e44">VBUS_LINE_INDX</a>&#160;&#160;&#160;<a class="el" href="#a77a75b687bba542225a0aa8ff1111503">VARIABLE_SECOND</a></td></tr>
-<tr class="memitem:a1a916ffcc1d0fef0ee83518eb9f96f95" id="r_a1a916ffcc1d0fef0ee83518eb9f96f95"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1a916ffcc1d0fef0ee83518eb9f96f95">IBUS_LINE_INDX</a>&#160;&#160;&#160;<a class="el" href="#a13faf6e042f9cdde50516319eabba0ee">VARIABLE_THIRD</a></td></tr>
-<tr class="memitem:acfb08ba1927095a33f2a55203bd13cc8" id="r_acfb08ba1927095a33f2a55203bd13cc8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acfb08ba1927095a33f2a55203bd13cc8">HINI_LINE_INDX</a>&#160;&#160;&#160;<a class="el" href="#aad326ddd976b3db59bbb437c0cd2e7df">VARIABLE_FOURTH</a></td></tr>
-<tr class="memitem:afa8fdff2f98f96ddf57091343ef229f4" id="r_afa8fdff2f98f96ddf57091343ef229f4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afa8fdff2f98f96ddf57091343ef229f4">HFIN_LINE_INDX</a>&#160;&#160;&#160;<a class="el" href="#ae35ee24046a1ba0de5c09fc736bcc4c6">VARIABLE_FIFTH</a></td></tr>
-<tr class="memitem:aa21ad658d5c5e97c3892610db0e8ed01" id="r_aa21ad658d5c5e97c3892610db0e8ed01"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa21ad658d5c5e97c3892610db0e8ed01">EDIT_FREQUENCY_INDX</a>&#160;&#160;&#160;<a class="el" href="#a7dfcd7551f788617eacaa5849ce2e654">VARIABLE_FIRST</a></td></tr>
-<tr class="memitem:a8993b022f1f031877d42022969794243" id="r_a8993b022f1f031877d42022969794243"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8993b022f1f031877d42022969794243">EDIT_ACCELERATION_INDX</a>&#160;&#160;&#160;<a class="el" href="#a77a75b687bba542225a0aa8ff1111503">VARIABLE_SECOND</a></td></tr>
-<tr class="memitem:a61e33b0df43cf4ded203a2f5047bf802" id="r_a61e33b0df43cf4ded203a2f5047bf802"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a61e33b0df43cf4ded203a2f5047bf802">EDIT_DESACCELERATION_INDX</a>&#160;&#160;&#160;<a class="el" href="#a13faf6e042f9cdde50516319eabba0ee">VARIABLE_THIRD</a></td></tr>
-<tr class="memitem:a00fe0841e1f23749b52b75c9c8f29c92" id="r_a00fe0841e1f23749b52b75c9c8f29c92"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a00fe0841e1f23749b52b75c9c8f29c92">EDIT_INPUT_VARIATION_INDX</a>&#160;&#160;&#160;<a class="el" href="#aad326ddd976b3db59bbb437c0cd2e7df">VARIABLE_FOURTH</a></td></tr>
-<tr class="memitem:a26954f4ece27a618efcb95a547c9faf2" id="r_a26954f4ece27a618efcb95a547c9faf2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a26954f4ece27a618efcb95a547c9faf2">EDIT_TIME_LINE_INDX</a>&#160;&#160;&#160;<a class="el" href="#a77a75b687bba542225a0aa8ff1111503">VARIABLE_SECOND</a></td></tr>
-<tr class="memitem:a590e349b41e38b820ed3be24008730e8" id="r_a590e349b41e38b820ed3be24008730e8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a590e349b41e38b820ed3be24008730e8">EDIT_HINI_LINE_INDX</a>&#160;&#160;&#160;<a class="el" href="#a13faf6e042f9cdde50516319eabba0ee">VARIABLE_THIRD</a></td></tr>
-<tr class="memitem:a81185cffb417986e774f3a91a70624d8" id="r_a81185cffb417986e774f3a91a70624d8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a81185cffb417986e774f3a91a70624d8">EDIT_HFIN_LINE_INDX</a>&#160;&#160;&#160;<a class="el" href="#aad326ddd976b3db59bbb437c0cd2e7df">VARIABLE_FOURTH</a></td></tr>
-<tr class="memitem:a59554f0fb836103386529044a7eeef2f" id="r_a59554f0fb836103386529044a7eeef2f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a59554f0fb836103386529044a7eeef2f">EDIT_VBUS_LINE_INDX</a>&#160;&#160;&#160;<a class="el" href="#a77a75b687bba542225a0aa8ff1111503">VARIABLE_SECOND</a></td></tr>
-<tr class="memitem:ae7667cd212d2b483f077c2a66d317c3a" id="r_ae7667cd212d2b483f077c2a66d317c3a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae7667cd212d2b483f077c2a66d317c3a">EDIT_IBUS_LINE_INDX</a>&#160;&#160;&#160;<a class="el" href="#a13faf6e042f9cdde50516319eabba0ee">VARIABLE_THIRD</a></td></tr>
+<tr class="memitem:a9134c2912280321dcfcfcb7f13848f8f" id="r_a9134c2912280321dcfcfcb7f13848f8f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9134c2912280321dcfcfcb7f13848f8f">FREC_LINE_INDX</a>&#160;&#160;&#160;<a class="el" href="_l_v_f_v__system_8h.html#a7dfcd7551f788617eacaa5849ce2e654">VARIABLE_FIRST</a></td></tr>
+<tr class="memitem:ab79b4daef4d2399ae9f653511f2b6e44" id="r_ab79b4daef4d2399ae9f653511f2b6e44"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab79b4daef4d2399ae9f653511f2b6e44">VBUS_LINE_INDX</a>&#160;&#160;&#160;<a class="el" href="_l_v_f_v__system_8h.html#a77a75b687bba542225a0aa8ff1111503">VARIABLE_SECOND</a></td></tr>
+<tr class="memitem:a1a916ffcc1d0fef0ee83518eb9f96f95" id="r_a1a916ffcc1d0fef0ee83518eb9f96f95"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1a916ffcc1d0fef0ee83518eb9f96f95">IBUS_LINE_INDX</a>&#160;&#160;&#160;<a class="el" href="_l_v_f_v__system_8h.html#a13faf6e042f9cdde50516319eabba0ee">VARIABLE_THIRD</a></td></tr>
+<tr class="memitem:acfb08ba1927095a33f2a55203bd13cc8" id="r_acfb08ba1927095a33f2a55203bd13cc8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acfb08ba1927095a33f2a55203bd13cc8">HINI_LINE_INDX</a>&#160;&#160;&#160;<a class="el" href="_l_v_f_v__system_8h.html#aad326ddd976b3db59bbb437c0cd2e7df">VARIABLE_FOURTH</a></td></tr>
+<tr class="memitem:afa8fdff2f98f96ddf57091343ef229f4" id="r_afa8fdff2f98f96ddf57091343ef229f4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afa8fdff2f98f96ddf57091343ef229f4">HFIN_LINE_INDX</a>&#160;&#160;&#160;<a class="el" href="_l_v_f_v__system_8h.html#ae35ee24046a1ba0de5c09fc736bcc4c6">VARIABLE_FIFTH</a></td></tr>
+<tr class="memitem:aa21ad658d5c5e97c3892610db0e8ed01" id="r_aa21ad658d5c5e97c3892610db0e8ed01"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa21ad658d5c5e97c3892610db0e8ed01">EDIT_FREQUENCY_INDX</a>&#160;&#160;&#160;<a class="el" href="_l_v_f_v__system_8h.html#a7dfcd7551f788617eacaa5849ce2e654">VARIABLE_FIRST</a></td></tr>
+<tr class="memitem:a8993b022f1f031877d42022969794243" id="r_a8993b022f1f031877d42022969794243"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8993b022f1f031877d42022969794243">EDIT_ACCELERATION_INDX</a>&#160;&#160;&#160;<a class="el" href="_l_v_f_v__system_8h.html#a77a75b687bba542225a0aa8ff1111503">VARIABLE_SECOND</a></td></tr>
+<tr class="memitem:a61e33b0df43cf4ded203a2f5047bf802" id="r_a61e33b0df43cf4ded203a2f5047bf802"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a61e33b0df43cf4ded203a2f5047bf802">EDIT_DESACCELERATION_INDX</a>&#160;&#160;&#160;<a class="el" href="_l_v_f_v__system_8h.html#a13faf6e042f9cdde50516319eabba0ee">VARIABLE_THIRD</a></td></tr>
+<tr class="memitem:a00fe0841e1f23749b52b75c9c8f29c92" id="r_a00fe0841e1f23749b52b75c9c8f29c92"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a00fe0841e1f23749b52b75c9c8f29c92">EDIT_INPUT_VARIATION_INDX</a>&#160;&#160;&#160;<a class="el" href="_l_v_f_v__system_8h.html#aad326ddd976b3db59bbb437c0cd2e7df">VARIABLE_FOURTH</a></td></tr>
+<tr class="memitem:a26954f4ece27a618efcb95a547c9faf2" id="r_a26954f4ece27a618efcb95a547c9faf2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a26954f4ece27a618efcb95a547c9faf2">EDIT_TIME_LINE_INDX</a>&#160;&#160;&#160;<a class="el" href="_l_v_f_v__system_8h.html#a77a75b687bba542225a0aa8ff1111503">VARIABLE_SECOND</a></td></tr>
+<tr class="memitem:a590e349b41e38b820ed3be24008730e8" id="r_a590e349b41e38b820ed3be24008730e8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a590e349b41e38b820ed3be24008730e8">EDIT_HINI_LINE_INDX</a>&#160;&#160;&#160;<a class="el" href="_l_v_f_v__system_8h.html#a13faf6e042f9cdde50516319eabba0ee">VARIABLE_THIRD</a></td></tr>
+<tr class="memitem:a81185cffb417986e774f3a91a70624d8" id="r_a81185cffb417986e774f3a91a70624d8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a81185cffb417986e774f3a91a70624d8">EDIT_HFIN_LINE_INDX</a>&#160;&#160;&#160;<a class="el" href="_l_v_f_v__system_8h.html#aad326ddd976b3db59bbb437c0cd2e7df">VARIABLE_FOURTH</a></td></tr>
+<tr class="memitem:a59554f0fb836103386529044a7eeef2f" id="r_a59554f0fb836103386529044a7eeef2f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a59554f0fb836103386529044a7eeef2f">EDIT_VBUS_LINE_INDX</a>&#160;&#160;&#160;<a class="el" href="_l_v_f_v__system_8h.html#a77a75b687bba542225a0aa8ff1111503">VARIABLE_SECOND</a></td></tr>
+<tr class="memitem:ae7667cd212d2b483f077c2a66d317c3a" id="r_ae7667cd212d2b483f077c2a66d317c3a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae7667cd212d2b483f077c2a66d317c3a">EDIT_IBUS_LINE_INDX</a>&#160;&#160;&#160;<a class="el" href="_l_v_f_v__system_8h.html#a13faf6e042f9cdde50516319eabba0ee">VARIABLE_THIRD</a></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-enum-members" class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumeraciones</h2></td></tr>
@@ -190,6 +177,7 @@ Funciones</h2></td></tr>
 <tr class="memdesc:ab07ce08361000a77647dc393f0d7b233"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pantalla de splash que se imprime al iniciar el sistema.  <br /></td></tr>
 <tr class="memitem:a68c92b6a0fed27244dea02a1421d70b3" id="r_a68c92b6a0fed27244dea02a1421d70b3"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a68c92b6a0fed27244dea02a1421d70b3">sh1106_main_screen</a> ()</td></tr>
 <tr class="memdesc:a68c92b6a0fed27244dea02a1421d70b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pantalla principal dell sistema. Allí se muestra la hora del sistema, la frecuencia a la que se encuentra el variador, la hora de inicio y fin de movimiento del motor.  <br /></td></tr>
+<tr class="memitem:a29450014420dbae89e483bd89ad30c32" id="r_a29450014420dbae89e483bd89ad30c32"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a29450014420dbae89e483bd89ad30c32">sh1106_print_emergency</a> ()</td></tr>
 <tr class="memitem:a12dc0f33fbf57c48dffabf60ab02d01e" id="r_a12dc0f33fbf57c48dffabf60ab02d01e"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a12dc0f33fbf57c48dffabf60ab02d01e">get_system_frequency</a> ()</td></tr>
 <tr class="memdesc:a12dc0f33fbf57c48dffabf60ab02d01e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entrega el valor de frecuencia de regimen seteado por el usuario.  <br /></td></tr>
 <tr class="memitem:a66d26ed49b8196ba0498d8a553167ec3" id="r_a66d26ed49b8196ba0498d8a553167ec3"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a66d26ed49b8196ba0498d8a553167ec3">get_system_acceleration</a> ()</td></tr>
@@ -216,7 +204,7 @@ Variables</h2></td></tr>
 <tr class="memitem:ab2fc8e2508158b8232828ad0db0ef3ab" id="r_ab2fc8e2508158b8232828ad0db0ef3ab"><td class="memItemLeft" align="right" valign="top">static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab2fc8e2508158b8232828ad0db0ef3ab">blink</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descripción detallada</h2>
-<div class="textblock"><p>Funciones que de consulta de los seteos hechos por el usuario, tarea que controla el display y posteo de eventos para controlar el display. </p>
+<div class="textblock"><p>Funciones de consulta de los seteos hechos por el usuario, tarea que controla el display y posteo de eventos para controlar el display. </p>
 <dl class="section author"><dt>Autor</dt><dd>Andrenacci - Carra </dd></dl>
 <dl class="section version"><dt>Versión</dt><dd>2.0 </dd></dl>
 <dl class="section date"><dt>Fecha</dt><dd>2025-11-06 </dd></dl>
@@ -230,12 +218,12 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define EDIT_ACCELERATION_INDX&#160;&#160;&#160;<a class="el" href="#a77a75b687bba542225a0aa8ff1111503">VARIABLE_SECOND</a></td>
+          <td class="memname">#define EDIT_ACCELERATION_INDX&#160;&#160;&#160;<a class="el" href="_l_v_f_v__system_8h.html#a77a75b687bba542225a0aa8ff1111503">VARIABLE_SECOND</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00059">59</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00049">49</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
 
 </div>
 </div>
@@ -246,12 +234,12 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define EDIT_DESACCELERATION_INDX&#160;&#160;&#160;<a class="el" href="#a13faf6e042f9cdde50516319eabba0ee">VARIABLE_THIRD</a></td>
+          <td class="memname">#define EDIT_DESACCELERATION_INDX&#160;&#160;&#160;<a class="el" href="_l_v_f_v__system_8h.html#a13faf6e042f9cdde50516319eabba0ee">VARIABLE_THIRD</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00060">60</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00050">50</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
 
 </div>
 </div>
@@ -262,12 +250,12 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define EDIT_FREQUENCY_INDX&#160;&#160;&#160;<a class="el" href="#a7dfcd7551f788617eacaa5849ce2e654">VARIABLE_FIRST</a></td>
+          <td class="memname">#define EDIT_FREQUENCY_INDX&#160;&#160;&#160;<a class="el" href="_l_v_f_v__system_8h.html#a7dfcd7551f788617eacaa5849ce2e654">VARIABLE_FIRST</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00058">58</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00048">48</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
 
 </div>
 </div>
@@ -278,12 +266,12 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define EDIT_HFIN_LINE_INDX&#160;&#160;&#160;<a class="el" href="#aad326ddd976b3db59bbb437c0cd2e7df">VARIABLE_FOURTH</a></td>
+          <td class="memname">#define EDIT_HFIN_LINE_INDX&#160;&#160;&#160;<a class="el" href="_l_v_f_v__system_8h.html#aad326ddd976b3db59bbb437c0cd2e7df">VARIABLE_FOURTH</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00065">65</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00055">55</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
 
 </div>
 </div>
@@ -294,12 +282,12 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define EDIT_HINI_LINE_INDX&#160;&#160;&#160;<a class="el" href="#a13faf6e042f9cdde50516319eabba0ee">VARIABLE_THIRD</a></td>
+          <td class="memname">#define EDIT_HINI_LINE_INDX&#160;&#160;&#160;<a class="el" href="_l_v_f_v__system_8h.html#a13faf6e042f9cdde50516319eabba0ee">VARIABLE_THIRD</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00064">64</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00054">54</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
 
 </div>
 </div>
@@ -310,12 +298,12 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define EDIT_IBUS_LINE_INDX&#160;&#160;&#160;<a class="el" href="#a13faf6e042f9cdde50516319eabba0ee">VARIABLE_THIRD</a></td>
+          <td class="memname">#define EDIT_IBUS_LINE_INDX&#160;&#160;&#160;<a class="el" href="_l_v_f_v__system_8h.html#a13faf6e042f9cdde50516319eabba0ee">VARIABLE_THIRD</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00068">68</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00058">58</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
 
 </div>
 </div>
@@ -326,12 +314,12 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define EDIT_INPUT_VARIATION_INDX&#160;&#160;&#160;<a class="el" href="#aad326ddd976b3db59bbb437c0cd2e7df">VARIABLE_FOURTH</a></td>
+          <td class="memname">#define EDIT_INPUT_VARIATION_INDX&#160;&#160;&#160;<a class="el" href="_l_v_f_v__system_8h.html#aad326ddd976b3db59bbb437c0cd2e7df">VARIABLE_FOURTH</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00061">61</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00051">51</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
 
 </div>
 </div>
@@ -342,12 +330,12 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define EDIT_TIME_LINE_INDX&#160;&#160;&#160;<a class="el" href="#a77a75b687bba542225a0aa8ff1111503">VARIABLE_SECOND</a></td>
+          <td class="memname">#define EDIT_TIME_LINE_INDX&#160;&#160;&#160;<a class="el" href="_l_v_f_v__system_8h.html#a77a75b687bba542225a0aa8ff1111503">VARIABLE_SECOND</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00063">63</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00053">53</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
 
 </div>
 </div>
@@ -358,12 +346,12 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define EDIT_VBUS_LINE_INDX&#160;&#160;&#160;<a class="el" href="#a77a75b687bba542225a0aa8ff1111503">VARIABLE_SECOND</a></td>
+          <td class="memname">#define EDIT_VBUS_LINE_INDX&#160;&#160;&#160;<a class="el" href="_l_v_f_v__system_8h.html#a77a75b687bba542225a0aa8ff1111503">VARIABLE_SECOND</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00067">67</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00057">57</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
 
 </div>
 </div>
@@ -374,12 +362,12 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define FREC_LINE_INDX&#160;&#160;&#160;<a class="el" href="#a7dfcd7551f788617eacaa5849ce2e654">VARIABLE_FIRST</a></td>
+          <td class="memname">#define FREC_LINE_INDX&#160;&#160;&#160;<a class="el" href="_l_v_f_v__system_8h.html#a7dfcd7551f788617eacaa5849ce2e654">VARIABLE_FIRST</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00052">52</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00042">42</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
 
 </div>
 </div>
@@ -395,7 +383,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00039">39</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00040">40</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
 
 </div>
 </div>
@@ -411,7 +399,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00038">38</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00039">39</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
 
 </div>
 </div>
@@ -422,12 +410,12 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define HFIN_LINE_INDX&#160;&#160;&#160;<a class="el" href="#ae35ee24046a1ba0de5c09fc736bcc4c6">VARIABLE_FIFTH</a></td>
+          <td class="memname">#define HFIN_LINE_INDX&#160;&#160;&#160;<a class="el" href="_l_v_f_v__system_8h.html#ae35ee24046a1ba0de5c09fc736bcc4c6">VARIABLE_FIFTH</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00056">56</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00046">46</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
 
 </div>
 </div>
@@ -438,12 +426,12 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define HINI_LINE_INDX&#160;&#160;&#160;<a class="el" href="#aad326ddd976b3db59bbb437c0cd2e7df">VARIABLE_FOURTH</a></td>
+          <td class="memname">#define HINI_LINE_INDX&#160;&#160;&#160;<a class="el" href="_l_v_f_v__system_8h.html#aad326ddd976b3db59bbb437c0cd2e7df">VARIABLE_FOURTH</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00055">55</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00045">45</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
 
 </div>
 </div>
@@ -459,7 +447,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00031">31</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00032">32</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
 
 </div>
 </div>
@@ -475,7 +463,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00034">34</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00035">35</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
 
 </div>
 </div>
@@ -491,7 +479,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00036">36</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00037">37</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
 
 </div>
 </div>
@@ -507,7 +495,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00033">33</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00034">34</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
 
 </div>
 </div>
@@ -523,7 +511,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00032">32</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00033">33</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
 
 </div>
 </div>
@@ -539,7 +527,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00035">35</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00036">36</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
 
 </div>
 </div>
@@ -550,156 +538,12 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define IBUS_LINE_INDX&#160;&#160;&#160;<a class="el" href="#a13faf6e042f9cdde50516319eabba0ee">VARIABLE_THIRD</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00054">54</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
-
-</div>
-</div>
-<a id="a577f043908355fedd12b09fe6e82e529" name="a577f043908355fedd12b09fe6e82e529"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a577f043908355fedd12b09fe6e82e529">&#9670;&#160;</a></span>LINE_INCREMENT</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define LINE_INCREMENT&#160;&#160;&#160;9</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00041">41</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
-
-</div>
-</div>
-<a id="a3487748d514085e5ac42bb73cc39f1ab" name="a3487748d514085e5ac42bb73cc39f1ab"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3487748d514085e5ac42bb73cc39f1ab">&#9670;&#160;</a></span>VARIABLE_EIGTH</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define VARIABLE_EIGTH&#160;&#160;&#160;83</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00050">50</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
-
-</div>
-</div>
-<a id="ae35ee24046a1ba0de5c09fc736bcc4c6" name="ae35ee24046a1ba0de5c09fc736bcc4c6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae35ee24046a1ba0de5c09fc736bcc4c6">&#9670;&#160;</a></span>VARIABLE_FIFTH</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define VARIABLE_FIFTH&#160;&#160;&#160;56</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00047">47</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
-
-</div>
-</div>
-<a id="a7dfcd7551f788617eacaa5849ce2e654" name="a7dfcd7551f788617eacaa5849ce2e654"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7dfcd7551f788617eacaa5849ce2e654">&#9670;&#160;</a></span>VARIABLE_FIRST</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define VARIABLE_FIRST&#160;&#160;&#160;20</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00043">43</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
-
-</div>
-</div>
-<a id="aad326ddd976b3db59bbb437c0cd2e7df" name="aad326ddd976b3db59bbb437c0cd2e7df"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aad326ddd976b3db59bbb437c0cd2e7df">&#9670;&#160;</a></span>VARIABLE_FOURTH</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define VARIABLE_FOURTH&#160;&#160;&#160;47</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00046">46</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
-
-</div>
-</div>
-<a id="a77a75b687bba542225a0aa8ff1111503" name="a77a75b687bba542225a0aa8ff1111503"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a77a75b687bba542225a0aa8ff1111503">&#9670;&#160;</a></span>VARIABLE_SECOND</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define VARIABLE_SECOND&#160;&#160;&#160;29</td>
+          <td class="memname">#define IBUS_LINE_INDX&#160;&#160;&#160;<a class="el" href="_l_v_f_v__system_8h.html#a13faf6e042f9cdde50516319eabba0ee">VARIABLE_THIRD</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00044">44</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
-
-</div>
-</div>
-<a id="a260ce7e6c6c283f570a2f8aa90f98978" name="a260ce7e6c6c283f570a2f8aa90f98978"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a260ce7e6c6c283f570a2f8aa90f98978">&#9670;&#160;</a></span>VARIABLE_SEVENTH</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define VARIABLE_SEVENTH&#160;&#160;&#160;74</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00049">49</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
-
-</div>
-</div>
-<a id="ad99585404a632d80fe89b4ee45653403" name="ad99585404a632d80fe89b4ee45653403"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad99585404a632d80fe89b4ee45653403">&#9670;&#160;</a></span>VARIABLE_SIXTH</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define VARIABLE_SIXTH&#160;&#160;&#160;65</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00048">48</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
-
-</div>
-</div>
-<a id="a13faf6e042f9cdde50516319eabba0ee" name="a13faf6e042f9cdde50516319eabba0ee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a13faf6e042f9cdde50516319eabba0ee">&#9670;&#160;</a></span>VARIABLE_THIRD</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define VARIABLE_THIRD&#160;&#160;&#160;38</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00045">45</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
 
 </div>
 </div>
@@ -710,12 +554,12 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define VBUS_LINE_INDX&#160;&#160;&#160;<a class="el" href="#a77a75b687bba542225a0aa8ff1111503">VARIABLE_SECOND</a></td>
+          <td class="memname">#define VBUS_LINE_INDX&#160;&#160;&#160;<a class="el" href="_l_v_f_v__system_8h.html#a77a75b687bba542225a0aa8ff1111503">VARIABLE_SECOND</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00053">53</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00043">43</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
 
 </div>
 </div>
@@ -741,7 +585,7 @@ Variables</h2></td></tr>
 <tr><td class="fieldname"><a id="ac6875ec3081f1d4e60754abd39a3b20caf96a50f7f4265fe4203ae65d14903ced" name="ac6875ec3081f1d4e60754abd39a3b20caf96a50f7f4265fe4203ae65d14903ced"></a>SCREEN_FREQUENCY_EDIT&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00075">75</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00065">65</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
 
 </div>
 </div>
@@ -769,12 +613,7 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00815">815</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
-<div class="dynheader">
-Gráfico de llamadas a esta función:</div>
-<div class="dyncontent">
-<div class="center"><img src="display_8c_ac70cfc639d4afbd5116d8361b1b25b41_icgraph.png" border="0" usemap="#adisplay_8c_ac70cfc639d4afbd5116d8361b1b25b41_icgraph" loading="lazy" alt=""/></div>
-</div>
+<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00887">887</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
 
 </div>
 </div>
@@ -801,12 +640,7 @@ Gráfico de llamadas a esta función:</div>
   </dd>
 </dl>
 
-<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00455">455</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
-<div class="dynheader">
-Gráfico de llamadas a esta función:</div>
-<div class="dyncontent">
-<div class="center"><img src="display_8c_a66d26ed49b8196ba0498d8a553167ec3_icgraph.png" border="0" usemap="#adisplay_8c_a66d26ed49b8196ba0498d8a553167ec3_icgraph" loading="lazy" alt=""/></div>
-</div>
+<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00458">458</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
 
 </div>
 </div>
@@ -833,12 +667,7 @@ Gráfico de llamadas a esta función:</div>
   </dd>
 </dl>
 
-<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00459">459</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
-<div class="dynheader">
-Gráfico de llamadas a esta función:</div>
-<div class="dyncontent">
-<div class="center"><img src="display_8c_afa6a8bd839cfecfb389e75fc3946a6b7_icgraph.png" border="0" usemap="#adisplay_8c_afa6a8bd839cfecfb389e75fc3946a6b7_icgraph" loading="lazy" alt=""/></div>
-</div>
+<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00462">462</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
 
 </div>
 </div>
@@ -865,12 +694,7 @@ Gráfico de llamadas a esta función:</div>
   </dd>
 </dl>
 
-<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00451">451</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
-<div class="dynheader">
-Gráfico de llamadas a esta función:</div>
-<div class="dyncontent">
-<div class="center"><img src="display_8c_a12dc0f33fbf57c48dffabf60ab02d01e_icgraph.png" border="0" usemap="#adisplay_8c_a12dc0f33fbf57c48dffabf60ab02d01e_icgraph" loading="lazy" alt=""/></div>
-</div>
+<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00454">454</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
 
 </div>
 </div>
@@ -899,12 +723,7 @@ Gráfico de llamadas a esta función:</div>
 
 <p>Inicializa el bus I2C para comunicarse con el display SH1106. </p>
 
-<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00197">197</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
-<div class="dynheader">
-Gráfico de llamadas a esta función:</div>
-<div class="dyncontent">
-<div class="center"><img src="display_8c_a8cf7e1644806347cf3e6f9ad41d7a917_icgraph.png" border="0" usemap="#adisplay_8c_a8cf7e1644806347cf3e6f9ad41d7a917_icgraph" loading="lazy" alt=""/></div>
-</div>
+<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00187">187</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
 
 </div>
 </div>
@@ -933,12 +752,7 @@ Gráfico de llamadas a esta función:</div>
 
 <p>Vacía el buffer de la pantalla para iniciar un nuevo dibujo. </p>
 
-<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00210">210</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
-<div class="dynheader">
-Gráfico de llamadas a esta función:</div>
-<div class="dyncontent">
-<div class="center"><img src="display_8c_ac968c4904357f62912c41c49897c2673_icgraph.png" border="0" usemap="#adisplay_8c_ac968c4904357f62912c41c49897c2673_icgraph" loading="lazy" alt=""/></div>
-</div>
+<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00200">200</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
 
 </div>
 </div>
@@ -973,17 +787,7 @@ Gráfico de llamadas a esta función:</div>
   </dd>
 </dl>
 
-<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00331">331</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
-<div class="dynheader">
-Gráfico de llamadas de esta función:</div>
-<div class="dyncontent">
-<div class="center"><img src="display_8c_aac2da5f11f68738a69e9f34857e0364e_cgraph.png" border="0" usemap="#adisplay_8c_aac2da5f11f68738a69e9f34857e0364e_cgraph" loading="lazy" alt=""/></div>
-</div>
-<div class="dynheader">
-Gráfico de llamadas a esta función:</div>
-<div class="dyncontent">
-<div class="center"><img src="display_8c_aac2da5f11f68738a69e9f34857e0364e_icgraph.png" border="0" usemap="#adisplay_8c_aac2da5f11f68738a69e9f34857e0364e_icgraph" loading="lazy" alt=""/></div>
-</div>
+<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00334">334</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
 
 </div>
 </div>
@@ -1010,17 +814,7 @@ Gráfico de llamadas a esta función:</div>
   </dd>
 </dl>
 
-<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00463">463</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
-<div class="dynheader">
-Gráfico de llamadas de esta función:</div>
-<div class="dyncontent">
-<div class="center"><img src="display_8c_a274d1d8208b52559a4c9906c2bb62b33_cgraph.png" border="0" usemap="#adisplay_8c_a274d1d8208b52559a4c9906c2bb62b33_cgraph" loading="lazy" alt=""/></div>
-</div>
-<div class="dynheader">
-Gráfico de llamadas a esta función:</div>
-<div class="dyncontent">
-<div class="center"><img src="display_8c_a274d1d8208b52559a4c9906c2bb62b33_icgraph.png" border="0" usemap="#adisplay_8c_a274d1d8208b52559a4c9906c2bb62b33_icgraph" loading="lazy" alt=""/></div>
-</div>
+<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00466">466</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
 
 </div>
 </div>
@@ -1049,17 +843,34 @@ Gráfico de llamadas a esta función:</div>
 
 <p>Pantalla principal dell sistema. Allí se muestra la hora del sistema, la frecuencia a la que se encuentra el variador, la hora de inicio y fin de movimiento del motor. </p>
 
-<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00422">422</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
-<div class="dynheader">
-Gráfico de llamadas de esta función:</div>
-<div class="dyncontent">
-<div class="center"><img src="display_8c_a68c92b6a0fed27244dea02a1421d70b3_cgraph.png" border="0" usemap="#adisplay_8c_a68c92b6a0fed27244dea02a1421d70b3_cgraph" loading="lazy" alt=""/></div>
+<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00425">425</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
+
 </div>
-<div class="dynheader">
-Gráfico de llamadas a esta función:</div>
-<div class="dyncontent">
-<div class="center"><img src="display_8c_a68c92b6a0fed27244dea02a1421d70b3_icgraph.png" border="0" usemap="#adisplay_8c_a68c92b6a0fed27244dea02a1421d70b3_icgraph" loading="lazy" alt=""/></div>
 </div>
+<a id="a29450014420dbae89e483bd89ad30c32" name="a29450014420dbae89e483bd89ad30c32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29450014420dbae89e483bd89ad30c32">&#9670;&#160;</a></span>sh1106_print_emergency()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void sh1106_print_emergency </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00235">235</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
 
 </div>
 </div>
@@ -1088,17 +899,7 @@ Gráfico de llamadas a esta función:</div>
 
 <p>Función que agrega al buffer de la pantalla un marco fijo que incluye la hora, la línea horizontal divisoria y el logo de la UTN. </p>
 
-<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00233">233</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
-<div class="dynheader">
-Gráfico de llamadas de esta función:</div>
-<div class="dyncontent">
-<div class="center"><img src="display_8c_a53bce9b7fc41d510f91fe40b01d296d5_cgraph.png" border="0" usemap="#adisplay_8c_a53bce9b7fc41d510f91fe40b01d296d5_cgraph" loading="lazy" alt=""/></div>
-</div>
-<div class="dynheader">
-Gráfico de llamadas a esta función:</div>
-<div class="dyncontent">
-<div class="center"><img src="display_8c_a53bce9b7fc41d510f91fe40b01d296d5_icgraph.png" border="0" usemap="#adisplay_8c_a53bce9b7fc41d510f91fe40b01d296d5_icgraph" loading="lazy" alt=""/></div>
-</div>
+<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00227">227</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
 
 </div>
 </div>
@@ -1133,17 +934,7 @@ Gráfico de llamadas a esta función:</div>
   </dd>
 </dl>
 
-<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00214">214</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
-<div class="dynheader">
-Gráfico de llamadas de esta función:</div>
-<div class="dyncontent">
-<div class="center"><img src="display_8c_a67fd3b24d3fe3a80a92dcb0662cf3c2c_cgraph.png" border="0" usemap="#adisplay_8c_a67fd3b24d3fe3a80a92dcb0662cf3c2c_cgraph" loading="lazy" alt=""/></div>
-</div>
-<div class="dynheader">
-Gráfico de llamadas a esta función:</div>
-<div class="dyncontent">
-<div class="center"><img src="display_8c_a67fd3b24d3fe3a80a92dcb0662cf3c2c_icgraph.png" border="0" usemap="#adisplay_8c_a67fd3b24d3fe3a80a92dcb0662cf3c2c_icgraph" loading="lazy" alt=""/></div>
-</div>
+<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00204">204</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
 
 </div>
 </div>
@@ -1178,17 +969,7 @@ Gráfico de llamadas a esta función:</div>
   </dd>
 </dl>
 
-<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00295">295</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
-<div class="dynheader">
-Gráfico de llamadas de esta función:</div>
-<div class="dyncontent">
-<div class="center"><img src="display_8c_ace8dea497c558e3edb559d848856c233_cgraph.png" border="0" usemap="#adisplay_8c_ace8dea497c558e3edb559d848856c233_cgraph" loading="lazy" alt=""/></div>
-</div>
-<div class="dynheader">
-Gráfico de llamadas a esta función:</div>
-<div class="dyncontent">
-<div class="center"><img src="display_8c_ace8dea497c558e3edb559d848856c233_icgraph.png" border="0" usemap="#adisplay_8c_ace8dea497c558e3edb559d848856c233_icgraph" loading="lazy" alt=""/></div>
-</div>
+<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00298">298</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
 
 </div>
 </div>
@@ -1223,17 +1004,7 @@ Gráfico de llamadas a esta función:</div>
   </dd>
 </dl>
 
-<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00399">399</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
-<div class="dynheader">
-Gráfico de llamadas de esta función:</div>
-<div class="dyncontent">
-<div class="center"><img src="display_8c_a4ecf1cb087c1b0706199c5965ed87c5b_cgraph.png" border="0" usemap="#adisplay_8c_a4ecf1cb087c1b0706199c5965ed87c5b_cgraph" loading="lazy" alt=""/></div>
-</div>
-<div class="dynheader">
-Gráfico de llamadas a esta función:</div>
-<div class="dyncontent">
-<div class="center"><img src="display_8c_a4ecf1cb087c1b0706199c5965ed87c5b_icgraph.png" border="0" usemap="#adisplay_8c_a4ecf1cb087c1b0706199c5965ed87c5b_icgraph" loading="lazy" alt=""/></div>
-</div>
+<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00402">402</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
 
 </div>
 </div>
@@ -1262,17 +1033,7 @@ Gráfico de llamadas a esta función:</div>
 
 <p>Pantalla de splash que se imprime al iniciar el sistema. </p>
 
-<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00411">411</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
-<div class="dynheader">
-Gráfico de llamadas de esta función:</div>
-<div class="dyncontent">
-<div class="center"><img src="display_8c_ab07ce08361000a77647dc393f0d7b233_cgraph.png" border="0" usemap="#adisplay_8c_ab07ce08361000a77647dc393f0d7b233_cgraph" loading="lazy" alt=""/></div>
-</div>
-<div class="dynheader">
-Gráfico de llamadas a esta función:</div>
-<div class="dyncontent">
-<div class="center"><img src="display_8c_ab07ce08361000a77647dc393f0d7b233_icgraph.png" border="0" usemap="#adisplay_8c_ab07ce08361000a77647dc393f0d7b233_icgraph" loading="lazy" alt=""/></div>
-</div>
+<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00414">414</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
 
 </div>
 </div>
@@ -1307,17 +1068,7 @@ Gráfico de llamadas a esta función:</div>
   </dd>
 </dl>
 
-<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00241">241</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
-<div class="dynheader">
-Gráfico de llamadas de esta función:</div>
-<div class="dyncontent">
-<div class="center"><img src="display_8c_a6b84e310816652c40db2a3af353b0194_cgraph.png" border="0" usemap="#adisplay_8c_a6b84e310816652c40db2a3af353b0194_cgraph" loading="lazy" alt=""/></div>
-</div>
-<div class="dynheader">
-Gráfico de llamadas a esta función:</div>
-<div class="dyncontent">
-<div class="center"><img src="display_8c_a6b84e310816652c40db2a3af353b0194_icgraph.png" border="0" usemap="#adisplay_8c_a6b84e310816652c40db2a3af353b0194_icgraph" loading="lazy" alt=""/></div>
-</div>
+<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00244">244</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
 
 </div>
 </div>
@@ -1344,17 +1095,7 @@ Gráfico de llamadas a esta función:</div>
   </dd>
 </dl>
 
-<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00480">480</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
-<div class="dynheader">
-Gráfico de llamadas de esta función:</div>
-<div class="dyncontent">
-<div class="center"><img src="display_8c_a0c23017a47c450de05f8c7af642c7461_cgraph.png" border="0" usemap="#adisplay_8c_a0c23017a47c450de05f8c7af642c7461_cgraph" loading="lazy" alt=""/></div>
-</div>
-<div class="dynheader">
-Gráfico de llamadas a esta función:</div>
-<div class="dyncontent">
-<div class="center"><img src="display_8c_a0c23017a47c450de05f8c7af642c7461_icgraph.png" border="0" usemap="#adisplay_8c_a0c23017a47c450de05f8c7af642c7461_icgraph" loading="lazy" alt=""/></div>
-</div>
+<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00485">485</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
 
 </div>
 </div>
@@ -1379,7 +1120,7 @@ Gráfico de llamadas a esta función:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00120">120</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00110">110</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
 
 </div>
 </div>
@@ -1395,7 +1136,7 @@ Gráfico de llamadas a esta función:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00083">83</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00073">73</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
 
 </div>
 </div>
@@ -1444,7 +1185,7 @@ Gráfico de llamadas a esta función:</div>
 <div class="line">    0xAF   </div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00091">91</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00081">81</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
 
 </div>
 </div>
@@ -1460,7 +1201,7 @@ Gráfico de llamadas a esta función:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00117">117</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00107">107</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
 
 </div>
 </div>
@@ -1484,7 +1225,7 @@ Gráfico de llamadas a esta función:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00089">89</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00079">79</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
 
 </div>
 </div>
@@ -1500,7 +1241,7 @@ Gráfico de llamadas a esta función:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00085">85</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00075">75</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
 
 </div>
 </div>
@@ -1516,7 +1257,7 @@ Gráfico de llamadas a esta función:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00087">87</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00077">77</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
 
 </div>
 </div>
@@ -1532,7 +1273,7 @@ Gráfico de llamadas a esta función:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00086">86</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00076">76</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
 
 </div>
 </div>
@@ -1556,7 +1297,7 @@ Gráfico de llamadas a esta función:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00119">119</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00109">109</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
 
 </div>
 </div>
