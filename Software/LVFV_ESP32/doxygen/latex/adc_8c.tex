@@ -45,7 +45,7 @@ esp\+\_\+err\+\_\+t \mbox{\hyperlink{adc_8c_a3cfa671db431099a0d91bd8bcfe935f8}{a
 \begin{DoxyCompactList}\small\item\em Configura los 4 ADC necesarios para el sistema y los calibra para obtener las mediciones en desde 0 a 3125mV. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{adc_8c_a1b78b89977b7b9e5ebc32e9456337379}{adc\+\_\+task}} (void \texorpdfstring{$\ast$}{*}arg)
 \begin{DoxyCompactList}\small\item\em Función programada como alarma para finalizar el funcionamiento del motor. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791}{system\+\_\+status\+\_\+e}} \mbox{\hyperlink{adc_8c_aa1581e2212cf6853c63ae97147e9ed1f}{read\+ADC}} (void)
+bool \mbox{\hyperlink{adc_8c_a5e222f52aaf250a9fcb696fe00333cac}{read\+ADC}} (void)
 \begin{DoxyCompactList}\small\item\em Desencola mediciones obtenidas desde el ADC para tensión y corriente del bus de contínua, compara con los parámetros seteados y dispara el estado de emergencia si es necesario. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
@@ -250,11 +250,11 @@ Lee por las entradas el canal 0 (GPIO36) el nivel de tensión de fuente de 5V, 3
 
 Definición en la línea \mbox{\hyperlink{adc_8c_source_l00146}{146}} del archivo \mbox{\hyperlink{adc_8c_source}{adc.\+c}}.
 
-\Hypertarget{adc_8c_aa1581e2212cf6853c63ae97147e9ed1f}\index{adc.c@{adc.c}!readADC@{readADC}}
+\Hypertarget{adc_8c_a5e222f52aaf250a9fcb696fe00333cac}\index{adc.c@{adc.c}!readADC@{readADC}}
 \index{readADC@{readADC}!adc.c@{adc.c}}
 \doxysubsubsection{\texorpdfstring{readADC()}{readADC()}}
-{\footnotesize\ttfamily \label{adc_8c_aa1581e2212cf6853c63ae97147e9ed1f} 
-\mbox{\hyperlink{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791}{system\+\_\+status\+\_\+e}} read\+ADC (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{adc_8c_a5e222f52aaf250a9fcb696fe00333cac} 
+bool read\+ADC (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
 
 
 
@@ -264,10 +264,9 @@ Consulta si existe alguna medición encolada en bus\+\_\+meas\+\_\+evt\+\_\+queu
 
 
 \begin{DoxyRetVals}{Valores devueltos}
-{\em -\/} & SYSTEM\+\_\+\+EMERGENCY\+: Si las mediciones de tensión o corriente del bus de DC está fuera de los parámetros esperados
+{\em -\/} & true\+: Si el sistema está inicializado y las mediciones pueden ser obtenidas
 \begin{DoxyItemize}
-\item SYSTEM\+\_\+\+EMERGENCY\+\_\+\+SENT\+: Si las mediciones de tensión o corriente del bus de DC continúan por fuera de los parámetros esperados
-\item Otros estados\+: Si la medición está dentro de los parámetros aceptables 
+\item false\+: Si el sistema todavía no inición y las mediciones que pudo haber obtenido fueron inválidas 
 \end{DoxyItemize}\\
 \hline
 \end{DoxyRetVals}

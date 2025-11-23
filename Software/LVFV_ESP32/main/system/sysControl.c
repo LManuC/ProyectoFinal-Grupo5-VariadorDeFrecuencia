@@ -208,14 +208,18 @@ void SPI_communication(void *arg) {
         item.setValue = 0;
         item.getValue = 0;
         vTaskDelay(pdMS_TO_TICKS(100));
-    } while ( SPI_SendRequest(&item) != SPI_RESPONSE_ERR_NOT_MOVING);
+    } while ( SPI_SendRequest(&item) != SPI_RESPONSE_ERR_NOT_MOVING );
 
-    engine_emergency_stop();
-    for (uint8_t i = 0; i < 10; i++) { 
-        readADC();
-        xQueueReceive( system_event_queue, &new_button, pdMS_TO_TICKS(20) );
+    for ( uint32_t i = 0;; i++ ) {
+        if ( readADC() ) {
+            while( xQueueReceive( system_event_queue, &new_button, pdMS_TO_TICKS(0) ) );
+            SystemEventPost(STOP_PRESSED);
+            break;
+        }
+        vTaskDelay(pdMS_TO_TICKS(100));
     }
-    engine_stop();
+
+    SystemEventPost(STOP_PRESSED);
 
     ESP_LOGI(TAG, "SPI_communication lista. Esperando comandos...");
 
@@ -234,7 +238,7 @@ void SPI_communication(void *arg) {
                     engine_emergency_stop();
                     break;
                 case STOP_PRESSED:
-                    if ( s_e.status != SYSTEM_EMERGENCY || s_e.status != SYSTEM_EMERGENCY_SENT ) {
+                    if ( s_e.status != SYSTEM_EMERGENCY && s_e.status != SYSTEM_EMERGENCY_SENT ) {
                         engine_stop();
                         ESP_LOGI(TAG, "Botón de Parada presionado");
                         item.request = SPI_REQUEST_STOP;
@@ -313,7 +317,6 @@ void SPI_communication(void *arg) {
                     item.setValue = 0;
                     item.getValue = 0;
                     SPI_SendRequest(&item);
-                    engine_emergency_stop();
                     RelayEvantPost( 1 );
                     break;
                 case TERMO_SW_PRESSED:

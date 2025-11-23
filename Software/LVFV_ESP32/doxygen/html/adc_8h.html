@@ -106,8 +106,8 @@ Funciones</h2></td></tr>
 <tr class="memdesc:a1b78b89977b7b9e5ebc32e9456337379"><td class="mdescLeft">&#160;</td><td class="mdescRight">Función programada como alarma para finalizar el funcionamiento del motor.  <br /></td></tr>
 <tr class="memitem:a3cfa671db431099a0d91bd8bcfe935f8" id="r_a3cfa671db431099a0d91bd8bcfe935f8"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3cfa671db431099a0d91bd8bcfe935f8">adc_init</a> (void)</td></tr>
 <tr class="memdesc:a3cfa671db431099a0d91bd8bcfe935f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configura los 4 ADC necesarios para el sistema y los calibra para obtener las mediciones en desde 0 a 3125mV.  <br /></td></tr>
-<tr class="memitem:aa1581e2212cf6853c63ae97147e9ed1f" id="r_aa1581e2212cf6853c63ae97147e9ed1f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_l_v_f_v__system_8h.html#a175b5f4c0244bf0bde30789366d31791">system_status_e</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa1581e2212cf6853c63ae97147e9ed1f">readADC</a> (void)</td></tr>
-<tr class="memdesc:aa1581e2212cf6853c63ae97147e9ed1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Desencola mediciones obtenidas desde el ADC para tensión y corriente del bus de contínua, compara con los parámetros seteados y dispara el estado de emergencia si es necesario.  <br /></td></tr>
+<tr class="memitem:a5e222f52aaf250a9fcb696fe00333cac" id="r_a5e222f52aaf250a9fcb696fe00333cac"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5e222f52aaf250a9fcb696fe00333cac">readADC</a> (void)</td></tr>
+<tr class="memdesc:a5e222f52aaf250a9fcb696fe00333cac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Desencola mediciones obtenidas desde el ADC para tensión y corriente del bus de contínua, compara con los parámetros seteados y dispara el estado de emergencia si es necesario.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descripción detallada</h2>
 <div class="textblock"><p>Declraración de funcion de inicialización y tarea lectura del ADC. </p>
@@ -161,14 +161,14 @@ Funciones</h2></td></tr>
 
 </div>
 </div>
-<a id="aa1581e2212cf6853c63ae97147e9ed1f" name="aa1581e2212cf6853c63ae97147e9ed1f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa1581e2212cf6853c63ae97147e9ed1f">&#9670;&#160;</a></span>readADC()</h2>
+<a id="a5e222f52aaf250a9fcb696fe00333cac" name="a5e222f52aaf250a9fcb696fe00333cac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e222f52aaf250a9fcb696fe00333cac">&#9670;&#160;</a></span>readADC()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_l_v_f_v__system_8h.html#a175b5f4c0244bf0bde30789366d31791">system_status_e</a> readADC </td>
+          <td class="memname">bool readADC </td>
           <td>(</td>
           <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -180,9 +180,8 @@ Funciones</h2></td></tr>
 <p>Consulta si existe alguna medición encolada en bus_meas_evt_queue sin ser bloqueante y envía esas mediciones a analizar por el sistema para evaluar si corresponde o no un estado de emergencia.</p>
 <dl class="retval"><dt>Valores devueltos</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">-</td><td>SYSTEM_EMERGENCY: Si las mediciones de tensión o corriente del bus de DC está fuera de los parámetros esperados<ul>
-<li>SYSTEM_EMERGENCY_SENT: Si las mediciones de tensión o corriente del bus de DC continúan por fuera de los parámetros esperados</li>
-<li>Otros estados: Si la medición está dentro de los parámetros aceptables </li>
+    <tr><td class="paramname">-</td><td>true: Si el sistema está inicializado y las mediciones pueden ser obtenidas<ul>
+<li>false: Si el sistema todavía no inición y las mediciones que pudo haber obtenido fueron inválidas </li>
 </ul>
 </td></tr>
   </table>

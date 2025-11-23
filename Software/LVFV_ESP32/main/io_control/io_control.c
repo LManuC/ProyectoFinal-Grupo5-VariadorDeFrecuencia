@@ -462,7 +462,7 @@ void GPIO_interrupt_attendance_task(void* arg) {
                         break;
                 }
             } else if ( io_num == STOP_BUTTON_PIN ) {
-                if ( !gpio_get_level(io_num) ) {
+                if ( gpio_get_level(io_num) ) {
                     last_interrupt = EMERGENCI_STOP_PRESSED;
                 } else {
                     last_interrupt = EMERGENCI_STOP_RELEASED;
@@ -567,13 +567,13 @@ void GPIO_interrupt_attendance_task(void* arg) {
                 }
                 break;
             case EMERGENCI_STOP_PRESSED:
-                if ( !gpio_get_level(STOP_BUTTON_PIN) ) {
+                if ( gpio_get_level(STOP_BUTTON_PIN) ) {
                     SystemEventPost(last_interrupt);
                     RelayEvantPost( 1 );
                 }
                 break;
             case EMERGENCI_STOP_RELEASED:
-                if ( gpio_get_level(STOP_BUTTON_PIN) ) {
+                if ( !gpio_get_level(STOP_BUTTON_PIN) ) {
                     SystemEventPost(last_interrupt);
                 }
                 break;

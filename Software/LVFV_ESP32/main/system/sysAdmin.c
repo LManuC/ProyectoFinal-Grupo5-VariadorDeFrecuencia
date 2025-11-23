@@ -192,26 +192,28 @@ system_status_e update_meas(uint16_t vbus_meas, uint16_t ibus_meas) {
 
     if ( system_status.ibus_max > system_seccurity_settings.ibus_max ) {
         in_emergency = true;
-        if ( system_status.status != SYSTEM_EMERGENCY ) {
+        if ( system_status.status != SYSTEM_EMERGENCY && system_status.status != SYSTEM_EMERGENCY_SENT ) {
             ESP_LOGE( TAG, "Disparo de emergencia por sobre corriente.");
         }
     }
 
     if ( system_status.vbus_min < system_seccurity_settings.vbus_min ) {
         in_emergency = true;
-        if ( system_status.status != SYSTEM_EMERGENCY ) {
+        if ( system_status.status != SYSTEM_EMERGENCY && system_status.status != SYSTEM_EMERGENCY_SENT ) {
             ESP_LOGE( TAG, "Disparo de emergencia por baja tensión.");
         }
     }
 
     if ( in_emergency == true ) {
-        if ( system_status.status == SYSTEM_EMERGENCY ) {
+        if ( system_status.status != SYSTEM_EMERGENCY_SENT ) {
+            engine_emergency_stop();
             SystemEventPost(SECURITY_EXCEDED);
             ESP_LOGI( TAG, "Mando senal.");
+            system_status.status = SYSTEM_EMERGENCY_SENT;
         }
-        system_status.status = SYSTEM_EMERGENCY_SENT;
     } else if ( system_status.status == SYSTEM_EMERGENCY_SENT ) {
         SystemEventPost(SECURITY_OK);
+        ESP_LOGI( TAG, "Salgo de emergencia por seguridad.");
     }
 
     return system_status.status;

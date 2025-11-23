@@ -10,7 +10,7 @@ var adc_8c =
     [ "adc_cali_try_init", "adc_8c.html#a3862aae06b5dfd4b6a23b569a4540fe2", null ],
     [ "adc_init", "adc_8c.html#a3cfa671db431099a0d91bd8bcfe935f8", null ],
     [ "adc_task", "adc_8c.html#a1b78b89977b7b9e5ebc32e9456337379", null ],
-    [ "readADC", "adc_8c.html#aa1581e2212cf6853c63ae97147e9ed1f", null ],
+    [ "readADC", "adc_8c.html#a5e222f52aaf250a9fcb696fe00333cac", null ],
     [ "bus_meas_evt_queue", "adc_8c.html#a6180364ad07572b6a621ab10c902c3ee", null ],
     [ "calibration_3V3_source", "adc_8c.html#a5a1bd2c5793ac7753f8a0906218f5ea7", null ],
     [ "calibration_3V3_source_ok", "adc_8c.html#ae4b530de7864564055c6c19c4a1ef2c8", null ],

@@ -169,59 +169,61 @@
 \DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00192}00192\ }
 \DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00193}00193\ \ \ \ \ \textcolor{keywordflow}{if}\ (\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.ibus\_max\ >\ \mbox{\hyperlink{display_8c_a45b4049988bafe92214f32fd28019e30}{system\_seccurity\_settings}}.ibus\_max\ )\ \{}
 \DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00194}00194\ \ \ \ \ \ \ \ \ in\_emergency\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00195}00195\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.status\ !=\ \mbox{\hyperlink{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791abf715611d16f62350c373d1c4aa17547}{SYSTEM\_EMERGENCY}}\ )\ \{}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00195}00195\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.status\ !=\ \mbox{\hyperlink{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791abf715611d16f62350c373d1c4aa17547}{SYSTEM\_EMERGENCY}}\ \&\&\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.status\ !=\ \mbox{\hyperlink{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791afa44959cbb89c7f6c3da69da5f014a08}{SYSTEM\_EMERGENCY\_SENT}}\ )\ \{}
 \DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00196}00196\ \ \ \ \ \ \ \ \ \ \ \ \ ESP\_LOGE(\ \mbox{\hyperlink{adc_8c_a5a85b9c772bbeb480b209a3e6ea92b4c}{TAG}},\ \textcolor{stringliteral}{"{}Disparo\ de\ emergencia\ por\ sobre\ corriente."{}});}
 \DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00197}00197\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00198}00198\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00199}00199\ }
 \DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00200}00200\ \ \ \ \ \textcolor{keywordflow}{if}\ (\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.vbus\_min\ <\ \mbox{\hyperlink{display_8c_a45b4049988bafe92214f32fd28019e30}{system\_seccurity\_settings}}.vbus\_min\ )\ \{}
 \DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00201}00201\ \ \ \ \ \ \ \ \ in\_emergency\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00202}00202\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.status\ !=\ \mbox{\hyperlink{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791abf715611d16f62350c373d1c4aa17547}{SYSTEM\_EMERGENCY}}\ )\ \{}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00202}00202\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.status\ !=\ \mbox{\hyperlink{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791abf715611d16f62350c373d1c4aa17547}{SYSTEM\_EMERGENCY}}\ \&\&\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.status\ !=\ \mbox{\hyperlink{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791afa44959cbb89c7f6c3da69da5f014a08}{SYSTEM\_EMERGENCY\_SENT}}\ )\ \{}
 \DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ \ \ ESP\_LOGE(\ \mbox{\hyperlink{adc_8c_a5a85b9c772bbeb480b209a3e6ea92b4c}{TAG}},\ \textcolor{stringliteral}{"{}Disparo\ de\ emergencia\ por\ baja\ tensión."{}});}
 \DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00204}00204\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00205}00205\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00206}00206\ }
 \DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00207}00207\ \ \ \ \ \textcolor{keywordflow}{if}\ (\ in\_emergency\ ==\ \textcolor{keyword}{true}\ )\ \{}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00208}00208\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.status\ ==\ \mbox{\hyperlink{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791abf715611d16f62350c373d1c4aa17547}{SYSTEM\_EMERGENCY}}\ )\ \{}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00209}00209\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_control_8c_aba4a84160e22ceea0cedd0ddcd454af4}{SystemEventPost}}(\mbox{\hyperlink{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796a28442d6913cbeabc9ed6fe1e20a255bf}{SECURITY\_EXCEDED}});}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00210}00210\ \ \ \ \ \ \ \ \ \ \ \ \ ESP\_LOGI(\ \mbox{\hyperlink{adc_8c_a5a85b9c772bbeb480b209a3e6ea92b4c}{TAG}},\ \textcolor{stringliteral}{"{}Mando\ senal."{}});}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00211}00211\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00212}00212\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.status\ =\ \mbox{\hyperlink{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791afa44959cbb89c7f6c3da69da5f014a08}{SYSTEM\_EMERGENCY\_SENT}};}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00213}00213\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.status\ ==\ \mbox{\hyperlink{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791afa44959cbb89c7f6c3da69da5f014a08}{SYSTEM\_EMERGENCY\_SENT}}\ )\ \{}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00214}00214\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_control_8c_aba4a84160e22ceea0cedd0ddcd454af4}{SystemEventPost}}(\mbox{\hyperlink{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796af31dc398d7d8cbf4a834c81d7dfa0e82}{SECURITY\_OK}});}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00215}00215\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00216}00216\ }
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00217}00217\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.status;}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00218}00218\ \}}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00219}00219\ }
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00220}\mbox{\hyperlink{sys_admin_8c_a4c6328d6bdb3ae404b65b9046dc71446}{00220}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{sys_admin_8c_a4c6328d6bdb3ae404b65b9046dc71446}{set\_frequency\_table}}(\ uint16\_t\ input\_variable,\ uint16\_t\ freq\_regime\ )\ \{}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00221}00221\ \ \ \ \ \textcolor{keywordflow}{if}\ (\ input\_variable\ ==\ 1\ )\ \{\ \textcolor{comment}{//lineal}}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00222}00222\ \ \ \ \ \ \ \ \ uint16\_t\ frequency\_gap\ =\ freq\_regime\ /\ 8;}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00223}00223\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_aa12e414b0919881d870f6596c2250185}{frequency\_table}}[7]\ =\ frequency\_gap;}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00224}00224\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (uint8\_t\ i\ =\ 6;\ i\ >\ 0;\ i-\/-\/\ )\ \{}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00225}00225\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_aa12e414b0919881d870f6596c2250185}{frequency\_table}}[i]\ =\ \mbox{\hyperlink{sys_admin_8c_aa12e414b0919881d870f6596c2250185}{frequency\_table}}[i\ +\ 1]\ +\ frequency\_gap;}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00226}00226\ \ \ \ \ \ \ \ \ \ \ \ \ ESP\_LOGI(\mbox{\hyperlink{adc_8c_a5a85b9c772bbeb480b209a3e6ea92b4c}{TAG}},\ \textcolor{stringliteral}{"{}frequency\_table[\%d]\ =\ \%d"{}},\ i,\ \mbox{\hyperlink{sys_admin_8c_aa12e414b0919881d870f6596c2250185}{frequency\_table}}[i]);}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00227}00227\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00228}00228\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_aa12e414b0919881d870f6596c2250185}{frequency\_table}}[0]\ =\ freq\_regime;}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00229}00229\ \ \ \ \ \ \ \ \ ESP\_LOGI(\mbox{\hyperlink{adc_8c_a5a85b9c772bbeb480b209a3e6ea92b4c}{TAG}},\ \textcolor{stringliteral}{"{}frequency\_table[0]\ =\ \%d"{}},\ \mbox{\hyperlink{sys_admin_8c_aa12e414b0919881d870f6596c2250185}{frequency\_table}}[0]);}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00230}00230\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\ input\_variable\ ==\ 2\ )\ \{\ \textcolor{comment}{//Cuadratica}}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00231}00231\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (uint8\_t\ i\ =\ 0;\ i\ <\ 8;\ i++)\ \{}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00232}00232\ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ num\ =\ (uint32\_t)freq\_regime\ *\ (uint32\_t)(i\ +\ 1)\ *\ (uint32\_t)(i\ +\ 1);}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00233}00233\ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ fi\ \ =\ (uint16\_t)((num\ +\ 32)\ /\ 64);}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00234}00234\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (fi\ ==\ 0)}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00235}00235\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fi\ =\ 1;}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00236}00236\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_aa12e414b0919881d870f6596c2250185}{frequency\_table}}[7\ -\/\ i]\ =\ fi;}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00237}00237\ \ \ \ \ \ \ \ \ \ \ \ \ ESP\_LOGI(\mbox{\hyperlink{adc_8c_a5a85b9c772bbeb480b209a3e6ea92b4c}{TAG}},\ \textcolor{stringliteral}{"{}frequency\_table[\%d]\ =\ \%d"{}},\ 7\ -\/\ i,\ \mbox{\hyperlink{sys_admin_8c_aa12e414b0919881d870f6596c2250185}{frequency\_table}}[7\ -\/\ i]);}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00238}00238\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00239}00239\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00240}00240\ \}}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00241}00241\ }
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00242}\mbox{\hyperlink{sys_admin_8c_a76880514447931f4c7457ce0407a6349}{00242}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{sys_admin_8c_a76880514447931f4c7457ce0407a6349}{set\_system\_settings}}(\ \mbox{\hyperlink{structfrequency__settings__t}{frequency\_settings\_t}}\ *f\_s,\ \mbox{\hyperlink{structseccurity__settings__t}{seccurity\_settings\_t}}\ *s\_s\ )\ \{}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00243}00243\ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.acceleration\ =\ f\_s-\/>\mbox{\hyperlink{structfrequency__settings__t_a44e11b804280aecf19f944765588d26f}{acceleration}};}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00244}00244\ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.desacceleration\ =\ f\_s-\/>\mbox{\hyperlink{structfrequency__settings__t_a8d753b012e5099230395ba6421d5d35b}{desacceleration}};}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00245}00245\ \ \ \ \ \mbox{\hyperlink{display_8c_a45b4049988bafe92214f32fd28019e30}{system\_seccurity\_settings}}.vbus\_min\ =\ s\_s-\/>\mbox{\hyperlink{structseccurity__settings__t_a58033d9c9f897d33e98d9686d7cf78b5}{vbus\_min}};}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00246}00246\ \ \ \ \ \mbox{\hyperlink{display_8c_a45b4049988bafe92214f32fd28019e30}{system\_seccurity\_settings}}.ibus\_max\ =\ s\_s-\/>\mbox{\hyperlink{structseccurity__settings__t_a69f28b5a90c9b33472fb9b8e7d530cb1}{ibus\_max}};}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00247}00247\ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_a4c6328d6bdb3ae404b65b9046dc71446}{set\_frequency\_table}}(\ f\_s-\/>\mbox{\hyperlink{structfrequency__settings__t_adbc9bfdd34cf261290d0c07e20756985}{input\_variable}},\ f\_s-\/>\mbox{\hyperlink{structfrequency__settings__t_a926d6368e65c23d77658fd6fd2c08af9}{freq\_regime}}\ );}
-\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00248}00248\ \}}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00208}00208\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.status\ !=\ \mbox{\hyperlink{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791afa44959cbb89c7f6c3da69da5f014a08}{SYSTEM\_EMERGENCY\_SENT}}\ )\ \{}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00209}00209\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_aa6c33be7b7273385ae39a1f682f28f75}{engine\_emergency\_stop}}();}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00210}00210\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_control_8c_aba4a84160e22ceea0cedd0ddcd454af4}{SystemEventPost}}(\mbox{\hyperlink{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796a28442d6913cbeabc9ed6fe1e20a255bf}{SECURITY\_EXCEDED}});}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00211}00211\ \ \ \ \ \ \ \ \ \ \ \ \ ESP\_LOGI(\ \mbox{\hyperlink{adc_8c_a5a85b9c772bbeb480b209a3e6ea92b4c}{TAG}},\ \textcolor{stringliteral}{"{}Mando\ senal."{}});}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00212}00212\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.status\ =\ \mbox{\hyperlink{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791afa44959cbb89c7f6c3da69da5f014a08}{SYSTEM\_EMERGENCY\_SENT}};}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00213}00213\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00214}00214\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.status\ ==\ \mbox{\hyperlink{_l_v_f_v__system_8h_a175b5f4c0244bf0bde30789366d31791afa44959cbb89c7f6c3da69da5f014a08}{SYSTEM\_EMERGENCY\_SENT}}\ )\ \{}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00215}00215\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_control_8c_aba4a84160e22ceea0cedd0ddcd454af4}{SystemEventPost}}(\mbox{\hyperlink{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796af31dc398d7d8cbf4a834c81d7dfa0e82}{SECURITY\_OK}});}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00216}00216\ \ \ \ \ \ \ \ \ ESP\_LOGI(\ \mbox{\hyperlink{adc_8c_a5a85b9c772bbeb480b209a3e6ea92b4c}{TAG}},\ \textcolor{stringliteral}{"{}Salgo\ de\ emergencia\ por\ seguridad."{}});}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00217}00217\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00218}00218\ }
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00219}00219\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.status;}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00220}00220\ \}}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00221}00221\ }
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00222}\mbox{\hyperlink{sys_admin_8c_a4c6328d6bdb3ae404b65b9046dc71446}{00222}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{sys_admin_8c_a4c6328d6bdb3ae404b65b9046dc71446}{set\_frequency\_table}}(\ uint16\_t\ input\_variable,\ uint16\_t\ freq\_regime\ )\ \{}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00223}00223\ \ \ \ \ \textcolor{keywordflow}{if}\ (\ input\_variable\ ==\ 1\ )\ \{\ \textcolor{comment}{//lineal}}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00224}00224\ \ \ \ \ \ \ \ \ uint16\_t\ frequency\_gap\ =\ freq\_regime\ /\ 8;}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00225}00225\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_aa12e414b0919881d870f6596c2250185}{frequency\_table}}[7]\ =\ frequency\_gap;}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00226}00226\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (uint8\_t\ i\ =\ 6;\ i\ >\ 0;\ i-\/-\/\ )\ \{}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00227}00227\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_aa12e414b0919881d870f6596c2250185}{frequency\_table}}[i]\ =\ \mbox{\hyperlink{sys_admin_8c_aa12e414b0919881d870f6596c2250185}{frequency\_table}}[i\ +\ 1]\ +\ frequency\_gap;}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00228}00228\ \ \ \ \ \ \ \ \ \ \ \ \ ESP\_LOGI(\mbox{\hyperlink{adc_8c_a5a85b9c772bbeb480b209a3e6ea92b4c}{TAG}},\ \textcolor{stringliteral}{"{}frequency\_table[\%d]\ =\ \%d"{}},\ i,\ \mbox{\hyperlink{sys_admin_8c_aa12e414b0919881d870f6596c2250185}{frequency\_table}}[i]);}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00229}00229\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00230}00230\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_aa12e414b0919881d870f6596c2250185}{frequency\_table}}[0]\ =\ freq\_regime;}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00231}00231\ \ \ \ \ \ \ \ \ ESP\_LOGI(\mbox{\hyperlink{adc_8c_a5a85b9c772bbeb480b209a3e6ea92b4c}{TAG}},\ \textcolor{stringliteral}{"{}frequency\_table[0]\ =\ \%d"{}},\ \mbox{\hyperlink{sys_admin_8c_aa12e414b0919881d870f6596c2250185}{frequency\_table}}[0]);}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00232}00232\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\ input\_variable\ ==\ 2\ )\ \{\ \textcolor{comment}{//Cuadratica}}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00233}00233\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (uint8\_t\ i\ =\ 0;\ i\ <\ 8;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00234}00234\ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ num\ =\ (uint32\_t)freq\_regime\ *\ (uint32\_t)(i\ +\ 1)\ *\ (uint32\_t)(i\ +\ 1);}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00235}00235\ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ fi\ \ =\ (uint16\_t)((num\ +\ 32)\ /\ 64);}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00236}00236\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (fi\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00237}00237\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fi\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00238}00238\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_aa12e414b0919881d870f6596c2250185}{frequency\_table}}[7\ -\/\ i]\ =\ fi;}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00239}00239\ \ \ \ \ \ \ \ \ \ \ \ \ ESP\_LOGI(\mbox{\hyperlink{adc_8c_a5a85b9c772bbeb480b209a3e6ea92b4c}{TAG}},\ \textcolor{stringliteral}{"{}frequency\_table[\%d]\ =\ \%d"{}},\ 7\ -\/\ i,\ \mbox{\hyperlink{sys_admin_8c_aa12e414b0919881d870f6596c2250185}{frequency\_table}}[7\ -\/\ i]);}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00240}00240\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00241}00241\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00242}00242\ \}}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00243}00243\ }
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00244}\mbox{\hyperlink{sys_admin_8c_a76880514447931f4c7457ce0407a6349}{00244}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{sys_admin_8c_a76880514447931f4c7457ce0407a6349}{set\_system\_settings}}(\ \mbox{\hyperlink{structfrequency__settings__t}{frequency\_settings\_t}}\ *f\_s,\ \mbox{\hyperlink{structseccurity__settings__t}{seccurity\_settings\_t}}\ *s\_s\ )\ \{}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00245}00245\ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.acceleration\ =\ f\_s-\/>\mbox{\hyperlink{structfrequency__settings__t_a44e11b804280aecf19f944765588d26f}{acceleration}};}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00246}00246\ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_a9f4a5a19b42426463975a42d18564601}{system\_status}}.desacceleration\ =\ f\_s-\/>\mbox{\hyperlink{structfrequency__settings__t_a8d753b012e5099230395ba6421d5d35b}{desacceleration}};}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00247}00247\ \ \ \ \ \mbox{\hyperlink{display_8c_a45b4049988bafe92214f32fd28019e30}{system\_seccurity\_settings}}.vbus\_min\ =\ s\_s-\/>\mbox{\hyperlink{structseccurity__settings__t_a58033d9c9f897d33e98d9686d7cf78b5}{vbus\_min}};}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00248}00248\ \ \ \ \ \mbox{\hyperlink{display_8c_a45b4049988bafe92214f32fd28019e30}{system\_seccurity\_settings}}.ibus\_max\ =\ s\_s-\/>\mbox{\hyperlink{structseccurity__settings__t_a69f28b5a90c9b33472fb9b8e7d530cb1}{ibus\_max}};}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00249}00249\ \ \ \ \ \mbox{\hyperlink{sys_admin_8c_a4c6328d6bdb3ae404b65b9046dc71446}{set\_frequency\_table}}(\ f\_s-\/>\mbox{\hyperlink{structfrequency__settings__t_adbc9bfdd34cf261290d0c07e20756985}{input\_variable}},\ f\_s-\/>\mbox{\hyperlink{structfrequency__settings__t_a926d6368e65c23d77658fd6fd2c08af9}{freq\_regime}}\ );}
+\DoxyCodeLine{\Hypertarget{sys_admin_8c_source_l00250}00250\ \}}
 
 \end{DoxyCode}

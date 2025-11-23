@@ -228,7 +228,7 @@ void adc_task(void *arg) {
             vector_filled = true;
         }
 
-        if ( vector_filled ) {
+        if ( vector_filled && bus_meas.ibus_max != 0 && bus_meas.vbus_min != 0 ) {
             xQueueSend(bus_meas_evt_queue, &bus_meas, 0);
         }
 
@@ -236,19 +236,12 @@ void adc_task(void *arg) {
     }
 }
 
-system_status_e readADC(void) {
+bool readADC(void) {
     seccurity_settings_t bus_meas;
-    system_status_t s_e;
-    
-    get_status(&s_e);
-
+    bool meas_updated = false;
     if ( xQueueReceive( bus_meas_evt_queue, &bus_meas, pdMS_TO_TICKS(0) ) ) {
-        s_e.status = update_meas(bus_meas.vbus_min, bus_meas.ibus_max);
+        update_meas(bus_meas.vbus_min, bus_meas.ibus_max);
+        meas_updated = true;
     }
-
-    if ( s_e.status == SYSTEM_EMERGENCY ) {
-        s_e.status = SYSTEM_EMERGENCY_SENT;
-    }
-
-    return s_e.status;
+    return meas_updated;
 }

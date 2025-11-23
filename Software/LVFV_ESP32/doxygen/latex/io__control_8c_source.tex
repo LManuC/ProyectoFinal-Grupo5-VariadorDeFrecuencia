@@ -396,7 +396,7 @@
 \DoxyCodeLine{\Hypertarget{io__control_8c_source_l00462}00462\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
 \DoxyCodeLine{\Hypertarget{io__control_8c_source_l00463}00463\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{io__control_8c_source_l00464}00464\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\ io\_num\ ==\ \mbox{\hyperlink{io__control_8c_a9da436c5bf6a3ce86e3c4a178ca6a862}{STOP\_BUTTON\_PIN}}\ )\ \{}
-\DoxyCodeLine{\Hypertarget{io__control_8c_source_l00465}00465\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ !gpio\_get\_level(io\_num)\ )\ \{}
+\DoxyCodeLine{\Hypertarget{io__control_8c_source_l00465}00465\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ gpio\_get\_level(io\_num)\ )\ \{}
 \DoxyCodeLine{\Hypertarget{io__control_8c_source_l00466}00466\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ last\_interrupt\ =\ \mbox{\hyperlink{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796a763a5af56f6336bb097fc295c10224c6}{EMERGENCI\_STOP\_PRESSED}};}
 \DoxyCodeLine{\Hypertarget{io__control_8c_source_l00467}00467\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
 \DoxyCodeLine{\Hypertarget{io__control_8c_source_l00468}00468\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ last\_interrupt\ =\ \mbox{\hyperlink{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796a8ecc5c208d515907194017a50654a5f0}{EMERGENCI\_STOP\_RELEASED}};}
@@ -501,13 +501,13 @@
 \DoxyCodeLine{\Hypertarget{io__control_8c_source_l00567}00567\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{io__control_8c_source_l00568}00568\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
 \DoxyCodeLine{\Hypertarget{io__control_8c_source_l00569}00569\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796a763a5af56f6336bb097fc295c10224c6}{EMERGENCI\_STOP\_PRESSED}}:}
-\DoxyCodeLine{\Hypertarget{io__control_8c_source_l00570}00570\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ !gpio\_get\_level(\mbox{\hyperlink{io__control_8c_a9da436c5bf6a3ce86e3c4a178ca6a862}{STOP\_BUTTON\_PIN}})\ )\ \{}
+\DoxyCodeLine{\Hypertarget{io__control_8c_source_l00570}00570\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ gpio\_get\_level(\mbox{\hyperlink{io__control_8c_a9da436c5bf6a3ce86e3c4a178ca6a862}{STOP\_BUTTON\_PIN}})\ )\ \{}
 \DoxyCodeLine{\Hypertarget{io__control_8c_source_l00571}00571\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_control_8c_aba4a84160e22ceea0cedd0ddcd454af4}{SystemEventPost}}(last\_interrupt);}
 \DoxyCodeLine{\Hypertarget{io__control_8c_source_l00572}00572\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{io__control_8c_a99f1c5e09ded6ba05fdd6b1f9d76db99}{RelayEvantPost}}(\ 1\ );}
 \DoxyCodeLine{\Hypertarget{io__control_8c_source_l00573}00573\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{io__control_8c_source_l00574}00574\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
 \DoxyCodeLine{\Hypertarget{io__control_8c_source_l00575}00575\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796a8ecc5c208d515907194017a50654a5f0}{EMERGENCI\_STOP\_RELEASED}}:}
-\DoxyCodeLine{\Hypertarget{io__control_8c_source_l00576}00576\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ gpio\_get\_level(\mbox{\hyperlink{io__control_8c_a9da436c5bf6a3ce86e3c4a178ca6a862}{STOP\_BUTTON\_PIN}})\ )\ \{}
+\DoxyCodeLine{\Hypertarget{io__control_8c_source_l00576}00576\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ !gpio\_get\_level(\mbox{\hyperlink{io__control_8c_a9da436c5bf6a3ce86e3c4a178ca6a862}{STOP\_BUTTON\_PIN}})\ )\ \{}
 \DoxyCodeLine{\Hypertarget{io__control_8c_source_l00577}00577\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_control_8c_aba4a84160e22ceea0cedd0ddcd454af4}{SystemEventPost}}(last\_interrupt);}
 \DoxyCodeLine{\Hypertarget{io__control_8c_source_l00578}00578\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{io__control_8c_source_l00579}00579\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
