@@ -19,47 +19,6 @@ typedef enum {
 
 static SystemState currentState = STATE_INIT;
 
-void GestorEstados_Init() {
-
-}
-
-void GestorEstados_Run() {
-    switch(currentState) {
-        case STATE_INIT:
-            // Implementar la logica de inicializacion
-            // Por ejemplo, iniciar los timers, configurar los GPIOs, etc.
-            //currentState = STATE_IDLE; // Cambiar al estado inactivo una vez que se complete la inicializacion
-            break;
-        case STATE_IDLE:
-            // Implementar la logica para el estado inactivo
-            // Esperar a que se reciba una accion para cambiar de estado
-            break;
-        case STATE_RUNNING:
-            // Implementar la logica para el estado de ejecucion
-            // Por ejemplo, controlar el motor a una velocidad constante
-            break;
-        case STATE_VEL_CHANGE:
-            // Implementar la logica para el estado de cambio de velocidad
-            break;
-        case STATE_BRAKING:
-            // Implementar la logica para el estado de frenado
-            // Por ejemplo, controlar el frenado del motor
-            // Si se detiene el motor y la velocidad es cero pasa al estado idle
-            //if(veloity == 0) {
-                //currentState = STATE_IDLE;
-            //}
-            break;
-        case STATE_EMERGENCY:
-            // Implementar la logica para el estado de emergencia
-            break;
-    }
-}
-
-/*
-    Diferentes partes del sistema va a mandar acciones a esta funcion para manejar
-    el estado y esta va a responder con un codigo
-
-*/
 SystemActionResponse GestorEstados_Action(SystemAction sysAct, int value) {
 
     /*

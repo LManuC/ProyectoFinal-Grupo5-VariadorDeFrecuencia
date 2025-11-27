@@ -65,96 +65,7 @@ volatile uint8_t rx_index = 0;
 
 SPI_HandleTypeDef* hspi;
 
-
-
-void SPI_ProcesarComando(uint8_t* buffer, int index, uint8_t* bufferResponse);
-
-void SPI_Init(void* _hspi) {
-
-    /* 
-        Modificacion de la configuracion del DMA 
-        Se baja la prioridad 
-    */
-    
-    // DMA1_Channel4_IRQn interrupt configuration
-    HAL_NVIC_SetPriority(DMA1_Channel4_IRQn, 2, 0);
-    HAL_NVIC_EnableIRQ(DMA1_Channel4_IRQn);
-
-    // DMA1_Channel5_IRQn interrupt configuration
-    HAL_NVIC_SetPriority(DMA1_Channel5_IRQn, 2, 0);
-    HAL_NVIC_EnableIRQ(DMA1_Channel5_IRQn);
-
-    hspi = (SPI_HandleTypeDef*)_hspi;
-
-    // Limpieza de memoria de ambos buffers
-    memset(rxDMABuffer, 0, sizeof(rxDMABuffer));
-    memset(txDMABuffer, 0, sizeof(txDMABuffer));
-
-    txDMABuffer[0] = SPI_RESPONSE_OK;
-    txDMABuffer[1] = ';';
-
-    // Inicio de el DMA
-    HAL_SPI_TransmitReceive_DMA(hspi, txDMABuffer, rxDMABuffer, SPI_TRANSMITION_SIZE);
-}
-
-
-
-void SPI_Loop(void) {
-
-    //static uint16_t lastPos = 0;
-	//uint8_t byteRx = 0;
-    //int respComando = 0;
-    
-
-    //uint16_t pos = SPI_BUF_SIZE - __HAL_DMA_GET_COUNTER(hspi->hdmarx);
-
-    /*
-    if(hspi->State != HAL_SPI_STATE_READY) {
-        // No termino el DMA
-        return;        
-    }
-    */
-
-    
-
-    /*
-    while(lastPos != pos) {
-
-        byteRx = rxDMABuffer[lastPos];
-
-
-        if(byteRx != ';') {
-            if(rxIndex < SPI_BUF_SIZE - 1) {
-                rxBuffer[rxIndex] = byteRx;
-                rxIndex++;
-            }
-        }else if(rxIndex > 0) {  // En caso de que sea un mensaje dummy se descarta
-            rxBuffer[rxIndex] = '\0'; // Fin de comando
-            printf("Comando: %s\n", rxBuffer);
-
-            // Se procesa el comando
-            respComando = SPI_ProcesarComando(rxBuffer, rxIndex);
-            if(respComando == 0) {  // Comando procesado correctamente
-                txDMABuffer[0] = RESP_OK;
-            }else {
-                txDMABuffer[0] = RESP_ERR;
-            }
-            // Se vuelve a cero el contador
-            rxIndex = 0;
-        }
-
-        // Incrementamos la posicion del buffer de DMA
-        lastPos = (lastPos + 1) % SPI_BUF_SIZE;
-    }
-
-
-    */
-
-
-
-}
-
-
+static void SPI_ProcesarComando(uint8_t* buffer, int index, uint8_t* bufferResponse);
 
 // En esta funcion vamos a procesar la cadena
 // Generalmente vamos a atacar al modulo gestor de estados
@@ -430,3 +341,21 @@ void HAL_SPI_TxRxCpltCallback(SPI_HandleTypeDef *_hspi) {
     }
 }
 
+void SPI_Init(void* _hspi) {
+    
+    HAL_NVIC_SetPriority(DMA1_Channel4_IRQn, 2, 0);
+    HAL_NVIC_EnableIRQ(DMA1_Channel4_IRQn);
+
+    HAL_NVIC_SetPriority(DMA1_Channel5_IRQn, 2, 0);
+    HAL_NVIC_EnableIRQ(DMA1_Channel5_IRQn);
+
+    hspi = (SPI_HandleTypeDef*)_hspi;
+
+    memset(rxDMABuffer, 0, sizeof(rxDMABuffer));
+    memset(txDMABuffer, 0, sizeof(txDMABuffer));
+
+    txDMABuffer[0] = SPI_RESPONSE_OK;
+    txDMABuffer[1] = ';';
+
+    HAL_SPI_TransmitReceive_DMA(hspi, txDMABuffer, rxDMABuffer, SPI_TRANSMITION_SIZE);
+}

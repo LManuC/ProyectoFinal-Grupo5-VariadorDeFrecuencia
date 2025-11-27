@@ -18,51 +18,30 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-
-/* Private includes ----------------------------------------------------------*/
-/* USER CODE BEGIN Includes */
-
-#include "../Modules/Gestor_SVM/GestorSVM.h"
-//#include "../Gestor_DinamicaMotor/GestorDinamica.h"
 #include <stdio.h>
 
-#include "../Modules/Gestor_DinamicaMotor/GestorDinamica.h"
+#include "../Modules/Gestor_SVM/GestorSVM.h"
 #include "../Modules/Gestor_Timers/GestorTimers.h"
 #include "../Modules/Gestor_Estados/GestorEstados.h"
-#include "../Modules/SoftTimers/SoftTimers.h"
 #include "../Modules/SPI_Interfase/SPIModule.h"
 
+#define GPIO_U_IN           GPIO_PIN_1
+#define GPIO_U_SD           GPIO_PIN_2
+#define GPIO_V_IN           GPIO_PIN_3
+#define GPIO_V_SD           GPIO_PIN_4
+#define GPIO_W_IN           GPIO_PIN_5
+#define GPIO_W_SD           GPIO_PIN_6
+#define GPIO_TERMO_SWITCH   GPIO_PIN_11
+#define GPIO_STOP_BUTTON    GPIO_PIN_12
 
+#define GPIO_LED_STATE      GPIO_PIN_0
+#define GPIO_LED_ERROR      GPIO_PIN_2
 
-/* USER CODE END Includes */
-
-/* Private typedef -----------------------------------------------------------*/
-/* USER CODE BEGIN PTD */
-
-/* USER CODE END PTD */
-
-/* Private define ------------------------------------------------------------*/
-/* USER CODE BEGIN PD */
-
-// Estas variables estan para prueba nomas
-static inline void CallActionStart(void) { GestorEstados_Action(ACTION_START, 0);}
-static inline void CallActionStop(void)  { GestorEstados_Action(ACTION_STOP, 0);}
-
-/* USER CODE END PD */
-
-/* Private macro -------------------------------------------------------------*/
-/* USER CODE BEGIN PM */
-
-/* USER CODE END PM */
-
-/* Private variables ---------------------------------------------------------*/
 SPI_HandleTypeDef hspi2;
 DMA_HandleTypeDef hdma_spi2_tx;
 DMA_HandleTypeDef hdma_spi2_rx;
-
 TIM_HandleTypeDef htim2;
 TIM_HandleTypeDef htim3;
-
 UART_HandleTypeDef huart1;
 
 /* USER CODE BEGIN PV */
@@ -263,48 +242,17 @@ int main(void)
   // Informamos al gestor de estados que finalizo la inicializacion
   // Esta debe ser la ultima llama de funcion del init
   GestorEstados_Action(ACTION_INIT_DONE, 0);
-
   printf("Config done\n");
 
+  __HAL_DBGMCU_FREEZE_TIM3();
+  __HAL_DBGMCU_FREEZE_TIM2();
 
-
-  /// Esto es para propositos de debug
-  __HAL_DBGMCU_FREEZE_TIM3();  // Congela TIM3 cuando el core está en halt
-  __HAL_DBGMCU_FREEZE_TIM2();  // Idem para TIM2 si querés
-
-  
-  /* USER CODE END 2 */
-
-  /* Infinite loop */
-  /* USER CODE BEGIN WHILE */
-  while (1)
-  {
-    /* USER CODE END WHILE */
-
-    /* USER CODE BEGIN 3 */
-
-    //GestorEstados_Run();
-    SoftTimer_Loop();
-
-    /*
-    //SPI_Loop();
-	  //printf("Holamundo\n");
-    //HAL_GPIO_WritePin(GPIOA, GPIO_PIN_7, GPIO_PIN_SET);
-    //HAL_Delay(2000);
-    //printf("AngSwitch: %d \n", GetData());
-    //HAL_GPIO_WritePin(GPIOA, GPIO_PIN_7, GPIO_PIN_RESET);
-    //HAL_Delay(500);
-    */
+  while (1) {
+    __WFI();
   }
-  /* USER CODE END 3 */
 }
 
-/**
-  * @brief System Clock Configuration
-  * @retval None
-  */
-void SystemClock_Config(void)
-{
+static void SystemClock_Config(void) {
   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
 
