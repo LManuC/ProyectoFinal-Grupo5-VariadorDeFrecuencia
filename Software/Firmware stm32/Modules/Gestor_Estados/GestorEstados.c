@@ -1,193 +1,178 @@
-/*
- * GestorEstados.c
- *
- *  Created on: Aug 10, 2025
- *      Author: elian
+/** 
+ *  @file GestorEstados.c
+ *  @brief Implementa la máquina de estados del LVFV.
+ *  @details Ver @ref SystemState, @ref SystemAction y @ref SystemActionResponse.
  */
 
 #include "GestorEstados.h"
 #include "../Gestor_SVM/GestorSVM.h"
 
-typedef enum {
-    STATE_INIT = 0, // En init se estan iniciando el sistema
-    STATE_IDLE,     // Finalizo la inicializacion o se encuentra inactivo
-    STATE_RUNNING,  // El motor esta girando a velocidad constante
-    STATE_VEL_CHANGE, // El sistema esta cambiando la velocidad
-    STATE_BRAKING,  // El motor se esta deteniendo, bajando la velocidad
-    STATE_EMERGENCY // El sistema se encuentra en estado de emergencia, esta girando o no
-} SystemState;
-
 static SystemState currentState = STATE_INIT;
 
 SystemActionResponse GestorEstados_Action(SystemAction sysAct, int value) {
-
-    /*
-    ACTION_RESP_OK
-ACTION_RESP_ERR
-ACTION_RESP_MOVING
-    
-    */
-
-    int retVal;
-
-
+    SystemActionResponse retVal = ACTION_RESP_ERR;  // default seguro
     switch(sysAct) {
         case ACTION_INIT_DONE:
-            // Cambio de estado a idle lo tenemos luego de la inicializacion
             if(currentState == STATE_INIT) {
-                // Si no estamos en estado idle, cambiamos
                 currentState = STATE_IDLE;
-                return 0;   // Retornar 0 si la accion fue exitosa
+                retVal = ACTION_RESP_OK;
+            } else {
+                retVal = ACTION_RESP_ERR;
             }
-            
-            return 1;   // Retornar 1 si la accion no se ejecuto
-
+            break;
         case ACTION_TO_IDLE:
             if(currentState == STATE_BRAKING) {
                 currentState = STATE_IDLE;
-                return ACTION_RESP_OK;
+                retVal = ACTION_RESP_OK;
+            } else {
+                retVal = ACTION_RESP_ERR;
             }
-            return ACTION_RESP_ERR;
-
+            break;
         case ACTION_START:
-            // Si estamos en estado idle podemos pasar a start
             if(currentState == STATE_IDLE) {
-
-                // Inicio del motor
                 GestorSVM_MotorStart();
-
                 currentState = STATE_VEL_CHANGE;
-                return ACTION_RESP_OK; // Retornar 0 si la accion fue exitosa
+                retVal = ACTION_RESP_OK;
             }else if(currentState == STATE_RUNNING || currentState == STATE_VEL_CHANGE || currentState == STATE_BRAKING) {
-                // Si ya estamos en estado running, no hacemos nada
-                return ACTION_RESP_MOVING; // Retornar 2 si ya estamos moviendo
+                retVal = ACTION_RESP_MOVING;
             }else if(currentState == STATE_EMERGENCY) {
-                return ACTION_RESP_EMERGENCY_ACTIVE;
+                retVal = ACTION_RESP_EMERGENCY_ACTIVE;
+            } else {
+                retVal = ACTION_RESP_ERR;
             }
-            return ACTION_RESP_ERR;
+            break;
         case ACTION_STOP:
             if(currentState == STATE_RUNNING || currentState == STATE_VEL_CHANGE) {
-
-                // Motor stop
                 GestorSVM_MotorStop();
-
+                /// @todo: Aca tengo que poner un timer para que calcule el tiempo aprox de frenado.
                 currentState = STATE_BRAKING;
-                // Aca tengo que poner un timer para que calcule el tiempo aprox de frenado.
-                return ACTION_RESP_OK;
-            }
-            // Si tenemos una emergencia y luego usamos el boton de stop
-            if(currentState == STATE_EMERGENCY) {
-
-                // Motor emergency stop
+                retVal = ACTION_RESP_OK;
+            } else if(currentState == STATE_EMERGENCY) {
                 GestorSVM_Estop();
                 currentState = STATE_IDLE;
-                return ACTION_RESP_OK;   // Retornar 0 si la accion fue exitosa
+                retVal = ACTION_RESP_OK;
+            } else if (currentState == STATE_IDLE) {
+                retVal = ACTION_RESP_NOT_MOVING;
+            } else {
+                retVal = ACTION_RESP_ERR;
             }
-
-            if(currentState == STATE_IDLE) {
-                // Si ya estamos en estado idle, no hacemos nada
-                return ACTION_RESP_NOT_MOVING; // Retornar 0 si la accion fue exitosa
-            }
-
-            return ACTION_RESP_ERR;   // Retornar 1 si la accion no se ejecuto
+            break;
         case ACTION_MOTOR_STOPPED:
             if(currentState == STATE_BRAKING) {
                 currentState = STATE_IDLE;
-                return ACTION_RESP_OK;
+                retVal = ACTION_RESP_OK;
+            } else {
+                retVal = ACTION_RESP_ERR;
             }
-            return ACTION_RESP_ERR;
+            break;
         case ACTION_EMERGENCY:
-            // Implementar la logica para manejar una emergencia
             if(currentState != STATE_EMERGENCY) {
-                // Si el motor esta girando se manda la interrupcion
-                if(currentState == STATE_RUNNING || currentState == STATE_BRAKING || currentState == STATE_VEL_CHANGE) {
-                    GestorSVM_Estop();
-                }
+                /// @todo: Revisar si es necesario chequear esto ¿Por qué no ejecutamos el stop sin importar el estado?
+                GestorSVM_Estop();
                 currentState = STATE_EMERGENCY;
-                return ACTION_RESP_OK;   // Retornar 1 si la accion no se ejecuto
+                retVal = ACTION_RESP_OK;
+            } else {
+                retVal = ACTION_RESP_ERR;
             }
-            return ACTION_RESP_ERR; // Retornar 0 si la accion fue exitosa
-
+            break;
         case ACTION_TO_CONST_RUNNING:
-            if(currentState == STATE_VEL_CHANGE) {  // Esta es la unica forma de llegar a este estado
+            if(currentState == STATE_VEL_CHANGE) {
                 currentState = STATE_RUNNING;
-                return ACTION_RESP_OK;
+                retVal = ACTION_RESP_OK;
+            } else {
+                retVal = ACTION_RESP_ERR;
             }
-            return ACTION_RESP_ERR;
-
+            break;
         case ACTION_SET_FREC:
-            // Implementar la logica para cambiar la velocidad
             if(currentState == STATE_IDLE || currentState == STATE_RUNNING || currentState == STATE_VEL_CHANGE) {
-                retVal = GestorSVM_SetFrec(value);
-                if(retVal == 0) {
-                    return ACTION_RESP_OK;
-                } else if(retVal == 1) {
+                int conf_retVal = GestorSVM_SetFrec(value);
+                if(conf_retVal == 0 || conf_retVal == -2) {
+                    retVal = ACTION_RESP_OK;
+                } else if(conf_retVal == 1) {
                     currentState = STATE_VEL_CHANGE;
-                    return ACTION_RESP_OK;
-                } else if(retVal == -1) {
-                    // Velocidad fuera de rango
-                    return ACTION_RESP_OUT_RANGE;
-                }else if(retVal == -2) {
-                    // La velocidad es la misma que ya tiene cargada
-                    return ACTION_RESP_OK;
+                    retVal = ACTION_RESP_OK;
+                } else if(conf_retVal == -1) {
+                    retVal = ACTION_RESP_OUT_RANGE;
                 }
             } else if( currentState == STATE_BRAKING) {
-                return ACTION_RESP_MOVING;
+                retVal = ACTION_RESP_MOVING;
+            } else {
+                retVal = ACTION_RESP_ERR;
             }
-            
-            return ACTION_RESP_ERR;
-
+            break;
         case ACTION_SET_ACEL:
             // Implementar la logica para cambiar la aceleracion
             if(currentState == STATE_IDLE || currentState == STATE_RUNNING) {
-                retVal = GestorSVM_SetAcel(value);
-                if(retVal == 0) {return ACTION_RESP_OK;} 
-                else if(retVal == -1) {return ACTION_RESP_OUT_RANGE;}
-                else if(retVal == -2) {return ACTION_RESP_ERR;}
+                switch( GestorSVM_SetAcel(value) ) {
+                    case 0:
+                        retVal = ACTION_RESP_OK;
+                        break;
+                    case -1:
+                        retVal = ACTION_RESP_OUT_RANGE;
+                        break;
+                    case -2:
+                    default:
+                        retVal = ACTION_RESP_ERR;
+                        break;
+                }
+            } else {
+                retVal = ACTION_RESP_ERR;
             }
-            
-            return ACTION_RESP_ERR;
-
+            break;
         case ACTION_SET_DESACEL:
             if(currentState == STATE_IDLE || currentState == STATE_RUNNING) {
-                retVal = GestorSVM_SetDecel(value);
-                if(retVal == 0) {return ACTION_RESP_OK;} 
-                else if(retVal == -1) {return ACTION_RESP_OUT_RANGE;}
-                else if(retVal == -2) {return ACTION_RESP_ERR;}
+                switch( GestorSVM_SetDecel(value) ) {
+                    case 0:
+                        retVal = ACTION_RESP_OK;
+                        break;
+                    case -1:
+                        retVal = ACTION_RESP_OUT_RANGE;
+                        break;
+                    case -2:
+                    default:
+                        retVal = ACTION_RESP_ERR;
+                        break;
+                }
+            } else {
+                retVal = ACTION_RESP_ERR;
             }
-
-            return ACTION_RESP_ERR;
-            
+            break;
         case ACTION_SET_DIR:
-            // Logica para cambiar la direccion
             if(currentState == STATE_IDLE) {
-                retVal = GestorSVM_SetDir(value);
-                if(retVal == 0) {return ACTION_RESP_OK;} 
-                else if(retVal == -1) {return ACTION_RESP_OUT_RANGE;}
-                else if(retVal == -2) {return ACTION_RESP_MOVING;}
-                else {return ACTION_RESP_ERR;}
+                switch( GestorSVM_SetDir(value)) {
+                    case 0:
+                        retVal = ACTION_RESP_OK;
+                        break;
+                    case -1:
+                        retVal = ACTION_RESP_OUT_RANGE;
+                        break;
+                    case -2:
+                        retVal = ACTION_RESP_MOVING;
+                        break;
+                    default:
+                        retVal = ACTION_RESP_ERR;
+                        break;
+                }
+            } else {
+                retVal = ACTION_RESP_MOVING;
             }
-            return ACTION_RESP_MOVING;
-
-        case ACTION_GET_FREC:
-            return GestorSVM_GetFrec();
-            
-        case ACTION_GET_ACEL:
-            return GestorSVM_GetAcel();
-            
-        case ACTION_GET_DESACEL:
-            return GestorSVM_GetDesacel();
-            
-        case ACTION_GET_DIR:
-            return GestorSVM_GetDir();
-
+            break;
+        // case ACTION_GET_FREC:            
+        // case ACTION_GET_ACEL:            
+        // case ACTION_GET_DESACEL:            
+        // case ACTION_GET_DIR:
+        //     retVal = ACTION_RESP_OK;     // lectura válida, sin transición
+        //     break;
         case ACTION_IS_MOTOR_STOP:
             if(currentState == STATE_IDLE || currentState == STATE_EMERGENCY) {
-                return 1;
+                retVal = ACTION_RESP_NOT_MOVING;
             }else {
-                return 0;
+                retVal = ACTION_RESP_MOVING;
             }
+            break;
         default:
-            return -1; // Retornar -1 si no se reconoce la accion
+            retVal = ACTION_RESP_ERR;
+            break;
     }
+    return retVal;
 }
