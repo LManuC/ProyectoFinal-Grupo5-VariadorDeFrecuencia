@@ -1,0 +1,314 @@
+\doxysection{Referencia del archivo C\+:/\+Users/\+User/\+Desktop/\+Proyecto\+Final-\/\+Grupo5-\/\+Variador\+De\+Frecuencia/\+Software/\+Firmware stm32/\+Modules/\+Gestor\+\_\+\+Estados/\+Gestor\+Estados.h}
+\hypertarget{_gestor_estados_8h}{}\label{_gestor_estados_8h}\index{C:/Users/User/Desktop/ProyectoFinal-\/Grupo5-\/VariadorDeFrecuencia/Software/Firmware stm32/Modules/Gestor\_Estados/GestorEstados.h@{C:/Users/User/Desktop/ProyectoFinal-\/Grupo5-\/VariadorDeFrecuencia/Software/Firmware stm32/Modules/Gestor\_Estados/GestorEstados.h}}
+Gráfico de los archivos que directa o indirectamente incluyen a este archivo\+:
+% FIG 0
+\doxysubsubsection*{Enumeraciones}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75}{System\+State}} \{ \newline
+\mbox{\hyperlink{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75a98d2a2153b4ae0445fa0b114d65b94d9}{STATE\+\_\+\+INIT}} = 0
+, \mbox{\hyperlink{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75aaade5e53e88cf231292cd1142cce2afe}{STATE\+\_\+\+IDLE}}
+, \mbox{\hyperlink{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75addfe11c6d06c4e27bd6efc18cc4862a6}{STATE\+\_\+\+RUNNING}}
+, \mbox{\hyperlink{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75a7d453a874f8a1e41a71fa02601836216}{STATE\+\_\+\+VEL\+\_\+\+CHANGE}}
+, \newline
+\mbox{\hyperlink{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75a0ee79d8541fe6a143bec1ec4c6b728e0}{STATE\+\_\+\+BRAKING}}
+, \mbox{\hyperlink{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75ad0180e0382824e561c72f20f08838420}{STATE\+\_\+\+EMERGENCY}}
+ \}
+\begin{DoxyCompactList}\small\item\em Estados de la máquina de estados del variador. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203c}{System\+Action}} \{ \newline
+\mbox{\hyperlink{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203cabb516226f3df30c332c998da773f56db}{ACTION\+\_\+\+NONE}} = 0
+, \mbox{\hyperlink{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203caa867dcd96a811cfb6266aa30addc4195}{ACTION\+\_\+\+INIT\+\_\+\+DONE}} = 1
+, \mbox{\hyperlink{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203ca464e3eead004a6b415ca415e38fa3d53}{ACTION\+\_\+\+TO\+\_\+\+IDLE}}
+, \mbox{\hyperlink{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203cad18d9bd6c0a4eced8d31c7b1c6b9dd16}{ACTION\+\_\+\+START}}
+, \newline
+\mbox{\hyperlink{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203ca4645d70cb9bb2228f230d601f477639d}{ACTION\+\_\+\+STOP}}
+, \mbox{\hyperlink{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203ca02e4f329c3a2d677cb3e9d9fea2e8e28}{ACTION\+\_\+\+MOTOR\+\_\+\+STOPPED}}
+, \mbox{\hyperlink{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203cae2752030c8dc2221fdfb8353ef2d7a8a}{ACTION\+\_\+\+EMERGENCY}}
+, \mbox{\hyperlink{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203ca02091b145bd0a41e238ffdae1167c912}{ACTION\+\_\+\+SET\+\_\+\+FREC}}
+, \newline
+\mbox{\hyperlink{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203ca7c202795a9f438cd5ffd71fa4992cb05}{ACTION\+\_\+\+SET\+\_\+\+ACEL}}
+, \mbox{\hyperlink{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203cadd57362c8b9ec1984dd5f0468974a768}{ACTION\+\_\+\+SET\+\_\+\+DESACEL}}
+, \mbox{\hyperlink{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203caef517ff4b1c364633231742027d859de}{ACTION\+\_\+\+SET\+\_\+\+DIR}}
+, \mbox{\hyperlink{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203ca901a803cd622114cffc6ee59403a5c86}{ACTION\+\_\+\+TO\+\_\+\+CONST\+\_\+\+RUNNING}}
+, \newline
+\mbox{\hyperlink{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203cac584cfe909986a1a00be92cb2870d63f}{ACTION\+\_\+\+GET\+\_\+\+FREC}}
+, \mbox{\hyperlink{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203ca936b4853f8101ae792185c02c4216be0}{ACTION\+\_\+\+GET\+\_\+\+ACEL}}
+, \mbox{\hyperlink{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203ca829629e8fda976af81ad64cd9b3f2171}{ACTION\+\_\+\+GET\+\_\+\+DESACEL}}
+, \mbox{\hyperlink{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203ca6cf84c7c734fe0fc8d2d79535f1c6374}{ACTION\+\_\+\+GET\+\_\+\+DIR}}
+, \newline
+\mbox{\hyperlink{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203cada94a1283a5879499cddac1556f56b5e}{ACTION\+\_\+\+IS\+\_\+\+MOTOR\+\_\+\+STOP}}
+ \}
+\begin{DoxyCompactList}\small\item\em Acciones externas/internas que gobiernan la máquina de estados del VFD. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7}{System\+Action\+Response}} \{ \newline
+\mbox{\hyperlink{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7a090da72512b04323631bc989b7ad9e9d}{ACTION\+\_\+\+RESP\+\_\+\+OK}} = 0
+, \mbox{\hyperlink{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7a3197eec44f9da238da4e390c38ae7187}{ACTION\+\_\+\+RESP\+\_\+\+ERR}} = 1
+, \mbox{\hyperlink{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7a7621bc4555e78cd6e80c74bafa7a0283}{ACTION\+\_\+\+RESP\+\_\+\+MOVING}} = 2
+, \mbox{\hyperlink{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7a81d02313245d29c06a707add990806c6}{ACTION\+\_\+\+RESP\+\_\+\+NOT\+\_\+\+MOVING}} = 3
+, \newline
+\mbox{\hyperlink{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7a55cf7ca3043c85a37a46adae995b6a0b}{ACTION\+\_\+\+RESP\+\_\+\+OUT\+\_\+\+RANGE}} = 4
+, \mbox{\hyperlink{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7ac9ce3b2802bf37aac433179ff2874a3e}{ACTION\+\_\+\+RESP\+\_\+\+EMERGENCY\+\_\+\+ACTIVE}} = 5
+ \}
+\begin{DoxyCompactList}\small\item\em Códigos de respuesta del gestor de estados ante una acción recibida. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7}{System\+Action\+Response}} \mbox{\hyperlink{_gestor_estados_8h_a44b3bf408355270c64323425c66e7719}{Gestor\+Estados\+\_\+\+Action}} (\mbox{\hyperlink{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203c}{System\+Action}} sys\+Act, int value)
+\begin{DoxyCompactList}\small\item\em Ejecuta una acción de la máquina de estados y devuelve el resultado. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{doc-enum-members}
+\Hypertarget{_gestor_estados_8h_doc-enum-members}
+\doxysubsection{Documentación de enumeraciones}
+\Hypertarget{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203c}\index{GestorEstados.h@{GestorEstados.h}!SystemAction@{SystemAction}}
+\index{SystemAction@{SystemAction}!GestorEstados.h@{GestorEstados.h}}
+\doxysubsubsection{\texorpdfstring{SystemAction}{SystemAction}}
+{\footnotesize\ttfamily \label{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203c} 
+enum \mbox{\hyperlink{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203c}{System\+Action}}}
+
+
+
+Acciones externas/internas que gobiernan la máquina de estados del VFD. 
+
+Cada acción puede provocar un cambio de estado (\doxylink{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75}{System\+State}) y devuelve un \doxylink{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7}{System\+Action\+Response} según las reglas implementadas en \doxylink{_gestor_estados_8h_a44b3bf408355270c64323425c66e7719}{Gestor\+Estados\+\_\+\+Action()}. Las referencias a estados (STATE\+\_\+\texorpdfstring{$\ast$}{*}) y respuestas (ACTION\+\_\+\+RESP\+\_\+\texorpdfstring{$\ast$}{*}) indican el flujo esperado y los códigos de retorno típicos. \begin{DoxyEnumFields}[2]{Valores de enumeraciones}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ACTION\_NONE@{ACTION\_NONE}!GestorEstados.h@{GestorEstados.h}}\index{GestorEstados.h@{GestorEstados.h}!ACTION\_NONE@{ACTION\_NONE}}}\Hypertarget{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203cabb516226f3df30c332c998da773f56db}\label{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203cabb516226f3df30c332c998da773f56db} 
+ACTION\+\_\+\+NONE&Sin uso. No debe enviarse. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ACTION\_INIT\_DONE@{ACTION\_INIT\_DONE}!GestorEstados.h@{GestorEstados.h}}\index{GestorEstados.h@{GestorEstados.h}!ACTION\_INIT\_DONE@{ACTION\_INIT\_DONE}}}\Hypertarget{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203caa867dcd96a811cfb6266aa30addc4195}\label{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203caa867dcd96a811cfb6266aa30addc4195} 
+ACTION\+\_\+\+INIT\+\_\+\+DONE&Fin de inicialización. Válida {\bfseries{solo}} si {\ttfamily \doxylink{_gestor_estados_8c_a7e2bcf8de2c1eced051a3a4d69ec7cee}{current\+State}==@ref \doxylink{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75a98d2a2153b4ae0445fa0b114d65b94d9}{STATE\+\_\+\+INIT}}\+: pasa a \doxylink{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75aaade5e53e88cf231292cd1142cce2afe}{STATE\+\_\+\+IDLE} y responde \doxylink{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7a090da72512b04323631bc989b7ad9e9d}{ACTION\+\_\+\+RESP\+\_\+\+OK}; en cualquier otro estado responde \doxylink{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7a3197eec44f9da238da4e390c38ae7187}{ACTION\+\_\+\+RESP\+\_\+\+ERR}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ACTION\_TO\_IDLE@{ACTION\_TO\_IDLE}!GestorEstados.h@{GestorEstados.h}}\index{GestorEstados.h@{GestorEstados.h}!ACTION\_TO\_IDLE@{ACTION\_TO\_IDLE}}}\Hypertarget{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203ca464e3eead004a6b415ca415e38fa3d53}\label{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203ca464e3eead004a6b415ca415e38fa3d53} 
+ACTION\+\_\+\+TO\+\_\+\+IDLE&Forzar estado inactivo. Válida cuando {\ttfamily \doxylink{_gestor_estados_8c_a7e2bcf8de2c1eced051a3a4d69ec7cee}{current\+State}==@ref \doxylink{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75a0ee79d8541fe6a143bec1ec4c6b728e0}{STATE\+\_\+\+BRAKING}}\+: pasa a \doxylink{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75aaade5e53e88cf231292cd1142cce2afe}{STATE\+\_\+\+IDLE} y responde \doxylink{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7a090da72512b04323631bc989b7ad9e9d}{ACTION\+\_\+\+RESP\+\_\+\+OK}; si no está frenando, responde \doxylink{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7a3197eec44f9da238da4e390c38ae7187}{ACTION\+\_\+\+RESP\+\_\+\+ERR}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ACTION\_START@{ACTION\_START}!GestorEstados.h@{GestorEstados.h}}\index{GestorEstados.h@{GestorEstados.h}!ACTION\_START@{ACTION\_START}}}\Hypertarget{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203cad18d9bd6c0a4eced8d31c7b1c6b9dd16}\label{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203cad18d9bd6c0a4eced8d31c7b1c6b9dd16} 
+ACTION\+\_\+\+START&Solicitud de arranque. Si {\ttfamily \doxylink{_gestor_estados_8c_a7e2bcf8de2c1eced051a3a4d69ec7cee}{current\+State}==@ref \doxylink{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75aaade5e53e88cf231292cd1142cce2afe}{STATE\+\_\+\+IDLE}} llama a {\ttfamily \doxylink{_gestor_s_v_m_8c_a0524c323e42d243efaacd375836c2cfb}{Gestor\+SVM\+\_\+\+Motor\+Start()}}, pasa a \doxylink{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75a7d453a874f8a1e41a71fa02601836216}{STATE\+\_\+\+VEL\+\_\+\+CHANGE} y responde \doxylink{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7a090da72512b04323631bc989b7ad9e9d}{ACTION\+\_\+\+RESP\+\_\+\+OK}. Si está en \doxylink{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75addfe11c6d06c4e27bd6efc18cc4862a6}{STATE\+\_\+\+RUNNING}, \doxylink{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75a7d453a874f8a1e41a71fa02601836216}{STATE\+\_\+\+VEL\+\_\+\+CHANGE} o \doxylink{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75a0ee79d8541fe6a143bec1ec4c6b728e0}{STATE\+\_\+\+BRAKING} responde \doxylink{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7a7621bc4555e78cd6e80c74bafa7a0283}{ACTION\+\_\+\+RESP\+\_\+\+MOVING}. En \doxylink{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75ad0180e0382824e561c72f20f08838420}{STATE\+\_\+\+EMERGENCY} responde \doxylink{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7ac9ce3b2802bf37aac433179ff2874a3e}{ACTION\+\_\+\+RESP\+\_\+\+EMERGENCY\+\_\+\+ACTIVE}. En cualquier otro caso \doxylink{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7a3197eec44f9da238da4e390c38ae7187}{ACTION\+\_\+\+RESP\+\_\+\+ERR}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ACTION\_STOP@{ACTION\_STOP}!GestorEstados.h@{GestorEstados.h}}\index{GestorEstados.h@{GestorEstados.h}!ACTION\_STOP@{ACTION\_STOP}}}\Hypertarget{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203ca4645d70cb9bb2228f230d601f477639d}\label{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203ca4645d70cb9bb2228f230d601f477639d} 
+ACTION\+\_\+\+STOP&Solicitud de parada. Si está en \doxylink{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75addfe11c6d06c4e27bd6efc18cc4862a6}{STATE\+\_\+\+RUNNING} o \doxylink{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75a7d453a874f8a1e41a71fa02601836216}{STATE\+\_\+\+VEL\+\_\+\+CHANGE}, llama a {\ttfamily \doxylink{_gestor_s_v_m_8c_adf2028330d7896b6f9a467dc57d5eac4}{Gestor\+SVM\+\_\+\+Motor\+Stop()}}, pasa a \doxylink{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75a0ee79d8541fe6a143bec1ec4c6b728e0}{STATE\+\_\+\+BRAKING} y responde \doxylink{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7a090da72512b04323631bc989b7ad9e9d}{ACTION\+\_\+\+RESP\+\_\+\+OK}. Si está en \doxylink{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75ad0180e0382824e561c72f20f08838420}{STATE\+\_\+\+EMERGENCY}, ejecuta {\ttfamily \doxylink{_gestor_s_v_m_8c_a63c6e1ceb949ac408d9516d4cb5be686}{Gestor\+SVM\+\_\+\+Estop()}}, pasa a \doxylink{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75aaade5e53e88cf231292cd1142cce2afe}{STATE\+\_\+\+IDLE} y responde \doxylink{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7a090da72512b04323631bc989b7ad9e9d}{ACTION\+\_\+\+RESP\+\_\+\+OK}. Si ya está en \doxylink{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75aaade5e53e88cf231292cd1142cce2afe}{STATE\+\_\+\+IDLE} responde \doxylink{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7a81d02313245d29c06a707add990806c6}{ACTION\+\_\+\+RESP\+\_\+\+NOT\+\_\+\+MOVING}. Otro caso\+: \doxylink{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7a3197eec44f9da238da4e390c38ae7187}{ACTION\+\_\+\+RESP\+\_\+\+ERR}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ACTION\_MOTOR\_STOPPED@{ACTION\_MOTOR\_STOPPED}!GestorEstados.h@{GestorEstados.h}}\index{GestorEstados.h@{GestorEstados.h}!ACTION\_MOTOR\_STOPPED@{ACTION\_MOTOR\_STOPPED}}}\Hypertarget{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203ca02e4f329c3a2d677cb3e9d9fea2e8e28}\label{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203ca02e4f329c3a2d677cb3e9d9fea2e8e28} 
+ACTION\+\_\+\+MOTOR\+\_\+\+STOPPED&Confirmación de motor detenido. Válida durante STATE\+\_\+\+BRAKING\+: pasa a \doxylink{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75aaade5e53e88cf231292cd1142cce2afe}{STATE\+\_\+\+IDLE} y responde \doxylink{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7a090da72512b04323631bc989b7ad9e9d}{ACTION\+\_\+\+RESP\+\_\+\+OK}; si no está frenando responde \doxylink{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7a3197eec44f9da238da4e390c38ae7187}{ACTION\+\_\+\+RESP\+\_\+\+ERR}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ACTION\_EMERGENCY@{ACTION\_EMERGENCY}!GestorEstados.h@{GestorEstados.h}}\index{GestorEstados.h@{GestorEstados.h}!ACTION\_EMERGENCY@{ACTION\_EMERGENCY}}}\Hypertarget{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203cae2752030c8dc2221fdfb8353ef2d7a8a}\label{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203cae2752030c8dc2221fdfb8353ef2d7a8a} 
+ACTION\+\_\+\+EMERGENCY&Activación de emergencia. Si no está en \doxylink{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75ad0180e0382824e561c72f20f08838420}{STATE\+\_\+\+EMERGENCY}, ejecuta {\ttfamily \doxylink{_gestor_s_v_m_8c_a63c6e1ceb949ac408d9516d4cb5be686}{Gestor\+SVM\+\_\+\+Estop()}}, pasa a \doxylink{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75ad0180e0382824e561c72f20f08838420}{STATE\+\_\+\+EMERGENCY} y responde \doxylink{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7a090da72512b04323631bc989b7ad9e9d}{ACTION\+\_\+\+RESP\+\_\+\+OK}; si ya estaba en emergencia responde \doxylink{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7a3197eec44f9da238da4e390c38ae7187}{ACTION\+\_\+\+RESP\+\_\+\+ERR}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ACTION\_SET\_FREC@{ACTION\_SET\_FREC}!GestorEstados.h@{GestorEstados.h}}\index{GestorEstados.h@{GestorEstados.h}!ACTION\_SET\_FREC@{ACTION\_SET\_FREC}}}\Hypertarget{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203ca02091b145bd0a41e238ffdae1167c912}\label{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203ca02091b145bd0a41e238ffdae1167c912} 
+ACTION\+\_\+\+SET\+\_\+\+FREC&Fijar frecuencia de régimen. Permitido en \doxylink{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75aaade5e53e88cf231292cd1142cce2afe}{STATE\+\_\+\+IDLE}, \doxylink{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75addfe11c6d06c4e27bd6efc18cc4862a6}{STATE\+\_\+\+RUNNING} o \doxylink{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75a7d453a874f8a1e41a71fa02601836216}{STATE\+\_\+\+VEL\+\_\+\+CHANGE}. Llama a {\ttfamily Gestor\+SVM\+\_\+\+Set\+Frec(value)}\+:
+\begin{DoxyItemize}
+\item 0 o -\/2 → \doxylink{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7a090da72512b04323631bc989b7ad9e9d}{ACTION\+\_\+\+RESP\+\_\+\+OK} (permanece en el estado actual)
+\item 1 → pasa a \doxylink{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75a7d453a874f8a1e41a71fa02601836216}{STATE\+\_\+\+VEL\+\_\+\+CHANGE} y \doxylink{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7a090da72512b04323631bc989b7ad9e9d}{ACTION\+\_\+\+RESP\+\_\+\+OK}
+\item -\/1 → \doxylink{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7a55cf7ca3043c85a37a46adae995b6a0b}{ACTION\+\_\+\+RESP\+\_\+\+OUT\+\_\+\+RANGE} Si está en \doxylink{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75a0ee79d8541fe6a143bec1ec4c6b728e0}{STATE\+\_\+\+BRAKING} → \doxylink{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7a7621bc4555e78cd6e80c74bafa7a0283}{ACTION\+\_\+\+RESP\+\_\+\+MOVING}; otro estado → \doxylink{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7a3197eec44f9da238da4e390c38ae7187}{ACTION\+\_\+\+RESP\+\_\+\+ERR}. 
+\end{DoxyItemize}\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ACTION\_SET\_ACEL@{ACTION\_SET\_ACEL}!GestorEstados.h@{GestorEstados.h}}\index{GestorEstados.h@{GestorEstados.h}!ACTION\_SET\_ACEL@{ACTION\_SET\_ACEL}}}\Hypertarget{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203ca7c202795a9f438cd5ffd71fa4992cb05}\label{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203ca7c202795a9f438cd5ffd71fa4992cb05} 
+ACTION\+\_\+\+SET\+\_\+\+ACEL&Configurar aceleración. Permitido en \doxylink{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75aaade5e53e88cf231292cd1142cce2afe}{STATE\+\_\+\+IDLE} o \doxylink{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75addfe11c6d06c4e27bd6efc18cc4862a6}{STATE\+\_\+\+RUNNING}. Llama a {\ttfamily Gestor\+SVM\+\_\+\+Set\+Acel(value)}\+:
+\begin{DoxyItemize}
+\item 0 → \doxylink{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7a090da72512b04323631bc989b7ad9e9d}{ACTION\+\_\+\+RESP\+\_\+\+OK}
+\item -\/1 → \doxylink{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7a55cf7ca3043c85a37a46adae995b6a0b}{ACTION\+\_\+\+RESP\+\_\+\+OUT\+\_\+\+RANGE}
+\item -\/2 u otro → \doxylink{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7a3197eec44f9da238da4e390c38ae7187}{ACTION\+\_\+\+RESP\+\_\+\+ERR} En otros estados → \doxylink{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7a3197eec44f9da238da4e390c38ae7187}{ACTION\+\_\+\+RESP\+\_\+\+ERR}. 
+\end{DoxyItemize}\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ACTION\_SET\_DESACEL@{ACTION\_SET\_DESACEL}!GestorEstados.h@{GestorEstados.h}}\index{GestorEstados.h@{GestorEstados.h}!ACTION\_SET\_DESACEL@{ACTION\_SET\_DESACEL}}}\Hypertarget{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203cadd57362c8b9ec1984dd5f0468974a768}\label{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203cadd57362c8b9ec1984dd5f0468974a768} 
+ACTION\+\_\+\+SET\+\_\+\+DESACEL&Configurar desaceleración. Igual a \doxylink{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203ca7c202795a9f438cd5ffd71fa4992cb05}{ACTION\+\_\+\+SET\+\_\+\+ACEL} pero llamando {\ttfamily Gestor\+SVM\+\_\+\+Set\+Decel(value)}. Respuestas\+: \doxylink{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7a090da72512b04323631bc989b7ad9e9d}{ACTION\+\_\+\+RESP\+\_\+\+OK}, \doxylink{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7a55cf7ca3043c85a37a46adae995b6a0b}{ACTION\+\_\+\+RESP\+\_\+\+OUT\+\_\+\+RANGE} o \doxylink{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7a3197eec44f9da238da4e390c38ae7187}{ACTION\+\_\+\+RESP\+\_\+\+ERR}. En otros estados → \doxylink{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7a3197eec44f9da238da4e390c38ae7187}{ACTION\+\_\+\+RESP\+\_\+\+ERR}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ACTION\_SET\_DIR@{ACTION\_SET\_DIR}!GestorEstados.h@{GestorEstados.h}}\index{GestorEstados.h@{GestorEstados.h}!ACTION\_SET\_DIR@{ACTION\_SET\_DIR}}}\Hypertarget{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203caef517ff4b1c364633231742027d859de}\label{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203caef517ff4b1c364633231742027d859de} 
+ACTION\+\_\+\+SET\+\_\+\+DIR&Configurar dirección de giro. Permitido solo en \doxylink{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75aaade5e53e88cf231292cd1142cce2afe}{STATE\+\_\+\+IDLE}. Llama a {\ttfamily Gestor\+SVM\+\_\+\+Set\+Dir(value)}\+:
+\begin{DoxyItemize}
+\item 0 → \doxylink{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7a090da72512b04323631bc989b7ad9e9d}{ACTION\+\_\+\+RESP\+\_\+\+OK}
+\item -\/1 → \doxylink{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7a55cf7ca3043c85a37a46adae995b6a0b}{ACTION\+\_\+\+RESP\+\_\+\+OUT\+\_\+\+RANGE}
+\item -\/2 → \doxylink{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7a7621bc4555e78cd6e80c74bafa7a0283}{ACTION\+\_\+\+RESP\+\_\+\+MOVING}
+\item otro → \doxylink{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7a3197eec44f9da238da4e390c38ae7187}{ACTION\+\_\+\+RESP\+\_\+\+ERR} Si no está en IDLE → \doxylink{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7a7621bc4555e78cd6e80c74bafa7a0283}{ACTION\+\_\+\+RESP\+\_\+\+MOVING}. 
+\end{DoxyItemize}\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ACTION\_TO\_CONST\_RUNNING@{ACTION\_TO\_CONST\_RUNNING}!GestorEstados.h@{GestorEstados.h}}\index{GestorEstados.h@{GestorEstados.h}!ACTION\_TO\_CONST\_RUNNING@{ACTION\_TO\_CONST\_RUNNING}}}\Hypertarget{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203ca901a803cd622114cffc6ee59403a5c86}\label{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203ca901a803cd622114cffc6ee59403a5c86} 
+ACTION\+\_\+\+TO\+\_\+\+CONST\+\_\+\+RUNNING&Transición a régimen constante. Válida cuando {\ttfamily \doxylink{_gestor_estados_8c_a7e2bcf8de2c1eced051a3a4d69ec7cee}{current\+State}==@ref \doxylink{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75a7d453a874f8a1e41a71fa02601836216}{STATE\+\_\+\+VEL\+\_\+\+CHANGE}}\+: pasa a \doxylink{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75addfe11c6d06c4e27bd6efc18cc4862a6}{STATE\+\_\+\+RUNNING} y responde \doxylink{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7a090da72512b04323631bc989b7ad9e9d}{ACTION\+\_\+\+RESP\+\_\+\+OK}; caso contrario \doxylink{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7a3197eec44f9da238da4e390c38ae7187}{ACTION\+\_\+\+RESP\+\_\+\+ERR}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ACTION\_GET\_FREC@{ACTION\_GET\_FREC}!GestorEstados.h@{GestorEstados.h}}\index{GestorEstados.h@{GestorEstados.h}!ACTION\_GET\_FREC@{ACTION\_GET\_FREC}}}\Hypertarget{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203cac584cfe909986a1a00be92cb2870d63f}\label{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203cac584cfe909986a1a00be92cb2870d63f} 
+ACTION\+\_\+\+GET\+\_\+\+FREC&Consulta de frecuencia actual. Acción de lectura (sin cambio de estado). La entrega del valor se realiza por la capa que invoca a \doxylink{_gestor_estados_8c_a44b3bf408355270c64323425c66e7719}{Gestor\+Estados\+\_\+\+Action()} (no hay respuesta numérica directa en este switch). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ACTION\_GET\_ACEL@{ACTION\_GET\_ACEL}!GestorEstados.h@{GestorEstados.h}}\index{GestorEstados.h@{GestorEstados.h}!ACTION\_GET\_ACEL@{ACTION\_GET\_ACEL}}}\Hypertarget{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203ca936b4853f8101ae792185c02c4216be0}\label{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203ca936b4853f8101ae792185c02c4216be0} 
+ACTION\+\_\+\+GET\+\_\+\+ACEL&Consulta de aceleración actual. Acción de lectura (sin cambio de estado). La obtención del valor queda a cargo de la capa llamadora. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ACTION\_GET\_DESACEL@{ACTION\_GET\_DESACEL}!GestorEstados.h@{GestorEstados.h}}\index{GestorEstados.h@{GestorEstados.h}!ACTION\_GET\_DESACEL@{ACTION\_GET\_DESACEL}}}\Hypertarget{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203ca829629e8fda976af81ad64cd9b3f2171}\label{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203ca829629e8fda976af81ad64cd9b3f2171} 
+ACTION\+\_\+\+GET\+\_\+\+DESACEL&Consulta de desaceleración actual. Acción de lectura (sin cambio de estado). La obtención del valor queda a cargo de la capa llamadora. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ACTION\_GET\_DIR@{ACTION\_GET\_DIR}!GestorEstados.h@{GestorEstados.h}}\index{GestorEstados.h@{GestorEstados.h}!ACTION\_GET\_DIR@{ACTION\_GET\_DIR}}}\Hypertarget{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203ca6cf84c7c734fe0fc8d2d79535f1c6374}\label{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203ca6cf84c7c734fe0fc8d2d79535f1c6374} 
+ACTION\+\_\+\+GET\+\_\+\+DIR&Consulta de dirección actual. Acción de lectura (sin cambio de estado). La obtención del valor queda a cargo de la capa llamadora. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ACTION\_IS\_MOTOR\_STOP@{ACTION\_IS\_MOTOR\_STOP}!GestorEstados.h@{GestorEstados.h}}\index{GestorEstados.h@{GestorEstados.h}!ACTION\_IS\_MOTOR\_STOP@{ACTION\_IS\_MOTOR\_STOP}}}\Hypertarget{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203cada94a1283a5879499cddac1556f56b5e}\label{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203cada94a1283a5879499cddac1556f56b5e} 
+ACTION\+\_\+\+IS\+\_\+\+MOTOR\+\_\+\+STOP&¿\+El motor está detenido? Si {\ttfamily \doxylink{_gestor_estados_8c_a7e2bcf8de2c1eced051a3a4d69ec7cee}{current\+State}==@ref \doxylink{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75aaade5e53e88cf231292cd1142cce2afe}{STATE\+\_\+\+IDLE}} o \doxylink{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75ad0180e0382824e561c72f20f08838420}{STATE\+\_\+\+EMERGENCY} → \doxylink{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7a81d02313245d29c06a707add990806c6}{ACTION\+\_\+\+RESP\+\_\+\+NOT\+\_\+\+MOVING}; en otro estado → \doxylink{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7a7621bc4555e78cd6e80c74bafa7a0283}{ACTION\+\_\+\+RESP\+\_\+\+MOVING}. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definición en la línea \mbox{\hyperlink{_gestor_estados_8h_source_l00064}{64}} del archivo \mbox{\hyperlink{_gestor_estados_8h_source}{Gestor\+Estados.\+h}}.
+
+\Hypertarget{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7}\index{GestorEstados.h@{GestorEstados.h}!SystemActionResponse@{SystemActionResponse}}
+\index{SystemActionResponse@{SystemActionResponse}!GestorEstados.h@{GestorEstados.h}}
+\doxysubsubsection{\texorpdfstring{SystemActionResponse}{SystemActionResponse}}
+{\footnotesize\ttfamily \label{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7} 
+enum \mbox{\hyperlink{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7}{System\+Action\+Response}}}
+
+
+
+Códigos de respuesta del gestor de estados ante una acción recibida. 
+
+Los valores indican el resultado de {\ttfamily \doxylink{_gestor_estados_8h_a44b3bf408355270c64323425c66e7719}{Gestor\+Estados\+\_\+\+Action()}} según la acción solicitada (\doxylink{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203c}{System\+Action}) y el estado actual (\doxylink{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75}{System\+State}). Se utilizan también como payload de respuesta en el enlace SPI con el ESP32. \begin{DoxyEnumFields}[2]{Valores de enumeraciones}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ACTION\_RESP\_OK@{ACTION\_RESP\_OK}!GestorEstados.h@{GestorEstados.h}}\index{GestorEstados.h@{GestorEstados.h}!ACTION\_RESP\_OK@{ACTION\_RESP\_OK}}}\Hypertarget{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7a090da72512b04323631bc989b7ad9e9d}\label{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7a090da72512b04323631bc989b7ad9e9d} 
+ACTION\+\_\+\+RESP\+\_\+\+OK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ACTION\_RESP\_ERR@{ACTION\_RESP\_ERR}!GestorEstados.h@{GestorEstados.h}}\index{GestorEstados.h@{GestorEstados.h}!ACTION\_RESP\_ERR@{ACTION\_RESP\_ERR}}}\Hypertarget{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7a3197eec44f9da238da4e390c38ae7187}\label{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7a3197eec44f9da238da4e390c38ae7187} 
+ACTION\+\_\+\+RESP\+\_\+\+ERR&La acción fue válida y se ejecutó correctamente. Si correspondía, la transición de estado se realizó. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ACTION\_RESP\_MOVING@{ACTION\_RESP\_MOVING}!GestorEstados.h@{GestorEstados.h}}\index{GestorEstados.h@{GestorEstados.h}!ACTION\_RESP\_MOVING@{ACTION\_RESP\_MOVING}}}\Hypertarget{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7a7621bc4555e78cd6e80c74bafa7a0283}\label{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7a7621bc4555e78cd6e80c74bafa7a0283} 
+ACTION\+\_\+\+RESP\+\_\+\+MOVING&Error genérico\+: secuencia inválida para el estado actual o fallo al aplicar la configuración. No hay garantía de cambio de estado. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ACTION\_RESP\_NOT\_MOVING@{ACTION\_RESP\_NOT\_MOVING}!GestorEstados.h@{GestorEstados.h}}\index{GestorEstados.h@{GestorEstados.h}!ACTION\_RESP\_NOT\_MOVING@{ACTION\_RESP\_NOT\_MOVING}}}\Hypertarget{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7a81d02313245d29c06a707add990806c6}\label{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7a81d02313245d29c06a707add990806c6} 
+ACTION\+\_\+\+RESP\+\_\+\+NOT\+\_\+\+MOVING&El motor está en movimiento (p. ej., en \doxylink{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75addfe11c6d06c4e27bd6efc18cc4862a6}{STATE\+\_\+\+RUNNING}, \doxylink{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75a7d453a874f8a1e41a71fa02601836216}{STATE\+\_\+\+VEL\+\_\+\+CHANGE} o \doxylink{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75a0ee79d8541fe6a143bec1ec4c6b728e0}{STATE\+\_\+\+BRAKING}). Puede usarse como respuesta a una consulta o para rechazar acciones no permitidas mientras hay movimiento. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ACTION\_RESP\_OUT\_RANGE@{ACTION\_RESP\_OUT\_RANGE}!GestorEstados.h@{GestorEstados.h}}\index{GestorEstados.h@{GestorEstados.h}!ACTION\_RESP\_OUT\_RANGE@{ACTION\_RESP\_OUT\_RANGE}}}\Hypertarget{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7a55cf7ca3043c85a37a46adae995b6a0b}\label{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7a55cf7ca3043c85a37a46adae995b6a0b} 
+ACTION\+\_\+\+RESP\+\_\+\+OUT\+\_\+\+RANGE&El motor está detenido (p. ej., en \doxylink{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75aaade5e53e88cf231292cd1142cce2afe}{STATE\+\_\+\+IDLE} o \doxylink{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75ad0180e0382824e561c72f20f08838420}{STATE\+\_\+\+EMERGENCY}). Puede ser respuesta a consulta o a un STOP redundante. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ACTION\_RESP\_EMERGENCY\_ACTIVE@{ACTION\_RESP\_EMERGENCY\_ACTIVE}!GestorEstados.h@{GestorEstados.h}}\index{GestorEstados.h@{GestorEstados.h}!ACTION\_RESP\_EMERGENCY\_ACTIVE@{ACTION\_RESP\_EMERGENCY\_ACTIVE}}}\Hypertarget{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7ac9ce3b2802bf37aac433179ff2874a3e}\label{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7ac9ce3b2802bf37aac433179ff2874a3e} 
+ACTION\+\_\+\+RESP\+\_\+\+EMERGENCY\+\_\+\+ACTIVE&El parámetro de configuración recibido (frecuencia, aceleración, etc.) está fuera de los límites admitidos por la lógica (p. ej., {\ttfamily Gestor\+SVM\+\_\+\texorpdfstring{$\ast$}{*}}). \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definición en la línea \mbox{\hyperlink{_gestor_estados_8h_source_l00212}{212}} del archivo \mbox{\hyperlink{_gestor_estados_8h_source}{Gestor\+Estados.\+h}}.
+
+\Hypertarget{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75}\index{GestorEstados.h@{GestorEstados.h}!SystemState@{SystemState}}
+\index{SystemState@{SystemState}!GestorEstados.h@{GestorEstados.h}}
+\doxysubsubsection{\texorpdfstring{SystemState}{SystemState}}
+{\footnotesize\ttfamily \label{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75} 
+enum \mbox{\hyperlink{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75}{System\+State}}}
+
+
+
+Estados de la máquina de estados del variador. 
+
+Representan el ciclo de vida del sistema y condicionan qué acciones (\doxylink{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203c}{System\+Action}) son válidas y qué respuestas (\doxylink{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7}{System\+Action\+Response}) devuelve {\ttfamily \doxylink{_gestor_estados_8h_a44b3bf408355270c64323425c66e7719}{Gestor\+Estados\+\_\+\+Action()}}. Las transiciones típicas son\+:
+\begin{DoxyItemize}
+\item \doxylink{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75a98d2a2153b4ae0445fa0b114d65b94d9}{STATE\+\_\+\+INIT} → ( \doxylink{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203caa867dcd96a811cfb6266aa30addc4195}{ACTION\+\_\+\+INIT\+\_\+\+DONE} ) → \doxylink{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75aaade5e53e88cf231292cd1142cce2afe}{STATE\+\_\+\+IDLE}
+\item \doxylink{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75aaade5e53e88cf231292cd1142cce2afe}{STATE\+\_\+\+IDLE} → ( \doxylink{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203cad18d9bd6c0a4eced8d31c7b1c6b9dd16}{ACTION\+\_\+\+START} ) → \doxylink{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75a7d453a874f8a1e41a71fa02601836216}{STATE\+\_\+\+VEL\+\_\+\+CHANGE}
+\item \doxylink{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75a7d453a874f8a1e41a71fa02601836216}{STATE\+\_\+\+VEL\+\_\+\+CHANGE} → ( \doxylink{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203ca901a803cd622114cffc6ee59403a5c86}{ACTION\+\_\+\+TO\+\_\+\+CONST\+\_\+\+RUNNING} ) → \doxylink{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75addfe11c6d06c4e27bd6efc18cc4862a6}{STATE\+\_\+\+RUNNING}
+\item \doxylink{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75addfe11c6d06c4e27bd6efc18cc4862a6}{STATE\+\_\+\+RUNNING} → ( \doxylink{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203ca4645d70cb9bb2228f230d601f477639d}{ACTION\+\_\+\+STOP} ) → \doxylink{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75a0ee79d8541fe6a143bec1ec4c6b728e0}{STATE\+\_\+\+BRAKING}
+\item \doxylink{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75a0ee79d8541fe6a143bec1ec4c6b728e0}{STATE\+\_\+\+BRAKING} → ( \doxylink{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203ca02e4f329c3a2d677cb3e9d9fea2e8e28}{ACTION\+\_\+\+MOTOR\+\_\+\+STOPPED} ) → \doxylink{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75aaade5e53e88cf231292cd1142cce2afe}{STATE\+\_\+\+IDLE}
+\item Cualquier estado → ( \doxylink{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203cae2752030c8dc2221fdfb8353ef2d7a8a}{ACTION\+\_\+\+EMERGENCY} ) → \doxylink{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75ad0180e0382824e561c72f20f08838420}{STATE\+\_\+\+EMERGENCY} 
+\end{DoxyItemize}\begin{DoxyEnumFields}[2]{Valores de enumeraciones}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STATE\_INIT@{STATE\_INIT}!GestorEstados.h@{GestorEstados.h}}\index{GestorEstados.h@{GestorEstados.h}!STATE\_INIT@{STATE\_INIT}}}\Hypertarget{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75a98d2a2153b4ae0445fa0b114d65b94d9}\label{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75a98d2a2153b4ae0445fa0b114d65b94d9} 
+STATE\+\_\+\+INIT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STATE\_IDLE@{STATE\_IDLE}!GestorEstados.h@{GestorEstados.h}}\index{GestorEstados.h@{GestorEstados.h}!STATE\_IDLE@{STATE\_IDLE}}}\Hypertarget{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75aaade5e53e88cf231292cd1142cce2afe}\label{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75aaade5e53e88cf231292cd1142cce2afe} 
+STATE\+\_\+\+IDLE&Sistema en inicialización. Solo es válida \doxylink{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203caa867dcd96a811cfb6266aa30addc4195}{ACTION\+\_\+\+INIT\+\_\+\+DONE} para pasar a \doxylink{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75aaade5e53e88cf231292cd1142cce2afe}{STATE\+\_\+\+IDLE}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STATE\_RUNNING@{STATE\_RUNNING}!GestorEstados.h@{GestorEstados.h}}\index{GestorEstados.h@{GestorEstados.h}!STATE\_RUNNING@{STATE\_RUNNING}}}\Hypertarget{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75addfe11c6d06c4e27bd6efc18cc4862a6}\label{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75addfe11c6d06c4e27bd6efc18cc4862a6} 
+STATE\+\_\+\+RUNNING&Reposo\+: motor detenido (o salida de emergencia). Admite configuración (\doxylink{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203ca02091b145bd0a41e238ffdae1167c912}{ACTION\+\_\+\+SET\+\_\+\+FREC}, \doxylink{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203ca7c202795a9f438cd5ffd71fa4992cb05}{ACTION\+\_\+\+SET\+\_\+\+ACEL}, \doxylink{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203cadd57362c8b9ec1984dd5f0468974a768}{ACTION\+\_\+\+SET\+\_\+\+DESACEL}, \doxylink{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203caef517ff4b1c364633231742027d859de}{ACTION\+\_\+\+SET\+\_\+\+DIR}) y arranque con \doxylink{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203cad18d9bd6c0a4eced8d31c7b1c6b9dd16}{ACTION\+\_\+\+START}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STATE\_VEL\_CHANGE@{STATE\_VEL\_CHANGE}!GestorEstados.h@{GestorEstados.h}}\index{GestorEstados.h@{GestorEstados.h}!STATE\_VEL\_CHANGE@{STATE\_VEL\_CHANGE}}}\Hypertarget{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75a7d453a874f8a1e41a71fa02601836216}\label{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75a7d453a874f8a1e41a71fa02601836216} 
+STATE\+\_\+\+VEL\+\_\+\+CHANGE&Marcha a velocidad constante. Acepta cambio de parámetros permitidos y \doxylink{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203ca4645d70cb9bb2228f230d601f477639d}{ACTION\+\_\+\+STOP} para transicionar a \doxylink{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75a0ee79d8541fe6a143bec1ec4c6b728e0}{STATE\+\_\+\+BRAKING}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STATE\_BRAKING@{STATE\_BRAKING}!GestorEstados.h@{GestorEstados.h}}\index{GestorEstados.h@{GestorEstados.h}!STATE\_BRAKING@{STATE\_BRAKING}}}\Hypertarget{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75a0ee79d8541fe6a143bec1ec4c6b728e0}\label{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75a0ee79d8541fe6a143bec1ec4c6b728e0} 
+STATE\+\_\+\+BRAKING&Transitorio de cambio de velocidad (acel./desacel.). Al alcanzar régimen\+: \doxylink{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203ca901a803cd622114cffc6ee59403a5c86}{ACTION\+\_\+\+TO\+\_\+\+CONST\+\_\+\+RUNNING} → \doxylink{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75addfe11c6d06c4e27bd6efc18cc4862a6}{STATE\+\_\+\+RUNNING}. \doxylink{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203ca4645d70cb9bb2228f230d601f477639d}{ACTION\+\_\+\+STOP} lleva a \doxylink{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75a0ee79d8541fe6a143bec1ec4c6b728e0}{STATE\+\_\+\+BRAKING}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STATE\_EMERGENCY@{STATE\_EMERGENCY}!GestorEstados.h@{GestorEstados.h}}\index{GestorEstados.h@{GestorEstados.h}!STATE\_EMERGENCY@{STATE\_EMERGENCY}}}\Hypertarget{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75ad0180e0382824e561c72f20f08838420}\label{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75ad0180e0382824e561c72f20f08838420} 
+STATE\+\_\+\+EMERGENCY&Frenado en curso. Al detenerse\+: \doxylink{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203ca02e4f329c3a2d677cb3e9d9fea2e8e28}{ACTION\+\_\+\+MOTOR\+\_\+\+STOPPED} → \doxylink{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75aaade5e53e88cf231292cd1142cce2afe}{STATE\+\_\+\+IDLE}. \doxylink{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203ca464e3eead004a6b415ca415e38fa3d53}{ACTION\+\_\+\+TO\+\_\+\+IDLE} fuerza el paso a inactivo. Emergencia activa (salidas deshabilitadas). Solo acciones de recuperación/acondicionamiento; p.\+ej. \doxylink{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203ca4645d70cb9bb2228f230d601f477639d}{ACTION\+\_\+\+STOP} puede llevar a \doxylink{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75aaade5e53e88cf231292cd1142cce2afe}{STATE\+\_\+\+IDLE} según la lógica de seguridad. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definición en la línea \mbox{\hyperlink{_gestor_estados_8h_source_l00025}{25}} del archivo \mbox{\hyperlink{_gestor_estados_8h_source}{Gestor\+Estados.\+h}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{_gestor_estados_8h_doc-func-members}
+\doxysubsection{Documentación de funciones}
+\Hypertarget{_gestor_estados_8h_a44b3bf408355270c64323425c66e7719}\index{GestorEstados.h@{GestorEstados.h}!GestorEstados\_Action@{GestorEstados\_Action}}
+\index{GestorEstados\_Action@{GestorEstados\_Action}!GestorEstados.h@{GestorEstados.h}}
+\doxysubsubsection{\texorpdfstring{GestorEstados\_Action()}{GestorEstados\_Action()}}
+{\footnotesize\ttfamily \label{_gestor_estados_8h_a44b3bf408355270c64323425c66e7719} 
+\mbox{\hyperlink{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7}{System\+Action\+Response}} Gestor\+Estados\+\_\+\+Action (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203c}{System\+Action}}}]{sys\+Act}{, }\item[{int}]{value}{}\end{DoxyParamCaption})}
+
+
+
+Ejecuta una acción de la máquina de estados y devuelve el resultado. 
+
+Evalúa la acción {\ttfamily sys\+Act} contra el estado actual (\doxylink{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75}{System\+State}) y, según corresponda, invoca rutinas del SVM (p.\+ej. {\ttfamily \doxylink{_gestor_s_v_m_8c_a0524c323e42d243efaacd375836c2cfb}{Gestor\+SVM\+\_\+\+Motor\+Start()}}, {\ttfamily \doxylink{_gestor_s_v_m_8c_adf2028330d7896b6f9a467dc57d5eac4}{Gestor\+SVM\+\_\+\+Motor\+Stop()}}, {\ttfamily \doxylink{_gestor_s_v_m_8c_a63c6e1ceb949ac408d9516d4cb5be686}{Gestor\+SVM\+\_\+\+Estop()}}, {\ttfamily Gestor\+SVM\+\_\+\+Set\+Frec/\+Set\+Acel/\+Set\+Decel/\+Set\+Dir}) y actualiza la variable interna {\ttfamily \doxylink{_gestor_estados_8c_a7e2bcf8de2c1eced051a3a4d69ec7cee}{current\+State}}. ~\newline
+ Las reglas de transición/retorno (según el código mostrado) incluyen, entre otras\+:
+\begin{DoxyItemize}
+\item \doxylink{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203caa867dcd96a811cfb6266aa30addc4195}{ACTION\+\_\+\+INIT\+\_\+\+DONE} \+: solo desde \doxylink{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75a98d2a2153b4ae0445fa0b114d65b94d9}{STATE\+\_\+\+INIT} → \doxylink{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75aaade5e53e88cf231292cd1142cce2afe}{STATE\+\_\+\+IDLE}.
+\item \doxylink{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203cad18d9bd6c0a4eced8d31c7b1c6b9dd16}{ACTION\+\_\+\+START} \+: desde \doxylink{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75aaade5e53e88cf231292cd1142cce2afe}{STATE\+\_\+\+IDLE} → \doxylink{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75a7d453a874f8a1e41a71fa02601836216}{STATE\+\_\+\+VEL\+\_\+\+CHANGE}; si hay movimiento → \doxylink{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7a7621bc4555e78cd6e80c74bafa7a0283}{ACTION\+\_\+\+RESP\+\_\+\+MOVING}; en emergencia → \doxylink{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7ac9ce3b2802bf37aac433179ff2874a3e}{ACTION\+\_\+\+RESP\+\_\+\+EMERGENCY\+\_\+\+ACTIVE}.
+\item \doxylink{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203ca4645d70cb9bb2228f230d601f477639d}{ACTION\+\_\+\+STOP} \+: desde RUNNING/\+VEL\+\_\+\+CHANGE → \doxylink{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75a0ee79d8541fe6a143bec1ec4c6b728e0}{STATE\+\_\+\+BRAKING}; en EMERGENCY → \doxylink{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75aaade5e53e88cf231292cd1142cce2afe}{STATE\+\_\+\+IDLE}; en IDLE → \doxylink{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7a81d02313245d29c06a707add990806c6}{ACTION\+\_\+\+RESP\+\_\+\+NOT\+\_\+\+MOVING}.
+\item \doxylink{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203ca02e4f329c3a2d677cb3e9d9fea2e8e28}{ACTION\+\_\+\+MOTOR\+\_\+\+STOPPED} \+: en BRAKING → \doxylink{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75aaade5e53e88cf231292cd1142cce2afe}{STATE\+\_\+\+IDLE}.
+\item \doxylink{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203cae2752030c8dc2221fdfb8353ef2d7a8a}{ACTION\+\_\+\+EMERGENCY} \+: a \doxylink{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75ad0180e0382824e561c72f20f08838420}{STATE\+\_\+\+EMERGENCY} (si no lo estaba).
+\item \doxylink{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203ca901a803cd622114cffc6ee59403a5c86}{ACTION\+\_\+\+TO\+\_\+\+CONST\+\_\+\+RUNNING} \+: en VEL\+\_\+\+CHANGE → \doxylink{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75addfe11c6d06c4e27bd6efc18cc4862a6}{STATE\+\_\+\+RUNNING}.
+\item ACTION\+\_\+\+SET\+\_\+\+FREC/\+SET\+\_\+\+ACEL/\+SET\+\_\+\+DESACEL/\+SET\+\_\+\+DIR \+: validan rango/estado y pueden dejar el estado o forzar \doxylink{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75a7d453a874f8a1e41a71fa02601836216}{STATE\+\_\+\+VEL\+\_\+\+CHANGE} (según retorno de {\ttfamily Gestor\+SVM\+\_\+\texorpdfstring{$\ast$}{*}}).
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\texttt{in}}  & {\em sys\+Act} & Acción solicitada (\doxylink{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203c}{System\+Action}). \\
+\hline
+\mbox{\texttt{in}}  & {\em value} & Parámetro asociado a la acción (p.\+ej., frecuencia, acel./desacel., dirección).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\doxylink{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7}{System\+Action\+Response}
+\begin{DoxyItemize}
+\item \doxylink{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7a090da72512b04323631bc989b7ad9e9d}{ACTION\+\_\+\+RESP\+\_\+\+OK} \+: La acción fue válida y se ejecutó (posible cambio de estado).
+\item \doxylink{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7a3197eec44f9da238da4e390c38ae7187}{ACTION\+\_\+\+RESP\+\_\+\+ERR} \+: Secuencia inválida para el estado actual o fallo de configuración.
+\item \doxylink{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7a7621bc4555e78cd6e80c74bafa7a0283}{ACTION\+\_\+\+RESP\+\_\+\+MOVING} \+: Rechazo/indicación de que el motor está en movimiento.
+\item \doxylink{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7a81d02313245d29c06a707add990806c6}{ACTION\+\_\+\+RESP\+\_\+\+NOT\+\_\+\+MOVING} \+: Rechazo/indicación de que el motor está detenido.
+\item \doxylink{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7a55cf7ca3043c85a37a46adae995b6a0b}{ACTION\+\_\+\+RESP\+\_\+\+OUT\+\_\+\+RANGE} \+: Parámetro {\ttfamily value} fuera de límites admitidos.
+\item ACTION\+\_\+\+RESP\+\_\+\+EMERGENCY\+\_\+\+ACTIVE\+: Acción no permitida bajo \doxylink{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75ad0180e0382824e561c72f20f08838420}{STATE\+\_\+\+EMERGENCY}.
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyNote}{Nota}
+Las acciones de lectura (\doxylink{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203cac584cfe909986a1a00be92cb2870d63f}{ACTION\+\_\+\+GET\+\_\+\+FREC}, \doxylink{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203ca936b4853f8101ae792185c02c4216be0}{ACTION\+\_\+\+GET\+\_\+\+ACEL}, \doxylink{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203ca829629e8fda976af81ad64cd9b3f2171}{ACTION\+\_\+\+GET\+\_\+\+DESACEL}, \doxylink{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203ca6cf84c7c734fe0fc8d2d79535f1c6374}{ACTION\+\_\+\+GET\+\_\+\+DIR}) no cambian de estado en este switch. 
+\end{DoxyNote}
+\begin{DoxyWarning}{Atención}
+Verificar que cada {\ttfamily case} finalice con {\ttfamily break} (en el código provisto faltaba {\ttfamily break} tras \doxylink{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203cae2752030c8dc2221fdfb8353ef2d7a8a}{ACTION\+\_\+\+EMERGENCY} para evitar fall-\/through). 
+\end{DoxyWarning}
+\begin{DoxyRefDesc}{Tareas pendientes}
+\item[\mbox{\hyperlink{todo__todo000001}{Tareas pendientes}}]\+: Aca tengo que poner un timer para que calcule el tiempo aprox de frenado. \end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{Tareas pendientes}
+\item[\mbox{\hyperlink{todo__todo000002}{Tareas pendientes}}]\+: Revisar si es necesario chequear esto ¿\+Por qué no ejecutamos el stop sin importar el estado? \end{DoxyRefDesc}
+
+
+Definición en la línea \mbox{\hyperlink{_gestor_estados_8c_source_l00012}{12}} del archivo \mbox{\hyperlink{_gestor_estados_8c_source}{Gestor\+Estados.\+c}}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 1
+Gráfico de llamadas a esta función\+:
+% FIG 2

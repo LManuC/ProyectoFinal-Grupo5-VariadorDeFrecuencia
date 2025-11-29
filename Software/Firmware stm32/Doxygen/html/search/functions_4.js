@@ -1,0 +1,28 @@
+var searchData=
+[
+  ['gestorestados_5faction_0',['GestorEstados_Action',['../_gestor_estados_8c.html#a44b3bf408355270c64323425c66e7719',1,'GestorEstados_Action(SystemAction sysAct, int value):&#160;GestorEstados.c'],['../_gestor_estados_8h.html#a44b3bf408355270c64323425c66e7719',1,'GestorEstados_Action(SystemAction sysAct, int value):&#160;GestorEstados.c']]],
+  ['gestorsvm_5fcalcinterrupt_1',['GestorSVM_CalcInterrupt',['../_gestor_s_v_m_8c.html#adabb99ea058e641f0e9431b537b9705b',1,'GestorSVM_CalcInterrupt():&#160;GestorSVM.c'],['../_gestor_s_v_m_8h.html#adabb99ea058e641f0e9431b537b9705b',1,'GestorSVM_CalcInterrupt():&#160;GestorSVM.c']]],
+  ['gestorsvm_5fcalcularvaloresswitching_2',['GestorSVM_CalcularValoresSwitching',['../_gestor_s_v_m_8c.html#a5d24428836578e5723a5385d49ab44c7',1,'GestorSVM.c']]],
+  ['gestorsvm_5fcalculoaceleracioneracion_3',['GestorSVM_Calculoaceleracioneracion',['../_gestor_s_v_m_8c.html#a510e4ee2d2a2ae17c44785899e0e5844',1,'GestorSVM.c']]],
+  ['gestorsvm_5festop_4',['GestorSVM_Estop',['../_gestor_s_v_m_8c.html#a63c6e1ceb949ac408d9516d4cb5be686',1,'GestorSVM_Estop():&#160;GestorSVM.c'],['../_gestor_s_v_m_8h.html#a63c6e1ceb949ac408d9516d4cb5be686',1,'GestorSVM_Estop():&#160;GestorSVM.c']]],
+  ['gestorsvm_5fgetacel_5',['GestorSVM_GetAcel',['../_gestor_s_v_m_8h.html#ae9d7d5f17aded3e5c7a7e79c3cfb5218',1,'GestorSVM.h']]],
+  ['gestorsvm_5fgetaceleracion_6',['GestorSVM_Getaceleracion',['../_gestor_s_v_m_8c.html#a194a2627a7348ecaf125a03508239ef6',1,'GestorSVM.c']]],
+  ['gestorsvm_5fgetdesacel_7',['GestorSVM_GetDesacel',['../_gestor_s_v_m_8h.html#a799448440b4d9095f1fb33d2d655fe1f',1,'GestorSVM.h']]],
+  ['gestorsvm_5fgetdesaceleracion_8',['GestorSVM_GetDesaceleracion',['../_gestor_s_v_m_8c.html#ae9fad44bd4d57af9bc9ac4f482ea5fae',1,'GestorSVM.c']]],
+  ['gestorsvm_5fgetdir_9',['GestorSVM_GetDir',['../_gestor_s_v_m_8c.html#a17bf21f94ae6073c66662117de912850',1,'GestorSVM_GetDir():&#160;GestorSVM.c'],['../_gestor_s_v_m_8h.html#a17bf21f94ae6073c66662117de912850',1,'GestorSVM_GetDir():&#160;GestorSVM.c']]],
+  ['gestorsvm_5fgetfrec_10',['GestorSVM_GetFrec',['../_gestor_s_v_m_8c.html#a0c781546371d716ca8146f4d0160460f',1,'GestorSVM_GetFrec():&#160;GestorSVM.c'],['../_gestor_s_v_m_8h.html#a0c781546371d716ca8146f4d0160460f',1,'GestorSVM_GetFrec():&#160;GestorSVM.c']]],
+  ['gestorsvm_5finit_11',['GestorSVM_Init',['../_gestor_s_v_m_8h.html#a9c53f505279cef7d19da29106d5adf63',1,'GestorSVM.h']]],
+  ['gestorsvm_5fmotorstart_12',['GestorSVM_MotorStart',['../_gestor_s_v_m_8c.html#a0524c323e42d243efaacd375836c2cfb',1,'GestorSVM_MotorStart():&#160;GestorSVM.c'],['../_gestor_s_v_m_8h.html#a0524c323e42d243efaacd375836c2cfb',1,'GestorSVM_MotorStart():&#160;GestorSVM.c']]],
+  ['gestorsvm_5fmotorstop_13',['GestorSVM_MotorStop',['../_gestor_s_v_m_8c.html#adf2028330d7896b6f9a467dc57d5eac4',1,'GestorSVM_MotorStop():&#160;GestorSVM.c'],['../_gestor_s_v_m_8h.html#adf2028330d7896b6f9a467dc57d5eac4',1,'GestorSVM_MotorStop():&#160;GestorSVM.c']]],
+  ['gestorsvm_5fsetacel_14',['GestorSVM_SetAcel',['../_gestor_s_v_m_8h.html#a66ad4d13b2b5836964bde8427acc0a07',1,'GestorSVM.h']]],
+  ['gestorsvm_5fsetaceleracion_15',['GestorSVM_Setaceleracion',['../_gestor_s_v_m_8c.html#a123fdc53095f5297ce6b01119c69c043',1,'GestorSVM.c']]],
+  ['gestorsvm_5fsetconfiguration_16',['GestorSVM_SetConfiguration',['../_gestor_s_v_m_8c.html#a17fd8593a56939f1777cfdbed0db0334',1,'GestorSVM_SetConfiguration(ConfiguracionSVM *configuracion):&#160;GestorSVM.c'],['../_gestor_s_v_m_8h.html#a17fd8593a56939f1777cfdbed0db0334',1,'GestorSVM_SetConfiguration(ConfiguracionSVM *configuracion):&#160;GestorSVM.c']]],
+  ['gestorsvm_5fsetdecel_17',['GestorSVM_SetDecel',['../_gestor_s_v_m_8c.html#af72bd515620559dd404ac8395ba10bec',1,'GestorSVM_SetDecel(int nuevaDecel):&#160;GestorSVM.c'],['../_gestor_s_v_m_8h.html#aef52c881f8b779b6e94b49076fa8876f',1,'GestorSVM_SetDecel(int decel):&#160;GestorSVM.c']]],
+  ['gestorsvm_5fsetdir_18',['GestorSVM_SetDir',['../_gestor_s_v_m_8c.html#a7cb0adcba1ed421b2ccb337faec3bb06',1,'GestorSVM_SetDir(int dir):&#160;GestorSVM.c'],['../_gestor_s_v_m_8h.html#a7cb0adcba1ed421b2ccb337faec3bb06',1,'GestorSVM_SetDir(int dir):&#160;GestorSVM.c']]],
+  ['gestorsvm_5fsetfrec_19',['GestorSVM_SetFrec',['../_gestor_s_v_m_8c.html#a8da78eb6c3f1e8cd6be888fe9f7fce89',1,'GestorSVM_SetFrec(int frec):&#160;GestorSVM.c'],['../_gestor_s_v_m_8h.html#a8da78eb6c3f1e8cd6be888fe9f7fce89',1,'GestorSVM_SetFrec(int frec):&#160;GestorSVM.c']]],
+  ['gestorsvm_5fswitchinterrupt_20',['GestorSVM_SwitchInterrupt',['../_gestor_s_v_m_8c.html#aab94327b81298999f1f2e8374495f521',1,'GestorSVM.c']]],
+  ['gestorsvm_5fswitchpuertos_21',['GestorSVM_SwitchPuertos',['../_gestor_s_v_m_8c.html#acb6435274a6164fddc89ab33bc3dfd09',1,'GestorSVM.c']]],
+  ['gestortimers_5fdetenertimersvm_22',['GestorTimers_DetenerTimerSVM',['../_gestor_timers_8c.html#a435418d983924d0a5acfc0413c37b037',1,'GestorTimers_DetenerTimerSVM():&#160;GestorTimers.c'],['../_gestor_timers_8h.html#a435418d983924d0a5acfc0413c37b037',1,'GestorTimers_DetenerTimerSVM():&#160;GestorTimers.c']]],
+  ['gestortimers_5finiciartimersvm_23',['GestorTimers_IniciarTimerSVM',['../_gestor_timers_8c.html#a0fddedad03556179833e10a26f6f4966',1,'GestorTimers_IniciarTimerSVM():&#160;GestorTimers.c'],['../_gestor_timers_8h.html#a0fddedad03556179833e10a26f6f4966',1,'GestorTimers_IniciarTimerSVM():&#160;GestorTimers.c']]],
+  ['gestortimers_5finit_24',['GestorTimers_Init',['../_gestor_timers_8c.html#acfbf9d184bcb79b7f2bfff3366b2a354',1,'GestorTimers_Init(TIM_HandleTypeDef *_hTimerSwitch, TIM_HandleTypeDef *_hTimerCalc):&#160;GestorTimers.c'],['../_gestor_timers_8h.html#a3042dbbe77d87b13806402936c91ccf7',1,'GestorTimers_Init():&#160;GestorTimers.h']]]
+];

@@ -1,0 +1,10 @@
+digraph "C:/Users/User/Desktop/ProyectoFinal-Grupo5-VariadorDeFrecuencia/Software/Firmware stm32/Src/system_stm32f1xx.c"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [id="Node000001",label="C:/Users/User/Desktop\l/ProyectoFinal-Grupo5\l-VariadorDeFrecuencia\l/Software/Firmware stm32\l/Src/system_stm32f1xx.c",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="CMSIS Cortex-M3 Device Peripheral Access Layer System Source File."];
+  Node1 -> Node2 [id="edge2_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="stm32f1xx.h",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+}

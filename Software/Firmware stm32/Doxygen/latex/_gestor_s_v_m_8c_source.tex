@@ -1,0 +1,766 @@
+\doxysection{Gestor\+SVM.\+c}
+\hypertarget{_gestor_s_v_m_8c_source}{}\label{_gestor_s_v_m_8c_source}\index{C:/Users/User/Desktop/ProyectoFinal-\/Grupo5-\/VariadorDeFrecuencia/Software/Firmware stm32/Modules/Gestor\_SVM/GestorSVM.c@{C:/Users/User/Desktop/ProyectoFinal-\/Grupo5-\/VariadorDeFrecuencia/Software/Firmware stm32/Modules/Gestor\_SVM/GestorSVM.c}}
+\mbox{\hyperlink{_gestor_s_v_m_8c}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00015}00015\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00016}00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_gestor_s_v_m_8h}{GestorSVM.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00017}00017\ \textcolor{preprocessor}{\#include\ "{}stm32f103xb.h"{}}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00018}00018\ \textcolor{preprocessor}{\#include\ "{}../Inc/main.h"{}}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00019}00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_gestor_estados_8h}{../Gestor\_Estados/GestorEstados.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00020}00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_gestor_timers_8h}{../Gestor\_Timers/GestorTimers.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00026}\mbox{\hyperlink{_gestor_s_v_m_8c_af525dcb5ad726f160c74b092470c3afb}{00026}}\ \textcolor{preprocessor}{\#define\ MAX\_TICKS\ 256}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00032}\mbox{\hyperlink{_gestor_s_v_m_8c_a634f55921fd3d9991843a953d85b3e01}{00032}}\ \textcolor{preprocessor}{\#define\ TICKS\_DESHABILITAR\_CANAL\ 280}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00038}\mbox{\hyperlink{_gestor_s_v_m_8c_a088bc954e734e4a4c8cdfa28902631c8}{00038}}\ \textcolor{preprocessor}{\#define\ MIN\_TICKS\_DIF\ 5}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00043}\mbox{\hyperlink{_gestor_s_v_m_8c_a8b94ecc4fd06bed94b55092056382bb9}{00043}}\ \textcolor{preprocessor}{\#define\ CONST\_CALC\_T1\_PROP\ \ \ \ \ \ (float)-\/3.59145E-\/6}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00044}\mbox{\hyperlink{_gestor_s_v_m_8c_a0b5e83d84abb0cd4e75397109803b9b1}{00044}}\ \textcolor{preprocessor}{\#define\ CONST\_CALC\_T1\_ORD\_ORG\ \ \ (float)224.2845426}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00045}\mbox{\hyperlink{_gestor_s_v_m_8c_a1a974e97a1f4cb13b8e18c1d14282d7e}{00045}}\ \textcolor{preprocessor}{\#define\ CONST\_CALC\_T2\_PROP\ \ \ \ \ \ (float)+3.59145E-\/6}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00046}\mbox{\hyperlink{_gestor_s_v_m_8c_aceca7678832e5d75c230eb52a7ab07c8}{00046}}\ \textcolor{preprocessor}{\#define\ CONST\_CALC\_T2\_ORD\_ORG\ \ \ (float)8.797345358}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00053}\mbox{\hyperlink{_gestor_s_v_m_8c_a259efd27fc2c061cab9f6fe254ede913}{00053}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00054}\mbox{\hyperlink{_gestor_s_v_m_8c_a259efd27fc2c061cab9f6fe254ede913a535edbda6e7cbf04c34c8e2ddbaa068e}{00054}}\ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a259efd27fc2c061cab9f6fe254ede913a535edbda6e7cbf04c34c8e2ddbaa068e}{INTERF\_NULA}}\ =\ 0,\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00055}\mbox{\hyperlink{_gestor_s_v_m_8c_a259efd27fc2c061cab9f6fe254ede913ad8ebdbe564fda2e464e021ce1c6c89d5}{00055}}\ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a259efd27fc2c061cab9f6fe254ede913ad8ebdbe564fda2e464e021ce1c6c89d5}{INTERF\_T1T2}},\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00056}\mbox{\hyperlink{_gestor_s_v_m_8c_a259efd27fc2c061cab9f6fe254ede913a3a22e2ff4e067e01c4129d1cdca6e5a2}{00056}}\ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a259efd27fc2c061cab9f6fe254ede913a3a22e2ff4e067e01c4129d1cdca6e5a2}{INTERF\_T1T3}},\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00057}\mbox{\hyperlink{_gestor_s_v_m_8c_a259efd27fc2c061cab9f6fe254ede913a2fb31e62eb904a81a91b0c8c6359de65}{00057}}\ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a259efd27fc2c061cab9f6fe254ede913a2fb31e62eb904a81a91b0c8c6359de65}{INTERF\_T2T3}},\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00058}\mbox{\hyperlink{_gestor_s_v_m_8c_a259efd27fc2c061cab9f6fe254ede913af08e64b327401299ee2989ce09d47d4a}{00058}}\ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a259efd27fc2c061cab9f6fe254ede913af08e64b327401299ee2989ce09d47d4a}{INTERF\_T1T2\_T2T3}}\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00059}00059\ \}\ \mbox{\hyperlink{_gestor_s_v_m_8c_a259efd27fc2c061cab9f6fe254ede913}{CasoInterferenciaTimer}};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00062}\mbox{\hyperlink{_gestor_s_v_m_8c_a4c4df3579e27c8ab2ddcba0e0420523d}{00062}}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_gestor_s_v_m_8c_a4c4df3579e27c8ab2ddcba0e0420523d}{frecuenciaSwitching}};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00064}\mbox{\hyperlink{_gestor_s_v_m_8c_ae76293000b309473e1e360f8a7ed9d23}{00064}}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_gestor_s_v_m_8c_ae76293000b309473e1e360f8a7ed9d23}{direccionRotacion}}\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00066}\mbox{\hyperlink{_gestor_s_v_m_8c_ab395be599c2e377eea2a91e52cd3b170}{00066}}\ \textcolor{keyword}{static}\ int32\_t\ \mbox{\hyperlink{_gestor_s_v_m_8c_ab395be599c2e377eea2a91e52cd3b170}{frecuenciaSalida}};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00068}\mbox{\hyperlink{_gestor_s_v_m_8c_abf2857a4c393671f47a1c040235ce0be}{00068}}\ \textcolor{keyword}{static}\ uint32\_t\ \mbox{\hyperlink{_gestor_s_v_m_8c_abf2857a4c393671f47a1c040235ce0be}{anguloSwitching}};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00070}\mbox{\hyperlink{_gestor_s_v_m_8c_a92a5f7a38fd8fadfde145a057abe1dce}{00070}}\ \textcolor{keyword}{static}\ \textcolor{keyword}{volatile}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_gestor_s_v_m_8c_a92a5f7a38fd8fadfde145a057abe1dce}{indiceModulacion}};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00072}\mbox{\hyperlink{_gestor_s_v_m_8c_a1c6352a5b38f1b11e9d1419fa3131452}{00072}}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_gestor_s_v_m_8c_a1c6352a5b38f1b11e9d1419fa3131452}{aceleracion}};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00074}\mbox{\hyperlink{_gestor_s_v_m_8c_a73da6448f1aebaa17720928dbd2e32cc}{00074}}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_gestor_s_v_m_8c_a73da6448f1aebaa17720928dbd2e32cc}{desaceleracion}};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00076}\mbox{\hyperlink{_gestor_s_v_m_8c_aebd08571e5da918d81a6b301cc8143cd}{00076}}\ \textcolor{keyword}{static}\ uint32\_t\ \mbox{\hyperlink{_gestor_s_v_m_8c_aebd08571e5da918d81a6b301cc8143cd}{anguloActual}};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00078}\mbox{\hyperlink{_gestor_s_v_m_8c_a840b47b2f587bf1efae83d4e07b57fde}{00078}}\ \textcolor{keyword}{static}\ int32\_t\ \mbox{\hyperlink{_gestor_s_v_m_8c_a840b47b2f587bf1efae83d4e07b57fde}{anguloParcial}};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00080}\mbox{\hyperlink{_gestor_s_v_m_8c_a7fb4c953b417b232d38613e87f190ab7}{00080}}\ \textcolor{keyword}{static}\ \textcolor{keyword}{volatile}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_gestor_s_v_m_8c_a7fb4c953b417b232d38613e87f190ab7}{cuadranteActual}};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00086}\mbox{\hyperlink{_gestor_s_v_m_8c_af36839c37ceddc6429a4d0f86e145d2c}{00086}}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_gestor_s_v_m_8c_af36839c37ceddc6429a4d0f86e145d2c}{vectorSecuenciaPorCuadrante}}[6][7]\ =\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00087}00087\ \ \ \ \ \{0b000,0b100,0b110,0b111,0b110,0b100,0b000\},\ \textcolor{comment}{//\ Sector\ 1}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00088}00088\ \ \ \ \ \{0b000,0b010,0b110,0b111,0b110,0b010,0b000\},\ \textcolor{comment}{//\ Sector\ 2}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00089}00089\ \ \ \ \ \{0b000,0b010,0b011,0b111,0b011,0b010,0b000\},\ \textcolor{comment}{//\ Sector\ 3}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00090}00090\ \ \ \ \ \{0b000,0b001,0b011,0b111,0b011,0b001,0b000\},\ \textcolor{comment}{//\ Sector\ 4}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00091}00091\ \ \ \ \ \{0b000,0b001,0b101,0b111,0b101,0b001,0b000\},\ \textcolor{comment}{//\ Sector\ 5}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00092}00092\ \ \ \ \ \{0b000,0b100,0b101,0b111,0b101,0b100,0b000\}\ \ \textcolor{comment}{//\ Sector\ 6}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00093}00093\ \};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00096}\mbox{\hyperlink{_gestor_s_v_m_8c_ab355d83e3c8f06aa34a64001eeae7c6b}{00096}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_gestor_s_v_m_8c_ab355d83e3c8f06aa34a64001eeae7c6b}{pinTogglePorCuadranteYOrden}}[6][3];}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00098}\mbox{\hyperlink{_gestor_s_v_m_8c_a096d4dcc733cc7d3cb3b2b2761ad74b4}{00098}}\ uint32\_t\ \mbox{\hyperlink{_gestor_s_v_m_8c_a096d4dcc733cc7d3cb3b2b2761ad74b4}{estadoGPIOPorCuadranteYOrden}}[6][2];}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00100}\mbox{\hyperlink{_gestor_s_v_m_8c_a7f0cb87b586cca67054c90a4539d1b0d}{00100}}\ uint32\_t\ \mbox{\hyperlink{_gestor_s_v_m_8c_a7f0cb87b586cca67054c90a4539d1b0d}{estadoGPIOOff}};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00102}\mbox{\hyperlink{_gestor_s_v_m_8c_a33806fcd4c3cc2167b449ba073d36281}{00102}}\ uint32\_t\ \mbox{\hyperlink{_gestor_s_v_m_8c_a33806fcd4c3cc2167b449ba073d36281}{estadoGPIOOn}};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00105}\mbox{\hyperlink{_gestor_s_v_m_8c_a722b3f89eeea95c0565294e0419fc801}{00105}}\ \textcolor{keyword}{static}\ \textcolor{keyword}{volatile}\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{_gestor_s_v_m_8c_a722b3f89eeea95c0565294e0419fc801}{flagAscensoAnguloParcial}}\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00107}\mbox{\hyperlink{_gestor_s_v_m_8c_a2fa87ffbab029a07fd246d47e0a75aa7}{00107}}\ \textcolor{keyword}{static}\ \textcolor{keyword}{volatile}\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{_gestor_s_v_m_8c_a2fa87ffbab029a07fd246d47e0a75aa7}{estadoLogicoSalida}}[3];}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00109}\mbox{\hyperlink{_gestor_s_v_m_8c_a65160f043db92066d395ee01d617c06f}{00109}}\ \textcolor{keyword}{static}\ \textcolor{keyword}{volatile}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_gestor_s_v_m_8c_a65160f043db92066d395ee01d617c06f}{ticksChannel}}[3];}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00111}\mbox{\hyperlink{_gestor_s_v_m_8c_a148644d9ebb39ea4dfa6fbf6da13229a}{00111}}\ \textcolor{keyword}{static}\ \textcolor{keyword}{volatile}\ \mbox{\hyperlink{_gestor_s_v_m_8c_a259efd27fc2c061cab9f6fe254ede913}{CasoInterferenciaTimer}}\ \mbox{\hyperlink{_gestor_s_v_m_8c_a148644d9ebb39ea4dfa6fbf6da13229a}{casoInterferencia}};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00114}\mbox{\hyperlink{_gestor_s_v_m_8c_a133e313d057f9cf8e8a9bbff80f96630}{00114}}\ \textcolor{keyword}{static}\ \textcolor{keyword}{volatile}\ int32\_t\ \mbox{\hyperlink{_gestor_s_v_m_8c_a133e313d057f9cf8e8a9bbff80f96630}{frecObjetivo}};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00116}\mbox{\hyperlink{_gestor_s_v_m_8c_a52252528ca7defa6f8de419143b30100}{00116}}\ \textcolor{keyword}{static}\ \textcolor{keyword}{volatile}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_gestor_s_v_m_8c_a52252528ca7defa6f8de419143b30100}{flagChangingFrecuencia}};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00118}\mbox{\hyperlink{_gestor_s_v_m_8c_a211a2b89c92027a6f5a6edbfffa2dd78}{00118}}\ \textcolor{keyword}{static}\ \textcolor{keyword}{volatile}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_gestor_s_v_m_8c_a211a2b89c92027a6f5a6edbfffa2dd78}{flagEsAcelerado}};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00120}\mbox{\hyperlink{_gestor_s_v_m_8c_a2f5156ba4efc07e0f2f1a04991fcfdae}{00120}}\ \textcolor{keyword}{static}\ \textcolor{keyword}{volatile}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_gestor_s_v_m_8c_a2f5156ba4efc07e0f2f1a04991fcfdae}{flagMotorRunning}};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00122}\mbox{\hyperlink{_gestor_s_v_m_8c_a62d70cb530b832d93219406698aa9a3f}{00122}}\ \textcolor{keyword}{static}\ \textcolor{keyword}{volatile}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_gestor_s_v_m_8c_a62d70cb530b832d93219406698aa9a3f}{frecuenciaReferenica}};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00124}\mbox{\hyperlink{_gestor_s_v_m_8c_aa16dda675dd4a2086e73b0c8374922ca}{00124}}\ \textcolor{keyword}{static}\ \textcolor{keyword}{volatile}\ uint32\_t\ \mbox{\hyperlink{_gestor_s_v_m_8c_aa16dda675dd4a2086e73b0c8374922ca}{cambioFrecuenciaPorCiclo}};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00126}\mbox{\hyperlink{_gestor_s_v_m_8c_ab255bd83f3ca54f5a92fd9a4bb021c41}{00126}}\ \textcolor{keyword}{volatile}\ \mbox{\hyperlink{struct_valores_switching}{ValoresSwitching}}\ \mbox{\hyperlink{_gestor_s_v_m_8c_ab255bd83f3ca54f5a92fd9a4bb021c41}{valoresSwitching}};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00127}00127\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00132}\mbox{\hyperlink{_gestor_s_v_m_8c_a72ff70b5c30d3fbd8b875ee71f24afa9}{00132}}\ \textcolor{preprocessor}{\#define\ BUFFER\_CALCULO\_SIZE\ 3}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00133}00133\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00134}\mbox{\hyperlink{struct_dato_calculado}{00134}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00135}\mbox{\hyperlink{struct_dato_calculado_a6b67d81053a0911ab65ab600949b15f6}{00135}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_dato_calculado_a6b67d81053a0911ab65ab600949b15f6}{ticksChannel1}}[\mbox{\hyperlink{_gestor_s_v_m_8c_a72ff70b5c30d3fbd8b875ee71f24afa9}{BUFFER\_CALCULO\_SIZE}}];}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00136}\mbox{\hyperlink{struct_dato_calculado_a4ff2b4e35351a99609de6ffeccb87873}{00136}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_dato_calculado_a4ff2b4e35351a99609de6ffeccb87873}{ticksChannel2}}[\mbox{\hyperlink{_gestor_s_v_m_8c_a72ff70b5c30d3fbd8b875ee71f24afa9}{BUFFER\_CALCULO\_SIZE}}];}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00137}\mbox{\hyperlink{struct_dato_calculado_a23c14d1ae7c78aa3e05d57f6779c46e1}{00137}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_dato_calculado_a23c14d1ae7c78aa3e05d57f6779c46e1}{ticksChannel3}}[\mbox{\hyperlink{_gestor_s_v_m_8c_a72ff70b5c30d3fbd8b875ee71f24afa9}{BUFFER\_CALCULO\_SIZE}}];}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00138}\mbox{\hyperlink{struct_dato_calculado_a110b8e1a5c828489c5d4f8591690b222}{00138}}\ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a259efd27fc2c061cab9f6fe254ede913}{CasoInterferenciaTimer}}\ \mbox{\hyperlink{struct_dato_calculado_a110b8e1a5c828489c5d4f8591690b222}{casoInterferencia}}[\mbox{\hyperlink{_gestor_s_v_m_8c_a72ff70b5c30d3fbd8b875ee71f24afa9}{BUFFER\_CALCULO\_SIZE}}];}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00139}\mbox{\hyperlink{struct_dato_calculado_ac9133a2bab73890014409c12800cce42}{00139}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_dato_calculado_ac9133a2bab73890014409c12800cce42}{cuadranteActual}}[\mbox{\hyperlink{_gestor_s_v_m_8c_a72ff70b5c30d3fbd8b875ee71f24afa9}{BUFFER\_CALCULO\_SIZE}}];}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00140}\mbox{\hyperlink{struct_dato_calculado_abe37e7db72b37274f43c592966f67757}{00140}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_dato_calculado_abe37e7db72b37274f43c592966f67757}{indiceEscritura}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00141}\mbox{\hyperlink{struct_dato_calculado_aa346a79b97ae33f1e90ee1ce16c6a526}{00141}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_dato_calculado_aa346a79b97ae33f1e90ee1ce16c6a526}{indiceLectura}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00142}\mbox{\hyperlink{struct_dato_calculado_a2b5a6f46101b4bdd080592e03264a8f0}{00142}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_dato_calculado_a2b5a6f46101b4bdd080592e03264a8f0}{contadorDeDatos}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00143}00143\ \}\ \mbox{\hyperlink{struct_dato_calculado}{DatoCalculado}};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00144}00144\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00145}\mbox{\hyperlink{_gestor_s_v_m_8c_a69e96d0fb1e5973bd8aeec118dcee1dc}{00145}}\ \textcolor{keyword}{volatile}\ \mbox{\hyperlink{struct_dato_calculado}{DatoCalculado}}\ \mbox{\hyperlink{_gestor_s_v_m_8c_a69e96d0fb1e5973bd8aeec118dcee1dc}{bufferCalculo}};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00146}00146\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00150}\mbox{\hyperlink{struct_parametros}{00150}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00151}\mbox{\hyperlink{struct_parametros_acea755411bc10eeb66da4f9c8ea43d88}{00151}}\ \ \ \ \ int32\_t\ \mbox{\hyperlink{struct_parametros_acea755411bc10eeb66da4f9c8ea43d88}{frecObjetivo}};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00152}\mbox{\hyperlink{struct_parametros_a4850999fb8a8332f97e88c1a2aff84b5}{00152}}\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{struct_parametros_a4850999fb8a8332f97e88c1a2aff84b5}{cambioFrecuenciaPorCiclo}};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00153}\mbox{\hyperlink{struct_parametros_ae76293000b309473e1e360f8a7ed9d23}{00153}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_parametros_ae76293000b309473e1e360f8a7ed9d23}{direccionRotacion}};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00154}\mbox{\hyperlink{struct_parametros_adcb648e2e2ddfe4551d64a0588028231}{00154}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_parametros_adcb648e2e2ddfe4551d64a0588028231}{flagMotorRunning}};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00155}\mbox{\hyperlink{struct_parametros_aa409895928fbe0374904263d46d8b486}{00155}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_parametros_aa409895928fbe0374904263d46d8b486}{flagEsAcelerado}};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00156}\mbox{\hyperlink{struct_parametros_adf4543a6423d02d5f740d7b593a23348}{00156}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_parametros_adf4543a6423d02d5f740d7b593a23348}{flagChangingFrecuencia}};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00157}00157\ \}\ \mbox{\hyperlink{struct_parametros}{Parametros}};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00158}00158\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00159}\mbox{\hyperlink{_gestor_s_v_m_8c_a59292e9c522e99e3b641c09a7ef71fab}{00159}}\ \textcolor{keyword}{volatile}\ \mbox{\hyperlink{struct_parametros}{Parametros}}\ \mbox{\hyperlink{_gestor_s_v_m_8c_a59292e9c522e99e3b641c09a7ef71fab}{paramSombra}};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00160}\mbox{\hyperlink{_gestor_s_v_m_8c_a1bdc9a3f642943b4f4e2282a234d5346}{00160}}\ \textcolor{keyword}{volatile}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_gestor_s_v_m_8c_a1bdc9a3f642943b4f4e2282a234d5346}{flagActualizarParamSombra}};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00161}00161\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00162}00162\ \textcolor{comment}{/*\ ================================\ Prototipos\ privados\ ================================\ */}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00163}00163\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00180}00180\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_gestor_s_v_m_8c_a510e4ee2d2a2ae17c44785899e0e5844}{GestorSVM\_Calculoaceleracioneracion}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00181}00181\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00188}00188\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_gestor_s_v_m_8c_ace22621aa363cb91c5b18fb80fb8d4b5}{pinMap}}(\textcolor{keywordtype}{int}\ x);}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00189}00189\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00199}00199\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_gestor_s_v_m_8c_a5d24428836578e5723a5385d49ab44c7}{GestorSVM\_CalcularValoresSwitching}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00200}00200\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00210}00210\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_gestor_s_v_m_8c_aab94327b81298999f1f2e8374495f521}{GestorSVM\_SwitchInterrupt}}(\mbox{\hyperlink{_gestor_s_v_m_8h_ac12e123ca97cf2482882646d5e67767e}{SwitchInterruptType}}\ intType);}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00211}00211\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00219}00219\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_gestor_s_v_m_8c_acb6435274a6164fddc89ab33bc3dfd09}{GestorSVM\_SwitchPuertos}}(\mbox{\hyperlink{_gestor_s_v_m_8h_a2cb06ce2ec272b92651a6472f0723580}{OrdenSwitch}}\ orden,\ \textcolor{keywordtype}{char}\ estado,\ \textcolor{keywordtype}{int}\ numCuadrante);}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00220}00220\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00221}00221\ \textcolor{comment}{/*\ ================================\ Implementación\ privada\ ================================\ */}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00222}00222\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00223}\mbox{\hyperlink{_gestor_s_v_m_8c_ace22621aa363cb91c5b18fb80fb8d4b5}{00223}}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_gestor_s_v_m_8c_ace22621aa363cb91c5b18fb80fb8d4b5}{pinMap}}(\textcolor{keywordtype}{int}\ x)\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00224}00224\ \ \ \ \ \textcolor{keywordtype}{int}\ r\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00225}00225\ \ \ \ \ x\ \&=\ 0x07;\ \textcolor{comment}{//\ limitar\ a\ 3\ bits\ (U,V,W)}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00226}00226\ \ \ \ \ \textcolor{keywordflow}{if}\ (x\ ==\ 1)\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00227}00227\ \ \ \ \ \ \ \ \ r\ =\ 2;\ \ \ \textcolor{comment}{//\ W}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00228}00228\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00229}00229\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (x\ ==\ 2)\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00230}00230\ \ \ \ \ \ \ \ \ r\ =\ 1;\ \ \ \textcolor{comment}{//\ V}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00231}00231\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00232}00232\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (x\ ==\ 4)\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00233}00233\ \ \ \ \ \ \ \ \ r\ =\ 0;\ \ \ \textcolor{comment}{//\ U}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00234}00234\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00235}00235\ \ \ \ \ \textcolor{keywordflow}{return}\ r;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00236}00236\ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00237}00237\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00238}\mbox{\hyperlink{_gestor_s_v_m_8c_a5d24428836578e5723a5385d49ab44c7}{00238}}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_gestor_s_v_m_8c_a5d24428836578e5723a5385d49ab44c7}{GestorSVM\_CalcularValoresSwitching}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00239}00239\ \ \ \ \ \textcolor{keywordtype}{int}\ t1,\ t2,\ t0;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00240}00240\ \ \ \ \ \textcolor{keywordtype}{int}\ ticksC1,\ ticksC2,\ ticksC3;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00241}00241\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00242}00242\ \ \ \ \ \textcolor{comment}{/*\ Rampa\ de\ velocidad\ si\ corresponde\ */}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00243}00243\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{_gestor_s_v_m_8c_a52252528ca7defa6f8de419143b30100}{flagChangingFrecuencia}})\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00244}00244\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a510e4ee2d2a2ae17c44785899e0e5844}{GestorSVM\_Calculoaceleracioneracion}}();}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00245}00245\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00246}00246\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00247}00247\ \ \ \ \ \textcolor{comment}{/*\ Avance\ angular\ y\ gestión\ de\ diente\ 0..60°\ */}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00248}00248\ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_aebd08571e5da918d81a6b301cc8143cd}{anguloActual}}\ +=\ \mbox{\hyperlink{_gestor_s_v_m_8c_abf2857a4c393671f47a1c040235ce0be}{anguloSwitching}};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00249}00249\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{_gestor_s_v_m_8c_aebd08571e5da918d81a6b301cc8143cd}{anguloActual}}\ >=\ 360\ *\ 1000\ *\ 1000)\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00250}00250\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_aebd08571e5da918d81a6b301cc8143cd}{anguloActual}}\ -\/=\ 360\ *\ 1000\ *\ 1000;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00251}00251\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a7fb4c953b417b232d38613e87f190ab7}{cuadranteActual}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00252}00252\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a722b3f89eeea95c0565294e0419fc801}{flagAscensoAnguloParcial}}\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00253}00253\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a840b47b2f587bf1efae83d4e07b57fde}{anguloParcial}}\ =\ \mbox{\hyperlink{_gestor_s_v_m_8c_aebd08571e5da918d81a6b301cc8143cd}{anguloActual}};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00254}00254\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00255}00255\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{_gestor_s_v_m_8c_a722b3f89eeea95c0565294e0419fc801}{flagAscensoAnguloParcial}}\ ==\ 1)\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00256}00256\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a840b47b2f587bf1efae83d4e07b57fde}{anguloParcial}}\ +=\ \mbox{\hyperlink{_gestor_s_v_m_8c_abf2857a4c393671f47a1c040235ce0be}{anguloSwitching}};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00257}00257\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{_gestor_s_v_m_8c_a840b47b2f587bf1efae83d4e07b57fde}{anguloParcial}}\ >=\ 60\ *\ 1000\ *\ 1000)\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00258}00258\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a840b47b2f587bf1efae83d4e07b57fde}{anguloParcial}}\ =\ 2\ *\ 60\ *\ 1000\ *\ 1000\ -\/\ \mbox{\hyperlink{_gestor_s_v_m_8c_a840b47b2f587bf1efae83d4e07b57fde}{anguloParcial}};\ \textcolor{comment}{//\ espejo}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00259}00259\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a722b3f89eeea95c0565294e0419fc801}{flagAscensoAnguloParcial}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00260}00260\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a7fb4c953b417b232d38613e87f190ab7}{cuadranteActual}}\ =\ (\mbox{\hyperlink{_gestor_s_v_m_8c_a7fb4c953b417b232d38613e87f190ab7}{cuadranteActual}}\ +\ 1)\ \%\ 6;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00261}00261\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00262}00262\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00263}00263\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a840b47b2f587bf1efae83d4e07b57fde}{anguloParcial}}\ -\/=\ \mbox{\hyperlink{_gestor_s_v_m_8c_abf2857a4c393671f47a1c040235ce0be}{anguloSwitching}};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00264}00264\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{_gestor_s_v_m_8c_a840b47b2f587bf1efae83d4e07b57fde}{anguloParcial}}\ <=\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00265}00265\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a840b47b2f587bf1efae83d4e07b57fde}{anguloParcial}}\ =\ -\/\mbox{\hyperlink{_gestor_s_v_m_8c_a840b47b2f587bf1efae83d4e07b57fde}{anguloParcial}};\ \textcolor{comment}{//\ espejo}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00266}00266\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a722b3f89eeea95c0565294e0419fc801}{flagAscensoAnguloParcial}}\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00267}00267\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a7fb4c953b417b232d38613e87f190ab7}{cuadranteActual}}\ =\ (\mbox{\hyperlink{_gestor_s_v_m_8c_a7fb4c953b417b232d38613e87f190ab7}{cuadranteActual}}\ +\ 1)\ \%\ 6;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00268}00268\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00269}00269\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00270}00270\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00271}00271\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00272}00272\ \ \ \ \ \textcolor{comment}{/*\ t1/t2\ por\ regresión\ e\ índice\ de\ modulación\ */}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00273}00273\ \ \ \ \ t1\ =\ (int)(((\mbox{\hyperlink{_gestor_s_v_m_8c_a8b94ecc4fd06bed94b55092056382bb9}{CONST\_CALC\_T1\_PROP}}\ *\ (\textcolor{keywordtype}{float})\mbox{\hyperlink{_gestor_s_v_m_8c_a840b47b2f587bf1efae83d4e07b57fde}{anguloParcial}}\ +\ \mbox{\hyperlink{_gestor_s_v_m_8c_a0b5e83d84abb0cd4e75397109803b9b1}{CONST\_CALC\_T1\_ORD\_ORG}})\ *\ \mbox{\hyperlink{_gestor_s_v_m_8c_a92a5f7a38fd8fadfde145a057abe1dce}{indiceModulacion}})\ /\ 100);}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00274}00274\ \ \ \ \ t2\ =\ (int)(((\mbox{\hyperlink{_gestor_s_v_m_8c_a1a974e97a1f4cb13b8e18c1d14282d7e}{CONST\_CALC\_T2\_PROP}}\ *\ (\textcolor{keywordtype}{float})\mbox{\hyperlink{_gestor_s_v_m_8c_a840b47b2f587bf1efae83d4e07b57fde}{anguloParcial}}\ +\ \mbox{\hyperlink{_gestor_s_v_m_8c_aceca7678832e5d75c230eb52a7ab07c8}{CONST\_CALC\_T2\_ORD\_ORG}})\ *\ \mbox{\hyperlink{_gestor_s_v_m_8c_a92a5f7a38fd8fadfde145a057abe1dce}{indiceModulacion}})\ /\ 100);}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00275}00275\ \ \ \ \ t0\ =\ (int)((\textcolor{keywordtype}{float})(255\ -\/\ t1\ -\/\ t2)\ *\ 0.5);}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00276}00276\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00277}00277\ \ \ \ \ \textcolor{comment}{/*\ Ticks\ absolutos\ en\ el\ período\ */}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00278}00278\ \ \ \ \ ticksC1\ =\ t0;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00279}00279\ \ \ \ \ ticksC2\ =\ t0\ +\ t1;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00280}00280\ \ \ \ \ ticksC3\ =\ t0\ +\ t1\ +\ t2;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00281}00281\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00282}00282\ \ \ \ \ \textcolor{comment}{/*\ Clasificación\ de\ interferencias\ */}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00283}00283\ \ \ \ \ \textcolor{keywordflow}{if}\ (ticksC3\ -\/\ ticksC1\ <\ \mbox{\hyperlink{_gestor_s_v_m_8c_a088bc954e734e4a4c8cdfa28902631c8}{MIN\_TICKS\_DIF}})\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00284}00284\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a148644d9ebb39ea4dfa6fbf6da13229a}{casoInterferencia}}\ =\ \mbox{\hyperlink{_gestor_s_v_m_8c_a259efd27fc2c061cab9f6fe254ede913a3a22e2ff4e067e01c4129d1cdca6e5a2}{INTERF\_T1T3}};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00285}00285\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (ticksC2\ -\/\ ticksC1\ <\ \mbox{\hyperlink{_gestor_s_v_m_8c_a088bc954e734e4a4c8cdfa28902631c8}{MIN\_TICKS\_DIF}}\ \&\&\ ticksC3\ -\/\ ticksC2\ <\ \mbox{\hyperlink{_gestor_s_v_m_8c_a088bc954e734e4a4c8cdfa28902631c8}{MIN\_TICKS\_DIF}})\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00286}00286\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a148644d9ebb39ea4dfa6fbf6da13229a}{casoInterferencia}}\ =\ \mbox{\hyperlink{_gestor_s_v_m_8c_a259efd27fc2c061cab9f6fe254ede913af08e64b327401299ee2989ce09d47d4a}{INTERF\_T1T2\_T2T3}};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00287}00287\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (ticksC2\ -\/\ ticksC1\ <\ \mbox{\hyperlink{_gestor_s_v_m_8c_a088bc954e734e4a4c8cdfa28902631c8}{MIN\_TICKS\_DIF}})\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00288}00288\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a148644d9ebb39ea4dfa6fbf6da13229a}{casoInterferencia}}\ =\ \mbox{\hyperlink{_gestor_s_v_m_8c_a259efd27fc2c061cab9f6fe254ede913ad8ebdbe564fda2e464e021ce1c6c89d5}{INTERF\_T1T2}};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00289}00289\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (ticksC3\ -\/\ ticksC2\ <\ \mbox{\hyperlink{_gestor_s_v_m_8c_a088bc954e734e4a4c8cdfa28902631c8}{MIN\_TICKS\_DIF}})\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00290}00290\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a148644d9ebb39ea4dfa6fbf6da13229a}{casoInterferencia}}\ =\ \mbox{\hyperlink{_gestor_s_v_m_8c_a259efd27fc2c061cab9f6fe254ede913a2fb31e62eb904a81a91b0c8c6359de65}{INTERF\_T2T3}};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00291}00291\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00292}00292\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a148644d9ebb39ea4dfa6fbf6da13229a}{casoInterferencia}}\ =\ \mbox{\hyperlink{_gestor_s_v_m_8c_a259efd27fc2c061cab9f6fe254ede913a535edbda6e7cbf04c34c8e2ddbaa068e}{INTERF\_NULA}};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00293}00293\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00294}00294\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00295}00295\ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a65160f043db92066d395ee01d617c06f}{ticksChannel}}[0]\ =\ ticksC1;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00296}00296\ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a65160f043db92066d395ee01d617c06f}{ticksChannel}}[1]\ =\ ticksC2;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00297}00297\ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a65160f043db92066d395ee01d617c06f}{ticksChannel}}[2]\ =\ ticksC3;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00298}00298\ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00299}00299\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00300}\mbox{\hyperlink{_gestor_s_v_m_8c_aab94327b81298999f1f2e8374495f521}{00300}}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_gestor_s_v_m_8c_aab94327b81298999f1f2e8374495f521}{GestorSVM\_SwitchInterrupt}}(\mbox{\hyperlink{_gestor_s_v_m_8h_ac12e123ca97cf2482882646d5e67767e}{SwitchInterruptType}}\ intType)\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00301}00301\ \ \ \ \ \textcolor{keyword}{volatile}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ countUpTx[3];\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 1=subiendo,\ 0=bajando}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00302}00302\ \ \ \ \ \textcolor{keyword}{volatile}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ flagTxActivo[3];\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ espera\ de\ evento\ por\ canal}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00303}00303\ \ \ \ \ \textcolor{keyword}{volatile}\ \textcolor{keyword}{static}\ \mbox{\hyperlink{_gestor_s_v_m_8c_a259efd27fc2c061cab9f6fe254ede913}{CasoInterferenciaTimer}}\ interferencia;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00304}00304\ \ \ \ \ \textcolor{keyword}{volatile}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ cuadrante\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00305}00305\ \ \ \ \ \textcolor{keywordtype}{int}\ ticks1,\ ticks2,\ ticks3;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00306}00306\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00307}00307\ \ \ \ \ \textcolor{comment}{/*\ Si\ no\ hay\ datos\ precargados,\ no\ hacer\ nada\ */}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00308}00308\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{_gestor_s_v_m_8c_a69e96d0fb1e5973bd8aeec118dcee1dc}{bufferCalculo}}.contadorDeDatos\ <=\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00309}00309\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00310}00310\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00311}00311\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00312}00312\ \ \ \ \ \textcolor{keywordflow}{switch}\ (intType)\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00313}00313\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_gestor_s_v_m_8h_ac12e123ca97cf2482882646d5e67767eab3055c3f71006b6d768de2e2d437cb18}{SWITCH\_INT\_CH1}}:}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00314}00314\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (flagTxActivo[0])\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00315}00315\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ flagTxActivo[0]\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00316}00316\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (countUpTx[0])\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00317}00317\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_acb6435274a6164fddc89ab33bc3dfd09}{GestorSVM\_SwitchPuertos}}(\mbox{\hyperlink{_gestor_s_v_m_8h_a2cb06ce2ec272b92651a6472f0723580ac02f34a92b4bd06f34ddb8273829adfe}{ORDEN\_SWITCH\_1\_UP}},\ 1,\ cuadrante);}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00318}00318\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ countUpTx[0]\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00319}00319\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00320}00320\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ countUpTx[0]\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00321}00321\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_acb6435274a6164fddc89ab33bc3dfd09}{GestorSVM\_SwitchPuertos}}(\mbox{\hyperlink{_gestor_s_v_m_8h_a2cb06ce2ec272b92651a6472f0723580a3b33d0db8eb3f130078bedff27ae613f}{ORDEN\_SWITCH\_1\_DOWN}},\ 0,\ cuadrante);}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00322}00322\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Rehabilita\ interrupciones\ de\ los\ otros\ canales\ */}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00323}00323\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TIM3-\/>DIER\ |=\ TIM\_DIER\_CC2IE;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00324}00324\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TIM3-\/>DIER\ |=\ TIM\_DIER\_CC3IE;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00325}00325\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TIM3-\/>DIER\ |=\ TIM\_DIER\_CC4IE;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00326}00326\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00327}00327\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00328}00328\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ flagTxActivo[0]\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00329}00329\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00330}00330\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00331}00331\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00332}00332\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_gestor_s_v_m_8h_ac12e123ca97cf2482882646d5e67767eac0f044f79933a5ba09b39462e4c5f0bc}{SWITCH\_INT\_CH2}}:}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00333}00333\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (flagTxActivo[1])\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00334}00334\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ flagTxActivo[1]\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00335}00335\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (countUpTx[1])\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00336}00336\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_acb6435274a6164fddc89ab33bc3dfd09}{GestorSVM\_SwitchPuertos}}(\mbox{\hyperlink{_gestor_s_v_m_8h_a2cb06ce2ec272b92651a6472f0723580a187371233676c22ea98a1001c6a88bb9}{ORDEN\_SWITCH\_2\_UP}},\ 1,\ cuadrante);}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00337}00337\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ countUpTx[1]\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00338}00338\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00339}00339\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_acb6435274a6164fddc89ab33bc3dfd09}{GestorSVM\_SwitchPuertos}}(\mbox{\hyperlink{_gestor_s_v_m_8h_a2cb06ce2ec272b92651a6472f0723580aa0006aaa69e23c55c838726806c02de8}{ORDEN\_SWITCH\_2\_DOWN}},\ 0,\ cuadrante);}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00340}00340\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ countUpTx[1]\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00341}00341\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00342}00342\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00343}00343\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (interferencia\ ==\ \mbox{\hyperlink{_gestor_s_v_m_8c_a259efd27fc2c061cab9f6fe254ede913af08e64b327401299ee2989ce09d47d4a}{INTERF\_T1T2\_T2T3}})\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00344}00344\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ flagTxActivo[1]\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00345}00345\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TIM3-\/>DIER\ \&=\ \string~TIM\_DIER\_CC3IE;\ \textcolor{comment}{//\ desactiva\ T2}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00346}00346\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00347}00347\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ flagTxActivo[1]\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00348}00348\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00349}00349\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00350}00350\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00351}00351\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00352}00352\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_gestor_s_v_m_8h_ac12e123ca97cf2482882646d5e67767ea4f79349a125bd828fdcaf406d0e6f376}{SWITCH\_INT\_CH3}}:}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00353}00353\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (flagTxActivo[2])\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00354}00354\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ flagTxActivo[2]\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00355}00355\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (countUpTx[2])\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00356}00356\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_acb6435274a6164fddc89ab33bc3dfd09}{GestorSVM\_SwitchPuertos}}(\mbox{\hyperlink{_gestor_s_v_m_8h_a2cb06ce2ec272b92651a6472f0723580adc53297fa82e0c3ab6d040cb0c0b8962}{ORDEN\_SWITCH\_3\_UP}},\ 1,\ cuadrante);}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00357}00357\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00358}00358\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Manejo\ de\ interferencias\ */}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00359}00359\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (interferencia)\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00360}00360\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_gestor_s_v_m_8c_a259efd27fc2c061cab9f6fe254ede913a535edbda6e7cbf04c34c8e2ddbaa068e}{INTERF\_NULA}}:}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00361}00361\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ flagTxActivo[0]\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00362}00362\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ flagTxActivo[1]\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00363}00363\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ flagTxActivo[2]\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00364}00364\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00365}00365\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_gestor_s_v_m_8c_a259efd27fc2c061cab9f6fe254ede913ad8ebdbe564fda2e464e021ce1c6c89d5}{INTERF\_T1T2}}:}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00366}00366\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ flagTxActivo[0]\ =\ 0;\ \ \textcolor{comment}{//\ T1\ pendiente}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00367}00367\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ flagTxActivo[1]\ =\ 0;\ \ \textcolor{comment}{//\ desactiva\ T2}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00368}00368\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ flagTxActivo[2]\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00369}00369\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Deshabilitacion\ T2}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00370}00370\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TIM3-\/>DIER\ \&=\ \string~TIM\_DIER\_CC3IE;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00371}00371\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Activacion\ T1}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00372}00372\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TIM3-\/>DIER\ |=\ TIM\_DIER\_CC2IE;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00373}00373\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00374}00374\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_gestor_s_v_m_8c_a259efd27fc2c061cab9f6fe254ede913a2fb31e62eb904a81a91b0c8c6359de65}{INTERF\_T2T3}}:}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00375}00375\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ flagTxActivo[0]\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00376}00376\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ flagTxActivo[1]\ =\ 0;\ \ \textcolor{comment}{//\ T2\ pendiente}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00377}00377\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ flagTxActivo[2]\ =\ 0;\ \ \textcolor{comment}{//\ T3\ off}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00378}00378\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TIM3-\/>DIER\ \&=\ \string~TIM\_DIER\_CC4IE;\ \textcolor{comment}{//\ CC4\ off}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00379}00379\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TIM3-\/>DIER\ |=\ \ TIM\_DIER\_CC3IE;\ \textcolor{comment}{//\ CC3\ on}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00380}00380\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00381}00381\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_gestor_s_v_m_8c_a259efd27fc2c061cab9f6fe254ede913a3a22e2ff4e067e01c4129d1cdca6e5a2}{INTERF\_T1T3}}:}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00382}00382\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ No\ debe\ ocurrir\ aquí\ */}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00383}00383\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00384}00384\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_gestor_s_v_m_8c_a259efd27fc2c061cab9f6fe254ede913af08e64b327401299ee2989ce09d47d4a}{INTERF\_T1T2\_T2T3}}:}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00385}00385\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ flagTxActivo[0]\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00386}00386\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ flagTxActivo[1]\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00387}00387\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ flagTxActivo[2]\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00388}00388\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TIM3-\/>DIER\ \&=\ \string~TIM\_DIER\_CC3IE;\ \textcolor{comment}{//\ CC3\ off}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00389}00389\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TIM3-\/>DIER\ |=\ \ TIM\_DIER\_CC2IE;\ \textcolor{comment}{//\ CC2\ on}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00390}00390\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00391}00391\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00392}00392\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Próximas\ interrupciones:\ cuenta\ abajo\ */}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00393}00393\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ countUpTx[0]\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00394}00394\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ countUpTx[1]\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00395}00395\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ countUpTx[2]\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00396}00396\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00397}00397\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_acb6435274a6164fddc89ab33bc3dfd09}{GestorSVM\_SwitchPuertos}}(\mbox{\hyperlink{_gestor_s_v_m_8h_a2cb06ce2ec272b92651a6472f0723580ae1152381faf3c6e029acc518bbe3cc4d}{ORDEN\_SWITCH\_3\_DOWN}},\ 0,\ cuadrante);}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00398}00398\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ countUpTx[2]\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00399}00399\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00400}00400\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00401}00401\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (interferencia\ ==\ \mbox{\hyperlink{_gestor_s_v_m_8c_a259efd27fc2c061cab9f6fe254ede913a3a22e2ff4e067e01c4129d1cdca6e5a2}{INTERF\_T1T3}})\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00402}00402\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ flagTxActivo[0]\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00403}00403\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ flagTxActivo[1]\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00404}00404\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ flagTxActivo[2]\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00405}00405\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00406}00406\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ flagTxActivo[2]\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00407}00407\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00408}00408\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00409}00409\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00410}00410\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00411}00411\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_gestor_s_v_m_8h_ac12e123ca97cf2482882646d5e67767ead52acd5eb7604d33eeaee40537f4082f}{SWITCH\_INT\_RESET}}:}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00412}00412\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Re-\/sync\ /\ precarga\ */}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00413}00413\ \ \ \ \ \ \ \ \ \ \ \ \ countUpTx[0]\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00414}00414\ \ \ \ \ \ \ \ \ \ \ \ \ countUpTx[1]\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00415}00415\ \ \ \ \ \ \ \ \ \ \ \ \ countUpTx[2]\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00416}00416\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00417}00417\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Consume\ entrada\ del\ buffer\ */}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00418}00418\ \ \ \ \ \ \ \ \ \ \ \ \ ticks1\ =\ \mbox{\hyperlink{_gestor_s_v_m_8c_a69e96d0fb1e5973bd8aeec118dcee1dc}{bufferCalculo}}.ticksChannel1[\mbox{\hyperlink{_gestor_s_v_m_8c_a69e96d0fb1e5973bd8aeec118dcee1dc}{bufferCalculo}}.indiceLectura];}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00419}00419\ \ \ \ \ \ \ \ \ \ \ \ \ ticks2\ =\ \mbox{\hyperlink{_gestor_s_v_m_8c_a69e96d0fb1e5973bd8aeec118dcee1dc}{bufferCalculo}}.ticksChannel2[\mbox{\hyperlink{_gestor_s_v_m_8c_a69e96d0fb1e5973bd8aeec118dcee1dc}{bufferCalculo}}.indiceLectura];}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00420}00420\ \ \ \ \ \ \ \ \ \ \ \ \ ticks3\ =\ \mbox{\hyperlink{_gestor_s_v_m_8c_a69e96d0fb1e5973bd8aeec118dcee1dc}{bufferCalculo}}.ticksChannel3[\mbox{\hyperlink{_gestor_s_v_m_8c_a69e96d0fb1e5973bd8aeec118dcee1dc}{bufferCalculo}}.indiceLectura];}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00421}00421\ \ \ \ \ \ \ \ \ \ \ \ \ interferencia\ =\ \mbox{\hyperlink{_gestor_s_v_m_8c_a69e96d0fb1e5973bd8aeec118dcee1dc}{bufferCalculo}}.casoInterferencia[\mbox{\hyperlink{_gestor_s_v_m_8c_a69e96d0fb1e5973bd8aeec118dcee1dc}{bufferCalculo}}.indiceLectura];}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00422}00422\ \ \ \ \ \ \ \ \ \ \ \ \ cuadrante\ =\ \mbox{\hyperlink{_gestor_s_v_m_8c_a69e96d0fb1e5973bd8aeec118dcee1dc}{bufferCalculo}}.cuadranteActual[\mbox{\hyperlink{_gestor_s_v_m_8c_a69e96d0fb1e5973bd8aeec118dcee1dc}{bufferCalculo}}.indiceLectura];}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00423}00423\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a69e96d0fb1e5973bd8aeec118dcee1dc}{bufferCalculo}}.indiceLectura\ =\ (\mbox{\hyperlink{_gestor_s_v_m_8c_a69e96d0fb1e5973bd8aeec118dcee1dc}{bufferCalculo}}.indiceLectura\ +\ 1)\ \%\ \mbox{\hyperlink{_gestor_s_v_m_8c_a72ff70b5c30d3fbd8b875ee71f24afa9}{BUFFER\_CALCULO\_SIZE}};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00424}00424\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a69e96d0fb1e5973bd8aeec118dcee1dc}{bufferCalculo}}.contadorDeDatos-\/-\/;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00425}00425\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00426}00426\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Habilitación\ según\ interferencias\ */}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00427}00427\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (interferencia)\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00428}00428\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_gestor_s_v_m_8c_a259efd27fc2c061cab9f6fe254ede913a535edbda6e7cbf04c34c8e2ddbaa068e}{INTERF\_NULA}}:}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00429}00429\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ flagTxActivo[0]\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00430}00430\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ flagTxActivo[1]\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00431}00431\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ flagTxActivo[2]\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00432}00432\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TIM3-\/>DIER\ |=\ TIM\_DIER\_CC2IE;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00433}00433\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TIM3-\/>DIER\ |=\ TIM\_DIER\_CC3IE;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00434}00434\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TIM3-\/>DIER\ |=\ TIM\_DIER\_CC4IE;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00435}00435\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00436}00436\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_gestor_s_v_m_8c_a259efd27fc2c061cab9f6fe254ede913ad8ebdbe564fda2e464e021ce1c6c89d5}{INTERF\_T1T2}}:}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00437}00437\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ flagTxActivo[0]\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00438}00438\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ flagTxActivo[1]\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00439}00439\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ flagTxActivo[2]\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00440}00440\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TIM3-\/>DIER\ \&=\ \string~TIM\_DIER\_CC2IE;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00441}00441\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TIM3-\/>DIER\ |=\ TIM\_DIER\_CC3IE;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00442}00442\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TIM3-\/>DIER\ |=\ TIM\_DIER\_CC4IE;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00443}00443\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00444}00444\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_gestor_s_v_m_8c_a259efd27fc2c061cab9f6fe254ede913a2fb31e62eb904a81a91b0c8c6359de65}{INTERF\_T2T3}}:}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00445}00445\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ flagTxActivo[0]\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00446}00446\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ flagTxActivo[1]\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00447}00447\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ flagTxActivo[2]\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00448}00448\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TIM3-\/>DIER\ |=\ TIM\_DIER\_CC2IE;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00449}00449\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TIM3-\/>DIER\ \&=\ \string~TIM\_DIER\_CC3IE;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00450}00450\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TIM3-\/>DIER\ |=\ TIM\_DIER\_CC4IE;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00451}00451\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00452}00452\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_gestor_s_v_m_8c_a259efd27fc2c061cab9f6fe254ede913a3a22e2ff4e067e01c4129d1cdca6e5a2}{INTERF\_T1T3}}:}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00453}00453\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ flagTxActivo[0]\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00454}00454\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ flagTxActivo[1]\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00455}00455\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ flagTxActivo[2]\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00456}00456\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Carga\ posiciones\ distantes\ (nunca\ disparan\ simultáneo)\ */}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00457}00457\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ticks1\ =\ 20;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00458}00458\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ticks2\ =\ 60;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00459}00459\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ticks3\ =\ 100;\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00460}00460\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TIM3-\/>DIER\ |=\ TIM\_DIER\_CC2IE;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00461}00461\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TIM3-\/>DIER\ |=\ TIM\_DIER\_CC3IE;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00462}00462\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TIM3-\/>DIER\ |=\ TIM\_DIER\_CC4IE;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00463}00463\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00464}00464\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_gestor_s_v_m_8c_a259efd27fc2c061cab9f6fe254ede913af08e64b327401299ee2989ce09d47d4a}{INTERF\_T1T2\_T2T3}}:}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00465}00465\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Desactivacion\ de\ T1\ y\ Activacion\ de\ T2\ y\ T3}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00466}00466\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ flagTxActivo[0]\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00467}00467\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ flagTxActivo[1]\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00468}00468\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ flagTxActivo[2]\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00469}00469\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TIM3-\/>DIER\ \&=\ \string~TIM\_DIER\_CC2IE;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00470}00470\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TIM3-\/>DIER\ |=\ TIM\_DIER\_CC3IE;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00471}00471\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TIM3-\/>DIER\ |=\ TIM\_DIER\_CC4IE;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00472}00472\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00473}00473\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00474}00474\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00475}00475\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Precarga\ CCRs\ (t1→CCR2,\ t2→CCR3,\ t3→CCR4)\ */}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00476}00476\ \ \ \ \ \ \ \ \ \ \ \ \ TIM3-\/>CCR2\ =\ ticks1;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00477}00477\ \ \ \ \ \ \ \ \ \ \ \ \ TIM3-\/>CCR3\ =\ ticks2;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00478}00478\ \ \ \ \ \ \ \ \ \ \ \ \ TIM3-\/>CCR4\ =\ ticks3;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00479}00479\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00480}00480\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00481}00481\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_gestor_s_v_m_8h_ac12e123ca97cf2482882646d5e67767ea1756e6c5bac5c299f9ae2b9e09439d8b}{SWITCH\_INT\_CLEAN}}:}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00482}00482\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Limpieza\ de\ estado\ */}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00483}00483\ \ \ \ \ \ \ \ \ \ \ \ \ countUpTx[0]\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00484}00484\ \ \ \ \ \ \ \ \ \ \ \ \ countUpTx[1]\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00485}00485\ \ \ \ \ \ \ \ \ \ \ \ \ countUpTx[2]\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00486}00486\ \ \ \ \ \ \ \ \ \ \ \ \ flagTxActivo[0]\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00487}00487\ \ \ \ \ \ \ \ \ \ \ \ \ flagTxActivo[1]\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00488}00488\ \ \ \ \ \ \ \ \ \ \ \ \ flagTxActivo[2]\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00489}00489\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00490}00490\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00491}00491\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00492}00492\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00493}00493\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00494}00494\ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00495}00495\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00496}\mbox{\hyperlink{_gestor_s_v_m_8c_acb6435274a6164fddc89ab33bc3dfd09}{00496}}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_gestor_s_v_m_8c_acb6435274a6164fddc89ab33bc3dfd09}{GestorSVM\_SwitchPuertos}}(\mbox{\hyperlink{_gestor_s_v_m_8h_a2cb06ce2ec272b92651a6472f0723580}{OrdenSwitch}}\ orden,\ \textcolor{keywordtype}{char}\ estado,\ \textcolor{keywordtype}{int}\ numCuadrante)\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00497}00497\ \ \ \ \ \textcolor{keywordflow}{switch}\ (orden)\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00498}00498\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_gestor_s_v_m_8h_a2cb06ce2ec272b92651a6472f0723580ac02f34a92b4bd06f34ddb8273829adfe}{ORDEN\_SWITCH\_1\_UP}}:}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00499}00499\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_gestor_s_v_m_8h_a2cb06ce2ec272b92651a6472f0723580a187371233676c22ea98a1001c6a88bb9}{ORDEN\_SWITCH\_2\_UP}}:}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00500}00500\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_gestor_s_v_m_8h_a2cb06ce2ec272b92651a6472f0723580ae1152381faf3c6e029acc518bbe3cc4d}{ORDEN\_SWITCH\_3\_DOWN}}:}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00501}00501\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_gestor_s_v_m_8h_a2cb06ce2ec272b92651a6472f0723580aa0006aaa69e23c55c838726806c02de8}{ORDEN\_SWITCH\_2\_DOWN}}:}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00502}00502\ \ \ \ \ \ \ \ \ \ \ \ \ GPIOA-\/>BSRR\ =\ \mbox{\hyperlink{_gestor_s_v_m_8c_a096d4dcc733cc7d3cb3b2b2761ad74b4}{estadoGPIOPorCuadranteYOrden}}[numCuadrante][estado];}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00503}00503\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00504}00504\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_gestor_s_v_m_8h_a2cb06ce2ec272b92651a6472f0723580adc53297fa82e0c3ab6d040cb0c0b8962}{ORDEN\_SWITCH\_3\_UP}}:}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00505}00505\ \ \ \ \ \ \ \ \ \ \ \ \ GPIOA-\/>BSRR\ =\ \mbox{\hyperlink{_gestor_s_v_m_8c_a33806fcd4c3cc2167b449ba073d36281}{estadoGPIOOn}};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00506}00506\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00507}00507\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_gestor_s_v_m_8h_a2cb06ce2ec272b92651a6472f0723580a3b33d0db8eb3f130078bedff27ae613f}{ORDEN\_SWITCH\_1\_DOWN}}:}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00508}00508\ \ \ \ \ \ \ \ \ \ \ \ \ GPIOA-\/>BSRR\ =\ \mbox{\hyperlink{_gestor_s_v_m_8c_a7f0cb87b586cca67054c90a4539d1b0d}{estadoGPIOOff}};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00509}00509\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00510}00510\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00511}00511\ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00512}00512\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00513}\mbox{\hyperlink{_gestor_s_v_m_8c_a510e4ee2d2a2ae17c44785899e0e5844}{00513}}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_gestor_s_v_m_8c_a510e4ee2d2a2ae17c44785899e0e5844}{GestorSVM\_Calculoaceleracioneracion}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00514}00514\ \ \ \ \ \textcolor{comment}{/*\ Sincronización\ con\ parámetros\ sombra,\ si\ corresponde\ */}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00515}00515\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{_gestor_s_v_m_8c_a1bdc9a3f642943b4f4e2282a234d5346}{flagActualizarParamSombra}})\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00516}00516\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a133e313d057f9cf8e8a9bbff80f96630}{frecObjetivo}}\ \ \ \ \ \ \ =\ \mbox{\hyperlink{_gestor_s_v_m_8c_a59292e9c522e99e3b641c09a7ef71fab}{paramSombra}}.frecObjetivo;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00517}00517\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_aa16dda675dd4a2086e73b0c8374922ca}{cambioFrecuenciaPorCiclo}}\ =\ \mbox{\hyperlink{_gestor_s_v_m_8c_a59292e9c522e99e3b641c09a7ef71fab}{paramSombra}}.cambioFrecuenciaPorCiclo;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00518}00518\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_ae76293000b309473e1e360f8a7ed9d23}{direccionRotacion}}\ \ =\ \mbox{\hyperlink{_gestor_s_v_m_8c_a59292e9c522e99e3b641c09a7ef71fab}{paramSombra}}.direccionRotacion;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00519}00519\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a2f5156ba4efc07e0f2f1a04991fcfdae}{flagMotorRunning}}\ \ \ =\ \mbox{\hyperlink{_gestor_s_v_m_8c_a59292e9c522e99e3b641c09a7ef71fab}{paramSombra}}.flagMotorRunning;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00520}00520\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a211a2b89c92027a6f5a6edbfffa2dd78}{flagEsAcelerado}}\ \ \ \ =\ \mbox{\hyperlink{_gestor_s_v_m_8c_a59292e9c522e99e3b641c09a7ef71fab}{paramSombra}}.flagEsAcelerado;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00521}00521\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a52252528ca7defa6f8de419143b30100}{flagChangingFrecuencia}}\ \ \ =\ \mbox{\hyperlink{_gestor_s_v_m_8c_a59292e9c522e99e3b641c09a7ef71fab}{paramSombra}}.flagChangingFrecuencia;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00522}00522\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a1bdc9a3f642943b4f4e2282a234d5346}{flagActualizarParamSombra}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00523}00523\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00524}00524\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00525}00525\ \ \ \ \ \textcolor{comment}{/*\ Aplicación\ de\ rampa\ */}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00526}00526\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{_gestor_s_v_m_8c_a211a2b89c92027a6f5a6edbfffa2dd78}{flagEsAcelerado}})\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00527}00527\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_ab395be599c2e377eea2a91e52cd3b170}{frecuenciaSalida}}\ +=\ \mbox{\hyperlink{_gestor_s_v_m_8c_aa16dda675dd4a2086e73b0c8374922ca}{cambioFrecuenciaPorCiclo}};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00528}00528\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{_gestor_s_v_m_8c_ab395be599c2e377eea2a91e52cd3b170}{frecuenciaSalida}}\ >=\ \mbox{\hyperlink{_gestor_s_v_m_8c_a133e313d057f9cf8e8a9bbff80f96630}{frecObjetivo}})\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00529}00529\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_ab395be599c2e377eea2a91e52cd3b170}{frecuenciaSalida}}\ =\ \mbox{\hyperlink{_gestor_s_v_m_8c_a133e313d057f9cf8e8a9bbff80f96630}{frecObjetivo}};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00530}00530\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_estados_8c_a44b3bf408355270c64323425c66e7719}{GestorEstados\_Action}}(\mbox{\hyperlink{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203ca901a803cd622114cffc6ee59403a5c86}{ACTION\_TO\_CONST\_RUNNING}},\ 0);}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00531}00531\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a52252528ca7defa6f8de419143b30100}{flagChangingFrecuencia}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00532}00532\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00533}00533\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00534}00534\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_ab395be599c2e377eea2a91e52cd3b170}{frecuenciaSalida}}\ -\/=\ \mbox{\hyperlink{_gestor_s_v_m_8c_aa16dda675dd4a2086e73b0c8374922ca}{cambioFrecuenciaPorCiclo}};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00535}00535\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{_gestor_s_v_m_8c_ab395be599c2e377eea2a91e52cd3b170}{frecuenciaSalida}}\ <=\ \mbox{\hyperlink{_gestor_s_v_m_8c_a133e313d057f9cf8e8a9bbff80f96630}{frecObjetivo}})\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00536}00536\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_ab395be599c2e377eea2a91e52cd3b170}{frecuenciaSalida}}\ =\ \mbox{\hyperlink{_gestor_s_v_m_8c_a133e313d057f9cf8e8a9bbff80f96630}{frecObjetivo}};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00537}00537\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00538}00538\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{_gestor_s_v_m_8c_a133e313d057f9cf8e8a9bbff80f96630}{frecObjetivo}}\ ==\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00539}00539\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a2f5156ba4efc07e0f2f1a04991fcfdae}{flagMotorRunning}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00540}00540\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_timers_8c_a435418d983924d0a5acfc0413c37b037}{GestorTimers\_DetenerTimerSVM}}();}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00541}00541\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_aab94327b81298999f1f2e8374495f521}{GestorSVM\_SwitchInterrupt}}(\mbox{\hyperlink{_gestor_s_v_m_8h_ac12e123ca97cf2482882646d5e67767ea1756e6c5bac5c299f9ae2b9e09439d8b}{SWITCH\_INT\_CLEAN}});}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00542}00542\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00543}00543\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Limpia\ buffer\ productor/consumidor\ */}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00544}00544\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a69e96d0fb1e5973bd8aeec118dcee1dc}{bufferCalculo}}.indiceEscritura\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00545}00545\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a69e96d0fb1e5973bd8aeec118dcee1dc}{bufferCalculo}}.indiceLectura\ \ \ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00546}00546\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a69e96d0fb1e5973bd8aeec118dcee1dc}{bufferCalculo}}.contadorDeDatos\ \ \ \ \ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00547}00547\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00548}00548\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Apaga\ salidas\ y\ drivers\ */}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00549}00549\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ HAL\_GPIO\_WritePin(GPIOA,\ \mbox{\hyperlink{group___g_p_i_o___s_v_m_gaaccb9e00e914fcf182f3630a6bb59ee6}{GPIO\_U\_IN}},\ GPIO\_PIN\_RESET);}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00550}00550\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ HAL\_GPIO\_WritePin(GPIOA,\ \mbox{\hyperlink{group___g_p_i_o___s_v_m_gacbd5e87c5c23566552587a7ec80e9d0b}{GPIO\_V\_IN}},\ GPIO\_PIN\_RESET);}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00551}00551\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ HAL\_GPIO\_WritePin(GPIOA,\ \mbox{\hyperlink{group___g_p_i_o___s_v_m_ga73106f511e1ffadeb2de4e584b200f3b}{GPIO\_W\_IN}},\ GPIO\_PIN\_RESET);}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00552}00552\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00553}00553\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ HAL\_GPIO\_WritePin(GPIOA,\ \mbox{\hyperlink{group___g_p_i_o___s_v_m_ga00e89367cd3adacbd9eb58d3edfd5fe5}{GPIO\_U\_SD}},\ GPIO\_PIN\_RESET);}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00554}00554\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ HAL\_GPIO\_WritePin(GPIOA,\ \mbox{\hyperlink{group___g_p_i_o___s_v_m_ga3dbfbc8a5b8e262798343490b2af411a}{GPIO\_V\_SD}},\ GPIO\_PIN\_RESET);}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00555}00555\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ HAL\_GPIO\_WritePin(GPIOA,\ \mbox{\hyperlink{group___g_p_i_o___s_v_m_gae4f2e2f0d4a0b28397bafc0043a5bab5}{GPIO\_W\_SD}},\ GPIO\_PIN\_RESET);}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00556}00556\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00557}00557\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Notifica\ detención\ */}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00558}00558\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_estados_8c_a44b3bf408355270c64323425c66e7719}{GestorEstados\_Action}}(\mbox{\hyperlink{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203ca02e4f329c3a2d677cb3e9d9fea2e8e28}{ACTION\_MOTOR\_STOPPED}},\ 0);}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00559}00559\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00560}00560\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_estados_8c_a44b3bf408355270c64323425c66e7719}{GestorEstados\_Action}}(\mbox{\hyperlink{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203ca901a803cd622114cffc6ee59403a5c86}{ACTION\_TO\_CONST\_RUNNING}},\ 0);}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00561}00561\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00562}00562\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a52252528ca7defa6f8de419143b30100}{flagChangingFrecuencia}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00563}00563\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00564}00564\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00565}00565\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00566}00566\ \ \ \ \ \textcolor{comment}{/*\ Índice\ de\ modulación\ (V/f)\ */}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00567}00567\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{_gestor_s_v_m_8c_ab395be599c2e377eea2a91e52cd3b170}{frecuenciaSalida}}\ <\ 50\ *\ 1000\ *\ 1000)\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00568}00568\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a92a5f7a38fd8fadfde145a057abe1dce}{indiceModulacion}}\ =\ \mbox{\hyperlink{_gestor_s_v_m_8c_ab395be599c2e377eea2a91e52cd3b170}{frecuenciaSalida}}\ /\ (500\ *\ 1000);\ \textcolor{comment}{//\ lineal\ hasta\ 50\ Hz}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00569}00569\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00570}00570\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a92a5f7a38fd8fadfde145a057abe1dce}{indiceModulacion}}\ =\ 100;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00571}00571\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00572}00572\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{_gestor_s_v_m_8c_a92a5f7a38fd8fadfde145a057abe1dce}{indiceModulacion}}\ <\ 1)\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00573}00573\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a92a5f7a38fd8fadfde145a057abe1dce}{indiceModulacion}}\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00574}00574\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00575}00575\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00576}00576\ \ \ \ \ \textcolor{comment}{/*\ Incremento\ angular\ por\ switching\ (cuidar\ orden\ para\ evitar\ overflow)\ */}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00577}00577\ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_abf2857a4c393671f47a1c040235ce0be}{anguloSwitching}}\ =\ (\mbox{\hyperlink{_gestor_s_v_m_8c_ab395be599c2e377eea2a91e52cd3b170}{frecuenciaSalida}}\ /\ \mbox{\hyperlink{_gestor_s_v_m_8c_a4c4df3579e27c8ab2ddcba0e0420523d}{frecuenciaSwitching}})\ *\ 360;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00578}00578\ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00579}00579\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00585}\mbox{\hyperlink{_gestor_s_v_m_8c_a17fd8593a56939f1777cfdbed0db0334}{00585}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_gestor_s_v_m_8c_a17fd8593a56939f1777cfdbed0db0334}{GestorSVM\_SetConfiguration}}(\mbox{\hyperlink{struct_configuracion_s_v_m}{ConfiguracionSVM}}*\ configuracion)\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00586}00586\ \ \ \ \ \textcolor{keywordtype}{int}\ i;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00587}00587\ \ \ \ \ \textcolor{comment}{/*\ Dinámicos\ */}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00588}00588\ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a4c4df3579e27c8ab2ddcba0e0420523d}{frecuenciaSwitching}}\ \ \ \ \ \ \ =\ configuracion-\/>frecuenciaSwitching;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00589}00589\ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_ae76293000b309473e1e360f8a7ed9d23}{direccionRotacion}}\ =\ configuracion-\/>\mbox{\hyperlink{struct_configuracion_s_v_m_ae76293000b309473e1e360f8a7ed9d23}{direccionRotacion}};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00590}00590\ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a1c6352a5b38f1b11e9d1419fa3131452}{aceleracion}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ configuracion-\/>aceleracion;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00591}00591\ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a73da6448f1aebaa17720928dbd2e32cc}{desaceleracion}}\ \ \ \ \ \ \ \ \ \ \ =\ configuracion-\/>desaceleracion;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00592}00592\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00593}00593\ \ \ \ \ \textcolor{comment}{/*\ Referencia\ (inicia\ como\ target)\ */}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00594}00594\ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a8da78eb6c3f1e8cd6be888fe9f7fce89}{GestorSVM\_SetFrec}}(configuracion-\/>frecuenciaReferenica);}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00595}00595\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00596}00596\ \ \ \ \ printf(\textcolor{stringliteral}{"{}Configuracion\ Seteada\ \(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00597}00597\ \ \ \ \ \textcolor{keywordtype}{int}\ estado0,\ estado1,\ estado2,\ estado3;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00598}00598\ \ \ \ \ \textcolor{keywordtype}{int}\ pinToggle1,\ pinToggle2,\ pinToggle3;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00599}00599\ \ \ \ \ uint32\_t\ myBSRR;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00600}00600\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00601}00601\ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a7f0cb87b586cca67054c90a4539d1b0d}{estadoGPIOOff}}\ =\ (\mbox{\hyperlink{group___g_p_i_o___s_v_m_gaaccb9e00e914fcf182f3630a6bb59ee6}{GPIO\_U\_IN}}\ |\ \mbox{\hyperlink{group___g_p_i_o___s_v_m_gacbd5e87c5c23566552587a7ec80e9d0b}{GPIO\_V\_IN}}\ |\ \mbox{\hyperlink{group___g_p_i_o___s_v_m_ga73106f511e1ffadeb2de4e584b200f3b}{GPIO\_W\_IN}})\ <<\ 16;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00602}00602\ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a33806fcd4c3cc2167b449ba073d36281}{estadoGPIOOn}}\ \ =\ (\mbox{\hyperlink{group___g_p_i_o___s_v_m_gaaccb9e00e914fcf182f3630a6bb59ee6}{GPIO\_U\_IN}}\ |\ \mbox{\hyperlink{group___g_p_i_o___s_v_m_gacbd5e87c5c23566552587a7ec80e9d0b}{GPIO\_V\_IN}}\ |\ \mbox{\hyperlink{group___g_p_i_o___s_v_m_ga73106f511e1ffadeb2de4e584b200f3b}{GPIO\_W\_IN}});}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00603}00603\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00604}00604\ \ \ \ \ \textcolor{keywordflow}{for}\ (i\ =\ 0;\ i\ <\ 6;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00605}00605\ \ \ \ \ \ \ \ \ estado0\ =\ \mbox{\hyperlink{_gestor_s_v_m_8c_af36839c37ceddc6429a4d0f86e145d2c}{vectorSecuenciaPorCuadrante}}[i][0];}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00606}00606\ \ \ \ \ \ \ \ \ estado1\ =\ \mbox{\hyperlink{_gestor_s_v_m_8c_af36839c37ceddc6429a4d0f86e145d2c}{vectorSecuenciaPorCuadrante}}[i][1];}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00607}00607\ \ \ \ \ \ \ \ \ estado2\ =\ \mbox{\hyperlink{_gestor_s_v_m_8c_af36839c37ceddc6429a4d0f86e145d2c}{vectorSecuenciaPorCuadrante}}[i][2];}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00608}00608\ \ \ \ \ \ \ \ \ estado3\ =\ \mbox{\hyperlink{_gestor_s_v_m_8c_af36839c37ceddc6429a4d0f86e145d2c}{vectorSecuenciaPorCuadrante}}[i][3];}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00609}00609\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00610}00610\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Estado\ 0→1\ */}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00611}00611\ \ \ \ \ \ \ \ \ myBSRR\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00612}00612\ \ \ \ \ \ \ \ \ myBSRR\ |=\ ((estado1\ \&\ 0b100)\ >\ 0)\ ?\ puerto\_senal\_pierna[0]\ :\ (puerto\_senal\_pierna[0]\ <<\ 16);}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00613}00613\ \ \ \ \ \ \ \ \ myBSRR\ |=\ ((estado1\ \&\ 0b010)\ >\ 0)\ ?\ puerto\_senal\_pierna[1]\ :\ (puerto\_senal\_pierna[1]\ <<\ 16);}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00614}00614\ \ \ \ \ \ \ \ \ myBSRR\ |=\ ((estado1\ \&\ 0b001)\ >\ 0)\ ?\ puerto\_senal\_pierna[2]\ :\ (puerto\_senal\_pierna[2]\ <<\ 16);}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00615}00615\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a096d4dcc733cc7d3cb3b2b2761ad74b4}{estadoGPIOPorCuadranteYOrden}}[i][0]\ =\ myBSRR;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00616}00616\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00617}00617\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Estado\ 1→2\ */}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00618}00618\ \ \ \ \ \ \ \ \ myBSRR\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00619}00619\ \ \ \ \ \ \ \ \ myBSRR\ |=\ ((estado2\ \&\ 0b100)\ >\ 0)\ ?\ puerto\_senal\_pierna[0]\ :\ (puerto\_senal\_pierna[0]\ <<\ 16);}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00620}00620\ \ \ \ \ \ \ \ \ myBSRR\ |=\ ((estado2\ \&\ 0b010)\ >\ 0)\ ?\ puerto\_senal\_pierna[1]\ :\ (puerto\_senal\_pierna[1]\ <<\ 16);}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00621}00621\ \ \ \ \ \ \ \ \ myBSRR\ |=\ ((estado2\ \&\ 0b001)\ >\ 0)\ ?\ puerto\_senal\_pierna[2]\ :\ (puerto\_senal\_pierna[2]\ <<\ 16);}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00622}00622\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a096d4dcc733cc7d3cb3b2b2761ad74b4}{estadoGPIOPorCuadranteYOrden}}[i][1]\ =\ myBSRR;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00623}00623\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00624}00624\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Pines\ que\ conmutan\ entre\ estados\ (XOR)\ */}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00625}00625\ \ \ \ \ \ \ \ \ pinToggle1\ =\ \mbox{\hyperlink{_gestor_s_v_m_8c_ace22621aa363cb91c5b18fb80fb8d4b5}{pinMap}}(estado0\ \string^\ estado1);}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00626}00626\ \ \ \ \ \ \ \ \ pinToggle2\ =\ \mbox{\hyperlink{_gestor_s_v_m_8c_ace22621aa363cb91c5b18fb80fb8d4b5}{pinMap}}(estado1\ \string^\ estado2);}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00627}00627\ \ \ \ \ \ \ \ \ pinToggle3\ =\ \mbox{\hyperlink{_gestor_s_v_m_8c_ace22621aa363cb91c5b18fb80fb8d4b5}{pinMap}}(estado2\ \string^\ estado3);}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00628}00628\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00629}00629\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Mapa\ a\ U/V/W\ con\ desplazamiento\ */}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00630}00630\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_ab355d83e3c8f06aa34a64001eeae7c6b}{pinTogglePorCuadranteYOrden}}[i][0]\ =\ \mbox{\hyperlink{group___g_p_i_o___s_v_m_gaaccb9e00e914fcf182f3630a6bb59ee6}{GPIO\_U\_IN}}\ <<\ (pinToggle1\ *\ 2);}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00631}00631\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_ab355d83e3c8f06aa34a64001eeae7c6b}{pinTogglePorCuadranteYOrden}}[i][1]\ =\ \mbox{\hyperlink{group___g_p_i_o___s_v_m_gaaccb9e00e914fcf182f3630a6bb59ee6}{GPIO\_U\_IN}}\ <<\ (pinToggle2\ *\ 2);}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00632}00632\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_ab355d83e3c8f06aa34a64001eeae7c6b}{pinTogglePorCuadranteYOrden}}[i][2]\ =\ \mbox{\hyperlink{group___g_p_i_o___s_v_m_gaaccb9e00e914fcf182f3630a6bb59ee6}{GPIO\_U\_IN}}\ <<\ (pinToggle3\ *\ 2);}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00633}00633\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00634}00634\ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00635}00635\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00640}\mbox{\hyperlink{_gestor_s_v_m_8c_adabb99ea058e641f0e9431b537b9705b}{00640}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_gestor_s_v_m_8c_adabb99ea058e641f0e9431b537b9705b}{GestorSVM\_CalcInterrupt}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00641}00641\ \ \ \ \ \textcolor{keywordtype}{int}\ indiceEscritura;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00642}00642\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00643}00643\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{_gestor_s_v_m_8c_a69e96d0fb1e5973bd8aeec118dcee1dc}{bufferCalculo}}.contadorDeDatos\ <\ \mbox{\hyperlink{_gestor_s_v_m_8c_a72ff70b5c30d3fbd8b875ee71f24afa9}{BUFFER\_CALCULO\_SIZE}})\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00644}00644\ \ \ \ \ \ \ \ \ indiceEscritura\ =\ \mbox{\hyperlink{_gestor_s_v_m_8c_a69e96d0fb1e5973bd8aeec118dcee1dc}{bufferCalculo}}.indiceEscritura;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00645}00645\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00646}00646\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a5d24428836578e5723a5385d49ab44c7}{GestorSVM\_CalcularValoresSwitching}}();}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00647}00647\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00648}00648\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Encolar\ resultados\ */}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00649}00649\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a69e96d0fb1e5973bd8aeec118dcee1dc}{bufferCalculo}}.ticksChannel1[indiceEscritura]\ =\ \mbox{\hyperlink{_gestor_s_v_m_8c_a65160f043db92066d395ee01d617c06f}{ticksChannel}}[0];}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00650}00650\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a69e96d0fb1e5973bd8aeec118dcee1dc}{bufferCalculo}}.ticksChannel2[indiceEscritura]\ =\ \mbox{\hyperlink{_gestor_s_v_m_8c_a65160f043db92066d395ee01d617c06f}{ticksChannel}}[1];}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00651}00651\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a69e96d0fb1e5973bd8aeec118dcee1dc}{bufferCalculo}}.ticksChannel3[indiceEscritura]\ =\ \mbox{\hyperlink{_gestor_s_v_m_8c_a65160f043db92066d395ee01d617c06f}{ticksChannel}}[2];}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00652}00652\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a69e96d0fb1e5973bd8aeec118dcee1dc}{bufferCalculo}}.casoInterferencia[indiceEscritura]\ =\ \mbox{\hyperlink{_gestor_s_v_m_8c_a148644d9ebb39ea4dfa6fbf6da13229a}{casoInterferencia}};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00653}00653\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a69e96d0fb1e5973bd8aeec118dcee1dc}{bufferCalculo}}.cuadranteActual[indiceEscritura]\ \ \ =\ \mbox{\hyperlink{_gestor_s_v_m_8c_a7fb4c953b417b232d38613e87f190ab7}{cuadranteActual}};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00654}00654\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00655}00655\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a69e96d0fb1e5973bd8aeec118dcee1dc}{bufferCalculo}}.indiceEscritura\ =\ (indiceEscritura\ +\ 1)\ \%\ \mbox{\hyperlink{_gestor_s_v_m_8c_a72ff70b5c30d3fbd8b875ee71f24afa9}{BUFFER\_CALCULO\_SIZE}};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00656}00656\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a69e96d0fb1e5973bd8aeec118dcee1dc}{bufferCalculo}}.contadorDeDatos++;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00657}00657\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00658}00658\ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00659}00659\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00660}00660\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ API\ invocada\ por\ el\ Gestor\ de\ Estados\ (SPI)\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00661}00661\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00668}\mbox{\hyperlink{_gestor_s_v_m_8c_a8da78eb6c3f1e8cd6be888fe9f7fce89}{00668}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_gestor_s_v_m_8c_a8da78eb6c3f1e8cd6be888fe9f7fce89}{GestorSVM\_SetFrec}}(\textcolor{keywordtype}{int}\ frec)\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00669}00669\ \ \ \ \ \textcolor{keywordtype}{int}\ flagEsAcelerado\_local;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00670}00670\ \ \ \ \ int32\_t\ cambioFrecuenciaPorCiclo\_local;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00671}00671\ \ \ \ \ int32\_t\ frecTarget\_local;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00672}00672\ \ \ \ \ int32\_t\ nuevaFrec;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00673}00673\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00674}00674\ \ \ \ \ \textcolor{keywordflow}{if}\ (frec\ <\ FERC\_OUT\_MIN\ ||\ frec\ >\ \mbox{\hyperlink{_gestor_s_v_m_8h_a4ca4d9aefdff1e7a45f9ebb015ea8de8}{FERC\_OUT\_MAX}})\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00675}00675\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00676}00676\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00677}00677\ \ \ \ \ nuevaFrec\ =\ (int32\_t)frec\ *\ 1000\ *\ 1000;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00678}00678\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{_gestor_s_v_m_8c_ab395be599c2e377eea2a91e52cd3b170}{frecuenciaSalida}}\ ==\ nuevaFrec)\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00679}00679\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/2;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00680}00680\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00681}00681\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00682}00682\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{_gestor_s_v_m_8c_a2f5156ba4efc07e0f2f1a04991fcfdae}{flagMotorRunning}})\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00683}00683\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Determinar\ sentido\ de\ la\ rampa\ */}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00684}00684\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{_gestor_s_v_m_8c_ab395be599c2e377eea2a91e52cd3b170}{frecuenciaSalida}}\ <\ nuevaFrec)\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00685}00685\ \ \ \ \ \ \ \ \ \ \ \ \ flagEsAcelerado\_local\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00686}00686\ \ \ \ \ \ \ \ \ \ \ \ \ cambioFrecuenciaPorCiclo\_local\ =\ (\mbox{\hyperlink{_gestor_s_v_m_8c_a1c6352a5b38f1b11e9d1419fa3131452}{aceleracion}}\ *\ 1000\ *\ 1000)\ /\ (\mbox{\hyperlink{_gestor_s_v_m_8c_a4c4df3579e27c8ab2ddcba0e0420523d}{frecuenciaSwitching}});}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00687}00687\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00688}00688\ \ \ \ \ \ \ \ \ \ \ \ \ flagEsAcelerado\_local\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00689}00689\ \ \ \ \ \ \ \ \ \ \ \ \ cambioFrecuenciaPorCiclo\_local\ =\ (\mbox{\hyperlink{_gestor_s_v_m_8c_a73da6448f1aebaa17720928dbd2e32cc}{desaceleracion}}\ *\ 1000\ *\ 1000)\ /\ (\mbox{\hyperlink{_gestor_s_v_m_8c_a4c4df3579e27c8ab2ddcba0e0420523d}{frecuenciaSwitching}});}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00690}00690\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00691}00691\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00692}00692\ \ \ \ \ \ \ \ \ frecTarget\_local\ =\ nuevaFrec;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00693}00693\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a62d70cb530b832d93219406698aa9a3f}{frecuenciaReferenica}}\ =\ frec;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00694}00694\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00695}00695\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Parámetros\ sombra\ */}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00696}00696\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a59292e9c522e99e3b641c09a7ef71fab}{paramSombra}}.flagMotorRunning\ \ \ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00697}00697\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a59292e9c522e99e3b641c09a7ef71fab}{paramSombra}}.flagChangingFrecuencia\ \ \ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00698}00698\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a59292e9c522e99e3b641c09a7ef71fab}{paramSombra}}.flagEsAcelerado\ \ \ \ =\ flagEsAcelerado\_local;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00699}00699\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a59292e9c522e99e3b641c09a7ef71fab}{paramSombra}}.cambioFrecuenciaPorCiclo\ =\ cambioFrecuenciaPorCiclo\_local;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00700}00700\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a59292e9c522e99e3b641c09a7ef71fab}{paramSombra}}.frecObjetivo\ \ \ \ \ \ \ =\ frecTarget\_local;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00701}00701\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a1bdc9a3f642943b4f4e2282a234d5346}{flagActualizarParamSombra}}\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00702}00702\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00703}00703\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a52252528ca7defa6f8de419143b30100}{flagChangingFrecuencia}}\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00704}00704\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00705}00705\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00706}00706\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a62d70cb530b832d93219406698aa9a3f}{frecuenciaReferenica}}\ =\ frec;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00707}00707\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00708}00708\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00709}00709\ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00710}00710\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00717}\mbox{\hyperlink{_gestor_s_v_m_8c_a7cb0adcba1ed421b2ccb337faec3bb06}{00717}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_gestor_s_v_m_8c_a7cb0adcba1ed421b2ccb337faec3bb06}{GestorSVM\_SetDir}}(\textcolor{keywordtype}{int}\ dir)\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00718}00718\ \ \ \ \ \textcolor{keywordtype}{int}\ estado1,\ estado2;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00719}00719\ \ \ \ \ \textcolor{keywordtype}{int}\ i;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00720}00720\ \ \ \ \ uint32\_t\ myBSRR;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00721}00721\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00722}00722\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{_gestor_s_v_m_8c_a2f5156ba4efc07e0f2f1a04991fcfdae}{flagMotorRunning}})\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00723}00723\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/2;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00724}00724\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00725}00725\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{_gestor_s_v_m_8c_a52252528ca7defa6f8de419143b30100}{flagChangingFrecuencia}})\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00726}00726\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/2;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00727}00727\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00728}00728\ \ \ \ \ \textcolor{keywordflow}{if}\ (dir\ !=\ 0\ \&\&\ dir\ !=\ 1)\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00729}00729\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00730}00730\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00731}00731\ \ \ \ \ \textcolor{keywordflow}{if}\ (dir\ ==\ \mbox{\hyperlink{_gestor_s_v_m_8c_ae76293000b309473e1e360f8a7ed9d23}{direccionRotacion}})\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00732}00732\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00733}00733\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00734}00734\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00735}00735\ \ \ \ \ \textcolor{comment}{/*\ Recalcular\ tablas\ BSRR\ intercambiando\ U↔V\ */}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00736}00736\ \ \ \ \ \textcolor{keywordflow}{for}\ (i\ =\ 0;\ i\ <\ 6;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00737}00737\ \ \ \ \ \ \ \ \ estado1\ =\ \mbox{\hyperlink{_gestor_s_v_m_8c_af36839c37ceddc6429a4d0f86e145d2c}{vectorSecuenciaPorCuadrante}}[i][1];}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00738}00738\ \ \ \ \ \ \ \ \ estado2\ =\ \mbox{\hyperlink{_gestor_s_v_m_8c_af36839c37ceddc6429a4d0f86e145d2c}{vectorSecuenciaPorCuadrante}}[i][2];}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00739}00739\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00740}00740\ \ \ \ \ \ \ \ \ myBSRR\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00741}00741\ \ \ \ \ \ \ \ \ myBSRR\ |=\ ((estado1\ \&\ 0b100)\ ?\ \mbox{\hyperlink{group___g_p_i_o___s_v_m_gacbd5e87c5c23566552587a7ec80e9d0b}{GPIO\_V\_IN}}\ :\ (\mbox{\hyperlink{group___g_p_i_o___s_v_m_gacbd5e87c5c23566552587a7ec80e9d0b}{GPIO\_V\_IN}}\ <<\ 16));}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00742}00742\ \ \ \ \ \ \ \ \ myBSRR\ |=\ ((estado1\ \&\ 0b010)\ ?\ \mbox{\hyperlink{group___g_p_i_o___s_v_m_gaaccb9e00e914fcf182f3630a6bb59ee6}{GPIO\_U\_IN}}\ :\ (\mbox{\hyperlink{group___g_p_i_o___s_v_m_gaaccb9e00e914fcf182f3630a6bb59ee6}{GPIO\_U\_IN}}\ <<\ 16));}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00743}00743\ \ \ \ \ \ \ \ \ myBSRR\ |=\ ((estado1\ \&\ 0b001)\ ?\ \mbox{\hyperlink{group___g_p_i_o___s_v_m_ga73106f511e1ffadeb2de4e584b200f3b}{GPIO\_W\_IN}}\ :\ (\mbox{\hyperlink{group___g_p_i_o___s_v_m_ga73106f511e1ffadeb2de4e584b200f3b}{GPIO\_W\_IN}}\ <<\ 16));}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00744}00744\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a096d4dcc733cc7d3cb3b2b2761ad74b4}{estadoGPIOPorCuadranteYOrden}}[i][0]\ =\ myBSRR;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00745}00745\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00746}00746\ \ \ \ \ \ \ \ \ myBSRR\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00747}00747\ \ \ \ \ \ \ \ \ myBSRR\ |=\ ((estado2\ \&\ 0b100)\ ?\ \mbox{\hyperlink{group___g_p_i_o___s_v_m_gacbd5e87c5c23566552587a7ec80e9d0b}{GPIO\_V\_IN}}\ :\ (\mbox{\hyperlink{group___g_p_i_o___s_v_m_gacbd5e87c5c23566552587a7ec80e9d0b}{GPIO\_V\_IN}}\ <<\ 16));}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00748}00748\ \ \ \ \ \ \ \ \ myBSRR\ |=\ ((estado2\ \&\ 0b010)\ ?\ \mbox{\hyperlink{group___g_p_i_o___s_v_m_gaaccb9e00e914fcf182f3630a6bb59ee6}{GPIO\_U\_IN}}\ :\ (\mbox{\hyperlink{group___g_p_i_o___s_v_m_gaaccb9e00e914fcf182f3630a6bb59ee6}{GPIO\_U\_IN}}\ <<\ 16));}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00749}00749\ \ \ \ \ \ \ \ \ myBSRR\ |=\ ((estado2\ \&\ 0b001)\ ?\ \mbox{\hyperlink{group___g_p_i_o___s_v_m_ga73106f511e1ffadeb2de4e584b200f3b}{GPIO\_W\_IN}}\ :\ (\mbox{\hyperlink{group___g_p_i_o___s_v_m_ga73106f511e1ffadeb2de4e584b200f3b}{GPIO\_W\_IN}}\ <<\ 16));}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00750}00750\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a096d4dcc733cc7d3cb3b2b2761ad74b4}{estadoGPIOPorCuadranteYOrden}}[i][1]\ =\ myBSRR;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00751}00751\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00752}00752\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00753}00753\ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_ae76293000b309473e1e360f8a7ed9d23}{direccionRotacion}}\ =\ dir;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00754}00754\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00755}00755\ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00756}00756\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00762}\mbox{\hyperlink{_gestor_s_v_m_8c_a123fdc53095f5297ce6b01119c69c043}{00762}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_gestor_s_v_m_8c_a123fdc53095f5297ce6b01119c69c043}{GestorSVM\_Setaceleracion}}(\textcolor{keywordtype}{int}\ nuevaaceleracion)\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00763}00763\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{_gestor_s_v_m_8c_a52252528ca7defa6f8de419143b30100}{flagChangingFrecuencia}})\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00764}00764\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/2;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00765}00765\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00766}00766\ \ \ \ \ \textcolor{keywordflow}{if}\ (nuevaaceleracion\ <\ ACELERACION\_MINIMA\ ||\ nuevaaceleracion\ >\ \mbox{\hyperlink{_gestor_s_v_m_8h_ad20461fd03db7a3b0c78c7c5b89d3328}{ACCLERACION\_MAXIMA}})\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00767}00767\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00768}00768\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00769}00769\ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a1c6352a5b38f1b11e9d1419fa3131452}{aceleracion}}\ =\ nuevaaceleracion;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00770}00770\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00771}00771\ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00772}00772\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00778}\mbox{\hyperlink{_gestor_s_v_m_8c_af72bd515620559dd404ac8395ba10bec}{00778}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_gestor_s_v_m_8c_af72bd515620559dd404ac8395ba10bec}{GestorSVM\_SetDecel}}(\textcolor{keywordtype}{int}\ nuevaDecel)\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00779}00779\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{_gestor_s_v_m_8c_a52252528ca7defa6f8de419143b30100}{flagChangingFrecuencia}})\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00780}00780\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/2;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00781}00781\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00782}00782\ \ \ \ \ \textcolor{keywordflow}{if}\ (nuevaDecel\ <\ DESACELERACION\_MINIMA\ ||\ nuevaDecel\ >\ \mbox{\hyperlink{_gestor_s_v_m_8h_a821297e1c63fd0f691a53726b9924500}{DESACELERACION\_MAXIMA}})\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00783}00783\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00784}00784\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00785}00785\ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a73da6448f1aebaa17720928dbd2e32cc}{desaceleracion}}\ =\ nuevaDecel;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00786}00786\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00787}00787\ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00788}00788\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00794}\mbox{\hyperlink{_gestor_s_v_m_8c_a0524c323e42d243efaacd375836c2cfb}{00794}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_gestor_s_v_m_8c_a0524c323e42d243efaacd375836c2cfb}{GestorSVM\_MotorStart}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00795}00795\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{_gestor_s_v_m_8c_a2f5156ba4efc07e0f2f1a04991fcfdae}{flagMotorRunning}})\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00796}00796\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a2f5156ba4efc07e0f2f1a04991fcfdae}{flagMotorRunning}}\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00797}00797\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a211a2b89c92027a6f5a6edbfffa2dd78}{flagEsAcelerado}}\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00798}00798\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a52252528ca7defa6f8de419143b30100}{flagChangingFrecuencia}}\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00799}00799\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00800}00800\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_aa16dda675dd4a2086e73b0c8374922ca}{cambioFrecuenciaPorCiclo}}\ =\ (\mbox{\hyperlink{_gestor_s_v_m_8c_a1c6352a5b38f1b11e9d1419fa3131452}{aceleracion}}\ *\ 1000\ *\ 1000)\ /\ (\mbox{\hyperlink{_gestor_s_v_m_8c_a4c4df3579e27c8ab2ddcba0e0420523d}{frecuenciaSwitching}});}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00801}00801\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00802}00802\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Parámetros\ sombra\ de\ arranque\ */}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00803}00803\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a59292e9c522e99e3b641c09a7ef71fab}{paramSombra}}.frecObjetivo\ =\ (uint32\_t)\mbox{\hyperlink{_gestor_s_v_m_8c_a62d70cb530b832d93219406698aa9a3f}{frecuenciaReferenica}}\ *\ 1000\ *\ 1000;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00804}00804\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a59292e9c522e99e3b641c09a7ef71fab}{paramSombra}}.flagMotorRunning\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00805}00805\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a59292e9c522e99e3b641c09a7ef71fab}{paramSombra}}.flagEsAcelerado\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00806}00806\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a59292e9c522e99e3b641c09a7ef71fab}{paramSombra}}.flagChangingFrecuencia\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00807}00807\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a59292e9c522e99e3b641c09a7ef71fab}{paramSombra}}.cambioFrecuenciaPorCiclo\ =\ \mbox{\hyperlink{_gestor_s_v_m_8c_aa16dda675dd4a2086e73b0c8374922ca}{cambioFrecuenciaPorCiclo}};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00808}00808\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a1bdc9a3f642943b4f4e2282a234d5346}{flagActualizarParamSombra}}\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00809}00809\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00810}00810\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Habilitar\ drivers\ */}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00811}00811\ \ \ \ \ \ \ \ \ HAL\_GPIO\_WritePin(GPIOA,\ \mbox{\hyperlink{group___g_p_i_o___s_v_m_ga00e89367cd3adacbd9eb58d3edfd5fe5}{GPIO\_U\_SD}},\ GPIO\_PIN\_SET);}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00812}00812\ \ \ \ \ \ \ \ \ HAL\_GPIO\_WritePin(GPIOA,\ \mbox{\hyperlink{group___g_p_i_o___s_v_m_ga3dbfbc8a5b8e262798343490b2af411a}{GPIO\_V\_SD}},\ GPIO\_PIN\_SET);}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00813}00813\ \ \ \ \ \ \ \ \ HAL\_GPIO\_WritePin(GPIOA,\ \mbox{\hyperlink{group___g_p_i_o___s_v_m_gae4f2e2f0d4a0b28397bafc0043a5bab5}{GPIO\_W\_SD}},\ GPIO\_PIN\_SET);}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00814}00814\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00815}00815\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Precargar\ una\ muestra\ y\ sincronizar\ switching\ */}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00816}00816\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_adabb99ea058e641f0e9431b537b9705b}{GestorSVM\_CalcInterrupt}}();}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00817}00817\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_aab94327b81298999f1f2e8374495f521}{GestorSVM\_SwitchInterrupt}}(\mbox{\hyperlink{_gestor_s_v_m_8h_ac12e123ca97cf2482882646d5e67767ead52acd5eb7604d33eeaee40537f4082f}{SWITCH\_INT\_RESET}});}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00818}00818\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00819}00819\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Iniciar\ timer\ de\ switching\ */}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00820}00820\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_timers_8c_a0fddedad03556179833e10a26f6f4966}{GestorTimers\_IniciarTimerSVM}}();}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00821}00821\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00822}00822\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00823}00823\ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00824}00824\ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00825}00825\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00831}\mbox{\hyperlink{_gestor_s_v_m_8c_adf2028330d7896b6f9a467dc57d5eac4}{00831}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_gestor_s_v_m_8c_adf2028330d7896b6f9a467dc57d5eac4}{GestorSVM\_MotorStop}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00832}00832\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{_gestor_s_v_m_8c_a2f5156ba4efc07e0f2f1a04991fcfdae}{flagMotorRunning}})\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00833}00833\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a211a2b89c92027a6f5a6edbfffa2dd78}{flagEsAcelerado}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00834}00834\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a52252528ca7defa6f8de419143b30100}{flagChangingFrecuencia}}\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00835}00835\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00836}00836\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_aa16dda675dd4a2086e73b0c8374922ca}{cambioFrecuenciaPorCiclo}}\ =\ (\mbox{\hyperlink{_gestor_s_v_m_8c_a73da6448f1aebaa17720928dbd2e32cc}{desaceleracion}}\ *\ 1000\ *\ 1000)\ /\ (\mbox{\hyperlink{_gestor_s_v_m_8c_a4c4df3579e27c8ab2ddcba0e0420523d}{frecuenciaSwitching}});}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00837}00837\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a133e313d057f9cf8e8a9bbff80f96630}{frecObjetivo}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00838}00838\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00839}00839\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Parámetros\ sombra\ */}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00840}00840\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a59292e9c522e99e3b641c09a7ef71fab}{paramSombra}}.flagMotorRunning\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00841}00841\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a59292e9c522e99e3b641c09a7ef71fab}{paramSombra}}.flagEsAcelerado\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00842}00842\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a59292e9c522e99e3b641c09a7ef71fab}{paramSombra}}.flagChangingFrecuencia\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00843}00843\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a59292e9c522e99e3b641c09a7ef71fab}{paramSombra}}.cambioFrecuenciaPorCiclo\ =\ \mbox{\hyperlink{_gestor_s_v_m_8c_aa16dda675dd4a2086e73b0c8374922ca}{cambioFrecuenciaPorCiclo}};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00844}00844\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a59292e9c522e99e3b641c09a7ef71fab}{paramSombra}}.frecObjetivo\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00845}00845\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a1bdc9a3f642943b4f4e2282a234d5346}{flagActualizarParamSombra}}\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00846}00846\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00847}00847\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00848}00848\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00849}00849\ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00850}00850\ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00851}00851\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00857}\mbox{\hyperlink{_gestor_s_v_m_8c_a63c6e1ceb949ac408d9516d4cb5be686}{00857}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_gestor_s_v_m_8c_a63c6e1ceb949ac408d9516d4cb5be686}{GestorSVM\_Estop}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00858}00858\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{_gestor_s_v_m_8c_a2f5156ba4efc07e0f2f1a04991fcfdae}{flagMotorRunning}})\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00859}00859\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_timers_8c_a435418d983924d0a5acfc0413c37b037}{GestorTimers\_DetenerTimerSVM}}();}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00860}00860\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00861}00861\ \ \ \ \ \ \ \ \ HAL\_GPIO\_WritePin(GPIOA,\ \mbox{\hyperlink{group___g_p_i_o___s_v_m_ga00e89367cd3adacbd9eb58d3edfd5fe5}{GPIO\_U\_SD}},\ GPIO\_PIN\_RESET);}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00862}00862\ \ \ \ \ \ \ \ \ HAL\_GPIO\_WritePin(GPIOA,\ \mbox{\hyperlink{group___g_p_i_o___s_v_m_ga3dbfbc8a5b8e262798343490b2af411a}{GPIO\_V\_SD}},\ GPIO\_PIN\_RESET);}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00863}00863\ \ \ \ \ \ \ \ \ HAL\_GPIO\_WritePin(GPIOA,\ \mbox{\hyperlink{group___g_p_i_o___s_v_m_gae4f2e2f0d4a0b28397bafc0043a5bab5}{GPIO\_W\_SD}},\ GPIO\_PIN\_RESET);}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00864}00864\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00865}00865\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_aab94327b81298999f1f2e8374495f521}{GestorSVM\_SwitchInterrupt}}(\mbox{\hyperlink{_gestor_s_v_m_8h_ac12e123ca97cf2482882646d5e67767ea1756e6c5bac5c299f9ae2b9e09439d8b}{SWITCH\_INT\_CLEAN}});}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00866}00866\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00867}00867\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a69e96d0fb1e5973bd8aeec118dcee1dc}{bufferCalculo}}.indiceEscritura\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00868}00868\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a69e96d0fb1e5973bd8aeec118dcee1dc}{bufferCalculo}}.indiceLectura\ \ \ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00869}00869\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a69e96d0fb1e5973bd8aeec118dcee1dc}{bufferCalculo}}.contadorDeDatos\ \ \ \ \ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00870}00870\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00871}00871\ \ \ \ \ \ \ \ \ HAL\_GPIO\_WritePin(GPIOA,\ \mbox{\hyperlink{group___g_p_i_o___s_v_m_gaaccb9e00e914fcf182f3630a6bb59ee6}{GPIO\_U\_IN}},\ GPIO\_PIN\_RESET);}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00872}00872\ \ \ \ \ \ \ \ \ HAL\_GPIO\_WritePin(GPIOA,\ \mbox{\hyperlink{group___g_p_i_o___s_v_m_gacbd5e87c5c23566552587a7ec80e9d0b}{GPIO\_V\_IN}},\ GPIO\_PIN\_RESET);}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00873}00873\ \ \ \ \ \ \ \ \ HAL\_GPIO\_WritePin(GPIOA,\ \mbox{\hyperlink{group___g_p_i_o___s_v_m_ga73106f511e1ffadeb2de4e584b200f3b}{GPIO\_W\_IN}},\ GPIO\_PIN\_RESET);}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00874}00874\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00875}00875\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a52252528ca7defa6f8de419143b30100}{flagChangingFrecuencia}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00876}00876\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_a2f5156ba4efc07e0f2f1a04991fcfdae}{flagMotorRunning}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00877}00877\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_ab395be599c2e377eea2a91e52cd3b170}{frecuenciaSalida}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00878}00878\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00879}00879\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00880}00880\ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00881}00881\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00887}\mbox{\hyperlink{_gestor_s_v_m_8c_a0c781546371d716ca8146f4d0160460f}{00887}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_gestor_s_v_m_8c_a0c781546371d716ca8146f4d0160460f}{GestorSVM\_GetFrec}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00888}00888\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{_gestor_s_v_m_8c_a62d70cb530b832d93219406698aa9a3f}{frecuenciaReferenica}};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00889}00889\ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00890}00890\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00892}\mbox{\hyperlink{_gestor_s_v_m_8c_a194a2627a7348ecaf125a03508239ef6}{00892}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_gestor_s_v_m_8c_a194a2627a7348ecaf125a03508239ef6}{GestorSVM\_Getaceleracion}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00893}00893\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{_gestor_s_v_m_8c_a1c6352a5b38f1b11e9d1419fa3131452}{aceleracion}};\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00894}00894\ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00895}00895\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00897}\mbox{\hyperlink{_gestor_s_v_m_8c_ae9fad44bd4d57af9bc9ac4f482ea5fae}{00897}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_gestor_s_v_m_8c_ae9fad44bd4d57af9bc9ac4f482ea5fae}{GestorSVM\_GetDesaceleracion}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00898}00898\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{_gestor_s_v_m_8c_a73da6448f1aebaa17720928dbd2e32cc}{desaceleracion}};\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00899}00899\ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00900}00900\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00902}\mbox{\hyperlink{_gestor_s_v_m_8c_a17bf21f94ae6073c66662117de912850}{00902}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_gestor_s_v_m_8c_a17bf21f94ae6073c66662117de912850}{GestorSVM\_GetDir}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00903}00903\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{_gestor_s_v_m_8c_ae76293000b309473e1e360f8a7ed9d23}{direccionRotacion}};\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00904}00904\ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00905}00905\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00906}00906\ \textcolor{comment}{/*\ ================================\ ISR\ de\ TIM3\ (HAL)\ ================================\ */}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00907}00907\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00918}\mbox{\hyperlink{_gestor_s_v_m_8c_a1fc39499fe9db8b7fb88005e9f107a36}{00918}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_gestor_s_v_m_8c_a1fc39499fe9db8b7fb88005e9f107a36}{HAL\_TIM\_OC\_DelayElapsedCallback}}(TIM\_HandleTypeDef\ *htim)\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00919}00919\ \ \ \ \ \textcolor{keywordflow}{if}\ (htim-\/>Instance\ !=\ TIM3)\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00920}00920\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00921}00921\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00922}00922\ }
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00923}00923\ \ \ \ \ \textcolor{keywordflow}{switch}\ (htim-\/>Channel)\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00924}00924\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ HAL\_TIM\_ACTIVE\_CHANNEL\_1:}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00925}00925\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_aab94327b81298999f1f2e8374495f521}{GestorSVM\_SwitchInterrupt}}(\mbox{\hyperlink{_gestor_s_v_m_8h_ac12e123ca97cf2482882646d5e67767ead52acd5eb7604d33eeaee40537f4082f}{SWITCH\_INT\_RESET}});}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00926}00926\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00927}00927\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ HAL\_TIM\_ACTIVE\_CHANNEL\_2:}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00928}00928\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_aab94327b81298999f1f2e8374495f521}{GestorSVM\_SwitchInterrupt}}(\mbox{\hyperlink{_gestor_s_v_m_8h_ac12e123ca97cf2482882646d5e67767eab3055c3f71006b6d768de2e2d437cb18}{SWITCH\_INT\_CH1}});}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00929}00929\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00930}00930\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ HAL\_TIM\_ACTIVE\_CHANNEL\_3:}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00931}00931\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_aab94327b81298999f1f2e8374495f521}{GestorSVM\_SwitchInterrupt}}(\mbox{\hyperlink{_gestor_s_v_m_8h_ac12e123ca97cf2482882646d5e67767eac0f044f79933a5ba09b39462e4c5f0bc}{SWITCH\_INT\_CH2}});}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00932}00932\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00933}00933\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ HAL\_TIM\_ACTIVE\_CHANNEL\_4:}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00934}00934\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_gestor_s_v_m_8c_aab94327b81298999f1f2e8374495f521}{GestorSVM\_SwitchInterrupt}}(\mbox{\hyperlink{_gestor_s_v_m_8h_ac12e123ca97cf2482882646d5e67767ea4f79349a125bd828fdcaf406d0e6f376}{SWITCH\_INT\_CH3}});}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00935}00935\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00936}00936\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00937}00937\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00938}00938\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_s_v_m_8c_source_l00939}00939\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,226 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Low Voltage Variable Frequency Drive: Archivo de código fuente C:/Users/User/Desktop/ProyectoFinal-Grupo5-VariadorDeFrecuencia/Software/Firmware stm32/Modules/Gestor_Estados/GestorEstados.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="DoxyPic.jpeg"/></td>
+  <td id="projectalign">
+   <div id="projectname">Low Voltage Variable Frequency Drive<span id="projectnumber">&#160;2.1</span>
+   </div>
+   <div id="projectbrief">Proyecto final Andrenacci-Carra 2025. Variador de frecuencia de motor trifásico 1/3HP utilizando 12V de contínua como fuente de entrada de tensión.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('_gestor_estados_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">GestorEstados.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_gestor_estados_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * GestorEstados.h</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> *  Created on: Aug 10, 2025</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> *      Author: elian</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#ifndef MODULES_GESTOR_ESTADOS_GESTORESTADOS_H_</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#define MODULES_GESTOR_ESTADOS_GESTORESTADOS_H_</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span></div>
+<div class="foldopen" id="foldopen00025" data-start="{" data-end="};">
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="_gestor_estados_8h.html#aa51313be2faacb739a18fdeecefbac75">   25</a></span><span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="_gestor_estados_8h.html#aa51313be2faacb739a18fdeecefbac75a98d2a2153b4ae0445fa0b114d65b94d9">   26</a></span>    <a class="code hl_enumvalue" href="_gestor_estados_8h.html#aa51313be2faacb739a18fdeecefbac75a98d2a2153b4ae0445fa0b114d65b94d9">STATE_INIT</a> = 0,   </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="_gestor_estados_8h.html#aa51313be2faacb739a18fdeecefbac75aaade5e53e88cf231292cd1142cce2afe">   29</a></span>    <a class="code hl_enumvalue" href="_gestor_estados_8h.html#aa51313be2faacb739a18fdeecefbac75aaade5e53e88cf231292cd1142cce2afe">STATE_IDLE</a>,       </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="_gestor_estados_8h.html#aa51313be2faacb739a18fdeecefbac75addfe11c6d06c4e27bd6efc18cc4862a6">   35</a></span>    <a class="code hl_enumvalue" href="_gestor_estados_8h.html#aa51313be2faacb739a18fdeecefbac75addfe11c6d06c4e27bd6efc18cc4862a6">STATE_RUNNING</a>,    </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="_gestor_estados_8h.html#aa51313be2faacb739a18fdeecefbac75a7d453a874f8a1e41a71fa02601836216">   39</a></span>    <a class="code hl_enumvalue" href="_gestor_estados_8h.html#aa51313be2faacb739a18fdeecefbac75a7d453a874f8a1e41a71fa02601836216">STATE_VEL_CHANGE</a>, </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="_gestor_estados_8h.html#aa51313be2faacb739a18fdeecefbac75a0ee79d8541fe6a143bec1ec4c6b728e0">   44</a></span>    <a class="code hl_enumvalue" href="_gestor_estados_8h.html#aa51313be2faacb739a18fdeecefbac75a0ee79d8541fe6a143bec1ec4c6b728e0">STATE_BRAKING</a>,    </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="_gestor_estados_8h.html#aa51313be2faacb739a18fdeecefbac75ad0180e0382824e561c72f20f08838420">   48</a></span>    <a class="code hl_enumvalue" href="_gestor_estados_8h.html#aa51313be2faacb739a18fdeecefbac75ad0180e0382824e561c72f20f08838420">STATE_EMERGENCY</a>   </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>} <a class="code hl_enumeration" href="_gestor_estados_8h.html#aa51313be2faacb739a18fdeecefbac75">SystemState</a>;</div>
+</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span></div>
+<div class="foldopen" id="foldopen00064" data-start="{" data-end="};">
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="_gestor_estados_8h.html#aeb5a7529a34b855a5dcc68a6acc1203c">   64</a></span><span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="_gestor_estados_8h.html#aeb5a7529a34b855a5dcc68a6acc1203cabb516226f3df30c332c998da773f56db">   65</a></span>    <a class="code hl_enumvalue" href="_gestor_estados_8h.html#aeb5a7529a34b855a5dcc68a6acc1203cabb516226f3df30c332c998da773f56db">ACTION_NONE</a> = 0, </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="_gestor_estados_8h.html#aeb5a7529a34b855a5dcc68a6acc1203caa867dcd96a811cfb6266aa30addc4195">   73</a></span>    <a class="code hl_enumvalue" href="_gestor_estados_8h.html#aeb5a7529a34b855a5dcc68a6acc1203caa867dcd96a811cfb6266aa30addc4195">ACTION_INIT_DONE</a> = 1,</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="_gestor_estados_8h.html#aeb5a7529a34b855a5dcc68a6acc1203ca464e3eead004a6b415ca415e38fa3d53">   81</a></span>    <a class="code hl_enumvalue" href="_gestor_estados_8h.html#aeb5a7529a34b855a5dcc68a6acc1203ca464e3eead004a6b415ca415e38fa3d53">ACTION_TO_IDLE</a>,</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="_gestor_estados_8h.html#aeb5a7529a34b855a5dcc68a6acc1203cad18d9bd6c0a4eced8d31c7b1c6b9dd16">   91</a></span>    <a class="code hl_enumvalue" href="_gestor_estados_8h.html#aeb5a7529a34b855a5dcc68a6acc1203cad18d9bd6c0a4eced8d31c7b1c6b9dd16">ACTION_START</a>,</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span></div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="_gestor_estados_8h.html#aeb5a7529a34b855a5dcc68a6acc1203ca4645d70cb9bb2228f230d601f477639d">  101</a></span>    <a class="code hl_enumvalue" href="_gestor_estados_8h.html#aeb5a7529a34b855a5dcc68a6acc1203ca4645d70cb9bb2228f230d601f477639d">ACTION_STOP</a>,</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span></div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="_gestor_estados_8h.html#aeb5a7529a34b855a5dcc68a6acc1203ca02e4f329c3a2d677cb3e9d9fea2e8e28">  108</a></span>    <a class="code hl_enumvalue" href="_gestor_estados_8h.html#aeb5a7529a34b855a5dcc68a6acc1203ca02e4f329c3a2d677cb3e9d9fea2e8e28">ACTION_MOTOR_STOPPED</a>,</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span></div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno"><a class="line" href="_gestor_estados_8h.html#aeb5a7529a34b855a5dcc68a6acc1203cae2752030c8dc2221fdfb8353ef2d7a8a">  116</a></span>    <a class="code hl_enumvalue" href="_gestor_estados_8h.html#aeb5a7529a34b855a5dcc68a6acc1203cae2752030c8dc2221fdfb8353ef2d7a8a">ACTION_EMERGENCY</a>,</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span></div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno"><a class="line" href="_gestor_estados_8h.html#aeb5a7529a34b855a5dcc68a6acc1203ca02091b145bd0a41e238ffdae1167c912">  127</a></span>    <a class="code hl_enumvalue" href="_gestor_estados_8h.html#aeb5a7529a34b855a5dcc68a6acc1203ca02091b145bd0a41e238ffdae1167c912">ACTION_SET_FREC</a>,</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span></div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno"><a class="line" href="_gestor_estados_8h.html#aeb5a7529a34b855a5dcc68a6acc1203ca7c202795a9f438cd5ffd71fa4992cb05">  138</a></span>    <a class="code hl_enumvalue" href="_gestor_estados_8h.html#aeb5a7529a34b855a5dcc68a6acc1203ca7c202795a9f438cd5ffd71fa4992cb05">ACTION_SET_ACEL</a>,</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span></div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno"><a class="line" href="_gestor_estados_8h.html#aeb5a7529a34b855a5dcc68a6acc1203cadd57362c8b9ec1984dd5f0468974a768">  146</a></span>    <a class="code hl_enumvalue" href="_gestor_estados_8h.html#aeb5a7529a34b855a5dcc68a6acc1203cadd57362c8b9ec1984dd5f0468974a768">ACTION_SET_DESACEL</a>,</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span></div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno"><a class="line" href="_gestor_estados_8h.html#aeb5a7529a34b855a5dcc68a6acc1203caef517ff4b1c364633231742027d859de">  157</a></span>    <a class="code hl_enumvalue" href="_gestor_estados_8h.html#aeb5a7529a34b855a5dcc68a6acc1203caef517ff4b1c364633231742027d859de">ACTION_SET_DIR</a>,</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span></div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno"><a class="line" href="_gestor_estados_8h.html#aeb5a7529a34b855a5dcc68a6acc1203ca901a803cd622114cffc6ee59403a5c86">  165</a></span>    <a class="code hl_enumvalue" href="_gestor_estados_8h.html#aeb5a7529a34b855a5dcc68a6acc1203ca901a803cd622114cffc6ee59403a5c86">ACTION_TO_CONST_RUNNING</a>,</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span></div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno"><a class="line" href="_gestor_estados_8h.html#aeb5a7529a34b855a5dcc68a6acc1203cac584cfe909986a1a00be92cb2870d63f">  173</a></span>    <a class="code hl_enumvalue" href="_gestor_estados_8h.html#aeb5a7529a34b855a5dcc68a6acc1203cac584cfe909986a1a00be92cb2870d63f">ACTION_GET_FREC</a>,</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span></div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno"><a class="line" href="_gestor_estados_8h.html#aeb5a7529a34b855a5dcc68a6acc1203ca936b4853f8101ae792185c02c4216be0">  180</a></span>    <a class="code hl_enumvalue" href="_gestor_estados_8h.html#aeb5a7529a34b855a5dcc68a6acc1203ca936b4853f8101ae792185c02c4216be0">ACTION_GET_ACEL</a>,</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span></div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno"><a class="line" href="_gestor_estados_8h.html#aeb5a7529a34b855a5dcc68a6acc1203ca829629e8fda976af81ad64cd9b3f2171">  187</a></span>    <a class="code hl_enumvalue" href="_gestor_estados_8h.html#aeb5a7529a34b855a5dcc68a6acc1203ca829629e8fda976af81ad64cd9b3f2171">ACTION_GET_DESACEL</a>,</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span></div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno"><a class="line" href="_gestor_estados_8h.html#aeb5a7529a34b855a5dcc68a6acc1203ca6cf84c7c734fe0fc8d2d79535f1c6374">  194</a></span>    <a class="code hl_enumvalue" href="_gestor_estados_8h.html#aeb5a7529a34b855a5dcc68a6acc1203ca6cf84c7c734fe0fc8d2d79535f1c6374">ACTION_GET_DIR</a>,</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span></div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno"><a class="line" href="_gestor_estados_8h.html#aeb5a7529a34b855a5dcc68a6acc1203cada94a1283a5879499cddac1556f56b5e">  201</a></span>    <a class="code hl_enumvalue" href="_gestor_estados_8h.html#aeb5a7529a34b855a5dcc68a6acc1203cada94a1283a5879499cddac1556f56b5e">ACTION_IS_MOTOR_STOP</a>,</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>} <a class="code hl_enumeration" href="_gestor_estados_8h.html#aeb5a7529a34b855a5dcc68a6acc1203c">SystemAction</a>;</div>
+</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span></div>
+<div class="foldopen" id="foldopen00212" data-start="{" data-end="};">
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno"><a class="line" href="_gestor_estados_8h.html#a699c67ad6d206290cab4c395cd7d7be7">  212</a></span><span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno"><a class="line" href="_gestor_estados_8h.html#a699c67ad6d206290cab4c395cd7d7be7a090da72512b04323631bc989b7ad9e9d">  213</a></span>    <a class="code hl_enumvalue" href="_gestor_estados_8h.html#a699c67ad6d206290cab4c395cd7d7be7a090da72512b04323631bc989b7ad9e9d">ACTION_RESP_OK</a> = 0,              </div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span> </div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno"><a class="line" href="_gestor_estados_8h.html#a699c67ad6d206290cab4c395cd7d7be7a3197eec44f9da238da4e390c38ae7187">  216</a></span>    <a class="code hl_enumvalue" href="_gestor_estados_8h.html#a699c67ad6d206290cab4c395cd7d7be7a3197eec44f9da238da4e390c38ae7187">ACTION_RESP_ERR</a> = 1,             </div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span> </div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno"><a class="line" href="_gestor_estados_8h.html#a699c67ad6d206290cab4c395cd7d7be7a7621bc4555e78cd6e80c74bafa7a0283">  220</a></span>    <a class="code hl_enumvalue" href="_gestor_estados_8h.html#a699c67ad6d206290cab4c395cd7d7be7a7621bc4555e78cd6e80c74bafa7a0283">ACTION_RESP_MOVING</a> = 2,          </div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span> </div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno"><a class="line" href="_gestor_estados_8h.html#a699c67ad6d206290cab4c395cd7d7be7a81d02313245d29c06a707add990806c6">  226</a></span>    <a class="code hl_enumvalue" href="_gestor_estados_8h.html#a699c67ad6d206290cab4c395cd7d7be7a81d02313245d29c06a707add990806c6">ACTION_RESP_NOT_MOVING</a> = 3,      </div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span> </div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno"><a class="line" href="_gestor_estados_8h.html#a699c67ad6d206290cab4c395cd7d7be7a55cf7ca3043c85a37a46adae995b6a0b">  230</a></span>    <a class="code hl_enumvalue" href="_gestor_estados_8h.html#a699c67ad6d206290cab4c395cd7d7be7a55cf7ca3043c85a37a46adae995b6a0b">ACTION_RESP_OUT_RANGE</a> = 4,       </div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span> </div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno"><a class="line" href="_gestor_estados_8h.html#a699c67ad6d206290cab4c395cd7d7be7ac9ce3b2802bf37aac433179ff2874a3e">  234</a></span>    <a class="code hl_enumvalue" href="_gestor_estados_8h.html#a699c67ad6d206290cab4c395cd7d7be7ac9ce3b2802bf37aac433179ff2874a3e">ACTION_RESP_EMERGENCY_ACTIVE</a> = 5 </div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>} <a class="code hl_enumeration" href="_gestor_estados_8h.html#a699c67ad6d206290cab4c395cd7d7be7">SystemActionResponse</a>;</div>
+</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span> </div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span></div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span><a class="code hl_enumeration" href="_gestor_estados_8h.html#a699c67ad6d206290cab4c395cd7d7be7">SystemActionResponse</a> <a class="code hl_function" href="_gestor_estados_8h.html#a44b3bf408355270c64323425c66e7719">GestorEstados_Action</a>(<a class="code hl_enumeration" href="_gestor_estados_8h.html#aeb5a7529a34b855a5dcc68a6acc1203c">SystemAction</a> sysAct, <span class="keywordtype">int</span> value);</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span> </div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span> </div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span><span class="preprocessor">#endif </span><span class="comment">/* MODULES_GESTOR_ESTADOS_GESTORESTADOS_H_ */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="a_gestor_estados_8h_html_a44b3bf408355270c64323425c66e7719"><div class="ttname"><a href="_gestor_estados_8h.html#a44b3bf408355270c64323425c66e7719">GestorEstados_Action</a></div><div class="ttdeci">SystemActionResponse GestorEstados_Action(SystemAction sysAct, int value)</div><div class="ttdoc">Ejecuta una acción de la máquina de estados y devuelve el resultado.</div><div class="ttdef"><b>Definition</b> <a href="_gestor_estados_8c_source.html#l00012">GestorEstados.c:12</a></div></div>
+<div class="ttc" id="a_gestor_estados_8h_html_a699c67ad6d206290cab4c395cd7d7be7"><div class="ttname"><a href="_gestor_estados_8h.html#a699c67ad6d206290cab4c395cd7d7be7">SystemActionResponse</a></div><div class="ttdeci">SystemActionResponse</div><div class="ttdoc">Códigos de respuesta del gestor de estados ante una acción recibida.</div><div class="ttdef"><b>Definition</b> <a href="#l00212">GestorEstados.h:212</a></div></div>
+<div class="ttc" id="a_gestor_estados_8h_html_a699c67ad6d206290cab4c395cd7d7be7a090da72512b04323631bc989b7ad9e9d"><div class="ttname"><a href="_gestor_estados_8h.html#a699c67ad6d206290cab4c395cd7d7be7a090da72512b04323631bc989b7ad9e9d">ACTION_RESP_OK</a></div><div class="ttdeci">@ ACTION_RESP_OK</div><div class="ttdef"><b>Definition</b> <a href="#l00213">GestorEstados.h:213</a></div></div>
+<div class="ttc" id="a_gestor_estados_8h_html_a699c67ad6d206290cab4c395cd7d7be7a3197eec44f9da238da4e390c38ae7187"><div class="ttname"><a href="_gestor_estados_8h.html#a699c67ad6d206290cab4c395cd7d7be7a3197eec44f9da238da4e390c38ae7187">ACTION_RESP_ERR</a></div><div class="ttdeci">@ ACTION_RESP_ERR</div><div class="ttdef"><b>Definition</b> <a href="#l00216">GestorEstados.h:216</a></div></div>
+<div class="ttc" id="a_gestor_estados_8h_html_a699c67ad6d206290cab4c395cd7d7be7a55cf7ca3043c85a37a46adae995b6a0b"><div class="ttname"><a href="_gestor_estados_8h.html#a699c67ad6d206290cab4c395cd7d7be7a55cf7ca3043c85a37a46adae995b6a0b">ACTION_RESP_OUT_RANGE</a></div><div class="ttdeci">@ ACTION_RESP_OUT_RANGE</div><div class="ttdef"><b>Definition</b> <a href="#l00230">GestorEstados.h:230</a></div></div>
+<div class="ttc" id="a_gestor_estados_8h_html_a699c67ad6d206290cab4c395cd7d7be7a7621bc4555e78cd6e80c74bafa7a0283"><div class="ttname"><a href="_gestor_estados_8h.html#a699c67ad6d206290cab4c395cd7d7be7a7621bc4555e78cd6e80c74bafa7a0283">ACTION_RESP_MOVING</a></div><div class="ttdeci">@ ACTION_RESP_MOVING</div><div class="ttdef"><b>Definition</b> <a href="#l00220">GestorEstados.h:220</a></div></div>
+<div class="ttc" id="a_gestor_estados_8h_html_a699c67ad6d206290cab4c395cd7d7be7a81d02313245d29c06a707add990806c6"><div class="ttname"><a href="_gestor_estados_8h.html#a699c67ad6d206290cab4c395cd7d7be7a81d02313245d29c06a707add990806c6">ACTION_RESP_NOT_MOVING</a></div><div class="ttdeci">@ ACTION_RESP_NOT_MOVING</div><div class="ttdef"><b>Definition</b> <a href="#l00226">GestorEstados.h:226</a></div></div>
+<div class="ttc" id="a_gestor_estados_8h_html_a699c67ad6d206290cab4c395cd7d7be7ac9ce3b2802bf37aac433179ff2874a3e"><div class="ttname"><a href="_gestor_estados_8h.html#a699c67ad6d206290cab4c395cd7d7be7ac9ce3b2802bf37aac433179ff2874a3e">ACTION_RESP_EMERGENCY_ACTIVE</a></div><div class="ttdeci">@ ACTION_RESP_EMERGENCY_ACTIVE</div><div class="ttdef"><b>Definition</b> <a href="#l00234">GestorEstados.h:234</a></div></div>
+<div class="ttc" id="a_gestor_estados_8h_html_aa51313be2faacb739a18fdeecefbac75"><div class="ttname"><a href="_gestor_estados_8h.html#aa51313be2faacb739a18fdeecefbac75">SystemState</a></div><div class="ttdeci">SystemState</div><div class="ttdoc">Estados de la máquina de estados del variador.</div><div class="ttdef"><b>Definition</b> <a href="#l00025">GestorEstados.h:25</a></div></div>
+<div class="ttc" id="a_gestor_estados_8h_html_aa51313be2faacb739a18fdeecefbac75a0ee79d8541fe6a143bec1ec4c6b728e0"><div class="ttname"><a href="_gestor_estados_8h.html#aa51313be2faacb739a18fdeecefbac75a0ee79d8541fe6a143bec1ec4c6b728e0">STATE_BRAKING</a></div><div class="ttdeci">@ STATE_BRAKING</div><div class="ttdef"><b>Definition</b> <a href="#l00044">GestorEstados.h:44</a></div></div>
+<div class="ttc" id="a_gestor_estados_8h_html_aa51313be2faacb739a18fdeecefbac75a7d453a874f8a1e41a71fa02601836216"><div class="ttname"><a href="_gestor_estados_8h.html#aa51313be2faacb739a18fdeecefbac75a7d453a874f8a1e41a71fa02601836216">STATE_VEL_CHANGE</a></div><div class="ttdeci">@ STATE_VEL_CHANGE</div><div class="ttdef"><b>Definition</b> <a href="#l00039">GestorEstados.h:39</a></div></div>
+<div class="ttc" id="a_gestor_estados_8h_html_aa51313be2faacb739a18fdeecefbac75a98d2a2153b4ae0445fa0b114d65b94d9"><div class="ttname"><a href="_gestor_estados_8h.html#aa51313be2faacb739a18fdeecefbac75a98d2a2153b4ae0445fa0b114d65b94d9">STATE_INIT</a></div><div class="ttdeci">@ STATE_INIT</div><div class="ttdef"><b>Definition</b> <a href="#l00026">GestorEstados.h:26</a></div></div>
+<div class="ttc" id="a_gestor_estados_8h_html_aa51313be2faacb739a18fdeecefbac75aaade5e53e88cf231292cd1142cce2afe"><div class="ttname"><a href="_gestor_estados_8h.html#aa51313be2faacb739a18fdeecefbac75aaade5e53e88cf231292cd1142cce2afe">STATE_IDLE</a></div><div class="ttdeci">@ STATE_IDLE</div><div class="ttdef"><b>Definition</b> <a href="#l00029">GestorEstados.h:29</a></div></div>
+<div class="ttc" id="a_gestor_estados_8h_html_aa51313be2faacb739a18fdeecefbac75ad0180e0382824e561c72f20f08838420"><div class="ttname"><a href="_gestor_estados_8h.html#aa51313be2faacb739a18fdeecefbac75ad0180e0382824e561c72f20f08838420">STATE_EMERGENCY</a></div><div class="ttdeci">@ STATE_EMERGENCY</div><div class="ttdef"><b>Definition</b> <a href="#l00048">GestorEstados.h:48</a></div></div>
+<div class="ttc" id="a_gestor_estados_8h_html_aa51313be2faacb739a18fdeecefbac75addfe11c6d06c4e27bd6efc18cc4862a6"><div class="ttname"><a href="_gestor_estados_8h.html#aa51313be2faacb739a18fdeecefbac75addfe11c6d06c4e27bd6efc18cc4862a6">STATE_RUNNING</a></div><div class="ttdeci">@ STATE_RUNNING</div><div class="ttdef"><b>Definition</b> <a href="#l00035">GestorEstados.h:35</a></div></div>
+<div class="ttc" id="a_gestor_estados_8h_html_aeb5a7529a34b855a5dcc68a6acc1203c"><div class="ttname"><a href="_gestor_estados_8h.html#aeb5a7529a34b855a5dcc68a6acc1203c">SystemAction</a></div><div class="ttdeci">SystemAction</div><div class="ttdoc">Acciones externas/internas que gobiernan la máquina de estados del VFD.</div><div class="ttdef"><b>Definition</b> <a href="#l00064">GestorEstados.h:64</a></div></div>
+<div class="ttc" id="a_gestor_estados_8h_html_aeb5a7529a34b855a5dcc68a6acc1203ca02091b145bd0a41e238ffdae1167c912"><div class="ttname"><a href="_gestor_estados_8h.html#aeb5a7529a34b855a5dcc68a6acc1203ca02091b145bd0a41e238ffdae1167c912">ACTION_SET_FREC</a></div><div class="ttdeci">@ ACTION_SET_FREC</div><div class="ttdoc">Fijar frecuencia de régimen.</div><div class="ttdef"><b>Definition</b> <a href="#l00127">GestorEstados.h:127</a></div></div>
+<div class="ttc" id="a_gestor_estados_8h_html_aeb5a7529a34b855a5dcc68a6acc1203ca02e4f329c3a2d677cb3e9d9fea2e8e28"><div class="ttname"><a href="_gestor_estados_8h.html#aeb5a7529a34b855a5dcc68a6acc1203ca02e4f329c3a2d677cb3e9d9fea2e8e28">ACTION_MOTOR_STOPPED</a></div><div class="ttdeci">@ ACTION_MOTOR_STOPPED</div><div class="ttdoc">Confirmación de motor detenido.</div><div class="ttdef"><b>Definition</b> <a href="#l00108">GestorEstados.h:108</a></div></div>
+<div class="ttc" id="a_gestor_estados_8h_html_aeb5a7529a34b855a5dcc68a6acc1203ca4645d70cb9bb2228f230d601f477639d"><div class="ttname"><a href="_gestor_estados_8h.html#aeb5a7529a34b855a5dcc68a6acc1203ca4645d70cb9bb2228f230d601f477639d">ACTION_STOP</a></div><div class="ttdeci">@ ACTION_STOP</div><div class="ttdoc">Solicitud de parada.</div><div class="ttdef"><b>Definition</b> <a href="#l00101">GestorEstados.h:101</a></div></div>
+<div class="ttc" id="a_gestor_estados_8h_html_aeb5a7529a34b855a5dcc68a6acc1203ca464e3eead004a6b415ca415e38fa3d53"><div class="ttname"><a href="_gestor_estados_8h.html#aeb5a7529a34b855a5dcc68a6acc1203ca464e3eead004a6b415ca415e38fa3d53">ACTION_TO_IDLE</a></div><div class="ttdeci">@ ACTION_TO_IDLE</div><div class="ttdoc">Forzar estado inactivo.</div><div class="ttdef"><b>Definition</b> <a href="#l00081">GestorEstados.h:81</a></div></div>
+<div class="ttc" id="a_gestor_estados_8h_html_aeb5a7529a34b855a5dcc68a6acc1203ca6cf84c7c734fe0fc8d2d79535f1c6374"><div class="ttname"><a href="_gestor_estados_8h.html#aeb5a7529a34b855a5dcc68a6acc1203ca6cf84c7c734fe0fc8d2d79535f1c6374">ACTION_GET_DIR</a></div><div class="ttdeci">@ ACTION_GET_DIR</div><div class="ttdoc">Consulta de dirección actual.</div><div class="ttdef"><b>Definition</b> <a href="#l00194">GestorEstados.h:194</a></div></div>
+<div class="ttc" id="a_gestor_estados_8h_html_aeb5a7529a34b855a5dcc68a6acc1203ca7c202795a9f438cd5ffd71fa4992cb05"><div class="ttname"><a href="_gestor_estados_8h.html#aeb5a7529a34b855a5dcc68a6acc1203ca7c202795a9f438cd5ffd71fa4992cb05">ACTION_SET_ACEL</a></div><div class="ttdeci">@ ACTION_SET_ACEL</div><div class="ttdoc">Configurar aceleración.</div><div class="ttdef"><b>Definition</b> <a href="#l00138">GestorEstados.h:138</a></div></div>
+<div class="ttc" id="a_gestor_estados_8h_html_aeb5a7529a34b855a5dcc68a6acc1203ca829629e8fda976af81ad64cd9b3f2171"><div class="ttname"><a href="_gestor_estados_8h.html#aeb5a7529a34b855a5dcc68a6acc1203ca829629e8fda976af81ad64cd9b3f2171">ACTION_GET_DESACEL</a></div><div class="ttdeci">@ ACTION_GET_DESACEL</div><div class="ttdoc">Consulta de desaceleración actual.</div><div class="ttdef"><b>Definition</b> <a href="#l00187">GestorEstados.h:187</a></div></div>
+<div class="ttc" id="a_gestor_estados_8h_html_aeb5a7529a34b855a5dcc68a6acc1203ca901a803cd622114cffc6ee59403a5c86"><div class="ttname"><a href="_gestor_estados_8h.html#aeb5a7529a34b855a5dcc68a6acc1203ca901a803cd622114cffc6ee59403a5c86">ACTION_TO_CONST_RUNNING</a></div><div class="ttdeci">@ ACTION_TO_CONST_RUNNING</div><div class="ttdoc">Transición a régimen constante.</div><div class="ttdef"><b>Definition</b> <a href="#l00165">GestorEstados.h:165</a></div></div>
+<div class="ttc" id="a_gestor_estados_8h_html_aeb5a7529a34b855a5dcc68a6acc1203ca936b4853f8101ae792185c02c4216be0"><div class="ttname"><a href="_gestor_estados_8h.html#aeb5a7529a34b855a5dcc68a6acc1203ca936b4853f8101ae792185c02c4216be0">ACTION_GET_ACEL</a></div><div class="ttdeci">@ ACTION_GET_ACEL</div><div class="ttdoc">Consulta de aceleración actual.</div><div class="ttdef"><b>Definition</b> <a href="#l00180">GestorEstados.h:180</a></div></div>
+<div class="ttc" id="a_gestor_estados_8h_html_aeb5a7529a34b855a5dcc68a6acc1203caa867dcd96a811cfb6266aa30addc4195"><div class="ttname"><a href="_gestor_estados_8h.html#aeb5a7529a34b855a5dcc68a6acc1203caa867dcd96a811cfb6266aa30addc4195">ACTION_INIT_DONE</a></div><div class="ttdeci">@ ACTION_INIT_DONE</div><div class="ttdoc">Fin de inicialización.</div><div class="ttdef"><b>Definition</b> <a href="#l00073">GestorEstados.h:73</a></div></div>
+<div class="ttc" id="a_gestor_estados_8h_html_aeb5a7529a34b855a5dcc68a6acc1203cabb516226f3df30c332c998da773f56db"><div class="ttname"><a href="_gestor_estados_8h.html#aeb5a7529a34b855a5dcc68a6acc1203cabb516226f3df30c332c998da773f56db">ACTION_NONE</a></div><div class="ttdeci">@ ACTION_NONE</div><div class="ttdef"><b>Definition</b> <a href="#l00065">GestorEstados.h:65</a></div></div>
+<div class="ttc" id="a_gestor_estados_8h_html_aeb5a7529a34b855a5dcc68a6acc1203cac584cfe909986a1a00be92cb2870d63f"><div class="ttname"><a href="_gestor_estados_8h.html#aeb5a7529a34b855a5dcc68a6acc1203cac584cfe909986a1a00be92cb2870d63f">ACTION_GET_FREC</a></div><div class="ttdeci">@ ACTION_GET_FREC</div><div class="ttdoc">Consulta de frecuencia actual.</div><div class="ttdef"><b>Definition</b> <a href="#l00173">GestorEstados.h:173</a></div></div>
+<div class="ttc" id="a_gestor_estados_8h_html_aeb5a7529a34b855a5dcc68a6acc1203cad18d9bd6c0a4eced8d31c7b1c6b9dd16"><div class="ttname"><a href="_gestor_estados_8h.html#aeb5a7529a34b855a5dcc68a6acc1203cad18d9bd6c0a4eced8d31c7b1c6b9dd16">ACTION_START</a></div><div class="ttdeci">@ ACTION_START</div><div class="ttdoc">Solicitud de arranque.</div><div class="ttdef"><b>Definition</b> <a href="#l00091">GestorEstados.h:91</a></div></div>
+<div class="ttc" id="a_gestor_estados_8h_html_aeb5a7529a34b855a5dcc68a6acc1203cada94a1283a5879499cddac1556f56b5e"><div class="ttname"><a href="_gestor_estados_8h.html#aeb5a7529a34b855a5dcc68a6acc1203cada94a1283a5879499cddac1556f56b5e">ACTION_IS_MOTOR_STOP</a></div><div class="ttdeci">@ ACTION_IS_MOTOR_STOP</div><div class="ttdoc">¿El motor está detenido?</div><div class="ttdef"><b>Definition</b> <a href="#l00201">GestorEstados.h:201</a></div></div>
+<div class="ttc" id="a_gestor_estados_8h_html_aeb5a7529a34b855a5dcc68a6acc1203cadd57362c8b9ec1984dd5f0468974a768"><div class="ttname"><a href="_gestor_estados_8h.html#aeb5a7529a34b855a5dcc68a6acc1203cadd57362c8b9ec1984dd5f0468974a768">ACTION_SET_DESACEL</a></div><div class="ttdeci">@ ACTION_SET_DESACEL</div><div class="ttdoc">Configurar desaceleración.</div><div class="ttdef"><b>Definition</b> <a href="#l00146">GestorEstados.h:146</a></div></div>
+<div class="ttc" id="a_gestor_estados_8h_html_aeb5a7529a34b855a5dcc68a6acc1203cae2752030c8dc2221fdfb8353ef2d7a8a"><div class="ttname"><a href="_gestor_estados_8h.html#aeb5a7529a34b855a5dcc68a6acc1203cae2752030c8dc2221fdfb8353ef2d7a8a">ACTION_EMERGENCY</a></div><div class="ttdeci">@ ACTION_EMERGENCY</div><div class="ttdoc">Activación de emergencia.</div><div class="ttdef"><b>Definition</b> <a href="#l00116">GestorEstados.h:116</a></div></div>
+<div class="ttc" id="a_gestor_estados_8h_html_aeb5a7529a34b855a5dcc68a6acc1203caef517ff4b1c364633231742027d859de"><div class="ttname"><a href="_gestor_estados_8h.html#aeb5a7529a34b855a5dcc68a6acc1203caef517ff4b1c364633231742027d859de">ACTION_SET_DIR</a></div><div class="ttdeci">@ ACTION_SET_DIR</div><div class="ttdoc">Configurar dirección de giro.</div><div class="ttdef"><b>Definition</b> <a href="#l00157">GestorEstados.h:157</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_f2541a3b18981391fa76fac5599e978a.html">Modules</a></li><li class="navelem"><a href="dir_7636318dd8b05b9ed7a45417b4e50414.html">Gestor_Estados</a></li><li class="navelem"><a href="_gestor_estados_8h.html">GestorEstados.h</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

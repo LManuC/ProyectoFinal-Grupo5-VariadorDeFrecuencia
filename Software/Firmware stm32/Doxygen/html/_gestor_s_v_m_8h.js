@@ -1,0 +1,48 @@
+var _gestor_s_v_m_8h =
+[
+    [ "ValoresSwitching", "struct_valores_switching.html", "struct_valores_switching" ],
+    [ "ConfiguracionSVM", "struct_configuracion_s_v_m.html", "struct_configuracion_s_v_m" ],
+    [ "ACCELERACION_DEFAUL", "_gestor_s_v_m_8h.html#a231639967147a957ca643878898bbd1a", null ],
+    [ "ACCLERACION_MAXIMA", "_gestor_s_v_m_8h.html#ad20461fd03db7a3b0c78c7c5b89d3328", null ],
+    [ "ACELERACION_MINIMA", "_gestor_s_v_m_8h.html#ac5dbec0539003d45fb5f37e359b45cb5", null ],
+    [ "DESACELERACION_DEFAULT", "_gestor_s_v_m_8h.html#acf469f6ab08bde39e1050be6c8acdf77", null ],
+    [ "DESACELERACION_MAXIMA", "_gestor_s_v_m_8h.html#a821297e1c63fd0f691a53726b9924500", null ],
+    [ "DESACELERACION_MINIMA", "_gestor_s_v_m_8h.html#a6d602fafd581235f871392b7bae7fa65", null ],
+    [ "DIRECCION_ROTACION", "_gestor_s_v_m_8h.html#abb7add96477d5a986599c0ad9ca73b3d", null ],
+    [ "FERC_OUT_MAX", "_gestor_s_v_m_8h.html#a4ca4d9aefdff1e7a45f9ebb015ea8de8", null ],
+    [ "FERC_OUT_MIN", "_gestor_s_v_m_8h.html#a5f04a0cf7d8d8c18c15187b55eab34f5", null ],
+    [ "FREC_REFERENCIA", "_gestor_s_v_m_8h.html#aa784b1a2e4159afb4ff38b2a5ea14797", null ],
+    [ "FREC_SWITCH", "_gestor_s_v_m_8h.html#a74dcab45393b4970a5499786793fb1d7", null ],
+    [ "RESOLUCION_TIMER", "_gestor_s_v_m_8h.html#a71687ff29f72b76fecf53720e53fc24c", null ],
+    [ "ConfiguracionSVM", "_gestor_s_v_m_8h.html#a3f100a5467305796e96f4d8fe406ecca", null ],
+    [ "ValoresSwitching", "_gestor_s_v_m_8h.html#aca7a295bc00d7b11d28b6fb2f5119b3a", null ],
+    [ "OrdenSwitch", "_gestor_s_v_m_8h.html#a2cb06ce2ec272b92651a6472f0723580", [
+      [ "ORDEN_SWITCH_1_UP", "_gestor_s_v_m_8h.html#a2cb06ce2ec272b92651a6472f0723580ac02f34a92b4bd06f34ddb8273829adfe", null ],
+      [ "ORDEN_SWITCH_2_UP", "_gestor_s_v_m_8h.html#a2cb06ce2ec272b92651a6472f0723580a187371233676c22ea98a1001c6a88bb9", null ],
+      [ "ORDEN_SWITCH_3_UP", "_gestor_s_v_m_8h.html#a2cb06ce2ec272b92651a6472f0723580adc53297fa82e0c3ab6d040cb0c0b8962", null ],
+      [ "ORDEN_SWITCH_3_DOWN", "_gestor_s_v_m_8h.html#a2cb06ce2ec272b92651a6472f0723580ae1152381faf3c6e029acc518bbe3cc4d", null ],
+      [ "ORDEN_SWITCH_2_DOWN", "_gestor_s_v_m_8h.html#a2cb06ce2ec272b92651a6472f0723580aa0006aaa69e23c55c838726806c02de8", null ],
+      [ "ORDEN_SWITCH_1_DOWN", "_gestor_s_v_m_8h.html#a2cb06ce2ec272b92651a6472f0723580a3b33d0db8eb3f130078bedff27ae613f", null ]
+    ] ],
+    [ "SwitchInterruptType", "_gestor_s_v_m_8h.html#ac12e123ca97cf2482882646d5e67767e", [
+      [ "SWITCH_INT_CH1", "_gestor_s_v_m_8h.html#ac12e123ca97cf2482882646d5e67767eab3055c3f71006b6d768de2e2d437cb18", null ],
+      [ "SWITCH_INT_CH2", "_gestor_s_v_m_8h.html#ac12e123ca97cf2482882646d5e67767eac0f044f79933a5ba09b39462e4c5f0bc", null ],
+      [ "SWITCH_INT_CH3", "_gestor_s_v_m_8h.html#ac12e123ca97cf2482882646d5e67767ea4f79349a125bd828fdcaf406d0e6f376", null ],
+      [ "SWITCH_INT_RESET", "_gestor_s_v_m_8h.html#ac12e123ca97cf2482882646d5e67767ead52acd5eb7604d33eeaee40537f4082f", null ],
+      [ "SWITCH_INT_CLEAN", "_gestor_s_v_m_8h.html#ac12e123ca97cf2482882646d5e67767ea1756e6c5bac5c299f9ae2b9e09439d8b", null ]
+    ] ],
+    [ "GestorSVM_CalcInterrupt", "_gestor_s_v_m_8h.html#adabb99ea058e641f0e9431b537b9705b", null ],
+    [ "GestorSVM_Estop", "_gestor_s_v_m_8h.html#a63c6e1ceb949ac408d9516d4cb5be686", null ],
+    [ "GestorSVM_GetAcel", "_gestor_s_v_m_8h.html#ae9d7d5f17aded3e5c7a7e79c3cfb5218", null ],
+    [ "GestorSVM_GetDesacel", "_gestor_s_v_m_8h.html#a799448440b4d9095f1fb33d2d655fe1f", null ],
+    [ "GestorSVM_GetDir", "_gestor_s_v_m_8h.html#a17bf21f94ae6073c66662117de912850", null ],
+    [ "GestorSVM_GetFrec", "_gestor_s_v_m_8h.html#a0c781546371d716ca8146f4d0160460f", null ],
+    [ "GestorSVM_Init", "_gestor_s_v_m_8h.html#a9c53f505279cef7d19da29106d5adf63", null ],
+    [ "GestorSVM_MotorStart", "_gestor_s_v_m_8h.html#a0524c323e42d243efaacd375836c2cfb", null ],
+    [ "GestorSVM_MotorStop", "_gestor_s_v_m_8h.html#adf2028330d7896b6f9a467dc57d5eac4", null ],
+    [ "GestorSVM_SetAcel", "_gestor_s_v_m_8h.html#a66ad4d13b2b5836964bde8427acc0a07", null ],
+    [ "GestorSVM_SetConfiguration", "_gestor_s_v_m_8h.html#a17fd8593a56939f1777cfdbed0db0334", null ],
+    [ "GestorSVM_SetDecel", "_gestor_s_v_m_8h.html#aef52c881f8b779b6e94b49076fa8876f", null ],
+    [ "GestorSVM_SetDir", "_gestor_s_v_m_8h.html#a7cb0adcba1ed421b2ccb337faec3bb06", null ],
+    [ "GestorSVM_SetFrec", "_gestor_s_v_m_8h.html#a8da78eb6c3f1e8cd6be888fe9f7fce89", null ]
+];

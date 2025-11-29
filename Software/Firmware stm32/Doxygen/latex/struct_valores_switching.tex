@@ -1,0 +1,125 @@
+\doxysection{Referencia de la estructura Valores\+Switching}
+\hypertarget{struct_valores_switching}{}\label{struct_valores_switching}\index{ValoresSwitching@{ValoresSwitching}}
+
+
+Estructura de trabajo del ISR del timer de switching.  
+
+
+
+
+{\ttfamily \#include $<$Gestor\+SVM.\+h$>$}
+
+\doxysubsubsection*{Campos de datos}
+\begin{DoxyCompactItemize}
+\item 
+char \mbox{\hyperlink{struct_valores_switching_a6794e128f58f056963a3ed7efcf8e57a}{cuadrante}}
+\item 
+char \mbox{\hyperlink{struct_valores_switching_ad70c7346a9ee253e1e529cfa9a41273a}{flag\+Switch}} \mbox{[}3\mbox{]}
+\begin{DoxyCompactList}\small\item\em Sector SVM actual (0..5). Lo usa el ISR para decidir qué pierna conmutar. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{struct_valores_switching_aca5abba3cb2978956257f491a6c109d5}{ticks1}} \mbox{[}2\mbox{]}
+\begin{DoxyCompactList}\small\item\em Flags de acción por pierna \{U,V,W\}\+: 1=encender, 0=apagar (par de valores por flanco). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{struct_valores_switching_a42a03a0972614a5edc85aad850d78c2b}{ticks2}} \mbox{[}2\mbox{]}
+\begin{DoxyCompactList}\small\item\em Ticks CCR del evento 1 (subida/bajada). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{struct_valores_switching_a169ba1ea5f11f71a98b80290ef4a9f4a}{ticks3}} \mbox{[}2\mbox{]}
+\begin{DoxyCompactList}\small\item\em Ticks CCR del evento 2 (subida/bajada). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{struct_valores_switching_a2c6a3fb7cddd9bd7254692264962b5b3}{contador}}
+\begin{DoxyCompactList}\small\item\em Ticks CCR del evento 3 (subida/bajada). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Estructura de trabajo del ISR del timer de switching. 
+
+Contiene los parámetros que determinan en qué puntos (ticks) se disparan las comparaciones CCR para conmutar las fases y el estado de conmutación (encendido/apagado) de cada pierna. El campo \doxylink{struct_valores_switching_a6794e128f58f056963a3ed7efcf8e57a}{cuadrante} indica el sector SVM actual (0..5). 
+
+Definición en la línea \mbox{\hyperlink{_gestor_s_v_m_8h_source_l00013}{13}} del archivo \mbox{\hyperlink{_gestor_s_v_m_8h_source}{Gestor\+SVM.\+h}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{struct_valores_switching_doc-variable-members}
+\doxysubsection{Documentación de campos}
+\Hypertarget{struct_valores_switching_a2c6a3fb7cddd9bd7254692264962b5b3}\index{ValoresSwitching@{ValoresSwitching}!contador@{contador}}
+\index{contador@{contador}!ValoresSwitching@{ValoresSwitching}}
+\doxysubsubsection{\texorpdfstring{contador}{contador}}
+{\footnotesize\ttfamily \label{struct_valores_switching_a2c6a3fb7cddd9bd7254692264962b5b3} 
+int contador}
+
+
+
+Ticks CCR del evento 3 (subida/bajada). 
+
+
+
+Definición en la línea \mbox{\hyperlink{_gestor_s_v_m_8h_source_l00019}{19}} del archivo \mbox{\hyperlink{_gestor_s_v_m_8h_source}{Gestor\+SVM.\+h}}.
+
+\Hypertarget{struct_valores_switching_a6794e128f58f056963a3ed7efcf8e57a}\index{ValoresSwitching@{ValoresSwitching}!cuadrante@{cuadrante}}
+\index{cuadrante@{cuadrante}!ValoresSwitching@{ValoresSwitching}}
+\doxysubsubsection{\texorpdfstring{cuadrante}{cuadrante}}
+{\footnotesize\ttfamily \label{struct_valores_switching_a6794e128f58f056963a3ed7efcf8e57a} 
+char cuadrante}
+
+
+
+Definición en la línea \mbox{\hyperlink{_gestor_s_v_m_8h_source_l00014}{14}} del archivo \mbox{\hyperlink{_gestor_s_v_m_8h_source}{Gestor\+SVM.\+h}}.
+
+\Hypertarget{struct_valores_switching_ad70c7346a9ee253e1e529cfa9a41273a}\index{ValoresSwitching@{ValoresSwitching}!flagSwitch@{flagSwitch}}
+\index{flagSwitch@{flagSwitch}!ValoresSwitching@{ValoresSwitching}}
+\doxysubsubsection{\texorpdfstring{flagSwitch}{flagSwitch}}
+{\footnotesize\ttfamily \label{struct_valores_switching_ad70c7346a9ee253e1e529cfa9a41273a} 
+char flag\+Switch\mbox{[}3\mbox{]}}
+
+
+
+Sector SVM actual (0..5). Lo usa el ISR para decidir qué pierna conmutar. 
+
+
+
+Definición en la línea \mbox{\hyperlink{_gestor_s_v_m_8h_source_l00015}{15}} del archivo \mbox{\hyperlink{_gestor_s_v_m_8h_source}{Gestor\+SVM.\+h}}.
+
+\Hypertarget{struct_valores_switching_aca5abba3cb2978956257f491a6c109d5}\index{ValoresSwitching@{ValoresSwitching}!ticks1@{ticks1}}
+\index{ticks1@{ticks1}!ValoresSwitching@{ValoresSwitching}}
+\doxysubsubsection{\texorpdfstring{ticks1}{ticks1}}
+{\footnotesize\ttfamily \label{struct_valores_switching_aca5abba3cb2978956257f491a6c109d5} 
+int ticks1\mbox{[}2\mbox{]}}
+
+
+
+Flags de acción por pierna \{U,V,W\}\+: 1=encender, 0=apagar (par de valores por flanco). 
+
+
+
+Definición en la línea \mbox{\hyperlink{_gestor_s_v_m_8h_source_l00016}{16}} del archivo \mbox{\hyperlink{_gestor_s_v_m_8h_source}{Gestor\+SVM.\+h}}.
+
+\Hypertarget{struct_valores_switching_a42a03a0972614a5edc85aad850d78c2b}\index{ValoresSwitching@{ValoresSwitching}!ticks2@{ticks2}}
+\index{ticks2@{ticks2}!ValoresSwitching@{ValoresSwitching}}
+\doxysubsubsection{\texorpdfstring{ticks2}{ticks2}}
+{\footnotesize\ttfamily \label{struct_valores_switching_a42a03a0972614a5edc85aad850d78c2b} 
+int ticks2\mbox{[}2\mbox{]}}
+
+
+
+Ticks CCR del evento 1 (subida/bajada). 
+
+
+
+Definición en la línea \mbox{\hyperlink{_gestor_s_v_m_8h_source_l00017}{17}} del archivo \mbox{\hyperlink{_gestor_s_v_m_8h_source}{Gestor\+SVM.\+h}}.
+
+\Hypertarget{struct_valores_switching_a169ba1ea5f11f71a98b80290ef4a9f4a}\index{ValoresSwitching@{ValoresSwitching}!ticks3@{ticks3}}
+\index{ticks3@{ticks3}!ValoresSwitching@{ValoresSwitching}}
+\doxysubsubsection{\texorpdfstring{ticks3}{ticks3}}
+{\footnotesize\ttfamily \label{struct_valores_switching_a169ba1ea5f11f71a98b80290ef4a9f4a} 
+int ticks3\mbox{[}2\mbox{]}}
+
+
+
+Ticks CCR del evento 2 (subida/bajada). 
+
+
+
+Definición en la línea \mbox{\hyperlink{_gestor_s_v_m_8h_source_l00018}{18}} del archivo \mbox{\hyperlink{_gestor_s_v_m_8h_source}{Gestor\+SVM.\+h}}.
+
+
+
+La documentación de esta estructura está generada del siguiente archivo\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+User/\+Desktop/\+Proyecto\+Final-\/\+Grupo5-\/\+Variador\+De\+Frecuencia/\+Software/\+Firmware stm32/\+Modules/\+Gestor\+\_\+\+SVM/\mbox{\hyperlink{_gestor_s_v_m_8h}{Gestor\+SVM.\+h}}\end{DoxyCompactItemize}

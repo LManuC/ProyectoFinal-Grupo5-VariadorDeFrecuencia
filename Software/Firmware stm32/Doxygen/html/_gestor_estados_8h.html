@@ -1,0 +1,399 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Low Voltage Variable Frequency Drive: Referencia del archivo C:/Users/User/Desktop/ProyectoFinal-Grupo5-VariadorDeFrecuencia/Software/Firmware stm32/Modules/Gestor_Estados/GestorEstados.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="DoxyPic.jpeg"/></td>
+  <td id="projectalign">
+   <div id="projectname">Low Voltage Variable Frequency Drive<span id="projectnumber">&#160;2.1</span>
+   </div>
+   <div id="projectbrief">Proyecto final Andrenacci-Carra 2025. Variador de frecuencia de motor trifásico 1/3HP utilizando 12V de contínua como fuente de entrada de tensión.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('_gestor_estados_8h.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia del archivo GestorEstados.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><div class="dynheader">
+Gráfico de los archivos que directa o indirectamente incluyen a este archivo:</div>
+<div class="dyncontent">
+<div class="center"><img src="_gestor_estados_8h__dep__incl.png" border="0" usemap="#a_c_1_2_users_2_user_2_desktop_2_proyecto_final-_grupo5-_variador_de_frecuencia_2_software_2_firmware_01stm32_2_modules_2_gestor___estados_2_gestor_estados_8hdep" loading="lazy" alt=""/></div>
+</div>
+</div>
+<p><a href="_gestor_estados_8h_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-enum-members" class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumeraciones</h2></td></tr>
+<tr class="memitem:aa51313be2faacb739a18fdeecefbac75" id="r_aa51313be2faacb739a18fdeecefbac75"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa51313be2faacb739a18fdeecefbac75">SystemState</a> { <br />
+&#160;&#160;<a class="el" href="#aa51313be2faacb739a18fdeecefbac75a98d2a2153b4ae0445fa0b114d65b94d9">STATE_INIT</a> = 0
+, <a class="el" href="#aa51313be2faacb739a18fdeecefbac75aaade5e53e88cf231292cd1142cce2afe">STATE_IDLE</a>
+, <a class="el" href="#aa51313be2faacb739a18fdeecefbac75addfe11c6d06c4e27bd6efc18cc4862a6">STATE_RUNNING</a>
+, <a class="el" href="#aa51313be2faacb739a18fdeecefbac75a7d453a874f8a1e41a71fa02601836216">STATE_VEL_CHANGE</a>
+, <br />
+&#160;&#160;<a class="el" href="#aa51313be2faacb739a18fdeecefbac75a0ee79d8541fe6a143bec1ec4c6b728e0">STATE_BRAKING</a>
+, <a class="el" href="#aa51313be2faacb739a18fdeecefbac75ad0180e0382824e561c72f20f08838420">STATE_EMERGENCY</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:aa51313be2faacb739a18fdeecefbac75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estados de la máquina de estados del variador.  <a href="#aa51313be2faacb739a18fdeecefbac75">Más...</a><br /></td></tr>
+<tr class="memitem:aeb5a7529a34b855a5dcc68a6acc1203c" id="r_aeb5a7529a34b855a5dcc68a6acc1203c"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeb5a7529a34b855a5dcc68a6acc1203c">SystemAction</a> { <br />
+&#160;&#160;<a class="el" href="#aeb5a7529a34b855a5dcc68a6acc1203cabb516226f3df30c332c998da773f56db">ACTION_NONE</a> = 0
+, <a class="el" href="#aeb5a7529a34b855a5dcc68a6acc1203caa867dcd96a811cfb6266aa30addc4195">ACTION_INIT_DONE</a> = 1
+, <a class="el" href="#aeb5a7529a34b855a5dcc68a6acc1203ca464e3eead004a6b415ca415e38fa3d53">ACTION_TO_IDLE</a>
+, <a class="el" href="#aeb5a7529a34b855a5dcc68a6acc1203cad18d9bd6c0a4eced8d31c7b1c6b9dd16">ACTION_START</a>
+, <br />
+&#160;&#160;<a class="el" href="#aeb5a7529a34b855a5dcc68a6acc1203ca4645d70cb9bb2228f230d601f477639d">ACTION_STOP</a>
+, <a class="el" href="#aeb5a7529a34b855a5dcc68a6acc1203ca02e4f329c3a2d677cb3e9d9fea2e8e28">ACTION_MOTOR_STOPPED</a>
+, <a class="el" href="#aeb5a7529a34b855a5dcc68a6acc1203cae2752030c8dc2221fdfb8353ef2d7a8a">ACTION_EMERGENCY</a>
+, <a class="el" href="#aeb5a7529a34b855a5dcc68a6acc1203ca02091b145bd0a41e238ffdae1167c912">ACTION_SET_FREC</a>
+, <br />
+&#160;&#160;<a class="el" href="#aeb5a7529a34b855a5dcc68a6acc1203ca7c202795a9f438cd5ffd71fa4992cb05">ACTION_SET_ACEL</a>
+, <a class="el" href="#aeb5a7529a34b855a5dcc68a6acc1203cadd57362c8b9ec1984dd5f0468974a768">ACTION_SET_DESACEL</a>
+, <a class="el" href="#aeb5a7529a34b855a5dcc68a6acc1203caef517ff4b1c364633231742027d859de">ACTION_SET_DIR</a>
+, <a class="el" href="#aeb5a7529a34b855a5dcc68a6acc1203ca901a803cd622114cffc6ee59403a5c86">ACTION_TO_CONST_RUNNING</a>
+, <br />
+&#160;&#160;<a class="el" href="#aeb5a7529a34b855a5dcc68a6acc1203cac584cfe909986a1a00be92cb2870d63f">ACTION_GET_FREC</a>
+, <a class="el" href="#aeb5a7529a34b855a5dcc68a6acc1203ca936b4853f8101ae792185c02c4216be0">ACTION_GET_ACEL</a>
+, <a class="el" href="#aeb5a7529a34b855a5dcc68a6acc1203ca829629e8fda976af81ad64cd9b3f2171">ACTION_GET_DESACEL</a>
+, <a class="el" href="#aeb5a7529a34b855a5dcc68a6acc1203ca6cf84c7c734fe0fc8d2d79535f1c6374">ACTION_GET_DIR</a>
+, <br />
+&#160;&#160;<a class="el" href="#aeb5a7529a34b855a5dcc68a6acc1203cada94a1283a5879499cddac1556f56b5e">ACTION_IS_MOTOR_STOP</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:aeb5a7529a34b855a5dcc68a6acc1203c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Acciones externas/internas que gobiernan la máquina de estados del VFD.  <a href="#aeb5a7529a34b855a5dcc68a6acc1203c">Más...</a><br /></td></tr>
+<tr class="memitem:a699c67ad6d206290cab4c395cd7d7be7" id="r_a699c67ad6d206290cab4c395cd7d7be7"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a699c67ad6d206290cab4c395cd7d7be7">SystemActionResponse</a> { <br />
+&#160;&#160;<a class="el" href="#a699c67ad6d206290cab4c395cd7d7be7a090da72512b04323631bc989b7ad9e9d">ACTION_RESP_OK</a> = 0
+, <a class="el" href="#a699c67ad6d206290cab4c395cd7d7be7a3197eec44f9da238da4e390c38ae7187">ACTION_RESP_ERR</a> = 1
+, <a class="el" href="#a699c67ad6d206290cab4c395cd7d7be7a7621bc4555e78cd6e80c74bafa7a0283">ACTION_RESP_MOVING</a> = 2
+, <a class="el" href="#a699c67ad6d206290cab4c395cd7d7be7a81d02313245d29c06a707add990806c6">ACTION_RESP_NOT_MOVING</a> = 3
+, <br />
+&#160;&#160;<a class="el" href="#a699c67ad6d206290cab4c395cd7d7be7a55cf7ca3043c85a37a46adae995b6a0b">ACTION_RESP_OUT_RANGE</a> = 4
+, <a class="el" href="#a699c67ad6d206290cab4c395cd7d7be7ac9ce3b2802bf37aac433179ff2874a3e">ACTION_RESP_EMERGENCY_ACTIVE</a> = 5
+<br />
+ }</td></tr>
+<tr class="memdesc:a699c67ad6d206290cab4c395cd7d7be7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Códigos de respuesta del gestor de estados ante una acción recibida.  <a href="#a699c67ad6d206290cab4c395cd7d7be7">Más...</a><br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:a44b3bf408355270c64323425c66e7719" id="r_a44b3bf408355270c64323425c66e7719"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a699c67ad6d206290cab4c395cd7d7be7">SystemActionResponse</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a44b3bf408355270c64323425c66e7719">GestorEstados_Action</a> (<a class="el" href="#aeb5a7529a34b855a5dcc68a6acc1203c">SystemAction</a> sysAct, int value)</td></tr>
+<tr class="memdesc:a44b3bf408355270c64323425c66e7719"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ejecuta una acción de la máquina de estados y devuelve el resultado.  <br /></td></tr>
+</table>
+<a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">Documentación de enumeraciones</h2>
+<a id="aeb5a7529a34b855a5dcc68a6acc1203c" name="aeb5a7529a34b855a5dcc68a6acc1203c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb5a7529a34b855a5dcc68a6acc1203c">&#9670;&#160;</a></span>SystemAction</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#aeb5a7529a34b855a5dcc68a6acc1203c">SystemAction</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Acciones externas/internas que gobiernan la máquina de estados del VFD. </p>
+<p>Cada acción puede provocar un cambio de estado (<a class="el" href="#aa51313be2faacb739a18fdeecefbac75">SystemState</a>) y devuelve un <a class="el" href="#a699c67ad6d206290cab4c395cd7d7be7">SystemActionResponse</a> según las reglas implementadas en <a class="el" href="#a44b3bf408355270c64323425c66e7719" title="Ejecuta una acción de la máquina de estados y devuelve el resultado.">GestorEstados_Action()</a>. Las referencias a estados (STATE_*) y respuestas (ACTION_RESP_*) indican el flujo esperado y los códigos de retorno típicos. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Valores de enumeraciones</th></tr><tr><td class="fieldname"><a id="aeb5a7529a34b855a5dcc68a6acc1203cabb516226f3df30c332c998da773f56db" name="aeb5a7529a34b855a5dcc68a6acc1203cabb516226f3df30c332c998da773f56db"></a>ACTION_NONE&#160;</td><td class="fielddoc"><p>Sin uso. No debe enviarse. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aeb5a7529a34b855a5dcc68a6acc1203caa867dcd96a811cfb6266aa30addc4195" name="aeb5a7529a34b855a5dcc68a6acc1203caa867dcd96a811cfb6266aa30addc4195"></a>ACTION_INIT_DONE&#160;</td><td class="fielddoc"><p>Fin de inicialización. </p>
+<p>Válida <b>solo</b> si <span class="tt"><a class="el" href="_gestor_estados_8c.html#a7e2bcf8de2c1eced051a3a4d69ec7cee">currentState</a>==@ref <a class="el" href="#aa51313be2faacb739a18fdeecefbac75a98d2a2153b4ae0445fa0b114d65b94d9">STATE_INIT</a></span>: pasa a <a class="el" href="#aa51313be2faacb739a18fdeecefbac75aaade5e53e88cf231292cd1142cce2afe">STATE_IDLE</a> y responde <a class="el" href="#a699c67ad6d206290cab4c395cd7d7be7a090da72512b04323631bc989b7ad9e9d">ACTION_RESP_OK</a>; en cualquier otro estado responde <a class="el" href="#a699c67ad6d206290cab4c395cd7d7be7a3197eec44f9da238da4e390c38ae7187">ACTION_RESP_ERR</a>. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aeb5a7529a34b855a5dcc68a6acc1203ca464e3eead004a6b415ca415e38fa3d53" name="aeb5a7529a34b855a5dcc68a6acc1203ca464e3eead004a6b415ca415e38fa3d53"></a>ACTION_TO_IDLE&#160;</td><td class="fielddoc"><p>Forzar estado inactivo. </p>
+<p>Válida cuando <span class="tt"><a class="el" href="_gestor_estados_8c.html#a7e2bcf8de2c1eced051a3a4d69ec7cee">currentState</a>==@ref <a class="el" href="#aa51313be2faacb739a18fdeecefbac75a0ee79d8541fe6a143bec1ec4c6b728e0">STATE_BRAKING</a></span>: pasa a <a class="el" href="#aa51313be2faacb739a18fdeecefbac75aaade5e53e88cf231292cd1142cce2afe">STATE_IDLE</a> y responde <a class="el" href="#a699c67ad6d206290cab4c395cd7d7be7a090da72512b04323631bc989b7ad9e9d">ACTION_RESP_OK</a>; si no está frenando, responde <a class="el" href="#a699c67ad6d206290cab4c395cd7d7be7a3197eec44f9da238da4e390c38ae7187">ACTION_RESP_ERR</a>. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aeb5a7529a34b855a5dcc68a6acc1203cad18d9bd6c0a4eced8d31c7b1c6b9dd16" name="aeb5a7529a34b855a5dcc68a6acc1203cad18d9bd6c0a4eced8d31c7b1c6b9dd16"></a>ACTION_START&#160;</td><td class="fielddoc"><p>Solicitud de arranque. </p>
+<p>Si <span class="tt"><a class="el" href="_gestor_estados_8c.html#a7e2bcf8de2c1eced051a3a4d69ec7cee">currentState</a>==@ref <a class="el" href="#aa51313be2faacb739a18fdeecefbac75aaade5e53e88cf231292cd1142cce2afe">STATE_IDLE</a></span> llama a <span class="tt"><a class="el" href="_gestor_s_v_m_8c.html#a0524c323e42d243efaacd375836c2cfb" title="Arranca el motor: habilita drivers, inicia timers y rampa hacia frecuenciaReferenica.">GestorSVM_MotorStart()</a></span>, pasa a <a class="el" href="#aa51313be2faacb739a18fdeecefbac75a7d453a874f8a1e41a71fa02601836216">STATE_VEL_CHANGE</a> y responde <a class="el" href="#a699c67ad6d206290cab4c395cd7d7be7a090da72512b04323631bc989b7ad9e9d">ACTION_RESP_OK</a>. Si está en <a class="el" href="#aa51313be2faacb739a18fdeecefbac75addfe11c6d06c4e27bd6efc18cc4862a6">STATE_RUNNING</a>, <a class="el" href="#aa51313be2faacb739a18fdeecefbac75a7d453a874f8a1e41a71fa02601836216">STATE_VEL_CHANGE</a> o <a class="el" href="#aa51313be2faacb739a18fdeecefbac75a0ee79d8541fe6a143bec1ec4c6b728e0">STATE_BRAKING</a> responde <a class="el" href="#a699c67ad6d206290cab4c395cd7d7be7a7621bc4555e78cd6e80c74bafa7a0283">ACTION_RESP_MOVING</a>. En <a class="el" href="#aa51313be2faacb739a18fdeecefbac75ad0180e0382824e561c72f20f08838420">STATE_EMERGENCY</a> responde <a class="el" href="#a699c67ad6d206290cab4c395cd7d7be7ac9ce3b2802bf37aac433179ff2874a3e">ACTION_RESP_EMERGENCY_ACTIVE</a>. En cualquier otro caso <a class="el" href="#a699c67ad6d206290cab4c395cd7d7be7a3197eec44f9da238da4e390c38ae7187">ACTION_RESP_ERR</a>. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aeb5a7529a34b855a5dcc68a6acc1203ca4645d70cb9bb2228f230d601f477639d" name="aeb5a7529a34b855a5dcc68a6acc1203ca4645d70cb9bb2228f230d601f477639d"></a>ACTION_STOP&#160;</td><td class="fielddoc"><p>Solicitud de parada. </p>
+<p>Si está en <a class="el" href="#aa51313be2faacb739a18fdeecefbac75addfe11c6d06c4e27bd6efc18cc4862a6">STATE_RUNNING</a> o <a class="el" href="#aa51313be2faacb739a18fdeecefbac75a7d453a874f8a1e41a71fa02601836216">STATE_VEL_CHANGE</a>, llama a <span class="tt"><a class="el" href="_gestor_s_v_m_8c.html#adf2028330d7896b6f9a467dc57d5eac4" title="Ordena frenado con rampa de desaceleracion hasta 0 Hz.">GestorSVM_MotorStop()</a></span>, pasa a <a class="el" href="#aa51313be2faacb739a18fdeecefbac75a0ee79d8541fe6a143bec1ec4c6b728e0">STATE_BRAKING</a> y responde <a class="el" href="#a699c67ad6d206290cab4c395cd7d7be7a090da72512b04323631bc989b7ad9e9d">ACTION_RESP_OK</a>. Si está en <a class="el" href="#aa51313be2faacb739a18fdeecefbac75ad0180e0382824e561c72f20f08838420">STATE_EMERGENCY</a>, ejecuta <span class="tt"><a class="el" href="_gestor_s_v_m_8c.html#a63c6e1ceb949ac408d9516d4cb5be686" title="Parada de emergencia inmediata: desactiva timers, apaga drivers y salidas.">GestorSVM_Estop()</a></span>, pasa a <a class="el" href="#aa51313be2faacb739a18fdeecefbac75aaade5e53e88cf231292cd1142cce2afe">STATE_IDLE</a> y responde <a class="el" href="#a699c67ad6d206290cab4c395cd7d7be7a090da72512b04323631bc989b7ad9e9d">ACTION_RESP_OK</a>. Si ya está en <a class="el" href="#aa51313be2faacb739a18fdeecefbac75aaade5e53e88cf231292cd1142cce2afe">STATE_IDLE</a> responde <a class="el" href="#a699c67ad6d206290cab4c395cd7d7be7a81d02313245d29c06a707add990806c6">ACTION_RESP_NOT_MOVING</a>. Otro caso: <a class="el" href="#a699c67ad6d206290cab4c395cd7d7be7a3197eec44f9da238da4e390c38ae7187">ACTION_RESP_ERR</a>. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aeb5a7529a34b855a5dcc68a6acc1203ca02e4f329c3a2d677cb3e9d9fea2e8e28" name="aeb5a7529a34b855a5dcc68a6acc1203ca02e4f329c3a2d677cb3e9d9fea2e8e28"></a>ACTION_MOTOR_STOPPED&#160;</td><td class="fielddoc"><p>Confirmación de motor detenido. </p>
+<p>Válida durante STATE_BRAKING: pasa a <a class="el" href="#aa51313be2faacb739a18fdeecefbac75aaade5e53e88cf231292cd1142cce2afe">STATE_IDLE</a> y responde <a class="el" href="#a699c67ad6d206290cab4c395cd7d7be7a090da72512b04323631bc989b7ad9e9d">ACTION_RESP_OK</a>; si no está frenando responde <a class="el" href="#a699c67ad6d206290cab4c395cd7d7be7a3197eec44f9da238da4e390c38ae7187">ACTION_RESP_ERR</a>. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aeb5a7529a34b855a5dcc68a6acc1203cae2752030c8dc2221fdfb8353ef2d7a8a" name="aeb5a7529a34b855a5dcc68a6acc1203cae2752030c8dc2221fdfb8353ef2d7a8a"></a>ACTION_EMERGENCY&#160;</td><td class="fielddoc"><p>Activación de emergencia. </p>
+<p>Si no está en <a class="el" href="#aa51313be2faacb739a18fdeecefbac75ad0180e0382824e561c72f20f08838420">STATE_EMERGENCY</a>, ejecuta <span class="tt"><a class="el" href="_gestor_s_v_m_8c.html#a63c6e1ceb949ac408d9516d4cb5be686" title="Parada de emergencia inmediata: desactiva timers, apaga drivers y salidas.">GestorSVM_Estop()</a></span>, pasa a <a class="el" href="#aa51313be2faacb739a18fdeecefbac75ad0180e0382824e561c72f20f08838420">STATE_EMERGENCY</a> y responde <a class="el" href="#a699c67ad6d206290cab4c395cd7d7be7a090da72512b04323631bc989b7ad9e9d">ACTION_RESP_OK</a>; si ya estaba en emergencia responde <a class="el" href="#a699c67ad6d206290cab4c395cd7d7be7a3197eec44f9da238da4e390c38ae7187">ACTION_RESP_ERR</a>. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aeb5a7529a34b855a5dcc68a6acc1203ca02091b145bd0a41e238ffdae1167c912" name="aeb5a7529a34b855a5dcc68a6acc1203ca02091b145bd0a41e238ffdae1167c912"></a>ACTION_SET_FREC&#160;</td><td class="fielddoc"><p>Fijar frecuencia de régimen. </p>
+<p>Permitido en <a class="el" href="#aa51313be2faacb739a18fdeecefbac75aaade5e53e88cf231292cd1142cce2afe">STATE_IDLE</a>, <a class="el" href="#aa51313be2faacb739a18fdeecefbac75addfe11c6d06c4e27bd6efc18cc4862a6">STATE_RUNNING</a> o <a class="el" href="#aa51313be2faacb739a18fdeecefbac75a7d453a874f8a1e41a71fa02601836216">STATE_VEL_CHANGE</a>. Llama a <span class="tt">GestorSVM_SetFrec(value)</span>:</p><ul>
+<li>0 o -2 → <a class="el" href="#a699c67ad6d206290cab4c395cd7d7be7a090da72512b04323631bc989b7ad9e9d">ACTION_RESP_OK</a> (permanece en el estado actual)</li>
+<li>1 → pasa a <a class="el" href="#aa51313be2faacb739a18fdeecefbac75a7d453a874f8a1e41a71fa02601836216">STATE_VEL_CHANGE</a> y <a class="el" href="#a699c67ad6d206290cab4c395cd7d7be7a090da72512b04323631bc989b7ad9e9d">ACTION_RESP_OK</a></li>
+<li>-1 → <a class="el" href="#a699c67ad6d206290cab4c395cd7d7be7a55cf7ca3043c85a37a46adae995b6a0b">ACTION_RESP_OUT_RANGE</a> Si está en <a class="el" href="#aa51313be2faacb739a18fdeecefbac75a0ee79d8541fe6a143bec1ec4c6b728e0">STATE_BRAKING</a> → <a class="el" href="#a699c67ad6d206290cab4c395cd7d7be7a7621bc4555e78cd6e80c74bafa7a0283">ACTION_RESP_MOVING</a>; otro estado → <a class="el" href="#a699c67ad6d206290cab4c395cd7d7be7a3197eec44f9da238da4e390c38ae7187">ACTION_RESP_ERR</a>. </li>
+</ul>
+</td></tr>
+<tr><td class="fieldname"><a id="aeb5a7529a34b855a5dcc68a6acc1203ca7c202795a9f438cd5ffd71fa4992cb05" name="aeb5a7529a34b855a5dcc68a6acc1203ca7c202795a9f438cd5ffd71fa4992cb05"></a>ACTION_SET_ACEL&#160;</td><td class="fielddoc"><p>Configurar aceleración. </p>
+<p>Permitido en <a class="el" href="#aa51313be2faacb739a18fdeecefbac75aaade5e53e88cf231292cd1142cce2afe">STATE_IDLE</a> o <a class="el" href="#aa51313be2faacb739a18fdeecefbac75addfe11c6d06c4e27bd6efc18cc4862a6">STATE_RUNNING</a>. Llama a <span class="tt">GestorSVM_SetAcel(value)</span>:</p><ul>
+<li>0 → <a class="el" href="#a699c67ad6d206290cab4c395cd7d7be7a090da72512b04323631bc989b7ad9e9d">ACTION_RESP_OK</a></li>
+<li>-1 → <a class="el" href="#a699c67ad6d206290cab4c395cd7d7be7a55cf7ca3043c85a37a46adae995b6a0b">ACTION_RESP_OUT_RANGE</a></li>
+<li>-2 u otro → <a class="el" href="#a699c67ad6d206290cab4c395cd7d7be7a3197eec44f9da238da4e390c38ae7187">ACTION_RESP_ERR</a> En otros estados → <a class="el" href="#a699c67ad6d206290cab4c395cd7d7be7a3197eec44f9da238da4e390c38ae7187">ACTION_RESP_ERR</a>. </li>
+</ul>
+</td></tr>
+<tr><td class="fieldname"><a id="aeb5a7529a34b855a5dcc68a6acc1203cadd57362c8b9ec1984dd5f0468974a768" name="aeb5a7529a34b855a5dcc68a6acc1203cadd57362c8b9ec1984dd5f0468974a768"></a>ACTION_SET_DESACEL&#160;</td><td class="fielddoc"><p>Configurar desaceleración. </p>
+<p>Igual a <a class="el" href="#aeb5a7529a34b855a5dcc68a6acc1203ca7c202795a9f438cd5ffd71fa4992cb05">ACTION_SET_ACEL</a> pero llamando <span class="tt">GestorSVM_SetDecel(value)</span>. Respuestas: <a class="el" href="#a699c67ad6d206290cab4c395cd7d7be7a090da72512b04323631bc989b7ad9e9d">ACTION_RESP_OK</a>, <a class="el" href="#a699c67ad6d206290cab4c395cd7d7be7a55cf7ca3043c85a37a46adae995b6a0b">ACTION_RESP_OUT_RANGE</a> o <a class="el" href="#a699c67ad6d206290cab4c395cd7d7be7a3197eec44f9da238da4e390c38ae7187">ACTION_RESP_ERR</a>. En otros estados → <a class="el" href="#a699c67ad6d206290cab4c395cd7d7be7a3197eec44f9da238da4e390c38ae7187">ACTION_RESP_ERR</a>. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aeb5a7529a34b855a5dcc68a6acc1203caef517ff4b1c364633231742027d859de" name="aeb5a7529a34b855a5dcc68a6acc1203caef517ff4b1c364633231742027d859de"></a>ACTION_SET_DIR&#160;</td><td class="fielddoc"><p>Configurar dirección de giro. </p>
+<p>Permitido solo en <a class="el" href="#aa51313be2faacb739a18fdeecefbac75aaade5e53e88cf231292cd1142cce2afe">STATE_IDLE</a>. Llama a <span class="tt">GestorSVM_SetDir(value)</span>:</p><ul>
+<li>0 → <a class="el" href="#a699c67ad6d206290cab4c395cd7d7be7a090da72512b04323631bc989b7ad9e9d">ACTION_RESP_OK</a></li>
+<li>-1 → <a class="el" href="#a699c67ad6d206290cab4c395cd7d7be7a55cf7ca3043c85a37a46adae995b6a0b">ACTION_RESP_OUT_RANGE</a></li>
+<li>-2 → <a class="el" href="#a699c67ad6d206290cab4c395cd7d7be7a7621bc4555e78cd6e80c74bafa7a0283">ACTION_RESP_MOVING</a></li>
+<li>otro → <a class="el" href="#a699c67ad6d206290cab4c395cd7d7be7a3197eec44f9da238da4e390c38ae7187">ACTION_RESP_ERR</a> Si no está en IDLE → <a class="el" href="#a699c67ad6d206290cab4c395cd7d7be7a7621bc4555e78cd6e80c74bafa7a0283">ACTION_RESP_MOVING</a>. </li>
+</ul>
+</td></tr>
+<tr><td class="fieldname"><a id="aeb5a7529a34b855a5dcc68a6acc1203ca901a803cd622114cffc6ee59403a5c86" name="aeb5a7529a34b855a5dcc68a6acc1203ca901a803cd622114cffc6ee59403a5c86"></a>ACTION_TO_CONST_RUNNING&#160;</td><td class="fielddoc"><p>Transición a régimen constante. </p>
+<p>Válida cuando <span class="tt"><a class="el" href="_gestor_estados_8c.html#a7e2bcf8de2c1eced051a3a4d69ec7cee">currentState</a>==@ref <a class="el" href="#aa51313be2faacb739a18fdeecefbac75a7d453a874f8a1e41a71fa02601836216">STATE_VEL_CHANGE</a></span>: pasa a <a class="el" href="#aa51313be2faacb739a18fdeecefbac75addfe11c6d06c4e27bd6efc18cc4862a6">STATE_RUNNING</a> y responde <a class="el" href="#a699c67ad6d206290cab4c395cd7d7be7a090da72512b04323631bc989b7ad9e9d">ACTION_RESP_OK</a>; caso contrario <a class="el" href="#a699c67ad6d206290cab4c395cd7d7be7a3197eec44f9da238da4e390c38ae7187">ACTION_RESP_ERR</a>. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aeb5a7529a34b855a5dcc68a6acc1203cac584cfe909986a1a00be92cb2870d63f" name="aeb5a7529a34b855a5dcc68a6acc1203cac584cfe909986a1a00be92cb2870d63f"></a>ACTION_GET_FREC&#160;</td><td class="fielddoc"><p>Consulta de frecuencia actual. </p>
+<p>Acción de lectura (sin cambio de estado). La entrega del valor se realiza por la capa que invoca a <a class="el" href="_gestor_estados_8c.html#a44b3bf408355270c64323425c66e7719">GestorEstados_Action()</a> (no hay respuesta numérica directa en este switch). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aeb5a7529a34b855a5dcc68a6acc1203ca936b4853f8101ae792185c02c4216be0" name="aeb5a7529a34b855a5dcc68a6acc1203ca936b4853f8101ae792185c02c4216be0"></a>ACTION_GET_ACEL&#160;</td><td class="fielddoc"><p>Consulta de aceleración actual. </p>
+<p>Acción de lectura (sin cambio de estado). La obtención del valor queda a cargo de la capa llamadora. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aeb5a7529a34b855a5dcc68a6acc1203ca829629e8fda976af81ad64cd9b3f2171" name="aeb5a7529a34b855a5dcc68a6acc1203ca829629e8fda976af81ad64cd9b3f2171"></a>ACTION_GET_DESACEL&#160;</td><td class="fielddoc"><p>Consulta de desaceleración actual. </p>
+<p>Acción de lectura (sin cambio de estado). La obtención del valor queda a cargo de la capa llamadora. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aeb5a7529a34b855a5dcc68a6acc1203ca6cf84c7c734fe0fc8d2d79535f1c6374" name="aeb5a7529a34b855a5dcc68a6acc1203ca6cf84c7c734fe0fc8d2d79535f1c6374"></a>ACTION_GET_DIR&#160;</td><td class="fielddoc"><p>Consulta de dirección actual. </p>
+<p>Acción de lectura (sin cambio de estado). La obtención del valor queda a cargo de la capa llamadora. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aeb5a7529a34b855a5dcc68a6acc1203cada94a1283a5879499cddac1556f56b5e" name="aeb5a7529a34b855a5dcc68a6acc1203cada94a1283a5879499cddac1556f56b5e"></a>ACTION_IS_MOTOR_STOP&#160;</td><td class="fielddoc"><p>¿El motor está detenido? </p>
+<p>Si <span class="tt"><a class="el" href="_gestor_estados_8c.html#a7e2bcf8de2c1eced051a3a4d69ec7cee">currentState</a>==@ref <a class="el" href="#aa51313be2faacb739a18fdeecefbac75aaade5e53e88cf231292cd1142cce2afe">STATE_IDLE</a></span> o <a class="el" href="#aa51313be2faacb739a18fdeecefbac75ad0180e0382824e561c72f20f08838420">STATE_EMERGENCY</a> → <a class="el" href="#a699c67ad6d206290cab4c395cd7d7be7a81d02313245d29c06a707add990806c6">ACTION_RESP_NOT_MOVING</a>; en otro estado → <a class="el" href="#a699c67ad6d206290cab4c395cd7d7be7a7621bc4555e78cd6e80c74bafa7a0283">ACTION_RESP_MOVING</a>. </p>
+</td></tr>
+</table>
+
+<p class="definition">Definición en la línea <a class="el" href="_gestor_estados_8h_source.html#l00064">64</a> del archivo <a class="el" href="_gestor_estados_8h_source.html">GestorEstados.h</a>.</p>
+
+</div>
+</div>
+<a id="a699c67ad6d206290cab4c395cd7d7be7" name="a699c67ad6d206290cab4c395cd7d7be7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a699c67ad6d206290cab4c395cd7d7be7">&#9670;&#160;</a></span>SystemActionResponse</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#a699c67ad6d206290cab4c395cd7d7be7">SystemActionResponse</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Códigos de respuesta del gestor de estados ante una acción recibida. </p>
+<p>Los valores indican el resultado de <span class="tt"><a class="el" href="#a44b3bf408355270c64323425c66e7719" title="Ejecuta una acción de la máquina de estados y devuelve el resultado.">GestorEstados_Action()</a></span> según la acción solicitada (<a class="el" href="#aeb5a7529a34b855a5dcc68a6acc1203c">SystemAction</a>) y el estado actual (<a class="el" href="#aa51313be2faacb739a18fdeecefbac75">SystemState</a>). Se utilizan también como payload de respuesta en el enlace SPI con el ESP32. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Valores de enumeraciones</th></tr><tr><td class="fieldname"><a id="a699c67ad6d206290cab4c395cd7d7be7a090da72512b04323631bc989b7ad9e9d" name="a699c67ad6d206290cab4c395cd7d7be7a090da72512b04323631bc989b7ad9e9d"></a>ACTION_RESP_OK&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a699c67ad6d206290cab4c395cd7d7be7a3197eec44f9da238da4e390c38ae7187" name="a699c67ad6d206290cab4c395cd7d7be7a3197eec44f9da238da4e390c38ae7187"></a>ACTION_RESP_ERR&#160;</td><td class="fielddoc"><p>La acción fue válida y se ejecutó correctamente. Si correspondía, la transición de estado se realizó. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a699c67ad6d206290cab4c395cd7d7be7a7621bc4555e78cd6e80c74bafa7a0283" name="a699c67ad6d206290cab4c395cd7d7be7a7621bc4555e78cd6e80c74bafa7a0283"></a>ACTION_RESP_MOVING&#160;</td><td class="fielddoc"><p>Error genérico: secuencia inválida para el estado actual o fallo al aplicar la configuración. No hay garantía de cambio de estado. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a699c67ad6d206290cab4c395cd7d7be7a81d02313245d29c06a707add990806c6" name="a699c67ad6d206290cab4c395cd7d7be7a81d02313245d29c06a707add990806c6"></a>ACTION_RESP_NOT_MOVING&#160;</td><td class="fielddoc"><p>El motor está en movimiento (p. ej., en <a class="el" href="#aa51313be2faacb739a18fdeecefbac75addfe11c6d06c4e27bd6efc18cc4862a6">STATE_RUNNING</a>, <a class="el" href="#aa51313be2faacb739a18fdeecefbac75a7d453a874f8a1e41a71fa02601836216">STATE_VEL_CHANGE</a> o <a class="el" href="#aa51313be2faacb739a18fdeecefbac75a0ee79d8541fe6a143bec1ec4c6b728e0">STATE_BRAKING</a>). Puede usarse como respuesta a una consulta o para rechazar acciones no permitidas mientras hay movimiento. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a699c67ad6d206290cab4c395cd7d7be7a55cf7ca3043c85a37a46adae995b6a0b" name="a699c67ad6d206290cab4c395cd7d7be7a55cf7ca3043c85a37a46adae995b6a0b"></a>ACTION_RESP_OUT_RANGE&#160;</td><td class="fielddoc"><p>El motor está detenido (p. ej., en <a class="el" href="#aa51313be2faacb739a18fdeecefbac75aaade5e53e88cf231292cd1142cce2afe">STATE_IDLE</a> o <a class="el" href="#aa51313be2faacb739a18fdeecefbac75ad0180e0382824e561c72f20f08838420">STATE_EMERGENCY</a>). Puede ser respuesta a consulta o a un STOP redundante. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a699c67ad6d206290cab4c395cd7d7be7ac9ce3b2802bf37aac433179ff2874a3e" name="a699c67ad6d206290cab4c395cd7d7be7ac9ce3b2802bf37aac433179ff2874a3e"></a>ACTION_RESP_EMERGENCY_ACTIVE&#160;</td><td class="fielddoc"><p>El parámetro de configuración recibido (frecuencia, aceleración, etc.) está fuera de los límites admitidos por la lógica (p. ej., <span class="tt">GestorSVM_*</span>). </p>
+</td></tr>
+</table>
+
+<p class="definition">Definición en la línea <a class="el" href="_gestor_estados_8h_source.html#l00212">212</a> del archivo <a class="el" href="_gestor_estados_8h_source.html">GestorEstados.h</a>.</p>
+
+</div>
+</div>
+<a id="aa51313be2faacb739a18fdeecefbac75" name="aa51313be2faacb739a18fdeecefbac75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa51313be2faacb739a18fdeecefbac75">&#9670;&#160;</a></span>SystemState</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#aa51313be2faacb739a18fdeecefbac75">SystemState</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Estados de la máquina de estados del variador. </p>
+<p>Representan el ciclo de vida del sistema y condicionan qué acciones (<a class="el" href="#aeb5a7529a34b855a5dcc68a6acc1203c">SystemAction</a>) son válidas y qué respuestas (<a class="el" href="#a699c67ad6d206290cab4c395cd7d7be7">SystemActionResponse</a>) devuelve <span class="tt"><a class="el" href="#a44b3bf408355270c64323425c66e7719" title="Ejecuta una acción de la máquina de estados y devuelve el resultado.">GestorEstados_Action()</a></span>. Las transiciones típicas son:</p><ul>
+<li><a class="el" href="#aa51313be2faacb739a18fdeecefbac75a98d2a2153b4ae0445fa0b114d65b94d9">STATE_INIT</a> → ( <a class="el" href="#aeb5a7529a34b855a5dcc68a6acc1203caa867dcd96a811cfb6266aa30addc4195">ACTION_INIT_DONE</a> ) → <a class="el" href="#aa51313be2faacb739a18fdeecefbac75aaade5e53e88cf231292cd1142cce2afe">STATE_IDLE</a></li>
+<li><a class="el" href="#aa51313be2faacb739a18fdeecefbac75aaade5e53e88cf231292cd1142cce2afe">STATE_IDLE</a> → ( <a class="el" href="#aeb5a7529a34b855a5dcc68a6acc1203cad18d9bd6c0a4eced8d31c7b1c6b9dd16">ACTION_START</a> ) → <a class="el" href="#aa51313be2faacb739a18fdeecefbac75a7d453a874f8a1e41a71fa02601836216">STATE_VEL_CHANGE</a></li>
+<li><a class="el" href="#aa51313be2faacb739a18fdeecefbac75a7d453a874f8a1e41a71fa02601836216">STATE_VEL_CHANGE</a> → ( <a class="el" href="#aeb5a7529a34b855a5dcc68a6acc1203ca901a803cd622114cffc6ee59403a5c86">ACTION_TO_CONST_RUNNING</a> ) → <a class="el" href="#aa51313be2faacb739a18fdeecefbac75addfe11c6d06c4e27bd6efc18cc4862a6">STATE_RUNNING</a></li>
+<li><a class="el" href="#aa51313be2faacb739a18fdeecefbac75addfe11c6d06c4e27bd6efc18cc4862a6">STATE_RUNNING</a> → ( <a class="el" href="#aeb5a7529a34b855a5dcc68a6acc1203ca4645d70cb9bb2228f230d601f477639d">ACTION_STOP</a> ) → <a class="el" href="#aa51313be2faacb739a18fdeecefbac75a0ee79d8541fe6a143bec1ec4c6b728e0">STATE_BRAKING</a></li>
+<li><a class="el" href="#aa51313be2faacb739a18fdeecefbac75a0ee79d8541fe6a143bec1ec4c6b728e0">STATE_BRAKING</a> → ( <a class="el" href="#aeb5a7529a34b855a5dcc68a6acc1203ca02e4f329c3a2d677cb3e9d9fea2e8e28">ACTION_MOTOR_STOPPED</a> ) → <a class="el" href="#aa51313be2faacb739a18fdeecefbac75aaade5e53e88cf231292cd1142cce2afe">STATE_IDLE</a></li>
+<li>Cualquier estado → ( <a class="el" href="#aeb5a7529a34b855a5dcc68a6acc1203cae2752030c8dc2221fdfb8353ef2d7a8a">ACTION_EMERGENCY</a> ) → <a class="el" href="#aa51313be2faacb739a18fdeecefbac75ad0180e0382824e561c72f20f08838420">STATE_EMERGENCY</a> </li>
+</ul>
+<table class="fieldtable">
+<tr><th colspan="2">Valores de enumeraciones</th></tr><tr><td class="fieldname"><a id="aa51313be2faacb739a18fdeecefbac75a98d2a2153b4ae0445fa0b114d65b94d9" name="aa51313be2faacb739a18fdeecefbac75a98d2a2153b4ae0445fa0b114d65b94d9"></a>STATE_INIT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aa51313be2faacb739a18fdeecefbac75aaade5e53e88cf231292cd1142cce2afe" name="aa51313be2faacb739a18fdeecefbac75aaade5e53e88cf231292cd1142cce2afe"></a>STATE_IDLE&#160;</td><td class="fielddoc"><p>Sistema en inicialización. Solo es válida <a class="el" href="#aeb5a7529a34b855a5dcc68a6acc1203caa867dcd96a811cfb6266aa30addc4195">ACTION_INIT_DONE</a> para pasar a <a class="el" href="#aa51313be2faacb739a18fdeecefbac75aaade5e53e88cf231292cd1142cce2afe">STATE_IDLE</a>. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aa51313be2faacb739a18fdeecefbac75addfe11c6d06c4e27bd6efc18cc4862a6" name="aa51313be2faacb739a18fdeecefbac75addfe11c6d06c4e27bd6efc18cc4862a6"></a>STATE_RUNNING&#160;</td><td class="fielddoc"><p>Reposo: motor detenido (o salida de emergencia). Admite configuración (<a class="el" href="#aeb5a7529a34b855a5dcc68a6acc1203ca02091b145bd0a41e238ffdae1167c912">ACTION_SET_FREC</a>, <a class="el" href="#aeb5a7529a34b855a5dcc68a6acc1203ca7c202795a9f438cd5ffd71fa4992cb05">ACTION_SET_ACEL</a>, <a class="el" href="#aeb5a7529a34b855a5dcc68a6acc1203cadd57362c8b9ec1984dd5f0468974a768">ACTION_SET_DESACEL</a>, <a class="el" href="#aeb5a7529a34b855a5dcc68a6acc1203caef517ff4b1c364633231742027d859de">ACTION_SET_DIR</a>) y arranque con <a class="el" href="#aeb5a7529a34b855a5dcc68a6acc1203cad18d9bd6c0a4eced8d31c7b1c6b9dd16">ACTION_START</a>. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aa51313be2faacb739a18fdeecefbac75a7d453a874f8a1e41a71fa02601836216" name="aa51313be2faacb739a18fdeecefbac75a7d453a874f8a1e41a71fa02601836216"></a>STATE_VEL_CHANGE&#160;</td><td class="fielddoc"><p>Marcha a velocidad constante. Acepta cambio de parámetros permitidos y <a class="el" href="#aeb5a7529a34b855a5dcc68a6acc1203ca4645d70cb9bb2228f230d601f477639d">ACTION_STOP</a> para transicionar a <a class="el" href="#aa51313be2faacb739a18fdeecefbac75a0ee79d8541fe6a143bec1ec4c6b728e0">STATE_BRAKING</a>. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aa51313be2faacb739a18fdeecefbac75a0ee79d8541fe6a143bec1ec4c6b728e0" name="aa51313be2faacb739a18fdeecefbac75a0ee79d8541fe6a143bec1ec4c6b728e0"></a>STATE_BRAKING&#160;</td><td class="fielddoc"><p>Transitorio de cambio de velocidad (acel./desacel.). Al alcanzar régimen: <a class="el" href="#aeb5a7529a34b855a5dcc68a6acc1203ca901a803cd622114cffc6ee59403a5c86">ACTION_TO_CONST_RUNNING</a> → <a class="el" href="#aa51313be2faacb739a18fdeecefbac75addfe11c6d06c4e27bd6efc18cc4862a6">STATE_RUNNING</a>. <a class="el" href="#aeb5a7529a34b855a5dcc68a6acc1203ca4645d70cb9bb2228f230d601f477639d">ACTION_STOP</a> lleva a <a class="el" href="#aa51313be2faacb739a18fdeecefbac75a0ee79d8541fe6a143bec1ec4c6b728e0">STATE_BRAKING</a>. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aa51313be2faacb739a18fdeecefbac75ad0180e0382824e561c72f20f08838420" name="aa51313be2faacb739a18fdeecefbac75ad0180e0382824e561c72f20f08838420"></a>STATE_EMERGENCY&#160;</td><td class="fielddoc"><p>Frenado en curso. Al detenerse: <a class="el" href="#aeb5a7529a34b855a5dcc68a6acc1203ca02e4f329c3a2d677cb3e9d9fea2e8e28">ACTION_MOTOR_STOPPED</a> → <a class="el" href="#aa51313be2faacb739a18fdeecefbac75aaade5e53e88cf231292cd1142cce2afe">STATE_IDLE</a>. <a class="el" href="#aeb5a7529a34b855a5dcc68a6acc1203ca464e3eead004a6b415ca415e38fa3d53">ACTION_TO_IDLE</a> fuerza el paso a inactivo. Emergencia activa (salidas deshabilitadas). Solo acciones de recuperación/acondicionamiento; p.ej. <a class="el" href="#aeb5a7529a34b855a5dcc68a6acc1203ca4645d70cb9bb2228f230d601f477639d">ACTION_STOP</a> puede llevar a <a class="el" href="#aa51313be2faacb739a18fdeecefbac75aaade5e53e88cf231292cd1142cce2afe">STATE_IDLE</a> según la lógica de seguridad. </p>
+</td></tr>
+</table>
+
+<p class="definition">Definición en la línea <a class="el" href="_gestor_estados_8h_source.html#l00025">25</a> del archivo <a class="el" href="_gestor_estados_8h_source.html">GestorEstados.h</a>.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones</h2>
+<a id="a44b3bf408355270c64323425c66e7719" name="a44b3bf408355270c64323425c66e7719"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44b3bf408355270c64323425c66e7719">&#9670;&#160;</a></span>GestorEstados_Action()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a699c67ad6d206290cab4c395cd7d7be7">SystemActionResponse</a> GestorEstados_Action </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#aeb5a7529a34b855a5dcc68a6acc1203c">SystemAction</a></td>          <td class="paramname"><span class="paramname"><em>sysAct</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ejecuta una acción de la máquina de estados y devuelve el resultado. </p>
+<p>Evalúa la acción <code class="param">sysAct</code> contra el estado actual (<a class="el" href="#aa51313be2faacb739a18fdeecefbac75">SystemState</a>) y, según corresponda, invoca rutinas del SVM (p.ej. <span class="tt"><a class="el" href="_gestor_s_v_m_8c.html#a0524c323e42d243efaacd375836c2cfb" title="Arranca el motor: habilita drivers, inicia timers y rampa hacia frecuenciaReferenica.">GestorSVM_MotorStart()</a></span>, <span class="tt"><a class="el" href="_gestor_s_v_m_8c.html#adf2028330d7896b6f9a467dc57d5eac4" title="Ordena frenado con rampa de desaceleracion hasta 0 Hz.">GestorSVM_MotorStop()</a></span>, <span class="tt"><a class="el" href="_gestor_s_v_m_8c.html#a63c6e1ceb949ac408d9516d4cb5be686" title="Parada de emergencia inmediata: desactiva timers, apaga drivers y salidas.">GestorSVM_Estop()</a></span>, <span class="tt">GestorSVM_SetFrec/SetAcel/SetDecel/SetDir</span>) y actualiza la variable interna <span class="tt"><a class="el" href="_gestor_estados_8c.html#a7e2bcf8de2c1eced051a3a4d69ec7cee">currentState</a></span>. <br  />
+ Las reglas de transición/retorno (según el código mostrado) incluyen, entre otras:</p><ul>
+<li><a class="el" href="#aeb5a7529a34b855a5dcc68a6acc1203caa867dcd96a811cfb6266aa30addc4195">ACTION_INIT_DONE</a> : solo desde <a class="el" href="#aa51313be2faacb739a18fdeecefbac75a98d2a2153b4ae0445fa0b114d65b94d9">STATE_INIT</a> → <a class="el" href="#aa51313be2faacb739a18fdeecefbac75aaade5e53e88cf231292cd1142cce2afe">STATE_IDLE</a>.</li>
+<li><a class="el" href="#aeb5a7529a34b855a5dcc68a6acc1203cad18d9bd6c0a4eced8d31c7b1c6b9dd16">ACTION_START</a> : desde <a class="el" href="#aa51313be2faacb739a18fdeecefbac75aaade5e53e88cf231292cd1142cce2afe">STATE_IDLE</a> → <a class="el" href="#aa51313be2faacb739a18fdeecefbac75a7d453a874f8a1e41a71fa02601836216">STATE_VEL_CHANGE</a>; si hay movimiento → <a class="el" href="#a699c67ad6d206290cab4c395cd7d7be7a7621bc4555e78cd6e80c74bafa7a0283">ACTION_RESP_MOVING</a>; en emergencia → <a class="el" href="#a699c67ad6d206290cab4c395cd7d7be7ac9ce3b2802bf37aac433179ff2874a3e">ACTION_RESP_EMERGENCY_ACTIVE</a>.</li>
+<li><a class="el" href="#aeb5a7529a34b855a5dcc68a6acc1203ca4645d70cb9bb2228f230d601f477639d">ACTION_STOP</a> : desde RUNNING/VEL_CHANGE → <a class="el" href="#aa51313be2faacb739a18fdeecefbac75a0ee79d8541fe6a143bec1ec4c6b728e0">STATE_BRAKING</a>; en EMERGENCY → <a class="el" href="#aa51313be2faacb739a18fdeecefbac75aaade5e53e88cf231292cd1142cce2afe">STATE_IDLE</a>; en IDLE → <a class="el" href="#a699c67ad6d206290cab4c395cd7d7be7a81d02313245d29c06a707add990806c6">ACTION_RESP_NOT_MOVING</a>.</li>
+<li><a class="el" href="#aeb5a7529a34b855a5dcc68a6acc1203ca02e4f329c3a2d677cb3e9d9fea2e8e28">ACTION_MOTOR_STOPPED</a> : en BRAKING → <a class="el" href="#aa51313be2faacb739a18fdeecefbac75aaade5e53e88cf231292cd1142cce2afe">STATE_IDLE</a>.</li>
+<li><a class="el" href="#aeb5a7529a34b855a5dcc68a6acc1203cae2752030c8dc2221fdfb8353ef2d7a8a">ACTION_EMERGENCY</a> : a <a class="el" href="#aa51313be2faacb739a18fdeecefbac75ad0180e0382824e561c72f20f08838420">STATE_EMERGENCY</a> (si no lo estaba).</li>
+<li><a class="el" href="#aeb5a7529a34b855a5dcc68a6acc1203ca901a803cd622114cffc6ee59403a5c86">ACTION_TO_CONST_RUNNING</a> : en VEL_CHANGE → <a class="el" href="#aa51313be2faacb739a18fdeecefbac75addfe11c6d06c4e27bd6efc18cc4862a6">STATE_RUNNING</a>.</li>
+<li>ACTION_SET_FREC/SET_ACEL/SET_DESACEL/SET_DIR : validan rango/estado y pueden dejar el estado o forzar <a class="el" href="#aa51313be2faacb739a18fdeecefbac75a7d453a874f8a1e41a71fa02601836216">STATE_VEL_CHANGE</a> (según retorno de <span class="tt">GestorSVM_*</span>).</li>
+</ul>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">sysAct</td><td>Acción solicitada (<a class="el" href="#aeb5a7529a34b855a5dcc68a6acc1203c">SystemAction</a>). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>Parámetro asociado a la acción (p.ej., frecuencia, acel./desacel., dirección).</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd><a class="el" href="#a699c67ad6d206290cab4c395cd7d7be7" title="Códigos de respuesta del gestor de estados ante una acción recibida.">SystemActionResponse</a><ul>
+<li><a class="el" href="#a699c67ad6d206290cab4c395cd7d7be7a090da72512b04323631bc989b7ad9e9d">ACTION_RESP_OK</a> : La acción fue válida y se ejecutó (posible cambio de estado).</li>
+<li><a class="el" href="#a699c67ad6d206290cab4c395cd7d7be7a3197eec44f9da238da4e390c38ae7187">ACTION_RESP_ERR</a> : Secuencia inválida para el estado actual o fallo de configuración.</li>
+<li><a class="el" href="#a699c67ad6d206290cab4c395cd7d7be7a7621bc4555e78cd6e80c74bafa7a0283">ACTION_RESP_MOVING</a> : Rechazo/indicación de que el motor está en movimiento.</li>
+<li><a class="el" href="#a699c67ad6d206290cab4c395cd7d7be7a81d02313245d29c06a707add990806c6">ACTION_RESP_NOT_MOVING</a> : Rechazo/indicación de que el motor está detenido.</li>
+<li><a class="el" href="#a699c67ad6d206290cab4c395cd7d7be7a55cf7ca3043c85a37a46adae995b6a0b">ACTION_RESP_OUT_RANGE</a> : Parámetro <code class="param">value</code> fuera de límites admitidos.</li>
+<li>ACTION_RESP_EMERGENCY_ACTIVE: Acción no permitida bajo <a class="el" href="#aa51313be2faacb739a18fdeecefbac75ad0180e0382824e561c72f20f08838420">STATE_EMERGENCY</a>.</li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Nota</dt><dd>Las acciones de lectura (<a class="el" href="#aeb5a7529a34b855a5dcc68a6acc1203cac584cfe909986a1a00be92cb2870d63f">ACTION_GET_FREC</a>, <a class="el" href="#aeb5a7529a34b855a5dcc68a6acc1203ca936b4853f8101ae792185c02c4216be0">ACTION_GET_ACEL</a>, <a class="el" href="#aeb5a7529a34b855a5dcc68a6acc1203ca829629e8fda976af81ad64cd9b3f2171">ACTION_GET_DESACEL</a>, <a class="el" href="#aeb5a7529a34b855a5dcc68a6acc1203ca6cf84c7c734fe0fc8d2d79535f1c6374">ACTION_GET_DIR</a>) no cambian de estado en este switch. </dd></dl>
+<dl class="section warning"><dt>Atención</dt><dd>Verificar que cada <span class="tt">case</span> finalice con <span class="tt">break</span> (en el código provisto faltaba <span class="tt">break</span> tras <a class="el" href="#aeb5a7529a34b855a5dcc68a6acc1203cae2752030c8dc2221fdfb8353ef2d7a8a">ACTION_EMERGENCY</a> para evitar fall-through). </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Tareas pendientes</a></b></dt><dd>: Aca tengo que poner un timer para que calcule el tiempo aprox de frenado. </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000002">Tareas pendientes</a></b></dt><dd>: Revisar si es necesario chequear esto ¿Por qué no ejecutamos el stop sin importar el estado? </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_gestor_estados_8c_source.html#l00012">12</a> del archivo <a class="el" href="_gestor_estados_8c_source.html">GestorEstados.c</a>.</p>
+<div class="dynheader">
+Gráfico de llamadas de esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="_gestor_estados_8h_a44b3bf408355270c64323425c66e7719_cgraph.png" border="0" usemap="#a_gestor_estados_8h_a44b3bf408355270c64323425c66e7719_cgraph" loading="lazy" alt=""/></div>
+</div>
+<div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="_gestor_estados_8h_a44b3bf408355270c64323425c66e7719_icgraph.png" border="0" usemap="#a_gestor_estados_8h_a44b3bf408355270c64323425c66e7719_icgraph" loading="lazy" alt=""/></div>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_f2541a3b18981391fa76fac5599e978a.html">Modules</a></li><li class="navelem"><a href="dir_7636318dd8b05b9ed7a45417b4e50414.html">Gestor_Estados</a></li><li class="navelem"><a href="_gestor_estados_8h.html">GestorEstados.h</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

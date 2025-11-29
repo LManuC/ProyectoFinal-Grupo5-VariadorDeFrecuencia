@@ -1,0 +1,253 @@
+\doxysection{Referencia del archivo C\+:/\+Users/\+User/\+Desktop/\+Proyecto\+Final-\/\+Grupo5-\/\+Variador\+De\+Frecuencia/\+Software/\+Firmware stm32/\+Modules/\+SPI\+\_\+\+Interfase/\+SPIModule.h}
+\hypertarget{_s_p_i_module_8h}{}\label{_s_p_i_module_8h}\index{C:/Users/User/Desktop/ProyectoFinal-\/Grupo5-\/VariadorDeFrecuencia/Software/Firmware stm32/Modules/SPI\_Interfase/SPIModule.h@{C:/Users/User/Desktop/ProyectoFinal-\/Grupo5-\/VariadorDeFrecuencia/Software/Firmware stm32/Modules/SPI\_Interfase/SPIModule.h}}
+
+
+Interfaz del módulo SPI (esclavo) con DMA.  
+
+
+Gráfico de los archivos que directa o indirectamente incluyen a este archivo\+:
+% FIG 0
+\doxysubsubsection*{Enumeraciones}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_s_p_i_module_8h_abcc4e317bdfcd5f571d62f7ed92facc5}{SPI\+\_\+\+Request}} \{ \newline
+\mbox{\hyperlink{_s_p_i_module_8h_abcc4e317bdfcd5f571d62f7ed92facc5afb08ac5078702d238e336a813719e9ac}{SPI\+\_\+\+REQUEST\+\_\+\+START}} = 10
+, \mbox{\hyperlink{_s_p_i_module_8h_abcc4e317bdfcd5f571d62f7ed92facc5a4baff6e3f2b188e4176a5a462f9c89d5}{SPI\+\_\+\+REQUEST\+\_\+\+STOP}}
+, \mbox{\hyperlink{_s_p_i_module_8h_abcc4e317bdfcd5f571d62f7ed92facc5a7161c8e8f4f677d8f5537560bdb7f70e}{SPI\+\_\+\+REQUEST\+\_\+\+SET\+\_\+\+FREC}}
+, \mbox{\hyperlink{_s_p_i_module_8h_abcc4e317bdfcd5f571d62f7ed92facc5afefeeb17807a057814da8ca09c8a9179}{SPI\+\_\+\+REQUEST\+\_\+\+SET\+\_\+\+ACEL}}
+, \newline
+\mbox{\hyperlink{_s_p_i_module_8h_abcc4e317bdfcd5f571d62f7ed92facc5af17d7382d3bc959eb5de0c79bb5b740e}{SPI\+\_\+\+REQUEST\+\_\+\+SET\+\_\+\+DESACEL}}
+, \mbox{\hyperlink{_s_p_i_module_8h_abcc4e317bdfcd5f571d62f7ed92facc5aa37aff4a7f01b47a80578af9f81f077f}{SPI\+\_\+\+REQUEST\+\_\+\+SET\+\_\+\+DIR}}
+, \mbox{\hyperlink{_s_p_i_module_8h_abcc4e317bdfcd5f571d62f7ed92facc5a2885786ad2c90e237e562f56737d5a51}{SPI\+\_\+\+REQUEST\+\_\+\+GET\+\_\+\+FREC}}
+, \mbox{\hyperlink{_s_p_i_module_8h_abcc4e317bdfcd5f571d62f7ed92facc5a360ce739c6acb058bfeb3fa04f5ea4ea}{SPI\+\_\+\+REQUEST\+\_\+\+GET\+\_\+\+ACEL}}
+, \newline
+\mbox{\hyperlink{_s_p_i_module_8h_abcc4e317bdfcd5f571d62f7ed92facc5a25999f55d934be143ea601d3967ab5a3}{SPI\+\_\+\+REQUEST\+\_\+\+GET\+\_\+\+DESACEL}}
+, \mbox{\hyperlink{_s_p_i_module_8h_abcc4e317bdfcd5f571d62f7ed92facc5a928c0d0c241acbd8dda3e853931a1d5d}{SPI\+\_\+\+REQUEST\+\_\+\+GET\+\_\+\+DIR}}
+, \mbox{\hyperlink{_s_p_i_module_8h_abcc4e317bdfcd5f571d62f7ed92facc5a3b1235b2b1f4a2b76d6c9986e04d2c90}{SPI\+\_\+\+REQUEST\+\_\+\+IS\+\_\+\+STOP}}
+, \mbox{\hyperlink{_s_p_i_module_8h_abcc4e317bdfcd5f571d62f7ed92facc5a3e1e4b098113ed293e6cc38961d15105}{SPI\+\_\+\+REQUEST\+\_\+\+EMERGENCY}}
+, \newline
+\mbox{\hyperlink{_s_p_i_module_8h_abcc4e317bdfcd5f571d62f7ed92facc5ad00e47a3fa1e44b0879a19b021b4c8d8}{SPI\+\_\+\+REQUEST\+\_\+\+RESPONSE}} = 0x50
+ \}
+\begin{DoxyCompactList}\small\item\em Comandos aceptados por el esclavo a través de SPI. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{_s_p_i_module_8h_acdb815a404f9450379dae79745e5ccd9}{SPI\+\_\+\+Response}} \{ \newline
+\mbox{\hyperlink{_s_p_i_module_8h_acdb815a404f9450379dae79745e5ccd9a354b001329a9015ee8fa4d11fe98e1fb}{SPI\+\_\+\+RESPONSE\+\_\+\+OK}} = 0x\+FF
+, \mbox{\hyperlink{_s_p_i_module_8h_acdb815a404f9450379dae79745e5ccd9a5a270a88abe106fde26e3725dc54115e}{SPI\+\_\+\+RESPONSE\+\_\+\+ERR}} = 0x\+A0
+, \mbox{\hyperlink{_s_p_i_module_8h_acdb815a404f9450379dae79745e5ccd9a732ecbbd42a5e8809536040964c86427}{SPI\+\_\+\+RESPONSE\+\_\+\+ERR\+\_\+\+CMD\+\_\+\+UNKNOWN}}
+, \mbox{\hyperlink{_s_p_i_module_8h_acdb815a404f9450379dae79745e5ccd9aee0c8330799c2bab5168eb65d1c9f4ca}{SPI\+\_\+\+RESPONSE\+\_\+\+ERR\+\_\+\+NO\+\_\+\+COMMAND}}
+, \newline
+\mbox{\hyperlink{_s_p_i_module_8h_acdb815a404f9450379dae79745e5ccd9a67277b7287dabc065ea3585cc2e6630a}{SPI\+\_\+\+RESPONSE\+\_\+\+ERR\+\_\+\+MOVING}}
+, \mbox{\hyperlink{_s_p_i_module_8h_acdb815a404f9450379dae79745e5ccd9af85830305f68c29305f43e85ca1fcd2a}{SPI\+\_\+\+RESPONSE\+\_\+\+ERR\+\_\+\+NOT\+\_\+\+MOVING}}
+, \mbox{\hyperlink{_s_p_i_module_8h_acdb815a404f9450379dae79745e5ccd9aa007b919a29275b8c8b7ac19d74a1efd}{SPI\+\_\+\+RESPONSE\+\_\+\+ERR\+\_\+\+DATA\+\_\+\+MISSING}}
+, \mbox{\hyperlink{_s_p_i_module_8h_acdb815a404f9450379dae79745e5ccd9a61474fe74a6c8ad2ee1ab7fd1c572dbb}{SPI\+\_\+\+RESPONSE\+\_\+\+ERR\+\_\+\+DATA\+\_\+\+INVALID}}
+, \newline
+\mbox{\hyperlink{_s_p_i_module_8h_acdb815a404f9450379dae79745e5ccd9aa69c0c081c3ae5a2ca82d94c06f112dd}{SPI\+\_\+\+RESPONSE\+\_\+\+ERR\+\_\+\+DATA\+\_\+\+OUT\+\_\+\+RANGE}}
+, \mbox{\hyperlink{_s_p_i_module_8h_acdb815a404f9450379dae79745e5ccd9a5fcca67df8ed1da7989bf8d4b1b0b660}{SPI\+\_\+\+RESPONSE\+\_\+\+ERR\+\_\+\+EMERGENCY\+\_\+\+ACTIVE}}
+, \mbox{\hyperlink{_s_p_i_module_8h_acdb815a404f9450379dae79745e5ccd9a01bcb9047a91810276a454f78921a53a}{SPI\+\_\+\+LAST\+\_\+\+VALUE}}
+ \}
+\begin{DoxyCompactList}\small\item\em Códigos de respuesta emitidos por el esclavo STM32. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_s_p_i_module_8h_ac791e9e443274155f67bd950c331574d}{SPI\+\_\+\+Init}} (void \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{_s_p_i_module_8c_ab03af3f014d42c6b2418347d63fc532e}{hspi}})
+\begin{DoxyCompactList}\small\item\em Inicializa el módulo SPI esclavo con DMA y deja activa la primera transacción. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Interfaz del módulo SPI (esclavo) con DMA. 
+
+El maestro (ESP32) envía solicitudes \doxylink{_s_p_i_module_8h_abcc4e317bdfcd5f571d62f7ed92facc5}{SPI\+\_\+\+Request} y el STM32 responde con un código \doxylink{_s_p_i_module_8h_acdb815a404f9450379dae79745e5ccd9}{SPI\+\_\+\+Response} en la {\bfseries{siguiente}} transacción DMA. ~\newline
+ Este módulo actúa como capa de transporte sobre la lógica de estados implementada en \doxylink{_gestor_estados_8c_a44b3bf408355270c64323425c66e7719}{Gestor\+Estados\+\_\+\+Action} (ver \doxylink{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203c}{System\+Action} y \doxylink{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75}{System\+State}).
+
+{\bfseries{Formato típico de tramas}}
+\begin{DoxyItemize}
+\item {\bfseries{Master → Slave}}\+: {\ttfamily CMD \mbox{[}DATOS...\mbox{]} \textquotesingle{};\textquotesingle{}} (ver \doxylink{_s_p_i_module_8h_abcc4e317bdfcd5f571d62f7ed92facc5}{SPI\+\_\+\+Request})
+\item {\bfseries{Slave → Master}}\+: {\ttfamily RESP \mbox{[}\textquotesingle{};\textquotesingle{}\mbox{]} \mbox{[}opcional\+: datos\mbox{]}} (ver \doxylink{_s_p_i_module_8h_acdb815a404f9450379dae79745e5ccd9}{SPI\+\_\+\+Response})
+\end{DoxyItemize}
+
+\begin{DoxySeeAlso}{Ver también}
+\doxylink{_gestor_estados_8c_a44b3bf408355270c64323425c66e7719}{Gestor\+Estados\+\_\+\+Action} 
+
+\doxylink{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203c}{System\+Action} 
+
+\doxylink{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75}{System\+State} 
+
+\doxylink{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7}{System\+Action\+Response} 
+\end{DoxySeeAlso}
+
+
+Definición en el archivo \mbox{\hyperlink{_s_p_i_module_8h_source}{SPIModule.\+h}}.
+
+
+
+\label{doc-enum-members}
+\Hypertarget{_s_p_i_module_8h_doc-enum-members}
+\doxysubsection{Documentación de enumeraciones}
+\Hypertarget{_s_p_i_module_8h_abcc4e317bdfcd5f571d62f7ed92facc5}\index{SPIModule.h@{SPIModule.h}!SPI\_Request@{SPI\_Request}}
+\index{SPI\_Request@{SPI\_Request}!SPIModule.h@{SPIModule.h}}
+\doxysubsubsection{\texorpdfstring{SPI\_Request}{SPI\_Request}}
+{\footnotesize\ttfamily \label{_s_p_i_module_8h_abcc4e317bdfcd5f571d62f7ed92facc5} 
+enum \mbox{\hyperlink{_s_p_i_module_8h_abcc4e317bdfcd5f571d62f7ed92facc5}{SPI\+\_\+\+Request}}}
+
+
+
+Comandos aceptados por el esclavo a través de SPI. 
+
+Cada entrada se mapea a una acción de \doxylink{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203c}{System\+Action} procesada por \doxylink{_gestor_estados_8c_a44b3bf408355270c64323425c66e7719}{Gestor\+Estados\+\_\+\+Action}. Los comandos \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\+SET\+\_\+\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} llevan datos; \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\+GET\+\_\+\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} devuelven valores. \begin{DoxyEnumFields}[2]{Valores de enumeraciones}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPI\_REQUEST\_START@{SPI\_REQUEST\_START}!SPIModule.h@{SPIModule.h}}\index{SPIModule.h@{SPIModule.h}!SPI\_REQUEST\_START@{SPI\_REQUEST\_START}}}\Hypertarget{_s_p_i_module_8h_abcc4e317bdfcd5f571d62f7ed92facc5afb08ac5078702d238e336a813719e9ac}\label{_s_p_i_module_8h_abcc4e317bdfcd5f571d62f7ed92facc5afb08ac5078702d238e336a813719e9ac} 
+SPI\+\_\+\+REQUEST\+\_\+\+START&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPI\_REQUEST\_STOP@{SPI\_REQUEST\_STOP}!SPIModule.h@{SPIModule.h}}\index{SPIModule.h@{SPIModule.h}!SPI\_REQUEST\_STOP@{SPI\_REQUEST\_STOP}}}\Hypertarget{_s_p_i_module_8h_abcc4e317bdfcd5f571d62f7ed92facc5a4baff6e3f2b188e4176a5a462f9c89d5}\label{_s_p_i_module_8h_abcc4e317bdfcd5f571d62f7ed92facc5a4baff6e3f2b188e4176a5a462f9c89d5} 
+SPI\+\_\+\+REQUEST\+\_\+\+STOP&Solicita arranque → equivale a \doxylink{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203cad18d9bd6c0a4eced8d31c7b1c6b9dd16}{ACTION\+\_\+\+START}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPI\_REQUEST\_SET\_FREC@{SPI\_REQUEST\_SET\_FREC}!SPIModule.h@{SPIModule.h}}\index{SPIModule.h@{SPIModule.h}!SPI\_REQUEST\_SET\_FREC@{SPI\_REQUEST\_SET\_FREC}}}\Hypertarget{_s_p_i_module_8h_abcc4e317bdfcd5f571d62f7ed92facc5a7161c8e8f4f677d8f5537560bdb7f70e}\label{_s_p_i_module_8h_abcc4e317bdfcd5f571d62f7ed92facc5a7161c8e8f4f677d8f5537560bdb7f70e} 
+SPI\+\_\+\+REQUEST\+\_\+\+SET\+\_\+\+FREC&Solicita parada → equivale a \doxylink{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203ca4645d70cb9bb2228f230d601f477639d}{ACTION\+\_\+\+STOP}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPI\_REQUEST\_SET\_ACEL@{SPI\_REQUEST\_SET\_ACEL}!SPIModule.h@{SPIModule.h}}\index{SPIModule.h@{SPIModule.h}!SPI\_REQUEST\_SET\_ACEL@{SPI\_REQUEST\_SET\_ACEL}}}\Hypertarget{_s_p_i_module_8h_abcc4e317bdfcd5f571d62f7ed92facc5afefeeb17807a057814da8ca09c8a9179}\label{_s_p_i_module_8h_abcc4e317bdfcd5f571d62f7ed92facc5afefeeb17807a057814da8ca09c8a9179} 
+SPI\+\_\+\+REQUEST\+\_\+\+SET\+\_\+\+ACEL&Setea frecuencia de régimen → \doxylink{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203ca02091b145bd0a41e238ffdae1167c912}{ACTION\+\_\+\+SET\+\_\+\+FREC} (requiere datos). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPI\_REQUEST\_SET\_DESACEL@{SPI\_REQUEST\_SET\_DESACEL}!SPIModule.h@{SPIModule.h}}\index{SPIModule.h@{SPIModule.h}!SPI\_REQUEST\_SET\_DESACEL@{SPI\_REQUEST\_SET\_DESACEL}}}\Hypertarget{_s_p_i_module_8h_abcc4e317bdfcd5f571d62f7ed92facc5af17d7382d3bc959eb5de0c79bb5b740e}\label{_s_p_i_module_8h_abcc4e317bdfcd5f571d62f7ed92facc5af17d7382d3bc959eb5de0c79bb5b740e} 
+SPI\+\_\+\+REQUEST\+\_\+\+SET\+\_\+\+DESACEL&Setea aceleración → \doxylink{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203ca7c202795a9f438cd5ffd71fa4992cb05}{ACTION\+\_\+\+SET\+\_\+\+ACEL} (requiere datos). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPI\_REQUEST\_SET\_DIR@{SPI\_REQUEST\_SET\_DIR}!SPIModule.h@{SPIModule.h}}\index{SPIModule.h@{SPIModule.h}!SPI\_REQUEST\_SET\_DIR@{SPI\_REQUEST\_SET\_DIR}}}\Hypertarget{_s_p_i_module_8h_abcc4e317bdfcd5f571d62f7ed92facc5aa37aff4a7f01b47a80578af9f81f077f}\label{_s_p_i_module_8h_abcc4e317bdfcd5f571d62f7ed92facc5aa37aff4a7f01b47a80578af9f81f077f} 
+SPI\+\_\+\+REQUEST\+\_\+\+SET\+\_\+\+DIR&Setea desaceleración → \doxylink{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203cadd57362c8b9ec1984dd5f0468974a768}{ACTION\+\_\+\+SET\+\_\+\+DESACEL} (requiere datos). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPI\_REQUEST\_GET\_FREC@{SPI\_REQUEST\_GET\_FREC}!SPIModule.h@{SPIModule.h}}\index{SPIModule.h@{SPIModule.h}!SPI\_REQUEST\_GET\_FREC@{SPI\_REQUEST\_GET\_FREC}}}\Hypertarget{_s_p_i_module_8h_abcc4e317bdfcd5f571d62f7ed92facc5a2885786ad2c90e237e562f56737d5a51}\label{_s_p_i_module_8h_abcc4e317bdfcd5f571d62f7ed92facc5a2885786ad2c90e237e562f56737d5a51} 
+SPI\+\_\+\+REQUEST\+\_\+\+GET\+\_\+\+FREC&Setea dirección de giro → \doxylink{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203caef517ff4b1c364633231742027d859de}{ACTION\+\_\+\+SET\+\_\+\+DIR} (requiere datos). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPI\_REQUEST\_GET\_ACEL@{SPI\_REQUEST\_GET\_ACEL}!SPIModule.h@{SPIModule.h}}\index{SPIModule.h@{SPIModule.h}!SPI\_REQUEST\_GET\_ACEL@{SPI\_REQUEST\_GET\_ACEL}}}\Hypertarget{_s_p_i_module_8h_abcc4e317bdfcd5f571d62f7ed92facc5a360ce739c6acb058bfeb3fa04f5ea4ea}\label{_s_p_i_module_8h_abcc4e317bdfcd5f571d62f7ed92facc5a360ce739c6acb058bfeb3fa04f5ea4ea} 
+SPI\+\_\+\+REQUEST\+\_\+\+GET\+\_\+\+ACEL&Consulta frecuencia actual → lectura sin cambio de \doxylink{_gestor_estados_8h_aa51313be2faacb739a18fdeecefbac75}{System\+State}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPI\_REQUEST\_GET\_DESACEL@{SPI\_REQUEST\_GET\_DESACEL}!SPIModule.h@{SPIModule.h}}\index{SPIModule.h@{SPIModule.h}!SPI\_REQUEST\_GET\_DESACEL@{SPI\_REQUEST\_GET\_DESACEL}}}\Hypertarget{_s_p_i_module_8h_abcc4e317bdfcd5f571d62f7ed92facc5a25999f55d934be143ea601d3967ab5a3}\label{_s_p_i_module_8h_abcc4e317bdfcd5f571d62f7ed92facc5a25999f55d934be143ea601d3967ab5a3} 
+SPI\+\_\+\+REQUEST\+\_\+\+GET\+\_\+\+DESACEL&Consulta aceleración actual. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPI\_REQUEST\_GET\_DIR@{SPI\_REQUEST\_GET\_DIR}!SPIModule.h@{SPIModule.h}}\index{SPIModule.h@{SPIModule.h}!SPI\_REQUEST\_GET\_DIR@{SPI\_REQUEST\_GET\_DIR}}}\Hypertarget{_s_p_i_module_8h_abcc4e317bdfcd5f571d62f7ed92facc5a928c0d0c241acbd8dda3e853931a1d5d}\label{_s_p_i_module_8h_abcc4e317bdfcd5f571d62f7ed92facc5a928c0d0c241acbd8dda3e853931a1d5d} 
+SPI\+\_\+\+REQUEST\+\_\+\+GET\+\_\+\+DIR&Consulta desaceleración actual. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPI\_REQUEST\_IS\_STOP@{SPI\_REQUEST\_IS\_STOP}!SPIModule.h@{SPIModule.h}}\index{SPIModule.h@{SPIModule.h}!SPI\_REQUEST\_IS\_STOP@{SPI\_REQUEST\_IS\_STOP}}}\Hypertarget{_s_p_i_module_8h_abcc4e317bdfcd5f571d62f7ed92facc5a3b1235b2b1f4a2b76d6c9986e04d2c90}\label{_s_p_i_module_8h_abcc4e317bdfcd5f571d62f7ed92facc5a3b1235b2b1f4a2b76d6c9986e04d2c90} 
+SPI\+\_\+\+REQUEST\+\_\+\+IS\+\_\+\+STOP&Consulta dirección actual. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPI\_REQUEST\_EMERGENCY@{SPI\_REQUEST\_EMERGENCY}!SPIModule.h@{SPIModule.h}}\index{SPIModule.h@{SPIModule.h}!SPI\_REQUEST\_EMERGENCY@{SPI\_REQUEST\_EMERGENCY}}}\Hypertarget{_s_p_i_module_8h_abcc4e317bdfcd5f571d62f7ed92facc5a3e1e4b098113ed293e6cc38961d15105}\label{_s_p_i_module_8h_abcc4e317bdfcd5f571d62f7ed92facc5a3e1e4b098113ed293e6cc38961d15105} 
+SPI\+\_\+\+REQUEST\+\_\+\+EMERGENCY&Consulta si el motor está detenido → usa \doxylink{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203cada94a1283a5879499cddac1556f56b5e}{ACTION\+\_\+\+IS\+\_\+\+MOTOR\+\_\+\+STOP}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPI\_REQUEST\_RESPONSE@{SPI\_REQUEST\_RESPONSE}!SPIModule.h@{SPIModule.h}}\index{SPIModule.h@{SPIModule.h}!SPI\_REQUEST\_RESPONSE@{SPI\_REQUEST\_RESPONSE}}}\Hypertarget{_s_p_i_module_8h_abcc4e317bdfcd5f571d62f7ed92facc5ad00e47a3fa1e44b0879a19b021b4c8d8}\label{_s_p_i_module_8h_abcc4e317bdfcd5f571d62f7ed92facc5ad00e47a3fa1e44b0879a19b021b4c8d8} 
+SPI\+\_\+\+REQUEST\+\_\+\+RESPONSE&Fuerza emergencia → \doxylink{_gestor_estados_8h_aeb5a7529a34b855a5dcc68a6acc1203cae2752030c8dc2221fdfb8353ef2d7a8a}{ACTION\+\_\+\+EMERGENCY}. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definición en la línea \mbox{\hyperlink{_s_p_i_module_8h_source_l00030}{30}} del archivo \mbox{\hyperlink{_s_p_i_module_8h_source}{SPIModule.\+h}}.
+
+\Hypertarget{_s_p_i_module_8h_acdb815a404f9450379dae79745e5ccd9}\index{SPIModule.h@{SPIModule.h}!SPI\_Response@{SPI\_Response}}
+\index{SPI\_Response@{SPI\_Response}!SPIModule.h@{SPIModule.h}}
+\doxysubsubsection{\texorpdfstring{SPI\_Response}{SPI\_Response}}
+{\footnotesize\ttfamily \label{_s_p_i_module_8h_acdb815a404f9450379dae79745e5ccd9} 
+enum \mbox{\hyperlink{_s_p_i_module_8h_acdb815a404f9450379dae79745e5ccd9}{SPI\+\_\+\+Response}}}
+
+
+
+Códigos de respuesta emitidos por el esclavo STM32. 
+
+Conceptualmente mapean los resultados de \doxylink{_gestor_estados_8c_a44b3bf408355270c64323425c66e7719}{Gestor\+Estados\+\_\+\+Action} (ver \doxylink{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7}{System\+Action\+Response}) hacia el enlace SPI. En comandos \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\+GET\+\_\+\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} pueden incluir bytes de datos adicionales. \begin{DoxyEnumFields}[2]{Valores de enumeraciones}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPI\_RESPONSE\_OK@{SPI\_RESPONSE\_OK}!SPIModule.h@{SPIModule.h}}\index{SPIModule.h@{SPIModule.h}!SPI\_RESPONSE\_OK@{SPI\_RESPONSE\_OK}}}\Hypertarget{_s_p_i_module_8h_acdb815a404f9450379dae79745e5ccd9a354b001329a9015ee8fa4d11fe98e1fb}\label{_s_p_i_module_8h_acdb815a404f9450379dae79745e5ccd9a354b001329a9015ee8fa4d11fe98e1fb} 
+SPI\+\_\+\+RESPONSE\+\_\+\+OK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPI\_RESPONSE\_ERR@{SPI\_RESPONSE\_ERR}!SPIModule.h@{SPIModule.h}}\index{SPIModule.h@{SPIModule.h}!SPI\_RESPONSE\_ERR@{SPI\_RESPONSE\_ERR}}}\Hypertarget{_s_p_i_module_8h_acdb815a404f9450379dae79745e5ccd9a5a270a88abe106fde26e3725dc54115e}\label{_s_p_i_module_8h_acdb815a404f9450379dae79745e5ccd9a5a270a88abe106fde26e3725dc54115e} 
+SPI\+\_\+\+RESPONSE\+\_\+\+ERR&Operación válida/exitosa → similar a \doxylink{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7a090da72512b04323631bc989b7ad9e9d}{ACTION\+\_\+\+RESP\+\_\+\+OK}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPI\_RESPONSE\_ERR\_CMD\_UNKNOWN@{SPI\_RESPONSE\_ERR\_CMD\_UNKNOWN}!SPIModule.h@{SPIModule.h}}\index{SPIModule.h@{SPIModule.h}!SPI\_RESPONSE\_ERR\_CMD\_UNKNOWN@{SPI\_RESPONSE\_ERR\_CMD\_UNKNOWN}}}\Hypertarget{_s_p_i_module_8h_acdb815a404f9450379dae79745e5ccd9a732ecbbd42a5e8809536040964c86427}\label{_s_p_i_module_8h_acdb815a404f9450379dae79745e5ccd9a732ecbbd42a5e8809536040964c86427} 
+SPI\+\_\+\+RESPONSE\+\_\+\+ERR\+\_\+\+CMD\+\_\+\+UNKNOWN&Error genérico → similar a \doxylink{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7a3197eec44f9da238da4e390c38ae7187}{ACTION\+\_\+\+RESP\+\_\+\+ERR}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPI\_RESPONSE\_ERR\_NO\_COMMAND@{SPI\_RESPONSE\_ERR\_NO\_COMMAND}!SPIModule.h@{SPIModule.h}}\index{SPIModule.h@{SPIModule.h}!SPI\_RESPONSE\_ERR\_NO\_COMMAND@{SPI\_RESPONSE\_ERR\_NO\_COMMAND}}}\Hypertarget{_s_p_i_module_8h_acdb815a404f9450379dae79745e5ccd9aee0c8330799c2bab5168eb65d1c9f4ca}\label{_s_p_i_module_8h_acdb815a404f9450379dae79745e5ccd9aee0c8330799c2bab5168eb65d1c9f4ca} 
+SPI\+\_\+\+RESPONSE\+\_\+\+ERR\+\_\+\+NO\+\_\+\+COMMAND&Comando desconocido (no mapea a acción válida). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPI\_RESPONSE\_ERR\_MOVING@{SPI\_RESPONSE\_ERR\_MOVING}!SPIModule.h@{SPIModule.h}}\index{SPIModule.h@{SPIModule.h}!SPI\_RESPONSE\_ERR\_MOVING@{SPI\_RESPONSE\_ERR\_MOVING}}}\Hypertarget{_s_p_i_module_8h_acdb815a404f9450379dae79745e5ccd9a67277b7287dabc065ea3585cc2e6630a}\label{_s_p_i_module_8h_acdb815a404f9450379dae79745e5ccd9a67277b7287dabc065ea3585cc2e6630a} 
+SPI\+\_\+\+RESPONSE\+\_\+\+ERR\+\_\+\+MOVING&Trama sin comando o sin \textquotesingle{};\textquotesingle{}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPI\_RESPONSE\_ERR\_NOT\_MOVING@{SPI\_RESPONSE\_ERR\_NOT\_MOVING}!SPIModule.h@{SPIModule.h}}\index{SPIModule.h@{SPIModule.h}!SPI\_RESPONSE\_ERR\_NOT\_MOVING@{SPI\_RESPONSE\_ERR\_NOT\_MOVING}}}\Hypertarget{_s_p_i_module_8h_acdb815a404f9450379dae79745e5ccd9af85830305f68c29305f43e85ca1fcd2a}\label{_s_p_i_module_8h_acdb815a404f9450379dae79745e5ccd9af85830305f68c29305f43e85ca1fcd2a} 
+SPI\+\_\+\+RESPONSE\+\_\+\+ERR\+\_\+\+NOT\+\_\+\+MOVING&Incompatible por movimiento → similar a \doxylink{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7a7621bc4555e78cd6e80c74bafa7a0283}{ACTION\+\_\+\+RESP\+\_\+\+MOVING}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPI\_RESPONSE\_ERR\_DATA\_MISSING@{SPI\_RESPONSE\_ERR\_DATA\_MISSING}!SPIModule.h@{SPIModule.h}}\index{SPIModule.h@{SPIModule.h}!SPI\_RESPONSE\_ERR\_DATA\_MISSING@{SPI\_RESPONSE\_ERR\_DATA\_MISSING}}}\Hypertarget{_s_p_i_module_8h_acdb815a404f9450379dae79745e5ccd9aa007b919a29275b8c8b7ac19d74a1efd}\label{_s_p_i_module_8h_acdb815a404f9450379dae79745e5ccd9aa007b919a29275b8c8b7ac19d74a1efd} 
+SPI\+\_\+\+RESPONSE\+\_\+\+ERR\+\_\+\+DATA\+\_\+\+MISSING&Incompatible por estar detenido → similar a \doxylink{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7a81d02313245d29c06a707add990806c6}{ACTION\+\_\+\+RESP\+\_\+\+NOT\+\_\+\+MOVING}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPI\_RESPONSE\_ERR\_DATA\_INVALID@{SPI\_RESPONSE\_ERR\_DATA\_INVALID}!SPIModule.h@{SPIModule.h}}\index{SPIModule.h@{SPIModule.h}!SPI\_RESPONSE\_ERR\_DATA\_INVALID@{SPI\_RESPONSE\_ERR\_DATA\_INVALID}}}\Hypertarget{_s_p_i_module_8h_acdb815a404f9450379dae79745e5ccd9a61474fe74a6c8ad2ee1ab7fd1c572dbb}\label{_s_p_i_module_8h_acdb815a404f9450379dae79745e5ccd9a61474fe74a6c8ad2ee1ab7fd1c572dbb} 
+SPI\+\_\+\+RESPONSE\+\_\+\+ERR\+\_\+\+DATA\+\_\+\+INVALID&Faltan datos en un comando que los requiere. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPI\_RESPONSE\_ERR\_DATA\_OUT\_RANGE@{SPI\_RESPONSE\_ERR\_DATA\_OUT\_RANGE}!SPIModule.h@{SPIModule.h}}\index{SPIModule.h@{SPIModule.h}!SPI\_RESPONSE\_ERR\_DATA\_OUT\_RANGE@{SPI\_RESPONSE\_ERR\_DATA\_OUT\_RANGE}}}\Hypertarget{_s_p_i_module_8h_acdb815a404f9450379dae79745e5ccd9aa69c0c081c3ae5a2ca82d94c06f112dd}\label{_s_p_i_module_8h_acdb815a404f9450379dae79745e5ccd9aa69c0c081c3ae5a2ca82d94c06f112dd} 
+SPI\+\_\+\+RESPONSE\+\_\+\+ERR\+\_\+\+DATA\+\_\+\+OUT\+\_\+\+RANGE&Datos inválidos. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPI\_RESPONSE\_ERR\_EMERGENCY\_ACTIVE@{SPI\_RESPONSE\_ERR\_EMERGENCY\_ACTIVE}!SPIModule.h@{SPIModule.h}}\index{SPIModule.h@{SPIModule.h}!SPI\_RESPONSE\_ERR\_EMERGENCY\_ACTIVE@{SPI\_RESPONSE\_ERR\_EMERGENCY\_ACTIVE}}}\Hypertarget{_s_p_i_module_8h_acdb815a404f9450379dae79745e5ccd9a5fcca67df8ed1da7989bf8d4b1b0b660}\label{_s_p_i_module_8h_acdb815a404f9450379dae79745e5ccd9a5fcca67df8ed1da7989bf8d4b1b0b660} 
+SPI\+\_\+\+RESPONSE\+\_\+\+ERR\+\_\+\+EMERGENCY\+\_\+\+ACTIVE&Datos fuera de rango → similar a \doxylink{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7a55cf7ca3043c85a37a46adae995b6a0b}{ACTION\+\_\+\+RESP\+\_\+\+OUT\+\_\+\+RANGE}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPI\_LAST\_VALUE@{SPI\_LAST\_VALUE}!SPIModule.h@{SPIModule.h}}\index{SPIModule.h@{SPIModule.h}!SPI\_LAST\_VALUE@{SPI\_LAST\_VALUE}}}\Hypertarget{_s_p_i_module_8h_acdb815a404f9450379dae79745e5ccd9a01bcb9047a91810276a454f78921a53a}\label{_s_p_i_module_8h_acdb815a404f9450379dae79745e5ccd9a01bcb9047a91810276a454f78921a53a} 
+SPI\+\_\+\+LAST\+\_\+\+VALUE&No permitido en emergencia → similar a \doxylink{_gestor_estados_8h_a699c67ad6d206290cab4c395cd7d7be7ac9ce3b2802bf37aac433179ff2874a3e}{ACTION\+\_\+\+RESP\+\_\+\+EMERGENCY\+\_\+\+ACTIVE}. Marcador final (no usar como respuesta). \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definición en la línea \mbox{\hyperlink{_s_p_i_module_8h_source_l00053}{53}} del archivo \mbox{\hyperlink{_s_p_i_module_8h_source}{SPIModule.\+h}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{_s_p_i_module_8h_doc-func-members}
+\doxysubsection{Documentación de funciones}
+\Hypertarget{_s_p_i_module_8h_ac791e9e443274155f67bd950c331574d}\index{SPIModule.h@{SPIModule.h}!SPI\_Init@{SPI\_Init}}
+\index{SPI\_Init@{SPI\_Init}!SPIModule.h@{SPIModule.h}}
+\doxysubsubsection{\texorpdfstring{SPI\_Init()}{SPI\_Init()}}
+{\footnotesize\ttfamily \label{_s_p_i_module_8h_ac791e9e443274155f67bd950c331574d} 
+void SPI\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{\+\_\+hspi}{}\end{DoxyParamCaption})}
+
+
+
+Inicializa el módulo SPI esclavo con DMA y deja activa la primera transacción. 
+
+
+\begin{DoxyItemize}
+\item Configura prioridades/enable de IRQ para DMA1 Channel 4/5 (Tx/\+Rx).
+\item Limpia buffers RX/\+TX y precarga una respuesta por defecto ({\ttfamily \doxylink{_s_p_i_module_8h_acdb815a404f9450379dae79745e5ccd9a354b001329a9015ee8fa4d11fe98e1fb}{SPI\+\_\+\+RESPONSE\+\_\+\+OK};}).
+\item Llama a {\ttfamily HAL\+\_\+\+SPI\+\_\+\+Transmit\+Receive\+\_\+\+DMA()} para iniciar el ciclo continuo DMA (el tamaño de paquete es el configurado en el fuente, p.\+ej. {\ttfamily \doxylink{_s_p_i_module_8c_a59d33135764e7772f86c6d0312592d56}{SPI\+\_\+\+TRANSMITION\+\_\+\+SIZE}}).
+\item El parseo y la construcción de \doxylink{_s_p_i_module_8h_acdb815a404f9450379dae79745e5ccd9}{SPI\+\_\+\+Response} se realizan en el callback {\ttfamily \doxylink{_s_p_i_module_8c_a2762f45ff67d3812619ca1b63c255140}{HAL\+\_\+\+SPI\+\_\+\+Tx\+Rx\+Cplt\+Callback}}, invocando \doxylink{_gestor_estados_8c_a44b3bf408355270c64323425c66e7719}{Gestor\+Estados\+\_\+\+Action} según corresponda.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\texttt{in}}  & {\em hspi} & Handler de SPI inicializado por HAL (tipo {\ttfamily SPI\+\_\+\+Handle\+Type\+Def\texorpdfstring{$\ast$}{*}}, p.\+ej. {\ttfamily \&\doxylink{main_8c_ab9da65f935e805137e2eb4e18c5ab224}{hspi2}}).\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{Ver también}
+\doxylink{_gestor_estados_8c_a44b3bf408355270c64323425c66e7719}{Gestor\+Estados\+\_\+\+Action} 
+
+\doxylink{_s_p_i_module_8h_abcc4e317bdfcd5f571d62f7ed92facc5}{SPI\+\_\+\+Request} 
+
+\doxylink{_s_p_i_module_8h_acdb815a404f9450379dae79745e5ccd9}{SPI\+\_\+\+Response} 
+\end{DoxySeeAlso}
+
+
+Definición en la línea \mbox{\hyperlink{_s_p_i_module_8c_source_l00257}{257}} del archivo \mbox{\hyperlink{_s_p_i_module_8c_source}{SPIModule.\+c}}.
+
+Gráfico de llamadas a esta función\+:
+% FIG 1
