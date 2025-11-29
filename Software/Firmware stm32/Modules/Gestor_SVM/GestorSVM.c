@@ -1,103 +1,88 @@
-/*
- * GestorSVM.cpp
+/**
+ * @file GestorSVM.cpp
+ * @brief Implementación del gestor SVM (Space Vector Modulation) para control de puente trifásico con TIM3.
+ * @details
+ *   - TIM3 (center-aligned, ARR≈255) realiza el switching (t1/t2/t3 y RESET) por canales CCR2/CCR3/CCR4 (+ CCR1 como resync).
+ *   - TIM2 (no visible acá) actúa como timer de cálculo (productor) que alimenta un buffer circular que consume TIM3.
+ *   - Se usan parámetros “sombra” para sincronizar cambios de consigna con el lazo de cálculo en interrupciones.
+ * Debido a la lentitud del calculo, este no se puede realizar en el timer de switching, el calculo demora 46us lo que representa una parte importante del ciclo. Por ello es que se involucra un timer de calculo que va a dos veces la frecuencia del de switching e intenta adelantar calculos hasta tres muestras futuras. 
  *
- *  Created on: Apr 4, 2025
- *      Author: Elian
+ * El proceso consumidor, el timer de switching, va a ir leyendo del indice de lectura y reduciendo el la variable numDatos.
+ * El proceso productor, el timer de calculo, va a ir escribiendo en el indice de escritura y aumentando la variable numDatos
+ * Si numDatos llega a 3, el proceso productor se detiene hasta que el consumidor lea algun dato.
  */
 
-// Includes privados
+#include <stdio.h>
 #include "GestorSVM.h"
-
-#include "stm32f103xb.h"			// Para incluir la definicion de GPIOA
+#include "stm32f103xb.h"
 #include "../Inc/main.h"
 #include "../Gestor_Estados/GestorEstados.h"
 #include "../Gestor_Timers/GestorTimers.h"
 
-// Solo para pruebas, despues borrar
-//#include "stm32f1xx_hal_gpio.h"		// Para incluir a HAL_GPIO_WritePin  BORAR DE ACA
+/**
+ * @def MAX_TICKS
+ * @brief ARR efectivo del timer de switching (resolución ≈ 256 pasos).
+ */
+#define MAX_TICKS 256
 
-#include <stdio.h>		// Para el printf
+/**
+ * @def TICKS_DESHABILITAR_CANAL
+ * @brief Valor mayor a ARR para forzar que un CCR nunca dispare (deshabilitar canal por “posición imposible”).
+ */
+#define TICKS_DESHABILITAR_CANAL 280
 
-// Definiciones privadas
-#define MAX_TICKS 256	// Este es el ARR del timer
-#define TICKS_DESHABILITAR_CANAL 280	// Valor para deshabilitar un canal, mayor a ARR
-#define MIN_TICKS_DIF 5	// Minimos ticks para considerar este canal
+/**
+ * @def MIN_TICKS_DIF
+ * @brief Mínima separación (en ticks) entre eventos para considerar que no hay interferencia entre t1/t2/t3.
+ */
+#define MIN_TICKS_DIF 5
 
-// Constantes de calculo para t1 y t2
+/** @name Constantes de cálculo t1/t2 por regresión lineal
+ *  @brief t1 y t2 se obtienen con una regresión lineal en función del ángulo parcial y el índice de modulación.
+ *  @{ */
+#define CONST_CALC_T1_PROP      (float)-3.59145E-6
+#define CONST_CALC_T1_ORD_ORG   (float)224.2845426
+#define CONST_CALC_T2_PROP      (float)+3.59145E-6
+#define CONST_CALC_T2_ORD_ORG   (float)8.797345358
+/** @} */
 
-// Estas constantes se obtienen a partir de una regresion lineal en donde
-// se debe multiplicar el factor proporcional por el angulo parcial multiplicado
-// por 1000.000
-#define CONST_CALC_T1_PROP 		(float) -3.59145E-6
-#define CONST_CALC_T1_ORD_ORG 	(float) 224.2845426
-#define CONST_CALC_T2_PROP		(float) +3.59145E-6
-#define CONST_CALC_T2_ORD_ORG	(float) 8.797345358
-
-
-// Enumeraciones privadas
-
-enum Cuadrantes{
-	CUADRANTE_1 = 0,
-	CUADRANTE_2,
-	CUADRANTE_3,
-	CUADRANTE_4,
-	CUADRANTE_5,
-	CUADRANTE_6
-};
-
-
+/**
+ * @enum CasoInterferenciaTimer
+ * @brief Casos de interferencia temporal entre eventos t1/t2/t3 (demasiado cercanos).
+ */
 typedef enum {
-	INTERF_NULA = 0,
-	INTERF_T1T2,
-	INTERF_T1T3,
-	INTERF_T2T3,
-	INTERF_T1T2_T2T3
+	INTERF_NULA = 0,        /// Sin interferencias.
+	INTERF_T1T2,            /// t1 y t2 demasiado cercanos.
+	INTERF_T1T3,            /// t1 y t3 demasiado cercanos.
+	INTERF_T2T3,            /// t2 y t3 demasiado cercanos.
+	INTERF_T1T2_T2T3        /// t1~t2 y t2~t3 simultáneamente.
 } CasoInterferenciaTimer;
 
-// Variables privadas
-
-// Variables de configuracion
-static int frec_switch;
-static int direccionRotacion; // 1 = sentido horario, -1 = antihorario
-static int resolucionTimer;
-
-static int frecOutMax;
-static int frecOutMin;
-
-// La frecuencia de salida puede ser negativa para evitar errores al momento de frenarlo
-static int32_t frecSalida;	// Esta es la frecuencia actual escalada por 1000*1000
-// Es es el angulo que se incrementa en cada switch, en cada conmutacion.
-static uint32_t ang_switch; 		// En grados por mil
-
-// Indice de modulacion, esta variable se sumamente importante. Nos va a 
-// manejar la tension de salida. El motor necesita una relacion V/f constante
-// Esta se alcanza cuando el motor gira a 50Hz
-// Esta variable es entera y va de 0 a 100
+/** @brief Frecuencia de switching [Hz] (TIM3). */
+static int frecuenciaSwitching;
+/** @brief Sentido de rotación: 1 horario, -1 antihorario. */
+static int direccionRotacion = 1;
+/** @brief Frecuencia de salida INSTANTÁNEA (escalada ×1e6) usada por el lazo de rampa. */
+static int32_t frecuenciaSalida;
+/** @brief Incremento angular por switching (grados×1e3). */
+static uint32_t anguloSwitching;
+/** @brief Índice de modulación (0..100). Controla la tensión de salida. La relación v/f debe ser constante*/
 static volatile int indiceModulacion;
-
-static int acel;
-static int desacel;
-
-static int acelMin;
-static int acelMax;
-static int desacelMin;
-static int desacelMax;
-
-
-// Este va a trakear el angulo actual
-static uint32_t angAct;		// Esta en grados por mil
-// Este angulo va de 0 a 60*1000*1000 y puede tomar valores negativos
-static int32_t angParcial;
-
-// Con este se guarda el ultimo estado
+/** @brief acelerada configurada [Hz/s]. */
+static int aceleracion;
+/** @brief Desacelerada configurada [Hz/s]. */
+static int desaceleracion;
+/** @brief Ángulo absoluto (grados×1e3). */
+static uint32_t anguloActual;
+/** @brief Ángulo parcial 0..60° (grados×1e3), usado para t1/t2. Puede ser negativo durante el diente. */
+static int32_t anguloParcial;
+/** @brief Cuadrante SVM actual (0..5). */
 static volatile int cuadranteActual;
 
-// Cuadrante que se usa para los calculos, no para el switching de pines
-// Esto se debe a que el calculo se realiza mientas se esta moviendo
-static volatile int cuadranteActualCal;
-
-
-
+/**
+ * @brief Secuencia SVM por cuadrante (V0→V1→V2→V7→V2→V1→V0).
+ * @details Cada fila representa el vector lógico {U,V,W} en 7 pasos por sector.
+ */
 const int vectorSecuenciaPorCuadrante[6][7] = {
     {0b000,0b100,0b110,0b111,0b110,0b100,0b000}, // Sector 1
     {0b000,0b010,0b110,0b111,0b110,0b010,0b000}, // Sector 2
@@ -107,605 +92,279 @@ const int vectorSecuenciaPorCuadrante[6][7] = {
     {0b000,0b100,0b101,0b111,0b101,0b100,0b000}  // Sector 6
 };
 
+/** @brief Mapa de qué pin conmuta en cada orden y cuadrante. */
 int pinTogglePorCuadranteYOrden[6][3];
+/** @brief Palabras BSRR precalculadas por cuadrante/estado (0/1). */
 uint32_t estadoGPIOPorCuadranteYOrden[6][2];
+/** @brief BSRR para apagar U/V/W simultáneo. */
 uint32_t estadoGPIOOff;
+/** @brief BSRR para encender U/V/W simultáneo. */
 uint32_t estadoGPIOOn;
 
-// Vector base de los ocho estados de conmutacion
-//const int vectorBase[8] = {0b000, 0b100, 0b110, 0b010, 0b011, 0b001, 0b101, 0b111};
-
-
-
-// Aca se guardan los pines de salida, estos se obtiene cruzando los datos 
-// de la configuracion, del orden y de los pines.
-static char orden_pierna_pines[6][3];
-
-// Aca guardamos el valor logico de las salidas sin tener en cuenta el numero
-// de pin
-static char orden_pierna_logico[6][3];
-
-
-// Aca guardamos los pines de la pierna
-static int puerto_encen_pierna[3];
-// Vector de los numero de pin de salida
-static int puerto_senal_pierna[3];
-
-
-// Esta variable nos sirve para saber si el angulo parcial hay que incrementarlo o decrementar
-static volatile char flagAscensoAngParcial;
-
-// Aca guardamos el estado logico de las salidas
+/** @brief Bandera de rampa del ángulo parcial (subida/bajada en diente). */
+static volatile char flagAscensoAnguloParcial = 1;
+/** @brief Estado lógico de salidas U/V/W (para depuración). */
 static volatile char estadoLogicoSalida[3];
-
-// Ticks de cada channel
+/** @brief t1/t2/t3 en ticks para el ciclo actual. */
 static volatile int ticksChannel[3];
-
-// Flags de interferencia
-// BORRAR ESTOS FLAGS, SE REMPLAZARON POR EL ENUM
-//static volatile int flagInterferenciaCanal1y2;
-//static volatile int flagInterferenciaCanal2y3;
-//static volatile int flagInterferenciaCanal1y3;
-
+/** @brief Caso de interferencia detectado para el ciclo actual. */
 static volatile CasoInterferenciaTimer casoInterferencia;
 
-
-// Usado para un debug simple
-static volatile int index = 0;
-static volatile int ultsPuertos[50];
-static volatile int ultsOutsLogicos[50];
-static volatile int timerT3[50];
-static volatile int ultsCuadrantes[50];
-
-
-// Variables que guardan los datos para la gestion dinamica
-// Frecuencia final de salida escalada por 1000
+/** @brief Frecuencia objetivo (target) escalada ×1e6. */
 static volatile int32_t frecObjetivo;
-
-// Este es un flag que indica que esta cambiando de frecuencia
-static volatile int flagChangingFrec;
-// Flag que indica si el movimiento es acelerado, si es 0 es desacelerado
+/** @brief Indica cambio de frecuencia en curso (rampa activa). */
+static volatile int flagChangingFrecuencia;
+/** @brief 1 si la rampa corresponde a una aceleración, 0 para desaceleración. */
 static volatile int flagEsAcelerado;
-// Frag que indica que el motor esta moviendose
+/** @brief 1 si el motor está en movimiento. */
 static volatile int flagMotorRunning;
-
-// Frecuencia referencia es la frecObjetivo cuando el estado esta en running
-// Cuando se frena el motor la frecObjetivo difiere de esta
-static volatile int frecReferencia;
-
-// Para el cambio de frecuencia vamos a necesitar una estructura mas solida
-// La variable de aceleracion la tenemos en frec/seg y hay que convertirla a un
-// valor en que se incrementa/decrementa frecSalida en cada ciclo. 
-// Necesita una conversion que se calcula una unica vez
-// Este valor esta escalado por 1000
-static volatile uint32_t cambioFrecPorCiclo;
-
-
-static volatile char contadorSwitchsCiclo;
-
-
-// Esta es la manejada por el handler del timer
+/** @brief Frecuencia “de referencia” reportada (Hz). */
+static volatile int frecuenciaReferenica;
+/** @brief Delta por ciclo de switching (escalado ×1e6) para la rampa. */
+static volatile uint32_t cambioFrecuenciaPorCiclo;
+/** @brief Estructura auxiliar de switching usada por el ISR. */
 volatile ValoresSwitching valoresSwitching;
 
-
-// Debido a la lentitud del calculo, este no se puede realizar
-// en el timer de switching, el calculo demora 46us lo que representa
-// una parte importante del ciclo. Por ello es que se involucra un timer
-// de calculo que va a dos veces la frecuencia del de switching e intenta
-// adelantar calculos hasta tres muestras futuras. 
-
-// El proceso consumidor, el timer de switching, va a ir leyendo del indice
-// de lectura y reduciendo el la variable numDatos
-// El proceso productor, el timer de calculo, va a ir escribiendo en el indice
-// de escritura y aumentando la variable numDatos
-// Si numDatos llega a 3, el proceso productor se detiene hasta que el consumidor
-// lea algun dato
-
+/**
+ * @brief Buffer circular (productor: timer de cálculo; consumidor: timer de switching).
+ * @details Tamaño fijo 3: el productor se detiene si está lleno.
+ */
 #define BUFFER_CALCULO_SIZE 3
 
 typedef struct {
 	int ticksChannel1[BUFFER_CALCULO_SIZE];
 	int ticksChannel2[BUFFER_CALCULO_SIZE];
 	int ticksChannel3[BUFFER_CALCULO_SIZE];
-	
-	// Si ambos canales estan muy cerca entre si se activa este flag
-	//int flagInterferenciaCanal1y2[BUFFER_CALCULO_SIZE];	
-	//int flagInterferenciaCanal2y3[BUFFER_CALCULO_SIZE]; 
-	//int flagInterferenciaCanal1y3[BUFFER_CALCULO_SIZE];
 	CasoInterferenciaTimer casoInterferencia[BUFFER_CALCULO_SIZE];
-
 	int cuadranteActual[BUFFER_CALCULO_SIZE];
-	int indEscritura;			// Indice de escritura
-	int indLectura;				// Indice de lectura
-	int numDatos;				// Cantidad de datos disponibles
-
-}DatoCalculado;
+	int indiceEscritura;  					/// Índice de escritura del productor.
+	int indiceLectura;    					/// Índice de lectura del consumidor.
+	int contadorDeDatos;      				/// Elementos válidos en el buffer.
+} DatoCalculado;
 
 volatile DatoCalculado bufferCalculo;
 
-
-// Para evitar problemas de acceso a variables compartidas
-// entre el timer de calculo y las funciones llamadas por el 
-// gestor de estados, se recurre a una estructura con variables
-// sombra que se actualizan en el timer de calculo
+/**
+ * @brief Parámetros “sombra” para sincronización atómica con el lazo de cálculo.
+ */
 typedef struct {
-
 	int32_t frecObjetivo;
-	uint32_t cambioFrecPorCiclo;
+	uint32_t cambioFrecuenciaPorCiclo;
 	int direccionRotacion;
-
-	// Flags
 	int flagMotorRunning;
 	int flagEsAcelerado;
-	int flagChangingFrec;
-} Parametros;	
+	int flagChangingFrecuencia;
+} Parametros;
 
 volatile Parametros paramSombra;
 volatile int flagActualizarParamSombra;
 
+/* ================================ Prototipos privados ================================ */
 
+/**
+ * @fn static void GestorSVM_Calculoaceleracioneracion(void)
+ * @brief Aplica la rampa de velocidad (aceleracion/desaceleracion) sobre @ref frecuenciaSalida y actualiza flags/estado.
+ * @details
+ *   - Si @ref flagActualizarParamSombra está activo, copia los parámetros de @ref paramSombra.
+ *   - Ajusta @ref frecuenciaSalida en ± @ref cambioFrecuenciaPorCiclo hasta llegar a @ref frecObjetivo.
+ *   - Al llegar a 0 Hz: detiene timers, limpia buffer, apaga GPIO y notifica @ref ACTION_MOTOR_STOPPED.
+ * @note En esta funcion se puede llegar a dar una incoherencia debido a la sincronizacion
+ * de las variables sombra. Si se esta ejecutando un cambio de frecuencia en la funcion 
+ * GestorSVM_SetFrecOut, es decir que se habia escrito flagChangingFrec y antes de llegar
+ * levantar el flagActualizarParamSombra, justo en ese momento llega una interrupcion 
+ * de este timer de calculo y en esa iteracion se terminaba de llegar a la velocidad 
+ * taget. En ese caso se va a pisar ese flagChangingFrec y se va a quedar como si nunca hubiese
+ * pasado.
+ * Debido a que es un caso muy extremo no se analiza 
+ */
+static void GestorSVM_Calculoaceleracioneracion(void);
 
-
-
-// Esta funcion se va a llamar en cada switch del timer 3 channel 4 para recalcular la 
-// aceleracion/desaceleracion 
-static void GestorSVM_CalculoAceleracion();
-
-// Funcion para generar los pines de salida
+/**
+ * @fn static int pinMap(int x)
+ * @brief Convierte el XOR de estados (bit U/V/W) al índice interno {0,1,2}.
+ * @param x Máscara de pin que cambia (1bit activo entre U/V/W).
+ * @return Índice 0→U, 1→V, 2→W.
+ */
 static int pinMap(int x);
 
+/**
+ * @fn static void GestorSVM_CalcularValoresSwitching(void)
+ * @brief Calcula t1, t2 y t0 (y casos de interferencia) y los deja en @ref ticksChannel[].
+ * @details
+ *   - Actualiza ángulos ( @ref anguloActual y @ref anguloParcial) y @ref cuadranteActual.
+ *   - t1/t2 por regresión lineal (constantes @ref CONST_CALC_T* y @ref indiceModulacion).
+ *   - t0 = (255 - t1 - t2)/2. Luego: ticksC1=t0, ticksC2=t0+t1, ticksC3=t0+t1+t2.
+ *   - Clasifica interferencias según @ref MIN_TICKS_DIF y setea @ref casoInterferencia.
+ */
+static void GestorSVM_CalcularValoresSwitching(void);
 
-void GestorSVM_Init() {
+/**
+ * @fn static void GestorSVM_SwitchInterrupt(SwitchInterruptType intType)
+ * @brief Handler interno llamado por el ISR de TIM3 según la fuente (CH1..CH4, RESET, CLEAN).
+ * @param intType Fuente de interrupción @ref SwitchInterruptType.
+ * @details
+ *   - RESET: consume una entrada del buffer y precarga CCR2/CCR3/CCR4.
+ *   - CH1/CH2/CH3: conmuta GPIO según orden/fase y maneja interferencias habilitando/deshabilitando CCxIE.
+ *   - CLEAN: limpia flags y estado interno del switching.
+ */
+static void GestorSVM_SwitchInterrupt(SwitchInterruptType intType);
 
-	int i = 0;
+/**
+ * @fn static void GestorSVM_SwitchPuertos(OrdenSwitch orden, char estado, int numCuadrante)
+ * @brief Escribe en BSRR los pines correspondientes a la orden y cuadrante.
+ * @param orden Orden de conmutación @ref OrdenSwitch.
+ * @param estado 0=primer estado del sector, 1=segundo estado (usa @ref estadoGPIOPorCuadranteYOrden).
+ * @param numCuadrante Sector SVM (0..5).
+ */
+static void GestorSVM_SwitchPuertos(OrdenSwitch orden, char estado, int numCuadrante);
 
-	frec_switch = 0;
-	frecSalida = 0;		// Motor frenado
-	frecObjetivo = 0;	// La velocidad objetivo es nula
-	frecReferencia = 0;
-	ang_switch = 0;
+/* ================================ Implementación privada ================================ */
 
-	acelMin = 0;
-	acelMax = 0;
-	desacelMin = 0;
-	desacelMax = 0;
-
-	acel = 0;
-	desacel = 0;
-
-	angAct = 0;
-	angParcial = 0;
-	cuadranteActual = 0;
-	flagAscensoAngParcial = 1;
-
-	flagChangingFrec = 0;
-	flagEsAcelerado = 0;
-	flagMotorRunning = 0;
-
-	contadorSwitchsCiclo = 0;
-
-	
-	direccionRotacion = 1;	// Sentido horario
-
-	estadoLogicoSalida[0] = 0;
-	estadoLogicoSalida[1] = 0;
-	estadoLogicoSalida[2] = 0;
-
-
-	// Se limpian los valores del buffer circular del timer de calculo
-	for (i = 0; i < BUFFER_CALCULO_SIZE; i++) {
-
-		bufferCalculo.ticksChannel1[i] = 0;
-		bufferCalculo.ticksChannel2[i] = 0;
-		bufferCalculo.ticksChannel3[i] = 0;
-		//bufferCalculo.flagInterferenciaCanal1y2[i] = 0;
-		//bufferCalculo.flagInterferenciaCanal2y3[i] = 0;
-		bufferCalculo.casoInterferencia[i] = INTERF_NULA;
-		bufferCalculo.cuadranteActual[i] = 0;
-	}
-
-	bufferCalculo.indEscritura = 0;
-	bufferCalculo.indLectura = 0;
-	bufferCalculo.numDatos = 0;
-	
-
-
-	// Se guardan los valores sombra
-	paramSombra.frecObjetivo = frecObjetivo;
-	paramSombra.cambioFrecPorCiclo = cambioFrecPorCiclo;
-	paramSombra.direccionRotacion = direccionRotacion;
-	paramSombra.flagMotorRunning = flagMotorRunning;
-	paramSombra.flagEsAcelerado = flagEsAcelerado;
-	paramSombra.flagChangingFrec = flagChangingFrec;
-	flagActualizarParamSombra = 0;
-}
-
-int pinMap(int x) {
-    x &= 0x07; // limitar a 3 bits
+static int pinMap(int x) {
     int r = 0;
-    if (x == 1) {r = 2;} 
-    else if (x == 2) {r |= 1;}
-    else if (x == 4) {r |= 0;}
-    return r;
+    x &= 0x07; // limitar a 3 bits (U,V,W)
+    if (x == 1) {
+		r = 2;   // W
+	}
+    else if (x == 2) {
+		r = 1;   // V
+	}
+    else if (x == 4) {
+		r = 0;   // U
+	}
+	return r;
 }
 
-void GestorSVM_SetConfiguration(ConfiguracionSVM* configuracion) {
-	
-	int i, j;
-	int puerto;
-
-	// Rangos de funcionamiento del motor
-	frecOutMax = configuracion->frecOutMax;
-	frecOutMin = configuracion->frecOutMin;
-
-	frec_switch = configuracion->frec_switch;
-	//frecSalida = configuracion->frecSalida; Esta es nula cuando se inicializa, el motor esta frenado
-	direccionRotacion = configuracion->direccionRotacion;
-	resolucionTimer = configuracion->resolucionTimer;
-
-	// Parametros dinamicos
-	acel = configuracion->acel;
-	desacel = configuracion->desacel;
-
-	acelMin = configuracion->acelMin;
-	acelMax = configuracion->acelMax;
-	desacelMin = configuracion->desacelMin;
-	desacelMax = configuracion->desacelMax;
-
-	// Calculamos el angulo que recorre en un switch
-	//ang_switch = frecSalida * 360 / frec_switch;
-	
-	// La variable sombra se actualiza dentro de la funcion
-	GestorSVM_SetFrec(configuracion->frecReferencia);
-
-	// Aca debemos comprobar si es posible
-	// Si el angulo es mayor a un umbral debemos descartar
-	// o aumentar la frecuencia de switching
-
-	//printf("AngSwitch: %d\n", ang_switch);
-
-	// Aca vamos a setear los pines de salida
-	for(i = 0; i < 6; i++) {
-		for(j = 0; j < 3; j++) {
-			puerto = (int)configuracion->orden_pierna[i][j];
-			orden_pierna_pines[i][j] = configuracion->puerto_senal_pierna[puerto];
-			orden_pierna_logico[i][j] = (int)configuracion->orden_pierna[i][j];
-		}
-	}
-
-	for(i = 0; i < 3; i++) {
-		// El de puerto senal pierna no se usa pero lo dejo igual
-		puerto_senal_pierna[i] = configuracion->puerto_senal_pierna[i];
-		puerto_encen_pierna[i] = configuracion->puerto_encen_pierna[i];
-	}
-
-	printf("Configuracion Seteada \n");
-	int estado0, estado1, estado2, estado3;
-	int pinToggle1, pinToggle2, pinToggle3;
-	uint32_t myBSRR;
-
-	estadoGPIOOff = (puerto_senal_pierna[0] | puerto_senal_pierna[1] | puerto_senal_pierna[2]) << 16; 
-	estadoGPIOOn = (puerto_senal_pierna[0] | puerto_senal_pierna[1] | puerto_senal_pierna[2]); 
-
-	for(i = 0; i < 6; i++) {
-		estado0 = vectorSecuenciaPorCuadrante[i][0];
-		estado1 = vectorSecuenciaPorCuadrante[i][1];
-		estado2 = vectorSecuenciaPorCuadrante[i][2];
-		estado3 = vectorSecuenciaPorCuadrante[i][3];
-
-		myBSRR = 0;
-		myBSRR |= ((estado1 & 0b100) > 0) ? puerto_senal_pierna[0] : (puerto_senal_pierna[0] << 16);
-		myBSRR |= ((estado1 & 0b010) > 0) ? puerto_senal_pierna[1] : (puerto_senal_pierna[1] << 16);
-		myBSRR |= ((estado1 & 0b001) > 0) ? puerto_senal_pierna[2] : (puerto_senal_pierna[2] << 16);
-
-		estadoGPIOPorCuadranteYOrden[i][0] = myBSRR;
-
-		myBSRR = 0;
-		myBSRR |= ((estado2 & 0b100) > 0) ? puerto_senal_pierna[0] : (puerto_senal_pierna[0] << 16);
-		myBSRR |= ((estado2 & 0b010) > 0) ? puerto_senal_pierna[1] : (puerto_senal_pierna[1] << 16);
-		myBSRR |= ((estado2 & 0b001) > 0) ? puerto_senal_pierna[2] : (puerto_senal_pierna[2] << 16);
-
-		estadoGPIOPorCuadranteYOrden[i][1] = myBSRR;
-
-
-
-
-
-		pinToggle1 = (estado0 ^ estado1);
-		pinToggle2 = (estado1 ^ estado2);
-		pinToggle3 = (estado2 ^ estado3);
-
-		pinToggle1 = pinMap(pinToggle1);
-		pinToggle2 = pinMap(pinToggle2);
-		pinToggle3 = pinMap(pinToggle3);
-
-		pinTogglePorCuadranteYOrden[i][0] = puerto_senal_pierna[pinToggle1];
-		pinTogglePorCuadranteYOrden[i][1] = puerto_senal_pierna[pinToggle2];
-		pinTogglePorCuadranteYOrden[i][2] = puerto_senal_pierna[pinToggle3];
-
-	}
-
-}
-
-
-
-void GestorSVM_CalcularValoresSwitching() {
-
-
-	// Esta funcion se ejecuta cada vez que se cumple el tiempo t1, t2 y t3
-	// Estos tiempos por como esta configurado el timer tienen una resolucion de 256
-	// Es decir que voy a tener que ajustar mi tiempo a un valor puntual de estos 256
-	// En fswitch que dura la subida y bajada del contador voy a tener 256 pasos
-	// Por lo que tengo que calcular en que paso voy a hacer el t1, el t2 y el t3
-	// Para ajustar el M voy a agregar un multiplicador
-
-
-	// Aca vamos a guardar el valor en que haremos la interrupcion
+static void GestorSVM_CalcularValoresSwitching() {
 	int t1, t2, t0;
 	int ticksC1, ticksC2, ticksC3;
 
-	// Chequeo y calculo de aceleracion / desaceleracion
-	if(flagChangingFrec) {
-		GestorSVM_CalculoAceleracion();
+	/* Rampa de velocidad si corresponde */
+	if (flagChangingFrecuencia) {
+		GestorSVM_Calculoaceleracioneracion();
 	}
-	//GestorSVM_CalculoAceleracion();
-	
 
-	// El angulo se incrementa al terminar el ciclo de switch
-	angAct += ang_switch;
-	if(angAct >= 360 * 1000 * 1000) {
-		angAct -= 360 * 1000 * 1000;
+	/* Avance angular y gestión de diente 0..60° */
+	anguloActual += anguloSwitching;
+	if (anguloActual >= 360 * 1000 * 1000) {
+		anguloActual -= 360 * 1000 * 1000;
 		cuadranteActual = 0;
-		flagAscensoAngParcial = 1;
-		// Aca vuelvo a sincronizar el angulo parcial
-		angParcial = angAct;
-	}else {
-		if(flagAscensoAngParcial == 1) {
-			angParcial += ang_switch;
-			if(angParcial >= 60 * 1000 * 1000) {
-				// Si me paso le resto lo que me pase, si estaba en 61, pongo 59
-				// y cuento hacia abajo ahora
-				angParcial = 2 * 60 * 1000 * 1000 - angParcial;
-				flagAscensoAngParcial = 0;
+		flagAscensoAnguloParcial = 1;
+		anguloParcial = anguloActual;
+	} else {
+		if (flagAscensoAnguloParcial == 1) {
+			anguloParcial += anguloSwitching;
+			if (anguloParcial >= 60 * 1000 * 1000) {
+				anguloParcial = 2 * 60 * 1000 * 1000 - anguloParcial; // espejo
+				flagAscensoAnguloParcial = 0;
 				cuadranteActual = (cuadranteActual + 1) % 6;
 			}
 		} else {
-			angParcial -= ang_switch;
-			if(angParcial <= 0) {
-				// Si me paso de cero le resto devuelta
-				// lo que me pase
-				angParcial = -angParcial;
-				flagAscensoAngParcial = 1;
+			anguloParcial -= anguloSwitching;
+			if (anguloParcial <= 0) {
+				anguloParcial = -anguloParcial; // espejo
+				flagAscensoAnguloParcial = 1;
 				cuadranteActual = (cuadranteActual + 1) % 6;
 			}
 		}
 	}
 
-	// Chequeamos que tengamos todos los switches
-	//if(contadorSwitchsCiclo != 6) {
-	//	HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_7);
-	//}
-	// Reiniciamos el contador
-	//contadorSwitchsCiclo = 0;
-
-
-
-	//printf("AngAct: %d, AngPar: %d, Cuad: %d, angSwitch: %d\n", angAct, angParcial, cuadranteActual, ang_switch);
-
-
-	// Si la resolucion es 256 justo =>
-	//t1 = (int)(((-0.0018 * (float)angParcial + 112.57) * indiceModulacion) / 100);
-	//t2 = (int)(((+0.0018 * (float)angParcial + 10.955) * indiceModulacion) / 100);
-	t1 = (int)(((CONST_CALC_T1_PROP * (float)angParcial + CONST_CALC_T1_ORD_ORG) * indiceModulacion) / 100);
-	t2 = (int)(((CONST_CALC_T2_PROP * (float)angParcial + CONST_CALC_T2_ORD_ORG) * indiceModulacion) / 100);
-	// Este es t0 / 2
+	/* t1/t2 por regresión e índice de modulación */
+	t1 = (int)(((CONST_CALC_T1_PROP * (float)anguloParcial + CONST_CALC_T1_ORD_ORG) * indiceModulacion) / 100);
+	t2 = (int)(((CONST_CALC_T2_PROP * (float)anguloParcial + CONST_CALC_T2_ORD_ORG) * indiceModulacion) / 100);
 	t0 = (int)((float)(255 - t1 - t2) * 0.5);
 
-
-	/*
-	// Si la resolucion es distinta puedo dejarla parametrizada
-	t1 = (-7.0E-6 * (float)currentAng + 0.4397) * resolucionTimer;
-	t2 = (+7.0E-6 * (float)currentAng + 0.0428) * resolucionTimer;
-	t0 = resolucionTimer - t1 - t2;
-	*/
-	//printf("ang: %d, t0: %d, t1: %d, t2: %d\n", angAct, t0, t1, t2);
-
-
-
-	// Si el timer 3 es muy cercano al limite le escribo un valor que nunca se alcanza
-	// Sino tengo problema con los puertos
-
+	/* Ticks absolutos en el período */
 	ticksC1 = t0;
 	ticksC2 = t0 + t1;
 	ticksC3 = t0 + t1 + t2;
 
-	// Analisis de los casos de interferencia
-	if(ticksC3 - ticksC1 < MIN_TICKS_DIF) {
+	/* Clasificación de interferencias */
+	if (ticksC3 - ticksC1 < MIN_TICKS_DIF) {
 		casoInterferencia = INTERF_T1T3;
-	}else if(ticksC2 - ticksC1 < MIN_TICKS_DIF && ticksC3 - ticksC2 < MIN_TICKS_DIF) {
+	} else if (ticksC2 - ticksC1 < MIN_TICKS_DIF && ticksC3 - ticksC2 < MIN_TICKS_DIF) {
 		casoInterferencia = INTERF_T1T2_T2T3;
-	}else if(ticksC2 - ticksC1 < MIN_TICKS_DIF) {
+	} else if (ticksC2 - ticksC1 < MIN_TICKS_DIF) {
 		casoInterferencia = INTERF_T1T2;
-	}else if(ticksC3 - ticksC2 < MIN_TICKS_DIF) {
+	} else if (ticksC3 - ticksC2 < MIN_TICKS_DIF) {
 		casoInterferencia = INTERF_T2T3;
-	}else {
+	} else {
 		casoInterferencia = INTERF_NULA;
 	}
-
-	/*
-	if(ticksC2 - ticksC1 < MIN_TICKS_DIF) {
-		ticksC1 = ticksC2 - MIN_TICKS_DIF;
-		casoInterferencia = INTERF_NULA;
-	}
-	if(ticksC3 - ticksC2 < MIN_TICKS_DIF) {
-		ticksC3 = ticksC2 + MIN_TICKS_DIF;
-		casoInterferencia = INTERF_NULA;
-	}
-	*/
-
-
-	/*
-	if(ticksC2 - ticksC1 < MIN_TICKS_DIF) {
-		flagInterferenciaCanal1y2 = 1;
-	}else {
-		flagInterferenciaCanal1y2 = 0;
-	}
-
-	if(ticksC3 - ticksC2 < MIN_TICKS_DIF) {
-		flagInterferenciaCanal2y3 = 1;
-	}else {
-		flagInterferenciaCanal2y3 = 0;
-	}
-	
-	if(ticksC3 - ticksC1 < MIN_TICKS_DIF) {
-		flagInterferenciaCanal1y3 = 1;
-	}else {
-		flagInterferenciaCanal1y3 = 0;
-	}
-	*/
 
 	ticksChannel[0] = ticksC1;
 	ticksChannel[1] = ticksC2;
 	ticksChannel[2] = ticksC3;
-
-
-
-	//if(resolucionTimer/2 - ticksChannel[2] < 5) {
-		// Esto no se ejecuta nunca ya que de todas formas el timer es muy chico
-	//	ticksChannel[2] = 2 * resolucionTimer;
-	//}
 }
 
-
-
-
-
-
-
-void GestorSVM_CalcInterrupt() {
-	// Esta funcion se llama cada vez que se cumple el tiempo de calculo
-	// Este timer va a 2 veces la frecuencia del timer de switching
-	// En esta funcion se calcula y se guardan los valores en el buffer circular
-	// Si el buffer esta lleno, no se hace nada
-
-	//HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_1);
-
-	int indEscritura;
-
-
-	if(bufferCalculo.numDatos < BUFFER_CALCULO_SIZE) {
-
-		indEscritura = bufferCalculo.indEscritura;
-
-		GestorSVM_CalcularValoresSwitching();
-		
-
-		// Se guardan los valores calculados
-		bufferCalculo.ticksChannel1[indEscritura] = ticksChannel[0];
-		bufferCalculo.ticksChannel2[indEscritura] = ticksChannel[1];
-		bufferCalculo.ticksChannel3[indEscritura] = ticksChannel[2];
-		//bufferCalculo.flagInterferenciaCanal1y2[indEscritura] = flagInterferenciaCanal1y2;
-		//bufferCalculo.flagInterferenciaCanal2y3[indEscritura] = flagInterferenciaCanal2y3;
-		//bufferCalculo.flagInterferenciaCanal1y3[indEscritura] = flagInterferenciaCanal1y3;
-		bufferCalculo.casoInterferencia[indEscritura] = casoInterferencia;
-		bufferCalculo.cuadranteActual[indEscritura] = cuadranteActual;
-
-		// Se actualizan los indices y la cantidad de datos
-		bufferCalculo.indEscritura = (indEscritura + 1) % BUFFER_CALCULO_SIZE;
-		bufferCalculo.numDatos ++;
-
-	}
-
-	//HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_1);
-}
-
-
-
-// Esta funcion es llamada por el handler del timer 3.
-// El timer 3 tiene tres canales asociados a cada etapa de switch
-// Ademas hay un cuarto canal que se usa para sincronizar el timer
-// En esta ultima etapa vamos a calcular y cargar los valores de los ticks
-void GestorSVM_SwitchInterrupt(SwitchInterruptType intType) {
-
-	// Chequea si esta en cuenta arriba o abajo
-	volatile static int countUpTx[3];
-
-	// Este flag si esta en 1 significa que se esta esperando una interrupcion
-	volatile static int flagTxActivo[3];
-	//volatile static int flagTxPreactivacion[3];
-
+static void GestorSVM_SwitchInterrupt(SwitchInterruptType intType) {
+	volatile static int countUpTx[3];               // 1=subiendo, 0=bajando
+	volatile static int flagTxActivo[3];            // espera de evento por canal
 	volatile static CasoInterferenciaTimer interferencia;
-
 	volatile static int cuadrante = 0;
 	int ticks1, ticks2, ticks3;
 
-	
-	if(bufferCalculo.numDatos <= 0) {
+	/* Si no hay datos precargados, no hacer nada */
+	if (bufferCalculo.contadorDeDatos <= 0) {
 		return;
 	}
 
-
-
-	switch(intType) {
+	switch (intType) {
 		case SWITCH_INT_CH1:
-			if(flagTxActivo[0]) {
+			if (flagTxActivo[0]) {
 				flagTxActivo[0] = 0;
-				if(countUpTx[0]) {
+				if (countUpTx[0]) {
 					GestorSVM_SwitchPuertos(ORDEN_SWITCH_1_UP, 1, cuadrante);
 					countUpTx[0] = 0;
-				}else {
+				} else {
 					countUpTx[0] = 1;
 					GestorSVM_SwitchPuertos(ORDEN_SWITCH_1_DOWN, 0, cuadrante);
-					// Este aca habilitamos todos los canales que habiamos bloqueado
+					/* Rehabilita interrupciones de los otros canales */
 					TIM3->DIER |= TIM_DIER_CC2IE;
 					TIM3->DIER |= TIM_DIER_CC3IE;
 					TIM3->DIER |= TIM_DIER_CC4IE;
-
 				}
-			}else {
+			} else {
 				flagTxActivo[0] = 1;
 			}
 			break;
+
 		case SWITCH_INT_CH2:
-			if(flagTxActivo[1]) {
+			if (flagTxActivo[1]) {
 				flagTxActivo[1] = 0;
-				if(countUpTx[1]) {
+				if (countUpTx[1]) {
 					GestorSVM_SwitchPuertos(ORDEN_SWITCH_2_UP, 1, cuadrante);
 					countUpTx[1] = 0;
-				}else {
+				} else {
 					GestorSVM_SwitchPuertos(ORDEN_SWITCH_2_DOWN, 0, cuadrante);
 					countUpTx[1] = 1;
 				}
-			}else {
-				if(interferencia == INTERF_T1T2_T2T3) {
+			} else {
+				if (interferencia == INTERF_T1T2_T2T3) {
 					flagTxActivo[1] = 0;
-					// Desactivo T2
-					TIM3->DIER &= ~TIM_DIER_CC3IE;
+					TIM3->DIER &= ~TIM_DIER_CC3IE; // desactiva T2
 				} else {
-				flagTxActivo[1] = 1;
+					flagTxActivo[1] = 1;
 				}
 			}
 			break;
 
-			
-			case SWITCH_INT_CH3:
-			if(flagTxActivo[2]) {
+		case SWITCH_INT_CH3:
+			if (flagTxActivo[2]) {
 				flagTxActivo[2] = 0;
-				if(countUpTx[2]) {
+				if (countUpTx[2]) {
 					GestorSVM_SwitchPuertos(ORDEN_SWITCH_3_UP, 1, cuadrante);
 
-					// Se evaluan el caso de interferencia, el caso de INTERF_T1T3 no se puede dar aca
-					switch(interferencia) {
+					/* Manejo de interferencias */
+					switch (interferencia) {
 						case INTERF_NULA:
-							// Se activan todos los canales
 							flagTxActivo[0] = 1;
 							flagTxActivo[1] = 1;
 							flagTxActivo[2] = 1;
 							break;
 						case INTERF_T1T2:
-							// Desactivacion de T2 y Activacion de T1
-							flagTxActivo[0] = 0;
-							flagTxActivo[1] = 0;
+							flagTxActivo[0] = 0;  // T1 pendiente
+							flagTxActivo[1] = 0;  // desactiva T2
 							flagTxActivo[2] = 1;
 							// Deshabilitacion T2
 							TIM3->DIER &= ~TIM_DIER_CC3IE;
@@ -713,76 +372,60 @@ void GestorSVM_SwitchInterrupt(SwitchInterruptType intType) {
 							TIM3->DIER |= TIM_DIER_CC2IE;
 							break;
 						case INTERF_T2T3:
-							// Desactivacion de T3 y Activacion de T2
 							flagTxActivo[0] = 1;
-							flagTxActivo[1] = 0;	// Queda pendiente interrupcion T2
-							flagTxActivo[2] = 0;
-							// Deshabilitacion T3
-							TIM3->DIER &= ~TIM_DIER_CC4IE;
-							// Activacion T2
-							TIM3->DIER |= TIM_DIER_CC3IE;
+							flagTxActivo[1] = 0;  // T2 pendiente
+							flagTxActivo[2] = 0;  // T3 off
+							TIM3->DIER &= ~TIM_DIER_CC4IE; // CC4 off
+							TIM3->DIER |=  TIM_DIER_CC3IE; // CC3 on
 							break;
 						case INTERF_T1T3:
-							// No es posible encontrear este estado aca
+							/* No debe ocurrir aquí */
 							break;
 						case INTERF_T1T2_T2T3:
-							// Se desactiva T2
 							flagTxActivo[0] = 0;
 							flagTxActivo[1] = 0;
 							flagTxActivo[2] = 1;
-							// Activacion T1 y desactivacion de T2
-							TIM3->DIER &= ~TIM_DIER_CC3IE;
-							TIM3->DIER |= TIM_DIER_CC2IE;
+							TIM3->DIER &= ~TIM_DIER_CC3IE; // CC3 off
+							TIM3->DIER |=  TIM_DIER_CC2IE; // CC2 on
 							break;
 					}
-					// Se establecen que las proximas interrupciones son cuenta abajo
+					/* Próximas interrupciones: cuenta abajo */
 					countUpTx[0] = 0;
 					countUpTx[1] = 0;
 					countUpTx[2] = 0;
-				}else {
+				} else {
 					GestorSVM_SwitchPuertos(ORDEN_SWITCH_3_DOWN, 0, cuadrante);
 					countUpTx[2] = 1;
 				}
-			}else { 
-				if(interferencia == INTERF_T1T3) {
+			} else {
+				if (interferencia == INTERF_T1T3) {
 					flagTxActivo[0] = 0;
 					flagTxActivo[1] = 0;
 					flagTxActivo[2] = 0;
-				}else {
+				} else {
 					flagTxActivo[2] = 1;
 				}
 			}
 			break;
+
 		case SWITCH_INT_RESET:
-
-			// RESET
-
-			// Canales cuenta arriba
+			/* Re-sync / precarga */
 			countUpTx[0] = 1;
 			countUpTx[1] = 1;
 			countUpTx[2] = 1;
 
-			// Carga de los valores calculados
-			ticks1 = bufferCalculo.ticksChannel1[bufferCalculo.indLectura];
-			ticks2 = bufferCalculo.ticksChannel2[bufferCalculo.indLectura];
-			ticks3 = bufferCalculo.ticksChannel3[bufferCalculo.indLectura];
-			interferencia = bufferCalculo.casoInterferencia[bufferCalculo.indLectura];
-			cuadrante = bufferCalculo.cuadranteActual[bufferCalculo.indLectura];
-			bufferCalculo.indLectura = (bufferCalculo.indLectura + 1) % BUFFER_CALCULO_SIZE;
-			bufferCalculo.numDatos --;
+			/* Consume entrada del buffer */
+			ticks1 = bufferCalculo.ticksChannel1[bufferCalculo.indiceLectura];
+			ticks2 = bufferCalculo.ticksChannel2[bufferCalculo.indiceLectura];
+			ticks3 = bufferCalculo.ticksChannel3[bufferCalculo.indiceLectura];
+			interferencia = bufferCalculo.casoInterferencia[bufferCalculo.indiceLectura];
+			cuadrante = bufferCalculo.cuadranteActual[bufferCalculo.indiceLectura];
+			bufferCalculo.indiceLectura = (bufferCalculo.indiceLectura + 1) % BUFFER_CALCULO_SIZE;
+			bufferCalculo.contadorDeDatos--;
 
-			
-
-			// Habilitacion de timers
-			
-
-
-			// Si tengo interferencia entre el 1 y 3 directamente se deshabilitan los tres canales
-			// Esto significaria ir del V0 al V7, lo que no genera ningun cambio asi que nos evitamos
-			// esta conmutacion inecesaria
-			switch(interferencia) {
+			/* Habilitación según interferencias */
+			switch (interferencia) {
 				case INTERF_NULA:
-					// No hay interferencia, habilito todos los canales
 					flagTxActivo[0] = 1;
 					flagTxActivo[1] = 1;
 					flagTxActivo[2] = 1;
@@ -791,7 +434,6 @@ void GestorSVM_SwitchInterrupt(SwitchInterruptType intType) {
 					TIM3->DIER |= TIM_DIER_CC4IE;
 					break;
 				case INTERF_T1T2:
-					// Desactivacion de T1 y Activacion de T2 y T3
 					flagTxActivo[0] = 0;
 					flagTxActivo[1] = 1;
 					flagTxActivo[2] = 1;
@@ -800,7 +442,6 @@ void GestorSVM_SwitchInterrupt(SwitchInterruptType intType) {
 					TIM3->DIER |= TIM_DIER_CC4IE;
 					break;
 				case INTERF_T2T3:
-					// Desactivacion de T2 y Activacion de T1 y T3
 					flagTxActivo[0] = 1;
 					flagTxActivo[1] = 0;
 					flagTxActivo[2] = 1;
@@ -812,7 +453,7 @@ void GestorSVM_SwitchInterrupt(SwitchInterruptType intType) {
 					flagTxActivo[0] = 0;
 					flagTxActivo[1] = 0;
 					flagTxActivo[2] = 0;
-					// Posiciones distantes ya que no genera ningun cambio		
+					/* Carga posiciones distantes (nunca disparan simultáneo) */
 					ticks1 = 20;
 					ticks2 = 60;
 					ticks3 = 100;			
@@ -831,358 +472,375 @@ void GestorSVM_SwitchInterrupt(SwitchInterruptType intType) {
 					break;
 			}
 
-
-			// Carga de los timers
-			TIM3->CCR2 = ticks1; // T1 en canal 2
-			TIM3->CCR3 = ticks2; // T2 en canal 3
-			TIM3->CCR4 = ticks3; // T3 en canal 4
-
-
-
+			/* Precarga CCRs (t1→CCR2, t2→CCR3, t3→CCR4) */
+			TIM3->CCR2 = ticks1;
+			TIM3->CCR3 = ticks2;
+			TIM3->CCR4 = ticks3;
 			break;
+
 		case SWITCH_INT_CLEAN:
-			// En este se limpian las variales
+			/* Limpieza de estado */
 			countUpTx[0] = 1;
 			countUpTx[1] = 1;
-			countUpTx[1] = 1;
+			countUpTx[2] = 1;
 			flagTxActivo[0] = 0;
 			flagTxActivo[1] = 0;
-			flagTxActivo[1] = 0;
+			flagTxActivo[2] = 0;
 			break;
-			
+
 		default:
-				// En el default no hay nada
 			break;
 	}
-	
-
 }
 
-
-// Esta funcion utiliza el caudranteActual para setear los pines de salida
-void GestorSVM_SwitchPuertos(OrdenSwitch orden, char estado, int numCuadrante) {
-
-	switch(orden) {
+static void GestorSVM_SwitchPuertos(OrdenSwitch orden, char estado, int numCuadrante) {
+	switch (orden) {
 		case ORDEN_SWITCH_1_UP:
-			GPIOA->BSRR = estadoGPIOPorCuadranteYOrden[numCuadrante][0];
-			break;
 		case ORDEN_SWITCH_2_UP:
-			GPIOA->BSRR = estadoGPIOPorCuadranteYOrden[numCuadrante][1];
+		case ORDEN_SWITCH_3_DOWN:
+		case ORDEN_SWITCH_2_DOWN:
+			GPIOA->BSRR = estadoGPIOPorCuadranteYOrden[numCuadrante][estado];
 			break;
 		case ORDEN_SWITCH_3_UP:
 			GPIOA->BSRR = estadoGPIOOn;
-			break;
-		case ORDEN_SWITCH_3_DOWN:
-			GPIOA->BSRR = estadoGPIOPorCuadranteYOrden[numCuadrante][1];
-			break;
-		case ORDEN_SWITCH_2_DOWN:
-			GPIOA->BSRR = estadoGPIOPorCuadranteYOrden[numCuadrante][0];
 			break;
 		case ORDEN_SWITCH_1_DOWN:
 			GPIOA->BSRR = estadoGPIOOff;
 			break;
 	}
-
 }
 
-
-
-// Funcion ejecutada por el calculo, no necesita parametros sombra
-void GestorSVM_CalculoAceleracion() {
-
-	// En esta funcion se puede llegar a dar una incoherencia debido a la sincronizacion
-	// de las variables sombra. Si se esta ejecutando un cambio de frecuencia en la funcion 
-	// GestorSVM_SetFrecOut, es decir que se habia escrito flagChangingFrec y antes de llegar
-	// levantar el flagActualizarParamSombra, justo en ese momento llega una interrupcion 
-	// de este timer de calculo y en esa iteracion se terminaba de llegar a la velocidad 
-	// taget. En ese caso se va a pisar ese flagChangingFrec y se va a quedar como si nunca hubiese
-	// pasado.
-	// Debido a que es un caso muy extremo no se analiza 
-
-	// Chequeamos si hay que actualizar los parametros sombra
-	if(flagActualizarParamSombra) {
-		frecObjetivo = paramSombra.frecObjetivo;
-		cambioFrecPorCiclo = paramSombra.cambioFrecPorCiclo;
-		direccionRotacion = paramSombra.direccionRotacion;
-
-		flagMotorRunning = paramSombra.flagMotorRunning;
-		flagEsAcelerado = paramSombra.flagEsAcelerado;
-		flagChangingFrec = paramSombra.flagChangingFrec;
-
+static void GestorSVM_Calculoaceleracioneracion() {
+	/* Sincronización con parámetros sombra, si corresponde */
+	if (flagActualizarParamSombra) {
+		frecObjetivo       = paramSombra.frecObjetivo;
+		cambioFrecuenciaPorCiclo = paramSombra.cambioFrecuenciaPorCiclo;
+		direccionRotacion  = paramSombra.direccionRotacion;
+		flagMotorRunning   = paramSombra.flagMotorRunning;
+		flagEsAcelerado    = paramSombra.flagEsAcelerado;
+		flagChangingFrecuencia   = paramSombra.flagChangingFrecuencia;
 		flagActualizarParamSombra = 0;
 	}
 
-	// La frecOutput y la frecObjetivo esta escalada por 1000
-	// Tenemos que agregarle un prescaler para las frec bajas
-
-
-	if(flagEsAcelerado) {
-		frecSalida += cambioFrecPorCiclo;
-		if(frecSalida >= frecObjetivo) {
-			frecSalida = frecObjetivo;
-			// Se manda la señal, la indicacion al gestor de estados
+	/* Aplicación de rampa */
+	if (flagEsAcelerado) {
+		frecuenciaSalida += cambioFrecuenciaPorCiclo;
+		if (frecuenciaSalida >= frecObjetivo) {
+			frecuenciaSalida = frecObjetivo;
 			GestorEstados_Action(ACTION_TO_CONST_RUNNING, 0);
-			// Se acomodan los flags
-			flagChangingFrec = 0;
+			flagChangingFrecuencia = 0;
 		}
-	}else {
-		frecSalida -= cambioFrecPorCiclo;
-		if(frecSalida <= frecObjetivo) {
-			frecSalida = frecObjetivo;
-			
-			if(frecObjetivo == 0) {
-				flagMotorRunning = 0;
-				
-				// Se detiene el timer de interrupcion
-				GestorTimers_DetenerTimerSVM();
-				
-				// Se limpian la funcion de interrpuciones de switch
-				GestorSVM_SwitchInterrupt(SWITCH_INT_CLEAN);
-				
-				// Limpieza del buffer de calculo
-				bufferCalculo.indEscritura = 0;
-				bufferCalculo.indLectura = 0;
-				bufferCalculo.numDatos = 0;
-				
-				// Apagamos los pines de la senal
-				HAL_GPIO_WritePin(GPIOA, puerto_senal_pierna[0], GPIO_PIN_RESET);
-				HAL_GPIO_WritePin(GPIOA, puerto_senal_pierna[1], GPIO_PIN_RESET);
-				HAL_GPIO_WritePin(GPIOA, puerto_senal_pierna[2], GPIO_PIN_RESET);
-				
-				// Apagamos los pines de encendido del IR2104
-				HAL_GPIO_WritePin(GPIOA, puerto_encen_pierna[0], GPIO_PIN_RESET);
-				HAL_GPIO_WritePin(GPIOA, puerto_encen_pierna[1], GPIO_PIN_RESET);
-				HAL_GPIO_WritePin(GPIOA, puerto_encen_pierna[2], GPIO_PIN_RESET);
-				
-				// Se envia la señal de que el motor se detuvo
-				GestorEstados_Action(ACTION_MOTOR_STOPPED, 0);
+	} else {
+		frecuenciaSalida -= cambioFrecuenciaPorCiclo;
+		if (frecuenciaSalida <= frecObjetivo) {
+			frecuenciaSalida = frecObjetivo;
 
-			}else {
-				// Se manda la señal, la indicacion al gestor de estados
+			if (frecObjetivo == 0) {
+				flagMotorRunning = 0;
+				GestorTimers_DetenerTimerSVM();
+				GestorSVM_SwitchInterrupt(SWITCH_INT_CLEAN);
+
+				/* Limpia buffer productor/consumidor */
+				bufferCalculo.indiceEscritura = 0;
+				bufferCalculo.indiceLectura   = 0;
+				bufferCalculo.contadorDeDatos     = 0;
+
+				/* Apaga salidas y drivers */
+				HAL_GPIO_WritePin(GPIOA, GPIO_U_IN, GPIO_PIN_RESET);
+				HAL_GPIO_WritePin(GPIOA, GPIO_V_IN, GPIO_PIN_RESET);
+				HAL_GPIO_WritePin(GPIOA, GPIO_W_IN, GPIO_PIN_RESET);
+
+				HAL_GPIO_WritePin(GPIOA, GPIO_U_SD, GPIO_PIN_RESET);
+				HAL_GPIO_WritePin(GPIOA, GPIO_V_SD, GPIO_PIN_RESET);
+				HAL_GPIO_WritePin(GPIOA, GPIO_W_SD, GPIO_PIN_RESET);
+
+				/* Notifica detención */
+				GestorEstados_Action(ACTION_MOTOR_STOPPED, 0);
+			} else {
 				GestorEstados_Action(ACTION_TO_CONST_RUNNING, 0);
-			}			
-			
-			// Se acomodan los flags
-			flagChangingFrec = 0;
+			}
+			flagChangingFrecuencia = 0;
 		}
 	}
 
-	if(frecSalida < 50 * 1000 * 1000) {
-		indiceModulacion = frecSalida / (500 * 1000);
-	}else {
+	/* Índice de modulación (V/f) */
+	if (frecuenciaSalida < 50 * 1000 * 1000) {
+		indiceModulacion = frecuenciaSalida / (500 * 1000); // lineal hasta 50 Hz
+	} else {
 		indiceModulacion = 100;
 	}
-
-	// No vamos a permitir un indice de modulacion menor a 2
-	if(indiceModulacion < 1) {
+	if (indiceModulacion < 1) {
 		indiceModulacion = 1;
 	}
 
-	// Calculamos el angulo que recorre en un switch
-	// El orden de la operacion es importante, de manera contraria
-	// se podria generar un overflow
-	ang_switch = (frecSalida / frec_switch) * 360 ;
-
-
-	//static int indx = 0;
-
-	//if(frecSalida > indx * 1000 * 1000) {
-	//	printf("angParcial: %d, angSwitch: %d, frecOut: %d, indiceMod: %d\n", angParcial, ang_switch, frecSalida, indiceModulacion);
-	//	indx ++;
-	//}
+	/* Incremento angular por switching (cuidar orden para evitar overflow) */
+	anguloSwitching = (frecuenciaSalida / frecuenciaSwitching) * 360;
 }
 
+/**
+ * @fn void GestorSVM_SetConfiguration(ConfiguracionSVM* configuracion)
+ * @brief Carga la configuración base de SVM y prepara tablas de BSRR por cuadrante.
+ * @param configuracion Puntero a @ref ConfiguracionSVM.
+ */
+void GestorSVM_SetConfiguration(ConfiguracionSVM* configuracion) {
+	int i;
+	/* Dinámicos */
+	frecuenciaSwitching       = configuracion->frecuenciaSwitching;
+	direccionRotacion = configuracion->direccionRotacion;
+	aceleracion              = configuracion->aceleracion;
+	desaceleracion           = configuracion->desaceleracion;
 
-/*
+	/* Referencia (inicia como target) */
+	GestorSVM_SetFrec(configuracion->frecuenciaReferenica);
 
-	Funciones llamadas por el Gestor de Estados
-	La mayoria derivan de llamadas del SPI, se ejecutan en el vector de interrupcion
-	del DMA
+	printf("Configuracion Seteada \n");
+	int estado0, estado1, estado2, estado3;
+	int pinToggle1, pinToggle2, pinToggle3;
+	uint32_t myBSRR;
 
-*/
+	estadoGPIOOff = (GPIO_U_IN | GPIO_V_IN | GPIO_W_IN) << 16;
+	estadoGPIOOn  = (GPIO_U_IN | GPIO_V_IN | GPIO_W_IN);
 
+	for (i = 0; i < 6; i++) {
+		estado0 = vectorSecuenciaPorCuadrante[i][0];
+		estado1 = vectorSecuenciaPorCuadrante[i][1];
+		estado2 = vectorSecuenciaPorCuadrante[i][2];
+		estado3 = vectorSecuenciaPorCuadrante[i][3];
 
-	
+		/* Estado 0→1 */
+		myBSRR = 0;
+		myBSRR |= ((estado1 & 0b100) > 0) ? puerto_senal_pierna[0] : (puerto_senal_pierna[0] << 16);
+		myBSRR |= ((estado1 & 0b010) > 0) ? puerto_senal_pierna[1] : (puerto_senal_pierna[1] << 16);
+		myBSRR |= ((estado1 & 0b001) > 0) ? puerto_senal_pierna[2] : (puerto_senal_pierna[2] << 16);
+		estadoGPIOPorCuadranteYOrden[i][0] = myBSRR;
+
+		/* Estado 1→2 */
+		myBSRR = 0;
+		myBSRR |= ((estado2 & 0b100) > 0) ? puerto_senal_pierna[0] : (puerto_senal_pierna[0] << 16);
+		myBSRR |= ((estado2 & 0b010) > 0) ? puerto_senal_pierna[1] : (puerto_senal_pierna[1] << 16);
+		myBSRR |= ((estado2 & 0b001) > 0) ? puerto_senal_pierna[2] : (puerto_senal_pierna[2] << 16);
+		estadoGPIOPorCuadranteYOrden[i][1] = myBSRR;
+
+		/* Pines que conmutan entre estados (XOR) */
+		pinToggle1 = pinMap(estado0 ^ estado1);
+		pinToggle2 = pinMap(estado1 ^ estado2);
+		pinToggle3 = pinMap(estado2 ^ estado3);
+
+		/* Mapa a U/V/W con desplazamiento */
+		pinTogglePorCuadranteYOrden[i][0] = GPIO_U_IN << (pinToggle1 * 2);
+		pinTogglePorCuadranteYOrden[i][1] = GPIO_U_IN << (pinToggle2 * 2);
+		pinTogglePorCuadranteYOrden[i][2] = GPIO_U_IN << (pinToggle3 * 2);
+	}
+}
+
+/**
+ * @fn void GestorSVM_CalcInterrupt(void)
+ * @brief Handler llamado por el timer de cálculo (productor). Encola t1/t2/t3 si hay espacio.
+ */
+void GestorSVM_CalcInterrupt() {
+	int indiceEscritura;
+
+	if (bufferCalculo.contadorDeDatos < BUFFER_CALCULO_SIZE) {
+		indiceEscritura = bufferCalculo.indiceEscritura;
+
+		GestorSVM_CalcularValoresSwitching();
+
+		/* Encolar resultados */
+		bufferCalculo.ticksChannel1[indiceEscritura] = ticksChannel[0];
+		bufferCalculo.ticksChannel2[indiceEscritura] = ticksChannel[1];
+		bufferCalculo.ticksChannel3[indiceEscritura] = ticksChannel[2];
+		bufferCalculo.casoInterferencia[indiceEscritura] = casoInterferencia;
+		bufferCalculo.cuadranteActual[indiceEscritura]   = cuadranteActual;
+
+		bufferCalculo.indiceEscritura = (indiceEscritura + 1) % BUFFER_CALCULO_SIZE;
+		bufferCalculo.contadorDeDatos++;
+	}
+}
+
+/* ------------------------ API invocada por el Gestor de Estados (SPI) ------------------------ */
+
+/**
+ * @fn int GestorSVM_SetFrec(int frec)
+ * @brief Solicita nueva frecuencia objetivo (Hz). Inicia rampa si el motor está en marcha.
+ * @param frec Frecuencia objetivo [Hz].
+ * @return 0 si aceptada (motor detenido), 1 si aceptada con rampa en curso; -1 fuera de rango; -2 misma que la actual.
+ */
 int GestorSVM_SetFrec(int frec) {
-
 	int flagEsAcelerado_local;
-	int32_t cambioFrecPorCiclo_local;
-	int32_t fregTarget_local;
+	int32_t cambioFrecuenciaPorCiclo_local;
+	int32_t frecTarget_local;
 	int32_t nuevaFrec;
 
-	if(frec < frecOutMin || frec > frecOutMax) {return -1;}	// Fuera de los rangos de operacion
-	
-	// Lo escalamos
+	if (frec < FERC_OUT_MIN || frec > FERC_OUT_MAX) {
+		return -1;
+	}
 	nuevaFrec = (int32_t)frec * 1000 * 1000;
-
-	// Se cambio la frecuencia a la misma, error
-	if(frecSalida == nuevaFrec) {return -2;}
-
-	// Si el motor esta en movimiento tengo que configurar para realizar un cambio de velocidad
-	if(flagMotorRunning) {
-
-		// Seteo del flagEsAcelerado usando la frec actual
-		if(frecSalida < nuevaFrec) {
-			flagEsAcelerado_local = 1;
-			cambioFrecPorCiclo_local = (acel * 1000 * 1000) / (frec_switch);
-		}else {
-			flagEsAcelerado_local = 0;
-			cambioFrecPorCiclo_local = (desacel * 1000 * 1000) / (frec_switch);
-		}
-		
-		fregTarget_local = nuevaFrec;
-		frecReferencia = frec;
-	
-		// Seteo de los parametros sombra y el flag de actualizacion
-		// No se modifica paramSombra.direccionRotacion
-		paramSombra.flagMotorRunning = 1;
-		paramSombra.flagChangingFrec = 1;
-		paramSombra.flagEsAcelerado = flagEsAcelerado_local;
-		paramSombra.cambioFrecPorCiclo = cambioFrecPorCiclo_local;
-		paramSombra.frecObjetivo = fregTarget_local;
-		flagActualizarParamSombra = 1;
-
-		// Habilitamos el cambio de frecuencia
-		flagChangingFrec = 1;
-
-		return 1;
-	}else {
-		frecReferencia = frec;
-		return 0;
+	if (frecuenciaSalida == nuevaFrec) {
+		return -2;
 	}
 
+	if (flagMotorRunning) {
+		/* Determinar sentido de la rampa */
+		if (frecuenciaSalida < nuevaFrec) {
+			flagEsAcelerado_local = 1;
+			cambioFrecuenciaPorCiclo_local = (aceleracion * 1000 * 1000) / (frecuenciaSwitching);
+		} else {
+			flagEsAcelerado_local = 0;
+			cambioFrecuenciaPorCiclo_local = (desaceleracion * 1000 * 1000) / (frecuenciaSwitching);
+		}
 
-	return 0;
+		frecTarget_local = nuevaFrec;
+		frecuenciaReferenica = frec;
+
+		/* Parámetros sombra */
+		paramSombra.flagMotorRunning   = 1;
+		paramSombra.flagChangingFrecuencia   = 1;
+		paramSombra.flagEsAcelerado    = flagEsAcelerado_local;
+		paramSombra.cambioFrecuenciaPorCiclo = cambioFrecuenciaPorCiclo_local;
+		paramSombra.frecObjetivo       = frecTarget_local;
+		flagActualizarParamSombra = 1;
+
+		flagChangingFrecuencia = 1;
+		return 1;
+	} else {
+		frecuenciaReferenica = frec;
+		return 0;
+	}
 }
 
+/**
+ * @fn int GestorSVM_SetDir(int dir)
+ * @brief Cambia el sentido de giro si el motor está detenido.
+ * @param dir 0 o 1 (mapeo a antihorario/horario).
+ * @return 0 OK; -1 fuera de rango; -2 si motor en marcha o rampa activa.
+ */
 int GestorSVM_SetDir(int dir) {
-
 	int estado1, estado2;
 	int i;
 	uint32_t myBSRR;
 
-	// Si estamos cambiando la frecuencia, no podemos cambiar la direccion
-	if(flagMotorRunning) {return -2;}
-	if(flagChangingFrec) {return -2;}
-	if(dir != 0 && dir != 1) {return -1;}
+	if (flagMotorRunning) {
+		return -2;
+	}
+	if (flagChangingFrecuencia) {
+		return -2;
+	}
+	if (dir != 0 && dir != 1) {
+		return -1;
+	}
+	if (dir == direccionRotacion) {
+		return 0;
+	}
 
-	if(dir == direccionRotacion) {return 0;}
-	
-	// Se recalcula el estadoGPIOPorCuadranteYOrden
-	// Se intercambian el orden de los pines, el pin 1 por el 2
-
-	for(i = 0; i < 6; i++) {
+	/* Recalcular tablas BSRR intercambiando U↔V */
+	for (i = 0; i < 6; i++) {
 		estado1 = vectorSecuenciaPorCuadrante[i][1];
 		estado2 = vectorSecuenciaPorCuadrante[i][2];
 
 		myBSRR = 0;
-		myBSRR |= ((estado1 & 0b100) > 0) ? puerto_senal_pierna[1] : (puerto_senal_pierna[1] << 16);
-		myBSRR |= ((estado1 & 0b010) > 0) ? puerto_senal_pierna[0] : (puerto_senal_pierna[0] << 16);
-		myBSRR |= ((estado1 & 0b001) > 0) ? puerto_senal_pierna[2] : (puerto_senal_pierna[2] << 16);
-
+		myBSRR |= ((estado1 & 0b100) ? GPIO_V_IN : (GPIO_V_IN << 16));
+		myBSRR |= ((estado1 & 0b010) ? GPIO_U_IN : (GPIO_U_IN << 16));
+		myBSRR |= ((estado1 & 0b001) ? GPIO_W_IN : (GPIO_W_IN << 16));
 		estadoGPIOPorCuadranteYOrden[i][0] = myBSRR;
 
 		myBSRR = 0;
-		myBSRR |= ((estado2 & 0b100) > 0) ? puerto_senal_pierna[1] : (puerto_senal_pierna[1] << 16);
-		myBSRR |= ((estado2 & 0b010) > 0) ? puerto_senal_pierna[0] : (puerto_senal_pierna[0] << 16);
-		myBSRR |= ((estado2 & 0b001) > 0) ? puerto_senal_pierna[2] : (puerto_senal_pierna[2] << 16);
-
+		myBSRR |= ((estado2 & 0b100) ? GPIO_V_IN : (GPIO_V_IN << 16));
+		myBSRR |= ((estado2 & 0b010) ? GPIO_U_IN : (GPIO_U_IN << 16));
+		myBSRR |= ((estado2 & 0b001) ? GPIO_W_IN : (GPIO_W_IN << 16));
 		estadoGPIOPorCuadranteYOrden[i][1] = myBSRR;
 	}
 
 	direccionRotacion = dir;
-
 	return 0;
 }
 
-// Devuelve 0 si se modifica exitosamente
-// Devuelve -1 si falla por fuera de rango
-// Devuelve -2 si falla ya que esta cambiando de velocidad
-int GestorSVM_SetAcel(int nuevaAcel) {
-	
-	// Si estamos cambiando la frecuencia, no podemos cambiar la aceleracion
-	if(flagChangingFrec) {return -2;}
-
-	if(nuevaAcel < acelMin || nuevaAcel > acelMax) {return -1;}	// Fuera de los rangos de operacion
-	
-	acel = nuevaAcel;
-	
+/**
+ * @fn int GestorSVM_Setaceleracion(int nuevaaceleracion)
+ * @brief Actualiza acelerada [Hz/s].
+ * @return 0 OK; -1 fuera de rango; -2 si hay rampa activa.
+ */
+int GestorSVM_Setaceleracion(int nuevaaceleracion) {
+	if (flagChangingFrecuencia) {
+		return -2;
+	}
+	if (nuevaaceleracion < ACELERACION_MINIMA || nuevaaceleracion > ACCLERACION_MAXIMA) {
+		return -1;
+	}
+	aceleracion = nuevaaceleracion;
 	return 0;
 }
 
+/**
+ * @fn int GestorSVM_SetDecel(int nuevaDecel)
+ * @brief Actualiza desacelerada [Hz/s].
+ * @return 0 OK; -1 fuera de rango; -2 si hay rampa activa.
+ */
 int GestorSVM_SetDecel(int nuevaDecel) {
-	// Si estamos cambiando la frecuencia, no podemos cambiar la desaceleracion
-	if(flagChangingFrec) {return -2;}
-
-	if(nuevaDecel < desacelMin || nuevaDecel > desacelMax) {return -1;}	// Fuera de los rangos de operacion
-	
-	desacel = nuevaDecel;
-
+	if (flagChangingFrecuencia) {
+		return -2;
+	}
+	if (nuevaDecel < DESACELERACION_MINIMA || nuevaDecel > DESACELERACION_MAXIMA) {
+		return -1;
+	}
+	desaceleracion = nuevaDecel;
 	return 0;
 }
 
+/**
+ * @fn int GestorSVM_MotorStart(void)
+ * @brief Arranca el motor: habilita drivers, inicia timers y rampa hacia @ref frecuenciaReferenica.
+ * @return 0 si arranca; 1 si ya estaba en marcha.
+ */
 int GestorSVM_MotorStart() {
-
-	// En esta funcion no se utilizan parametros sombra ya que no se esta ejecutando el timer
-	// de calculo ni el de switcheo
-	if(!flagMotorRunning) {
-
-		// El motor se acelera, se levanta el flag de running
-		// Es un movimiento acelerado, aumenta las rpm
-		// Se calcula la aceleracion, se levanta el flag de cambio de movimiento
+	if (!flagMotorRunning) {
 		flagMotorRunning = 1;
 		flagEsAcelerado = 1;
-		flagChangingFrec = 1;
+		flagChangingFrecuencia = 1;
 
-		// Calculo de la aceleracion
-		cambioFrecPorCiclo = (acel * 1000 * 1000) / (frec_switch);
+		cambioFrecuenciaPorCiclo = (aceleracion * 1000 * 1000) / (frecuenciaSwitching);
 
-		paramSombra.frecObjetivo = (uint32_t)frecReferencia * 1000 * 1000;
+		/* Parámetros sombra de arranque */
+		paramSombra.frecObjetivo = (uint32_t)frecuenciaReferenica * 1000 * 1000;
 		paramSombra.flagMotorRunning = 1;
 		paramSombra.flagEsAcelerado = 1;
-		paramSombra.flagChangingFrec = 1;
-		paramSombra.cambioFrecPorCiclo = cambioFrecPorCiclo;
+		paramSombra.flagChangingFrecuencia = 1;
+		paramSombra.cambioFrecuenciaPorCiclo = cambioFrecuenciaPorCiclo;
 		flagActualizarParamSombra = 1;
 
+		/* Habilitar drivers */
+		HAL_GPIO_WritePin(GPIOA, GPIO_U_SD, GPIO_PIN_SET);
+		HAL_GPIO_WritePin(GPIOA, GPIO_V_SD, GPIO_PIN_SET);
+		HAL_GPIO_WritePin(GPIOA, GPIO_W_SD, GPIO_PIN_SET);
 
-		//GestorSVM_CalcularValoresSwitching();
-
-		HAL_GPIO_WritePin(GPIOA, puerto_encen_pierna[0], GPIO_PIN_SET);
-		HAL_GPIO_WritePin(GPIOA, puerto_encen_pierna[1], GPIO_PIN_SET);
-		HAL_GPIO_WritePin(GPIOA, puerto_encen_pierna[2], GPIO_PIN_SET);
-
-		// Se calcula un valor
+		/* Precargar una muestra y sincronizar switching */
 		GestorSVM_CalcInterrupt();
-
-		// Se consume y se precargan los timers
 		GestorSVM_SwitchInterrupt(SWITCH_INT_RESET);
 
-		// Se inician las interrupciones
+		/* Iniciar timer de switching */
 		GestorTimers_IniciarTimerSVM();
-
 		return 0;
 	}
-
 	return 1;
 }
 
+/**
+ * @fn int GestorSVM_MotorStop(void)
+ * @brief Ordena frenado con rampa de @ref desaceleracion hasta 0 Hz.
+ * @return 0 si acepta; 1 si ya estaba detenido.
+ */
 int GestorSVM_MotorStop() {
-
-	if(flagMotorRunning) {
-		
+	if (flagMotorRunning) {
 		flagEsAcelerado = 0;
-		flagChangingFrec = 1;
+		flagChangingFrecuencia = 1;
 
-		// Calculo de la desaceleracion
-		cambioFrecPorCiclo = (desacel * 1000 * 1000) / (frec_switch);
-
+		cambioFrecuenciaPorCiclo = (desaceleracion * 1000 * 1000) / (frecuenciaSwitching);
 		frecObjetivo = 0;
 
-		// Se actualizan los parametros sombra
+		/* Parámetros sombra */
 		paramSombra.flagMotorRunning = 1;
 		paramSombra.flagEsAcelerado = 0;
-		paramSombra.flagChangingFrec = 1;
-		paramSombra.cambioFrecPorCiclo = cambioFrecPorCiclo;
+		paramSombra.flagChangingFrecuencia = 1;
+		paramSombra.cambioFrecuenciaPorCiclo = cambioFrecuenciaPorCiclo;
 		paramSombra.frecObjetivo = 0;
 		flagActualizarParamSombra = 1;
 
@@ -1191,86 +849,91 @@ int GestorSVM_MotorStop() {
 	return 1;
 }
 
+/**
+ * @fn int GestorSVM_Estop(void)
+ * @brief Parada de emergencia inmediata: desactiva timers, apaga drivers y salidas.
+ * @return Siempre 0.
+ */
 int GestorSVM_Estop() {
-
-	if(flagMotorRunning) {
-
-		// Se detiene el timer de interrupcion
+	if (flagMotorRunning) {
 		GestorTimers_DetenerTimerSVM();
-		
-		// Apagamos los pines de encendido del IR2104
-		HAL_GPIO_WritePin(GPIOA, puerto_encen_pierna[0], GPIO_PIN_RESET);
-		HAL_GPIO_WritePin(GPIOA, puerto_encen_pierna[1], GPIO_PIN_RESET);
-		HAL_GPIO_WritePin(GPIOA, puerto_encen_pierna[2], GPIO_PIN_RESET);
-		
-		// Se limpian la funcion de interrpuciones de switch
+
+		HAL_GPIO_WritePin(GPIOA, GPIO_U_SD, GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(GPIOA, GPIO_V_SD, GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(GPIOA, GPIO_W_SD, GPIO_PIN_RESET);
+
 		GestorSVM_SwitchInterrupt(SWITCH_INT_CLEAN);
-		
-		// Limpieza del buffer de calculo
-		bufferCalculo.indEscritura = 0;
-		bufferCalculo.indLectura = 0;
-		bufferCalculo.numDatos = 0;
 
-		// Apagamos los pines de la senal
-		HAL_GPIO_WritePin(GPIOA, puerto_senal_pierna[0], GPIO_PIN_RESET);
-		HAL_GPIO_WritePin(GPIOA, puerto_senal_pierna[1], GPIO_PIN_RESET);
-		HAL_GPIO_WritePin(GPIOA, puerto_senal_pierna[2], GPIO_PIN_RESET);
+		bufferCalculo.indiceEscritura = 0;
+		bufferCalculo.indiceLectura   = 0;
+		bufferCalculo.contadorDeDatos     = 0;
 
-		// Limpio los flags y establezco la frecuencia en cero
-		flagChangingFrec = 0;
+		HAL_GPIO_WritePin(GPIOA, GPIO_U_IN, GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(GPIOA, GPIO_V_IN, GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(GPIOA, GPIO_W_IN, GPIO_PIN_RESET);
+
+		flagChangingFrecuencia = 0;
 		flagMotorRunning = 0;
-		frecSalida = 0;
+		frecuenciaSalida = 0;
+	}
+	return 0;
+}
+
+/**
+ * @fn int GestorSVM_GetFrec(void)
+ * @brief Devuelve la frecuencia de referencia configurada (Hz).
+ * @return @ref frecuenciaReferenica.
+ */
+int GestorSVM_GetFrec() {
+	return frecuenciaReferenica;
+}
+
+/** @brief Devuelve acelerada actual [Hz/s]. */
+int GestorSVM_Getaceleracion() {
+	return aceleracion; 
+}
+
+/** @brief Devuelve desacelerada actual [Hz/s]. */
+int GestorSVM_GetDesaceleracion() {
+	return desaceleracion; 
+}
+
+/** @brief Devuelve sentido de giro (1 horario, -1 antihorario). */
+int GestorSVM_GetDir() {
+	return direccionRotacion; 
+}
+
+/* ================================ ISR de TIM3 (HAL) ================================ */
+
+/**
+ * @fn void HAL_TIM_OC_DelayElapsedCallback(TIM_HandleTypeDef *htim)
+ * @brief Callback HAL de Output Compare: enruta eventos CCR de TIM3 a @ref GestorSVM_SwitchInterrupt.
+ * @param htim Puntero al handle del timer que disparó el evento.
+ * @details
+ *   - CH1 → @ref SWITCH_INT_RESET
+ *   - CH2 → @ref SWITCH_INT_CH1
+ *   - CH3 → @ref SWITCH_INT_CH2
+ *   - CH4 → @ref SWITCH_INT_CH3
+ */
+void HAL_TIM_OC_DelayElapsedCallback(TIM_HandleTypeDef *htim) {
+	if (htim->Instance != TIM3) {
+		return;
 	}
 
-	return 0;	// Siempre devuelve cero
-}
-
-int GestorSVM_GetFrec() {
-	/*if(flagMotorRunning) {
-		return frecSalida / (1000 * 1000);
-	} else {
-		return 0;
-	}*/
-
-	return frecReferencia;
-}
-
-int GestorSVM_GetAcel() {
-	return acel;
-}
-
-int GestorSVM_GetDesacel() {
-	return desacel;
-}
-
-int GestorSVM_GetDir() {
-	return direccionRotacion;
-}
-
-void HAL_TIM_OC_DelayElapsedCallback(TIM_HandleTypeDef *htim)
-{
-    if (htim->Instance != TIM3) return;
-
-    switch (htim->Channel)
-    {
-        case HAL_TIM_ACTIVE_CHANNEL_1:
-            // Canal 1 → normalmente RESET o sincronización
-            GestorSVM_SwitchInterrupt(SWITCH_INT_RESET);
-            break;
-
-        case HAL_TIM_ACTIVE_CHANNEL_2:
-            GestorSVM_SwitchInterrupt(SWITCH_INT_CH1);
-            break;
-
-        case HAL_TIM_ACTIVE_CHANNEL_3:
-            GestorSVM_SwitchInterrupt(SWITCH_INT_CH2);
-            break;
-
-        case HAL_TIM_ACTIVE_CHANNEL_4:
-            GestorSVM_SwitchInterrupt(SWITCH_INT_CH3);
-            break;
-
-        default:
-            break;
-    }
+	switch (htim->Channel) {
+		case HAL_TIM_ACTIVE_CHANNEL_1:
+			GestorSVM_SwitchInterrupt(SWITCH_INT_RESET);
+			break;
+		case HAL_TIM_ACTIVE_CHANNEL_2:
+			GestorSVM_SwitchInterrupt(SWITCH_INT_CH1);
+			break;
+		case HAL_TIM_ACTIVE_CHANNEL_3:
+			GestorSVM_SwitchInterrupt(SWITCH_INT_CH2);
+			break;
+		case HAL_TIM_ACTIVE_CHANNEL_4:
+			GestorSVM_SwitchInterrupt(SWITCH_INT_CH3);
+			break;
+		default:
+			break;
+	}
 }
