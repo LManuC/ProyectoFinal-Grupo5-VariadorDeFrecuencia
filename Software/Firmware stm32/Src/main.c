@@ -59,7 +59,7 @@ UART_HandleTypeDef huart1;
  * 
  * @brief Inicializa GPIOA y GPIOB.
  *
- * @details Configura los pines de los puertos A y B como salidas push pull, sin pull up y como pines de baja frecuencia. Los pines configurados son los que controlan el modulador, entradas digitales (termoswitch y boton de stop) y salidas (leds de estado).
+ * @details Configura los pines de los puertos A y B como salidas push pull, sin pull up y como pines de baja frecuencia. Los pines configurados son los que controlan el modulador y salidas (leds de estado). Las entradas digitales (termoswitch y boton de stop) no son configuradas ya que serán señales controladas por el HMI.
  */
 static void MX_GPIO_Init(void);
 
@@ -68,9 +68,10 @@ static void MX_GPIO_Init(void);
  *
  * @brief Habilita el clock del DMA1 y sus interrupciones de canal 4 y 5.
  *
- * @details Habilita el reloj del **DMA1** y registra en el NVIC las IRQ de **DMA1_Channel4** y **DMA1_Channel5** con prioridad 0.
+ * @details Habilita el reloj del **DMA1** y registra en el NVIC las IRQ de **DMA1_Channel4** y **DMA1_Channel5** con prioridad 2.
  * En F1, estos canales suelen mapearse a **SPI2_RX (Ch4)** y **SPI2_TX (Ch5)**, por lo que esta rutina deja listo el DMA para que llamadas como `HAL_SPI_TransmitReceive_DMA()` configuren y lancen las transferencias.  
  * No configura direcciones, tamaños ni modos del DMA; solo habilita el clock y las IRQ.
+ * @note Anteriormente la prioridad era 0. Luego pasó a 2 ya que en el SPI se configura en 2.
  */
 static void MX_DMA_Init(void);
 
@@ -118,7 +119,7 @@ static void MX_SPI2_Init(void);
  * @details
  * La función main inicializa la estructura de configuración, inicializa los periféricos y el gestor de estados. Al terminar su trabajo queda en un while(1) con la sentencia WFI para reducir el consumo de CPU.
  *   1) HAL_Init()
- *   2) SystemClock_Config()  ← (ver checklist: falta llamada)
+ *   2) SystemClock_Config()
  *   3) Carga configuración SVM (frecuencia de switching, ref, etc.).
  *   4) Inicializa manejador de timers (GestorTimers_Init).
  *   5) Inicializa periféricos (GPIO, DMA, TIM3, USART1, TIM2, SPI2) y driver SPI.
@@ -131,6 +132,7 @@ static void MX_SPI2_Init(void);
 int main(void) {
 
   HAL_Init();                                   /// Configuración del MCU. Reset of all peripherals, Initializes the Flash interface and the Systick.
+  SystemClock_Config();
  
   
   ConfiguracionSVM config = {                   /// Cofiguración del módulo SVM
@@ -150,17 +152,17 @@ int main(void) {
   config.puerto_encen_pierna[2] = GPIO_PIN_6;
   GestorSVM_SetConfiguration(&config);
 
-  // Inicio del gestor de timers
-  GestorTimers_Init(&htim3, &htim2);
-
   // Initialize all configured peripherals
   MX_GPIO_Init();
   MX_DMA_Init();
   MX_TIM3_Init();
-  MX_USART1_UART_Init();
   MX_TIM2_Init();
+  MX_USART1_UART_Init();
   MX_SPI2_Init();
   SPI_Init(&hspi2);
+
+  // Inicio del gestor de timers
+  GestorTimers_Init(&htim3, &htim2);
 
   // Informamos al gestor de estados que finalizo la inicializacion
   // Esta debe ser la ultima llama de funcion del init
@@ -334,9 +336,9 @@ static void MX_USART1_UART_Init(void) {
 
 static void MX_DMA_Init(void) {
   __HAL_RCC_DMA1_CLK_ENABLE();
-  HAL_NVIC_SetPriority(DMA1_Channel4_IRQn, 0, 0);
+  HAL_NVIC_SetPriority(DMA1_Channel4_IRQn, 2, 0);
   HAL_NVIC_EnableIRQ(DMA1_Channel4_IRQn);
-  HAL_NVIC_SetPriority(DMA1_Channel5_IRQn, 0, 0);
+  HAL_NVIC_SetPriority(DMA1_Channel5_IRQn, 2, 0);
   HAL_NVIC_EnableIRQ(DMA1_Channel5_IRQn);
 }
 
@@ -348,7 +350,7 @@ static void MX_GPIO_Init(void) {
   __HAL_RCC_GPIOA_CLK_ENABLE();
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
-  HAL_GPIO_WritePin(GPIOA, GPIO_U_IN|GPIO_U_SD|GPIO_V_IN|GPIO_V_SD|GPIO_W_IN|GPIO_W_SD|GPIO_TERMO_SWITCH|GPIO_STOP_BUTTON, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOA, GPIO_U_IN|GPIO_U_SD|GPIO_V_IN|GPIO_V_SD|GPIO_W_IN|GPIO_W_SD, GPIO_PIN_RESET);//|GPIO_TERMO_SWITCH|GPIO_STOP_BUTTON, GPIO_PIN_RESET);
   HAL_GPIO_WritePin(GPIOB, GPIO_LED_STATE|GPIO_LED_ERROR, GPIO_PIN_RESET);
 
   GPIO_InitStruct.Pin = GPIO_U_IN|GPIO_U_SD|GPIO_V_IN|GPIO_V_SD|GPIO_W_IN|GPIO_W_SD|GPIO_TERMO_SWITCH|GPIO_STOP_BUTTON;
@@ -362,34 +364,6 @@ static void MX_GPIO_Init(void) {
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
-}
-
-/**
- * @fn void TIM3_CC_IRQHandler(void)
- *
- * @brief ISR de captura/compare del TIM3.
- *
- * @details Atiende la interrupción de TIM3 invocada por el NVIC. Llama a `HAL_TIM_IRQHandler(&htim3)` para el manejo genérico de la HAL y, a continuación, verifica y limpia explícitamente los flags de evento de comparación **CC1**, **CC2** y **CC3** (`TIM_FLAG_CC1/2/3`) usando `__HAL_TIM_GET_FLAG` y `__HAL_TIM_CLEAR_FLAG`. Este patrón evita re-disparos espurios. No procesa CC4 ni el evento de update.
- *
- * @todo Eliminar función - VERIFICAR
- */
-void TIM3_CC_IRQHandler(void) {
-    HAL_TIM_IRQHandler(&htim3);
-
-    // Comparación con CCR1
-    if (__HAL_TIM_GET_FLAG(&htim3, TIM_FLAG_CC1)) {
-        __HAL_TIM_CLEAR_FLAG(&htim3, TIM_FLAG_CC1);
-    }
-
-    // Comparación con CCR2
-    if (__HAL_TIM_GET_FLAG(&htim3, TIM_FLAG_CC2)) {
-        __HAL_TIM_CLEAR_FLAG(&htim3, TIM_FLAG_CC2);
-    }
-
-    // Comparación con CCR3
-    if (__HAL_TIM_GET_FLAG(&htim3, TIM_FLAG_CC3)) {
-        __HAL_TIM_CLEAR_FLAG(&htim3, TIM_FLAG_CC3);
-    }
 }
 
 /**

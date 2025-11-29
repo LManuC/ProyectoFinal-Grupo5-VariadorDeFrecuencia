@@ -1,69 +1,56 @@
-/* USER CODE BEGIN Header */
 /**
-  ******************************************************************************
-  * @file           : main.h
-  * @brief          : Header for main.c file.
-  *                   This file contains the common defines of the application.
-  ******************************************************************************
-  * @attention
-  *
-  * Copyright (c) 2025 STMicroelectronics.
-  * All rights reserved.
-  *
-  * This software is licensed under terms that can be found in the LICENSE file
-  * in the root directory of this software component.
-  * If no LICENSE file comes with this software, it is provided AS-IS.
-  *
-  ******************************************************************************
+  * @file    main.h
+  * @brief   Header de la aplicación principal.
+  * @details Contiene definiciones comunes, asignación de pines y prototipos
+  *          globales compartidos por todo el proyecto.
   */
-/* USER CODE END Header */
 
-/* Define to prevent recursive inclusion -------------------------------------*/
 #ifndef __MAIN_H
 #define __MAIN_H
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
-/* Includes ------------------------------------------------------------------*/
 #include "stm32f1xx_hal.h"
 
-/* Private includes ----------------------------------------------------------*/
-/* USER CODE BEGIN Includes */
+/** \defgroup GPIO_SVM Pines del inversor (puerto A)
+  * @brief Pines de control del módulo SVM en GPIOA.
+  * @{
+  */
 
-/* USER CODE END Includes */
+/** @brief Entrada lógica de la pierna U (GPIOA, PIN_1). */
+#define GPIO_U_IN           GPIO_PIN_1
+/** @brief Shutdown/Habilitación driver pierna U (GPIOA, PIN_2). */
+#define GPIO_U_SD           GPIO_PIN_2
+/** @brief Entrada lógica de la pierna V (GPIOA, PIN_3). */
+#define GPIO_V_IN           GPIO_PIN_3
+/** @brief Shutdown/Habilitación driver pierna V (GPIOA, PIN_4). */
+#define GPIO_V_SD           GPIO_PIN_4
+/** @brief Entrada lógica de la pierna W (GPIOA, PIN_5). */
+#define GPIO_W_IN           GPIO_PIN_5
+/** @brief Shutdown/Habilitación driver pierna W (GPIOA, PIN_6). */
+#define GPIO_W_SD           GPIO_PIN_6
 
-/* Exported types ------------------------------------------------------------*/
-/* USER CODE BEGIN ET */
+/** @brief Entrada digital: Termo–switch (GPIOA, PIN_11). */
+#define GPIO_TERMO_SWITCH   GPIO_PIN_11
+/** @brief Entrada digital: Botón de parada (GPIOA, PIN_12). */
+#define GPIO_STOP_BUTTON    GPIO_PIN_12
+/** @} */
 
-/* USER CODE END ET */
+/** \defgroup GPIO_LEDS Pines de señalización (puerto B)
+  * @brief LEDs de estado en GPIOB.
+  * @{
+  */
 
-/* Exported constants --------------------------------------------------------*/
-/* USER CODE BEGIN EC */
+/** @brief LED de estado (GPIOB, PIN_0). */
+#define GPIO_LED_STATE      GPIO_PIN_0
+/** @brief LED de error (GPIOB, PIN_2). */
+#define GPIO_LED_ERROR      GPIO_PIN_2
+/** @} */
 
-/* USER CODE END EC */
-
-/* Exported macro ------------------------------------------------------------*/
-/* USER CODE BEGIN EM */
-
-/* USER CODE END EM */
-
-/* Exported functions prototypes ---------------------------------------------*/
+/**
+  * @fn void Error_Handler(void)
+  * @brief Manejador global de errores fatales.
+  * @details Detiene la ejecución en un bucle y puede ser utilizado para
+  *          reportar/diagnosticar condiciones críticas. Implementado en @ref main.c.
+  */
 void Error_Handler(void);
-
-/* USER CODE BEGIN EFP */
-
-/* USER CODE END EFP */
-
-/* Private defines -----------------------------------------------------------*/
-
-/* USER CODE BEGIN Private defines */
-
-/* USER CODE END Private defines */
-
-#ifdef __cplusplus
-}
-#endif
 
 #endif /* __MAIN_H */
