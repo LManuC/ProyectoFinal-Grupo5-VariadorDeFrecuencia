@@ -1,0 +1,5050 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.12.3)  3 DEC 2025 21:12
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**./refman.tex
+(refman.tex
+LaTeX2e <2025-11-01>
+L3 programming layer <2025-11-06>
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
+Package: iftex 2024/12/12 v1.0g TeX engine tests
+)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/base\book.cls
+Document Class: book 2025/01/22 v1.4n Standard LaTeX document class
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/base\bk10.clo
+File: bk10.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count275
+\c@chapter=\count276
+\c@section=\count277
+\c@subsection=\count278
+\c@subsubsection=\count279
+\c@paragraph=\count280
+\c@subparagraph=\count281
+\c@figure=\count282
+\c@table=\count283
+\abovecaptionskip=\skip49
+\belowcaptionskip=\skip50
+\bibindent=\dimen148
+)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarerr.st
+y
+package info suppressed
+) (doxygen.sty
+Package: doxygen 
+
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/base\alltt.sty
+Package: alltt 2024/07/07 v2.0g defines alltt environment
+)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
+Package: array 2025/09/25 v2.6n Tabular extension package (FMi)
+\col@sep=\dimen149
+\ar@mcellbox=\box53
+\extrarowheight=\dimen150
+\NC@list=\toks17
+\extratabsurround=\skip51
+\backup@length=\skip52
+\ar@cellbox=\box54
+)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/tools\calc.sty
+Package: calc 2025/03/01 v4.3b Infix arithmetic (KKT,FJ)
+\calc@Acount=\count284
+\calc@Bcount=\count285
+\calc@Adimen=\dimen151
+\calc@Bdimen=\dimen152
+\calc@Askip=\skip53
+\calc@Bskip=\skip54
+LaTeX Info: Redefining \setlength on input line 86.
+LaTeX Info: Redefining \addtolength on input line 87.
+\calc@Ccount=\count286
+\calc@Cskip=\skip55
+)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count287
+\float@exts=\toks18
+\float@box=\box55
+\@float@everytoks=\toks19
+\@floatcapt=\box56
+)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
+Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
+)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/tools\verbatim.sty
+Package: verbatim 2024-01-22 v1.5x LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks20
+\verbatim@line=\toks21
+\verbatim@in@stream=\read2
+)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/varwidth\varwidth.sty
+Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
+\@vwid@box=\box57
+\sift@deathcycles=\count288
+\@vwid@loff=\dimen153
+\@vwid@roff=\dimen154
+)
+==> First Aid for varwidth.sty applied!
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
+Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
+
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 274.
+
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
+File: pdftex.def 2025/09/29 v1.2d Graphics/color driver for pdftex
+) (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx
+)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1353.
+Package xcolor Info: Model `RGB' extended on input line 1365.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1367.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
+) (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/colortbl\colortbl.sty
+Package: colortbl 2024/10/29 v1.0k Color table columns (DPC)
+\everycr=\toks22
+\minrowclearance=\skip56
+\rownum=\count289
+) (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/tools\longtable.sty
+Package: longtable 2025-10-13 v4.24 Multi-page Table package (DPC)
+\LTleft=\skip57
+\LTright=\skip58
+\LTpre=\skip59
+\LTpost=\skip60
+\LTchunksize=\count290
+\LTcapwidth=\dimen155
+\LT@head=\box58
+\LT@firsthead=\box59
+\LT@foot=\box60
+\LT@lastfoot=\box61
+\LT@gbox=\box62
+\LT@cols=\count291
+\LT@rows=\count292
+\c@LT@tables=\count293
+\c@LT@chunks=\count294
+\LT@p@ftn=\toks23
+)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/xltabular\xltabular.sty
+Package: xltabular 2025/02/28 v0.2i `xltabular' package (hv,RN)
+
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/tools\tabularx.sty
+Package: tabularx 2023/12/11 v2.12a `tabularx' package (DPC)
+\TX@col@width=\dimen156
+\TX@old@table=\dimen157
+\TX@old@col=\dimen158
+\TX@target=\dimen159
+\TX@delta=\dimen160
+\TX@cols=\count295
+\TX@ftn=\toks24
+)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
+Package: etoolbox 2025/10/02 v2.5m e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count296
+)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/ltablex\ltablex.sty
+Package: ltablex 2014/08/13 v1.1 Modified tabularx
+))
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/tabularray\tabularray.st
+y
+Package: tabularray 2025-08-29 v2025B Typeset tabulars and arrays with LaTeX3
+
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/ninecolors\ninecolors.st
+y
+Package: ninecolors 2022-02-13 v2022D Select colors with proper color contrast
+
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xparse\xparse
+.sty (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
+Package: expl3 2025-11-06 L3 programming layer (loader) 
+
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdft
+ex.def
+File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count297
+))
+Package: xparse 2025-10-09 L3 Experimental document command parser
+))
+\l__tblr_a_int=\count298
+\l__tblr_c_int=\count299
+\l__tblr_r_int=\count300
+\l__tblr_d_dim=\dimen161
+\l__tblr_h_dim=\dimen162
+\l__tblr_o_dim=\dimen163
+\l__tblr_p_dim=\dimen164
+\l__tblr_q_dim=\dimen165
+\l__tblr_r_dim=\dimen166
+\l__tblr_s_dim=\dimen167
+\l__tblr_t_dim=\dimen168
+\l__tblr_v_dim=\dimen169
+\l__tblr_w_dim=\dimen170
+\l__tblr_a_box=\box63
+\l__tblr_b_box=\box64
+\l__tblr_c_box=\box65
+\l__tblr_d_box=\box66
+\c@tblrcount=\count301
+\c@colnum=\count302
+\c@rowcount=\count303
+\c@colcount=\count304
+\abovesep=\dimen171
+\belowsep=\dimen172
+\leftsep=\dimen173
+\rightsep=\dimen174
+\gTblrLevelInt=\count305
+\g__tblr_data_row_key_count_int=\count306
+\g__tblr_data_column_key_count_int=\count307
+\g__tblr_data_cell_key_count_int=\count308
+\g__tblr_array_int=\count309
+\l__tblr_key_count_int=\count310
+\l__tblr_key_quotient_int=\count311
+\l__tblr_key_quotient_two_int=\count312
+\l__tblr_key_remainder_int=\count313
+\g__tblr_data_str_value_count_int=\count314
+\lTblrChildTotalInt=\count315
+\lTblrChildHtotalInt=\count316
+\lTblrChildVtotalInt=\count317
+\l__child_diff_h_int=\count318
+\l__child_diff_v_int=\count319
+\l__child_sign_h_int=\count320
+\l__child_sign_v_int=\count321
+\l__child_step_int=\count322
+\lTblrDefaultHruleWidthDim=\dimen175
+\lTblrDefaultVruleWidthDim=\dimen176
+\l__tblr_split_balance_int=\count323
+\l__tblr_strut_dp_dim=\dimen177
+\l__tblr_strut_ht_dim=\dimen178
+\g__tblr_cell_wd_dim=\dimen179
+\g__tblr_cell_ht_dim=\dimen180
+\g__tblr_cell_head_dim=\dimen181
+\g__tblr_cell_foot_dim=\dimen182
+\l__tblr_measured_cell_box=\box67
+\g__tblr_last_box=\box68
+\l__tblr_temp_box=\box69
+\l__tblr_column_target_dim=\dimen183
+\l__tblr_hfuzz_dim=\dimen184
+\l__tblr_caption_box=\box70
+\l__tblr_caption_left_box=\box71
+\lTblrRowHeadInt=\count324
+\lTblrRowFootInt=\count325
+\l__tblr_row_head_box=\box72
+\l__tblr_row_foot_box=\box73
+\l__tblr_row_head_foot_dim=\dimen185
+\lTblrTableWidthDim=\dimen186
+\l__tblr_table_firsthead_box=\box74
+\l__tblr_table_middlehead_box=\box75
+\l__tblr_table_lasthead_box=\box76
+\l__tblr_table_firstfoot_box=\box77
+\l__tblr_table_middlefoot_box=\box78
+\l__tblr_table_lastfoot_box=\box79
+\l__tblr_remain_height_dim=\dimen187
+\l__tblr_long_from_int=\count326
+\l__tblr_long_to_int=\count327
+\l__tblr_curr_i_int=\count328
+\l__tblr_prev_i_int=\count329
+\lTblrTablePageInt=\count330
+\l__tblr_table_head_box=\box80
+\l__tblr_table_foot_box=\box81
+\l__tblr_table_head_foot_dim=\dimen188
+\l__tblr_table_head_body_foot_dim=\dimen189
+\l__tblr_table_box=\box82
+\lTblrRowFirstInt=\count331
+\lTblrRowLastInt=\count332
+\l__tblr_table_hlines_box=\box83
+\l__tblr_hline_box=\box84
+\l__tblr_row_box=\box85
+\l__tblr_col_o_wd_dim=\dimen190
+\l__tblr_col_b_wd_dim=\dimen191
+\l__tblr_hline_leftskip_dim=\dimen192
+\l__tblr_hline_rightskip_dim=\dimen193
+\l__tblr_row_ht_dim=\dimen194
+\l__tblr_row_dp_dim=\dimen195
+\l__tblr_row_abovesep_dim=\dimen196
+\l__tblr_row_belowsep_dim=\dimen197
+\l__tblr_row_vlines_box=\box86
+\l__tblr_vline_box=\box87
+\l__tblr_cell_box=\box88
+\l__tblr_row_upper_dim=\dimen198
+\l__tblr_row_lower_dim=\dimen199
+\l__tblr_row_vpace_dim=\dimen256
+\l__tblr_vline_aboveskip_dim=\dimen257
+\l__tblr_vline_belowskip_dim=\dimen258
+\lTblrCellRowSpanInt=\count333
+\lTblrCellColSpanInt=\count334
+\l__tblr_cell_wd_dim=\dimen259
+\l__tblr_cell_ht_dim=\dimen260
+\lTblrCellAboveBorderWidthDim=\dimen261
+\lTblrCellBelowBorderWidthDim=\dimen262
+\lTblrCellLeftBorderWidthDim=\dimen263
+\lTblrCellRightBorderWidthDim=\dimen264
+\l__tblr_diag_box=\box89
+\l__tblr_cell_inner_wd_dim=\dimen265
+\l__tblr_cell_inner_dp_dim=\dimen266
+\l__tblr_cell_hanchor_dim=\dimen267
+\l__tblr_last_cell_table_ht_dim=\dimen268
+\l__tblr_last_cell_table_dp_dim=\dimen269
+\l__tblr_last_vline_wd_dim=\dimen270
+\l__tblr_tikz_node_box=\box90
+)
+\g__doxy_nohyper_int=\count335
+
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/fancyvrb\fancyvrb.sty
+Package: fancyvrb 2025/07/28 4.6 verbatim text (tvz,hv)
+
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks25
+)
+\FV@CodeLineNo=\count336
+\FV@InFile=\read3
+\FV@TabBox=\box91
+\c@FancyVerbLine=\count337
+\FV@StepNumber=\count338
+\FV@OutFile=\write3
+)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/tools\multicol.sty
+Package: multicol 2025/10/21 v2.0b multicolumn formatting (FMi)
+\c@tracingmulticols=\count339
+\mult@box=\box92
+\multicol@leftmargin=\dimen271
+\c@unbalance=\count340
+\c@collectmore=\count341
+\doublecol@number=\count342
+\multicoltolerance=\count343
+\multicolpretolerance=\count344
+\full@width=\dimen272
+\page@free=\dimen273
+\premulticols=\dimen274
+\postmulticols=\dimen275
+\multicolsep=\skip61
+\multicolbaselineskip=\skip62
+\partial@page=\box93
+\last@line=\box94
+\mc@boxedresult=\box95
+\maxbalancingoverflow=\dimen276
+\mult@rightbox=\box96
+\mult@grightbox=\box97
+\mult@firstbox=\box98
+\mult@gfirstbox=\box99
+\@tempa=\box100
+\@tempa=\box101
+\@tempa=\box102
+\@tempa=\box103
+\@tempa=\box104
+\@tempa=\box105
+\@tempa=\box106
+\@tempa=\box107
+\@tempa=\box108
+\@tempa=\box109
+\@tempa=\box110
+\@tempa=\box111
+\@tempa=\box112
+\@tempa=\box113
+\@tempa=\box114
+\@tempa=\box115
+\@tempa=\box116
+\@tempa=\box117
+\@tempa=\box118
+\@tempa=\box119
+\@tempa=\box120
+\@tempa=\box121
+\@tempa=\box122
+\@tempa=\box123
+\@tempa=\box124
+\@tempa=\box125
+\@tempa=\box126
+\@tempa=\box127
+\@tempa=\box128
+\@tempa=\box129
+\@tempa=\box130
+\@tempa=\box131
+\@tempa=\box132
+\@tempa=\box133
+\@tempa=\box134
+\@tempa=\box135
+\c@minrows=\count345
+\c@columnbadness=\count346
+\c@finalcolumnbadness=\count347
+\last@try=\dimen277
+\multicolovershoot=\dimen278
+\multicolundershoot=\dimen279
+\mult@nat@firstbox=\box136
+\colbreak@box=\box137
+\mc@col@check@num=\count348
+\g__mc_curr_col_int=\count349
+)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/multirow\multirow.sty
+Package: multirow 2024/11/12 v2.9 Span multiple rows of a table
+\multirow@colwidth=\skip63
+\multirow@cntb=\count350
+\multirow@dima=\skip64
+\bigstrutjot=\dimen280
+)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/hanging\hanging.sty
+Package: hanging 2009/09/02 v1.2b hanging paragraphs and punctuation
+\h@ngcommawd=\skip65
+\h@ngfstopwd=\skip66
+\h@ngquotewd=\skip67
+\h@ngdquotewd=\skip68
+\h@ngquerywd=\skip69
+\h@ngexclwd=\skip70
+\h@ngcolonwd=\skip71
+\h@ngscolonwd=\skip72
+)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifpdf.sty
+Package: ifpdf 2019/10/25 v3.4 ifpdf legacy package. Use iftex instead.
+)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/adjustbox\adjustbox.sty
+Package: adjustbox 2025/02/26 v1.3c Adjusting TeX boxes (trim, clip, ...)
+
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/xkeyval\xkeyval.sty
+Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
+
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\xkeyval.tex
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\xkvutils.tex
+\XKV@toks=\toks26
+\XKV@tempa@toks=\toks27
+)
+\XKV@depth=\count351
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+)) (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/adjustbox\adjcalc.sty
+Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back
+-ends (calc, etex, pgfmath)
+) (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/adjustbox\trimclip.sty
+Package: trimclip 2025/02/21 v1.2a Trim and clip general TeX material
+
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+Package: graphicx 2024/12/31 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
+
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
+
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
+Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
+)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.cf
+g
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 106.
+)
+\Gin@req@height=\dimen281
+\Gin@req@width=\dimen282
+)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/collectbox\collectbox.st
+y
+Package: collectbox 2022/10/17 v0.4c Collect macro arguments as boxes
+\collectedbox=\box138
+)
+\tc@llx=\dimen283
+\tc@lly=\dimen284
+\tc@urx=\dimen285
+\tc@ury=\dimen286
+Package trimclip Info: Using driver 'tc-pdftex.def'.
+
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/adjustbox\tc-pdftex.def
+File: tc-pdftex.def 2025/02/26 v2.3 Clipping driver for pdftex
+))
+\adjbox@Width=\dimen287
+\adjbox@Height=\dimen288
+\adjbox@Depth=\dimen289
+\adjbox@Totalheight=\dimen290
+\adjbox@pwidth=\dimen291
+\adjbox@pheight=\dimen292
+\adjbox@pdepth=\dimen293
+\adjbox@ptotalheight=\dimen294
+
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/ifoddpage\ifoddpage.sty
+Package: ifoddpage 2022/10/18 v1.2 Conditionals for odd/even page detection
+\c@checkoddpage=\count352
+)) (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks28
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/stackengine\stackengine.
+sty
+Package: stackengine 2021/07/22 v4.11\ Stacking text and objects in convenient 
+ways
+
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/listofitems\listofitems.
+sty
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/listofitems\listofitem
+s.tex
+\loi_cnt_foreach_nest=\count353
+\loi_nestcnt=\count354
+)
+Package: listofitems 2024/03/09 v1.65 Grab items in lists using user-specified 
+sep char (CT)
+)
+\c@@stackindex=\count355
+\@boxshift=\skip73
+\stack@tmplength=\skip74
+\temp@stkl=\skip75
+\@stackedboxwidth=\skip76
+\@addedbox=\box139
+\@anchorbox=\box140
+\@insetbox=\box141
+\se@backgroundbox=\box142
+\stackedbox=\box143
+\@centerbox=\box144
+\c@ROWcellindex@=\count356
+)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/enumitem\enumitem.sty
+Package: enumitem 2025/02/06 v3.11 Customized lists
+\labelindent=\skip77
+\enit@outerparindent=\dimen295
+\enit@toks=\toks29
+\enit@inbox=\box145
+\enit@count@id=\count357
+\enitdp@description=\count358
+)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/alphalph\alphalph.sty
+Package: alphalph 2019/12/09 v2.6 Convert numbers to letters (HO)
+
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+))
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/ulem\ulem.sty
+\UL@box=\box146
+\UL@hyphenbox=\box147
+\UL@skip=\skip78
+\UL@hook=\toks30
+\UL@height=\dimen296
+\UL@pe=\count359
+\UL@pixel=\dimen297
+\ULC@box=\box148
+Package: ulem 2019/11/18
+\ULdepth=\dimen298
+)
+\xrefbox=\box149
+\xreflength=\skip79
+\CodeWidthChar=\skip80
+\CodeHeightChar=\skip81
+\DoxyCodeWidth=\skip82
+\c@DoxyEnumeratei=\count360
+\c@DoxyEnumerateii=\count361
+\c@DoxyEnumerateiii=\count362
+\c@DoxyEnumerateiv=\count363
+\c@DoxyEnumeratev=\count364
+\c@DoxyEnumeratevi=\count365
+\c@DoxyEnumeratevii=\count366
+\c@DoxyEnumerateviii=\count367
+\c@DoxyEnumerateix=\count368
+\c@DoxyEnumeratex=\count369
+\c@DoxyEnumeratexi=\count370
+\c@DoxyEnumeratexii=\count371
+\enitdp@DoxyEnumerate=\count372
+\enitdp@DoxyItemize=\count373
+\c@subsubsubsection=\count374
+\c@subsubsubsubsection=\count375
+\c@subsubsubsubsubsection=\count376
+\c@subsubsubsubsubsubsection=\count377
+)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty
+Package: inputenc 2024/02/08 v1.3d Input encoding file
+\inpenc@prehook=\toks31
+\inpenc@posthook=\toks32
+)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/base\makeidx.sty
+Package: makeidx 2021/10/04 v1.0m Standard LaTeX package
+)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/base\textcomp.sty
+Package: textcomp 2024/04/24 v2.1b Standard LaTeX package
+)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/wasysym\wasysym.sty
+Package: wasysym 2020/01/19 v2.4 Wasy-2 symbol support package
+\symwasy=\mathgroup6
+LaTeX Font Info:    Overwriting symbol font `wasy' in version `bold'
+(Font)                  U/wasy/m/n --> U/wasy/b/n on input line 93.
+)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifxetex.sty
+Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
+)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
+Package: babel 2025/11/09 v25.15 The multilingual framework for LuaLaTeX, pdfLa
+TeX and XeLaTeX
+\babel@savecnt=\count378
+LaTeX Encoding Info:    Redeclaring text command \ij (encoding OT1) on input li
+ne 2050.
+LaTeX Encoding Info:    Redeclaring text command \IJ (encoding OT1) on input li
+ne 2052.
+LaTeX Encoding Info:    Redeclaring text command \ij (encoding T1) on input lin
+e 2054.
+LaTeX Encoding Info:    Redeclaring text command \IJ (encoding T1) on input lin
+e 2055.
+LaTeX Encoding Info:    Ignoring declaration for text command \ij (encoding ?) 
+on input line 2056.
+LaTeX Encoding Info:    Ignoring declaration for text command \IJ (encoding ?) 
+on input line 2058.
+LaTeX Encoding Info:    Ignoring declaration for text command \SS (encoding ?) 
+on input line 2083.
+\U@D=\dimen299
+\l@unhyphenated=\language79
+
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def)
+\bbl@readstream=\read4
+\bbl@dirlevel=\count379
+Package babel Info: Configuration files are deprecated, as
+(babel)             they can break document portability.
+(babel)             Reported on input line 4175.
+
+*************************************
+* Local config file bblopts.cfg used
+*
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/arabi\bblopts.cfg
+File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
+ babel
+)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/babel/locale/es\babel-
+spanish.tex)
+Package babel Info: Importing font and identification data for spanish
+(babel)             from babel-es.ini. Reported on input line 4298.
+
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/babel-spanish\spanish.ld
+f
+Language: spanish.ldf 2021/05/27 v5.0q Spanish support from the babel system
+\es@quottoks=\toks33
+\es@quotdepth=\count380
+))
+LaTeX Encoding Info:    Redeclaring text command \guillemotleft (encoding OT1) 
+on input line 47.
+LaTeX Encoding Info:    Redeclaring text command \guillemotright (encoding OT1)
+ on input line 47.
+ (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
+Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
+)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\helvet.sty
+Package: helvet 2020/03/25 PSNFSS-v9.3 (WaS) 
+)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\courier.sty
+Package: courier 2020/03/25 PSNFSS-v9.3 (WaS) 
+)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+)
+\Gm@cnth=\count381
+\Gm@cntv=\count382
+\c@Gm@tempcnt=\count383
+\Gm@bindingoffset=\dimen300
+\Gm@wd@mp=\dimen301
+\Gm@odd@mp=\dimen302
+\Gm@even@mp=\dimen303
+\Gm@layoutwidth=\dimen304
+\Gm@layoutheight=\dimen305
+\Gm@layouthoffset=\dimen306
+\Gm@layoutvoffset=\dimen307
+\Gm@dimlist=\toks34
+
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg))
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/changepage\changepage.st
+y
+Package: changepage 2009/10/20 v1.0c check page and change page layout
+\c@cp@cntr=\count384
+\cp@tempcnt=\count385
+LaTeX Info: Redefining \checkoddpage on input line 59.
+) (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/fancyhdr\fancyhdr.sty
+Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
+
+\f@nch@headwidth=\skip83
+\f@nch@offset@elh=\skip84
+\f@nch@offset@erh=\skip85
+\f@nch@offset@olh=\skip86
+\f@nch@offset@orh=\skip87
+\f@nch@offset@elf=\skip88
+\f@nch@offset@erf=\skip89
+\f@nch@offset@olf=\skip90
+\f@nch@offset@orf=\skip91
+\f@nch@height=\skip92
+\f@nch@footalignment=\skip93
+\f@nch@widthL=\skip94
+\f@nch@widthC=\skip95
+\f@nch@widthR=\skip96
+\@temptokenb=\toks35
+) (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/natbib\natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip97
+\bibsep=\skip98
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count386
+)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/tocloft\tocloft.sty
+Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
+Package tocloft Info: The document has chapter divisions on input line 51.
+\cftparskip=\skip99
+\cftbeforetoctitleskip=\skip100
+\cftaftertoctitleskip=\skip101
+\cftbeforepartskip=\skip102
+\cftpartnumwidth=\skip103
+\cftpartindent=\skip104
+\cftbeforechapskip=\skip105
+\cftchapindent=\skip106
+\cftchapnumwidth=\skip107
+\cftbeforesecskip=\skip108
+\cftsecindent=\skip109
+\cftsecnumwidth=\skip110
+\cftbeforesubsecskip=\skip111
+\cftsubsecindent=\skip112
+\cftsubsecnumwidth=\skip113
+\cftbeforesubsubsecskip=\skip114
+\cftsubsubsecindent=\skip115
+\cftsubsubsecnumwidth=\skip116
+\cftbeforeparaskip=\skip117
+\cftparaindent=\skip118
+\cftparanumwidth=\skip119
+\cftbeforesubparaskip=\skip120
+\cftsubparaindent=\skip121
+\cftsubparanumwidth=\skip122
+\cftbeforeloftitleskip=\skip123
+\cftafterloftitleskip=\skip124
+\cftbeforefigskip=\skip125
+\cftfigindent=\skip126
+\cftfignumwidth=\skip127
+\c@lofdepth=\count387
+\c@lotdepth=\count388
+\cftbeforelottitleskip=\skip128
+\cftafterlottitleskip=\skip129
+\cftbeforetabskip=\skip130
+\cfttabindent=\skip131
+\cfttabnumwidth=\skip132
+)
+\@indexfile=\write4
+\openout4 = `refman.idx'.
+
+
+Writing index file refman.idx
+
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/newunicodechar\newunicod
+echar.sty
+Package: newunicodechar 2018/04/08 v1.2 Defining Unicode characters
+)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
+Package: hyperref 2025-07-12 v7.01o Hypertext links for LaTeX
+
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdefinek
+eys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pdfescape\pdfescape.st
+y
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+ (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexcmds.
+sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+))
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
+Package: nameref 2025-06-21 v2.57 Cross-referencing by name of section
+
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestring\gettitl
+estring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+))
+\c@section@level=\count389
+)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/stringenc\stringenc.st
+y
+Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
+)
+)
+\@linkdim=\dimen308
+\Hy@linkcounter=\count390
+\Hy@pagecounter=\count391
+ (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
+File: pd1enc.def 2025-07-12 v7.01o Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+)
+\Hy@SavedSpaceFactor=\count392
+
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
+File: puenc.def 2025-07-12 v7.01o Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+Package hyperref Info: Hyper figures OFF on input line 4195.
+Package hyperref Info: Link nesting OFF on input line 4200.
+Package hyperref Info: Hyper index ON on input line 4203.
+Package hyperref Info: Plain pages OFF on input line 4210.
+Package hyperref Info: Backreferencing ON on input line 4213.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4462.
+
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\backref.sty
+Package: backref 2025-06-21 v1.45 Bibliographical back referencing
+
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfile
+check.sty
+Package: rerunfilecheck 2025-06-21 v1.11 Rerun checks for auxiliary files (HO)
+
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounter\uniqueco
+unter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bigintcalc.
+sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
+))
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+84.
+))
+\c@Hy@tempcnt=\count393
+ (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
+\Urlmuskip=\muskip17
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4801.
+\XeTeXLinkMargin=\dimen309
+
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+)
+\Fld@menulength=\count394
+\Field@Width=\dimen310
+\Fld@charsize=\dimen311
+Package hyperref Info: Hyper figures OFF on input line 6078.
+Package hyperref Info: Link nesting OFF on input line 6083.
+Package hyperref Info: Hyper index ON on input line 6086.
+Package hyperref Info: backreferencing ON on input line 6091.
+Package hyperref Info: Link coloring OFF on input line 6098.
+Package hyperref Info: Link coloring with OCG OFF on input line 6103.
+Package hyperref Info: PDF/A mode OFF on input line 6108.
+\Hy@abspage=\count395
+\c@Item=\count396
+\c@Hfootnote=\count397
+)
+Package hyperref Info: Driver: hpdftex.
+
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
+File: hpdftex.def 2025-07-12 v7.01o Hyperref driver for pdfTeX
+\Fld@listcount=\count398
+\c@bookmark@seq@number=\count399
+\Hy@SectionHShift=\skip133
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 180.
+Package hyperref Info: Option `unicode' set `true' on input line 180.
+
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption.sty
+Package: caption 2023/08/05 v3.6o Customizing captions (AR)
+
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption3.sty
+Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
+\caption@tempdima=\dimen312
+\captionmargin=\dimen313
+\caption@leftmargin=\dimen314
+\caption@rightmargin=\dimen315
+\caption@width=\dimen316
+\caption@indent=\dimen317
+\caption@parindent=\dimen318
+\caption@hangindent=\dimen319
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count400
+\c@continuedfloat=\count401
+Package caption Info: changepage package is loaded.
+\caption@adjustwidth@hsize=\dimen320
+\caption@adjustwidth@linewidth=\dimen321
+Package caption Info: float package is loaded.
+Package caption Info: hyperref package is loaded.
+Package caption Info: longtable package is loaded.
+
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/caption\ltcaption.sty
+Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
+))
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/etoc\etoc.sty
+Package: etoc 2023/10/29 v1.2d Completely customisable TOCs (JFB)
+\Etoc@toctoks=\toks36
+\c@etoc@tocid=\count402
+\etoc@framed@titlebox=\box150
+\etoc@framed@contentsbox=\box151
+)
+LaTeX Font Info:    Trying to load font information for T1+phv on input line 20
+2.
+
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\t1phv.fd
+File: t1phv.fd 2020/03/25 scalable font definitions for T1/phv.
+)
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 8.99994pt on input line 202.
+
+No file refman.aux.
+\openout1 = `refman.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 202.
+LaTeX Font Info:    ... okay on input line 202.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 202.
+LaTeX Font Info:    ... okay on input line 202.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 202.
+LaTeX Font Info:    ... okay on input line 202.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 202.
+LaTeX Font Info:    ... okay on input line 202.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 202.
+LaTeX Font Info:    ... okay on input line 202.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 202.
+LaTeX Font Info:    ... okay on input line 202.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 202.
+LaTeX Font Info:    ... okay on input line 202.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 202.
+LaTeX Font Info:    ... okay on input line 202.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 202.
+LaTeX Font Info:    ... okay on input line 202.
+
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mki
+i
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count403
+\scratchdimen=\dimen322
+\scratchbox=\box152
+\nofMPsegments=\count404
+\nofMParguments=\count405
+\everyMPshowfont=\toks37
+\MPscratchCnt=\count406
+\MPscratchDim=\dimen323
+\MPnumerator=\count407
+\makeMPintoPDFobject=\count408
+\everyMPtoPDFconversion=\toks38
+)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-ba
+se.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cf
+g
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+))
+LaTeX Info: Redefining \. on input line 202.
+LaTeX Info: Redefining \% on input line 202.
+Package babel Info: 'spanish' activates 'spanish' shorthands.
+(babel)             Reported on input line 202.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: twoside 
+* h-part:(L,W,R)=(71.13188pt, 455.24411pt, 71.13188pt)
+* v-part:(T,H,B)=(71.13188pt, 702.78308pt, 71.13188pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=455.24411pt
+* \textheight=702.78308pt
+* \oddsidemargin=-1.1381pt
+* \evensidemargin=-1.1381pt
+* \topmargin=-31.2056pt
+* \headheight=12.0pt
+* \headsep=18.06749pt
+* \topskip=10.0pt
+* \footskip=25.29494pt
+* \marginparwidth=125.0pt
+* \marginparsep=7.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidetrue
+* \@mparswitchtrue
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+Package backref Info: ** backref set up for natbib ** on input line 202.
+Package hyperref Info: Link coloring ON on input line 202.
+\@outlinefile=\write5
+\openout5 = `refman.out'.
+
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+No file refman.toc.
+Package hyperref Info: Option `pageanchor' set `false' on input line 210.
+Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 210.
+
+Package hyperref Info: Option `unicode' set `true' on input line 210.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 12.9599pt on input line 215.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 10.79993pt on input line 216.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 6.29996pt on input line 216.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 216
+.
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 216
+.
+
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Trying to load font information for U+wasy on input line 21
+6.
+
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/wasysym\uwasy.fd
+File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
+)
+[1
+
+
+{C:/Users/User/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/User/
+AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}] [2
+
+]
+\tf@toc=\write6
+\openout6 = `refman.toc'.
+
+Package hyperref Info: Option `pageanchor' set `true' on input line 227.
+ (todo.tex
+Cap\'{\i }tulo 1.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 18.66588pt on input line 1.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 18.66588pt on input line 1.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 22.39185pt on input line 1.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 8.99994pt on input line 5.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 6.29996pt on input line 5.
+
+Underfull \hbox (badness 10000) in paragraph at lines 5--9
+
+ []
+
+) [1
+
+
+]
+LaTeX Info: Redefining \. on input line 230.
+LaTeX Info: Redefining \% on input line 230.
+Package babel Info: 'spanish' activates 'spanish' shorthands.
+(babel)             Reported on input line 230.
+ [2
+
+]
+Cap\'{\i }tulo 2.
+(topics.tex
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 12.9599pt on input line 1.
+
+
+LaTeX Warning: Reference `group___g_p_i_o___s_v_m' on page 3 undefined on input
+ line 3.
+
+
+LaTeX Warning: Reference `group___g_p_i_o___l_e_d_s' on page 3 undefined on inp
+ut line 4.
+
+
+LaTeX Warning: Reference `group___c_m_s_i_s' on page 3 undefined on input line 
+5.
+
+
+LaTeX Warning: Reference `group__stm32f1xx__system' on page 3 undefined on inpu
+t line 7.
+
+
+LaTeX Warning: Reference `group___s_t_m32_f1xx___system___private___includes' o
+n page 3 undefined on input line 9.
+
+
+LaTeX Warning: Reference `group___s_t_m32_f1xx___system___private___types_defin
+itions' on page 3 undefined on input line 10.
+
+
+LaTeX Warning: Reference `group___s_t_m32_f1xx___system___private___defines' on
+ page 3 undefined on input line 11.
+
+
+LaTeX Warning: Reference `group___s_t_m32_f1xx___system___private___macros' on 
+page 3 undefined on input line 12.
+
+
+LaTeX Warning: Reference `group___s_t_m32_f1xx___system___private___variables' 
+on page 3 undefined on input line 13.
+
+
+LaTeX Warning: Reference `group___s_t_m32_f1xx___system___private___function_pr
+ototypes' on page 3 undefined on input line 14.
+
+
+LaTeX Warning: Reference `group___s_t_m32_f1xx___system___private___functions' 
+on page 3 undefined on input line 15.
+
+) [3]
+LaTeX Info: Redefining \. on input line 232.
+LaTeX Info: Redefining \% on input line 232.
+ [4
+
+]
+Cap\'{\i }tulo 3.
+(dirs.tex
+
+LaTeX Warning: Reference `dir_7636318dd8b05b9ed7a45417b4e50414' on page 5 undef
+ined on input line 3.
+
+
+LaTeX Warning: Reference `_gestor_estados_8c' on page 5 undefined on input line
+ 5.
+
+
+LaTeX Warning: Reference `_gestor_estados_8h' on page 5 undefined on input line
+ 6.
+
+
+LaTeX Warning: Reference `dir_5e924d87cccfbea0d44c1fb041436dc5' on page 5 undef
+ined on input line 8.
+
+
+LaTeX Warning: Reference `_gestor_s_v_m_8c' on page 5 undefined on input line 1
+0.
+
+
+LaTeX Warning: Reference `_gestor_s_v_m_8h' on page 5 undefined on input line 1
+1.
+
+
+LaTeX Warning: Reference `dir_45df05129260c151337118bc2dfd8c28' on page 5 undef
+ined on input line 13.
+
+
+LaTeX Warning: Reference `_gestor_timers_8c' on page 5 undefined on input line 
+15.
+
+
+LaTeX Warning: Reference `_gestor_timers_8h' on page 5 undefined on input line 
+16.
+
+
+LaTeX Warning: Reference `dir_f93dfce691d792349f1c14ede440e2e6' on page 5 undef
+ined on input line 18.
+
+
+LaTeX Warning: Reference `main_8h' on page 5 undefined on input line 20.
+
+
+LaTeX Warning: Reference `stm32f1xx__hal__conf_8h' on page 5 undefined on input
+ line 21.
+
+
+LaTeX Warning: Reference `stm32f1xx__it_8h' on page 5 undefined on input line 2
+2.
+
+
+LaTeX Warning: Reference `dir_f2541a3b18981391fa76fac5599e978a' on page 5 undef
+ined on input line 24.
+
+
+LaTeX Warning: Reference `dir_7636318dd8b05b9ed7a45417b4e50414' on page 5 undef
+ined on input line 26.
+
+
+LaTeX Warning: Reference `_gestor_estados_8c' on page 5 undefined on input line
+ 28.
+
+
+LaTeX Warning: Reference `_gestor_estados_8h' on page 5 undefined on input line
+ 29.
+
+
+LaTeX Warning: Reference `dir_5e924d87cccfbea0d44c1fb041436dc5' on page 5 undef
+ined on input line 31.
+
+
+LaTeX Warning: Reference `_gestor_s_v_m_8c' on page 5 undefined on input line 3
+3.
+
+
+LaTeX Warning: Reference `_gestor_s_v_m_8h' on page 5 undefined on input line 3
+4.
+
+
+LaTeX Warning: Reference `dir_45df05129260c151337118bc2dfd8c28' on page 5 undef
+ined on input line 36.
+
+
+LaTeX Warning: Reference `_gestor_timers_8c' on page 5 undefined on input line 
+38.
+
+
+LaTeX Warning: Reference `_gestor_timers_8h' on page 5 undefined on input line 
+39.
+
+
+LaTeX Warning: Reference `dir_11e98151db3da6da9cabb2da8b2e011d' on page 5 undef
+ined on input line 41.
+
+
+LaTeX Warning: Reference `_s_p_i_module_8c' on page 5 undefined on input line 4
+3.
+
+
+LaTeX Warning: Reference `_s_p_i_module_8h' on page 5 undefined on input line 4
+4.
+
+
+LaTeX Warning: Reference `dir_11e98151db3da6da9cabb2da8b2e011d' on page 5 undef
+ined on input line 47.
+
+
+LaTeX Warning: Reference `_s_p_i_module_8c' on page 5 undefined on input line 4
+9.
+
+
+LaTeX Warning: Reference `_s_p_i_module_8h' on page 5 undefined on input line 5
+0.
+
+
+LaTeX Warning: Reference `dir_413f4e031a85da0d68269c6fd2f76e1c' on page 5 undef
+ined on input line 52.
+
+
+LaTeX Warning: Reference `main_8c' on page 5 undefined on input line 54.
+
+
+LaTeX Warning: Reference `stm32f1xx__hal__msp_8c' on page 5 undefined on input 
+line 55.
+
+
+LaTeX Warning: Reference `stm32f1xx__it_8c' on page 5 undefined on input line 5
+6.
+
+
+LaTeX Warning: Reference `syscalls_8c' on page 5 undefined on input line 57.
+
+
+LaTeX Warning: Reference `sysmem_8c' on page 5 undefined on input line 58.
+
+
+LaTeX Warning: Reference `system__stm32f1xx_8c' on page 5 undefined on input li
+ne 59.
+
+) [5]
+LaTeX Info: Redefining \. on input line 234.
+LaTeX Info: Redefining \% on input line 234.
+ [6
+
+]
+Cap\'{\i }tulo 4.
+(annotated.tex
+
+LaTeX Warning: Reference `struct_configuracion_s_v_m' on page 7 undefined on in
+put line 3.
+
+
+LaTeX Warning: Reference `struct_dato_calculado' on page 7 undefined on input l
+ine 4.
+
+
+LaTeX Warning: Reference `struct_parametros' on page 7 undefined on input line 
+5.
+
+
+LaTeX Warning: Reference `struct_valores_switching' on page 7 undefined on inpu
+t line 6.
+
+) [7]
+LaTeX Info: Redefining \. on input line 236.
+LaTeX Info: Redefining \% on input line 236.
+ [8
+
+]
+Cap\'{\i }tulo 5.
+(files.tex
+
+LaTeX Warning: Reference `main_8h' on page 9 undefined on input line 3.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--3
+ [][] \T1/phv/m/n/10 C[]:/[]Users/[]User/[]Desktop/[]Proyecto[]Final-[]Grupo5-[
+]Variador[]De[]Frecuencia/[]Software/[]Firmware stm32/[] 
+ []
+
+
+LaTeX Warning: Reference `stm32f1xx__hal__conf_8h' on page 9 undefined on input
+ line 4.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4--4
+ [][] \T1/phv/m/n/10 C[]:/[]Users/[]User/[]Desktop/[]Proyecto[]Final-[]Grupo5-[
+]Variador[]De[]Frecuencia/[]Software/[]Firmware stm32/[] 
+ []
+
+
+LaTeX Warning: Reference `stm32f1xx__it_8h' on page 9 undefined on input line 5
+.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5--5
+ [][] \T1/phv/m/n/10 C[]:/[]Users/[]User/[]Desktop/[]Proyecto[]Final-[]Grupo5-[
+]Variador[]De[]Frecuencia/[]Software/[]Firmware stm32/[] 
+ []
+
+
+LaTeX Warning: Reference `_gestor_estados_8c' on page 9 undefined on input line
+ 6.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6--6
+ [][] \T1/phv/m/n/10 C[]:/[]Users/[]User/[]Desktop/[]Proyecto[]Final-[]Grupo5-[
+]Variador[]De[]Frecuencia/[]Software/[]Firmware stm32/[] 
+ []
+
+
+LaTeX Warning: Reference `_gestor_estados_8h' on page 9 undefined on input line
+ 7.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7--7
+ [][] \T1/phv/m/n/10 C[]:/[]Users/[]User/[]Desktop/[]Proyecto[]Final-[]Grupo5-[
+]Variador[]De[]Frecuencia/[]Software/[]Firmware stm32/[] 
+ []
+
+
+LaTeX Warning: Reference `_gestor_s_v_m_8c' on page 9 undefined on input line 8
+.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 8--8
+ [][] \T1/phv/m/n/10 C[]:/[]Users/[]User/[]Desktop/[]Proyecto[]Final-[]Grupo5-[
+]Variador[]De[]Frecuencia/[]Software/[]Firmware stm32/[] 
+ []
+
+
+LaTeX Warning: Reference `_gestor_s_v_m_8h' on page 9 undefined on input line 9
+.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9--9
+ [][] \T1/phv/m/n/10 C[]:/[]Users/[]User/[]Desktop/[]Proyecto[]Final-[]Grupo5-[
+]Variador[]De[]Frecuencia/[]Software/[]Firmware stm32/[] 
+ []
+
+
+LaTeX Warning: Reference `_gestor_timers_8c' on page 9 undefined on input line 
+10.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 10--10
+ [][] \T1/phv/m/n/10 C[]:/[]Users/[]User/[]Desktop/[]Proyecto[]Final-[]Grupo5-[
+]Variador[]De[]Frecuencia/[]Software/[]Firmware stm32/[] 
+ []
+
+
+LaTeX Warning: Reference `_gestor_timers_8h' on page 9 undefined on input line 
+11.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--11
+ [][] \T1/phv/m/n/10 C[]:/[]Users/[]User/[]Desktop/[]Proyecto[]Final-[]Grupo5-[
+]Variador[]De[]Frecuencia/[]Software/[]Firmware stm32/[] 
+ []
+
+
+LaTeX Warning: Reference `_s_p_i_module_8c' on page 9 undefined on input line 1
+2.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 12--12
+ [][] \T1/phv/m/n/10 C[]:/[]Users/[]User/[]Desktop/[]Proyecto[]Final-[]Grupo5-[
+]Variador[]De[]Frecuencia/[]Software/[]Firmware stm32/[] 
+ []
+
+
+LaTeX Warning: Reference `_s_p_i_module_8h' on page 9 undefined on input line 1
+3.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 13--13
+ [][] \T1/phv/m/n/10 C[]:/[]Users/[]User/[]Desktop/[]Proyecto[]Final-[]Grupo5-[
+]Variador[]De[]Frecuencia/[]Software/[]Firmware stm32/[] 
+ []
+
+
+LaTeX Warning: Reference `main_8c' on page 9 undefined on input line 14.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 14--14
+ [][] \T1/phv/m/n/10 C[]:/[]Users/[]User/[]Desktop/[]Proyecto[]Final-[]Grupo5-[
+]Variador[]De[]Frecuencia/[]Software/[]Firmware stm32/[] 
+ []
+
+
+LaTeX Warning: Reference `stm32f1xx__hal__msp_8c' on page 9 undefined on input 
+line 15.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 15--15
+ [][] \T1/phv/m/n/10 C[]:/[]Users/[]User/[]Desktop/[]Proyecto[]Final-[]Grupo5-[
+]Variador[]De[]Frecuencia/[]Software/[]Firmware stm32/[] 
+ []
+
+
+LaTeX Warning: Reference `stm32f1xx__it_8c' on page 9 undefined on input line 1
+6.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 16--16
+ [][] \T1/phv/m/n/10 C[]:/[]Users/[]User/[]Desktop/[]Proyecto[]Final-[]Grupo5-[
+]Variador[]De[]Frecuencia/[]Software/[]Firmware stm32/[] 
+ []
+
+
+LaTeX Warning: Reference `syscalls_8c' on page 9 undefined on input line 17.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 17--17
+ [][] \T1/phv/m/n/10 C[]:/[]Users/[]User/[]Desktop/[]Proyecto[]Final-[]Grupo5-[
+]Variador[]De[]Frecuencia/[]Software/[]Firmware stm32/[] 
+ []
+
+[9]
+
+LaTeX Warning: Reference `sysmem_8c' on page 10 undefined on input line 18.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 18--18
+ [][] \T1/phv/m/n/10 C[]:/[]Users/[]User/[]Desktop/[]Proyecto[]Final-[]Grupo5-[
+]Variador[]De[]Frecuencia/[]Software/[]Firmware stm32/[] 
+ []
+
+
+LaTeX Warning: Reference `system__stm32f1xx_8c' on page 10 undefined on input l
+ine 19.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--19
+ [][] \T1/phv/m/n/10 C[]:/[]Users/[]User/[]Desktop/[]Proyecto[]Final-[]Grupo5-[
+]Variador[]De[]Frecuencia/[]Software/[]Firmware stm32/[] 
+ []
+
+)
+LaTeX Info: Redefining \. on input line 238.
+LaTeX Info: Redefining \% on input line 238.
+ [10]
+Cap\'{\i }tulo 6.
+(group___g_p_i_o___s_v_m.tex
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 8.09995pt on input line 12.
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 12.
+LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
+(Font)              scaled to size 8.09995pt on input line 12.
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <7> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 12.
+LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
+(Font)              scaled to size 6.29996pt on input line 12.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 10.79993pt on input line 29.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 7.19995pt on input line 40.
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 40
+.
+
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\t1pcr.fd
+File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
+)
+[11
+
+]) (group___g_p_i_o___l_e_d_s.tex
+LaTeX Info: Redefining \. on input line 12.
+LaTeX Info: Redefining \% on input line 12.
+ [12]) (group___c_m_s_i_s.tex
+
+LaTeX Warning: Reference `group__stm32f1xx__system' on page 13 undefined on inp
+ut line 8.
+
+(group__stm32f1xx__system.tex
+LaTeX Info: Redefining \. on input line 8.
+LaTeX Info: Redefining \% on input line 8.
+ [13]
+
+LaTeX Warning: Reference `group___s_t_m32_f1xx___system___private___includes' o
+n page 14 undefined on input line 8.
+
+
+LaTeX Warning: Reference `group___s_t_m32_f1xx___system___private___types_defin
+itions' on page 14 undefined on input line 11.
+
+
+LaTeX Warning: Reference `group___s_t_m32_f1xx___system___private___defines' on
+ page 14 undefined on input line 14.
+
+
+LaTeX Warning: Reference `group___s_t_m32_f1xx___system___private___macros' on 
+page 14 undefined on input line 17.
+
+
+LaTeX Warning: Reference `group___s_t_m32_f1xx___system___private___variables' 
+on page 14 undefined on input line 20.
+
+
+LaTeX Warning: Reference `group___s_t_m32_f1xx___system___private___function_pr
+ototypes' on page 14 undefined on input line 23.
+
+
+LaTeX Warning: Reference `group___s_t_m32_f1xx___system___private___functions' 
+on page 14 undefined on input line 26.
+
+(group___s_t_m32_f1xx___system___private___includes.tex)
+(group___s_t_m32_f1xx___system___private___types_definitions.tex)
+(group___s_t_m32_f1xx___system___private___defines.tex
+LaTeX Info: Redefining \. on input line 36.
+LaTeX Info: Redefining \% on input line 36.
+ [14])
+(group___s_t_m32_f1xx___system___private___macros.tex)
+(group___s_t_m32_f1xx___system___private___variables.tex)
+(group___s_t_m32_f1xx___system___private___function_prototypes.tex)
+(group___s_t_m32_f1xx___system___private___functions.tex
+LaTeX Info: Redefining \. on input line 5.
+LaTeX Info: Redefining \% on input line 5.
+ [15]
+LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <8> not available
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 24.
+LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
+(Font)              scaled to size 8.99994pt on input line 30.
+
+Underfull \hbox (badness 10000) detected at line 30
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 31--32
+
+ []
+
+LaTeX Font Info:    Trying to load font information for TS1+phv on input line 3
+8.
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1phv.fd
+File: ts1phv.fd 2020/03/25 scalable font definitions for TS1/phv.
+)
+LaTeX Font Info:    Font shape `TS1/phv/m/n' will be
+(Font)              scaled to size 8.99994pt on input line 38.
+
+Underfull \hbox (badness 10000) in paragraph at lines 43--44
+
+ []
+
+LaTeX Info: Redefining \. on input line 47.
+LaTeX Info: Redefining \% on input line 47.
+[16]
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 54.
+LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
+(Font)              scaled to size 8.99994pt on input line 54.
+
+Underfull \hbox (badness 10000) detected at line 75
+[][][]
+ []
+
+LaTeX Info: Redefining \. on input line 82.
+LaTeX Info: Redefining \% on input line 82.
+[17])))
+LaTeX Info: Redefining \. on input line 242.
+LaTeX Info: Redefining \% on input line 242.
+ [18]
+Cap\'{\i }tulo 7.
+(dir_7636318dd8b05b9ed7a45417b4e50414.tex)
+(dir_5e924d87cccfbea0d44c1fb041436dc5.tex)
+(dir_45df05129260c151337118bc2dfd8c28.tex)
+(dir_f93dfce691d792349f1c14ede440e2e6.tex [19
+
+])
+(dir_f2541a3b18981391fa76fac5599e978a.tex)
+(dir_11e98151db3da6da9cabb2da8b2e011d.tex)
+(dir_413f4e031a85da0d68269c6fd2f76e1c.tex
+LaTeX Info: Redefining \. on input line 11.
+LaTeX Info: Redefining \% on input line 11.
+ [20])
+LaTeX Info: Redefining \. on input line 250.
+LaTeX Info: Redefining \% on input line 250.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 22.16548pt, for example:
+(fancyhdr)                \setlength{\headheight}{22.16548pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-10.16548pt}.
+
+[21]
+LaTeX Info: Redefining \. on input line 250.
+LaTeX Info: Redefining \% on input line 250.
+ [22
+
+]
+Cap\'{\i }tulo 8.
+(struct_configuracion_s_v_m.tex [23]) (struct_dato_calculado.tex
+LaTeX Info: Redefining \. on input line 33.
+LaTeX Info: Redefining \% on input line 33.
+ [24]
+LaTeX Info: Redefining \. on input line 110.
+LaTeX Info: Redefining \% on input line 110.
+ [25])
+(struct_parametros.tex
+LaTeX Info: Redefining \. on input line 53.
+LaTeX Info: Redefining \% on input line 53.
+ [26]) (struct_valores_switching.tex
+LaTeX Info: Redefining \. on input line 20.
+LaTeX Info: Redefining \% on input line 20.
+ [27]
+LaTeX Info: Redefining \. on input line 101.
+LaTeX Info: Redefining \% on input line 101.
+ [28])
+LaTeX Info: Redefining \. on input line 255.
+LaTeX Info: Redefining \% on input line 255.
+ [29]
+LaTeX Info: Redefining \. on input line 255.
+LaTeX Info: Redefining \% on input line 255.
+
+[30
+
+]
+Cap\'{\i }tulo 9.
+(main_8h.tex [31]) (main_8h_source.tex) (stm32f1xx__hal__conf_8h.tex
+LaTeX Info: Redefining \. on input line 20.
+LaTeX Info: Redefining \% on input line 20.
+ [32]
+LaTeX Info: Redefining \. on input line 81.
+LaTeX Info: Redefining \% on input line 81.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 34.16548pt, for example:
+(fancyhdr)                \setlength{\headheight}{34.16548pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-22.16548pt}.
+
+[33]
+LaTeX Info: Redefining \. on input line 184.
+LaTeX Info: Redefining \% on input line 184.
+ [34]
+LaTeX Font Info:    Font shape `TS1/phv/m/it' in size <9> not available
+(Font)              Font shape `TS1/phv/m/sl' tried instead on input line 184.
+LaTeX Font Info:    Font shape `TS1/phv/m/sl' will be
+(Font)              scaled to size 8.09995pt on input line 184.
+
+Underfull \hbox (badness 10000) detected at line 190
+[][][]
+ []
+
+LaTeX Info: Redefining \. on input line 271.
+LaTeX Info: Redefining \% on input line 271.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 34.16548pt, for example:
+(fancyhdr)                \setlength{\headheight}{34.16548pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-22.16548pt}.
+
+[35]
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 7.19995pt on input line 285.
+LaTeX Info: Redefining \. on input line 351.
+LaTeX Info: Redefining \% on input line 351.
+ [36]
+LaTeX Info: Redefining \. on input line 426.
+LaTeX Info: Redefining \% on input line 426.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 34.16548pt, for example:
+(fancyhdr)                \setlength{\headheight}{34.16548pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-22.16548pt}.
+
+[37]
+LaTeX Info: Redefining \. on input line 491.
+LaTeX Info: Redefining \% on input line 491.
+ [38]
+LaTeX Info: Redefining \. on input line 555.
+LaTeX Info: Redefining \% on input line 555.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 34.16548pt, for example:
+(fancyhdr)                \setlength{\headheight}{34.16548pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-22.16548pt}.
+
+[39]
+LaTeX Info: Redefining \. on input line 619.
+LaTeX Info: Redefining \% on input line 619.
+ [40]
+LaTeX Info: Redefining \. on input line 683.
+LaTeX Info: Redefining \% on input line 683.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 34.16548pt, for example:
+(fancyhdr)                \setlength{\headheight}{34.16548pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-22.16548pt}.
+
+[41]
+LaTeX Info: Redefining \. on input line 745.
+LaTeX Info: Redefining \% on input line 745.
+ [42]
+LaTeX Info: Redefining \. on input line 815.
+LaTeX Info: Redefining \% on input line 815.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 34.16548pt, for example:
+(fancyhdr)                \setlength{\headheight}{34.16548pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-22.16548pt}.
+
+[43]
+LaTeX Info: Redefining \. on input line 895.
+LaTeX Info: Redefining \% on input line 895.
+ [44]
+LaTeX Info: Redefining \. on input line 975.
+LaTeX Info: Redefining \% on input line 975.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 34.16548pt, for example:
+(fancyhdr)                \setlength{\headheight}{34.16548pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-22.16548pt}.
+
+[45]) (stm32f1xx__hal__conf_8h_source.tex
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+ [46]
+LaTeX Info: Redefining \. on input line 66.
+LaTeX Info: Redefining \% on input line 66.
+ [47]
+LaTeX Info: Redefining \. on input line 144.
+LaTeX Info: Redefining \% on input line 144.
+ [48]
+LaTeX Info: Redefining \. on input line 231.
+LaTeX Info: Redefining \% on input line 231.
+ [49]
+LaTeX Info: Redefining \. on input line 318.
+LaTeX Info: Redefining \% on input line 318.
+ [50])
+(stm32f1xx__it_8h.tex
+LaTeX Info: Redefining \. on input line 40.
+LaTeX Info: Redefining \% on input line 40.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 34.16548pt, for example:
+(fancyhdr)                \setlength{\headheight}{34.16548pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-22.16548pt}.
+
+[51]
+Underfull \hbox (badness 10000) detected at line 46
+[][][]
+ []
+
+LaTeX Info: Redefining \. on input line 124.
+LaTeX Info: Redefining \% on input line 124.
+[52]
+LaTeX Info: Redefining \. on input line 205.
+LaTeX Info: Redefining \% on input line 205.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 34.16548pt, for example:
+(fancyhdr)                \setlength{\headheight}{34.16548pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-22.16548pt}.
+
+[53]) (stm32f1xx__it_8h_source.tex
+LaTeX Info: Redefining \. on input line 24.
+LaTeX Info: Redefining \% on input line 24.
+ [54]) (_gestor_estados_8c.tex)
+(_gestor_estados_8c_source.tex
+LaTeX Info: Redefining \. on input line 7.
+LaTeX Info: Redefining \% on input line 7.
+ [55]
+LaTeX Info: Redefining \. on input line 86.
+LaTeX Info: Redefining \% on input line 86.
+ [56]
+LaTeX Info: Redefining \. on input line 172.
+LaTeX Info: Redefining \% on input line 172.
+ [57]) (_gestor_estados_8h.tex
+Overfull \hbox (31.67311pt too wide) in paragraph at lines 42--51
+[] \T1/phv/m/n/10 = 0 , [] = 1 , [] = 2 , []
+ []
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Underfull \hbox (badness 1874) in paragraph at lines 157--157
+[]\T1/phv/m/n/10 Transición a ré-gi-men cons-tan-te. Vá-li-da cuan-do []\T1/pcr
+/m/n/10 ==@ref [][]\T1/phv/m/n/10 : pa-sa a [] y res-pon-de
+ []
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 157--157
+[]\T1/phv/m/n/10 Configurar ace-le-ra-ción. Per-mi-ti-do en [] o []. Lla-ma a \
+T1/pcr/m/n/10 Gestor[]SVM[]_[][]Set[]
+ []
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Underfull \hbox (badness 4595) in paragraph at lines 157--157
+[]\T1/phv/m/n/10 Configurar di-rec-ción de gi-ro. Per-mi-ti-do so-lo en []. Lla
+-ma a \T1/pcr/m/n/10 Gestor[]SVM[]_[][]Set[]
+ []
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Underfull \hbox (badness 1874) in paragraph at lines 157--157
+[]\T1/phv/m/n/10 Transición a ré-gi-men cons-tan-te. Vá-li-da cuan-do []\T1/pcr
+/m/n/10 ==@ref [][]\T1/phv/m/n/10 : pa-sa a [] y res-pon-de
+ []
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 157--157
+[]\T1/phv/m/n/10 Fin de ini-cia-li-za-ción. Vá-li-da \T1/phv/b/n/10 so-lo \T1/p
+hv/m/n/10 si []\T1/pcr/m/n/10 ==@ref
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 157--157
+[]\T1/phv/m/n/10 Forzar es-ta-do inac-ti-vo. Vá-li-da cuan-do []\T1/pcr/m/n/10 
+==@ref
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 157--157
+[][]\T1/phv/m/n/10 : pa-sa a [] y res-pon-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 157--157
+\T1/phv/m/n/10 de []; si no es-tá fre-nan-do, res-pon-de
+ []
+
+
+Underfull \hbox (badness 3312) in paragraph at lines 157--157
+[]\T1/phv/m/n/10 Solicitud de arran-que. Si []\T1/pcr/m/n/10 ==@ref []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 157--157
+\T1/phv/m/n/10 y res-pon-de []. Si es-tá en [],
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 157--157
+[] \T1/phv/m/n/10 o [] res-pon-de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 157--157
+[]\T1/phv/m/n/10 . En [] res-pon-de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 157--157
+[]\T1/phv/m/n/10 . En cual-quier otro ca-so
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 157--157
+[]\T1/phv/m/n/10 Solicitud de pa-ra-da. Si es-tá en [] o
+ []
+
+
+Underfull \hbox (badness 4108) in paragraph at lines 157--157
+[]\T1/phv/m/n/10 , lla-ma a [], pa-
+ []
+
+
+Underfull \hbox (badness 4927) in paragraph at lines 157--157
+\T1/phv/m/n/10 sa a [] y res-pon-de []. Si es-tá
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 157--157
+\T1/phv/m/n/10 en [], eje-cu-ta [], pa-
+ []
+
+
+Underfull \hbox (badness 1688) in paragraph at lines 157--157
+\T1/phv/m/n/10 sa a [] y res-pon-de []. Si ya es-tá en
+ []
+
+
+Underfull \hbox (badness 7030) in paragraph at lines 157--157
+[] \T1/phv/m/n/10 res-pon-de []. Otro caso[]:
+ []
+
+
+Underfull \hbox (badness 1603) in paragraph at lines 157--157
+\T1/phv/m/n/10 cu-ta [], pa-sa a [] y res-
+ []
+
+
+Underfull \hbox (badness 2318) in paragraph at lines 157--157
+\T1/phv/m/n/10 pon-de []; si ya es-ta-ba en emer-gen-cia res-pon-de
+ []
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 157--157
+[]\T1/phv/m/n/10 -1 \TS1/cmss/m/n/10 ^^Y [] \T1/phv/m/n/10 Si es-tá en
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 157--157
+[] \TS1/cmss/m/n/10 ^^Y []\T1/phv/m/n/10 ; otro es-ta-do
+ []
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Underfull \hbox (badness 7415) in paragraph at lines 157--157
+[]\T1/phv/m/n/10 -2 u otro \TS1/cmss/m/n/10 ^^Y [] \T1/phv/m/n/10 En otros es-t
+a-dos \TS1/cmss/m/n/10 ^^Y
+ []
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 157--157
+[]\T1/phv/m/n/10 otro \TS1/cmss/m/n/10 ^^Y [] \T1/phv/m/n/10 Si no es-tá en ID-
+LE \TS1/cmss/m/n/10 ^^Y
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 157--157
+[][]\T1/phv/m/n/10 : pa-sa a [] y res-pon-de
+ []
+
+
+Underfull \hbox (badness 1859) in paragraph at lines 157--157
+\T1/phv/m/n/10 ta-do). La en-tre-ga del va-lor se rea-li-za por la ca-pa que in
+-vo-ca a
+ []
+
+
+Underfull \hbox (badness 1009) in paragraph at lines 157--157
+[] \T1/phv/m/n/10 (no hay res-pues-ta nu-mé-ri-ca di-rec-ta en es-te
+ []
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 157--157
+[]\T1/phv/m/n/10 Fin de ini-cia-li-za-ción. Vá-li-da \T1/phv/b/n/10 so-lo \T1/p
+hv/m/n/10 si []\T1/pcr/m/n/10 ==@ref
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 157--157
+[]\T1/phv/m/n/10 Forzar es-ta-do inac-ti-vo. Vá-li-da cuan-do []\T1/pcr/m/n/10 
+==@ref
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 157--157
+[][]\T1/phv/m/n/10 : pa-sa a [] y res-pon-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 157--157
+\T1/phv/m/n/10 de []; si no es-tá fre-nan-do, res-pon-de
+ []
+
+
+Underfull \hbox (badness 3312) in paragraph at lines 157--157
+[]\T1/phv/m/n/10 Solicitud de arran-que. Si []\T1/pcr/m/n/10 ==@ref []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 157--157
+\T1/phv/m/n/10 y res-pon-de []. Si es-tá en [],
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 157--157
+[] \T1/phv/m/n/10 o [] res-pon-de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 157--157
+[]\T1/phv/m/n/10 . En [] res-pon-de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 157--157
+[]\T1/phv/m/n/10 . En cual-quier otro ca-so
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 157--157
+[]\T1/phv/m/n/10 Solicitud de pa-ra-da. Si es-tá en [] o
+ []
+
+
+Underfull \hbox (badness 4108) in paragraph at lines 157--157
+[]\T1/phv/m/n/10 , lla-ma a [], pa-
+ []
+
+
+Underfull \hbox (badness 4927) in paragraph at lines 157--157
+\T1/phv/m/n/10 sa a [] y res-pon-de []. Si es-tá
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 157--157
+\T1/phv/m/n/10 en [], eje-cu-ta [], pa-
+ []
+
+
+Underfull \hbox (badness 1688) in paragraph at lines 157--157
+\T1/phv/m/n/10 sa a [] y res-pon-de []. Si ya es-tá en
+ []
+
+
+Underfull \hbox (badness 7030) in paragraph at lines 157--157
+[] \T1/phv/m/n/10 res-pon-de []. Otro caso[]:
+ []
+
+
+Underfull \hbox (badness 1603) in paragraph at lines 157--157
+\T1/phv/m/n/10 cu-ta [], pa-sa a [] y res-
+ []
+
+
+Underfull \hbox (badness 2318) in paragraph at lines 157--157
+\T1/phv/m/n/10 pon-de []; si ya es-ta-ba en emer-gen-cia res-pon-de
+ []
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 157--157
+[]\T1/phv/m/n/10 -1 \TS1/cmss/m/n/10 ^^Y [] \T1/phv/m/n/10 Si es-tá en
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 157--157
+[] \TS1/cmss/m/n/10 ^^Y []\T1/phv/m/n/10 ; otro es-ta-do
+ []
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Underfull \hbox (badness 7415) in paragraph at lines 157--157
+[]\T1/phv/m/n/10 -2 u otro \TS1/cmss/m/n/10 ^^Y [] \T1/phv/m/n/10 En otros es-t
+a-dos \TS1/cmss/m/n/10 ^^Y
+ []
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 157--157
+[]\T1/phv/m/n/10 otro \TS1/cmss/m/n/10 ^^Y [] \T1/phv/m/n/10 Si no es-tá en ID-
+LE \TS1/cmss/m/n/10 ^^Y
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 157--157
+[][]\T1/phv/m/n/10 : pa-sa a [] y res-pon-de
+ []
+
+
+Underfull \hbox (badness 1859) in paragraph at lines 157--157
+\T1/phv/m/n/10 ta-do). La en-tre-ga del va-lor se rea-li-za por la ca-pa que in
+-vo-ca a
+ []
+
+
+Underfull \hbox (badness 1009) in paragraph at lines 157--157
+[] \T1/phv/m/n/10 (no hay res-pues-ta nu-mé-ri-ca di-rec-ta en es-te
+ []
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+LaTeX Info: Redefining \. on input line 157.
+LaTeX Info: Redefining \% on input line 157.
+[58]
+Underfull \hbox (badness 10000) in paragraph at lines 157--157
+[]\T1/phv/m/n/10 Fin de ini-cia-li-za-ción. Vá-li-da \T1/phv/b/n/10 so-lo \T1/p
+hv/m/n/10 si []\T1/pcr/m/n/10 ==@ref
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 157--157
+[]\T1/phv/m/n/10 Forzar es-ta-do inac-ti-vo. Vá-li-da cuan-do []\T1/pcr/m/n/10 
+==@ref
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 157--157
+[][]\T1/phv/m/n/10 : pa-sa a [] y res-pon-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 157--157
+\T1/phv/m/n/10 de []; si no es-tá fre-nan-do, res-pon-de
+ []
+
+
+Underfull \hbox (badness 3312) in paragraph at lines 157--157
+[]\T1/phv/m/n/10 Solicitud de arran-que. Si []\T1/pcr/m/n/10 ==@ref []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 157--157
+\T1/phv/m/n/10 y res-pon-de []. Si es-tá en [],
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 157--157
+[] \T1/phv/m/n/10 o [] res-pon-de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 157--157
+[]\T1/phv/m/n/10 . En [] res-pon-de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 157--157
+[]\T1/phv/m/n/10 . En cual-quier otro ca-so
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 157--157
+[]\T1/phv/m/n/10 Solicitud de pa-ra-da. Si es-tá en [] o
+ []
+
+
+Underfull \hbox (badness 4108) in paragraph at lines 157--157
+[]\T1/phv/m/n/10 , lla-ma a [], pa-
+ []
+
+
+Underfull \hbox (badness 4927) in paragraph at lines 157--157
+\T1/phv/m/n/10 sa a [] y res-pon-de []. Si es-tá
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 157--157
+\T1/phv/m/n/10 en [], eje-cu-ta [], pa-
+ []
+
+
+Underfull \hbox (badness 1688) in paragraph at lines 157--157
+\T1/phv/m/n/10 sa a [] y res-pon-de []. Si ya es-tá en
+ []
+
+
+Underfull \hbox (badness 7030) in paragraph at lines 157--157
+[] \T1/phv/m/n/10 res-pon-de []. Otro caso[]:
+ []
+
+
+Underfull \hbox (badness 1603) in paragraph at lines 157--157
+\T1/phv/m/n/10 cu-ta [], pa-sa a [] y res-
+ []
+
+
+Underfull \hbox (badness 2318) in paragraph at lines 157--157
+\T1/phv/m/n/10 pon-de []; si ya es-ta-ba en emer-gen-cia res-pon-de
+ []
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 157--157
+[]\T1/phv/m/n/10 -1 \TS1/cmss/m/n/10 ^^Y [] \T1/phv/m/n/10 Si es-tá en
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 157--157
+[] \TS1/cmss/m/n/10 ^^Y []\T1/phv/m/n/10 ; otro es-ta-do
+ []
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Underfull \hbox (badness 7415) in paragraph at lines 157--157
+[]\T1/phv/m/n/10 -2 u otro \TS1/cmss/m/n/10 ^^Y [] \T1/phv/m/n/10 En otros es-t
+a-dos \TS1/cmss/m/n/10 ^^Y
+ []
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+LaTeX Info: Redefining \. on input line 157.
+LaTeX Info: Redefining \% on input line 157.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 34.16548pt, for example:
+(fancyhdr)                \setlength{\headheight}{34.16548pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-22.16548pt}.
+
+[59]
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 157--157
+[]\T1/phv/m/n/10 otro \TS1/cmss/m/n/10 ^^Y [] \T1/phv/m/n/10 Si no es-tá en ID-
+LE \TS1/cmss/m/n/10 ^^Y
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 157--157
+[][]\T1/phv/m/n/10 : pa-sa a [] y res-pon-de
+ []
+
+
+Underfull \hbox (badness 1859) in paragraph at lines 157--157
+\T1/phv/m/n/10 ta-do). La en-tre-ga del va-lor se rea-li-za por la ca-pa que in
+-vo-ca a
+ []
+
+
+Underfull \hbox (badness 1009) in paragraph at lines 157--157
+[] \T1/phv/m/n/10 (no hay res-pues-ta nu-mé-ri-ca di-rec-ta en es-te
+ []
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 157.
+
+
+Underfull \hbox (badness 1910) in paragraph at lines 197--197
+[]\T1/phv/m/n/10 El mo-tor es-tá en mo-vi-mien-to (p. ej., en [],
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 197--197
+[]\T1/phv/m/n/10 El mo-tor es-tá de-te-ni-do (p. ej., en [] o
+ []
+
+
+Underfull \hbox (badness 1303) in paragraph at lines 197--197
+[]\T1/phv/m/n/10 ). Pue-de ser res-pues-ta a con-sul-ta o a
+ []
+
+
+Underfull \hbox (badness 1910) in paragraph at lines 197--197
+[]\T1/phv/m/n/10 El mo-tor es-tá en mo-vi-mien-to (p. ej., en [],
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 197--197
+[]\T1/phv/m/n/10 El mo-tor es-tá de-te-ni-do (p. ej., en [] o
+ []
+
+
+Underfull \hbox (badness 1303) in paragraph at lines 197--197
+[]\T1/phv/m/n/10 ). Pue-de ser res-pues-ta a con-sul-ta o a
+ []
+
+
+Underfull \hbox (badness 1910) in paragraph at lines 197--197
+[]\T1/phv/m/n/10 El mo-tor es-tá en mo-vi-mien-to (p. ej., en [],
+ []
+
+LaTeX Info: Redefining \. on input line 197.
+LaTeX Info: Redefining \% on input line 197.
+[60]
+Underfull \hbox (badness 10000) in paragraph at lines 197--197
+[]\T1/phv/m/n/10 El mo-tor es-tá de-te-ni-do (p. ej., en [] o
+ []
+
+
+Underfull \hbox (badness 1303) in paragraph at lines 197--197
+[]\T1/phv/m/n/10 ). Pue-de ser res-pues-ta a con-sul-ta o a
+ []
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 214.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 214.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 215.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 215.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 216.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 216.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 217.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 217.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 218.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 218.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 219.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 219.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 245.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 245.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 245.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 245.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 245.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 245.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 245.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 245.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 245.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 245.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 245.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 245.
+
+
+Underfull \hbox (badness 1603) in paragraph at lines 245--245
+[]\T1/phv/m/n/10 Sistema en ini-cia-li-za-ción. So-lo es vá-li-da [] pa-ra pa-s
+ar a
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 245--245
+[]\T1/phv/m/n/10 Reposo[]: mo-tor de-te-ni-do (o sa-li-da de emer-gen-cia). Ad-
+mi-te con-fi-gu-ra-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 245--245
+\T1/phv/m/n/10 ción ([], [], [],
+ []
+
+
+Underfull \hbox (badness 2564) in paragraph at lines 245--245
+[]\T1/phv/m/n/10 Marcha a ve-lo-ci-dad cons-tan-te. Acep-ta cam-bio de pa-rá-me
+-tros per-mi-ti-dos y
+ []
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 245.
+
+
+Underfull \hbox (badness 3701) in paragraph at lines 245--245
+[]\T1/phv/m/n/10 Transitorio de cam-bio de ve-lo-ci-dad (acel./desacel.). Al al
+-can-zar régimen[]
+ []
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 245.
+
+
+Underfull \hbox (badness 1603) in paragraph at lines 245--245
+[]\T1/phv/m/n/10 Sistema en ini-cia-li-za-ción. So-lo es vá-li-da [] pa-ra pa-s
+ar a
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 245--245
+[]\T1/phv/m/n/10 Reposo[]: mo-tor de-te-ni-do (o sa-li-da de emer-gen-cia). Ad-
+mi-te con-fi-gu-ra-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 245--245
+\T1/phv/m/n/10 ción ([], [], [],
+ []
+
+
+Underfull \hbox (badness 2564) in paragraph at lines 245--245
+[]\T1/phv/m/n/10 Marcha a ve-lo-ci-dad cons-tan-te. Acep-ta cam-bio de pa-rá-me
+-tros per-mi-ti-dos y
+ []
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 245.
+
+
+Underfull \hbox (badness 3701) in paragraph at lines 245--245
+[]\T1/phv/m/n/10 Transitorio de cam-bio de ve-lo-ci-dad (acel./desacel.). Al al
+-can-zar régimen[]
+ []
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 245.
+
+
+Underfull \hbox (badness 1603) in paragraph at lines 245--245
+[]\T1/phv/m/n/10 Sistema en ini-cia-li-za-ción. So-lo es vá-li-da [] pa-ra pa-s
+ar a
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 245--245
+[]\T1/phv/m/n/10 Reposo[]: mo-tor de-te-ni-do (o sa-li-da de emer-gen-cia). Ad-
+mi-te con-fi-gu-ra-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 245--245
+\T1/phv/m/n/10 ción ([], [], [],
+ []
+
+
+Underfull \hbox (badness 2564) in paragraph at lines 245--245
+[]\T1/phv/m/n/10 Marcha a ve-lo-ci-dad cons-tan-te. Acep-ta cam-bio de pa-rá-me
+-tros per-mi-ti-dos y
+ []
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 245.
+
+
+Underfull \hbox (badness 3701) in paragraph at lines 245--245
+[]\T1/phv/m/n/10 Transitorio de cam-bio de ve-lo-ci-dad (acel./desacel.). Al al
+-can-zar régimen[]
+ []
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 245.
+
+LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <7> not available
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 259.
+LaTeX Info: Redefining \. on input line 263.
+LaTeX Info: Redefining \% on input line 263.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 34.16548pt, for example:
+(fancyhdr)                \setlength{\headheight}{34.16548pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-22.16548pt}.
+
+[61]
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 268.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 269.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 269.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 269.
+
+
+Overfull \hbox (22.86905pt too wide) in paragraph at lines 269--270
+[][] []\T1/phv/m/n/10 : des-de [] \TS1/cmss/m/n/10 ^^Y []\T1/phv/m/n/10 ; si ha
+y mo-vi-mien-to \TS1/cmss/m/n/10 ^^Y []\T1/phv/m/n/10 ;
+ []
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 270.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 270.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 270.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 271.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 273.
+
+
+Underfull \hbox (badness 10000) detected at line 284
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 295
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 296--297
+[]\T1/phv/m/n/10 Las ac-cio-nes de lec-tu-ra ([], [], [],
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 298
+[][][]
+ []
+
+LaTeX Info: Redefining \. on input line 311.
+LaTeX Info: Redefining \% on input line 311.
+[62]) (_gestor_estados_8h_source.tex
+LaTeX Info: Redefining \. on input line 70.
+LaTeX Info: Redefining \% on input line 70.
+ [63]) (_gestor_s_v_m_8c.tex
+
+! LaTeX Error: Unicode character â‰ˆ (U+2248)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.22 ...vo del timer de switching (resoluciÃ³n â‰ˆ
+                                                   256 pasos). \end{DoxyComp...
+
+? 
+LaTeX Info: Redefining \. on input line 52.
+LaTeX Info: Redefining \% on input line 52.
+[64]
+LaTeX Info: Redefining \. on input line 102.
+LaTeX Info: Redefining \% on input line 102.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 34.16548pt, for example:
+(fancyhdr)                \setlength{\headheight}{34.16548pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-22.16548pt}.
+
+[65]
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 118.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 118.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 118.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 118.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 118.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 118.
+
+LaTeX Info: Redefining \. on input line 153.
+LaTeX Info: Redefining \% on input line 153.
+[66]
+
+! LaTeX Error: Unicode character â‰ˆ (U+2248)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.222 ...o del timer de switching (resoluciÃ³n â‰ˆ
+                                                   256 pasos).
+? 
+LaTeX Info: Redefining \. on input line 250.
+LaTeX Info: Redefining \% on input line 250.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 34.16548pt, for example:
+(fancyhdr)                \setlength{\headheight}{34.16548pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-22.16548pt}.
+
+[67]
+Underfull \hbox (badness 10000) detected at line 314
+[][][]
+ []
+
+LaTeX Info: Redefining \. on input line 321.
+LaTeX Info: Redefining \% on input line 321.
+[68]
+Underfull \hbox (badness 10000) detected at line 363
+[][][]
+ []
+
+LaTeX Info: Redefining \. on input line 380.
+LaTeX Info: Redefining \% on input line 380.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 34.16548pt, for example:
+(fancyhdr)                \setlength{\headheight}{34.16548pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-22.16548pt}.
+
+[69]
+Underfull \hbox (badness 10000) detected at line 387
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 392
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 459
+[][][]
+ []
+
+LaTeX Info: Redefining \. on input line 464.
+LaTeX Info: Redefining \% on input line 464.
+[70]
+Underfull \hbox (badness 10000) detected at line 464
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 485
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 510
+[][][]
+ []
+
+LaTeX Info: Redefining \. on input line 529.
+LaTeX Info: Redefining \% on input line 529.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 34.16548pt, for example:
+(fancyhdr)                \setlength{\headheight}{34.16548pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-22.16548pt}.
+
+[71]
+Underfull \hbox (badness 10000) detected at line 531
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 557
+[][][]
+ []
+
+LaTeX Info: Redefining \. on input line 578.
+LaTeX Info: Redefining \% on input line 578.
+[72]
+Underfull \hbox (badness 10000) detected at line 580
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 588
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 614
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 622
+[][][]
+ []
+
+LaTeX Info: Redefining \. on input line 641.
+LaTeX Info: Redefining \% on input line 641.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 34.16548pt, for example:
+(fancyhdr)                \setlength{\headheight}{34.16548pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-22.16548pt}.
+
+[73]
+Underfull \hbox (badness 10000) detected at line 653
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 661
+[][][]
+ []
+
+LaTeX Info: Redefining \. on input line 709.
+LaTeX Info: Redefining \% on input line 709.
+[74]
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 746.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 747.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 748.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 749.
+
+LaTeX Info: Redefining \. on input line 770.
+LaTeX Info: Redefining \% on input line 770.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 34.16548pt, for example:
+(fancyhdr)                \setlength{\headheight}{34.16548pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-22.16548pt}.
+
+[75]
+Underfull \hbox (badness 10000) detected at line 771
+[][][]
+ []
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 772.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 772.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 772.
+
+LaTeX Info: Redefining \. on input line 877.
+LaTeX Info: Redefining \% on input line 877.
+[76]
+LaTeX Info: Redefining \. on input line 957.
+LaTeX Info: Redefining \% on input line 957.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 34.16548pt, for example:
+(fancyhdr)                \setlength{\headheight}{34.16548pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-22.16548pt}.
+
+[77]
+LaTeX Info: Redefining \. on input line 1037.
+LaTeX Info: Redefining \% on input line 1037.
+ [78]
+LaTeX Info: Redefining \. on input line 1121.
+LaTeX Info: Redefining \% on input line 1121.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 34.16548pt, for example:
+(fancyhdr)                \setlength{\headheight}{34.16548pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-22.16548pt}.
+
+[79]
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 1185.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 1185.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 1185.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 1185.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 1185.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 1185.
+
+) (_gestor_s_v_m_8c_source.tex
+LaTeX Info: Redefining \. on input line 5.
+LaTeX Info: Redefining \% on input line 5.
+ [80]
+LaTeX Info: Redefining \. on input line 64.
+LaTeX Info: Redefining \% on input line 64.
+ [81]
+LaTeX Font Info:    Trying to load font information for TS1+pcr on input line 1
+36.
+
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1pcr.fd
+File: ts1pcr.fd 2001/06/04 font definitions for TS1/pcr.
+)
+LaTeX Info: Redefining \. on input line 145.
+LaTeX Info: Redefining \% on input line 145.
+
+[82]
+LaTeX Info: Redefining \. on input line 230.
+LaTeX Info: Redefining \% on input line 230.
+ [83]
+LaTeX Info: Redefining \. on input line 317.
+LaTeX Info: Redefining \% on input line 317.
+ [84]
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family pcr in TS1 encoding.
+(textcomp)                Default family used instead on input line 364.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family pcr in TS1 encoding.
+(textcomp)                Default family used instead on input line 364.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family pcr in TS1 encoding.
+(textcomp)                Default family used instead on input line 364.
+
+LaTeX Info: Redefining \. on input line 404.
+LaTeX Info: Redefining \% on input line 404.
+[85]
+LaTeX Info: Redefining \. on input line 491.
+LaTeX Info: Redefining \% on input line 491.
+ [86]
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family pcr in TS1 encoding.
+(textcomp)                Default family used instead on input line 494.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family pcr in TS1 encoding.
+(textcomp)                Default family used instead on input line 501.
+
+LaTeX Info: Redefining \. on input line 578.
+LaTeX Info: Redefining \% on input line 578.
+[87]
+
+! LaTeX Error: Unicode character â†” (U+2194)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.603 ...tablas\ BSRR\ intercambiando\ Uâ†”V\ */}}
+                                                  
+? 
+LaTeX Info: Redefining \. on input line 665.
+LaTeX Info: Redefining \% on input line 665.
+[88]
+LaTeX Info: Redefining \. on input line 752.
+LaTeX Info: Redefining \% on input line 752.
+ [89]) (_gestor_s_v_m_8h.tex
+Overfull \hbox (48.70123pt too wide) in paragraph at lines 49--58
+[] \T1/phv/m/n/10 = 0 , [] = 1 , [] = 2 , []
+ []
+
+LaTeX Info: Redefining \. on input line 72.
+LaTeX Info: Redefining \% on input line 72.
+[90]
+LaTeX Info: Redefining \. on input line 132.
+LaTeX Info: Redefining \% on input line 132.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 34.16548pt, for example:
+(fancyhdr)                \setlength{\headheight}{34.16548pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-22.16548pt}.
+
+[91]
+LaTeX Info: Redefining \. on input line 222.
+LaTeX Info: Redefining \% on input line 222.
+ [92]
+LaTeX Info: Redefining \. on input line 281.
+LaTeX Info: Redefining \% on input line 281.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 34.16548pt, for example:
+(fancyhdr)                \setlength{\headheight}{34.16548pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-22.16548pt}.
+
+[93]
+Underfull \hbox (badness 10000) detected at line 344
+[][][]
+ []
+
+LaTeX Info: Redefining \. on input line 367.
+LaTeX Info: Redefining \% on input line 367.
+[94]
+Underfull \hbox (badness 10000) detected at line 367
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 372
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 435
+[][][]
+ []
+
+LaTeX Info: Redefining \. on input line 440.
+LaTeX Info: Redefining \% on input line 440.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 34.16548pt, for example:
+(fancyhdr)                \setlength{\headheight}{34.16548pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-22.16548pt}.
+
+[95]
+Underfull \hbox (badness 10000) detected at line 440
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 471
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 496
+[][][]
+ []
+
+LaTeX Info: Redefining \. on input line 502.
+LaTeX Info: Redefining \% on input line 502.
+[96]
+Underfull \hbox (badness 10000) detected at line 522
+[][][]
+ []
+
+LaTeX Info: Redefining \. on input line 545.
+LaTeX Info: Redefining \% on input line 545.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 34.16548pt, for example:
+(fancyhdr)                \setlength{\headheight}{34.16548pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-22.16548pt}.
+
+[97]
+Underfull \hbox (badness 10000) detected at line 546
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 569
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 577
+[][][]
+ []
+
+LaTeX Info: Redefining \. on input line 602.
+LaTeX Info: Redefining \% on input line 602.
+[98]
+Underfull \hbox (badness 10000) detected at line 603
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 611
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 642
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 650
+[][][]
+ []
+
+) (_gestor_s_v_m_8h_source.tex
+LaTeX Info: Redefining \. on input line 5.
+LaTeX Info: Redefining \% on input line 5.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 34.16548pt, for example:
+(fancyhdr)                \setlength{\headheight}{34.16548pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-22.16548pt}.
+
+[99]
+LaTeX Info: Redefining \. on input line 88.
+LaTeX Info: Redefining \% on input line 88.
+ [100]) (_gestor_timers_8c.tex
+LaTeX Info: Redefining \. on input line 85.
+LaTeX Info: Redefining \% on input line 85.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 34.16548pt, for example:
+(fancyhdr)                \setlength{\headheight}{34.16548pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-22.16548pt}.
+
+[101]) (_gestor_timers_8c_source.tex) (_gestor_timers_8h.tex
+LaTeX Info: Redefining \. on input line 5.
+LaTeX Info: Redefining \% on input line 5.
+ [102])
+(_gestor_timers_8h_source.tex
+LaTeX Info: Redefining \. on input line 5.
+LaTeX Info: Redefining \% on input line 5.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 34.16548pt, for example:
+(fancyhdr)                \setlength{\headheight}{34.16548pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-22.16548pt}.
+
+[103]) (_s_p_i_module_8c.tex
+LaTeX Info: Redefining \. on input line 36.
+LaTeX Info: Redefining \% on input line 36.
+ [104]
+LaTeX Info: Redefining \. on input line 122.
+LaTeX Info: Redefining \% on input line 122.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 34.16548pt, for example:
+(fancyhdr)                \setlength{\headheight}{34.16548pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-22.16548pt}.
+
+[105]
+Underfull \hbox (badness 10000) detected at line 130
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 162
+[][][]
+ []
+
+LaTeX Info: Redefining \. on input line 188.
+LaTeX Info: Redefining \% on input line 188.
+[106]) (_s_p_i_module_8c_source.tex
+LaTeX Info: Redefining \. on input line 23.
+LaTeX Info: Redefining \% on input line 23.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 34.16548pt, for example:
+(fancyhdr)                \setlength{\headheight}{34.16548pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-22.16548pt}.
+
+[107]
+LaTeX Info: Redefining \. on input line 88.
+LaTeX Info: Redefining \% on input line 88.
+ [108]
+LaTeX Info: Redefining \. on input line 175.
+LaTeX Info: Redefining \% on input line 175.
+ [109]) (_s_p_i_module_8h.tex
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+ [110]
+Overfull \hbox (24.56319pt too wide) in paragraph at lines 13--31
+[] \T1/phv/m/n/10 = 10 , [] , [] , []
+ []
+
+
+Overfull \hbox (57.43945pt too wide) in paragraph at lines 13--31
+[] \T1/phv/m/n/10 , [] , [] , []
+ []
+
+
+Overfull \hbox (60.34628pt too wide) in paragraph at lines 13--31
+[] \T1/phv/m/n/10 , [] , [] , []
+ []
+
+
+Overfull \hbox (38.22462pt too wide) in paragraph at lines 32--47
+[] \T1/phv/m/n/10 , [] , []
+ []
+
+
+Overfull \hbox (33.005pt too wide) in paragraph at lines 32--47
+[] \T1/phv/m/n/10 , [] , []
+ []
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 63.
+
+
+LaTeX Font Warning: Font shape `T1/cmss/b/n' undefined
+(Font)              using `T1/cmss/m/n' instead on input line 63.
+
+
+LaTeX Font Warning: Font shape `TS1/cmss/b/n' undefined
+(Font)              using `TS1/cmss/m/n' instead
+(Font)              for symbol `textrightarrow' on input line 63.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 64.
+
+
+Underfull \hbox (badness 10000) detected at line 67
+[][][]
+ []
+
+LaTeX Info: Redefining \. on input line 93.
+LaTeX Info: Redefining \% on input line 93.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 34.16548pt, for example:
+(fancyhdr)                \setlength{\headheight}{34.16548pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-22.16548pt}.
+
+[111]
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 148.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 148.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 148.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 148.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 148.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 148.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 148.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 148.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 148.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 148.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 148.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 148.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 148.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 148.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 148.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 148.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 148.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 148.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 148.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 148.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 148.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 148.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 148.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 148.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 148.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 148.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 148.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 148.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 148.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 148.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 148.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 148.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 148.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 148.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 148.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 148.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 148.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 148.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 148.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 148.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 148.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 148.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 148.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 148.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 148.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 148.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 148.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 148.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 148.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 148.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 148.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 148.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 148.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 148.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 148.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 148.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 148.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 148.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 148.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 148.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 148.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 148.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 148.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 148.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 148.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 148.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 148.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 148.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 148.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 148.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 148.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 148.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 208.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 208.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 208.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 208.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 208.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 208.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 208.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 208.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 208.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 208.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 208.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 208.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 208.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 208.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 208.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 208.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 208.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 208.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 208.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 208.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 208.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 208.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 208.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 208.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 208.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 208.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 208.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 208.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 208.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 208.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 208.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 208.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 208.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 208.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 208.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 208.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 208.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 208.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 208.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 208--208
+[]\T1/phv/m/n/10 Incompatible por mo-vi-mien-to \TS1/cmss/b/n/10 ^^Y \T1/phv/m/
+n/10 si-mi-lar a
+ []
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 208.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 208--208
+[]\T1/phv/m/n/10 Incompatible por es-tar de-te-ni-do \TS1/cmss/b/n/10 ^^Y \T1/p
+hv/m/n/10 si-mi-lar a
+ []
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 208.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 208--208
+[]\T1/phv/m/n/10 Datos fue-ra de ran-go \TS1/cmss/b/n/10 ^^Y \T1/phv/m/n/10 si-
+mi-lar a
+ []
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 208.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 208--208
+[]\T1/phv/m/n/10 No per-mi-ti-do en emer-gen-cia \TS1/cmss/b/n/10 ^^Y \T1/phv/m
+/n/10 si-mi-lar a
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 208--208
+[]\T1/phv/m/n/10 . Mar-ca-dor fi-
+ []
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 208.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 208.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 208.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 208--208
+[]\T1/phv/m/n/10 Incompatible por mo-vi-mien-to \TS1/cmss/b/n/10 ^^Y \T1/phv/m/
+n/10 si-mi-lar a
+ []
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 208.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 208--208
+[]\T1/phv/m/n/10 Incompatible por es-tar de-te-ni-do \TS1/cmss/b/n/10 ^^Y \T1/p
+hv/m/n/10 si-mi-lar a
+ []
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 208.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 208--208
+[]\T1/phv/m/n/10 Datos fue-ra de ran-go \TS1/cmss/b/n/10 ^^Y \T1/phv/m/n/10 si-
+mi-lar a
+ []
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 208.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 208--208
+[]\T1/phv/m/n/10 No per-mi-ti-do en emer-gen-cia \TS1/cmss/b/n/10 ^^Y \T1/phv/m
+/n/10 si-mi-lar a
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 208--208
+[]\T1/phv/m/n/10 . Mar-ca-dor fi-
+ []
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 208.
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 208.
+
+LaTeX Info: Redefining \. on input line 208.
+LaTeX Info: Redefining \% on input line 208.
+[112]
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 208.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 208--208
+[]\T1/phv/m/n/10 Incompatible por mo-vi-mien-to \TS1/cmss/b/n/10 ^^Y \T1/phv/m/
+n/10 si-mi-lar a
+ []
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 208.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 208--208
+[]\T1/phv/m/n/10 Incompatible por es-tar de-te-ni-do \TS1/cmss/b/n/10 ^^Y \T1/p
+hv/m/n/10 si-mi-lar a
+ []
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 208.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 208--208
+[]\T1/phv/m/n/10 Datos fue-ra de ran-go \TS1/cmss/b/n/10 ^^Y \T1/phv/m/n/10 si-
+mi-lar a
+ []
+
+
+Package textcomp Warning: Symbol \textrightarrow not provided by
+(textcomp)                font family phv in TS1 encoding.
+(textcomp)                Default family used instead on input line 208.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 208--208
+[]\T1/phv/m/n/10 No per-mi-ti-do en emer-gen-cia \TS1/cmss/b/n/10 ^^Y \T1/phv/m
+/n/10 si-mi-lar a
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 208--208
+[]\T1/phv/m/n/10 . Mar-ca-dor fi-
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 241
+[][][]
+ []
+
+) (_s_p_i_module_8h_source.tex
+LaTeX Info: Redefining \. on input line 13.
+LaTeX Info: Redefining \% on input line 13.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 34.16548pt, for example:
+(fancyhdr)                \setlength{\headheight}{34.16548pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-22.16548pt}.
+
+[113]) (main_8c.tex
+LaTeX Info: Redefining \. on input line 30.
+LaTeX Info: Redefining \% on input line 30.
+ [114]
+Underfull \hbox (badness 10000) in paragraph at lines 66--67
+
+ []
+
+LaTeX Info: Redefining \. on input line 88.
+LaTeX Info: Redefining \% on input line 88.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 22.16548pt, for example:
+(fancyhdr)                \setlength{\headheight}{22.16548pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-10.16548pt}.
+
+[115]
+LaTeX Info: Redefining \. on input line 149.
+LaTeX Info: Redefining \% on input line 149.
+ [116]
+Underfull \hbox (badness 10000) detected at line 149
+[][][]
+ []
+
+LaTeX Info: Redefining \. on input line 215.
+LaTeX Info: Redefining \% on input line 215.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 22.16548pt, for example:
+(fancyhdr)                \setlength{\headheight}{22.16548pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-10.16548pt}.
+
+[117]
+LaTeX Info: Redefining \. on input line 287.
+LaTeX Info: Redefining \% on input line 287.
+ [118]) (main_8c_source.tex
+LaTeX Info: Redefining \. on input line 32.
+LaTeX Info: Redefining \% on input line 32.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 22.16548pt, for example:
+(fancyhdr)                \setlength{\headheight}{22.16548pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-10.16548pt}.
+
+[119]
+LaTeX Info: Redefining \. on input line 88.
+LaTeX Info: Redefining \% on input line 88.
+ [120]
+LaTeX Info: Redefining \. on input line 173.
+LaTeX Info: Redefining \% on input line 173.
+ [121]
+LaTeX Info: Redefining \. on input line 259.
+LaTeX Info: Redefining \% on input line 259.
+ [122]) (stm32f1xx__hal__msp_8c.tex
+LaTeX Info: Redefining \. on input line 40.
+LaTeX Info: Redefining \% on input line 40.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 34.16548pt, for example:
+(fancyhdr)                \setlength{\headheight}{34.16548pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-22.16548pt}.
+
+[123]
+Underfull \hbox (badness 10000) detected at line 40
+[][][]
+ []
+
+LaTeX Info: Redefining \. on input line 102.
+LaTeX Info: Redefining \% on input line 102.
+[124]
+LaTeX Info: Redefining \. on input line 157.
+LaTeX Info: Redefining \% on input line 157.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 34.16548pt, for example:
+(fancyhdr)                \setlength{\headheight}{34.16548pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-22.16548pt}.
+
+[125]) (stm32f1xx__hal__msp_8c_source.tex
+LaTeX Info: Redefining \. on input line 5.
+LaTeX Info: Redefining \% on input line 5.
+ [126]
+LaTeX Info: Redefining \. on input line 79.
+LaTeX Info: Redefining \% on input line 79.
+ [127]) (stm32f1xx__it_8c.tex
+LaTeX Info: Redefining \. on input line 19.
+LaTeX Info: Redefining \% on input line 19.
+
+[128]
+Underfull \hbox (badness 10000) detected at line 62
+[][][]
+ []
+
+LaTeX Info: Redefining \. on input line 88.
+LaTeX Info: Redefining \% on input line 88.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 34.16548pt, for example:
+(fancyhdr)                \setlength{\headheight}{34.16548pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-22.16548pt}.
+
+[129]
+LaTeX Info: Redefining \. on input line 179.
+LaTeX Info: Redefining \% on input line 179.
+ [130]
+LaTeX Info: Redefining \. on input line 251.
+LaTeX Info: Redefining \% on input line 251.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 34.16548pt, for example:
+(fancyhdr)                \setlength{\headheight}{34.16548pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-22.16548pt}.
+
+[131]) (stm32f1xx__it_8c_source.tex
+LaTeX Info: Redefining \. on input line 5.
+LaTeX Info: Redefining \% on input line 5.
+ [132]
+LaTeX Info: Redefining \. on input line 70.
+LaTeX Info: Redefining \% on input line 70.
+ [133]) (syscalls_8c.tex
+LaTeX Info: Redefining \. on input line 63.
+LaTeX Info: Redefining \% on input line 63.
+ [134]
+Underfull \hbox (badness 10000) detected at line 69
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 76
+[][][]
+ []
+
+LaTeX Info: Redefining \. on input line 135.
+LaTeX Info: Redefining \% on input line 135.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 34.16548pt, for example:
+(fancyhdr)                \setlength{\headheight}{34.16548pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-22.16548pt}.
+
+[135]
+LaTeX Info: Redefining \. on input line 206.
+LaTeX Info: Redefining \% on input line 206.
+ [136]
+LaTeX Info: Redefining \. on input line 259.
+LaTeX Info: Redefining \% on input line 259.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 34.16548pt, for example:
+(fancyhdr)                \setlength{\headheight}{34.16548pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-22.16548pt}.
+
+[137]) (syscalls_8c_source.tex
+LaTeX Info: Redefining \. on input line 36.
+LaTeX Info: Redefining \% on input line 36.
+ [138]
+LaTeX Info: Redefining \. on input line 88.
+LaTeX Info: Redefining \% on input line 88.
+ [139]) (sysmem_8c.tex
+LaTeX Info: Redefining \. on input line 12.
+LaTeX Info: Redefining \% on input line 12.
+ [140]
+Underfull \hbox (badness 10000) detected at line 27
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 34
+[][][]
+ []
+
+LaTeX Info: Redefining \. on input line 72.
+LaTeX Info: Redefining \% on input line 72.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 34.16548pt, for example:
+(fancyhdr)                \setlength{\headheight}{34.16548pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-22.16548pt}.
+
+[141]
+Underfull \hbox (badness 10000) detected at line 73
+[][][]
+ []
+
+) (sysmem_8c_source.tex) (system__stm32f1xx_8c.tex
+LaTeX Info: Redefining \. on input line 16.
+LaTeX Info: Redefining \% on input line 16.
+ [142]
+Underfull \hbox (badness 10000) detected at line 39
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 54
+[][][]
+ []
+
+LaTeX Info: Redefining \. on input line 61.
+LaTeX Info: Redefining \% on input line 61.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 34.16548pt, for example:
+(fancyhdr)                \setlength{\headheight}{34.16548pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-22.16548pt}.
+
+[143]) (system__stm32f1xx_8c_source.tex
+LaTeX Info: Redefining \. on input line 71.
+LaTeX Info: Redefining \% on input line 71.
+ [144]
+LaTeX Info: Redefining \. on input line 152.
+LaTeX Info: Redefining \% on input line 152.
+ [145]
+LaTeX Info: Redefining \. on input line 237.
+LaTeX Info: Redefining \% on input line 237.
+ [146])
+LaTeX Info: Redefining \. on input line 292.
+LaTeX Info: Redefining \% on input line 292.
+ [147]
+LaTeX Info: Redefining \. on input line 292.
+LaTeX Info: Redefining \% on input line 292.
+ [148
+
+]
+No file refman.ind.
+(refman.aux
+LaTeX Info: Redefining \. on input line 9.
+LaTeX Info: Redefining \% on input line 9.
+)
+ ***********
+LaTeX2e <2025-11-01>
+L3 programming layer <2025-11-06>
+ ***********
+
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `refman.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `refman.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  1671AAF01D00C3B59FBD97C826FE4136;106732.
+ ) 
+Here is how much of TeX's memory you used:
+ 26928 strings out of 467871
+ 557298 string characters out of 5418860
+ 1227908 words of memory out of 5000000
+ 51306 multiletter control sequences out of 15000+600000
+ 686436 words of font info for 118 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 103i,16n,124p,1661b,1943s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+pdfTeX warning (dest): name{_gestor_estados_8c_a44b3bf408355270c64323425c66e771
+9} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{_gestor_estados_8c_a7e2bcf8de2c1eced051a3a4d69ec7ce
+e} has been referenced but does not exist, replaced by a fixed one
+
+ <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi525\tctt080
+0.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tc
+si0900.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi6
+00\tcss1000.pk><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/
+amsfonts/cm/cmmi10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1
+/public/amsfonts/cm/cmmi7.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/font
+s/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/User/AppData/Local/Programs/MiK
+TeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/User/AppData/Local/Progr
+ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/User/AppData/Loca
+l/Programs/MiKTeX/fonts/type1/urw/courier/ucrb8a.pfb><C:/Users/User/AppData/Loc
+al/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users/User/AppData/Lo
+cal/Programs/MiKTeX/fonts/type1/urw/courier/ucrro8a.pfb><C:/Users/User/AppData/
+Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/User/AppDat
+a/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8ac.pfb><C:/Users/User/App
+Data/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/User/A
+ppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvro8a.pfb>
+Output written on refman.pdf (150 pages, 1668135 bytes).
+PDF statistics:
+ 9022 PDF objects out of 10688 (max. 8388607)
+ 4002 named destinations out of 4296 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+

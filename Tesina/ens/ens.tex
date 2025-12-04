@@ -1,0 +1,274 @@
+\label{sec:4_ens}
+
+\subsection{Introducción}
+
+En esta sección se presentan los ensayos experimentales realizados sobre el variador de frecuencia desarrollado. El objetivo de estas pruebas es verificar el correcto funcionamiento del dispositivo en condiciones reales de operación, evaluar su respuesta ante distintas cargas y frecuencias, y garantizar que los parámetros eléctricos se mantengan dentro de límites seguros.
+
+Los ensayos permiten comprobar tanto el desempeño del conversor, como el comportamiento del inversor, en esto se involucra la conmutación de los MOSFET, la modulación (SVM) implementada y el programa de control.
+
+
+
+\subsection{Ensayo funcional}
+
+El primer ensayo consistió en verificar el funcionamiento general del variador de frecuencia (VFD). Para ello, se conectó el motor trifásico al inversor y se alimentó la etapa de potencia mediante dos fuentes de $12V$ repartiendo la carga. Adicionalmente, se utilizó una tercera fuente destinada exclusivamente a la electrónica de control. La configuración del ensayo se muestra en el siguiente diagrama y en la imagen del banco de pruebas.
+
+\begin{figure}[H]
+\centering
+    \includegraphics[width=0.4\textwidth]{ens/img/func/DiagConexion.png}
+    \caption{Diagrama de conexión para los ensayos.}
+\label{fig:img_ens_func_diagConex}
+\end{figure}
+
+
+\begin{figure}[H]
+\centering
+    \includegraphics[width=0.9\textwidth]{ens/img/func/SetupMedicion.jpg}
+    \caption{Configuración de mediciones con el motor a la izquierda y las fuentes de alimentación a la derecha.}
+\label{fig:img_ens_func_setup}
+\end{figure}
+
+Una vez energizado el sistema, se evaluó el comportamiento del motor durante las etapas de arranque, detención y régimen permanente, para frecuencias de operación comprendidas entre 10 Hz y 150 Hz. Durante todas las pruebas no se observaron vibraciones ni comportamientos anómalos en el motor, lo que indica que el sistema trifásico generado se encontraba correctamente balanceado y sin fallas de modulación.
+
+También se aplicó carga al motor utilizando el freno dinámico, generando una potencia de salida aproximada de $300 W$. El motor respondió correctamente bajo estas condiciones, sin presentar inestabilidades ni síntomas de sobrecarga. Sin embargo, el sistema de frenado no permite realizar ensayos prolongados debido a limitaciones propias del mecanismo.
+
+Es importante aclarar que el motor utilizado en la prueba es de $2 HP$, una potencia significativamente superior. No obstante, siempre que la carga aplicada no supere la potencia nominal, el comportamiento dinámico y eléctrico es representativo, por lo que los resultados obtenidos se consideran válidos para el análisis.
+
+\begin{figure}[H]
+\centering
+    \includegraphics[width=0.9\textwidth]{ens/img/func/FrenoMotor.jpg}
+    \caption{Motor con un sistema de frenado ajustable.}
+\label{fig:img_ens_func_frenoMotor}
+\end{figure}
+
+Asimismo, se comprobó el correcto funcionamiento de todas las entradas digitales, incluyendo los botones de comando y el circuito de parada de emergencia, verificando una respuesta inmediata y conforme a lo previsto en el diseño.
+
+\begin{figure}[H]
+\centering
+    \includegraphics[width=0.9\textwidth]{ens/img/func/EstadoIdle.jpg}
+    \caption{Variador encendido en estado de espera.}
+\label{fig:img_ens_func_estadoIdle}
+\end{figure}
+
+\subsection{Ensayo de la modulación}
+
+Este ensayo tuvo como finalidad verificar el correcto funcionamiento del esquema de modulación por vector espacial (SVM). En primera instancia se evaluó la integridad de las señales generadas por el inversor, comprobando que las formas de onda presentaran la secuencia, el desfase y la calidad esperada sin distorsiones relevantes. Posteriormente, se analizaron parámetros asociados a la modulación, como la simetría de los pulsos y los tiempos de conmutación, cuya correcta implementación resulta esencial para evitar la aparición de armónicos y asegurar un funcionamiento estable del motor. Finalmente, se verificó que el índice de modulación respetara la estrategia $V/f$, garantizando la adecuada relación entre la frecuencia programada y la amplitud de tensión entregada al motor.
+
+
+\subsubsection{Integridad de la señal}
+
+En esta sección se evalúa el comportamiento de las formas de onda generadas por el inversor. Utilizando la masa del osciloscopio sobre una de las fases y muestreando las otras dos, se verificó la integridad de la señal entregada. A continuación se muestran mediciones realizadas con una frecuencia de salida de $50Hz$, donde puede observarse el desfase de $60^\circ$ entre fases característico del sistema trifásico.
+
+\begin{figure}[H]
+\centering
+    \includegraphics[width=0.9\textwidth]{ens/img/mod/Dif_MedFrec.jpg}
+    \caption{Forma de onda trifásica muestreando solo dos ondas de $50Hz$.}
+\label{fig:img_ens_mod_Dif_MedFrec}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+    \includegraphics[width=0.9\textwidth]{ens/img/mod/Dif_MedDesf.jpg}
+    \caption{Desfase de $60^\circ$ entre dos fases medidas.}
+\label{fig:img_ens_mod_Dif_MedDesf}
+\end{figure}
+
+También se registraron señales a distintas frecuencias para observar el comportamiento general de la modulación.
+
+\begin{figure}[H]
+\centering
+    \includegraphics[width=0.9\textwidth]{ens/img/mod/Dif_Med10Hz.jpg}
+    \caption{Forma de onda a una frecuencia de $10Hz$.}
+\label{fig:img_ens_mod_Dif_Med10Hz}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+    \includegraphics[width=0.9\textwidth]{ens/img/mod/Dif_Med150Hz.jpg}
+    \caption{Forma de onda a una frecuencia de $150Hz$.}
+\label{fig:img_ens_mod_Dif_Med150Hz}
+\end{figure}
+
+Para un análisis más detallado, se realizó un acercamiento (zoom) sobre los pulsos de modulación.
+
+\begin{figure}[H]
+\centering
+    \includegraphics[width=0.9\textwidth]{ens/img/mod/Dif_Zoom1.jpg}
+    \caption{Detalle ampliado de la modulación SVM (vista 1).}
+\label{fig:img_ens_mod_Dif_Zoom1}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+    \includegraphics[width=0.9\textwidth]{ens/img/mod/Dif_Zoom2.jpg}
+    \caption{Detalle ampliado de la modulación SVM (vista 2).}
+\label{fig:img_ens_mod_Dif_Zoom2}
+\end{figure}
+
+\subsubsection{Simetría de pulsos}
+
+En esta sección se analiza la simetría de los pulsos generados por el esquema SVM, ya que cualquier asimetría podría introducir armónicos no deseados y producir vibraciones o ruidos en el motor. Las siguientes imágenes muestran capturas temporales de los pulsos, evidenciando su correcta simetría.
+
+\begin{figure}[H]
+\centering
+    \includegraphics[width=0.9\textwidth]{ens/img/mod/SimPulsoGral.jpg}
+    \caption{Vista general de los pulsos de modulación generados por el microcontrolador.}
+\label{fig:img_ens_mod_SimPulso_Gral}
+\end{figure}
+
+En las siguientes figuras se muestran dos mediciones, centradas respecto del pulso de otra fase, donde se observa que no existe diferencia apreciable en los tiempos de conmutación.
+
+\begin{figure}[H]
+\centering
+    \includegraphics[width=0.9\textwidth]{ens/img/mod/SimPulsoMed1.jpg}
+    \caption{Comparación temporal de pulsos entre dos fases (vista 1).}
+\label{fig:img_ens_mod_SimPulso_Med1}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+    \includegraphics[width=0.9\textwidth]{ens/img/mod/SimPulsoMed2.jpg}
+    \caption{Comparación temporal de pulsos entre dos fases (vista 2).}
+\label{fig:img_ens_mod_SimPulso_Med2}
+\end{figure}
+
+\subsubsection{Indice de modulación}
+
+Para verificar la correcta implementación de la estrategia $V/f$, se evaluó la relación entre la frecuencia programada y la tensión eficaz aplicada al motor. Dado que el motor requiere una tensión proporcional a la frecuencia de operación, este ajuste se logra desde la modulación, reduciendo el ancho de los pulsos conforme disminuye la frecuencia.
+
+Para este ensayo se montó el motor y se configuró el variador a distintas frecuencias fijas. En cada caso se midió la tensión de salida del inversor, registrando el comportamiento del sistema ante variaciones de frecuencia. Las figuras siguientes muestran el montaje experimental y las mediciones obtenidas.
+
+En el ensayo se emplearon cuatro multímetros, destinados a medir:
+
+\begin{enumerate}
+    \item Tensión de linea del inversor.
+    \item Corriente de fase.
+    \item Tensión del bus DC.
+    \item Corriente del bus DC.
+\end{enumerate}
+
+A continuación, se muestran imágenes del ensayo en donde se verifica esta relación.  
+
+\begin{figure}[H]
+\centering
+    \includegraphics[width=0.9\textwidth]{ens/img/mod/ModFrec5Hz.jpg}
+    \caption{Variador con motor en vacío inyectando una señal de $5Hz$.}
+\label{fig:img_ens_modInx_5Hz}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+    \includegraphics[width=0.9\textwidth]{ens/img/mod/ModFrec10Hz.jpg}
+    \caption{Variador con motor en vacío inyectando una señal de $10Hz$.}
+\label{fig:img_ens_modInx_10Hz}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+    \includegraphics[width=0.9\textwidth]{ens/img/mod/ModFrec20Hz.jpg}
+    \caption{Variador con motor en vacío inyectando una señal de $20Hz$.}
+\label{fig:img_ens_modInx_20Hz}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+    \includegraphics[width=0.9\textwidth]{ens/img/mod/ModFrec30Hz.jpg}
+    \caption{Variador con motor en vacío inyectando una señal de $30Hz$.}
+\label{fig:img_ens_modInx_30Hz}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+    \includegraphics[width=0.9\textwidth]{ens/img/mod/ModFrec50Hz.jpg}
+    \caption{Variador con motor en vacío inyectando una señal de $50Hz$.}
+\label{fig:img_ens_modInx_50Hz}
+\end{figure}
+
+
+
+
+\subsection{Rendimiento}
+
+El análisis del rendimiento del sistema se realizó mediante un ensayo dividido en dos etapas. En la primera se evaluó el conversor, donde se midieron las tensiones y corrientes de entrada, así como el comportamiento del bus DC bajo carga inductiva. En la segunda etapa se analizó el inversor, utilizando una carga resistiva de valor conocido, lo que permitió evaluar únicamente la tensión de línea sin depender de mediciones de corriente.
+
+La separación del ensayo en dos partes se realizo porque las mediciones de corriente en la salida del inversor no arrojaban resultados físicamente coherentes. Esto se relaciona con la naturaleza pulsante de la conmutación PWM, generando valores erróneos. Por tal motivo, las mediciones de corriente fueron descartadas.
+
+
+Para la medición de la eficiencia se utilizó el motor junto con el freno dinámico, permitiendo evaluar el comportamiento del sistema en dos puntos de carga distintos. De este modo fue posible analizar la respuesta del conversor bajo diferentes demandas de potencia. Durante los ensayos, la frecuencia de salida del inversor se fijó en 50 Hz, asegurando una condición de funcionamiento estable y comparable entre las mediciones realizadas.
+
+
+\subsubsection{Eficiencia del conversor}
+En una primera instancia se ensayó el conversor bajo una condición de baja potencia de salida. Para medir la corriente de entrada se realizó una medición indirecta utilizando una resistencia de $0.1\Omega$ y observando la caída de tensión sobre la misma mediante el osciloscopio.
+
+\begin{figure}[H]
+\centering
+    \includegraphics[width=0.9\textwidth]{ens/img/rend/Cnv_50W_Med1.jpg}
+    \caption{Medición con motor en vacío inyectando una señal de $50Hz$.}
+\label{fig:img_ens_rend_cnv50W_med1}
+\end{figure}
+
+A partir de las mediciones de corriente y tensión de entrada se observa que la tensión de línea se mantiene prácticamente constante, mientras que la corriente presenta una forma de onda de diente de sierra. La frecuencia principal de esta señal es de $2.5 kHz$, coincidiendo con la frecuencia de conmutación asociada a la reposición de energía en el bus DC: cuando la tensión del capacitor disminuye por la demanda del inversor, el conversor incrementa la corriente para restaurar el nivel de tensión.
+
+\begin{figure}[H]
+\centering
+    \includegraphics[width=0.9\textwidth]{ens/img/rend/Cnv_50W_Med2.jpg}
+    \caption{Medición de la tensión en shunt en trazo celeste y tensión de la fuente de alimentación en amarillo.}
+\label{fig:img_ens_rend_cnv50W_med2}
+\end{figure}
+
+Las mediciones presentan un nivel elevado de ruido eléctrico, consecuencia tanto de la conmutación del inversor como de la del propio conversor, cuya frecuencia de switching es de aproximadamente $50 kHz$. Este ruido dificulta la obtención de mediciones más estables, aunque los valores promedio resultan representativos.
+
+A partir del análisis de la señal se obtiene una corriente RMS de entrada de $2.9A$, lo que permite estimar una potencia de entrada de aproximadamente $66 W$. En cuanto al bus DC, se midió una tensión de $336 V$ y una corriente cercana a $150 mA$, resultando en una potencia de salida de $50.4W$. De este modo, el rendimiento del conversor para esta carga se calcula como
+
+\[
+\eta_{conversor \ - \ 50W} = \frac{P_{out}}{P_{in}}=0.764
+\]
+
+Posteriormente se repitió el mismo procedimiento para una carga cercana a 300 W, lo que permitió evaluar el desempeño del conversor bajo una condición de demanda más elevada. Debido a que la corriente del primario es significativamente mayor, se empleó una resistencia shunt de $1.5m\Omega$.
+
+\begin{figure}[H]
+\centering
+    \includegraphics[width=0.9\textwidth]{ens/img/rend/Cnv_300W_Med1.jpg}
+    \caption{Medición con motor bajo carga inyectando una señal de $50Hz$.}
+\label{fig:img_ens_rend_cnv300W_med1}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+    \includegraphics[width=0.9\textwidth]{ens/img/rend/Cnv_300W_Med2.jpg}
+    \caption{Medición de la tensión en shunt en trazo celeste y tensión de la fuente de alimentación en amarillo.}
+\label{fig:img_ens_rend_cnv300W_med2}
+\end{figure}
+
+En este caso se observa que la señal de corriente mantiene la forma de diente de sierra, pero con una frecuencia considerablemente más alta, cercana a los $50kHz$, correspondiente a la frecuencia de conmutación del conversor. A partir de estas mediciones se calcula una corriente de entrada de $69.33A$, lo que implica una potencia de entrada de $358.8W$.
+
+Por su parte, en el bus de continua se mide una tensión de $333V$ y una corriente de $920mA$, obteniéndose así una potencia de $306.53W$.
+
+\[
+\eta_{conversor \ - \ 300W} = \frac{P_{out}}{P_{in}}=0.854
+\]
+
+Bajo una carga elevada, el conversor muestra un comportamiento más eficiente, lo cual resulta especialmente relevante dado que es en estas condiciones cuando se produce el mayor consumo de potencia.
+
+\subsubsection{Eficiencia del inversor}
+
+Dado que no se dispone de una forma confiable de medir la corriente y la tensión a la salida del inversor debido al elevado nivel de ruido y a las mediciones erróneas que este produce. No es posible calcular directamente la potencia de salida, y por lo tanto tampoco el rendimiento. Para resolver esta limitación, se utilizó una carga resistiva pura de valor conocido. Esta carga consume aproximadamente $120W$ en un sistema trifásico. Con el fin de determinar la potencia exacta, se midió la tensión de línea junto con la potencia entregada por el Bus DC.
+
+\begin{figure}[H]
+\centering
+    \includegraphics[width=0.9\textwidth]{ens/img/rend/Inv_120W.jpg}
+    \caption{Medición del variador con una carga resistiva pura de $120W$.}
+\label{fig:img_ens_rend_inv120W}
+\end{figure}
+
+La potencia suministrada por el Bus DC es de $137.17W$, calculada a partir de una tensión de $334V$ y una corriente de $460mA$. La potencia de salida medida es de $130.63W$, lo que resulta en un rendimiento del $95.2\%$.
+
+\[
+\eta_{inversor \ - \ 120W} = \frac{P_{out}}{P_{in}}=0.9523
+\]
+
+\subsubsection{Rendimiento del variador}
+
+El rendimiento total del variador está determinado por la combinación del rendimiento del conversor y del inversor. A partir de los valores, se obtiene un rendimiento de $81.3\%$. Si bien este valor es relativamente bajo, se encuentra fuertemente condicionado por el desempeño limitado del conversor, que constituye la principal fuente de pérdidas dentro del sistema.
+
+\subsection{Durabilidad}
+

@@ -1,0 +1,335 @@
+\label{sec:2_mt_cnv}
+
+\subsection{Conversor DC-DC}
+Un conversor DC-DC es un dispositivo que convierte potencia de un nivel de tensión continua a otro. Estos existen de dos tipos básicos, los convertidores lineales y los convertidores por conmutación. Los lineales tienen un gran control de la tensión de salida y un ruido muy bajo, pero en contracara tiene un rendimiento muy bajo, solo se utilizan para bajos niveles de potencia.
+
+Los conmutados son sistemas con características opuestas al anterior, donde el interés de estos es en una fuente de alto rendimiento, volumen reducido y manejo de grandes potencias. La ventaja se encuentra en la relación de tensión entrada salida muy alta y corrientes considerables, como desventajas vamos a tener niveles de ruido generados elevados y complejidad en la estabilidad del lazo cerrado ya que no son sistemas lineales.
+
+Entre estos conversores conmutados se encuentran divididos en dos grandes grupos, los aislados y los directos. El primer grupo se distingue por el uso de un transformador de alta frecuencia para la transferencia de energía. Mientras que los directos son más eficientes, tiene un menor costo, tamaño y un control más simple, los aislados pueden lograr una relación entrada salida mucho más alta. Este segundo grupo requiere de un transformador que trabaje en alta frecuencia lo que lleva a un sistema más complejo y costoso.
+
+Por último, en este tipo de conversores aislados vamos a encontrar varias topologías distintas, entre ellas tenemos la flyback, forward, medio puente y puente completo. 
+
+\subsubsection{Flyback}
+
+El convertidor flyback funciona almacenando energía en forma de flujo en el transformador mientras se hace circular corriente por el primario, cuando esta corriente se desvanece, la energía se transfiere al secundario y se disipa en la carga. Debido a que el transformador actúa mas como un inductor que como un transformador ideal, esta topología se comporta de manera simular a un convertidor boost aislado. Sus ventajas son la simplicidad del diseño y el bajo costo, lo que la hace ideal para aplicaciones de baja potencia. No obstante, sus desventajas incluyen mayores pérdidas por conmutación, elevados picos de tensión en el transistor del primario y una eficiencia limitada cuando se trabaja con potencias medias o altas.
+
+\subsubsection{Forward}
+
+La topología Forward, transfiere la energía directamente desde la entrada hacia la salida. A diferencia del Flyback, no hay almacenamiento de energía en el transformador durante el ciclo de conducción, por lo que es necesaria la inclusión de un inductor de salida para filtrar la corriente continua. Esta topología ofrece una mejor eficiencia en potencias intermedias y reduce significativamente los picos de tensión sobre el transistor del primario. Sin embargo, requiere circuitos adicionales, como devanados de desmagnetización para evitar la saturación del núcleo del transformador.
+
+\subsubsection{Medio puente}
+
+Para un requerimiento de potencia más exigente, se recurre a topologías más robustas como la Half-Bridge. Este tipo de conversor utiliza dos interruptores que se activan alternadamente, aplicando una forma de onda alterna simétrica sobre el primario del transformador. Esto permite que el transformador trabaje de manera más eficiente y que la energía se transfiera en ambos semiciclos del conmutado. Al limitar la tensión de trabajo de los interruptores a la mitad del voltaje de entrada, se reduce el estrés eléctrico sobre los componentes, lo cual mejora la confiabilidad. Como desventaja, esta topología necesita de capacitores de acoplamiento de gran tamaño y un control de PWM más preciso. Es común verla en fuentes conmutadas de media y alta potencia.
+
+\subsubsection{Puente completo}
+
+La topología Full-Bridge representa la solución más eficiente y robusta para aplicaciones de alta potencia. Emplea cuatro interruptores organizados en un puente completo, lo que permite aplicar todo el voltaje de entrada al primario del transformador en cada ciclo de conmutación. Esta configuración maximiza el uso del núcleo del transformador y permite un diseño más compacto en términos de densidad de potencia. Además, el hecho de operar con formas de onda simétricas reduce significativamente el contenido armónico y mejora la eficiencia total del sistema. Sin embargo, su principal desventaja es la complejidad, requiere un mayor número de componentes activos y un control más sofisticado, así como una protección más robusta contra fallos. 
+
+\subsubsection{Análisis del convertidor de puente completo}
+
+El conversor consta de tres bloques principales, la etapa de conmutación en puente del lado primario, el transformador de alta frecuencia y la etapa rectificadora de lado del secundario. 
+
+\begin{figure}[h!tbp]
+\centering
+    \includegraphics[width=0.9\textwidth]{mt/cnv/img/EsqConvPuente.png}
+    \caption{Esquema de un conversor de topología puente completo.}
+\label{fig:imgMTEsqConvPuente}
+\end{figure}
+
+\paragraph{Etapa del primario}
+El conmutador del primario esta formado por cuatro transistores de potencia dispuestos en configuración H. Mediante las respectivas señales de control a las compuertas de estos se puede manejar la corriente a través del primario del transformador en dos direcciones alternas. Al activar dos interruptores diagonales Q1 y Q4, se aplica la tensión de entrada al transformador en un sentido, y al activar el otro par Q2 y Q3, se aplica en el sentido opuesto. Esto produce una tensión alterna pulsante en el primario, cuya frecuencia está definida por el controlador y es central en el transformador.
+
+\paragraph{Transformador de alta frecuencia}
+El transformador tiene tres funciones esenciales: elevar la tensión, aislar galvánicamente entre entrada y salida y permitir la transferencia eficiente de energía a frecuencias elevadas, por el orden de las decenas de kHz. La relación de espiras se calcula de forma tal que se obtenga una tensión de salida en el secundario tras la rectificación. Es fundamental el diseño adecuado del núcleo y el control de las pérdidas por histéresis y perdidas por efecto pelicular.
+
+\paragraph{Etapa del secundario}
+En el secundario se ubica un puente rectificador de diodos rápidos o bien una etapa síncrona con MOSFETs para reducir pérdidas, que convierte la tensión alterna inducida en el secundario en una tensión continua. Posteriormente, una bobina para mantener la corriente constante y un conjunto de capacitores de filtrado para suavizar la tensión, reduciendo el rizado y entregando una salida estable. Se deben considerar protecciones contra sobretensión, rizado excesivo y corriente de pico en esta etapa.
+
+\subsubsection{Análisis del convertidor de pushpull completo}
+Al igual que el convertidor puente completo, el pushpull se puede construir con tres etapas principales.
+
+\begin{figure}[h!tbp]
+\centering
+    \includegraphics[width=0.9\textwidth]{mt/cnv/img/EsqConvPushPull.png}
+    \caption{Esquema de un conversor de topología puente completo.}
+\label{fig:imgMTEsqConvPushPull}
+\end{figure}
+
+El conversor push-pull utiliza dos transistores de conmutación (Q1 y Q2) conectados a un transformador T1, cuyo primario está dividido en dos devanados simétricos y el secundario en uno solo. La operación se basa en la conmutación alternada de Q1 y Q2, de modo que cada transistor energiza su respectivo devanado primario durante medio ciclo, invirtiendo la polaridad del flujo magnético en el núcleo. Esta conmutación alternada permite un aprovechamiento más eficiente del transformador, reduciendo el tamaño del núcleo y distribuyendo la disipación térmica. La energía transferida al secundario se rectifica y filtra para obtener la tensión de salida deseada. Este esquema permite manejar potencias elevadas y mantiene una buena simetría en la transferencia de energía. 
+
+\subsubsection{Comparativa pushpull contra puente completo}
+
+El conversor push-pull y el puente completo son topologías aisladas que emplean un transformador para transferir energía entre el primario y el secundario, pero difieren en su configuración y prestaciones. El push-pull utiliza dos transistores y un primario con dos devanados simétricos, conmutados de forma alternada para invertir la polaridad del flujo magnético; es más económico y de control más sencillo, aunque presenta mayores tensiones sobre los transistores y un menor aprovechamiento del núcleo. En cambio, el puente completo emplea cuatro transistores y un único devanado primario, logrando una utilización más eficiente del transformador y menores esfuerzos de tensión en los semiconductores, a costa de una mayor complejidad de control y un incremento en el costo de implementación.
+
+
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.4}
+\setlength{\tabcolsep}{5pt}
+
+% Centrado vertical en celdas tipo m{}
+\begin{tabular}{|>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{4cm}|>{\centering\arraybackslash}m{4cm}|}
+\hline
+\textbf{Característica} & \textbf{Push-Pull} & \textbf{Puente Completo (Full-Bridge)} \\ \hline
+
+Cantidad de transistores & 2 & 4 \\ \hline
+Estructura del primario & Dos devanados simétricos & Un solo devanado \\ \hline
+Aprovechamiento del transformador & Menor, cada devanado conduce medio ciclo & Máximo, todo el devanado conduce en cada medio ciclo \\ \hline
+Tensión máxima sobre los transistores & Aproximadamente $2 \times V_{in}$ & Aproximadamente $V_{in}$ \\ \hline
+Complejidad de control & Moderada (conmutación alternada de 2 transistores) & Mayor (conmutación de 4 transistores) \\ \hline
+Rango de potencia típico & Medio (decenas a pocos cientos de vatios) & Medio-alto a alto (cientos de vatios a kW) \\ \hline
+Eficiencia & Buena, pérdidas debido a magnetización residual & Alta, mejor aprovechamiento del núcleo \\ \hline
+Costo & Más económico (menos transistores y drivers) & Mayor (más componentes y drivers) \\ \hline
+\end{tabular}
+
+\caption{Comparación entre topologías Push-Pull y Puente Completo (Full-Bridge).}
+\label{tab:pushpull_vs_fullbridge}
+\end{table}
+
+
+\subsubsection{Características de un transformador de ferrite}
+A diferencia de los transformadores utilizados en sistemas de baja frecuencia, los que se conectan a la tensión de red, los transformadores empleados en fuentes conmutadas operan a frecuencias elevadas, típicamente entre 20kHz y 500kHz, lo que permite reducir significativamente el tamaño del núcleo y de los devanados, así como mejorar la eficiencia global del sistema. Para esta aplicación, se utilizan núcleos de ferrita, debido a sus propiedades específicas para alta frecuencia.
+
+La ferrita es un material cerámico compuesto por óxidos de hierro combinados con otros elementos metálicos como manganeso, zinc o níquel. Su principal ventaja es su alta resistividad eléctrica, lo que minimiza las corrientes parásitas (eddy currents) incluso cuando el flujo magnético varía rápidamente, como ocurre en los conversores conmutados. Además, las ferritas presentan bajas pérdidas por histéresis a frecuencias elevadas, comparado con núcleos metálicos tradicionales como el hierro al silicio.
+
+Las ferritas utilizadas en transformadores de potencia pertenecen generalmente a las familias MnZn (manganeso y zinc) para frecuencias medias y altas potencias o NiZn (niquel y zinc) para frecuencias más elevadas y bajas potencias. La selección del tipo de ferrita y su geometría depende directamente de la frecuencia de conmutación, la potencia a transferir, el tipo de topología y los márgenes térmicos del sistema.
+
+\paragraph{Parámetros relevantes en el diseño del transformador}
+
+Para el diseño y modelado de un transformador con núcleo de ferrita en aplicaciones conmutadas, se deben tener en cuenta varios parámetros clave:
+
+\begin{itemize}
+  \item Forma del núcleo: Las geometrías más comunes incluyen los núcleos tipo EE, EI, ETD, EFD, PQ y toroidales. Cada una presenta ventajas distintas en términos de facilidad de arrollado, disipación térmica y volumen magnético útil.
+  \item Material del núcleo: El tipo de ferrita define las propiedades magnéticas del transformador, incluyendo la frecuencia óptima de operación, las pérdidas por histéresis, la saturación magnética y la estabilidad térmica. Elegir un material adecuado es fundamental para evitar sobrecalentamientos y mantener la eficiencia.
+  \item Relación de transformación: Esta determina la relación entre la tensión de salida y entrada. Debe seleccionarse cuidadosamente para garantizar la transferencia eficiente de energía sin saturar el núcleo.
+  \item Inductancia de magnetización: Esta define la capacidad del núcleo para almacenar energía en cada ciclo. Un valor muy bajo nos va a extraer mucha corriente aun sin carga, lo que nos disminuye la eficiencia y un valor muy alto nos va a funcionar mejor en vacío, pero nos va a limitar la transferencia de potencia.
+  \item Resistencia óhmica de los devanados: Esta influye directamente en las pérdidas por efecto Joule ($I^2 R$) . Es importante minimizar esta resistencia utilizando conductores de adecuada sección y longitud, especialmente en aplicaciones de alta corriente.
+  \item Pérdidas magnéticas: En alta frecuencia, las pérdidas por histéresis y por corrientes parásitas crecen con la frecuencia y el flujo magnético. Por eso se opera con una densidad de flujo relativamente baja para evitar saturación y sobrecalentamiento.
+  \item Diámetro del alambre: Este está directamente relacionado con la resistencia y la capacidad de conducción de corriente. Se debe seleccionar un calibre que soporte la corriente de pico sin sobrecalentarse, considerando además el efecto pelicular (skin effect) que se vuelve relevante a altas frecuencias. En algunos casos se emplea alambre esmaltado múltiple o Litz wire para reducir estas pérdidas.
+  \item Acoplamiento entre devanados: Se busca un acoplamiento estrecho (alta inductancia mutua) para reducir el contenido de armónicos, mejorar la transferencia de energía y disminuir las sobretensiones asociadas al fenómeno de leakage inductivo. En algunos diseños se emplean técnicas de arrollado intercalado (interleaved windings).
+  \item Carrete o bobina: El diseño del soporte donde se enrollan los alambres afecta la facilidad de construcción, el aislamiento entre devanados y la disipación térmica. Debe permitir distancias de seguridad entre primario y secundario, y materiales plásticos con buen aislamiento dieléctrico y resistencia térmica. Además, este nos provee un apoyo mecánico del dispositivo a la PCB.
+
+\end{itemize}
+
+\subsubsection{Análisis del transformador}
+
+Para el cálculo de un transformador se utilizan reglas empíricas ya que resulta muy complejo el análisis puramente teórico. A continuación, vamos a detallar una serie de pasos para poder construir un transformador de núcleo de ferrita. 
+
+\paragraph{Dimensiones del núcleo}
+La forma y dimensión del núcleo nos determina la densidad de potencia que este debe manejar por unidad de volumen, esto es equivalente a la densidad de potencia disipada por el transformador por unidad de superficie de disipación. Estas pérdidas se dan en el hierro y el cobre y aumentan con la corriente y como consecuencia con la densidad de corriente J en el cobre. Existen dos parámetros geométricos que determinan las características disipativas, uno es la sección transversal del núcleo $A_c$ y la sección transversal de la ventana $W_a$. De la multiplicación de estas dos obtenemos el producto de áreas $A_p$.
+\[
+A_p=A_c  W_a
+\]
+
+\begin{figure}[h!tbp]
+\centering
+    \includegraphics[width=0.9\textwidth]{mt/cnv/img/EsqMedioFerrite-Areas.png}
+    \caption{Esquema de media mitad del núcleo de ferrita señalando el área de ventana y el área de la sección transversal.}
+\label{fig:imgMTEsqMedioFerriteArea}
+\end{figure}
+
+Una vez conocida el área correspondiente del núcleo, es posible estimar la densidad de corriente admisible en los conductores de cobre, en función del salto térmico que experimenta el transformador. Cabe destacar que, a medida que aumentan las dimensiones del núcleo, la densidad de corriente permitida tiende a disminuir. Esto se explica porque la disipación térmica crece a un ritmo menor en comparación con el volumen total en el que se genera el calor.
+
+Este comportamiento puede expresarse mediante la siguiente relación empírica:
+
+\[
+J=k_j \ A_p^{-x}
+\]
+
+donde $k_j$ es una constante que depende del salto térmico considerado, del tipo de núcleo utilizado y de la proporción entre las pérdidas por conducción en el cobre y las pérdidas en el material magnético. Para un incremento de temperatura de 15°C, el valor de $k_j$ es 420, mientras que, para un salto térmico de 30°C, se toma como 297. En cuanto al exponente x, este varía entre 0.12 y 0.17 para núcleos laminados, y tiene un valor de 0.24 en el caso de núcleos de ferrita.
+
+El diseño del transformador también exige conocer la corriente media de entrada y la eficiencia del convertidor. Estos se obtienen con las siguientes fórmulas:
+
+
+
+\[
+I_{in} = \frac{P_{in}}{V_{in}} \qquad \eta = \frac{P_{out}}{P_{in}}
+\]
+
+La corriente eficaz máxima en el primario $I_{inMax rms}$, está relacionada con la corriente media de entrada mediante un factor de topología $k_t$, propio de la arquitectura del convertidor. Esta relación queda expresada así:
+
+\[
+I_{inMax rms}=\frac{I_{in}}{k_t} =\frac{P_{in}}{V_{in} \ k_t}
+\]
+
+El número de espiras del primario que podrán ser alojadas en la sección de la ventana $W_a$, cuando tiene una densidad de corriente $J$, depende del factor de devanado $k_u$ y el factor del primario $k_p$. El factor $k_p$ es la relación entre la superficie ocupada por el devanado primario y la superficie de la ventana. 
+
+Por otro lado, la cantidad de espiras que pueden disponerse en la sección de ventana del núcleo, $W_a$, depende de la densidad de corriente J, del factor de ocupación del bobinado $k_u$, y del factor del primario $k_p$, que representa qué proporción del área de ventana corresponde al devanado primario. La relación se puede expresar de la siguiente forma:
+
+
+\[
+n_1 \ I_{in} = k_u \ k_p \ W_a \ J \quad \Rightarrow \quad W_a = \frac{n_1 \ I_{in}}{k_u \ k_p \ J} = \frac{n_1 \ P_{in}}{V_{in} \ k_t \ k_u \ k_p \ J}
+\]
+
+Aplicando la ley de Faraday al devanado de magnetización y considerando el tiempo de encendido, se puede deducir el área del núcleo necesaria para evitar saturación
+
+\[
+E \ dt = n \ d\phi \quad \Rightarrow \quad V_{in} \ T_{on} = n_1 \ B \ A_c \quad \Rightarrow \quad A_c = \frac{V_{in}}{2 \ n_1 \ B \ f}
+\]
+
+Si se buscan expresiones prácticas para el diseño, se puede determinar el valor del producto área $A_p$ en $cm^4$, que incluye simultáneamente la ventana y la sección del núcleo, combinando los parámetros previamente definidos. Esto da como resultado:
+
+\[
+A_p = \left({\frac{P_{in} \ 10^4}{2 \ k_t \ k_u \ k_p \ k_j \ B \ f}}\right)^{1.31} \quad \text{[cm}^4\text{]}
+\]
+
+En configuraciones tipo puente completo, se adopta típicamente un valor de $k_t=1$ y $k_p=0.41$. El factor de llenado del devanado $k_u$, por su parte, depende de cómo está dispuesto el conductor dentro del carrete, del tipo de núcleo y del grosor de los aislamientos. Este suele variar entre 0.2 y 0.7. Para diseños prácticos, se suele asumir un valor representativo de $k_u$ igual a 0.4.
+
+\subsubsection{Aspectos constructivos del transformador}
+
+En esta etapa vamos a analizar los aspectos constructivos importantes que deben ser controlados durante la fase de diseño. En caso contrario, pueden generarse efectos nocivos desde un punto de vista funcional.
+
+\paragraph{Inductancia de dispersión}
+
+En un transformador real, parte del flujo magnético generado no se concatena con los demás devanados que lo componen. Este flujo se denomina flujo de dispersión y puede representarse eléctricamente como una inductancia en serie con cada devanado.
+
+Cada devanado crea su propia inductancia de dispersión. Por ejemplo, el flujo de la corriente del primario que no se concatena con el secundario genera la inductancia de dispersión del primario, y viceversa para el secundario. Si el transformador posee múltiples devanados secundarios, también existirán inductancias de dispersión entre ellos.
+
+La inductancia de dispersión se puede reducir mediante: 
+
+\begin{itemize}
+  \item Disminución del número de espiras.
+  \item Reducción del espesor de cada devanado
+  \item Aumento del ancho de los devanados.
+  \item Disminución del espesor de la aislación entre devanados.
+  \item Uso de devanados acoplados (bifilares o multifilares).
+\end{itemize}
+
+\paragraph{Medición de la inductancia de dispersión}
+
+Se realiza mediante el cortocircuito del devanado opuesto y la medición de la inductancia del devanado restante. Este método es una aproximación válida bajo la condición de que la inductancia de magnetización sea mucho mayor que la de dispersión $L_p \gg L_d$, lo cual suele cumplirse.
+
+\paragraph{Capacidad distribuida}
+
+En los transformadores existen múltiples capacidades distribuidas que pueden modelarse como capacidades parásitas equivalentes concentradas. Este modelo no es único y varía según la banda de frecuencia de operación. Esta capacidad equivalente del primario no puede medirse confiablemente con un puente debido a su dependencia de las condiciones de operación.
+Reducción de la capacidad parásita
+
+\begin{itemize}
+  \item Aumentar el espesor de la aislación entre la primera capa y el núcleo.
+  \item Reducir el ancho del bobinado.
+  \item Incrementar el número de capas.
+  \item Evitar grandes diferencias de potencial entre bobinados.
+  \item No usar devanado bifilar.
+  \item Utilizar blindaje electrostático entre primario y secundario conectado a masa.
+
+\end{itemize}
+
+Cabe destacar que muchas de estas medidas aumentan la inductancia de dispersión, por lo que el diseño óptimo es un compromiso entre inductancia y capacidad parásita, habitualmente determinado experimentalmente.
+
+\paragraph{Efecto Pelicular}
+
+Los transformadores que trabajan en altas frecuencias, como el caso de las SMPS, sufren de los efectos de la concentración de la corriente en la parte exterior del conductor de cobre, llamado efecto pelicular o skin. Tal efecto es mayor a medida que aumenta la frecuencia. Esto produce una disminución de la superficie útil de conducción, aumentando las pérdidas en el cobre. Cuando se trabaja con frecuencias demasiado elevadas, es conveniente utilizar devanados multifilares, es decir, para crear una cierta sección transversal de cobre se coloca un cierto número de conductores de menor sección en paralelo, cada uno de los cuales debe poseer una sección que asegure una pérdida admisible por efecto Joule. Para resolver tal problema se emplean gráficos que representan la sección transversal máxima, a un porcentaje de pérdida determinado, en función de la frecuencia.
+
+
+\paragraph{Efecto combinado de la inductancia de dispersión y la capacidad parasita}
+Cuando el transformador funciona en conmutación (como en una SMPS), el cierre del interruptor carga simultáneamente la inductancia de dispersión y la capacidad parásita. La frecuencia de resonancia de este sistema LC está dada por:
+
+
+
+\[
+f_r = \frac{1}{2\pi \sqrt{L_p \  C_p}}
+\]
+
+
+\paragraph{Pérdidas en un transformador}
+Las pérdidas en un transformador se pueden clasificar en pérdidas en el cobre, por efecto Joule o perdidas en el núcleo ferromagnético, por histéresis y corrientes parásitas.
+
+Las perdidas en el cobre se calculan a partir de la resistencia total de los devanados y la corriente eficaz. La resistencia del alambre de cobre $R_{Cu}$ se obtiene con la longitud de la espira media $l_m$, la cantidad de espiras n, la resistividad del cobre $\rho_{Cu}$ y la sección del cobre $A_w$:
+
+
+\[
+R_{Cu} = \rho_{Cu} \frac{n \ l_m}{A_w}
+\]
+\[
+P_{Cu Tot}=P_{n1}+P_{n2}+P_{n3}
+\]
+
+ Las pérdidas en el núcleo ferromagnético dependen de la variación máxima de inducción magnética $\hat{B}$ y la frecuencia. Las perdidas por histéresis $P_h$ son proporcionales a la frecuencia y las pérdidas por corrientes parasitas $P_e$, son proporcionales al cuadrado de la frecuencia. El valor de x oscila entre 1.7 y 2.2 para núcleos laminados.
+
+\[
+ P_{e+h}=k_h \ f \ \hat{B}^x+k_e \ f^2 \ \hat{B}^2
+\]
+
+En transformadores de ferrita se obtienen perdidas muy bajas en altas frecuencias por lo que las pérdidas por corrientes parásitas son despreciables, por lo que solo se considera
+
+\[
+P_e=k_e \ f^a \ \hat{B}^c
+\]
+
+Un hecho importante es que, para un transformador ya construido, un aumento en la frecuencia puede disminuir las pérdidas del núcleo si se reduce el número de espiras y la inducción se mantiene. 
+
+La variación de inducción máxima se calcula con la variación de la corriente magnetizante $\Delta I$ y esta se obtiene conociendo la tensión aplicada $V_{in}$, la inductancia de magnetización o inductancia del primario $L_p$, donde se supone que la inductancia de dispersión es despreciable, y el tiempo de conducción $T_{on}$. 
+
+\[
+\hat{B} = \frac{\mu_0 \ \mu_e \ n_1} {l_e}  \Delta I
+\]
+\[
+\Delta I=\frac{V_{in} \ T_{on}}{L_p} 
+\]
+
+Conocida la $\hat{B}$ y la frecuencia, se obtiene la pérdida específica del núcleo $P_{e+h}$ usando los gráficos del fabricante, y multiplicando por la masa del núcleo se halla la potencia total disipada.
+
+Un transformador se considera equilibrado cuando
+\[
+P_{Cu Tot}=P_{e+h}
+\]
+
+En topologías como la Flyback, donde se requiere minimizar la inductancia de dispersión y obtener un transformador equilibrado, suele trabajarse con la mayor $\hat{B}$ admisible para reducir el número de espiras.
+
+\paragraph{Inductor con corriente continua superpuesta}
+Los inductores son componentes clave en SMPS. La energía almacenada se calcula usando la ley de inducción de Faraday e integrando y aplicando la ley de Ampere
+
+\[
+E = n \frac{d\phi}{dt} = L \frac{di}{dt}
+\]
+\[
+L = \frac{n \phi}{I} = \frac{n A_c B}{I}
+\]
+\[
+\frac{L I^2}{2} = \frac{n A_c B}{2} I
+\]
+\[
+B = \mu_0 \ \mu_r \ H
+\]
+\[
+fem = \frac{d\phi}{dt} = \frac{dB}{dt} A_c
+\]
+
+Si se sustituye el volumen del núcleo \( V_c \), se obtiene que la energía en el inductor es proporcional. Con esto podemos calcular la inductancia:
+
+\[
+V_c = A_c l_e \quad \Rightarrow \quad L = \frac{\mu_0 \mu_r V_c B}{2 l_e I}
+\]
+\[
+L = \frac{\mu_0 \ \mu_e \ A_c}{l_e} n^2 = A_l \ n^2
+\]
+
+Donde $A_l$ es el factor de inductancia del núcleo y es equivalente a la inversa de la reluctancia.
+\[
+A_l=\frac{1}{R}
+\]
+
+\paragraph{Determinación de las dimensiones del núcleo}
+Nos interesa obtener el producto de área para poder seleccionar un núcleo especifico.
+\[
+J=k_j \ A_p^{-x}  \ \ \ \ \  L \ I^2= n\ A_c \ B \ I  \ \ \ \ \   n_1 \ I=k_u \ k_p \ W_a \ J
+\]
+
+\[
+A_p = \left({\frac{L \ I^2 \ 10^4}{k_j \ k_u \ k_p \ B}}\right)^{1.31} \quad \text{[cm}^4\text{]}
+\]
+
+Para un inductor tipo buck-boost continuo o boost discontinuo, se usa $k=k_j \   k_u=0.7$.
+
+Podemos obtener un mínimo número de espiras dado la inductancia y el área transversal del núcleo $A_c$. Esto se puede lograr de dos formas, considerando que la inducción máxima no debe saturar al núcleo o que la variación máxima de inducción magnética está limitada por las pérdidas del núcleo. 
+
+\[
+n_{min}=\frac{L \ I_{max}}{B_{max} \ A_c} 10^4     \ \ \ \    o     \ \ \ \        n_{min}=\frac{L \ \Delta I}{\hat{B} \ A_c} 10^4   \ \ \     con \  A_c [cm^4]
+\]
+
+Para hallar la longitud de entrehierro $l_g$, lo que nos va a determinar la reluctancia, aplicamos
+\[
+l_g=\frac{\mu_o \ n^2 \ A_c}{L}
+\]
+
+Este valor corresponde al entrehierro total en la columna central del núcleo con espacio total de aire. Si se realiza con separación entre los semi-núcleos, se usa $l_g/2$ en cada uno.

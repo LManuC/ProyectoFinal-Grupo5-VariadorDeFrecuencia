@@ -1,0 +1,10 @@
+\label{sec:2_mt_inv}
+\subsection{Inversor}
+
+La etapa inversora tiene como función principal convertir la tensión continua proveniente del bus DC en una tensión alterna trifásica que permita alimentar cargas equilibradas, tales como motores eléctricos o sistemas de potencia trifásicos. Este proceso se realiza mediante un conjunto de interruptores electrónicos de potencia, típicamente transistores MOSFET o IGBT, dispuestos en una configuración de puente trifásico.
+
+Cada una de las tres ramas del inversor está formada por dos transistores conectados en serie entre el bus positivo y negativo, con el punto medio de cada rama constituyendo una de las fases de salida. Mediante la conmutación secuencial y controlada de estos dispositivos, se obtiene una forma de onda alterna en cada fase, desfasada 120° entre sí, logrando así un sistema trifásico equilibrado.
+
+El inversor permite controlar tanto la magnitud como la frecuencia de la tensión de salida a partir del valor del bus DC, lo que resulta fundamental en aplicaciones de control de velocidad de motores de corriente alterna o en sistemas de conversión de energía, como inversores fotovoltaicos o variadores de frecuencia.
+
+El diseño de la etapa inversora debe considerar aspectos eléctricos y térmicos relevantes, tales como las corrientes máximas por fase, la tensión máxima de los transistores, las pérdidas por conmutación y conducción, y la correcta disipación térmica mediante disipadores o ventilación forzada. Asimismo, es fundamental la incorporación de elementos de protección que aseguren un funcionamiento confiable frente a transitorios o cortocircuitos.

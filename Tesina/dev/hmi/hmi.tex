@@ -1,0 +1,169 @@
+\label{sec:3_dev_hmi}
+\subsection{Inversor}
+\subsection{HMI}
+\subsubsection{Fuente de alimentación}
+
+El ciruito aislado constará del regulador B1205S-2WR2, con una tensión de entrada de 10.8 a 13.2Vdc y una salida de 5Vdc, lo que nos permitirá completar el esquema con un regulador lineal de 3.3Vdc tradicional sin inconvenientes. Optaremos por una circuitería como la de la figura~\ref{fig:imgDCDC_PS}.
+
+\begin{figure}[h!tbp]
+\centering
+    \includegraphics[width=0.9\textwidth]{dev/hmi/img/DC-DC_PS.png}
+    \caption{Diagrama de la fuente de alimentación de la etapa de control.}
+\label{fig:imgDCDC_PS}
+\end{figure}
+
+Si sumamos los consumos de corriente pesimistas y aproximados de los componentes más importantes obtenemos:
+
+\vspace{1cm}
+\begin{table}[H]
+	\centering
+    \begin{tabular}{ | c | p{6cm} | c | c | c  |}
+    \hline
+    Componente & Función                                    & Consumo [mA]  & Cantidad  & Total [mA]    \\ \hline
+    STM32      & Microcontrolador variador                  & 150           & 1         & 150           \\ \hline
+    ESP32      & Microcontrolador HMI                       & 500           & 1         & 500           \\ \hline
+    MCP23017   & Expansor de GPIO                           & 1             & 1         & 1             \\ \hline
+    SH1106     & Controlador de display y display OLED      & 120           & 1         & 120           \\ \hline
+    Buzzer     & Indicador de pulsada panel frontal         & 30            & 1         & 30            \\ \hline
+    Leds       & Indicadores testigo                        & 5             & 5         & 25            \\ \hline
+    \multicolumn{4}{|r|}{Total}                                                         & 826           \\ \hline
+    \end{tabular}
+    \caption{Tabla de consumos}
+\end{table}
+
+Si sumamos un margen de seguridad del 20\% nos da un consumo total de 991mA, superando lo 800mA que un regulador lineal SMD como el AMS1117 podría llegar a entregar sin ponerlo en riesgo. Dada esta condición, se optó po colocar dos fuentes gemelas. Una de ellas alimentará el microcontrolador que administra la señal de los transistores de salida junto con sus led testigos, la otra abastecerá al microcontrolador del HMI, sus periféricos y leds testigos:
+
+\vspace{1cm}
+\begin{table}[H]
+	\centering
+    \begin{tabular}{ | c | p{6cm} | c | c | c  |}
+    \hline
+    Componente  & Función                                   & Consumo [mA]  & Cantidad  & Total [mA]    \\  \hline
+    STM32       & Microcontrolador variador                 & 150           & 1         & 150           \\ \hline
+    Leds        & Indicadores testigo                       & 3             & 5         & 15            \\ \hline
+    \multicolumn{4}{|r|}{Total}                                                         & 165           \\ \hline
+    \end{tabular}
+    \caption{Tabla de consumos}
+\end{table}
+
+\vspace{1cm}
+\begin{table}[H]
+	\centering
+    \begin{tabular}{ | c | p{6cm} | c | c | c  |}
+    \hline
+    Componente  & Función                                   & Consumo [mA]  & Cantidad  & Total [mA]    \\  \hline
+    ESP32       & Microcontrolador HMI                      & 500           & 1         & 500           \\ \hline
+    MCP23017    & Expansor de GPIO                          & 1             & 1         & 1             \\ \hline
+    SH1106      & Controlador de display y display OLED     & 120           & 1         & 120           \\ \hline
+    Buzzer      & Indicador de pulsada panel frontal        & 30            & 1         & 30            \\ \hline
+    Leds        & Indicadores testigo                       & 2             & 5         & 10            \\ \hline
+    \multicolumn{4}{|r|}{Total}                                                         & 661           \\ \hline
+    \end{tabular}
+    \caption{Tabla de consumos}
+\end{table}
+
+De esta manera logramos, adicionando ese mismo margen del 20\% 198mA y 793mA respectivamente, cumpliendo con la limitación antes mencionada. Así llegamos a un diseño de PCB como el de la siguiente figura~\ref{fig:imgDCDC_PS_PCB}.
+
+\begin{figure}[h!tbp]
+\centering
+    \includegraphics[width=0.9\textwidth]{dev/hmi/img/DC-DC_PS_PCB.png}
+    \caption{Diseño PCB de la fuente de alimentación.}
+\label{fig:imgDCDC_PS_PCB}
+\end{figure}
+
+\begin{figure}[h!tbp]
+\centering
+    \includegraphics[width=0.9\textwidth]{dev/hmi/img/DC-DC_PS_PCB_3D.png}
+    \caption{Diseño 3D de la fuente de alimentación.}
+\label{fig:imgDCDC_PS_PCB_3D}
+\end{figure}
+
+\subsubsection{Display}
+
+El diseño de PCB del display no reviste demasiada explicación, basta con mencionar que se conectan solamente los pines SDA, SCL y alimentación tal como muestra la figura~\ref{fig:imgSH1106ConnectionKiCAD} y figura~\ref{fig:imgSH1106ConnectionKiCADPCB} debido a la utilización del módulo comercial del SH1106.
+
+\begin{figure}[H]
+\centering
+    \includegraphics[width=0.9\textwidth]{dev/hmi/img/I2C_Interface_KCD.png}
+    \caption{Conexionado de display en PCB.}
+\label{fig:imgSH1106ConnectionKiCAD}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+    \includegraphics[width=0.9\textwidth]{dev/hmi/img/OLED_PCB.png}
+    \caption{Conexionado de display en PCB.}
+\label{fig:imgSH1106ConnectionKiCADPCB}
+\end{figure}
+
+\vspace{0.5\baselineskip}
+
+\textbf{Desarrollo del software}
+
+Para el control del display se trabajó con una tarea específica llamada \textit{task\_display}. Desde allí se inicializa el display y el puerto $I^{2}C$; se reciben comandos desde el panel frontal o señales desde el control del sistema de variados de frecuencia a través de colas de comandos para ingresar al menú, navegarlo, editar variables guardarlas en memoria no volatil, arrancar y frenar el motor. El menú tendrá un mapa de navegación como se muestra en la figura~\ref{fig:imgPantallasOLED}.
+
+\begin{figure}[H]
+\centering
+    \includegraphics[width=0.9\textwidth]{dev/hmi/img/pantallasVFLVdc-Display.png}
+    \caption{Mapa de navegación del display.}
+\label{fig:imgPantallasOLED}
+\end{figure}
+
+Se dispondrá de una pantalla splash que avanzará por tiempo a la principal que nos mostrará la frecuencia actual de la salida de potencia, la corriente y tensión del bus de contínua, la hora de inicio y fin de funcionmiento de motor y la hora del sistema. Entrando en los menúes pueden editarse las varibles de frecuencia, temporales y de seguridad:
+
+\begin{itemize}
+    \item Frecuencia
+    \begin{itemize}
+        \item Frecuencia de operación
+            \begin{itemize}
+            \item Es la frecuencia a la cual funcionará el motor cuando llegue a régimen si no hay ninguna entrada de control de velocidad activa.
+            \item Mínimo 1$Hz$; Máximo 150$Hz$.
+        \end{itemize}
+        \item Aceleración
+            \begin{itemize}
+            \item Es la variación de frecuencia en $\frac{Hz}/{S}$ que el motor incrementará hasta llegar a régimen.
+            \item Mínimo 1$\frac{Hz}/{S}$; Máximo 50$\frac{Hz}/{S}$.
+        \end{itemize}
+        \item Desaceleración
+            \begin{itemize}
+            \item Es la variación de frecuencia en $\frac{Hz}/{S}$ que el motor decrementará hasta llegar a régimen o hasta frenar.
+            \item Mínimo 1$\frac{Hz}/{S}$; Máximo 50$\frac{Hz}/{S}$.
+        \end{itemize}
+        \item Variación de lineal o cuadrática de las entradas de control
+            \begin{itemize}
+            \item Es la variación de frecuencia en $Hz$ que las entradas de control de velocidad tendrán entre ellas con 0Hz como valor inicial y la Frencuencia de operación como valor final.
+            \item Puede ser lineal o cuadrátiva.
+        \end{itemize}
+    \end{itemize}
+    \item Seguridad
+    \begin{itemize}
+        \item Tensión de bus
+            \begin{itemize}
+            \item Es la mínima tensión en el bus de contínua en $V$ que podrá admitirse sin entrar en estado de emergencia.
+            \item Mínimo 250$Hz$; Máximo 360$Hz$.
+        \end{itemize}
+        \item Corriente de bus
+            \begin{itemize}
+            \item Es la máxima corriente que podrá circular por el bus de contínua en $mA$ sin entrar en estado de emergencia.
+            \item Mínimo 500$mA$; Máximo 2000$mA$.
+        \end{itemize}
+    \end{itemize}
+    \item Tiempo
+    \begin{itemize}
+        \item Hora
+            \begin{itemize}
+            \item Es la hora del sistema. Se imprime en la parte superior del display.
+        \end{itemize}
+        \item Inicio
+            \begin{itemize}
+            \item Es la hora a la que iniciará a funcionar el motor.
+            \item Se comparra contra la hora de sistema.
+        \end{itemize}
+        \item Fin
+            \begin{itemize}
+            \item Es la hora a la que frenará el motor.
+            \item Se comparra contra la hora de sistema.
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+
