@@ -70,4 +70,6 @@ void task_display(void *pvParameters);
  */
 esp_err_t DisplayEventPost(systemSignal_e event);
 
+esp_err_t system_variables_save(frequency_settings_SH1106_t *frequency_settings, time_settings_SH1106_t *time_settings, seccurity_settings_SH1106_t *seccurity_settings);
+
 #endif

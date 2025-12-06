@@ -30,6 +30,7 @@
 #include "./adc/adc.h"
 #include "./nvs/nvs.h"
 #include "./rtc/rtc.h"
+#include "./wifi/wifi.h"
 
 #include "LVFV_system.h"
 
@@ -53,6 +54,10 @@ void app_main(void) {
     xTaskCreatePinnedToCore(adc_task,                       "adc_task",                         4096, NULL, 9,  NULL, 0);
     xTaskCreatePinnedToCore(SPI_communication,              "SPI_communication",                2048, NULL, 9,  NULL, 0);
     xTaskCreatePinnedToCore(GPIO_interrupt_attendance_task, "GPIO_interrupt_attendance_task",   2048, NULL, 10, NULL, 0);
+
+    wifi_init_softap();
+    // start_mdns();
+    start_webserver();
 
     while (1) {
         vTaskDelay(pdMS_TO_TICKS(1000));

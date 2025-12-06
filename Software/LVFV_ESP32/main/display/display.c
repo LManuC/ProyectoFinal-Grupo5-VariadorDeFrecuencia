@@ -482,6 +482,40 @@ esp_err_t sh1106_init() {
     return sh1106_refresh();
 }
 
+esp_err_t system_variables_save(frequency_settings_SH1106_t *frequency_settings, time_settings_SH1106_t *time_settings, seccurity_settings_SH1106_t *seccurity_settings) {
+    ESP_LOGI(TAG, "Guardando variables del sistema desde el display");
+    if ( frequency_settings == NULL || time_settings == NULL || seccurity_settings == NULL ) {
+        return ESP_ERR_INVALID_ARG;
+    }
+
+    system_frequency_settings.freq_regime = frequency_settings->frequency_settings.freq_regime;
+    system_frequency_settings.acceleration = frequency_settings->frequency_settings.acceleration;
+    system_frequency_settings.desacceleration = frequency_settings->frequency_settings.desacceleration;
+    system_frequency_settings.input_variable = frequency_settings->frequency_settings.input_variable;
+    system_seccurity_settings.vbus_min = seccurity_settings->seccurity_settings.vbus_min;
+    system_seccurity_settings.ibus_max = seccurity_settings->seccurity_settings.ibus_max;
+    system_time_settings.time_system->tm_hour = time_settings->time_settings.time_system->tm_hour;
+    system_time_settings.time_system->tm_min = time_settings->time_settings.time_system->tm_min;
+    system_time_settings.time_system->tm_sec = time_settings->time_settings.time_system->tm_sec;
+    system_time_settings.time_start->tm_hour = time_settings->time_settings.time_start->tm_hour;
+    system_time_settings.time_start->tm_min = time_settings->time_settings.time_start->tm_min;
+    system_time_settings.time_start->tm_sec = 0;
+    system_time_settings.time_stop->tm_hour = time_settings->time_settings.time_stop->tm_hour;
+    system_time_settings.time_stop->tm_min = time_settings->time_settings.time_stop->tm_min;
+    system_time_settings.time_stop->tm_sec = 0;
+    
+    setTime(  system_time_settings.time_system );
+    set_frequency_table(system_frequency_settings.input_variable, system_frequency_settings.freq_regime);
+    rtc_schedule_alarms(&system_time_settings);
+
+    if ( save_variables( &system_frequency_settings, &system_time_settings, &system_seccurity_settings) != ESP_OK ) {
+        ESP_LOGE(TAG, "Algo falló guardando los valores en NVS");
+    }
+    set_system_settings( &system_frequency_settings, &system_seccurity_settings);    
+    ESP_LOGI(TAG, "Configuración guardada correctamente");
+    return ESP_OK;
+}
+
 void task_display(void *pvParameters) {
     
     uint8_t new_button;                                                         // Variable Queue
@@ -823,31 +857,7 @@ void task_display(void *pvParameters) {
                 case BUTTON_SAVE:
                     ESP_LOGI(TAG,"Guardando valores...");
 
-
-                    system_frequency_settings.freq_regime = frequency_edit.frequency_settings.freq_regime;
-                    system_frequency_settings.acceleration = frequency_edit.frequency_settings.acceleration;
-                    system_frequency_settings.desacceleration = frequency_edit.frequency_settings.desacceleration;
-                    system_frequency_settings.input_variable = frequency_edit.frequency_settings.input_variable;
-                    system_seccurity_settings.vbus_min = seccurity_edit.seccurity_settings.vbus_min;
-                    system_seccurity_settings.ibus_max = seccurity_edit.seccurity_settings.ibus_max;
-                    system_time_settings.time_system->tm_hour = time_edit.time_settings.time_system->tm_hour;
-                    system_time_settings.time_system->tm_min = time_edit.time_settings.time_system->tm_min;
-                    system_time_settings.time_system->tm_sec = time_edit.time_settings.time_system->tm_sec;
-                    system_time_settings.time_start->tm_hour = time_edit.time_settings.time_start->tm_hour;
-                    system_time_settings.time_start->tm_min = time_edit.time_settings.time_start->tm_min;
-                    system_time_settings.time_start->tm_sec = 0;
-                    system_time_settings.time_stop->tm_hour = time_edit.time_settings.time_stop->tm_hour;
-                    system_time_settings.time_stop->tm_min = time_edit.time_settings.time_stop->tm_min;
-                    system_time_settings.time_stop->tm_sec = 0;
-                    
-                    setTime(  system_time_settings.time_system );
-                    set_frequency_table(system_frequency_settings.input_variable, system_frequency_settings.freq_regime);
-                    rtc_schedule_alarms(&system_time_settings);
-
-                    if ( save_variables( &system_frequency_settings, &system_time_settings, &system_seccurity_settings) != ESP_OK ) {
-                        ESP_LOGE(TAG, "Algo falló guardando los valores en NVS");
-                    }
-                    set_system_settings( &system_frequency_settings, &system_seccurity_settings);
+                    system_variables_save(&frequency_edit, &time_edit, &seccurity_edit);
 
                     screen_displayed = SCREEN_MAIN;
                     edit = 0;
