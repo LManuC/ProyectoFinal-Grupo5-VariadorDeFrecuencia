@@ -55,8 +55,8 @@ const char *HTML_FORM =
 "    <div class=\"col-md-4\">"
 "      <label class=\"form-label\">Variación de las entradas</label>"
 "      <select class=\"form-select\" name=\"variation\" required>"
-"        <option value=\"lineal\">Lineal</option>"
-"        <option value=\"cuadratica\">Cuadrática</option>"
+"        <option value=\"1\">Lineal</option>"
+"        <option value=\"2\">Cuadrática</option>"
 "      </select>"
 "    </div>"
 

@@ -1,3 +1,11 @@
+/**
+ * @file web_cfg.c
+ * @brief Endpoints HTTP para configurar el LVFV por Wi-Fi (AP local).
+ *
+ * Sirve un formulario (GET /) y procesa su POST (POST /save) en formato
+ * application/x-www-form-urlencoded. Convierte los parámetros a estructuras
+ * de configuración y dispara acciones (guardar, start/stop).
+ */
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -24,6 +32,62 @@ static const char *TAG = "WEB_CFG";
 
 /* ---------- Helpers para parsear POST x-www-form-urlencoded ---------- */
 
+/**
+ * @fn static int hex2int(char c);
+ * 
+ * @brief Convierte un dígito hex a entero (0..15).
+ */
+static int hex2int(char c);
+
+/**
+ * @fn static void url_decode(char *dst, const char *src);
+ * 
+ * @brief Decodifica URL (reemplaza '+' por espacio y %HH por byte).
+ * @param dst buffer destino (puede ser mismo que src si hay espacio).
+ * @param src cadena codificada.
+ */
+static void url_decode(char *dst, const char *src);
+
+/**
+ * @fn static bool get_param_value(const char *body, const char *key, char *dest, size_t dest_len);
+ * 
+ * @brief Obtiene el valor de un parámetro key=val del body x-www-form-urlencoded.
+ * @param body  cuerpo completo del POST (NUL-terminated).
+ * @param key   nombre del parámetro (sin '=').
+ * @param dest  buffer destino para el valor decodificado.
+ * @param dest_len tamaño de dest, incluye NUL.
+ * @return true si se encontró la clave; false si no.
+ *
+ * @note Devuelve el valor decodificado (URL-decoding).
+ */
+static bool get_param_value(const char *body, const char *key, char *dest, size_t dest_len);
+
+/**
+ * @fn static esp_err_t root_get_handler(httpd_req_t *req);
+ * 
+ * @brief Handler GET "/" – devuelve el formulario HTML.
+ */
+static esp_err_t root_get_handler(httpd_req_t *req);
+
+/**
+ * @fn static esp_err_t save_post_handler(httpd_req_t *req);
+ * 
+ * @brief Handler POST "/save" – parsea el formulario y actúa.
+ *
+ * Flujo:
+ *  1) Lee el body (x-www-form-urlencoded) a 'body'.
+ *  2) Extrae parámetros: frequency, accel, decel, imax, vmin, variation_str (linear/cuadratica), sys_time, start_time, stop_time.
+ *  3) Llena estructuras frequency_edit, seccurity_edit, time_edit.
+ *  4) Si cmd=save → system_variables_save(...).
+ *     Si cmd=start → SystemEventPost( @ref START_PRESSED).
+ *     Si cmd=stop  → SystemEventPost( @ref STOP_PRESSED).
+ *  5) Responde nuevamente con el formulario.
+ *
+ * @warning Los campos time_* se cargan como punteros a variables locales (stack). Si system_variables_save() no copia por valor de inmediato y almacena los punteros, quedarían colgando. Ver “Posibles issues” más abajo.
+ *
+ */
+static esp_err_t save_post_handler(httpd_req_t *req);
+
 static int hex2int(char c) {
     if (c >= '0' && c <= '9') return c - '0';
     if (c >= 'a' && c <= 'f') return 10 + (c - 'a');
@@ -48,7 +112,6 @@ static void url_decode(char *dst, const char *src) {
     *dst = '\0';
 }
 
-// Busca un key en cuerpo "key1=val1&key2=val2..." y lo copia decodificado a dest
 static bool get_param_value(const char *body, const char *key, char *dest, size_t dest_len) {
     size_t key_len = strlen(key);
     const char *p = body;
@@ -86,8 +149,6 @@ static bool get_param_value(const char *body, const char *key, char *dest, size_
     return false;
 }
 
-/* --------------------- Handlers HTTP --------------------- */
-
 static esp_err_t root_get_handler(httpd_req_t *req) {
     httpd_resp_set_type(req, "text/html");
     httpd_resp_send(req, HTML_FORM, HTTPD_RESP_USE_STRLEN);
@@ -124,7 +185,6 @@ static esp_err_t save_post_handler(httpd_req_t *req) {
 
     int frequency = 0, accel = 0, decel = 0, variation = 0;
     int imax = 0, vmin = 0;
-    char variation_str[16] = {0};
     char sys_time_str[16] = {0};
     char start_time_str[16] = {0};
     char stop_time_str[16] = {0};
@@ -149,14 +209,9 @@ static esp_err_t save_post_handler(httpd_req_t *req) {
         vmin = atoi(buf);
         ESP_LOGI(TAG, "Tension minima: %d", vmin);
     }
-    if (get_param_value(body, "variation_str", variation_str, sizeof(variation_str))) {
-        ESP_LOGI(TAG, "Variacion de entradas %s", variation_str);
-        if ( strcmp(variation_str, "cuadratica") == 0 ) {
-            variation = 1;
-        } else {
-            variation = 2;
-        }
-        // variation_str = "linear" o "quadratic"
+    if (get_param_value(body, "variation", buf, sizeof(buf))) {
+        variation = atoi(buf);
+        ESP_LOGI(TAG, "Variacion de entradas %d", variation);
     }
     get_param_value(body, "sys_time",   sys_time_str,   sizeof(sys_time_str));
     get_param_value(body, "start_time", start_time_str, sizeof(start_time_str));
@@ -224,8 +279,6 @@ static esp_err_t save_post_handler(httpd_req_t *req) {
     return ESP_OK;
 }
 
-/* ---------------------- Inicio HTTPD ---------------------- */
-
 httpd_handle_t start_webserver(void) {
     httpd_config_t config = HTTPD_DEFAULT_CONFIG();
     config.server_port = 80;
@@ -250,8 +303,6 @@ httpd_handle_t start_webserver(void) {
     }
     return server;
 }
-
-/* ---------------------- WiFi AP ---------------------- */
 
 void wifi_init_softap(void) {
     ESP_ERROR_CHECK(esp_netif_init());
@@ -281,32 +332,3 @@ void wifi_init_softap(void) {
 
     ESP_LOGI(TAG, "AP iniciado. SSID: %s, pass: %s", wifi_config.ap.ssid, wifi_config.ap.password);
 }
-
-// void start_mdns(void) {
-//     // Iniciar mDNS
-//     mdns_init();
-//     // hostname -> variador.local
-//     mdns_hostname_set("variador");
-//     // Nombre descriptivo
-//     mdns_instance_name_set("Variador ESP32");
-
-//     // Opcional: anunciar servicio HTTP
-//     mdns_service_add("ESP32-WebServer", "_http", "_tcp", 80, NULL, 0);
-// }
-
-// /* ---------------------- main ---------------------- */
-
-// void app_main(void)
-// {
-//     // Inicializar NVS
-//     esp_err_t ret = nvs_flash_init();
-//     if (ret == ESP_ERR_NVS_NO_FREE_PAGES || ret == ESP_ERR_NVS_NEW_VERSION_FOUND) {
-//         ESP_ERROR_CHECK(nvs_flash_erase());
-//         ESP_ERROR_CHECK(nvs_flash_init());
-//     }
-
-//     wifi_init_softap();
-//     start_webserver();
-
-//     ESP_LOGI(TAG, "Servidor web listo.");
-// }

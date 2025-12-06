@@ -210,7 +210,7 @@ static esp_err_t program_alarm(esp_timer_handle_t *timer_handle, void (*callback
 
 // Callback para inicio de tarea
 static void alarm_start_cb(void *arg) {
-    ESP_LOGI(TAG, "⏰ Alarma de INICIO disparada");
+    ESP_LOGI(TAG, "Alarma de INICIO disparada");
 
     // Cancelo las anteriores si existían
     if (rtc_alarms.start_timer) {
@@ -231,7 +231,7 @@ static void alarm_start_cb(void *arg) {
 
 // Callback para fin de tarea
 static void alarm_stop_cb(void *arg) {
-    ESP_LOGI(TAG, "⏰ Alarma de FIN disparada");
+    ESP_LOGI(TAG, "Alarma de FIN disparada");
 
     // Cancelo las anteriores si existían
     if (rtc_alarms.start_timer) {

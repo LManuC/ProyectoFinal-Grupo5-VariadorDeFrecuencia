@@ -70,6 +70,29 @@ void task_display(void *pvParameters);
  */
 esp_err_t DisplayEventPost(systemSignal_e event);
 
+/**
+ * @brief Copia parámetros recibidos desde la UI al estado del sistema, los aplica en tiempo de ejecución y los persiste en NVS.
+ *
+ * Flujo:
+ *  1) Valida punteros de entrada.
+ *  2) Copia por valor los campos de frecuencia y seguridad a los structs globales `system_frequency_settings` y `system_seccurity_settings`.
+ *  3) Copia por valor solo las *campos* de hora (tm_hour/min/sec) hacia las estructuras de tiempo globales apuntadas por `system_time_settings.time_*`. (No guarda punteros entrantes: solo lee sus valores).
+ *  4) Aplica cambios en runtime:
+ *        - `setTime(system_time_settings.time_system)` para RTC.
+ *        - `set_frequency_table(...)` para tabla de modulación según entrada/fo.
+ *        - `rtc_schedule_alarms(&system_time_settings)` programa alarmas start/stop.
+ *  5) Persiste todo en NVS con `save_variables(...)`.
+ *  6) Notifica/actualiza al resto del sistema con `set_system_settings(...)`.
+ *
+ * @param frequency_settings   Parámetros de frecuencia y rampas (Hz, Hz/s).
+ *
+ * @param time_settings        Tiempos de sistema/start/stop (struct tm vía punteros).
+ *
+ * @param seccurity_settings   Límites de seguridad (Vbus min, Ibus máx).
+ *
+ * @return @ref ESP_OK si el flujo se ejecutó;
+           @ref ESP_ERR_INVALID_ARG si algún puntero es NULL.
+ */
 esp_err_t system_variables_save(frequency_settings_SH1106_t *frequency_settings, time_settings_SH1106_t *time_settings, seccurity_settings_SH1106_t *seccurity_settings);
 
 #endif

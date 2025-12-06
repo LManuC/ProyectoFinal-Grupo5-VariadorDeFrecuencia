@@ -488,6 +488,10 @@ esp_err_t system_variables_save(frequency_settings_SH1106_t *frequency_settings,
         return ESP_ERR_INVALID_ARG;
     }
 
+    if ( time_settings->time_settings.time_system == NULL || time_settings->time_settings.time_start == NULL || time_settings->time_settings.time_stop == NULL ) {
+        return ESP_ERR_INVALID_ARG;
+    }
+
     system_frequency_settings.freq_regime = frequency_settings->frequency_settings.freq_regime;
     system_frequency_settings.acceleration = frequency_settings->frequency_settings.acceleration;
     system_frequency_settings.desacceleration = frequency_settings->frequency_settings.desacceleration;
