@@ -193,7 +193,7 @@ esp_err_t MCP23017_INIT( void ) {
     iocon.bits.DISSLW = __MCP23017_DISSLW_ENABLED__;                // Activo el Slew Rate en el SDA para una mejor comunicación
     iocon.bits.SEQOP = __MCP23017_SEQOP_DISABLED__;                 // No activo el incremento del puntero de direcciones para poder leer constantemente el mismo registro si quiero
     iocon.bits.MIRROR = __MCP23017_MIRROR_UNCONNECTED__;            // Los pines de interrupción A y B se controlan por separado
-    iocon.bits.BANK = __MCP23017_FUNC_MODE__;                       // Uso el modo Byte para tratar los puertos como si guesen de 8 bits y no de 16
+    iocon.bits.BANK = __MCP23017_FUNC_MODE__;                       // Uso el modo Byte para tratar los puertos como si fuesen de 8 bits y no de 16
 
     gppua.all = __MCP23017_GPPU_PULL_UP_DISABLE__;
 
