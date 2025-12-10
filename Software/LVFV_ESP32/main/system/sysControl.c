@@ -238,7 +238,7 @@ void SPI_communication(void *arg) {
                     engine_emergency_stop();
                     break;
                 case STOP_PRESSED:
-                    if ( s_e.status != SYSTEM_EMERGENCY && s_e.status != SYSTEM_EMERGENCY_SENT ) {
+                    if ( s_e.status != SYSTEM_EMERGENCY ) {
                         engine_stop();
                         ESP_LOGI(TAG, "Botón de Parada presionado");
                         item.request = SPI_REQUEST_STOP;

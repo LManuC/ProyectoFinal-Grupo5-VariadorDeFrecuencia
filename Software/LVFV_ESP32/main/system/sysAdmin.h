@@ -97,7 +97,6 @@ uint16_t change_frequency(uint8_t speed_slector);
  *      - SYSTEM_REGIME: El sistema está con el motor girando a régimen
  *      - SYSTEM_BREAKING: El sistema está frenando
  *      - SYSTEM_EMERGENCY: El sistema entra por primera vez en estado de emergencia
- *      - SYSTEM_EMERGENCY_SENT: El sistema continúa en estado de emergencia
  */
 system_status_e update_meas(uint16_t vbus_meas, uint16_t ibus_meas);
 
