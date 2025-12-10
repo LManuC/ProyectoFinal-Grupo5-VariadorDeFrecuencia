@@ -19,93 +19,82 @@
 
 \refsection{0}
   \datalist[entry]{apa/apasortcite//global/global/global}
-    \entry{newton}{book}{}{}
-      \name{author}{2}{}{%
-        {{un=0,uniquepart=base,hash=7a621e01239c1fe6557cf9c9d2f85bd3}{%
-           family={Newton},
-           familyi={N\bibinitperiod},
-           given={Isaac},
-           giveni={I\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=d68883d85f66284f082e7fbbba3babef}{%
-           family={Whiteside},
-           familyi={W\bibinitperiod},
-           given={D.\bibnamedelimi T.},
-           giveni={D\bibinitperiod\bibinitdelim T\bibinitperiod},
-           givenun=0}}%
+    \entry{Buzzer_datasheet}{manual}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=e510911ba16f29bf1f72c1e0b29cd0f3}{%
+           family={{Jiangsu Wauwha Electronics}},
+           familyi={J\bibinitperiod}}}%
       }
-      \list{location}{1}{%
-        {UK}%
-      }
-      \list{publisher}{1}{%
-        {Cambridge University Press}%
-      }
-      \strng{namehash}{1e7043c4fd41a2718eda5f852b11d977}
-      \strng{fullhash}{1e7043c4fd41a2718eda5f852b11d977}
-      \strng{fullhashraw}{1e7043c4fd41a2718eda5f852b11d977}
-      \strng{bibnamehash}{1e7043c4fd41a2718eda5f852b11d977}
-      \strng{authorbibnamehash}{1e7043c4fd41a2718eda5f852b11d977}
-      \strng{authornamehash}{1e7043c4fd41a2718eda5f852b11d977}
-      \strng{authorfullhash}{1e7043c4fd41a2718eda5f852b11d977}
-      \strng{authorfullhashraw}{1e7043c4fd41a2718eda5f852b11d977}
-      \field{sortinit}{N}
-      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \strng{namehash}{e510911ba16f29bf1f72c1e0b29cd0f3}
+      \strng{fullhash}{e510911ba16f29bf1f72c1e0b29cd0f3}
+      \strng{fullhashraw}{e510911ba16f29bf1f72c1e0b29cd0f3}
+      \strng{bibnamehash}{e510911ba16f29bf1f72c1e0b29cd0f3}
+      \strng{authorbibnamehash}{e510911ba16f29bf1f72c1e0b29cd0f3}
+      \strng{authornamehash}{e510911ba16f29bf1f72c1e0b29cd0f3}
+      \strng{authorfullhash}{e510911ba16f29bf1f72c1e0b29cd0f3}
+      \strng{authorfullhashraw}{e510911ba16f29bf1f72c1e0b29cd0f3}
+      \field{sortinit}{J}
+      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \true{uniqueprimaryauthor}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{isbn}{978-0-521-07740-8}
-      \field{title}{The Mathematical Papers of Isaac Newton}
-      \field{year}{1971}
-      \field{pages}{722}
-      \range{pages}{1}
+      \field{subtitle}{Datasheet}
+      \field{title}{Electromagnetic buzzer}
+      \field{type}{Hoja de datos}
+      \field{urlday}{7}
+      \field{urlmonth}{8}
+      \field{urlyear}{2025}
+      \field{year}{2022}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.st.com/resource/en/datasheet/l298.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.st.com/resource/en/datasheet/l298.pdf
+      \endverb
     \endentry
   \enddatalist
   \datalist[entry]{apa/global//global/global/global}
-    \entry{newton}{book}{}{}
-      \name{author}{2}{}{%
-        {{un=0,uniquepart=base,hash=7a621e01239c1fe6557cf9c9d2f85bd3}{%
-           family={Newton},
-           familyi={N\bibinitperiod},
-           given={Isaac},
-           giveni={I\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=d68883d85f66284f082e7fbbba3babef}{%
-           family={Whiteside},
-           familyi={W\bibinitperiod},
-           given={D.\bibnamedelimi T.},
-           giveni={D\bibinitperiod\bibinitdelim T\bibinitperiod},
-           givenun=0}}%
+    \entry{Buzzer_datasheet}{manual}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=e510911ba16f29bf1f72c1e0b29cd0f3}{%
+           family={{Jiangsu Wauwha Electronics}},
+           familyi={J\bibinitperiod}}}%
       }
-      \list{location}{1}{%
-        {UK}%
-      }
-      \list{publisher}{1}{%
-        {Cambridge University Press}%
-      }
-      \strng{namehash}{1e7043c4fd41a2718eda5f852b11d977}
-      \strng{fullhash}{1e7043c4fd41a2718eda5f852b11d977}
-      \strng{fullhashraw}{1e7043c4fd41a2718eda5f852b11d977}
-      \strng{bibnamehash}{1e7043c4fd41a2718eda5f852b11d977}
-      \strng{authorbibnamehash}{1e7043c4fd41a2718eda5f852b11d977}
-      \strng{authornamehash}{1e7043c4fd41a2718eda5f852b11d977}
-      \strng{authorfullhash}{1e7043c4fd41a2718eda5f852b11d977}
-      \strng{authorfullhashraw}{1e7043c4fd41a2718eda5f852b11d977}
-      \field{sortinit}{N}
-      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \strng{namehash}{e510911ba16f29bf1f72c1e0b29cd0f3}
+      \strng{fullhash}{e510911ba16f29bf1f72c1e0b29cd0f3}
+      \strng{fullhashraw}{e510911ba16f29bf1f72c1e0b29cd0f3}
+      \strng{bibnamehash}{e510911ba16f29bf1f72c1e0b29cd0f3}
+      \strng{authorbibnamehash}{e510911ba16f29bf1f72c1e0b29cd0f3}
+      \strng{authornamehash}{e510911ba16f29bf1f72c1e0b29cd0f3}
+      \strng{authorfullhash}{e510911ba16f29bf1f72c1e0b29cd0f3}
+      \strng{authorfullhashraw}{e510911ba16f29bf1f72c1e0b29cd0f3}
+      \field{sortinit}{J}
+      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \true{uniqueprimaryauthor}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{isbn}{978-0-521-07740-8}
-      \field{title}{The Mathematical Papers of Isaac Newton}
-      \field{year}{1971}
-      \field{pages}{722}
-      \range{pages}{1}
+      \field{subtitle}{Datasheet}
+      \field{title}{Electromagnetic buzzer}
+      \field{type}{Hoja de datos}
+      \field{urlday}{7}
+      \field{urlmonth}{8}
+      \field{urlyear}{2025}
+      \field{year}{2022}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.st.com/resource/en/datasheet/l298.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.st.com/resource/en/datasheet/l298.pdf
+      \endverb
     \endentry
   \enddatalist
+  \missing{newton}
 \endrefsection
 \endinput
 
