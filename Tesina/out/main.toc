@@ -1,0 +1,83 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {section}{\numberline {1}Abstract}{3}{section.1}%
+\contentsline {section}{\numberline {2}Marco teórico}{4}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Conversor DC-DC}{4}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Flyback}{4}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}Forward}{4}{subsubsection.2.1.2}%
+\contentsline {subsubsection}{\numberline {2.1.3}Medio puente}{4}{subsubsection.2.1.3}%
+\contentsline {subsubsection}{\numberline {2.1.4}Puente completo}{5}{subsubsection.2.1.4}%
+\contentsline {subsubsection}{\numberline {2.1.5}Análisis del convertidor de puente completo}{5}{subsubsection.2.1.5}%
+\contentsline {paragraph}{Etapa del primario}{5}{paragraph*.3}%
+\contentsline {paragraph}{Transformador de alta frecuencia}{6}{paragraph*.4}%
+\contentsline {paragraph}{Etapa del secundario}{6}{paragraph*.5}%
+\contentsline {subsubsection}{\numberline {2.1.6}Análisis del convertidor de pushpull completo}{6}{subsubsection.2.1.6}%
+\contentsline {subsubsection}{\numberline {2.1.7}Comparativa pushpull contra puente completo}{6}{subsubsection.2.1.7}%
+\contentsline {subsubsection}{\numberline {2.1.8}Características de un transformador de ferrite}{7}{subsubsection.2.1.8}%
+\contentsline {paragraph}{Parámetros relevantes en el diseño del transformador}{8}{paragraph*.8}%
+\contentsline {subsubsection}{\numberline {2.1.9}Análisis del transformador}{9}{subsubsection.2.1.9}%
+\contentsline {paragraph}{Dimensiones del núcleo}{9}{paragraph*.9}%
+\contentsline {subsubsection}{\numberline {2.1.10}Aspectos constructivos del transformador}{11}{subsubsection.2.1.10}%
+\contentsline {paragraph}{Inductancia de dispersión}{11}{paragraph*.11}%
+\contentsline {paragraph}{Medición de la inductancia de dispersión}{11}{paragraph*.12}%
+\contentsline {paragraph}{Capacidad distribuida}{11}{paragraph*.13}%
+\contentsline {paragraph}{Efecto Pelicular}{12}{paragraph*.14}%
+\contentsline {paragraph}{Efecto combinado de la inductancia de dispersión y la capacidad parasita}{12}{paragraph*.15}%
+\contentsline {paragraph}{Pérdidas en un transformador}{12}{paragraph*.16}%
+\contentsline {paragraph}{Inductor con corriente continua superpuesta}{13}{paragraph*.17}%
+\contentsline {paragraph}{Determinación de las dimensiones del núcleo}{14}{paragraph*.18}%
+\contentsline {subsection}{\numberline {2.2}Modulación}{14}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Modulación de vector espacial}{15}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Patrón SVM}{16}{subsubsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.3}Motor trifásico a inducción}{17}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}Introducción}{17}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.2}Principio de funcionamiento}{18}{subsubsection.2.3.2}%
+\contentsline {paragraph}{Campo magnético giratorio y generación del par}{18}{paragraph*.22}%
+\contentsline {subsubsection}{\numberline {2.3.3}Control mediante inversor (VFD)}{18}{subsubsection.2.3.3}%
+\contentsline {subsection}{\numberline {2.4}Inversor}{18}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}HMI}{19}{subsection.2.5}%
+\contentsline {subsubsection}{\numberline {2.5.1}Fuente de alimentación}{19}{subsubsection.2.5.1}%
+\contentsline {subsubsection}{\numberline {2.5.2}Display}{19}{subsubsection.2.5.2}%
+\contentsline {subsubsection}{\numberline {2.5.3}Extensión de GPIO}{22}{subsubsection.2.5.3}%
+\contentsline {section}{\numberline {3}Desarrollo de proyecto}{24}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Conversor DC-DC}{24}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Introducción}{24}{subsubsection.3.1.1}%
+\contentsline {paragraph}{Selección de topología}{24}{paragraph*.27}%
+\contentsline {paragraph}{Requerimientos mínimos eléctricos}{24}{paragraph*.28}%
+\contentsline {subsubsection}{\numberline {3.1.2}Diseño de transformador}{25}{subsubsection.3.1.2}%
+\contentsline {paragraph}{Selección del núcleo}{25}{paragraph*.31}%
+\contentsline {paragraph}{Relación de transformación y cálculo de espiras}{26}{paragraph*.36}%
+\contentsline {paragraph}{Sección de conductores}{26}{paragraph*.37}%
+\contentsline {subsubsection}{\numberline {3.1.3}Diseño y simulación de circuito de conmutación}{27}{subsubsection.3.1.3}%
+\contentsline {paragraph}{Selección de los transistores de conmutación}{28}{paragraph*.40}%
+\contentsline {paragraph}{Simulación del circuito de conmutación}{29}{paragraph*.43}%
+\contentsline {paragraph}{Diseño del controlador de los transistores de conmutación}{33}{paragraph*.51}%
+\contentsline {subsubsection}{\numberline {3.1.4}Diseño de circuito de control}{34}{subsubsection.3.1.4}%
+\contentsline {paragraph}{Circuito de medición de tensión}{35}{paragraph*.55}%
+\contentsline {paragraph}{Circuito de medición de corriente}{35}{paragraph*.57}%
+\contentsline {subsubsection}{\numberline {3.1.5}Dificultades encontradas}{36}{subsubsection.3.1.5}%
+\contentsline {subsection}{\numberline {3.2}Inversor}{42}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Introducción}{42}{subsubsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.3}Inversor}{42}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}HMI}{42}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}Fuente de alimentación}{42}{subsubsection.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.2}Estructura del código}{45}{subsubsection.3.4.2}%
+\contentsline {subsubsection}{\numberline {3.4.3}Display}{47}{subsubsection.3.4.3}%
+\contentsline {subsubsection}{\numberline {3.4.4}Configuración Wi-Fi}{49}{subsubsection.3.4.4}%
+\contentsline {subsubsection}{\numberline {3.4.5}Memoria no volatil}{49}{subsubsection.3.4.5}%
+\contentsline {subsubsection}{\numberline {3.4.6}Comunicación SPI}{50}{subsubsection.3.4.6}%
+\contentsline {subsubsection}{\numberline {3.4.7}GPIO - MCP23017}{52}{subsubsection.3.4.7}%
+\contentsline {section}{\numberline {4}Ensayos y Verificación}{65}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Introducción}{65}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Ensayo funcional}{65}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Ensayo de la modulación}{68}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}Integridad de la señal}{68}{subsubsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.2}Simetría de pulsos}{71}{subsubsection.4.3.2}%
+\contentsline {subsubsection}{\numberline {4.3.3}Indice de modulación}{72}{subsubsection.4.3.3}%
+\contentsline {subsection}{\numberline {4.4}Rendimiento}{75}{subsection.4.4}%
+\contentsline {subsubsection}{\numberline {4.4.1}Eficiencia del conversor}{76}{subsubsection.4.4.1}%
+\contentsline {subsubsection}{\numberline {4.4.2}Eficiencia del inversor}{79}{subsubsection.4.4.2}%
+\contentsline {subsubsection}{\numberline {4.4.3}Rendimiento del variador}{80}{subsubsection.4.4.3}%
+\contentsline {subsection}{\numberline {4.5}Durabilidad}{80}{subsection.4.5}%
+\contentsline {section}{\numberline {5}Conclusiones}{81}{section.5}%
+\contentsline {section}{\numberline {6}Referencias}{82}{section.6}%
+\contentsline {section}{\numberline {7}Bibliografía}{82}{section.7}%
