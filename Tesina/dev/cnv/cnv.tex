@@ -132,13 +132,18 @@ El cálculo inicial de la relación de transformación arrojó un valor de 1:26.
 
 El devanado primario se compone de 3 + 3 espiras con punto medio, y el secundario consta de 135 espiras.
 
-\paragraph{Relación de transformación y cálculo de espiras}
+\paragraph{Sección de conductores}
 
 Para la elección de la sección del conductor se adoptaron densidades de corriente típicas de 2 a 5 $A/mm^2$, valores comunes en bobinados de transformadores. En el primario se seleccionó una densidad de 3 $A/mm^2$ y en el secundario de 5 $A/mm^2$, considerando la cantidad de espiras necesarias.
 
 Suponiendo una forma de onda cuadrada con ciclo de trabajo del 45\%, la corriente RMS del primario resulta 13.8 $A$, lo que determina secciones de 4.6 $mm^2$ para el primario y 0.3 $mm^2$ para el secundario. Finalmente, se utilizaron conductores de 5 $mm^2$ en el primario y doble alambre de 0.4 $mm$ de diámetro en el secundario, verificándose que la ocupación de la ventana del núcleo resultara adecuada.
 
-\hl{Incluir una imagen del transformador (Sacar foto)}
+\begin{figure}[H]
+\centering
+    \includegraphics[width=0.4\textwidth]{dev/cnv/img/Trafo.jpg}
+    \caption{Imagen de transformador del conversor.}
+\label{fig:imgDevTrafo}
+\end{figure}
 
 \subsubsection{Diseño y simulación de circuito de conmutación}
 El circuito de conmutación del conversor debe manejar corrientes elevadas, por lo que la selección de los transistores de potencia y del circuito de excitación de compuerta es crítica. En la figura siguiente se muestra el diagrama circuital simplificado del convertidor.
@@ -154,8 +159,7 @@ La topología utilizada corresponde a una fuente push-pull, la cual emplea dos t
 
 Con el fin de reducir la corriente en cada dispositivo, se implementó paralelización de transistores, lo que permite distribuir mejor la disipación térmica y disminuir la resistencia de conducción efectiva. Este método reduce las pérdidas y mejora la eficiencia global del sistema.
 
-\hl{Hay comentario de que se usaron dos transistores??}
-\hl{Decir lo de los cables cortos y la disipacion termica}
+Un aspecto fundamental para garantizar la vida útil y el correcto funcionamiento de los transistores es asegurar una adecuada refrigeración. La disipación térmica resulta crítica para evitar el sobrecalentamiento y preservar la integridad de los dispositivos. Este criterio constituyó el punto de partida para el diseño del montaje.
 
 \paragraph{Selección de los transistores de conmutación}
 
@@ -202,7 +206,7 @@ Para asegurar un buen funcionamiento del conversor en las simulaciones se exigen
 
 \begin{figure}[H]
 \centering
-    \includegraphics[width=0.9\textwidth]{dev/cnv/img/EsqSimpSim.png}
+    \includegraphics[width=0.9\textwidth]{dev/cnv/img/EsqSimpleSim.jpg}
     \caption{Esquema circuital del conversor para simulación.}
 \label{fig:imgDev_EsqSimSimplificado}
 \end{figure}
@@ -322,7 +326,79 @@ El conversor es completamente aislado galvánicamente, lo que mejora la segurida
 
 
 
-\subsubsection{Dificultades alcanzadas}
+\subsubsection{Dificultades encontradas}
 
-En esta sección se pretende detallar las complicaciones alcanzas y la resolución de estas, siendo el conversor el componente de potencia mas complejo para diseñar. 
+En esta sección se detallan las complicaciones enfrentadas durante el diseño del conversor y las soluciones aplicadas, dado que este resultó ser el componente de potencia más complejo del proyecto. En esta etapa inicial contábamos con un conocimiento limitado sobre el diseño de convertidores de alta potencia, por lo que comprender los aspectos críticos implicó un proceso prolongado de análisis y pruebas.
 
+Nuestra idea inicial fue implementar una topología de puente completo, ya que presenta una alta eficiencia y era un aspecto que considerábamos prioritario. Para ello se fabricó un transformador con un núcleo cuya relación de transformación era de $12:320$. El tamaño del núcleo resultó ser considerablemente grande, lo que obligó a bobinar un primario de 16 espiras, generando pérdidas significativas. El número de vueltas había sido calculado correctamente según las expresiones presentadas en el marco teórico, pero en la práctica el diseño no ofreció el rendimiento esperado.
+
+
+\begin{figure}[H]
+\centering
+    \includegraphics[width=0.9\textwidth]{dev/cnv/img/Dif_Trafo1.jpg}
+    \caption{Imagen de transformador midiendo la inductancia del primario.}
+\label{fig:imgDev_Dif_Trafo1}
+\end{figure}
+
+En los ensayos se logró obtener únicamente $30 W$ con una eficiencia del $50\%$, un valor demasiado bajo para los objetivos del diseño. Parte de este desempeño deficiente se debía a que, en esta primera iteración, no habíamos dimensionado correctamente la corriente requerida en el primario, además de que existían pérdidas considerables en el cableado del bus DC de baja tensión.
+
+\begin{figure}[H]
+\centering
+    \includegraphics[width=0.9\textwidth]{dev/cnv/img/Dif_PuenteHTrafo1.jpg}
+    \caption{Imagen de transformador 1 con puente H.}
+\label{fig:imgDev_Dif_PuenteHTrafo1}
+\end{figure}
+
+Al observar la baja performance de este transformador y tomando como referencia el diseño de transformadores de fuentes conmutadas existentes, además de otras guías prácticas, se construyó un segundo transformador con 3 vueltas en el primario y se redujo drásticamente la distancia del cableado del bus DC. Estos cambios produjeron una mejora sustancial.
+
+
+\begin{figure}[H]
+\centering
+    \includegraphics[width=0.9\textwidth]{dev/cnv/img/Dif_PuenteHTrafo2.jpg}
+    \caption{Imagen de transformador 2 con puente H.}
+\label{fig:imgDev_Dif_PuenteHTrafo2}
+\end{figure}
+
+Con el objetivo de optimizar aún más el rendimiento, se construyó un tercer transformador. En este caso no disponíamos del carrete adecuado, por lo que fue impreso en plástico y luego bobinado manualmente.
+
+\begin{figure}[H]
+\centering
+    \includegraphics[width=0.9\textwidth]{dev/cnv/img/Dif_PuenteHTrafo3.jpg}
+    \caption{Imagen de transformador 3 con puente H.}
+\label{fig:imgDev_Dif_PuenteHTrafo3}
+\end{figure}
+
+Este tercer transformador presentó la mejor performance: con una carga de $250\Omega$ se obtuvo una tensión máxima de $297V$ y una corriente de $1.2A$. Sin embargo, persistía un problema importante: no era posible alcanzar la tensión objetivo de $320V$.
+
+Ante esta situación, se decidió cambiar a una topología más simple. Esto respondía tanto a la necesidad de reducir la complejidad del circuito de conmutación como a la de simplificar el cableado. Además, los transistores se dañaban con frecuencia durante las pruebas y solían fallar de a pares, lo cual implicaba un considerable gasto de tiempo y reemplazo de componentes.
+
+La topología seleccionada fue la de \textit{push-pull}. Se montaron tres transistores por cada rama, colocados en un disipador y aislados mediante mica.
+
+\begin{figure}[H]
+\centering
+    \includegraphics[width=0.9\textwidth]{dev/cnv/img/Dif_PushPull.jpg}
+    \caption{Imagen de transistores en topologia Push Pull.}
+\label{fig:imgDev_Dif_Pushpull}
+\end{figure}
+
+Con esta nueva topología se obtuvo un rendimiento levemente inferior, pero las ventajas en simplicidad y confiabilidad justificaron su adopción. Durante los ensayos se detectó que la tensión en los terminales del transformador no coincidía con la tensión real entregada por la fuente, debido a caídas en los conductores. Esto explicaba por qué no se alcanzaban los $320V$. En un primer intento se incrementó significativamente la sección de los cables, incluso utilizando barras de aluminio. Si bien esto no mejoró los resultados, permitió observar la ventaja de evitar el uso de mica en los transistores, reemplazándolo por dos bloques de disipadores independientes, lo que mejoró notablemente la disipación y prolongó la vida útil de los transistores.
+
+También se ensayó el uso de los dos mejores transformadores, tanto con los primarios en paralelo como en serie, sin obtener mejoras sustanciales.
+
+\begin{figure}[H]
+\centering
+    \includegraphics[width=0.9\textwidth]{dev/cnv/img/Dif_PushpullEtapa2.jpg}
+    \caption{Imagen de conversor pushpull con barras de aluminio y transformadores en paralelo.}
+\label{fig:imgDev_Dif_PushpullEtapa2}
+\end{figure}
+
+Finalmente, utilizando el transformador con mejor rendimiento, se decidió incrementar la relación de transformación agregando espiras en el secundario por encima del valor inicial de $12:320$. Paralelamente se implementó un circuito de control práctico con el TL494, permitiendo ajustar el ciclo de trabajo mediante un potenciómetro. Esta modificación sí permitió alcanzar los $320V$ y obtener momentáneamente una potencia de salida de 460 W. Sin embargo, surgió un inconveniente importante: sin carga, la tensión escalaba fácilmente por encima de los $450V$. Esto hizo indispensable implementar un control realimentado, utilizando una medición aislada de la tensión de salida.
+
+\begin{figure}[H]
+\centering
+    \includegraphics[width=0.9\textwidth]{dev/cnv/img/Dif_PushPullEtapa3.jpg}
+    \caption{Imagen de conversor pushpull realimentado con TL494 y placa de medicion.}
+\label{fig:imgDev_Dif_PushpullEtapa3}
+\end{figure}
+
+Por cuestiones de espacio y dado que el transformador más eficiente contaba con un carrete impreso en plástico, finalmente se optó por utilizar el segundo mejor transformador, ligeramente más compacto. Si bien la topología push-pull no ofrece la mayor eficiencia posible, proporciona una implementación más simple y confiable, a costa de requerir un primario con punto medio, lo cual resulta mucho menos problemático que gestionar ocho transistores como en el puente completo.

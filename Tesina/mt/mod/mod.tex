@@ -1,0 +1,72 @@
+\label{sec:2_mod}
+
+\subsection{Modulación}
+
+La modulación cumple un rol fundamental en el control de inversores, ya que permite sintetizar tensiones alternas a partir de una fuente de corriente continua. Para lograr esto, se varían parámetros de la señal como la amplitud, la frecuencia y el ciclo de trabajo de modo que el convertidor pueda generar una forma de onda que reproduzca la referencia deseada. 
+
+En la actualidad existen diversas técnicas de modulación aplicables al control de inversores trifásicos, cada una con un nivel diferente de complejidad y desempeño. Las más utilizadas son las basadas en PWM, como la modulación sinusoidal y sus variantes optimizadas, que permiten regular la tensión efectiva aplicada al motor mediante el ajuste del ciclo de trabajo. Una alternativa más avanzada es la modulación por vectores espaciales (SVM), que optimiza la utilización del bus de continua y reduce la distorsión armónica al considerar el inversor como un sistema vectorial. Finalmente, en niveles superiores de control aparece el Field Oriented Control (FOC), que combina técnicas de modulación con estrategias de control orientadas al flujo y al par para lograr un comportamiento más preciso y dinámico del motor. Estas opciones cubren la mayoría de las necesidades en variadores industriales y de propósito general.
+
+Ventajas de la Modulación SVM frente a técnicas PWM convencionales
+
+La elección de la modulación SVM se fundamenta en su capacidad para maximizar el desempeño del inversor en comparación con técnicas PWM convencionales. Al operar mediante una representación vectorial de las tensiones del inversor, la SVM permite una utilización más eficiente del bus de continua, obteniendo mayor tensión de salida disponible sin incrementar la frecuencia de conmutación. Además, reduce significativamente la distorsión armónica y mejora la calidad de la forma de onda aplicada al motor, lo que se traduce en un funcionamiento más suave, menor calentamiento y mayor eficiencia energética. Estas características hacen que la SVM sea especialmente adecuada para variadores donde se busca un control preciso, buena respuesta dinámica y un rendimiento eléctrico óptimo.
+
+\subsubsection{Modulación de vector espacial}
+
+La modulación por vectores espaciales (SVM, Space Vector Modulation) es una técnica avanzada generalmente utilizada en inversores trifásicos para generar señales de salida que aproximen de la mejor manera posible una tensión senoidal. A diferencia del PWM sinusoidal tradicional, que trata cada fase por separado, SVM considera al inversor como un sistema único capaz de generar un conjunto limitado de tensiones discretas. Estas tensiones pueden representarse como vectores en un plano bidimensional (plano $\alpha-\beta$) mediante la transformación de Clarke.
+
+El principio fundamental de la SVM se basa en que un inversor trifásico puede generar seis vectores activos y dos vectores nulos figura \ref{fig:imgMT_Mod_modHexagonVectors}, que en conjunto forman un hexágono regular en el plano vectorial. El objetivo de la técnica consiste en aproximar un vector de referencia rotante, que representa la tensión trifásica deseada, utilizando combinaciones temporales de estos vectores disponibles. Dentro de cada periodo de conmutación, el algoritmo determina en qué sector del hexágono se encuentra el vector de referencia y selecciona los dos vectores activos correspondientes junto con un vector nulo. A partir de esto se calculan los tiempos durante los cuales cada vector debe aplicarse para reproducir, en promedio, la tensión deseada en ese intervalo.
+
+\begin{figure}[H]
+\centering
+    \includegraphics[width=0.7\textwidth]{mt/mod/img/modHexagonVectors.jpg}
+    \caption{Hexágono con los ocho vectores básicos.}
+\label{fig:imgMT_Mod_modHexagonVectors}
+\end{figure}
+
+La implementación de SVM también define una secuencia óptima de conmutación que minimiza el número de cambios de estado en los interruptores, reduciendo pérdidas por conmutación y mejorando la eficiencia global del inversor. El resultado es una forma de onda más cercana a una sinusoide ideal, con menor distorsión armónica y una utilización más eficiente del bus de continua en comparación con PWM sinusoidal. De hecho, la SVM permite obtener aproximadamente un quince por ciento más de tensión útil sin aumentar la frecuencia de conmutación, lo que se traduce en un mejor desempeño energético y térmico del sistema.
+
+\begin{figure}[H]
+\centering
+    \includegraphics[width=0.7\textwidth]{mt/mod/img/modVectors.png}
+    \caption{Vectores con sus representaciones en el puente H trifásico.}
+\label{fig:imgMT_Mod_modVectors}
+\end{figure}
+
+Además de estas ventajas, la modulación SVM se integra de manera natural con estrategias avanzadas de control como el Field Oriented Control, que requieren una modulación precisa y estable para mantener el desacoplamiento entre el control de flujo y de par del motor. Gracias a su enfoque vectorial y su excelente respuesta dinámica, SVM se ha convertido en la técnica preferida para variadores modernos que buscan lograr alta eficiencia, baja distorsión y un control preciso del comportamiento eléctrico y mecánico del motor.
+
+
+\subsubsection{Patrón SVM}
+
+Se interpreta el vector activo del hexágono como la representación espacial del campo magnético resultante en el estator del motor. Dentro de cada uno de los seis sectores del hexágono se produce la conmutación entre dos vectores activos y los dos vectores nulos. Durante la primera mitad del sector predomina uno de los vectores activos, mientras que en la segunda mitad predomina el otro, garantizando así la transición suave del vector resultante.
+
+Los tiempos de aplicación de cada vector se determinan a partir de las siguientes constantes:
+
+\[
+A = \frac{3 \sqrt{3}}{2\pi} \ T
+\]
+\[
+B = \frac{3}{\pi} \ T
+\]
+
+donde $T$ corresponde al período de conmutación del inversor.
+
+Los tiempos de permanencia de cada vector se obtienen mediante:
+
+\[
+t_1 = I_{mod} \ A \   \cos{\alpha} - \frac{t_2}{2}
+\]
+\[
+t_2 = I_{mod} \ B \ \sin{\alpha}
+\]
+\[
+t_0 = \frac{T}{2} - t_1 - t_2
+\]
+
+En estas expresiones, $\alpha$ es el ángulo eléctrico dentro del sector correspondiente del hexágono, mientras que el índice de modulación $I_{mod}$ permite ajustar la amplitud de la tensión de salida generada por el inversor.
+
+\begin{figure}[H]
+\centering
+    \includegraphics[width=0.7\textwidth]{mt/mod/img/SwitchingPattern.png}
+    \caption{Patrón de conmutación de los transistores.}
+\label{fig:imgMT_Mod_switchPattern}
+\end{figure}
