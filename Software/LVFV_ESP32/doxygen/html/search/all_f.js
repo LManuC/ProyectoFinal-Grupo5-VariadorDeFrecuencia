@@ -7,10 +7,11 @@ var searchData=
   ['request_4',['request',['../structspi__cmd__item__t.html#a8e022ff634b33af641a97b0e25f460b4',1,'spi_cmd_item_t']]],
   ['reserved_5',['reserved',['../union_m_c_p23017___i_o_c_o_n__t.html#acb7bc06bed6f6408d719334fc41698c7',1,'MCP23017_IOCON_t']]],
   ['reserved_5f2_6',['reserved_2',['../union_m_c_p23017___i_o_c_o_n__t.html#a93656a2c355d9bf614866e3b4ed2a30f',1,'MCP23017_IOCON_t']]],
-  ['rotation_7',['rotation',['../structsh1106__t.html#a31ef40b2ca90f868c7d76754d0100c3b',1,'sh1106_t']]],
-  ['rtc_2ec_8',['rtc.c',['../rtc_8c.html',1,'']]],
-  ['rtc_2eh_9',['rtc.h',['../rtc_8h.html',1,'']]],
-  ['rtc_5falarms_10',['rtc_alarms',['../rtc_8c.html#a27b710d06dd027d535da94e798d0a819',1,'rtc.c']]],
-  ['rtc_5falarms_5ft_11',['rtc_alarms_t',['../structrtc__alarms__t.html',1,'']]],
-  ['rtc_5fschedule_5falarms_12',['rtc_schedule_alarms',['../rtc_8c.html#adb9ac05b0bcd1cc3769f8a9931d90c06',1,'rtc_schedule_alarms(time_settings_t *time_settings):&#160;rtc.c'],['../rtc_8h.html#adb9ac05b0bcd1cc3769f8a9931d90c06',1,'rtc_schedule_alarms(time_settings_t *time_settings):&#160;rtc.c']]]
+  ['root_5fget_5fhandler_7',['root_get_handler',['../wifi_8c.html#ad8bb541f65016944ecd059dc8e08f531',1,'wifi.c']]],
+  ['rotation_8',['rotation',['../structsh1106__t.html#a31ef40b2ca90f868c7d76754d0100c3b',1,'sh1106_t']]],
+  ['rtc_2ec_9',['rtc.c',['../rtc_8c.html',1,'']]],
+  ['rtc_2eh_10',['rtc.h',['../rtc_8h.html',1,'']]],
+  ['rtc_5falarms_11',['rtc_alarms',['../rtc_8c.html#a27b710d06dd027d535da94e798d0a819',1,'rtc.c']]],
+  ['rtc_5falarms_5ft_12',['rtc_alarms_t',['../structrtc__alarms__t.html',1,'']]],
+  ['rtc_5fschedule_5falarms_13',['rtc_schedule_alarms',['../rtc_8c.html#adb9ac05b0bcd1cc3769f8a9931d90c06',1,'rtc_schedule_alarms(time_settings_t *time_settings):&#160;rtc.c'],['../rtc_8h.html#adb9ac05b0bcd1cc3769f8a9931d90c06',1,'rtc_schedule_alarms(time_settings_t *time_settings):&#160;rtc.c']]]
 ];

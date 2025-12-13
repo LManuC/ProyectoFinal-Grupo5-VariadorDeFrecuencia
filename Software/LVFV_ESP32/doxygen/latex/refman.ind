@@ -1,0 +1,1940 @@
+\begin{theindex}
+
+  \item {\_\_MCP23017\_ADDRESS\_\_}
+    \subitem {mcp23017\_defs.h}, \hyperpage{155}
+  \item {\_\_MCP23017\_BANK\_SEQUENTIAL\_\_}
+    \subitem {mcp23017\_defs.h}, \hyperpage{155}
+  \item {\_\_MCP23017\_BANK\_SPLIT\_\_}
+    \subitem {mcp23017\_defs.h}, \hyperpage{155}
+  \item {\_\_MCP23017\_DISSLW\_DISABLED\_\_}
+    \subitem {mcp23017\_defs.h}, \hyperpage{155}
+  \item {\_\_MCP23017\_DISSLW\_ENABLED\_\_}
+    \subitem {mcp23017\_defs.h}, \hyperpage{155}
+  \item {\_\_MCP23017\_FUNC\_MODE\_\_}
+    \subitem {mcp23017\_defs.h}, \hyperpage{155}
+  \item {\_\_MCP23017\_GPINTEN\_DISABLE\_\_}
+    \subitem {mcp23017\_defs.h}, \hyperpage{156}
+  \item {\_\_MCP23017\_GPINTEN\_ENABLE\_\_}
+    \subitem {mcp23017\_defs.h}, \hyperpage{156}
+  \item {\_\_MCP23017\_GPPU\_PULL\_UP\_DISABLE\_\_}
+    \subitem {mcp23017\_defs.h}, \hyperpage{156}
+  \item {\_\_MCP23017\_GPPU\_PULL\_UP\_ENABLE\_\_}
+    \subitem {mcp23017\_defs.h}, \hyperpage{156}
+  \item {\_\_MCP23017\_INTCON\_CHANGE\_\_}
+    \subitem {mcp23017\_defs.h}, \hyperpage{156}
+  \item {\_\_MCP23017\_INTCON\_DEFVAL\_\_}
+    \subitem {mcp23017\_defs.h}, \hyperpage{156}
+  \item {\_\_MCP23017\_INTERRUPT\_DISABLE\_\_}
+    \subitem {mcp23017\_defs.h}, \hyperpage{157}
+  \item {\_\_MCP23017\_INTERRUPT\_ENABLE\_\_}
+    \subitem {mcp23017\_defs.h}, \hyperpage{157}
+  \item {\_\_MCP23017\_INTPOL\_POLARITY\_HIGH\_\_}
+    \subitem {mcp23017\_defs.h}, \hyperpage{157}
+  \item {\_\_MCP23017\_INTPOL\_POLARITY\_LOW\_\_}
+    \subitem {mcp23017\_defs.h}, \hyperpage{157}
+  \item {\_\_MCP23017\_IODIR\_INPUT\_\_}
+    \subitem {mcp23017\_defs.h}, \hyperpage{157}
+  \item {\_\_MCP23017\_IODIR\_OUTPUT\_\_}
+    \subitem {mcp23017\_defs.h}, \hyperpage{157}
+  \item {\_\_MCP23017\_MIRROR\_CONNECTED\_\_}
+    \subitem {mcp23017\_defs.h}, \hyperpage{158}
+  \item {\_\_MCP23017\_MIRROR\_UNCONNECTED\_\_}
+    \subitem {mcp23017\_defs.h}, \hyperpage{158}
+  \item {\_\_MCP23017\_ODR\_ACTIVE\_DRIVER\_OUTPUT\_\_}
+    \subitem {mcp23017\_defs.h}, \hyperpage{158}
+  \item {\_\_MCP23017\_ODR\_OPEN\_DRAIN\_OUTPUT\_\_}
+    \subitem {mcp23017\_defs.h}, \hyperpage{158}
+  \item {\_\_MCP23017\_OPPOSITE\_LOGIC\_\_}
+    \subitem {mcp23017\_defs.h}, \hyperpage{158}
+  \item {\_\_MCP23017\_POSITIVE\_LOGIC\_\_}
+    \subitem {mcp23017\_defs.h}, \hyperpage{158}
+  \item {\_\_MCP23017\_READ\_OPPCODE\_\_}
+    \subitem {mcp23017\_defs.h}, \hyperpage{159}
+  \item {\_\_MCP23017\_READ\_\_}
+    \subitem {mcp23017\_defs.h}, \hyperpage{159}
+  \item {\_\_MCP23017\_SEQOP\_DISABLED\_\_}
+    \subitem {mcp23017\_defs.h}, \hyperpage{159}
+  \item {\_\_MCP23017\_SEQOP\_ENABLED\_\_}
+    \subitem {mcp23017\_defs.h}, \hyperpage{159}
+  \item {\_\_MCP23017\_WRITE\_OPPCODE\_\_}
+    \subitem {mcp23017\_defs.h}, \hyperpage{159}
+  \item {\_\_MCP23017\_WRITE\_\_}
+    \subitem {mcp23017\_defs.h}, \hyperpage{159}
+
+  \indexspace
+
+  \item {accelerating}
+    \subitem {sysAdmin.c}, \hyperpage{205}
+  \item {accelerating\_handle}
+    \subitem {sysAdmin.c}, \hyperpage{210}
+  \item {acceleration}
+    \subitem {frequency\_settings\_t}, \hyperpage{16}
+    \subitem {system\_status\_t}, \hyperpage{44}
+  \item {adc.c}
+    \subitem {ADC\_ATTEN\_USED}, \hyperpage{50}
+    \subitem {adc\_cali\_try\_init}, \hyperpage{52}
+    \subitem {ADC\_CH\_GPIO34}, \hyperpage{50}
+    \subitem {ADC\_CH\_GPIO35}, \hyperpage{50}
+    \subitem {ADC\_CH\_GPIO36}, \hyperpage{51}
+    \subitem {ADC\_CH\_GPIO39}, \hyperpage{51}
+    \subitem {adc\_init}, \hyperpage{53}
+    \subitem {ADC\_PERIOD\_MS}, \hyperpage{51}
+    \subitem {adc\_task}, \hyperpage{53}
+    \subitem {ADC\_UNIT\_USED}, \hyperpage{51}
+    \subitem {bus\_meas\_evt\_queue}, \hyperpage{55}
+    \subitem {calibration\_3V3\_source}, \hyperpage{55}
+    \subitem {calibration\_3V3\_source\_ok}, \hyperpage{55}
+    \subitem {calibration\_5V\_source}, \hyperpage{55}
+    \subitem {calibration\_5V\_source\_ok}, \hyperpage{55}
+    \subitem {calibration\_bus\_voltage}, \hyperpage{55}
+    \subitem {calibration\_bus\_voltage\_ok}, \hyperpage{55}
+    \subitem {calibration\_current}, \hyperpage{56}
+    \subitem {calibration\_current\_ok}, \hyperpage{56}
+    \subitem {readADC}, \hyperpage{53}
+    \subitem {s\_adc}, \hyperpage{56}
+    \subitem {TAG}, \hyperpage{56}
+  \item {adc.h}
+    \subitem {adc\_init}, \hyperpage{60}
+    \subitem {adc\_task}, \hyperpage{60}
+    \subitem {readADC}, \hyperpage{60}
+  \item {ADC\_ATTEN\_USED}
+    \subitem {adc.c}, \hyperpage{50}
+  \item {adc\_cali\_try\_init}
+    \subitem {adc.c}, \hyperpage{52}
+  \item {ADC\_CH\_GPIO34}
+    \subitem {adc.c}, \hyperpage{50}
+  \item {ADC\_CH\_GPIO35}
+    \subitem {adc.c}, \hyperpage{50}
+  \item {ADC\_CH\_GPIO36}
+    \subitem {adc.c}, \hyperpage{51}
+  \item {ADC\_CH\_GPIO39}
+    \subitem {adc.c}, \hyperpage{51}
+  \item {adc\_init}
+    \subitem {adc.c}, \hyperpage{53}
+    \subitem {adc.h}, \hyperpage{60}
+  \item {ADC\_PERIOD\_MS}
+    \subitem {adc.c}, \hyperpage{51}
+  \item {adc\_task}
+    \subitem {adc.c}, \hyperpage{53}
+    \subitem {adc.h}, \hyperpage{60}
+  \item {ADC\_UNIT\_USED}
+    \subitem {adc.c}, \hyperpage{51}
+  \item {alarm\_settings}
+    \subitem {rtc.c}, \hyperpage{198}
+  \item {alarm\_start\_cb}
+    \subitem {rtc.c}, \hyperpage{195}
+  \item {alarm\_stop\_cb}
+    \subitem {rtc.c}, \hyperpage{195}
+  \item {all}
+    \subitem {MCP23017\_DEFVAL\_t}, \hyperpage{17}
+    \subitem {MCP23017\_GPINTEN\_t}, \hyperpage{19}
+    \subitem {MCP23017\_GPIO\_t}, \hyperpage{21}
+    \subitem {MCP23017\_GPPU\_t}, \hyperpage{23}
+    \subitem {MCP23017\_INTCAP\_t}, \hyperpage{26}
+    \subitem {MCP23017\_INTCON\_t}, \hyperpage{28}
+    \subitem {MCP23017\_INTF\_t}, \hyperpage{30}
+    \subitem {MCP23017\_IOCON\_t}, \hyperpage{32}
+    \subitem {MCP23017\_IODIR\_t}, \hyperpage{34}
+    \subitem {MCP23017\_IPOL\_t}, \hyperpage{36}
+    \subitem {MCP23017\_OLAT\_t}, \hyperpage{38}
+  \item {app\_main}
+    \subitem {main.c}, \hyperpage{176}
+  \item {arrow\_bmp}
+    \subitem {sh1106\_graphics.c}, \hyperpage{92}
+
+  \indexspace
+
+  \item {BANK}
+    \subitem {MCP23017\_IOCON\_t}, \hyperpage{32}
+  \item {bitmap}
+    \subitem {bitmap\_t}, \hyperpage{13}
+  \item {bitmap\_t}, \hyperpage{13}
+    \subitem {bitmap}, \hyperpage{13}
+    \subitem {h}, \hyperpage{13}
+    \subitem {sh1106\_graphics.c}, \hyperpage{90}
+    \subitem {w}, \hyperpage{14}
+    \subitem {x}, \hyperpage{14}
+    \subitem {y}, \hyperpage{14}
+  \item {bits}
+    \subitem {MCP23017\_DEFVAL\_t}, \hyperpage{17}
+    \subitem {MCP23017\_GPINTEN\_t}, \hyperpage{19}
+    \subitem {MCP23017\_GPIO\_t}, \hyperpage{21}
+    \subitem {MCP23017\_GPPU\_t}, \hyperpage{23}
+    \subitem {MCP23017\_INTCAP\_t}, \hyperpage{26}
+    \subitem {MCP23017\_INTCON\_t}, \hyperpage{28}
+    \subitem {MCP23017\_INTF\_t}, \hyperpage{30}
+    \subitem {MCP23017\_IOCON\_t}, \hyperpage{32}
+    \subitem {MCP23017\_IODIR\_t}, \hyperpage{34}
+    \subitem {MCP23017\_IPOL\_t}, \hyperpage{36}
+    \subitem {MCP23017\_OLAT\_t}, \hyperpage{38}
+  \item {blink}
+    \subitem {display.c}, \hyperpage{72}
+  \item {buffer}
+    \subitem {sh1106\_t}, \hyperpage{42}
+  \item {bus\_meas\_evt\_queue}
+    \subitem {adc.c}, \hyperpage{55}
+  \item {BUTTON\_BACK}
+    \subitem {LVFV\_system.h}, \hyperpage{173}
+  \item {BUTTON\_DOWN}
+    \subitem {LVFV\_system.h}, \hyperpage{173}
+  \item {button\_evt\_queue}
+    \subitem {display.c}, \hyperpage{72}
+  \item {BUTTON\_LEFT}
+    \subitem {LVFV\_system.h}, \hyperpage{173}
+  \item {BUTTON\_MENU}
+    \subitem {LVFV\_system.h}, \hyperpage{173}
+  \item {BUTTON\_OK}
+    \subitem {LVFV\_system.h}, \hyperpage{173}
+  \item {BUTTON\_RIGHT}
+    \subitem {LVFV\_system.h}, \hyperpage{173}
+  \item {BUTTON\_SAVE}
+    \subitem {LVFV\_system.h}, \hyperpage{173}
+  \item {BUTTON\_UP}
+    \subitem {LVFV\_system.h}, \hyperpage{173}
+  \item {buzzer\_evt\_queue}
+    \subitem {io\_control.c}, \hyperpage{124}
+  \item {BUZZER\_PIN}
+    \subitem {io\_control.c}, \hyperpage{114}
+  \item {BuzzerEvantPost}
+    \subitem {io\_control.c}, \hyperpage{120}
+    \subitem {io\_control.h}, \hyperpage{133}
+
+  \indexspace
+
+  \item {C:/Users/User/LVFV\_ESP32/main/adc/adc.c}, \hyperpage{49}, 
+		\hyperpage{56}
+  \item {C:/Users/User/LVFV\_ESP32/main/adc/adc.h}, \hyperpage{59}, 
+		\hyperpage{61}
+  \item {C:/Users/User/LVFV\_ESP32/main/display/display.c}, 
+		\hyperpage{61}, \hyperpage{73}
+  \item {C:/Users/User/LVFV\_ESP32/main/display/display.h}, 
+		\hyperpage{84}, \hyperpage{88}
+  \item {C:/Users/User/LVFV\_ESP32/main/display/sh1106\_graphics.c}, 
+		\hyperpage{88}, \hyperpage{99}
+  \item {C:/Users/User/LVFV\_ESP32/main/display/sh1106\_graphics.h}, 
+		\hyperpage{104}, \hyperpage{107}
+  \item {C:/Users/User/LVFV\_ESP32/main/display/sh1106\_i2c.c}, 
+		\hyperpage{107}, \hyperpage{109}
+  \item {C:/Users/User/LVFV\_ESP32/main/display/sh1106\_i2c.h}, 
+		\hyperpage{110, 111}
+  \item {C:/Users/User/LVFV\_ESP32/main/io\_control/io\_control.c}, 
+		\hyperpage{112}, \hyperpage{125}
+  \item {C:/Users/User/LVFV\_ESP32/main/io\_control/io\_control.h}, 
+		\hyperpage{132}, \hyperpage{135}
+  \item {C:/Users/User/LVFV\_ESP32/main/io\_control/MCP23017.c}, 
+		\hyperpage{136}, \hyperpage{145}
+  \item {C:/Users/User/LVFV\_ESP32/main/io\_control/MCP23017.h}, 
+		\hyperpage{149}, \hyperpage{153}
+  \item {C:/Users/User/LVFV\_ESP32/main/io\_control/mcp23017\_defs.h}, 
+		\hyperpage{153}, \hyperpage{164}
+  \item {C:/Users/User/LVFV\_ESP32/main/LVFV\_system.h}, 
+		\hyperpage{167}, \hyperpage{173}
+  \item {C:/Users/User/LVFV\_ESP32/main/main.c}, \hyperpage{175}, 
+		\hyperpage{177}
+  \item {C:/Users/User/LVFV\_ESP32/main/nvs/nvs.c}, \hyperpage{178}, 
+		\hyperpage{187}
+  \item {C:/Users/User/LVFV\_ESP32/main/nvs/nvs.h}, \hyperpage{191}, 
+		\hyperpage{194}
+  \item {C:/Users/User/LVFV\_ESP32/main/rtc/rtc.c}, \hyperpage{194}, 
+		\hyperpage{199}
+  \item {C:/Users/User/LVFV\_ESP32/main/rtc/rtc.h}, \hyperpage{201}, 
+		\hyperpage{203}
+  \item {C:/Users/User/LVFV\_ESP32/main/system/sysAdmin.c}, 
+		\hyperpage{204}, \hyperpage{211}
+  \item {C:/Users/User/LVFV\_ESP32/main/system/sysAdmin.h}, 
+		\hyperpage{213}, \hyperpage{218}
+  \item {C:/Users/User/LVFV\_ESP32/main/system/sysControl.c}, 
+		\hyperpage{218}, \hyperpage{223}
+  \item {C:/Users/User/LVFV\_ESP32/main/system/sysControl.h}, 
+		\hyperpage{227}, \hyperpage{231}
+  \item {C:/Users/User/LVFV\_ESP32/main/wifi/form.c}, 
+		\hyperpage{231, 232}
+  \item {C:/Users/User/LVFV\_ESP32/main/wifi/form.h}, \hyperpage{234}
+  \item {C:/Users/User/LVFV\_ESP32/main/wifi/wifi.c}, \hyperpage{234}, 
+		\hyperpage{237}
+  \item {C:/Users/User/LVFV\_ESP32/main/wifi/wifi.h}, \hyperpage{241}
+  \item {calibration\_3V3\_source}
+    \subitem {adc.c}, \hyperpage{55}
+  \item {calibration\_3V3\_source\_ok}
+    \subitem {adc.c}, \hyperpage{55}
+  \item {calibration\_5V\_source}
+    \subitem {adc.c}, \hyperpage{55}
+  \item {calibration\_5V\_source\_ok}
+    \subitem {adc.c}, \hyperpage{55}
+  \item {calibration\_bus\_voltage}
+    \subitem {adc.c}, \hyperpage{55}
+  \item {calibration\_bus\_voltage\_ok}
+    \subitem {adc.c}, \hyperpage{55}
+  \item {calibration\_current}
+    \subitem {adc.c}, \hyperpage{56}
+  \item {calibration\_current\_ok}
+    \subitem {adc.c}, \hyperpage{56}
+  \item {change\_frequency}
+    \subitem {sysAdmin.c}, \hyperpage{205}
+    \subitem {sysAdmin.h}, \hyperpage{214}
+  \item {CMD\_CONTROL}
+    \subitem {sh1106\_i2c.c}, \hyperpage{108}
+
+  \indexspace
+
+  \item {DATA\_CONTROL}
+    \subitem {sh1106\_i2c.c}, \hyperpage{108}
+  \item {DEF0}
+    \subitem {MCP23017\_DEFVAL\_t}, \hyperpage{17}
+  \item {DEF1}
+    \subitem {MCP23017\_DEFVAL\_t}, \hyperpage{17}
+  \item {DEF2}
+    \subitem {MCP23017\_DEFVAL\_t}, \hyperpage{17}
+  \item {DEF3}
+    \subitem {MCP23017\_DEFVAL\_t}, \hyperpage{18}
+  \item {DEF4}
+    \subitem {MCP23017\_DEFVAL\_t}, \hyperpage{18}
+  \item {DEF5}
+    \subitem {MCP23017\_DEFVAL\_t}, \hyperpage{18}
+  \item {DEF6}
+    \subitem {MCP23017\_DEFVAL\_t}, \hyperpage{18}
+  \item {DEF7}
+    \subitem {MCP23017\_DEFVAL\_t}, \hyperpage{18}
+  \item {desaccelerating}
+    \subitem {sysAdmin.c}, \hyperpage{206}
+  \item {desaccelerating\_handle}
+    \subitem {sysAdmin.c}, \hyperpage{210}
+  \item {desacceleration}
+    \subitem {frequency\_settings\_t}, \hyperpage{16}
+    \subitem {system\_status\_t}, \hyperpage{44}
+  \item {display.c}
+    \subitem {blink}, \hyperpage{72}
+    \subitem {button\_evt\_queue}, \hyperpage{72}
+    \subitem {DisplayEventPost}, \hyperpage{67}
+    \subitem {EDIT\_ACCELERATION\_INDX}, \hyperpage{63}
+    \subitem {EDIT\_DESACCELERATION\_INDX}, \hyperpage{63}
+    \subitem {EDIT\_FREQUENCY\_INDX}, \hyperpage{64}
+    \subitem {EDIT\_HFIN\_LINE\_INDX}, \hyperpage{64}
+    \subitem {EDIT\_HINI\_LINE\_INDX}, \hyperpage{64}
+    \subitem {EDIT\_IBUS\_LINE\_INDX}, \hyperpage{64}
+    \subitem {EDIT\_INPUT\_VARIATION\_INDX}, \hyperpage{64}
+    \subitem {EDIT\_TIME\_LINE\_INDX}, \hyperpage{64}
+    \subitem {EDIT\_VBUS\_LINE\_INDX}, \hyperpage{64}
+    \subitem {FREC\_LINE\_INDX}, \hyperpage{64}
+    \subitem {FREQUENCY\_CUADRATIC\_VARIABLE}, \hyperpage{65}
+    \subitem {FREQUENCY\_LINEAR\_VARIABLE}, \hyperpage{65}
+    \subitem {get\_system\_acceleration}, \hyperpage{67}
+    \subitem {get\_system\_desacceleration}, \hyperpage{67}
+    \subitem {get\_system\_frequency}, \hyperpage{67}
+    \subitem {HFIN\_LINE\_INDX}, \hyperpage{65}
+    \subitem {HINI\_LINE\_INDX}, \hyperpage{65}
+    \subitem {I2C\_DISPLAY\_MASTER\_NUM}, \hyperpage{65}
+    \subitem {I2C\_MASTER\_FREQ\_HZ}, \hyperpage{65}
+    \subitem {i2c\_master\_init}, \hyperpage{68}
+    \subitem {I2C\_MASTER\_RX\_BUF\_DISABLE}, \hyperpage{65}
+    \subitem {I2C\_MASTER\_SCL\_IO}, \hyperpage{65}
+    \subitem {I2C\_MASTER\_SDA\_IO}, \hyperpage{66}
+    \subitem {I2C\_MASTER\_TX\_BUF\_DISABLE}, \hyperpage{66}
+    \subitem {IBUS\_LINE\_INDX}, \hyperpage{66}
+    \subitem {init\_seq}, \hyperpage{72}
+    \subitem {oled}, \hyperpage{72}
+    \subitem {screen\_displayed}, \hyperpage{72}
+    \subitem {SCREEN\_FREQUENCY\_EDIT}, \hyperpage{67}
+    \subitem {SCREEN\_MAIN}, \hyperpage{66}
+    \subitem {SCREEN\_SECURITY\_EDIT}, \hyperpage{66}
+    \subitem {SCREEN\_SELECT\_VARIABLE}, \hyperpage{66}
+    \subitem {screen\_selected\_e}, \hyperpage{66}
+    \subitem {SCREEN\_TIME\_EDIT}, \hyperpage{66}
+    \subitem {sh1106\_clear\_buffer}, \hyperpage{68}
+    \subitem {sh1106\_frequency\_edit\_variables}, \hyperpage{68}
+    \subitem {sh1106\_init}, \hyperpage{68}
+    \subitem {sh1106\_main\_screen}, \hyperpage{68}
+    \subitem {sh1106\_print\_emergency}, \hyperpage{69}
+    \subitem {sh1106\_print\_frame}, \hyperpage{69}
+    \subitem {sh1106\_refresh}, \hyperpage{69}
+    \subitem {sh1106\_security\_edit\_variables}, \hyperpage{69}
+    \subitem {sh1106\_select\_edit\_variables}, \hyperpage{70}
+    \subitem {sh1106\_splash\_screen}, \hyperpage{70}
+    \subitem {sh1106\_time\_edit\_variables}, \hyperpage{70}
+    \subitem {system\_frequency\_settings}, \hyperpage{72}
+    \subitem {system\_seccurity\_settings}, \hyperpage{73}
+    \subitem {system\_time\_settings}, \hyperpage{73}
+    \subitem {system\_variables\_save}, \hyperpage{70}
+    \subitem {TAG}, \hyperpage{73}
+    \subitem {task\_display}, \hyperpage{71}
+    \subitem {VBUS\_LINE\_INDX}, \hyperpage{66}
+  \item {display.h}
+    \subitem {DisplayEventPost}, \hyperpage{85}
+    \subitem {get\_system\_acceleration}, \hyperpage{86}
+    \subitem {get\_system\_desacceleration}, \hyperpage{86}
+    \subitem {get\_system\_frequency}, \hyperpage{86}
+    \subitem {sh1106\_init}, \hyperpage{86}
+    \subitem {system\_variables\_save}, \hyperpage{87}
+    \subitem {task\_display}, \hyperpage{87}
+  \item {DisplayEventPost}
+    \subitem {display.c}, \hyperpage{67}
+    \subitem {display.h}, \hyperpage{85}
+  \item {DISSLW}
+    \subitem {MCP23017\_IOCON\_t}, \hyperpage{32}
+  \item {DUTY\_MAX\_PCT}
+    \subitem {io\_control.c}, \hyperpage{114}
+  \item {DUTY\_MIN\_PCT}
+    \subitem {io\_control.c}, \hyperpage{114}
+
+  \indexspace
+
+  \item {edit}
+    \subitem {frequency\_settings\_SH1106\_t}, \hyperpage{15}
+    \subitem {seccurity\_settings\_SH1106\_t}, \hyperpage{40}
+    \subitem {time\_settings\_SH1106\_t}, \hyperpage{46}
+  \item {EDIT\_ACCELERATION\_INDX}
+    \subitem {display.c}, \hyperpage{63}
+  \item {EDIT\_DESACCELERATION\_INDX}
+    \subitem {display.c}, \hyperpage{63}
+  \item {edit\_flag}
+    \subitem {frequency\_settings\_SH1106\_t}, \hyperpage{15}
+    \subitem {seccurity\_settings\_SH1106\_t}, \hyperpage{40}
+    \subitem {time\_settings\_SH1106\_t}, \hyperpage{46}
+  \item {EDIT\_FREQUENCY\_INDX}
+    \subitem {display.c}, \hyperpage{64}
+  \item {EDIT\_HFIN\_LINE\_INDX}
+    \subitem {display.c}, \hyperpage{64}
+  \item {EDIT\_HINI\_LINE\_INDX}
+    \subitem {display.c}, \hyperpage{64}
+  \item {EDIT\_IBUS\_LINE\_INDX}
+    \subitem {display.c}, \hyperpage{64}
+  \item {EDIT\_INPUT\_VARIATION\_INDX}
+    \subitem {display.c}, \hyperpage{64}
+  \item {EDIT\_TIME\_LINE\_INDX}
+    \subitem {display.c}, \hyperpage{64}
+  \item {edit\_variable}
+    \subitem {frequency\_settings\_SH1106\_t}, \hyperpage{15}
+    \subitem {seccurity\_settings\_SH1106\_t}, \hyperpage{41}
+    \subitem {time\_settings\_SH1106\_t}, \hyperpage{46}
+  \item {EDIT\_VBUS\_LINE\_INDX}
+    \subitem {display.c}, \hyperpage{64}
+  \item {EMERGENCI\_STOP\_PRESSED}
+    \subitem {LVFV\_system.h}, \hyperpage{173}
+  \item {EMERGENCI\_STOP\_RELEASED}
+    \subitem {LVFV\_system.h}, \hyperpage{173}
+  \item {engine\_emergency\_stop}
+    \subitem {sysAdmin.c}, \hyperpage{206}
+    \subitem {sysAdmin.h}, \hyperpage{215}
+  \item {engine\_emergency\_stop\_release}
+    \subitem {sysAdmin.c}, \hyperpage{206}
+    \subitem {sysAdmin.h}, \hyperpage{215}
+  \item {engine\_start}
+    \subitem {sysAdmin.c}, \hyperpage{206}
+    \subitem {sysAdmin.h}, \hyperpage{215}
+  \item {engine\_stop}
+    \subitem {sysAdmin.c}, \hyperpage{207}
+    \subitem {sysAdmin.h}, \hyperpage{215}
+
+  \indexspace
+
+  \item {fail\_bmp}
+    \subitem {sh1106\_graphics.c}, \hyperpage{92}
+  \item {fifth}
+    \subitem {LVFV\_system.h}, \hyperpage{171}
+  \item {first}
+    \subitem {LVFV\_system.h}, \hyperpage{171}
+  \item {font5x7\_close\_excl}
+    \subitem {sh1106\_graphics.c}, \hyperpage{92}
+  \item {font5x7\_close\_quest}
+    \subitem {sh1106\_graphics.c}, \hyperpage{92}
+  \item {font5x7\_comma}
+    \subitem {sh1106\_graphics.c}, \hyperpage{92}
+  \item {font5x7\_dot}
+    \subitem {sh1106\_graphics.c}, \hyperpage{92}
+  \item {font5x7\_double\_dot}
+    \subitem {sh1106\_graphics.c}, \hyperpage{92}
+  \item {font5x7\_minus}
+    \subitem {sh1106\_graphics.c}, \hyperpage{93}
+  \item {font5x7\_rowmajor}
+    \subitem {sh1106\_graphics.c}, \hyperpage{93}
+  \item {font5x7\_rowminor}
+    \subitem {sh1106\_graphics.c}, \hyperpage{93}
+  \item {font5x7\_rownumber}
+    \subitem {sh1106\_graphics.c}, \hyperpage{94}
+  \item {font5x7\_space}
+    \subitem {sh1106\_graphics.c}, \hyperpage{95}
+  \item {font8x14\_close\_excl}
+    \subitem {sh1106\_graphics.c}, \hyperpage{95}
+  \item {font8x14\_close\_quest}
+    \subitem {sh1106\_graphics.c}, \hyperpage{95}
+  \item {font8x14\_comma}
+    \subitem {sh1106\_graphics.c}, \hyperpage{95}
+  \item {font8x14\_dot}
+    \subitem {sh1106\_graphics.c}, \hyperpage{95}
+  \item {font8x14\_double\_dot}
+    \subitem {sh1106\_graphics.c}, \hyperpage{95}
+  \item {font8x14\_minus}
+    \subitem {sh1106\_graphics.c}, \hyperpage{96}
+  \item {font8x14\_rowmajor}
+    \subitem {sh1106\_graphics.c}, \hyperpage{96}
+  \item {font8x14\_rowminor}
+    \subitem {sh1106\_graphics.c}, \hyperpage{96}
+  \item {font8x14\_rownumber}
+    \subitem {sh1106\_graphics.c}, \hyperpage{97}
+  \item {font8x14\_space}
+    \subitem {sh1106\_graphics.c}, \hyperpage{98}
+  \item {form.c}
+    \subitem {HTML\_FORM}, \hyperpage{232}
+  \item {form.h}
+    \subitem {HTML\_FORM}, \hyperpage{234}
+  \item {fourth}
+    \subitem {LVFV\_system.h}, \hyperpage{171}
+  \item {FREC\_LINE\_INDX}
+    \subitem {display.c}, \hyperpage{64}
+  \item {freq\_0\_10V\_output}
+    \subitem {io\_control.c}, \hyperpage{121}
+  \item {freq\_regime}
+    \subitem {frequency\_settings\_t}, \hyperpage{16}
+  \item {FREQ\_SEL\_1\_PIN}
+    \subitem {io\_control.c}, \hyperpage{114}
+  \item {FREQ\_SEL\_2\_PIN}
+    \subitem {io\_control.c}, \hyperpage{115}
+  \item {FREQ\_SEL\_3\_PIN}
+    \subitem {io\_control.c}, \hyperpage{115}
+  \item {FREQ\_SEL\_MASK}
+    \subitem {io\_control.c}, \hyperpage{115}
+  \item {frequency}
+    \subitem {system\_status\_t}, \hyperpage{45}
+  \item {FREQUENCY\_CUADRATIC\_VARIABLE}
+    \subitem {display.c}, \hyperpage{65}
+  \item {frequency\_destiny}
+    \subitem {system\_status\_t}, \hyperpage{45}
+  \item {FREQUENCY\_LINEAR\_VARIABLE}
+    \subitem {display.c}, \hyperpage{65}
+  \item {frequency\_settings}
+    \subitem {frequency\_settings\_SH1106\_t}, \hyperpage{15}
+  \item {frequency\_settings\_SH1106\_t}, \hyperpage{14}
+    \subitem {edit}, \hyperpage{15}
+    \subitem {edit\_flag}, \hyperpage{15}
+    \subitem {edit\_variable}, \hyperpage{15}
+    \subitem {frequency\_settings}, \hyperpage{15}
+    \subitem {LVFV\_system.h}, \hyperpage{170}
+    \subitem {multiplier}, \hyperpage{15}
+  \item {frequency\_settings\_t}, \hyperpage{15}
+    \subitem {acceleration}, \hyperpage{16}
+    \subitem {desacceleration}, \hyperpage{16}
+    \subitem {freq\_regime}, \hyperpage{16}
+    \subitem {input\_variable}, \hyperpage{16}
+    \subitem {LVFV\_system.h}, \hyperpage{170}
+  \item {frequency\_table}
+    \subitem {sysAdmin.c}, \hyperpage{210}
+
+  \indexspace
+
+  \item {get\_param\_value}
+    \subitem {wifi.c}, \hyperpage{235}
+  \item {get\_status}
+    \subitem {sysAdmin.c}, \hyperpage{207}
+    \subitem {sysAdmin.h}, \hyperpage{216}
+  \item {get\_system\_acceleration}
+    \subitem {display.c}, \hyperpage{67}
+    \subitem {display.h}, \hyperpage{86}
+  \item {get\_system\_desacceleration}
+    \subitem {display.c}, \hyperpage{67}
+    \subitem {display.h}, \hyperpage{86}
+  \item {get\_system\_frequency}
+    \subitem {display.c}, \hyperpage{67}
+    \subitem {display.h}, \hyperpage{86}
+  \item {getTime}
+    \subitem {rtc.c}, \hyperpage{196}
+    \subitem {rtc.h}, \hyperpage{202}
+  \item {getValue}
+    \subitem {spi\_cmd\_item\_t}, \hyperpage{43}
+  \item {GP0}
+    \subitem {MCP23017\_GPIO\_t}, \hyperpage{21}
+  \item {GP1}
+    \subitem {MCP23017\_GPIO\_t}, \hyperpage{22}
+  \item {GP2}
+    \subitem {MCP23017\_GPIO\_t}, \hyperpage{22}
+  \item {GP3}
+    \subitem {MCP23017\_GPIO\_t}, \hyperpage{22}
+  \item {GP4}
+    \subitem {MCP23017\_GPIO\_t}, \hyperpage{22}
+  \item {GP5}
+    \subitem {MCP23017\_GPIO\_t}, \hyperpage{22}
+  \item {GP6}
+    \subitem {MCP23017\_GPIO\_t}, \hyperpage{22}
+  \item {GP7}
+    \subitem {MCP23017\_GPIO\_t}, \hyperpage{23}
+  \item {GPINT0}
+    \subitem {MCP23017\_GPINTEN\_t}, \hyperpage{19}
+  \item {GPINT1}
+    \subitem {MCP23017\_GPINTEN\_t}, \hyperpage{19}
+  \item {GPINT2}
+    \subitem {MCP23017\_GPINTEN\_t}, \hyperpage{20}
+  \item {GPINT3}
+    \subitem {MCP23017\_GPINTEN\_t}, \hyperpage{20}
+  \item {GPINT4}
+    \subitem {MCP23017\_GPINTEN\_t}, \hyperpage{20}
+  \item {GPINT5}
+    \subitem {MCP23017\_GPINTEN\_t}, \hyperpage{20}
+  \item {GPINT6}
+    \subitem {MCP23017\_GPINTEN\_t}, \hyperpage{20}
+  \item {GPINT7}
+    \subitem {MCP23017\_GPINTEN\_t}, \hyperpage{20}
+  \item {GPIO\_evt\_queue}
+    \subitem {io\_control.c}, \hyperpage{124}
+  \item {gpio\_init\_interrupts}
+    \subitem {io\_control.c}, \hyperpage{121}
+  \item {GPIO\_interrupt\_attendance\_task}
+    \subitem {io\_control.c}, \hyperpage{121}
+    \subitem {io\_control.h}, \hyperpage{133}
+  \item {gpio\_isr\_handler}
+    \subitem {io\_control.c}, \hyperpage{122}
+
+  \indexspace
+
+  \item {h}
+    \subitem {bitmap\_t}, \hyperpage{13}
+  \item {height}
+    \subitem {sh1106\_t}, \hyperpage{42}
+  \item {hex2int}
+    \subitem {wifi.c}, \hyperpage{235}
+  \item {HFIN\_LINE\_INDX}
+    \subitem {display.c}, \hyperpage{65}
+  \item {HINI\_LINE\_INDX}
+    \subitem {display.c}, \hyperpage{65}
+  \item {HTML\_FORM}
+    \subitem {form.c}, \hyperpage{232}
+    \subitem {form.h}, \hyperpage{234}
+
+  \indexspace
+
+  \item {I2C\_DISPLAY}
+    \subitem {sh1106\_i2c.c}, \hyperpage{108}
+  \item {I2C\_DISPLAY\_MASTER\_NUM}
+    \subitem {display.c}, \hyperpage{65}
+  \item {I2C\_IO\_MASTER\_NUM}
+    \subitem {MCP23017.c}, \hyperpage{137}
+  \item {i2c\_is\_hardware\_free}
+    \subitem {MCP23017.c}, \hyperpage{139}
+  \item {I2C\_MASTER\_FREQ\_HZ}
+    \subitem {display.c}, \hyperpage{65}
+    \subitem {MCP23017.c}, \hyperpage{137}
+  \item {i2c\_master\_init}
+    \subitem {display.c}, \hyperpage{68}
+    \subitem {MCP23017.c}, \hyperpage{139}
+  \item {I2C\_MASTER\_RX\_BUF\_DISABLE}
+    \subitem {display.c}, \hyperpage{65}
+    \subitem {MCP23017.c}, \hyperpage{138}
+  \item {I2C\_MASTER\_SCL\_IO}
+    \subitem {display.c}, \hyperpage{65}
+    \subitem {MCP23017.c}, \hyperpage{138}
+  \item {I2C\_MASTER\_SDA\_IO}
+    \subitem {display.c}, \hyperpage{66}
+    \subitem {MCP23017.c}, \hyperpage{138}
+  \item {I2C\_MASTER\_TIMEOUT\_MS}
+    \subitem {MCP23017.c}, \hyperpage{138}
+  \item {I2C\_MASTER\_TX\_BUF\_DISABLE}
+    \subitem {display.c}, \hyperpage{66}
+    \subitem {MCP23017.c}, \hyperpage{138}
+  \item {i2c\_release\_hardware}
+    \subitem {MCP23017.c}, \hyperpage{139}
+  \item {IBUS\_LINE\_INDX}
+    \subitem {display.c}, \hyperpage{66}
+  \item {ibus\_max}
+    \subitem {seccurity\_settings\_t}, \hyperpage{42}
+    \subitem {system\_status\_t}, \hyperpage{45}
+  \item {ICP0}
+    \subitem {MCP23017\_INTCAP\_t}, \hyperpage{26}
+  \item {ICP1}
+    \subitem {MCP23017\_INTCAP\_t}, \hyperpage{26}
+  \item {ICP2}
+    \subitem {MCP23017\_INTCAP\_t}, \hyperpage{26}
+  \item {ICP3}
+    \subitem {MCP23017\_INTCAP\_t}, \hyperpage{26}
+  \item {ICP4}
+    \subitem {MCP23017\_INTCAP\_t}, \hyperpage{26}
+  \item {ICP5}
+    \subitem {MCP23017\_INTCAP\_t}, \hyperpage{27}
+  \item {ICP6}
+    \subitem {MCP23017\_INTCAP\_t}, \hyperpage{27}
+  \item {ICP7}
+    \subitem {MCP23017\_INTCAP\_t}, \hyperpage{27}
+  \item {init\_seq}
+    \subitem {display.c}, \hyperpage{72}
+  \item {initRTC}
+    \subitem {rtc.c}, \hyperpage{196}
+    \subitem {rtc.h}, \hyperpage{202}
+  \item {input\_variable}
+    \subitem {frequency\_settings\_t}, \hyperpage{16}
+  \item {inputs\_status}
+    \subitem {system\_status\_t}, \hyperpage{45}
+  \item {INT0}
+    \subitem {MCP23017\_INTF\_t}, \hyperpage{30}
+  \item {INT1}
+    \subitem {MCP23017\_INTF\_t}, \hyperpage{30}
+  \item {INT2}
+    \subitem {MCP23017\_INTF\_t}, \hyperpage{30}
+  \item {INT3}
+    \subitem {MCP23017\_INTF\_t}, \hyperpage{30}
+  \item {INT4}
+    \subitem {MCP23017\_INTF\_t}, \hyperpage{30}
+  \item {INT5}
+    \subitem {MCP23017\_INTF\_t}, \hyperpage{31}
+  \item {INT6}
+    \subitem {MCP23017\_INTF\_t}, \hyperpage{31}
+  \item {INT7}
+    \subitem {MCP23017\_INTF\_t}, \hyperpage{31}
+  \item {INT\_A\_PIN}
+    \subitem {io\_control.c}, \hyperpage{115}
+  \item {INT\_B\_PIN}
+    \subitem {io\_control.c}, \hyperpage{115}
+  \item {INTPOL}
+    \subitem {MCP23017\_IOCON\_t}, \hyperpage{32}
+  \item {IO0}
+    \subitem {MCP23017\_IODIR\_t}, \hyperpage{34}
+  \item {IO1}
+    \subitem {MCP23017\_IODIR\_t}, \hyperpage{34}
+  \item {IO2}
+    \subitem {MCP23017\_IODIR\_t}, \hyperpage{34}
+  \item {IO3}
+    \subitem {MCP23017\_IODIR\_t}, \hyperpage{34}
+  \item {IO4}
+    \subitem {MCP23017\_IODIR\_t}, \hyperpage{34}
+  \item {IO5}
+    \subitem {MCP23017\_IODIR\_t}, \hyperpage{35}
+  \item {IO6}
+    \subitem {MCP23017\_IODIR\_t}, \hyperpage{35}
+  \item {IO7}
+    \subitem {MCP23017\_IODIR\_t}, \hyperpage{35}
+  \item {io\_control.c}
+    \subitem {buzzer\_evt\_queue}, \hyperpage{124}
+    \subitem {BUZZER\_PIN}, \hyperpage{114}
+    \subitem {BuzzerEvantPost}, \hyperpage{120}
+    \subitem {DUTY\_MAX\_PCT}, \hyperpage{114}
+    \subitem {DUTY\_MIN\_PCT}, \hyperpage{114}
+    \subitem {freq\_0\_10V\_output}, \hyperpage{121}
+    \subitem {FREQ\_SEL\_1\_PIN}, \hyperpage{114}
+    \subitem {FREQ\_SEL\_2\_PIN}, \hyperpage{115}
+    \subitem {FREQ\_SEL\_3\_PIN}, \hyperpage{115}
+    \subitem {FREQ\_SEL\_MASK}, \hyperpage{115}
+    \subitem {GPIO\_evt\_queue}, \hyperpage{124}
+    \subitem {gpio\_init\_interrupts}, \hyperpage{121}
+    \subitem {GPIO\_interrupt\_attendance\_task}, \hyperpage{121}
+    \subitem {gpio\_isr\_handler}, \hyperpage{122}
+    \subitem {INT\_A\_PIN}, \hyperpage{115}
+    \subitem {INT\_B\_PIN}, \hyperpage{115}
+    \subitem {MATRIX\_SW1}, \hyperpage{115}
+    \subitem {MATRIX\_SW2}, \hyperpage{116}
+    \subitem {MATRIX\_SW3}, \hyperpage{116}
+    \subitem {MATRIX\_SW4}, \hyperpage{116}
+    \subitem {MATRIX\_SW5}, \hyperpage{116}
+    \subitem {MATRIX\_SW6}, \hyperpage{116}
+    \subitem {MATRIX\_SW7}, \hyperpage{116}
+    \subitem {MATRIX\_SW8}, \hyperpage{117}
+    \subitem {MCP23017\_buzzer\_control}, \hyperpage{122}
+    \subitem {MCP23017\_keyboard\_control}, \hyperpage{122}
+    \subitem {MCP23017\_relay\_control}, \hyperpage{122}
+    \subitem {mcp\_porta}, \hyperpage{124}
+    \subitem {mcp\_portb}, \hyperpage{125}
+    \subitem {PWM\_CHANNEL}, \hyperpage{117}
+    \subitem {PWM\_FREQ\_HZ}, \hyperpage{117}
+    \subitem {PWM\_GPIO}, \hyperpage{117}
+    \subitem {PWM\_MODE}, \hyperpage{117}
+    \subitem {PWM\_RES}, \hyperpage{117}
+    \subitem {PWM\_STEP\_MS}, \hyperpage{118}
+    \subitem {PWM\_TIMER}, \hyperpage{118}
+    \subitem {relay\_evt\_queue}, \hyperpage{125}
+    \subitem {RELAY\_PIN}, \hyperpage{118}
+    \subitem {RelayEvantPost}, \hyperpage{123}
+    \subitem {set\_freq\_output}, \hyperpage{124}
+    \subitem {START\_BUTTON\_PIN}, \hyperpage{118}
+    \subitem {STOP\_BUTTON\_PIN}, \hyperpage{118}
+    \subitem {STOP\_PIN}, \hyperpage{118}
+    \subitem {STOP\_SW\_MASK}, \hyperpage{119}
+    \subitem {SWITCH\_BUTTON\_BACK}, \hyperpage{119}
+    \subitem {SWITCH\_BUTTON\_DOWN}, \hyperpage{119}
+    \subitem {SWITCH\_BUTTON\_LEFT}, \hyperpage{119}
+    \subitem {SWITCH\_BUTTON\_MENU}, \hyperpage{119}
+    \subitem {SWITCH\_BUTTON\_OK}, \hyperpage{119}
+    \subitem {SWITCH\_BUTTON\_RIGHT}, \hyperpage{120}
+    \subitem {SWITCH\_BUTTON\_SAVE}, \hyperpage{120}
+    \subitem {SWITCH\_BUTTON\_UP}, \hyperpage{120}
+    \subitem {TAG}, \hyperpage{125}
+    \subitem {TERMO\_SW\_MASK}, \hyperpage{120}
+    \subitem {TERMO\_SW\_PIN}, \hyperpage{120}
+  \item {io\_control.h}
+    \subitem {BuzzerEvantPost}, \hyperpage{133}
+    \subitem {GPIO\_interrupt\_attendance\_task}, \hyperpage{133}
+    \subitem {RelayEvantPost}, \hyperpage{133}
+    \subitem {set\_freq\_output}, \hyperpage{135}
+  \item {IOC0}
+    \subitem {MCP23017\_INTCON\_t}, \hyperpage{28}
+  \item {IOC1}
+    \subitem {MCP23017\_INTCON\_t}, \hyperpage{28}
+  \item {IOC2}
+    \subitem {MCP23017\_INTCON\_t}, \hyperpage{28}
+  \item {IOC3}
+    \subitem {MCP23017\_INTCON\_t}, \hyperpage{28}
+  \item {IOC4}
+    \subitem {MCP23017\_INTCON\_t}, \hyperpage{28}
+  \item {IOC5}
+    \subitem {MCP23017\_INTCON\_t}, \hyperpage{29}
+  \item {IOC6}
+    \subitem {MCP23017\_INTCON\_t}, \hyperpage{29}
+  \item {IOC7}
+    \subitem {MCP23017\_INTCON\_t}, \hyperpage{29}
+  \item {IP0}
+    \subitem {MCP23017\_IPOL\_t}, \hyperpage{36}
+  \item {IP1}
+    \subitem {MCP23017\_IPOL\_t}, \hyperpage{36}
+  \item {IP2}
+    \subitem {MCP23017\_IPOL\_t}, \hyperpage{36}
+  \item {IP3}
+    \subitem {MCP23017\_IPOL\_t}, \hyperpage{36}
+  \item {IP4}
+    \subitem {MCP23017\_IPOL\_t}, \hyperpage{36}
+  \item {IP5}
+    \subitem {MCP23017\_IPOL\_t}, \hyperpage{37}
+  \item {IP6}
+    \subitem {MCP23017\_IPOL\_t}, \hyperpage{37}
+  \item {IP7}
+    \subitem {MCP23017\_IPOL\_t}, \hyperpage{37}
+
+  \indexspace
+
+  \item {line\_bmp}
+    \subitem {sh1106\_graphics.c}, \hyperpage{98}
+  \item {LINE\_INCREMENT}
+    \subitem {LVFV\_system.h}, \hyperpage{168}
+  \item {Lista de tareas pendientes}, \hyperpage{1}
+  \item {load\_16}
+    \subitem {nvs.c}, \hyperpage{183}
+  \item {load\_acceleration}
+    \subitem {nvs.c}, \hyperpage{179}
+  \item {load\_desacceleration}
+    \subitem {nvs.c}, \hyperpage{179}
+  \item {load\_frequency}
+    \subitem {nvs.c}, \hyperpage{179}
+  \item {load\_hour\_fin}
+    \subitem {nvs.c}, \hyperpage{179}
+  \item {load\_hour\_ini}
+    \subitem {nvs.c}, \hyperpage{180}
+  \item {load\_ibus\_max}
+    \subitem {nvs.c}, \hyperpage{180}
+  \item {load\_input\_variable}
+    \subitem {nvs.c}, \hyperpage{180}
+  \item {load\_min\_fin}
+    \subitem {nvs.c}, \hyperpage{180}
+  \item {load\_min\_ini}
+    \subitem {nvs.c}, \hyperpage{180}
+  \item {load\_variables}
+    \subitem {nvs.c}, \hyperpage{184}
+    \subitem {nvs.h}, \hyperpage{192}
+  \item {load\_vbus\_min}
+    \subitem {nvs.c}, \hyperpage{181}
+  \item {logo16\_utn\_bmp}
+    \subitem {sh1106\_graphics.c}, \hyperpage{98}
+  \item {LVFV\_system.h}
+    \subitem {BUTTON\_BACK}, \hyperpage{173}
+    \subitem {BUTTON\_DOWN}, \hyperpage{173}
+    \subitem {BUTTON\_LEFT}, \hyperpage{173}
+    \subitem {BUTTON\_MENU}, \hyperpage{173}
+    \subitem {BUTTON\_OK}, \hyperpage{173}
+    \subitem {BUTTON\_RIGHT}, \hyperpage{173}
+    \subitem {BUTTON\_SAVE}, \hyperpage{173}
+    \subitem {BUTTON\_UP}, \hyperpage{173}
+    \subitem {EMERGENCI\_STOP\_PRESSED}, \hyperpage{173}
+    \subitem {EMERGENCI\_STOP\_RELEASED}, \hyperpage{173}
+    \subitem {fifth}, \hyperpage{171}
+    \subitem {first}, \hyperpage{171}
+    \subitem {fourth}, \hyperpage{171}
+    \subitem {frequency\_settings\_SH1106\_t}, \hyperpage{170}
+    \subitem {frequency\_settings\_t}, \hyperpage{170}
+    \subitem {LINE\_INCREMENT}, \hyperpage{168}
+    \subitem {seccurity\_settings\_SH1106\_t}, \hyperpage{170}
+    \subitem {seccurity\_settings\_t}, \hyperpage{170}
+    \subitem {second}, \hyperpage{171}
+    \subitem {SECURITY\_EXCEDED}, \hyperpage{173}
+    \subitem {SECURITY\_OK}, \hyperpage{173}
+    \subitem {seventh}, \hyperpage{171}
+    \subitem {SH1106\_SIZE\_1}, \hyperpage{168}
+    \subitem {SH1106\_SIZE\_2}, \hyperpage{169}
+    \subitem {sh1106\_variable\_lines\_e}, \hyperpage{170, 171}
+    \subitem {sixth}, \hyperpage{171}
+    \subitem {SPEED\_SELECTOR\_0}, \hyperpage{173}
+    \subitem {SPEED\_SELECTOR\_1}, \hyperpage{173}
+    \subitem {SPEED\_SELECTOR\_2}, \hyperpage{173}
+    \subitem {SPEED\_SELECTOR\_3}, \hyperpage{173}
+    \subitem {SPEED\_SELECTOR\_4}, \hyperpage{173}
+    \subitem {SPEED\_SELECTOR\_5}, \hyperpage{173}
+    \subitem {SPEED\_SELECTOR\_6}, \hyperpage{173}
+    \subitem {SPEED\_SELECTOR\_7}, \hyperpage{173}
+    \subitem {SPEED\_SELECTOR\_8}, \hyperpage{173}
+    \subitem {SPEED\_SELECTOR\_9}, \hyperpage{173}
+    \subitem {START\_PRESSED}, \hyperpage{173}
+    \subitem {START\_RELEASED}, \hyperpage{173}
+    \subitem {STOP\_PRESSED}, \hyperpage{173}
+    \subitem {STOP\_RELEASED}, \hyperpage{173}
+    \subitem {SYSTEM\_ACCLE\_DESACCEL}, \hyperpage{171}
+    \subitem {SYSTEM\_BREAKING}, \hyperpage{171}
+    \subitem {SYSTEM\_EMERGENCY}, \hyperpage{171}
+    \subitem {SYSTEM\_EMERGENCY\_OK}, \hyperpage{171}
+    \subitem {SYSTEM\_EMERGENCY\_SENT}, \hyperpage{171}
+    \subitem {SYSTEM\_IDLE}, \hyperpage{171}
+    \subitem {SYSTEM\_REGIME}, \hyperpage{171}
+    \subitem {system\_status\_e}, \hyperpage{170, 171}
+    \subitem {system\_status\_t}, \hyperpage{170}
+    \subitem {systemSignal\_e}, \hyperpage{171}
+    \subitem {TERMO\_SW\_PRESSED}, \hyperpage{173}
+    \subitem {TERMO\_SW\_RELEASED}, \hyperpage{173}
+    \subitem {third}, \hyperpage{171}
+    \subitem {time\_settings\_SH1106\_t}, \hyperpage{170}
+    \subitem {time\_settings\_t}, \hyperpage{171}
+    \subitem {VARIABLE\_EIGTH}, \hyperpage{169}
+    \subitem {VARIABLE\_FIFTH}, \hyperpage{169}
+    \subitem {VARIABLE\_FIRST}, \hyperpage{169}
+    \subitem {VARIABLE\_FOURTH}, \hyperpage{169}
+    \subitem {VARIABLE\_SECOND}, \hyperpage{169}
+    \subitem {VARIABLE\_SEVENTH}, \hyperpage{169}
+    \subitem {VARIABLE\_SIXTH}, \hyperpage{169}
+    \subitem {VARIABLE\_THIRD}, \hyperpage{170}
+
+  \indexspace
+
+  \item {main.c}
+    \subitem {app\_main}, \hyperpage{176}
+    \subitem {TAG}, \hyperpage{177}
+  \item {MATRIX\_SW1}
+    \subitem {io\_control.c}, \hyperpage{115}
+  \item {MATRIX\_SW2}
+    \subitem {io\_control.c}, \hyperpage{116}
+  \item {MATRIX\_SW3}
+    \subitem {io\_control.c}, \hyperpage{116}
+  \item {MATRIX\_SW4}
+    \subitem {io\_control.c}, \hyperpage{116}
+  \item {MATRIX\_SW5}
+    \subitem {io\_control.c}, \hyperpage{116}
+  \item {MATRIX\_SW6}
+    \subitem {io\_control.c}, \hyperpage{116}
+  \item {MATRIX\_SW7}
+    \subitem {io\_control.c}, \hyperpage{116}
+  \item {MATRIX\_SW8}
+    \subitem {io\_control.c}, \hyperpage{117}
+  \item {MCP23017.c}
+    \subitem {I2C\_IO\_MASTER\_NUM}, \hyperpage{137}
+    \subitem {i2c\_is\_hardware\_free}, \hyperpage{139}
+    \subitem {I2C\_MASTER\_FREQ\_HZ}, \hyperpage{137}
+    \subitem {i2c\_master\_init}, \hyperpage{139}
+    \subitem {I2C\_MASTER\_RX\_BUF\_DISABLE}, \hyperpage{138}
+    \subitem {I2C\_MASTER\_SCL\_IO}, \hyperpage{138}
+    \subitem {I2C\_MASTER\_SDA\_IO}, \hyperpage{138}
+    \subitem {I2C\_MASTER\_TIMEOUT\_MS}, \hyperpage{138}
+    \subitem {I2C\_MASTER\_TX\_BUF\_DISABLE}, \hyperpage{138}
+    \subitem {i2c\_release\_hardware}, \hyperpage{139}
+    \subitem {MCP23017\_INIT}, \hyperpage{139}
+    \subitem {mcp\_get\_on\_interrupt\_input}, \hyperpage{140}
+    \subitem {mcp\_interrupt\_flag}, \hyperpage{140}
+    \subitem {mcp\_read\_port}, \hyperpage{142}
+    \subitem {mcp\_register\_read}, \hyperpage{142}
+    \subitem {mcp\_register\_write}, \hyperpage{143}
+    \subitem {mcp\_write\_output\_pin}, \hyperpage{143}
+    \subitem {mcp\_write\_output\_port}, \hyperpage{144}
+    \subitem {TAG}, \hyperpage{144}
+    \subitem {xI2C\_Mutex}, \hyperpage{144}
+  \item {MCP23017.h}
+    \subitem {MCP23017\_INIT}, \hyperpage{150}
+    \subitem {mcp\_get\_on\_interrupt\_input}, \hyperpage{150}
+    \subitem {mcp\_interrupt\_flag}, \hyperpage{150}
+    \subitem {mcp\_read\_port}, \hyperpage{151}
+    \subitem {mcp\_write\_output\_pin}, \hyperpage{151}
+    \subitem {mcp\_write\_output\_port}, \hyperpage{152}
+  \item {MCP23017\_buzzer\_control}
+    \subitem {io\_control.c}, \hyperpage{122}
+  \item {mcp23017\_defs.h}
+    \subitem {\_\_MCP23017\_ADDRESS\_\_}, \hyperpage{155}
+    \subitem {\_\_MCP23017\_BANK\_SEQUENTIAL\_\_}, \hyperpage{155}
+    \subitem {\_\_MCP23017\_BANK\_SPLIT\_\_}, \hyperpage{155}
+    \subitem {\_\_MCP23017\_DISSLW\_DISABLED\_\_}, \hyperpage{155}
+    \subitem {\_\_MCP23017\_DISSLW\_ENABLED\_\_}, \hyperpage{155}
+    \subitem {\_\_MCP23017\_FUNC\_MODE\_\_}, \hyperpage{155}
+    \subitem {\_\_MCP23017\_GPINTEN\_DISABLE\_\_}, \hyperpage{156}
+    \subitem {\_\_MCP23017\_GPINTEN\_ENABLE\_\_}, \hyperpage{156}
+    \subitem {\_\_MCP23017\_GPPU\_PULL\_UP\_DISABLE\_\_}, 
+		\hyperpage{156}
+    \subitem {\_\_MCP23017\_GPPU\_PULL\_UP\_ENABLE\_\_}, 
+		\hyperpage{156}
+    \subitem {\_\_MCP23017\_INTCON\_CHANGE\_\_}, \hyperpage{156}
+    \subitem {\_\_MCP23017\_INTCON\_DEFVAL\_\_}, \hyperpage{156}
+    \subitem {\_\_MCP23017\_INTERRUPT\_DISABLE\_\_}, \hyperpage{157}
+    \subitem {\_\_MCP23017\_INTERRUPT\_ENABLE\_\_}, \hyperpage{157}
+    \subitem {\_\_MCP23017\_INTPOL\_POLARITY\_HIGH\_\_}, 
+		\hyperpage{157}
+    \subitem {\_\_MCP23017\_INTPOL\_POLARITY\_LOW\_\_}, \hyperpage{157}
+    \subitem {\_\_MCP23017\_IODIR\_INPUT\_\_}, \hyperpage{157}
+    \subitem {\_\_MCP23017\_IODIR\_OUTPUT\_\_}, \hyperpage{157}
+    \subitem {\_\_MCP23017\_MIRROR\_CONNECTED\_\_}, \hyperpage{158}
+    \subitem {\_\_MCP23017\_MIRROR\_UNCONNECTED\_\_}, \hyperpage{158}
+    \subitem {\_\_MCP23017\_ODR\_ACTIVE\_DRIVER\_OUTPUT\_\_}, 
+		\hyperpage{158}
+    \subitem {\_\_MCP23017\_ODR\_OPEN\_DRAIN\_OUTPUT\_\_}, 
+		\hyperpage{158}
+    \subitem {\_\_MCP23017\_OPPOSITE\_LOGIC\_\_}, \hyperpage{158}
+    \subitem {\_\_MCP23017\_POSITIVE\_LOGIC\_\_}, \hyperpage{158}
+    \subitem {\_\_MCP23017\_READ\_OPPCODE\_\_}, \hyperpage{159}
+    \subitem {\_\_MCP23017\_READ\_\_}, \hyperpage{159}
+    \subitem {\_\_MCP23017\_SEQOP\_DISABLED\_\_}, \hyperpage{159}
+    \subitem {\_\_MCP23017\_SEQOP\_ENABLED\_\_}, \hyperpage{159}
+    \subitem {\_\_MCP23017\_WRITE\_OPPCODE\_\_}, \hyperpage{159}
+    \subitem {\_\_MCP23017\_WRITE\_\_}, \hyperpage{159}
+    \subitem {MCP23017\_DEFVALA\_REGISTER}, \hyperpage{160}
+    \subitem {MCP23017\_DEFVALB\_REGISTER}, \hyperpage{160}
+    \subitem {MCP23017\_GPINTENA\_REGISTER}, \hyperpage{160}
+    \subitem {MCP23017\_GPINTENB\_REGISTER}, \hyperpage{160}
+    \subitem {MCP23017\_GPIOA\_REGISTER}, \hyperpage{160}
+    \subitem {MCP23017\_GPIOB\_REGISTER}, \hyperpage{160}
+    \subitem {MCP23017\_GPPUA\_REGISTER}, \hyperpage{161}
+    \subitem {MCP23017\_GPPUB\_REGISTER}, \hyperpage{161}
+    \subitem {MCP23017\_INTCAPA\_REGISTER}, \hyperpage{161}
+    \subitem {MCP23017\_INTCAPB\_REGISTER}, \hyperpage{161}
+    \subitem {MCP23017\_INTCONA\_REGISTER}, \hyperpage{161}
+    \subitem {MCP23017\_INTCONB\_REGISTER}, \hyperpage{161}
+    \subitem {MCP23017\_INTFA\_REGISTER}, \hyperpage{162}
+    \subitem {MCP23017\_INTFB\_REGISTER}, \hyperpage{162}
+    \subitem {MCP23017\_IOCON\_REGISTER}, \hyperpage{162}
+    \subitem {MCP23017\_IODIRA\_REGISTER}, \hyperpage{162}
+    \subitem {MCP23017\_IODIRB\_REGISTER}, \hyperpage{162}
+    \subitem {MCP23017\_IPOLA\_REGISTER}, \hyperpage{162}
+    \subitem {MCP23017\_IPOLB\_REGISTER}, \hyperpage{163}
+    \subitem {MCP23017\_OLATA\_REGISTER}, \hyperpage{163}
+    \subitem {MCP23017\_OLATB\_REGISTER}, \hyperpage{163}
+    \subitem {mcp\_port\_e}, \hyperpage{163}
+    \subitem {PORTA}, \hyperpage{163}
+    \subitem {PORTB}, \hyperpage{163}
+  \item {MCP23017\_DEFVAL\_t}, \hyperpage{16}
+    \subitem {all}, \hyperpage{17}
+    \subitem {bits}, \hyperpage{17}
+    \subitem {DEF0}, \hyperpage{17}
+    \subitem {DEF1}, \hyperpage{17}
+    \subitem {DEF2}, \hyperpage{17}
+    \subitem {DEF3}, \hyperpage{18}
+    \subitem {DEF4}, \hyperpage{18}
+    \subitem {DEF5}, \hyperpage{18}
+    \subitem {DEF6}, \hyperpage{18}
+    \subitem {DEF7}, \hyperpage{18}
+  \item {MCP23017\_DEFVALA\_REGISTER}
+    \subitem {mcp23017\_defs.h}, \hyperpage{160}
+  \item {MCP23017\_DEFVALB\_REGISTER}
+    \subitem {mcp23017\_defs.h}, \hyperpage{160}
+  \item {MCP23017\_GPINTEN\_t}, \hyperpage{19}
+    \subitem {all}, \hyperpage{19}
+    \subitem {bits}, \hyperpage{19}
+    \subitem {GPINT0}, \hyperpage{19}
+    \subitem {GPINT1}, \hyperpage{19}
+    \subitem {GPINT2}, \hyperpage{20}
+    \subitem {GPINT3}, \hyperpage{20}
+    \subitem {GPINT4}, \hyperpage{20}
+    \subitem {GPINT5}, \hyperpage{20}
+    \subitem {GPINT6}, \hyperpage{20}
+    \subitem {GPINT7}, \hyperpage{20}
+  \item {MCP23017\_GPINTENA\_REGISTER}
+    \subitem {mcp23017\_defs.h}, \hyperpage{160}
+  \item {MCP23017\_GPINTENB\_REGISTER}
+    \subitem {mcp23017\_defs.h}, \hyperpage{160}
+  \item {MCP23017\_GPIO\_t}, \hyperpage{21}
+    \subitem {all}, \hyperpage{21}
+    \subitem {bits}, \hyperpage{21}
+    \subitem {GP0}, \hyperpage{21}
+    \subitem {GP1}, \hyperpage{22}
+    \subitem {GP2}, \hyperpage{22}
+    \subitem {GP3}, \hyperpage{22}
+    \subitem {GP4}, \hyperpage{22}
+    \subitem {GP5}, \hyperpage{22}
+    \subitem {GP6}, \hyperpage{22}
+    \subitem {GP7}, \hyperpage{23}
+  \item {MCP23017\_GPIOA\_REGISTER}
+    \subitem {mcp23017\_defs.h}, \hyperpage{160}
+  \item {MCP23017\_GPIOB\_REGISTER}
+    \subitem {mcp23017\_defs.h}, \hyperpage{160}
+  \item {MCP23017\_GPPU\_t}, \hyperpage{23}
+    \subitem {all}, \hyperpage{23}
+    \subitem {bits}, \hyperpage{23}
+    \subitem {PU0}, \hyperpage{24}
+    \subitem {PU1}, \hyperpage{24}
+    \subitem {PU2}, \hyperpage{24}
+    \subitem {PU3}, \hyperpage{24}
+    \subitem {PU4}, \hyperpage{24}
+    \subitem {PU5}, \hyperpage{24}
+    \subitem {PU6}, \hyperpage{25}
+    \subitem {PU7}, \hyperpage{25}
+  \item {MCP23017\_GPPUA\_REGISTER}
+    \subitem {mcp23017\_defs.h}, \hyperpage{161}
+  \item {MCP23017\_GPPUB\_REGISTER}
+    \subitem {mcp23017\_defs.h}, \hyperpage{161}
+  \item {MCP23017\_INIT}
+    \subitem {MCP23017.c}, \hyperpage{139}
+    \subitem {MCP23017.h}, \hyperpage{150}
+  \item {MCP23017\_INTCAP\_t}, \hyperpage{25}
+    \subitem {all}, \hyperpage{26}
+    \subitem {bits}, \hyperpage{26}
+    \subitem {ICP0}, \hyperpage{26}
+    \subitem {ICP1}, \hyperpage{26}
+    \subitem {ICP2}, \hyperpage{26}
+    \subitem {ICP3}, \hyperpage{26}
+    \subitem {ICP4}, \hyperpage{26}
+    \subitem {ICP5}, \hyperpage{27}
+    \subitem {ICP6}, \hyperpage{27}
+    \subitem {ICP7}, \hyperpage{27}
+  \item {MCP23017\_INTCAPA\_REGISTER}
+    \subitem {mcp23017\_defs.h}, \hyperpage{161}
+  \item {MCP23017\_INTCAPB\_REGISTER}
+    \subitem {mcp23017\_defs.h}, \hyperpage{161}
+  \item {MCP23017\_INTCON\_t}, \hyperpage{27}
+    \subitem {all}, \hyperpage{28}
+    \subitem {bits}, \hyperpage{28}
+    \subitem {IOC0}, \hyperpage{28}
+    \subitem {IOC1}, \hyperpage{28}
+    \subitem {IOC2}, \hyperpage{28}
+    \subitem {IOC3}, \hyperpage{28}
+    \subitem {IOC4}, \hyperpage{28}
+    \subitem {IOC5}, \hyperpage{29}
+    \subitem {IOC6}, \hyperpage{29}
+    \subitem {IOC7}, \hyperpage{29}
+  \item {MCP23017\_INTCONA\_REGISTER}
+    \subitem {mcp23017\_defs.h}, \hyperpage{161}
+  \item {MCP23017\_INTCONB\_REGISTER}
+    \subitem {mcp23017\_defs.h}, \hyperpage{161}
+  \item {MCP23017\_INTF\_t}, \hyperpage{29}
+    \subitem {all}, \hyperpage{30}
+    \subitem {bits}, \hyperpage{30}
+    \subitem {INT0}, \hyperpage{30}
+    \subitem {INT1}, \hyperpage{30}
+    \subitem {INT2}, \hyperpage{30}
+    \subitem {INT3}, \hyperpage{30}
+    \subitem {INT4}, \hyperpage{30}
+    \subitem {INT5}, \hyperpage{31}
+    \subitem {INT6}, \hyperpage{31}
+    \subitem {INT7}, \hyperpage{31}
+  \item {MCP23017\_INTFA\_REGISTER}
+    \subitem {mcp23017\_defs.h}, \hyperpage{162}
+  \item {MCP23017\_INTFB\_REGISTER}
+    \subitem {mcp23017\_defs.h}, \hyperpage{162}
+  \item {MCP23017\_IOCON\_REGISTER}
+    \subitem {mcp23017\_defs.h}, \hyperpage{162}
+  \item {MCP23017\_IOCON\_t}, \hyperpage{31}
+    \subitem {all}, \hyperpage{32}
+    \subitem {BANK}, \hyperpage{32}
+    \subitem {bits}, \hyperpage{32}
+    \subitem {DISSLW}, \hyperpage{32}
+    \subitem {INTPOL}, \hyperpage{32}
+    \subitem {MIRROR}, \hyperpage{32}
+    \subitem {ODR}, \hyperpage{32}
+    \subitem {reserved}, \hyperpage{33}
+    \subitem {reserved\_2}, \hyperpage{33}
+    \subitem {SEQOP}, \hyperpage{33}
+  \item {MCP23017\_IODIR\_t}, \hyperpage{33}
+    \subitem {all}, \hyperpage{34}
+    \subitem {bits}, \hyperpage{34}
+    \subitem {IO0}, \hyperpage{34}
+    \subitem {IO1}, \hyperpage{34}
+    \subitem {IO2}, \hyperpage{34}
+    \subitem {IO3}, \hyperpage{34}
+    \subitem {IO4}, \hyperpage{34}
+    \subitem {IO5}, \hyperpage{35}
+    \subitem {IO6}, \hyperpage{35}
+    \subitem {IO7}, \hyperpage{35}
+  \item {MCP23017\_IODIRA\_REGISTER}
+    \subitem {mcp23017\_defs.h}, \hyperpage{162}
+  \item {MCP23017\_IODIRB\_REGISTER}
+    \subitem {mcp23017\_defs.h}, \hyperpage{162}
+  \item {MCP23017\_IPOL\_t}, \hyperpage{35}
+    \subitem {all}, \hyperpage{36}
+    \subitem {bits}, \hyperpage{36}
+    \subitem {IP0}, \hyperpage{36}
+    \subitem {IP1}, \hyperpage{36}
+    \subitem {IP2}, \hyperpage{36}
+    \subitem {IP3}, \hyperpage{36}
+    \subitem {IP4}, \hyperpage{36}
+    \subitem {IP5}, \hyperpage{37}
+    \subitem {IP6}, \hyperpage{37}
+    \subitem {IP7}, \hyperpage{37}
+  \item {MCP23017\_IPOLA\_REGISTER}
+    \subitem {mcp23017\_defs.h}, \hyperpage{162}
+  \item {MCP23017\_IPOLB\_REGISTER}
+    \subitem {mcp23017\_defs.h}, \hyperpage{163}
+  \item {MCP23017\_keyboard\_control}
+    \subitem {io\_control.c}, \hyperpage{122}
+  \item {MCP23017\_OLAT\_t}, \hyperpage{37}
+    \subitem {all}, \hyperpage{38}
+    \subitem {bits}, \hyperpage{38}
+    \subitem {OL0}, \hyperpage{38}
+    \subitem {OL1}, \hyperpage{38}
+    \subitem {OL2}, \hyperpage{38}
+    \subitem {OL3}, \hyperpage{38}
+    \subitem {OL4}, \hyperpage{38}
+    \subitem {OL5}, \hyperpage{39}
+    \subitem {OL6}, \hyperpage{39}
+    \subitem {OL7}, \hyperpage{39}
+  \item {MCP23017\_OLATA\_REGISTER}
+    \subitem {mcp23017\_defs.h}, \hyperpage{163}
+  \item {MCP23017\_OLATB\_REGISTER}
+    \subitem {mcp23017\_defs.h}, \hyperpage{163}
+  \item {MCP23017\_relay\_control}
+    \subitem {io\_control.c}, \hyperpage{122}
+  \item {mcp\_get\_on\_interrupt\_input}
+    \subitem {MCP23017.c}, \hyperpage{140}
+    \subitem {MCP23017.h}, \hyperpage{150}
+  \item {mcp\_interrupt\_flag}
+    \subitem {MCP23017.c}, \hyperpage{140}
+    \subitem {MCP23017.h}, \hyperpage{150}
+  \item {mcp\_port\_e}
+    \subitem {mcp23017\_defs.h}, \hyperpage{163}
+  \item {mcp\_porta}
+    \subitem {io\_control.c}, \hyperpage{124}
+  \item {mcp\_portb}
+    \subitem {io\_control.c}, \hyperpage{125}
+  \item {mcp\_read\_port}
+    \subitem {MCP23017.c}, \hyperpage{142}
+    \subitem {MCP23017.h}, \hyperpage{151}
+  \item {mcp\_register\_read}
+    \subitem {MCP23017.c}, \hyperpage{142}
+  \item {mcp\_register\_write}
+    \subitem {MCP23017.c}, \hyperpage{143}
+  \item {mcp\_write\_output\_pin}
+    \subitem {MCP23017.c}, \hyperpage{143}
+    \subitem {MCP23017.h}, \hyperpage{151}
+  \item {mcp\_write\_output\_port}
+    \subitem {MCP23017.c}, \hyperpage{144}
+    \subitem {MCP23017.h}, \hyperpage{152}
+  \item {MIRROR}
+    \subitem {MCP23017\_IOCON\_t}, \hyperpage{32}
+  \item {multiplier}
+    \subitem {frequency\_settings\_SH1106\_t}, \hyperpage{15}
+    \subitem {seccurity\_settings\_SH1106\_t}, \hyperpage{41}
+    \subitem {time\_settings\_SH1106\_t}, \hyperpage{46}
+
+  \indexspace
+
+  \item {nvs.c}
+    \subitem {load\_16}, \hyperpage{183}
+    \subitem {load\_acceleration}, \hyperpage{179}
+    \subitem {load\_desacceleration}, \hyperpage{179}
+    \subitem {load\_frequency}, \hyperpage{179}
+    \subitem {load\_hour\_fin}, \hyperpage{179}
+    \subitem {load\_hour\_ini}, \hyperpage{180}
+    \subitem {load\_ibus\_max}, \hyperpage{180}
+    \subitem {load\_input\_variable}, \hyperpage{180}
+    \subitem {load\_min\_fin}, \hyperpage{180}
+    \subitem {load\_min\_ini}, \hyperpage{180}
+    \subitem {load\_variables}, \hyperpage{184}
+    \subitem {load\_vbus\_min}, \hyperpage{181}
+    \subitem {nvs\_init\_once}, \hyperpage{185}
+    \subitem {save\_16}, \hyperpage{185}
+    \subitem {save\_acceleration}, \hyperpage{181}
+    \subitem {save\_desacceleration}, \hyperpage{181}
+    \subitem {save\_frequency}, \hyperpage{181}
+    \subitem {save\_hour\_fin}, \hyperpage{181}
+    \subitem {save\_hour\_ini}, \hyperpage{182}
+    \subitem {save\_ibus\_max}, \hyperpage{182}
+    \subitem {save\_input\_variable}, \hyperpage{182}
+    \subitem {save\_min\_fin}, \hyperpage{182}
+    \subitem {save\_min\_ini}, \hyperpage{182}
+    \subitem {save\_variables}, \hyperpage{186}
+    \subitem {save\_vbus\_min}, \hyperpage{183}
+    \subitem {TAG}, \hyperpage{187}
+  \item {nvs.h}
+    \subitem {load\_variables}, \hyperpage{192}
+    \subitem {nvs\_init\_once}, \hyperpage{192}
+    \subitem {save\_variables}, \hyperpage{193}
+  \item {nvs\_init\_once}
+    \subitem {nvs.c}, \hyperpage{185}
+    \subitem {nvs.h}, \hyperpage{192}
+
+  \indexspace
+
+  \item {ODR}
+    \subitem {MCP23017\_IOCON\_t}, \hyperpage{32}
+  \item {OL0}
+    \subitem {MCP23017\_OLAT\_t}, \hyperpage{38}
+  \item {OL1}
+    \subitem {MCP23017\_OLAT\_t}, \hyperpage{38}
+  \item {OL2}
+    \subitem {MCP23017\_OLAT\_t}, \hyperpage{38}
+  \item {OL3}
+    \subitem {MCP23017\_OLAT\_t}, \hyperpage{38}
+  \item {OL4}
+    \subitem {MCP23017\_OLAT\_t}, \hyperpage{38}
+  \item {OL5}
+    \subitem {MCP23017\_OLAT\_t}, \hyperpage{39}
+  \item {OL6}
+    \subitem {MCP23017\_OLAT\_t}, \hyperpage{39}
+  \item {OL7}
+    \subitem {MCP23017\_OLAT\_t}, \hyperpage{39}
+  \item {oled}
+    \subitem {display.c}, \hyperpage{72}
+
+  \indexspace
+
+  \item {PIN\_NUM\_CLK}
+    \subitem {sysControl.c}, \hyperpage{220}
+  \item {PIN\_NUM\_CS}
+    \subitem {sysControl.c}, \hyperpage{220}
+  \item {PIN\_NUM\_MISO}
+    \subitem {sysControl.c}, \hyperpage{220}
+  \item {PIN\_NUM\_MOSI}
+    \subitem {sysControl.c}, \hyperpage{220}
+  \item {PORTA}
+    \subitem {mcp23017\_defs.h}, \hyperpage{163}
+  \item {PORTB}
+    \subitem {mcp23017\_defs.h}, \hyperpage{163}
+  \item {program\_alarm}
+    \subitem {rtc.c}, \hyperpage{196}
+  \item {PU0}
+    \subitem {MCP23017\_GPPU\_t}, \hyperpage{24}
+  \item {PU1}
+    \subitem {MCP23017\_GPPU\_t}, \hyperpage{24}
+  \item {PU2}
+    \subitem {MCP23017\_GPPU\_t}, \hyperpage{24}
+  \item {PU3}
+    \subitem {MCP23017\_GPPU\_t}, \hyperpage{24}
+  \item {PU4}
+    \subitem {MCP23017\_GPPU\_t}, \hyperpage{24}
+  \item {PU5}
+    \subitem {MCP23017\_GPPU\_t}, \hyperpage{24}
+  \item {PU6}
+    \subitem {MCP23017\_GPPU\_t}, \hyperpage{25}
+  \item {PU7}
+    \subitem {MCP23017\_GPPU\_t}, \hyperpage{25}
+  \item {PWM\_CHANNEL}
+    \subitem {io\_control.c}, \hyperpage{117}
+  \item {PWM\_FREQ\_HZ}
+    \subitem {io\_control.c}, \hyperpage{117}
+  \item {PWM\_GPIO}
+    \subitem {io\_control.c}, \hyperpage{117}
+  \item {PWM\_MODE}
+    \subitem {io\_control.c}, \hyperpage{117}
+  \item {PWM\_RES}
+    \subitem {io\_control.c}, \hyperpage{117}
+  \item {PWM\_STEP\_MS}
+    \subitem {io\_control.c}, \hyperpage{118}
+  \item {PWM\_TIMER}
+    \subitem {io\_control.c}, \hyperpage{118}
+
+  \indexspace
+
+  \item {readADC}
+    \subitem {adc.c}, \hyperpage{53}
+    \subitem {adc.h}, \hyperpage{60}
+  \item {Referencia del directorio C:/Users/User/LVFV\_ESP32/main}, 
+		\hyperpage{10}
+  \item {Referencia del directorio C:/Users/User/LVFV\_ESP32/main/adc}, 
+		\hyperpage{9}
+  \item {Referencia del directorio C:/Users/User/LVFV\_ESP32/main/display}, 
+		\hyperpage{9}
+  \item {Referencia del directorio C:/Users/User/LVFV\_ESP32/main/io\_control}, 
+		\hyperpage{10}
+  \item {Referencia del directorio C:/Users/User/LVFV\_ESP32/main/nvs}, 
+		\hyperpage{10}
+  \item {Referencia del directorio C:/Users/User/LVFV\_ESP32/main/rtc}, 
+		\hyperpage{11}
+  \item {Referencia del directorio C:/Users/User/LVFV\_ESP32/main/system}, 
+		\hyperpage{11}
+  \item {Referencia del directorio C:/Users/User/LVFV\_ESP32/main/wifi}, 
+		\hyperpage{11}
+  \item {relay\_evt\_queue}
+    \subitem {io\_control.c}, \hyperpage{125}
+  \item {RELAY\_PIN}
+    \subitem {io\_control.c}, \hyperpage{118}
+  \item {RelayEvantPost}
+    \subitem {io\_control.c}, \hyperpage{123}
+    \subitem {io\_control.h}, \hyperpage{133}
+  \item {request}
+    \subitem {spi\_cmd\_item\_t}, \hyperpage{43}
+  \item {reserved}
+    \subitem {MCP23017\_IOCON\_t}, \hyperpage{33}
+  \item {reserved\_2}
+    \subitem {MCP23017\_IOCON\_t}, \hyperpage{33}
+  \item {root\_get\_handler}
+    \subitem {wifi.c}, \hyperpage{236}
+  \item {rotation}
+    \subitem {sh1106\_t}, \hyperpage{42}
+  \item {rtc.c}
+    \subitem {alarm\_settings}, \hyperpage{198}
+    \subitem {alarm\_start\_cb}, \hyperpage{195}
+    \subitem {alarm\_stop\_cb}, \hyperpage{195}
+    \subitem {getTime}, \hyperpage{196}
+    \subitem {initRTC}, \hyperpage{196}
+    \subitem {program\_alarm}, \hyperpage{196}
+    \subitem {rtc\_alarms}, \hyperpage{198}
+    \subitem {rtc\_schedule\_alarms}, \hyperpage{197}
+    \subitem {setTime}, \hyperpage{197}
+    \subitem {TAG}, \hyperpage{198}
+    \subitem {time\_start}, \hyperpage{198}
+    \subitem {time\_stop}, \hyperpage{198}
+  \item {rtc.h}
+    \subitem {getTime}, \hyperpage{202}
+    \subitem {initRTC}, \hyperpage{202}
+    \subitem {rtc\_schedule\_alarms}, \hyperpage{202}
+    \subitem {setTime}, \hyperpage{203}
+  \item {rtc\_alarms}
+    \subitem {rtc.c}, \hyperpage{198}
+  \item {rtc\_alarms\_t}, \hyperpage{39}
+    \subitem {start\_timer}, \hyperpage{40}
+    \subitem {stop\_timer}, \hyperpage{40}
+  \item {rtc\_schedule\_alarms}
+    \subitem {rtc.c}, \hyperpage{197}
+    \subitem {rtc.h}, \hyperpage{202}
+
+  \indexspace
+
+  \item {s\_adc}
+    \subitem {adc.c}, \hyperpage{56}
+  \item {save\_16}
+    \subitem {nvs.c}, \hyperpage{185}
+  \item {save\_acceleration}
+    \subitem {nvs.c}, \hyperpage{181}
+  \item {save\_desacceleration}
+    \subitem {nvs.c}, \hyperpage{181}
+  \item {save\_frequency}
+    \subitem {nvs.c}, \hyperpage{181}
+  \item {save\_hour\_fin}
+    \subitem {nvs.c}, \hyperpage{181}
+  \item {save\_hour\_ini}
+    \subitem {nvs.c}, \hyperpage{182}
+  \item {save\_ibus\_max}
+    \subitem {nvs.c}, \hyperpage{182}
+  \item {save\_input\_variable}
+    \subitem {nvs.c}, \hyperpage{182}
+  \item {save\_min\_fin}
+    \subitem {nvs.c}, \hyperpage{182}
+  \item {save\_min\_ini}
+    \subitem {nvs.c}, \hyperpage{182}
+  \item {save\_post\_handler}
+    \subitem {wifi.c}, \hyperpage{236}
+  \item {save\_variables}
+    \subitem {nvs.c}, \hyperpage{186}
+    \subitem {nvs.h}, \hyperpage{193}
+  \item {save\_vbus\_min}
+    \subitem {nvs.c}, \hyperpage{183}
+  \item {screen\_displayed}
+    \subitem {display.c}, \hyperpage{72}
+  \item {SCREEN\_FREQUENCY\_EDIT}
+    \subitem {display.c}, \hyperpage{67}
+  \item {SCREEN\_MAIN}
+    \subitem {display.c}, \hyperpage{66}
+  \item {SCREEN\_SECURITY\_EDIT}
+    \subitem {display.c}, \hyperpage{66}
+  \item {SCREEN\_SELECT\_VARIABLE}
+    \subitem {display.c}, \hyperpage{66}
+  \item {screen\_selected\_e}
+    \subitem {display.c}, \hyperpage{66}
+  \item {SCREEN\_TIME\_EDIT}
+    \subitem {display.c}, \hyperpage{66}
+  \item {seccurity\_settings}
+    \subitem {seccurity\_settings\_SH1106\_t}, \hyperpage{41}
+  \item {seccurity\_settings\_SH1106\_t}, \hyperpage{40}
+    \subitem {edit}, \hyperpage{40}
+    \subitem {edit\_flag}, \hyperpage{40}
+    \subitem {edit\_variable}, \hyperpage{41}
+    \subitem {LVFV\_system.h}, \hyperpage{170}
+    \subitem {multiplier}, \hyperpage{41}
+    \subitem {seccurity\_settings}, \hyperpage{41}
+  \item {seccurity\_settings\_t}, \hyperpage{41}
+    \subitem {ibus\_max}, \hyperpage{42}
+    \subitem {LVFV\_system.h}, \hyperpage{170}
+    \subitem {vbus\_min}, \hyperpage{42}
+  \item {second}
+    \subitem {LVFV\_system.h}, \hyperpage{171}
+  \item {SECURITY\_EXCEDED}
+    \subitem {LVFV\_system.h}, \hyperpage{173}
+  \item {SECURITY\_OK}
+    \subitem {LVFV\_system.h}, \hyperpage{173}
+  \item {SEQOP}
+    \subitem {MCP23017\_IOCON\_t}, \hyperpage{33}
+  \item {set\_freq\_output}
+    \subitem {io\_control.c}, \hyperpage{124}
+    \subitem {io\_control.h}, \hyperpage{135}
+  \item {set\_frequency\_table}
+    \subitem {sysAdmin.c}, \hyperpage{207}
+    \subitem {sysAdmin.h}, \hyperpage{216}
+  \item {set\_system\_settings}
+    \subitem {sysAdmin.c}, \hyperpage{209}
+    \subitem {sysAdmin.h}, \hyperpage{217}
+  \item {setTime}
+    \subitem {rtc.c}, \hyperpage{197}
+    \subitem {rtc.h}, \hyperpage{203}
+  \item {setValue}
+    \subitem {spi\_cmd\_item\_t}, \hyperpage{44}
+  \item {seventh}
+    \subitem {LVFV\_system.h}, \hyperpage{171}
+  \item {SH1106\_ADDR}
+    \subitem {sh1106\_i2c.c}, \hyperpage{109}
+  \item {sh1106\_clear\_buffer}
+    \subitem {display.c}, \hyperpage{68}
+  \item {SH1106\_COMM\_CMD}
+    \subitem {sh1106\_i2c.h}, \hyperpage{111}
+  \item {SH1106\_COMM\_DATA}
+    \subitem {sh1106\_i2c.h}, \hyperpage{111}
+  \item {sh1106\_comm\_type\_t}
+    \subitem {sh1106\_i2c.h}, \hyperpage{110}
+  \item {sh1106\_draw\_arrow}
+    \subitem {sh1106\_graphics.c}, \hyperpage{90}
+    \subitem {sh1106\_graphics.h}, \hyperpage{105}
+  \item {sh1106\_draw\_bitmap}
+    \subitem {sh1106\_graphics.c}, \hyperpage{90}
+  \item {sh1106\_draw\_fail}
+    \subitem {sh1106\_graphics.c}, \hyperpage{90}
+    \subitem {sh1106\_graphics.h}, \hyperpage{106}
+  \item {sh1106\_draw\_line}
+    \subitem {sh1106\_graphics.c}, \hyperpage{91}
+    \subitem {sh1106\_graphics.h}, \hyperpage{106}
+  \item {sh1106\_draw\_text}
+    \subitem {sh1106\_graphics.c}, \hyperpage{91}
+    \subitem {sh1106\_graphics.h}, \hyperpage{106}
+  \item {sh1106\_draw\_utn\_logo}
+    \subitem {sh1106\_graphics.c}, \hyperpage{91}
+    \subitem {sh1106\_graphics.h}, \hyperpage{107}
+  \item {sh1106\_frequency\_edit\_variables}
+    \subitem {display.c}, \hyperpage{68}
+  \item {sh1106\_graphics.c}
+    \subitem {arrow\_bmp}, \hyperpage{92}
+    \subitem {bitmap\_t}, \hyperpage{90}
+    \subitem {fail\_bmp}, \hyperpage{92}
+    \subitem {font5x7\_close\_excl}, \hyperpage{92}
+    \subitem {font5x7\_close\_quest}, \hyperpage{92}
+    \subitem {font5x7\_comma}, \hyperpage{92}
+    \subitem {font5x7\_dot}, \hyperpage{92}
+    \subitem {font5x7\_double\_dot}, \hyperpage{92}
+    \subitem {font5x7\_minus}, \hyperpage{93}
+    \subitem {font5x7\_rowmajor}, \hyperpage{93}
+    \subitem {font5x7\_rowminor}, \hyperpage{93}
+    \subitem {font5x7\_rownumber}, \hyperpage{94}
+    \subitem {font5x7\_space}, \hyperpage{95}
+    \subitem {font8x14\_close\_excl}, \hyperpage{95}
+    \subitem {font8x14\_close\_quest}, \hyperpage{95}
+    \subitem {font8x14\_comma}, \hyperpage{95}
+    \subitem {font8x14\_dot}, \hyperpage{95}
+    \subitem {font8x14\_double\_dot}, \hyperpage{95}
+    \subitem {font8x14\_minus}, \hyperpage{96}
+    \subitem {font8x14\_rowmajor}, \hyperpage{96}
+    \subitem {font8x14\_rowminor}, \hyperpage{96}
+    \subitem {font8x14\_rownumber}, \hyperpage{97}
+    \subitem {font8x14\_space}, \hyperpage{98}
+    \subitem {line\_bmp}, \hyperpage{98}
+    \subitem {logo16\_utn\_bmp}, \hyperpage{98}
+    \subitem {sh1106\_draw\_arrow}, \hyperpage{90}
+    \subitem {sh1106\_draw\_bitmap}, \hyperpage{90}
+    \subitem {sh1106\_draw\_fail}, \hyperpage{90}
+    \subitem {sh1106\_draw\_line}, \hyperpage{91}
+    \subitem {sh1106\_draw\_text}, \hyperpage{91}
+    \subitem {sh1106\_draw\_utn\_logo}, \hyperpage{91}
+    \subitem {slash}, \hyperpage{98}
+  \item {sh1106\_graphics.h}
+    \subitem {sh1106\_draw\_arrow}, \hyperpage{105}
+    \subitem {sh1106\_draw\_fail}, \hyperpage{106}
+    \subitem {sh1106\_draw\_line}, \hyperpage{106}
+    \subitem {sh1106\_draw\_text}, \hyperpage{106}
+    \subitem {sh1106\_draw\_utn\_logo}, \hyperpage{107}
+    \subitem {sh1106\_t}, \hyperpage{105}
+  \item {sh1106\_i2c.c}
+    \subitem {CMD\_CONTROL}, \hyperpage{108}
+    \subitem {DATA\_CONTROL}, \hyperpage{108}
+    \subitem {I2C\_DISPLAY}, \hyperpage{108}
+    \subitem {SH1106\_ADDR}, \hyperpage{109}
+    \subitem {sh1106\_write}, \hyperpage{109}
+  \item {sh1106\_i2c.h}
+    \subitem {SH1106\_COMM\_CMD}, \hyperpage{111}
+    \subitem {SH1106\_COMM\_DATA}, \hyperpage{111}
+    \subitem {sh1106\_comm\_type\_t}, \hyperpage{110}
+    \subitem {sh1106\_write}, \hyperpage{111}
+  \item {sh1106\_init}
+    \subitem {display.c}, \hyperpage{68}
+    \subitem {display.h}, \hyperpage{86}
+  \item {sh1106\_main\_screen}
+    \subitem {display.c}, \hyperpage{68}
+  \item {sh1106\_print\_emergency}
+    \subitem {display.c}, \hyperpage{69}
+  \item {sh1106\_print\_frame}
+    \subitem {display.c}, \hyperpage{69}
+  \item {sh1106\_refresh}
+    \subitem {display.c}, \hyperpage{69}
+  \item {sh1106\_security\_edit\_variables}
+    \subitem {display.c}, \hyperpage{69}
+  \item {sh1106\_select\_edit\_variables}
+    \subitem {display.c}, \hyperpage{70}
+  \item {SH1106\_SIZE\_1}
+    \subitem {LVFV\_system.h}, \hyperpage{168}
+  \item {SH1106\_SIZE\_2}
+    \subitem {LVFV\_system.h}, \hyperpage{169}
+  \item {sh1106\_splash\_screen}
+    \subitem {display.c}, \hyperpage{70}
+  \item {sh1106\_t}, \hyperpage{42}
+    \subitem {buffer}, \hyperpage{42}
+    \subitem {height}, \hyperpage{42}
+    \subitem {rotation}, \hyperpage{42}
+    \subitem {sh1106\_graphics.h}, \hyperpage{105}
+    \subitem {width}, \hyperpage{43}
+  \item {sh1106\_time\_edit\_variables}
+    \subitem {display.c}, \hyperpage{70}
+  \item {sh1106\_variable\_lines\_e}
+    \subitem {LVFV\_system.h}, \hyperpage{170, 171}
+  \item {sh1106\_write}
+    \subitem {sh1106\_i2c.c}, \hyperpage{109}
+    \subitem {sh1106\_i2c.h}, \hyperpage{111}
+  \item {sixth}
+    \subitem {LVFV\_system.h}, \hyperpage{171}
+  \item {slash}
+    \subitem {sh1106\_graphics.c}, \hyperpage{98}
+  \item {SPEED\_SELECTOR\_0}
+    \subitem {LVFV\_system.h}, \hyperpage{173}
+  \item {SPEED\_SELECTOR\_1}
+    \subitem {LVFV\_system.h}, \hyperpage{173}
+  \item {SPEED\_SELECTOR\_2}
+    \subitem {LVFV\_system.h}, \hyperpage{173}
+  \item {SPEED\_SELECTOR\_3}
+    \subitem {LVFV\_system.h}, \hyperpage{173}
+  \item {SPEED\_SELECTOR\_4}
+    \subitem {LVFV\_system.h}, \hyperpage{173}
+  \item {SPEED\_SELECTOR\_5}
+    \subitem {LVFV\_system.h}, \hyperpage{173}
+  \item {SPEED\_SELECTOR\_6}
+    \subitem {LVFV\_system.h}, \hyperpage{173}
+  \item {SPEED\_SELECTOR\_7}
+    \subitem {LVFV\_system.h}, \hyperpage{173}
+  \item {SPEED\_SELECTOR\_8}
+    \subitem {LVFV\_system.h}, \hyperpage{173}
+  \item {SPEED\_SELECTOR\_9}
+    \subitem {LVFV\_system.h}, \hyperpage{173}
+  \item {SPI\_CLOCK\_HZ}
+    \subitem {sysControl.c}, \hyperpage{220}
+  \item {spi\_cmd\_item\_t}, \hyperpage{43}
+    \subitem {getValue}, \hyperpage{43}
+    \subitem {request}, \hyperpage{43}
+    \subitem {setValue}, \hyperpage{44}
+  \item {SPI\_communication}
+    \subitem {sysControl.c}, \hyperpage{221}
+    \subitem {sysControl.h}, \hyperpage{229}
+  \item {spi\_handle}
+    \subitem {sysControl.c}, \hyperpage{222}
+  \item {SPI\_HOST\_USED}
+    \subitem {sysControl.c}, \hyperpage{220}
+  \item {SPI\_Init}
+    \subitem {sysControl.c}, \hyperpage{221}
+    \subitem {sysControl.h}, \hyperpage{229}
+  \item {SPI\_QUEUE\_TX\_DEPTH}
+    \subitem {sysControl.c}, \hyperpage{220}
+  \item {SPI\_Request}
+    \subitem {sysControl.h}, \hyperpage{228}
+  \item {SPI\_REQUEST\_EMERGENCY}
+    \subitem {sysControl.h}, \hyperpage{229}
+  \item {SPI\_REQUEST\_GET\_ACEL}
+    \subitem {sysControl.h}, \hyperpage{228}
+  \item {SPI\_REQUEST\_GET\_DESACEL}
+    \subitem {sysControl.h}, \hyperpage{229}
+  \item {SPI\_REQUEST\_GET\_DIR}
+    \subitem {sysControl.h}, \hyperpage{229}
+  \item {SPI\_REQUEST\_GET\_FREC}
+    \subitem {sysControl.h}, \hyperpage{228}
+  \item {SPI\_REQUEST\_IS\_STOP}
+    \subitem {sysControl.h}, \hyperpage{229}
+  \item {SPI\_REQUEST\_RESPONSE}
+    \subitem {sysControl.h}, \hyperpage{229}
+  \item {SPI\_REQUEST\_SET\_ACEL}
+    \subitem {sysControl.h}, \hyperpage{228}
+  \item {SPI\_REQUEST\_SET\_DESACEL}
+    \subitem {sysControl.h}, \hyperpage{228}
+  \item {SPI\_REQUEST\_SET\_DIR}
+    \subitem {sysControl.h}, \hyperpage{228}
+  \item {SPI\_REQUEST\_SET\_FREC}
+    \subitem {sysControl.h}, \hyperpage{228}
+  \item {SPI\_REQUEST\_START}
+    \subitem {sysControl.h}, \hyperpage{228}
+  \item {SPI\_REQUEST\_STOP}
+    \subitem {sysControl.h}, \hyperpage{228}
+  \item {SPI\_Response}
+    \subitem {sysControl.h}, \hyperpage{229}
+  \item {SPI\_RESPONSE\_ERR}
+    \subitem {sysControl.h}, \hyperpage{229}
+  \item {SPI\_RESPONSE\_ERR\_CMD\_UNKNOWN}
+    \subitem {sysControl.h}, \hyperpage{229}
+  \item {SPI\_RESPONSE\_ERR\_DATA\_INVALID}
+    \subitem {sysControl.h}, \hyperpage{229}
+  \item {SPI\_RESPONSE\_ERR\_DATA\_MISSING}
+    \subitem {sysControl.h}, \hyperpage{229}
+  \item {SPI\_RESPONSE\_ERR\_DATA\_OUT\_RANGE}
+    \subitem {sysControl.h}, \hyperpage{229}
+  \item {SPI\_RESPONSE\_ERR\_MOVING}
+    \subitem {sysControl.h}, \hyperpage{229}
+  \item {SPI\_RESPONSE\_ERR\_NO\_COMMAND}
+    \subitem {sysControl.h}, \hyperpage{229}
+  \item {SPI\_RESPONSE\_ERR\_NOT\_MOVING}
+    \subitem {sysControl.h}, \hyperpage{229}
+  \item {SPI\_RESPONSE\_OK}
+    \subitem {sysControl.h}, \hyperpage{229}
+  \item {SPI\_SendRequest}
+    \subitem {sysControl.c}, \hyperpage{221}
+  \item {START\_BUTTON\_PIN}
+    \subitem {io\_control.c}, \hyperpage{118}
+  \item {START\_PRESSED}
+    \subitem {LVFV\_system.h}, \hyperpage{173}
+  \item {START\_RELEASED}
+    \subitem {LVFV\_system.h}, \hyperpage{173}
+  \item {start\_timer}
+    \subitem {rtc\_alarms\_t}, \hyperpage{40}
+  \item {start\_webserver}
+    \subitem {wifi.c}, \hyperpage{236}
+    \subitem {wifi.h}, \hyperpage{241}
+  \item {status}
+    \subitem {system\_status\_t}, \hyperpage{45}
+  \item {STOP\_BUTTON\_PIN}
+    \subitem {io\_control.c}, \hyperpage{118}
+  \item {STOP\_PIN}
+    \subitem {io\_control.c}, \hyperpage{118}
+  \item {STOP\_PRESSED}
+    \subitem {LVFV\_system.h}, \hyperpage{173}
+  \item {STOP\_RELEASED}
+    \subitem {LVFV\_system.h}, \hyperpage{173}
+  \item {STOP\_SW\_MASK}
+    \subitem {io\_control.c}, \hyperpage{119}
+  \item {stop\_timer}
+    \subitem {rtc\_alarms\_t}, \hyperpage{40}
+  \item {SWITCH\_BUTTON\_BACK}
+    \subitem {io\_control.c}, \hyperpage{119}
+  \item {SWITCH\_BUTTON\_DOWN}
+    \subitem {io\_control.c}, \hyperpage{119}
+  \item {SWITCH\_BUTTON\_LEFT}
+    \subitem {io\_control.c}, \hyperpage{119}
+  \item {SWITCH\_BUTTON\_MENU}
+    \subitem {io\_control.c}, \hyperpage{119}
+  \item {SWITCH\_BUTTON\_OK}
+    \subitem {io\_control.c}, \hyperpage{119}
+  \item {SWITCH\_BUTTON\_RIGHT}
+    \subitem {io\_control.c}, \hyperpage{120}
+  \item {SWITCH\_BUTTON\_SAVE}
+    \subitem {io\_control.c}, \hyperpage{120}
+  \item {SWITCH\_BUTTON\_UP}
+    \subitem {io\_control.c}, \hyperpage{120}
+  \item {sysAdmin.c}
+    \subitem {accelerating}, \hyperpage{205}
+    \subitem {accelerating\_handle}, \hyperpage{210}
+    \subitem {change\_frequency}, \hyperpage{205}
+    \subitem {desaccelerating}, \hyperpage{206}
+    \subitem {desaccelerating\_handle}, \hyperpage{210}
+    \subitem {engine\_emergency\_stop}, \hyperpage{206}
+    \subitem {engine\_emergency\_stop\_release}, \hyperpage{206}
+    \subitem {engine\_start}, \hyperpage{206}
+    \subitem {engine\_stop}, \hyperpage{207}
+    \subitem {frequency\_table}, \hyperpage{210}
+    \subitem {get\_status}, \hyperpage{207}
+    \subitem {set\_frequency\_table}, \hyperpage{207}
+    \subitem {set\_system\_settings}, \hyperpage{209}
+    \subitem {system\_seccurity\_settings}, \hyperpage{210}
+    \subitem {system\_status}, \hyperpage{210}
+    \subitem {TAG}, \hyperpage{210}
+    \subitem {update\_meas}, \hyperpage{209}
+  \item {sysAdmin.h}
+    \subitem {change\_frequency}, \hyperpage{214}
+    \subitem {engine\_emergency\_stop}, \hyperpage{215}
+    \subitem {engine\_emergency\_stop\_release}, \hyperpage{215}
+    \subitem {engine\_start}, \hyperpage{215}
+    \subitem {engine\_stop}, \hyperpage{215}
+    \subitem {get\_status}, \hyperpage{216}
+    \subitem {set\_frequency\_table}, \hyperpage{216}
+    \subitem {set\_system\_settings}, \hyperpage{217}
+    \subitem {update\_meas}, \hyperpage{217}
+  \item {sysControl.c}
+    \subitem {PIN\_NUM\_CLK}, \hyperpage{220}
+    \subitem {PIN\_NUM\_CS}, \hyperpage{220}
+    \subitem {PIN\_NUM\_MISO}, \hyperpage{220}
+    \subitem {PIN\_NUM\_MOSI}, \hyperpage{220}
+    \subitem {SPI\_CLOCK\_HZ}, \hyperpage{220}
+    \subitem {SPI\_communication}, \hyperpage{221}
+    \subitem {spi\_handle}, \hyperpage{222}
+    \subitem {SPI\_HOST\_USED}, \hyperpage{220}
+    \subitem {SPI\_Init}, \hyperpage{221}
+    \subitem {SPI\_QUEUE\_TX\_DEPTH}, \hyperpage{220}
+    \subitem {SPI\_SendRequest}, \hyperpage{221}
+    \subitem {system\_event\_queue}, \hyperpage{222}
+    \subitem {SystemEventPost}, \hyperpage{222}
+    \subitem {TAG}, \hyperpage{223}
+  \item {sysControl.h}
+    \subitem {SPI\_communication}, \hyperpage{229}
+    \subitem {SPI\_Init}, \hyperpage{229}
+    \subitem {SPI\_Request}, \hyperpage{228}
+    \subitem {SPI\_REQUEST\_EMERGENCY}, \hyperpage{229}
+    \subitem {SPI\_REQUEST\_GET\_ACEL}, \hyperpage{228}
+    \subitem {SPI\_REQUEST\_GET\_DESACEL}, \hyperpage{229}
+    \subitem {SPI\_REQUEST\_GET\_DIR}, \hyperpage{229}
+    \subitem {SPI\_REQUEST\_GET\_FREC}, \hyperpage{228}
+    \subitem {SPI\_REQUEST\_IS\_STOP}, \hyperpage{229}
+    \subitem {SPI\_REQUEST\_RESPONSE}, \hyperpage{229}
+    \subitem {SPI\_REQUEST\_SET\_ACEL}, \hyperpage{228}
+    \subitem {SPI\_REQUEST\_SET\_DESACEL}, \hyperpage{228}
+    \subitem {SPI\_REQUEST\_SET\_DIR}, \hyperpage{228}
+    \subitem {SPI\_REQUEST\_SET\_FREC}, \hyperpage{228}
+    \subitem {SPI\_REQUEST\_START}, \hyperpage{228}
+    \subitem {SPI\_REQUEST\_STOP}, \hyperpage{228}
+    \subitem {SPI\_Response}, \hyperpage{229}
+    \subitem {SPI\_RESPONSE\_ERR}, \hyperpage{229}
+    \subitem {SPI\_RESPONSE\_ERR\_CMD\_UNKNOWN}, \hyperpage{229}
+    \subitem {SPI\_RESPONSE\_ERR\_DATA\_INVALID}, \hyperpage{229}
+    \subitem {SPI\_RESPONSE\_ERR\_DATA\_MISSING}, \hyperpage{229}
+    \subitem {SPI\_RESPONSE\_ERR\_DATA\_OUT\_RANGE}, \hyperpage{229}
+    \subitem {SPI\_RESPONSE\_ERR\_MOVING}, \hyperpage{229}
+    \subitem {SPI\_RESPONSE\_ERR\_NO\_COMMAND}, \hyperpage{229}
+    \subitem {SPI\_RESPONSE\_ERR\_NOT\_MOVING}, \hyperpage{229}
+    \subitem {SPI\_RESPONSE\_OK}, \hyperpage{229}
+    \subitem {SystemEventPost}, \hyperpage{230}
+  \item {SYSTEM\_ACCLE\_DESACCEL}
+    \subitem {LVFV\_system.h}, \hyperpage{171}
+  \item {SYSTEM\_BREAKING}
+    \subitem {LVFV\_system.h}, \hyperpage{171}
+  \item {SYSTEM\_EMERGENCY}
+    \subitem {LVFV\_system.h}, \hyperpage{171}
+  \item {SYSTEM\_EMERGENCY\_OK}
+    \subitem {LVFV\_system.h}, \hyperpage{171}
+  \item {SYSTEM\_EMERGENCY\_SENT}
+    \subitem {LVFV\_system.h}, \hyperpage{171}
+  \item {system\_event\_queue}
+    \subitem {sysControl.c}, \hyperpage{222}
+  \item {system\_frequency\_settings}
+    \subitem {display.c}, \hyperpage{72}
+  \item {SYSTEM\_IDLE}
+    \subitem {LVFV\_system.h}, \hyperpage{171}
+  \item {SYSTEM\_REGIME}
+    \subitem {LVFV\_system.h}, \hyperpage{171}
+  \item {system\_seccurity\_settings}
+    \subitem {display.c}, \hyperpage{73}
+    \subitem {sysAdmin.c}, \hyperpage{210}
+  \item {system\_status}
+    \subitem {sysAdmin.c}, \hyperpage{210}
+  \item {system\_status\_e}
+    \subitem {LVFV\_system.h}, \hyperpage{170, 171}
+  \item {system\_status\_t}, \hyperpage{44}
+    \subitem {acceleration}, \hyperpage{44}
+    \subitem {desacceleration}, \hyperpage{44}
+    \subitem {frequency}, \hyperpage{45}
+    \subitem {frequency\_destiny}, \hyperpage{45}
+    \subitem {ibus\_max}, \hyperpage{45}
+    \subitem {inputs\_status}, \hyperpage{45}
+    \subitem {LVFV\_system.h}, \hyperpage{170}
+    \subitem {status}, \hyperpage{45}
+    \subitem {vbus\_min}, \hyperpage{45}
+  \item {system\_time\_settings}
+    \subitem {display.c}, \hyperpage{73}
+  \item {system\_variables\_save}
+    \subitem {display.c}, \hyperpage{70}
+    \subitem {display.h}, \hyperpage{87}
+  \item {SystemEventPost}
+    \subitem {sysControl.c}, \hyperpage{222}
+    \subitem {sysControl.h}, \hyperpage{230}
+  \item {systemSignal\_e}
+    \subitem {LVFV\_system.h}, \hyperpage{171}
+
+  \indexspace
+
+  \item {TAG}
+    \subitem {adc.c}, \hyperpage{56}
+    \subitem {display.c}, \hyperpage{73}
+    \subitem {io\_control.c}, \hyperpage{125}
+    \subitem {main.c}, \hyperpage{177}
+    \subitem {MCP23017.c}, \hyperpage{144}
+    \subitem {nvs.c}, \hyperpage{187}
+    \subitem {rtc.c}, \hyperpage{198}
+    \subitem {sysAdmin.c}, \hyperpage{210}
+    \subitem {sysControl.c}, \hyperpage{223}
+    \subitem {wifi.c}, \hyperpage{237}
+  \item {task\_display}
+    \subitem {display.c}, \hyperpage{71}
+    \subitem {display.h}, \hyperpage{87}
+  \item {TERMO\_SW\_MASK}
+    \subitem {io\_control.c}, \hyperpage{120}
+  \item {TERMO\_SW\_PIN}
+    \subitem {io\_control.c}, \hyperpage{120}
+  \item {TERMO\_SW\_PRESSED}
+    \subitem {LVFV\_system.h}, \hyperpage{173}
+  \item {TERMO\_SW\_RELEASED}
+    \subitem {LVFV\_system.h}, \hyperpage{173}
+  \item {third}
+    \subitem {LVFV\_system.h}, \hyperpage{171}
+  \item {time\_settings}
+    \subitem {time\_settings\_SH1106\_t}, \hyperpage{46}
+  \item {time\_settings\_SH1106\_t}, \hyperpage{46}
+    \subitem {edit}, \hyperpage{46}
+    \subitem {edit\_flag}, \hyperpage{46}
+    \subitem {edit\_variable}, \hyperpage{46}
+    \subitem {LVFV\_system.h}, \hyperpage{170}
+    \subitem {multiplier}, \hyperpage{46}
+    \subitem {time\_settings}, \hyperpage{46}
+  \item {time\_settings\_t}, \hyperpage{47}
+    \subitem {LVFV\_system.h}, \hyperpage{171}
+    \subitem {time\_start}, \hyperpage{47}
+    \subitem {time\_stop}, \hyperpage{47}
+    \subitem {time\_system}, \hyperpage{47}
+  \item {time\_start}
+    \subitem {rtc.c}, \hyperpage{198}
+    \subitem {time\_settings\_t}, \hyperpage{47}
+  \item {time\_stop}
+    \subitem {rtc.c}, \hyperpage{198}
+    \subitem {time\_settings\_t}, \hyperpage{47}
+  \item {time\_system}
+    \subitem {time\_settings\_t}, \hyperpage{47}
+
+  \indexspace
+
+  \item {update\_meas}
+    \subitem {sysAdmin.c}, \hyperpage{209}
+    \subitem {sysAdmin.h}, \hyperpage{217}
+  \item {url\_decode}
+    \subitem {wifi.c}, \hyperpage{236}
+
+  \indexspace
+
+  \item {VARIABLE\_EIGTH}
+    \subitem {LVFV\_system.h}, \hyperpage{169}
+  \item {VARIABLE\_FIFTH}
+    \subitem {LVFV\_system.h}, \hyperpage{169}
+  \item {VARIABLE\_FIRST}
+    \subitem {LVFV\_system.h}, \hyperpage{169}
+  \item {VARIABLE\_FOURTH}
+    \subitem {LVFV\_system.h}, \hyperpage{169}
+  \item {VARIABLE\_SECOND}
+    \subitem {LVFV\_system.h}, \hyperpage{169}
+  \item {VARIABLE\_SEVENTH}
+    \subitem {LVFV\_system.h}, \hyperpage{169}
+  \item {VARIABLE\_SIXTH}
+    \subitem {LVFV\_system.h}, \hyperpage{169}
+  \item {VARIABLE\_THIRD}
+    \subitem {LVFV\_system.h}, \hyperpage{170}
+  \item {VBUS\_LINE\_INDX}
+    \subitem {display.c}, \hyperpage{66}
+  \item {vbus\_min}
+    \subitem {seccurity\_settings\_t}, \hyperpage{42}
+    \subitem {system\_status\_t}, \hyperpage{45}
+
+  \indexspace
+
+  \item {w}
+    \subitem {bitmap\_t}, \hyperpage{14}
+  \item {width}
+    \subitem {sh1106\_t}, \hyperpage{43}
+  \item {wifi.c}
+    \subitem {get\_param\_value}, \hyperpage{235}
+    \subitem {hex2int}, \hyperpage{235}
+    \subitem {root\_get\_handler}, \hyperpage{236}
+    \subitem {save\_post\_handler}, \hyperpage{236}
+    \subitem {start\_webserver}, \hyperpage{236}
+    \subitem {TAG}, \hyperpage{237}
+    \subitem {url\_decode}, \hyperpage{236}
+    \subitem {wifi\_init\_softap}, \hyperpage{237}
+  \item {wifi.h}
+    \subitem {start\_webserver}, \hyperpage{241}
+    \subitem {wifi\_init\_softap}, \hyperpage{241}
+  \item {wifi\_init\_softap}
+    \subitem {wifi.c}, \hyperpage{237}
+    \subitem {wifi.h}, \hyperpage{241}
+
+  \indexspace
+
+  \item {x}
+    \subitem {bitmap\_t}, \hyperpage{14}
+  \item {xI2C\_Mutex}
+    \subitem {MCP23017.c}, \hyperpage{144}
+
+  \indexspace
+
+  \item {y}
+    \subitem {bitmap\_t}, \hyperpage{14}
+
+\end{theindex}

@@ -1,0 +1,763 @@
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\babel@toc {spanish}{}\relax 
+\contentsline {chapter}{\numberline {1}Lista de tareas pendientes }{1}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Jerarquía de directorios}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Directorios}{3}{section.2.1}%
+\contentsline {chapter}{\numberline {3}Índice de estructuras de datos}{5}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Estructuras de datos}{5}{section.3.1}%
+\contentsline {chapter}{\numberline {4}Índice de archivos}{7}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Lista de archivos}{7}{section.4.1}%
+\contentsline {chapter}{\numberline {5}Documentación de directorios}{9}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Referencia del directorio C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}User/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}LVFV\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ESP32/main/adc}{9}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Referencia del directorio C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}User/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}LVFV\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ESP32/main/display}{9}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Referencia del directorio C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}User/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}LVFV\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ESP32/main/io\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}control}{10}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Referencia del directorio C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}User/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}LVFV\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ESP32/main}{10}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Referencia del directorio C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}User/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}LVFV\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ESP32/main/nvs}{10}{section.5.5}%
+\contentsline {section}{\numberline {5.6}Referencia del directorio C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}User/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}LVFV\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ESP32/main/rtc}{11}{section.5.6}%
+\contentsline {section}{\numberline {5.7}Referencia del directorio C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}User/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}LVFV\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ESP32/main/system}{11}{section.5.7}%
+\contentsline {section}{\numberline {5.8}Referencia del directorio C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}User/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}LVFV\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ESP32/main/wifi}{11}{section.5.8}%
+\contentsline {chapter}{\numberline {6}Documentación de estructuras de datos}{13}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Referencia de la estructura bitmap\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t}{13}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Descripción detallada}{13}{subsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.1.2}Documentación de campos}{13}{subsection.6.1.2}%
+\contentsline {subsubsection}{\numberline {6.1.2.1}bitmap}{13}{subsubsection.6.1.2.1}%
+\contentsline {subsubsection}{\numberline {6.1.2.2}h}{14}{subsubsection.6.1.2.2}%
+\contentsline {subsubsection}{\numberline {6.1.2.3}w}{14}{subsubsection.6.1.2.3}%
+\contentsline {subsubsection}{\numberline {6.1.2.4}x}{14}{subsubsection.6.1.2.4}%
+\contentsline {subsubsection}{\numberline {6.1.2.5}y}{14}{subsubsection.6.1.2.5}%
+\contentsline {section}{\numberline {6.2}Referencia de la estructura frequency\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}settings\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}SH1106\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t}{14}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Descripción detallada}{15}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}Documentación de campos}{15}{subsection.6.2.2}%
+\contentsline {subsubsection}{\numberline {6.2.2.1}edit}{15}{subsubsection.6.2.2.1}%
+\contentsline {subsubsection}{\numberline {6.2.2.2}edit\_flag}{15}{subsubsection.6.2.2.2}%
+\contentsline {subsubsection}{\numberline {6.2.2.3}edit\_variable}{15}{subsubsection.6.2.2.3}%
+\contentsline {subsubsection}{\numberline {6.2.2.4}frequency\_settings}{15}{subsubsection.6.2.2.4}%
+\contentsline {subsubsection}{\numberline {6.2.2.5}multiplier}{15}{subsubsection.6.2.2.5}%
+\contentsline {section}{\numberline {6.3}Referencia de la estructura frequency\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}settings\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t}{15}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Descripción detallada}{16}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2}Documentación de campos}{16}{subsection.6.3.2}%
+\contentsline {subsubsection}{\numberline {6.3.2.1}acceleration}{16}{subsubsection.6.3.2.1}%
+\contentsline {subsubsection}{\numberline {6.3.2.2}desacceleration}{16}{subsubsection.6.3.2.2}%
+\contentsline {subsubsection}{\numberline {6.3.2.3}freq\_regime}{16}{subsubsection.6.3.2.3}%
+\contentsline {subsubsection}{\numberline {6.3.2.4}input\_variable}{16}{subsubsection.6.3.2.4}%
+\contentsline {section}{\numberline {6.4}Referencia de la unión MCP23017\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}DEFVAL\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t}{16}{section.6.4}%
+\contentsline {subsection}{\numberline {6.4.1}Descripción detallada}{17}{subsection.6.4.1}%
+\contentsline {subsection}{\numberline {6.4.2}Documentación de campos}{17}{subsection.6.4.2}%
+\contentsline {subsubsection}{\numberline {6.4.2.1}all}{17}{subsubsection.6.4.2.1}%
+\contentsline {subsubsection}{\numberline {6.4.2.2}[struct]}{17}{subsubsection.6.4.2.2}%
+\contentsline {subsubsection}{\numberline {6.4.2.3}DEF0}{17}{subsubsection.6.4.2.3}%
+\contentsline {subsubsection}{\numberline {6.4.2.4}DEF1}{17}{subsubsection.6.4.2.4}%
+\contentsline {subsubsection}{\numberline {6.4.2.5}DEF2}{18}{subsubsection.6.4.2.5}%
+\contentsline {subsubsection}{\numberline {6.4.2.6}DEF3}{18}{subsubsection.6.4.2.6}%
+\contentsline {subsubsection}{\numberline {6.4.2.7}DEF4}{18}{subsubsection.6.4.2.7}%
+\contentsline {subsubsection}{\numberline {6.4.2.8}DEF5}{18}{subsubsection.6.4.2.8}%
+\contentsline {subsubsection}{\numberline {6.4.2.9}DEF6}{18}{subsubsection.6.4.2.9}%
+\contentsline {subsubsection}{\numberline {6.4.2.10}DEF7}{18}{subsubsection.6.4.2.10}%
+\contentsline {section}{\numberline {6.5}Referencia de la unión MCP23017\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}GPINTEN\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t}{19}{section.6.5}%
+\contentsline {subsection}{\numberline {6.5.1}Descripción detallada}{19}{subsection.6.5.1}%
+\contentsline {subsection}{\numberline {6.5.2}Documentación de campos}{19}{subsection.6.5.2}%
+\contentsline {subsubsection}{\numberline {6.5.2.1}all}{19}{subsubsection.6.5.2.1}%
+\contentsline {subsubsection}{\numberline {6.5.2.2}[struct]}{19}{subsubsection.6.5.2.2}%
+\contentsline {subsubsection}{\numberline {6.5.2.3}GPINT0}{19}{subsubsection.6.5.2.3}%
+\contentsline {subsubsection}{\numberline {6.5.2.4}GPINT1}{20}{subsubsection.6.5.2.4}%
+\contentsline {subsubsection}{\numberline {6.5.2.5}GPINT2}{20}{subsubsection.6.5.2.5}%
+\contentsline {subsubsection}{\numberline {6.5.2.6}GPINT3}{20}{subsubsection.6.5.2.6}%
+\contentsline {subsubsection}{\numberline {6.5.2.7}GPINT4}{20}{subsubsection.6.5.2.7}%
+\contentsline {subsubsection}{\numberline {6.5.2.8}GPINT5}{20}{subsubsection.6.5.2.8}%
+\contentsline {subsubsection}{\numberline {6.5.2.9}GPINT6}{20}{subsubsection.6.5.2.9}%
+\contentsline {subsubsection}{\numberline {6.5.2.10}GPINT7}{21}{subsubsection.6.5.2.10}%
+\contentsline {section}{\numberline {6.6}Referencia de la unión MCP23017\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}GPIO\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t}{21}{section.6.6}%
+\contentsline {subsection}{\numberline {6.6.1}Descripción detallada}{21}{subsection.6.6.1}%
+\contentsline {subsection}{\numberline {6.6.2}Documentación de campos}{21}{subsection.6.6.2}%
+\contentsline {subsubsection}{\numberline {6.6.2.1}all}{21}{subsubsection.6.6.2.1}%
+\contentsline {subsubsection}{\numberline {6.6.2.2}[struct]}{21}{subsubsection.6.6.2.2}%
+\contentsline {subsubsection}{\numberline {6.6.2.3}GP0}{22}{subsubsection.6.6.2.3}%
+\contentsline {subsubsection}{\numberline {6.6.2.4}GP1}{22}{subsubsection.6.6.2.4}%
+\contentsline {subsubsection}{\numberline {6.6.2.5}GP2}{22}{subsubsection.6.6.2.5}%
+\contentsline {subsubsection}{\numberline {6.6.2.6}GP3}{22}{subsubsection.6.6.2.6}%
+\contentsline {subsubsection}{\numberline {6.6.2.7}GP4}{22}{subsubsection.6.6.2.7}%
+\contentsline {subsubsection}{\numberline {6.6.2.8}GP5}{22}{subsubsection.6.6.2.8}%
+\contentsline {subsubsection}{\numberline {6.6.2.9}GP6}{23}{subsubsection.6.6.2.9}%
+\contentsline {subsubsection}{\numberline {6.6.2.10}GP7}{23}{subsubsection.6.6.2.10}%
+\contentsline {section}{\numberline {6.7}Referencia de la unión MCP23017\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}GPPU\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t}{23}{section.6.7}%
+\contentsline {subsection}{\numberline {6.7.1}Descripción detallada}{23}{subsection.6.7.1}%
+\contentsline {subsection}{\numberline {6.7.2}Documentación de campos}{23}{subsection.6.7.2}%
+\contentsline {subsubsection}{\numberline {6.7.2.1}all}{23}{subsubsection.6.7.2.1}%
+\contentsline {subsubsection}{\numberline {6.7.2.2}[struct]}{24}{subsubsection.6.7.2.2}%
+\contentsline {subsubsection}{\numberline {6.7.2.3}PU0}{24}{subsubsection.6.7.2.3}%
+\contentsline {subsubsection}{\numberline {6.7.2.4}PU1}{24}{subsubsection.6.7.2.4}%
+\contentsline {subsubsection}{\numberline {6.7.2.5}PU2}{24}{subsubsection.6.7.2.5}%
+\contentsline {subsubsection}{\numberline {6.7.2.6}PU3}{24}{subsubsection.6.7.2.6}%
+\contentsline {subsubsection}{\numberline {6.7.2.7}PU4}{24}{subsubsection.6.7.2.7}%
+\contentsline {subsubsection}{\numberline {6.7.2.8}PU5}{25}{subsubsection.6.7.2.8}%
+\contentsline {subsubsection}{\numberline {6.7.2.9}PU6}{25}{subsubsection.6.7.2.9}%
+\contentsline {subsubsection}{\numberline {6.7.2.10}PU7}{25}{subsubsection.6.7.2.10}%
+\contentsline {section}{\numberline {6.8}Referencia de la unión MCP23017\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}INTCAP\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t}{25}{section.6.8}%
+\contentsline {subsection}{\numberline {6.8.1}Descripción detallada}{26}{subsection.6.8.1}%
+\contentsline {subsection}{\numberline {6.8.2}Documentación de campos}{26}{subsection.6.8.2}%
+\contentsline {subsubsection}{\numberline {6.8.2.1}all}{26}{subsubsection.6.8.2.1}%
+\contentsline {subsubsection}{\numberline {6.8.2.2}[struct]}{26}{subsubsection.6.8.2.2}%
+\contentsline {subsubsection}{\numberline {6.8.2.3}ICP0}{26}{subsubsection.6.8.2.3}%
+\contentsline {subsubsection}{\numberline {6.8.2.4}ICP1}{26}{subsubsection.6.8.2.4}%
+\contentsline {subsubsection}{\numberline {6.8.2.5}ICP2}{26}{subsubsection.6.8.2.5}%
+\contentsline {subsubsection}{\numberline {6.8.2.6}ICP3}{26}{subsubsection.6.8.2.6}%
+\contentsline {subsubsection}{\numberline {6.8.2.7}ICP4}{27}{subsubsection.6.8.2.7}%
+\contentsline {subsubsection}{\numberline {6.8.2.8}ICP5}{27}{subsubsection.6.8.2.8}%
+\contentsline {subsubsection}{\numberline {6.8.2.9}ICP6}{27}{subsubsection.6.8.2.9}%
+\contentsline {subsubsection}{\numberline {6.8.2.10}ICP7}{27}{subsubsection.6.8.2.10}%
+\contentsline {section}{\numberline {6.9}Referencia de la unión MCP23017\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}INTCON\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t}{27}{section.6.9}%
+\contentsline {subsection}{\numberline {6.9.1}Descripción detallada}{28}{subsection.6.9.1}%
+\contentsline {subsection}{\numberline {6.9.2}Documentación de campos}{28}{subsection.6.9.2}%
+\contentsline {subsubsection}{\numberline {6.9.2.1}all}{28}{subsubsection.6.9.2.1}%
+\contentsline {subsubsection}{\numberline {6.9.2.2}[struct]}{28}{subsubsection.6.9.2.2}%
+\contentsline {subsubsection}{\numberline {6.9.2.3}IOC0}{28}{subsubsection.6.9.2.3}%
+\contentsline {subsubsection}{\numberline {6.9.2.4}IOC1}{28}{subsubsection.6.9.2.4}%
+\contentsline {subsubsection}{\numberline {6.9.2.5}IOC2}{28}{subsubsection.6.9.2.5}%
+\contentsline {subsubsection}{\numberline {6.9.2.6}IOC3}{28}{subsubsection.6.9.2.6}%
+\contentsline {subsubsection}{\numberline {6.9.2.7}IOC4}{29}{subsubsection.6.9.2.7}%
+\contentsline {subsubsection}{\numberline {6.9.2.8}IOC5}{29}{subsubsection.6.9.2.8}%
+\contentsline {subsubsection}{\numberline {6.9.2.9}IOC6}{29}{subsubsection.6.9.2.9}%
+\contentsline {subsubsection}{\numberline {6.9.2.10}IOC7}{29}{subsubsection.6.9.2.10}%
+\contentsline {section}{\numberline {6.10}Referencia de la unión MCP23017\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}INTF\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t}{29}{section.6.10}%
+\contentsline {subsection}{\numberline {6.10.1}Descripción detallada}{30}{subsection.6.10.1}%
+\contentsline {subsection}{\numberline {6.10.2}Documentación de campos}{30}{subsection.6.10.2}%
+\contentsline {subsubsection}{\numberline {6.10.2.1}all}{30}{subsubsection.6.10.2.1}%
+\contentsline {subsubsection}{\numberline {6.10.2.2}[struct]}{30}{subsubsection.6.10.2.2}%
+\contentsline {subsubsection}{\numberline {6.10.2.3}INT0}{30}{subsubsection.6.10.2.3}%
+\contentsline {subsubsection}{\numberline {6.10.2.4}INT1}{30}{subsubsection.6.10.2.4}%
+\contentsline {subsubsection}{\numberline {6.10.2.5}INT2}{30}{subsubsection.6.10.2.5}%
+\contentsline {subsubsection}{\numberline {6.10.2.6}INT3}{30}{subsubsection.6.10.2.6}%
+\contentsline {subsubsection}{\numberline {6.10.2.7}INT4}{31}{subsubsection.6.10.2.7}%
+\contentsline {subsubsection}{\numberline {6.10.2.8}INT5}{31}{subsubsection.6.10.2.8}%
+\contentsline {subsubsection}{\numberline {6.10.2.9}INT6}{31}{subsubsection.6.10.2.9}%
+\contentsline {subsubsection}{\numberline {6.10.2.10}INT7}{31}{subsubsection.6.10.2.10}%
+\contentsline {section}{\numberline {6.11}Referencia de la unión MCP23017\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}IOCON\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t}{31}{section.6.11}%
+\contentsline {subsection}{\numberline {6.11.1}Descripción detallada}{32}{subsection.6.11.1}%
+\contentsline {subsection}{\numberline {6.11.2}Documentación de campos}{32}{subsection.6.11.2}%
+\contentsline {subsubsection}{\numberline {6.11.2.1}all}{32}{subsubsection.6.11.2.1}%
+\contentsline {subsubsection}{\numberline {6.11.2.2}BANK}{32}{subsubsection.6.11.2.2}%
+\contentsline {subsubsection}{\numberline {6.11.2.3}[struct]}{32}{subsubsection.6.11.2.3}%
+\contentsline {subsubsection}{\numberline {6.11.2.4}DISSLW}{32}{subsubsection.6.11.2.4}%
+\contentsline {subsubsection}{\numberline {6.11.2.5}INTPOL}{32}{subsubsection.6.11.2.5}%
+\contentsline {subsubsection}{\numberline {6.11.2.6}MIRROR}{32}{subsubsection.6.11.2.6}%
+\contentsline {subsubsection}{\numberline {6.11.2.7}ODR}{33}{subsubsection.6.11.2.7}%
+\contentsline {subsubsection}{\numberline {6.11.2.8}reserved}{33}{subsubsection.6.11.2.8}%
+\contentsline {subsubsection}{\numberline {6.11.2.9}reserved\_2}{33}{subsubsection.6.11.2.9}%
+\contentsline {subsubsection}{\numberline {6.11.2.10}SEQOP}{33}{subsubsection.6.11.2.10}%
+\contentsline {section}{\numberline {6.12}Referencia de la unión MCP23017\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}IODIR\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t}{33}{section.6.12}%
+\contentsline {subsection}{\numberline {6.12.1}Descripción detallada}{34}{subsection.6.12.1}%
+\contentsline {subsection}{\numberline {6.12.2}Documentación de campos}{34}{subsection.6.12.2}%
+\contentsline {subsubsection}{\numberline {6.12.2.1}all}{34}{subsubsection.6.12.2.1}%
+\contentsline {subsubsection}{\numberline {6.12.2.2}[struct]}{34}{subsubsection.6.12.2.2}%
+\contentsline {subsubsection}{\numberline {6.12.2.3}IO0}{34}{subsubsection.6.12.2.3}%
+\contentsline {subsubsection}{\numberline {6.12.2.4}IO1}{34}{subsubsection.6.12.2.4}%
+\contentsline {subsubsection}{\numberline {6.12.2.5}IO2}{34}{subsubsection.6.12.2.5}%
+\contentsline {subsubsection}{\numberline {6.12.2.6}IO3}{34}{subsubsection.6.12.2.6}%
+\contentsline {subsubsection}{\numberline {6.12.2.7}IO4}{35}{subsubsection.6.12.2.7}%
+\contentsline {subsubsection}{\numberline {6.12.2.8}IO5}{35}{subsubsection.6.12.2.8}%
+\contentsline {subsubsection}{\numberline {6.12.2.9}IO6}{35}{subsubsection.6.12.2.9}%
+\contentsline {subsubsection}{\numberline {6.12.2.10}IO7}{35}{subsubsection.6.12.2.10}%
+\contentsline {section}{\numberline {6.13}Referencia de la unión MCP23017\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}IPOL\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t}{35}{section.6.13}%
+\contentsline {subsection}{\numberline {6.13.1}Descripción detallada}{36}{subsection.6.13.1}%
+\contentsline {subsection}{\numberline {6.13.2}Documentación de campos}{36}{subsection.6.13.2}%
+\contentsline {subsubsection}{\numberline {6.13.2.1}all}{36}{subsubsection.6.13.2.1}%
+\contentsline {subsubsection}{\numberline {6.13.2.2}[struct]}{36}{subsubsection.6.13.2.2}%
+\contentsline {subsubsection}{\numberline {6.13.2.3}IP0}{36}{subsubsection.6.13.2.3}%
+\contentsline {subsubsection}{\numberline {6.13.2.4}IP1}{36}{subsubsection.6.13.2.4}%
+\contentsline {subsubsection}{\numberline {6.13.2.5}IP2}{36}{subsubsection.6.13.2.5}%
+\contentsline {subsubsection}{\numberline {6.13.2.6}IP3}{36}{subsubsection.6.13.2.6}%
+\contentsline {subsubsection}{\numberline {6.13.2.7}IP4}{37}{subsubsection.6.13.2.7}%
+\contentsline {subsubsection}{\numberline {6.13.2.8}IP5}{37}{subsubsection.6.13.2.8}%
+\contentsline {subsubsection}{\numberline {6.13.2.9}IP6}{37}{subsubsection.6.13.2.9}%
+\contentsline {subsubsection}{\numberline {6.13.2.10}IP7}{37}{subsubsection.6.13.2.10}%
+\contentsline {section}{\numberline {6.14}Referencia de la unión MCP23017\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}OLAT\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t}{37}{section.6.14}%
+\contentsline {subsection}{\numberline {6.14.1}Descripción detallada}{38}{subsection.6.14.1}%
+\contentsline {subsection}{\numberline {6.14.2}Documentación de campos}{38}{subsection.6.14.2}%
+\contentsline {subsubsection}{\numberline {6.14.2.1}all}{38}{subsubsection.6.14.2.1}%
+\contentsline {subsubsection}{\numberline {6.14.2.2}[struct]}{38}{subsubsection.6.14.2.2}%
+\contentsline {subsubsection}{\numberline {6.14.2.3}OL0}{38}{subsubsection.6.14.2.3}%
+\contentsline {subsubsection}{\numberline {6.14.2.4}OL1}{38}{subsubsection.6.14.2.4}%
+\contentsline {subsubsection}{\numberline {6.14.2.5}OL2}{38}{subsubsection.6.14.2.5}%
+\contentsline {subsubsection}{\numberline {6.14.2.6}OL3}{38}{subsubsection.6.14.2.6}%
+\contentsline {subsubsection}{\numberline {6.14.2.7}OL4}{39}{subsubsection.6.14.2.7}%
+\contentsline {subsubsection}{\numberline {6.14.2.8}OL5}{39}{subsubsection.6.14.2.8}%
+\contentsline {subsubsection}{\numberline {6.14.2.9}OL6}{39}{subsubsection.6.14.2.9}%
+\contentsline {subsubsection}{\numberline {6.14.2.10}OL7}{39}{subsubsection.6.14.2.10}%
+\contentsline {section}{\numberline {6.15}Referencia de la estructura rtc\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}alarms\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t}{39}{section.6.15}%
+\contentsline {subsection}{\numberline {6.15.1}Descripción detallada}{39}{subsection.6.15.1}%
+\contentsline {subsection}{\numberline {6.15.2}Documentación de campos}{40}{subsection.6.15.2}%
+\contentsline {subsubsection}{\numberline {6.15.2.1}start\_timer}{40}{subsubsection.6.15.2.1}%
+\contentsline {subsubsection}{\numberline {6.15.2.2}stop\_timer}{40}{subsubsection.6.15.2.2}%
+\contentsline {section}{\numberline {6.16}Referencia de la estructura seccurity\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}settings\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}SH1106\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t}{40}{section.6.16}%
+\contentsline {subsection}{\numberline {6.16.1}Descripción detallada}{40}{subsection.6.16.1}%
+\contentsline {subsection}{\numberline {6.16.2}Documentación de campos}{40}{subsection.6.16.2}%
+\contentsline {subsubsection}{\numberline {6.16.2.1}edit}{40}{subsubsection.6.16.2.1}%
+\contentsline {subsubsection}{\numberline {6.16.2.2}edit\_flag}{41}{subsubsection.6.16.2.2}%
+\contentsline {subsubsection}{\numberline {6.16.2.3}edit\_variable}{41}{subsubsection.6.16.2.3}%
+\contentsline {subsubsection}{\numberline {6.16.2.4}multiplier}{41}{subsubsection.6.16.2.4}%
+\contentsline {subsubsection}{\numberline {6.16.2.5}seccurity\_settings}{41}{subsubsection.6.16.2.5}%
+\contentsline {section}{\numberline {6.17}Referencia de la estructura seccurity\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}settings\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t}{41}{section.6.17}%
+\contentsline {subsection}{\numberline {6.17.1}Descripción detallada}{41}{subsection.6.17.1}%
+\contentsline {subsection}{\numberline {6.17.2}Documentación de campos}{42}{subsection.6.17.2}%
+\contentsline {subsubsection}{\numberline {6.17.2.1}ibus\_max}{42}{subsubsection.6.17.2.1}%
+\contentsline {subsubsection}{\numberline {6.17.2.2}vbus\_min}{42}{subsubsection.6.17.2.2}%
+\contentsline {section}{\numberline {6.18}Referencia de la estructura sh1106\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t}{42}{section.6.18}%
+\contentsline {subsection}{\numberline {6.18.1}Descripción detallada}{42}{subsection.6.18.1}%
+\contentsline {subsection}{\numberline {6.18.2}Documentación de campos}{42}{subsection.6.18.2}%
+\contentsline {subsubsection}{\numberline {6.18.2.1}buffer}{42}{subsubsection.6.18.2.1}%
+\contentsline {subsubsection}{\numberline {6.18.2.2}height}{42}{subsubsection.6.18.2.2}%
+\contentsline {subsubsection}{\numberline {6.18.2.3}rotation}{43}{subsubsection.6.18.2.3}%
+\contentsline {subsubsection}{\numberline {6.18.2.4}width}{43}{subsubsection.6.18.2.4}%
+\contentsline {section}{\numberline {6.19}Referencia de la estructura spi\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cmd\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}item\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t}{43}{section.6.19}%
+\contentsline {subsection}{\numberline {6.19.1}Descripción detallada}{43}{subsection.6.19.1}%
+\contentsline {subsection}{\numberline {6.19.2}Documentación de campos}{43}{subsection.6.19.2}%
+\contentsline {subsubsection}{\numberline {6.19.2.1}getValue}{43}{subsubsection.6.19.2.1}%
+\contentsline {subsubsection}{\numberline {6.19.2.2}request}{44}{subsubsection.6.19.2.2}%
+\contentsline {subsubsection}{\numberline {6.19.2.3}setValue}{44}{subsubsection.6.19.2.3}%
+\contentsline {section}{\numberline {6.20}Referencia de la estructura system\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}status\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t}{44}{section.6.20}%
+\contentsline {subsection}{\numberline {6.20.1}Descripción detallada}{44}{subsection.6.20.1}%
+\contentsline {subsection}{\numberline {6.20.2}Documentación de campos}{44}{subsection.6.20.2}%
+\contentsline {subsubsection}{\numberline {6.20.2.1}acceleration}{44}{subsubsection.6.20.2.1}%
+\contentsline {subsubsection}{\numberline {6.20.2.2}desacceleration}{45}{subsubsection.6.20.2.2}%
+\contentsline {subsubsection}{\numberline {6.20.2.3}frequency}{45}{subsubsection.6.20.2.3}%
+\contentsline {subsubsection}{\numberline {6.20.2.4}frequency\_destiny}{45}{subsubsection.6.20.2.4}%
+\contentsline {subsubsection}{\numberline {6.20.2.5}ibus\_max}{45}{subsubsection.6.20.2.5}%
+\contentsline {subsubsection}{\numberline {6.20.2.6}inputs\_status}{45}{subsubsection.6.20.2.6}%
+\contentsline {subsubsection}{\numberline {6.20.2.7}status}{45}{subsubsection.6.20.2.7}%
+\contentsline {subsubsection}{\numberline {6.20.2.8}vbus\_min}{45}{subsubsection.6.20.2.8}%
+\contentsline {section}{\numberline {6.21}Referencia de la estructura time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}settings\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}SH1106\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t}{46}{section.6.21}%
+\contentsline {subsection}{\numberline {6.21.1}Descripción detallada}{46}{subsection.6.21.1}%
+\contentsline {subsection}{\numberline {6.21.2}Documentación de campos}{46}{subsection.6.21.2}%
+\contentsline {subsubsection}{\numberline {6.21.2.1}edit}{46}{subsubsection.6.21.2.1}%
+\contentsline {subsubsection}{\numberline {6.21.2.2}edit\_flag}{46}{subsubsection.6.21.2.2}%
+\contentsline {subsubsection}{\numberline {6.21.2.3}edit\_variable}{46}{subsubsection.6.21.2.3}%
+\contentsline {subsubsection}{\numberline {6.21.2.4}multiplier}{46}{subsubsection.6.21.2.4}%
+\contentsline {subsubsection}{\numberline {6.21.2.5}time\_settings}{47}{subsubsection.6.21.2.5}%
+\contentsline {section}{\numberline {6.22}Referencia de la estructura time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}settings\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t}{47}{section.6.22}%
+\contentsline {subsection}{\numberline {6.22.1}Descripción detallada}{47}{subsection.6.22.1}%
+\contentsline {subsection}{\numberline {6.22.2}Documentación de campos}{47}{subsection.6.22.2}%
+\contentsline {subsubsection}{\numberline {6.22.2.1}time\_start}{47}{subsubsection.6.22.2.1}%
+\contentsline {subsubsection}{\numberline {6.22.2.2}time\_stop}{47}{subsubsection.6.22.2.2}%
+\contentsline {subsubsection}{\numberline {6.22.2.3}time\_system}{47}{subsubsection.6.22.2.3}%
+\contentsline {chapter}{\numberline {7}Documentación de archivos}{49}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Referencia del archivo C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}User/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}LVFV\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ESP32/main/adc/adc.c}{49}{section.7.1}%
+\contentsline {subsection}{\numberline {7.1.1}Descripción detallada}{50}{subsection.7.1.1}%
+\contentsline {subsection}{\numberline {7.1.2}Documentación de «define»}{50}{subsection.7.1.2}%
+\contentsline {subsubsection}{\numberline {7.1.2.1}ADC\_ATTEN\_USED}{50}{subsubsection.7.1.2.1}%
+\contentsline {subsubsection}{\numberline {7.1.2.2}ADC\_CH\_GPIO34}{50}{subsubsection.7.1.2.2}%
+\contentsline {subsubsection}{\numberline {7.1.2.3}ADC\_CH\_GPIO35}{51}{subsubsection.7.1.2.3}%
+\contentsline {subsubsection}{\numberline {7.1.2.4}ADC\_CH\_GPIO36}{51}{subsubsection.7.1.2.4}%
+\contentsline {subsubsection}{\numberline {7.1.2.5}ADC\_CH\_GPIO39}{51}{subsubsection.7.1.2.5}%
+\contentsline {subsubsection}{\numberline {7.1.2.6}ADC\_PERIOD\_MS}{51}{subsubsection.7.1.2.6}%
+\contentsline {subsubsection}{\numberline {7.1.2.7}ADC\_UNIT\_USED}{51}{subsubsection.7.1.2.7}%
+\contentsline {subsection}{\numberline {7.1.3}Documentación de funciones}{52}{subsection.7.1.3}%
+\contentsline {subsubsection}{\numberline {7.1.3.1}adc\_cali\_try\_init()}{52}{subsubsection.7.1.3.1}%
+\contentsline {subsubsection}{\numberline {7.1.3.2}adc\_init()}{53}{subsubsection.7.1.3.2}%
+\contentsline {subsubsection}{\numberline {7.1.3.3}adc\_task()}{53}{subsubsection.7.1.3.3}%
+\contentsline {subsubsection}{\numberline {7.1.3.4}readADC()}{54}{subsubsection.7.1.3.4}%
+\contentsline {subsection}{\numberline {7.1.4}Documentación de variables}{55}{subsection.7.1.4}%
+\contentsline {subsubsection}{\numberline {7.1.4.1}bus\_meas\_evt\_queue}{55}{subsubsection.7.1.4.1}%
+\contentsline {subsubsection}{\numberline {7.1.4.2}calibration\_3V3\_source}{55}{subsubsection.7.1.4.2}%
+\contentsline {subsubsection}{\numberline {7.1.4.3}calibration\_3V3\_source\_ok}{55}{subsubsection.7.1.4.3}%
+\contentsline {subsubsection}{\numberline {7.1.4.4}calibration\_5V\_source}{55}{subsubsection.7.1.4.4}%
+\contentsline {subsubsection}{\numberline {7.1.4.5}calibration\_5V\_source\_ok}{55}{subsubsection.7.1.4.5}%
+\contentsline {subsubsection}{\numberline {7.1.4.6}calibration\_bus\_voltage}{55}{subsubsection.7.1.4.6}%
+\contentsline {subsubsection}{\numberline {7.1.4.7}calibration\_bus\_voltage\_ok}{56}{subsubsection.7.1.4.7}%
+\contentsline {subsubsection}{\numberline {7.1.4.8}calibration\_current}{56}{subsubsection.7.1.4.8}%
+\contentsline {subsubsection}{\numberline {7.1.4.9}calibration\_current\_ok}{56}{subsubsection.7.1.4.9}%
+\contentsline {subsubsection}{\numberline {7.1.4.10}s\_adc}{56}{subsubsection.7.1.4.10}%
+\contentsline {subsubsection}{\numberline {7.1.4.11}TAG}{56}{subsubsection.7.1.4.11}%
+\contentsline {section}{\numberline {7.2}adc.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c}{56}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Referencia del archivo C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}User/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}LVFV\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ESP32/main/adc/adc.h}{59}{section.7.3}%
+\contentsline {subsection}{\numberline {7.3.1}Descripción detallada}{59}{subsection.7.3.1}%
+\contentsline {subsection}{\numberline {7.3.2}Documentación de funciones}{60}{subsection.7.3.2}%
+\contentsline {subsubsection}{\numberline {7.3.2.1}adc\_init()}{60}{subsubsection.7.3.2.1}%
+\contentsline {subsubsection}{\numberline {7.3.2.2}adc\_task()}{60}{subsubsection.7.3.2.2}%
+\contentsline {subsubsection}{\numberline {7.3.2.3}readADC()}{60}{subsubsection.7.3.2.3}%
+\contentsline {section}{\numberline {7.4}adc.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{61}{section.7.4}%
+\contentsline {section}{\numberline {7.5}Referencia del archivo C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}User/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}LVFV\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ESP32/main/display/display.c}{61}{section.7.5}%
+\contentsline {subsection}{\numberline {7.5.1}Descripción detallada}{63}{subsection.7.5.1}%
+\contentsline {subsection}{\numberline {7.5.2}Documentación de «define»}{63}{subsection.7.5.2}%
+\contentsline {subsubsection}{\numberline {7.5.2.1}EDIT\_ACCELERATION\_INDX}{63}{subsubsection.7.5.2.1}%
+\contentsline {subsubsection}{\numberline {7.5.2.2}EDIT\_DESACCELERATION\_INDX}{64}{subsubsection.7.5.2.2}%
+\contentsline {subsubsection}{\numberline {7.5.2.3}EDIT\_FREQUENCY\_INDX}{64}{subsubsection.7.5.2.3}%
+\contentsline {subsubsection}{\numberline {7.5.2.4}EDIT\_HFIN\_LINE\_INDX}{64}{subsubsection.7.5.2.4}%
+\contentsline {subsubsection}{\numberline {7.5.2.5}EDIT\_HINI\_LINE\_INDX}{64}{subsubsection.7.5.2.5}%
+\contentsline {subsubsection}{\numberline {7.5.2.6}EDIT\_IBUS\_LINE\_INDX}{64}{subsubsection.7.5.2.6}%
+\contentsline {subsubsection}{\numberline {7.5.2.7}EDIT\_INPUT\_VARIATION\_INDX}{64}{subsubsection.7.5.2.7}%
+\contentsline {subsubsection}{\numberline {7.5.2.8}EDIT\_TIME\_LINE\_INDX}{64}{subsubsection.7.5.2.8}%
+\contentsline {subsubsection}{\numberline {7.5.2.9}EDIT\_VBUS\_LINE\_INDX}{64}{subsubsection.7.5.2.9}%
+\contentsline {subsubsection}{\numberline {7.5.2.10}FREC\_LINE\_INDX}{65}{subsubsection.7.5.2.10}%
+\contentsline {subsubsection}{\numberline {7.5.2.11}FREQUENCY\_CUADRATIC\_VARIABLE}{65}{subsubsection.7.5.2.11}%
+\contentsline {subsubsection}{\numberline {7.5.2.12}FREQUENCY\_LINEAR\_VARIABLE}{65}{subsubsection.7.5.2.12}%
+\contentsline {subsubsection}{\numberline {7.5.2.13}HFIN\_LINE\_INDX}{65}{subsubsection.7.5.2.13}%
+\contentsline {subsubsection}{\numberline {7.5.2.14}HINI\_LINE\_INDX}{65}{subsubsection.7.5.2.14}%
+\contentsline {subsubsection}{\numberline {7.5.2.15}I2C\_DISPLAY\_MASTER\_NUM}{65}{subsubsection.7.5.2.15}%
+\contentsline {subsubsection}{\numberline {7.5.2.16}I2C\_MASTER\_FREQ\_HZ}{65}{subsubsection.7.5.2.16}%
+\contentsline {subsubsection}{\numberline {7.5.2.17}I2C\_MASTER\_RX\_BUF\_DISABLE}{65}{subsubsection.7.5.2.17}%
+\contentsline {subsubsection}{\numberline {7.5.2.18}I2C\_MASTER\_SCL\_IO}{66}{subsubsection.7.5.2.18}%
+\contentsline {subsubsection}{\numberline {7.5.2.19}I2C\_MASTER\_SDA\_IO}{66}{subsubsection.7.5.2.19}%
+\contentsline {subsubsection}{\numberline {7.5.2.20}I2C\_MASTER\_TX\_BUF\_DISABLE}{66}{subsubsection.7.5.2.20}%
+\contentsline {subsubsection}{\numberline {7.5.2.21}IBUS\_LINE\_INDX}{66}{subsubsection.7.5.2.21}%
+\contentsline {subsubsection}{\numberline {7.5.2.22}VBUS\_LINE\_INDX}{66}{subsubsection.7.5.2.22}%
+\contentsline {subsection}{\numberline {7.5.3}Documentación de enumeraciones}{66}{subsection.7.5.3}%
+\contentsline {subsubsection}{\numberline {7.5.3.1}screen\_selected\_e}{66}{subsubsection.7.5.3.1}%
+\contentsline {subsection}{\numberline {7.5.4}Documentación de funciones}{67}{subsection.7.5.4}%
+\contentsline {subsubsection}{\numberline {7.5.4.1}DisplayEventPost()}{67}{subsubsection.7.5.4.1}%
+\contentsline {subsubsection}{\numberline {7.5.4.2}get\_system\_acceleration()}{67}{subsubsection.7.5.4.2}%
+\contentsline {subsubsection}{\numberline {7.5.4.3}get\_system\_desacceleration()}{67}{subsubsection.7.5.4.3}%
+\contentsline {subsubsection}{\numberline {7.5.4.4}get\_system\_frequency()}{67}{subsubsection.7.5.4.4}%
+\contentsline {subsubsection}{\numberline {7.5.4.5}i2c\_master\_init()}{68}{subsubsection.7.5.4.5}%
+\contentsline {subsubsection}{\numberline {7.5.4.6}sh1106\_clear\_buffer()}{68}{subsubsection.7.5.4.6}%
+\contentsline {subsubsection}{\numberline {7.5.4.7}sh1106\_frequency\_edit\_variables()}{68}{subsubsection.7.5.4.7}%
+\contentsline {subsubsection}{\numberline {7.5.4.8}sh1106\_init()}{68}{subsubsection.7.5.4.8}%
+\contentsline {subsubsection}{\numberline {7.5.4.9}sh1106\_main\_screen()}{69}{subsubsection.7.5.4.9}%
+\contentsline {subsubsection}{\numberline {7.5.4.10}sh1106\_print\_emergency()}{69}{subsubsection.7.5.4.10}%
+\contentsline {subsubsection}{\numberline {7.5.4.11}sh1106\_print\_frame()}{69}{subsubsection.7.5.4.11}%
+\contentsline {subsubsection}{\numberline {7.5.4.12}sh1106\_refresh()}{69}{subsubsection.7.5.4.12}%
+\contentsline {subsubsection}{\numberline {7.5.4.13}sh1106\_security\_edit\_variables()}{69}{subsubsection.7.5.4.13}%
+\contentsline {subsubsection}{\numberline {7.5.4.14}sh1106\_select\_edit\_variables()}{70}{subsubsection.7.5.4.14}%
+\contentsline {subsubsection}{\numberline {7.5.4.15}sh1106\_splash\_screen()}{70}{subsubsection.7.5.4.15}%
+\contentsline {subsubsection}{\numberline {7.5.4.16}sh1106\_time\_edit\_variables()}{70}{subsubsection.7.5.4.16}%
+\contentsline {subsubsection}{\numberline {7.5.4.17}system\_variables\_save()}{71}{subsubsection.7.5.4.17}%
+\contentsline {subsubsection}{\numberline {7.5.4.18}task\_display()}{71}{subsubsection.7.5.4.18}%
+\contentsline {subsection}{\numberline {7.5.5}Documentación de variables}{72}{subsection.7.5.5}%
+\contentsline {subsubsection}{\numberline {7.5.5.1}blink}{72}{subsubsection.7.5.5.1}%
+\contentsline {subsubsection}{\numberline {7.5.5.2}button\_evt\_queue}{72}{subsubsection.7.5.5.2}%
+\contentsline {subsubsection}{\numberline {7.5.5.3}init\_seq}{72}{subsubsection.7.5.5.3}%
+\contentsline {subsubsection}{\numberline {7.5.5.4}oled}{72}{subsubsection.7.5.5.4}%
+\contentsline {subsubsection}{\numberline {7.5.5.5}screen\_displayed}{72}{subsubsection.7.5.5.5}%
+\contentsline {subsubsection}{\numberline {7.5.5.6}system\_frequency\_settings}{73}{subsubsection.7.5.5.6}%
+\contentsline {subsubsection}{\numberline {7.5.5.7}system\_seccurity\_settings}{73}{subsubsection.7.5.5.7}%
+\contentsline {subsubsection}{\numberline {7.5.5.8}system\_time\_settings}{73}{subsubsection.7.5.5.8}%
+\contentsline {subsubsection}{\numberline {7.5.5.9}TAG}{73}{subsubsection.7.5.5.9}%
+\contentsline {section}{\numberline {7.6}display.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c}{73}{section.7.6}%
+\contentsline {section}{\numberline {7.7}Referencia del archivo C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}User/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}LVFV\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ESP32/main/display/display.h}{84}{section.7.7}%
+\contentsline {subsection}{\numberline {7.7.1}Descripción detallada}{84}{subsection.7.7.1}%
+\contentsline {subsection}{\numberline {7.7.2}Documentación de funciones}{85}{subsection.7.7.2}%
+\contentsline {subsubsection}{\numberline {7.7.2.1}DisplayEventPost()}{85}{subsubsection.7.7.2.1}%
+\contentsline {subsubsection}{\numberline {7.7.2.2}get\_system\_acceleration()}{86}{subsubsection.7.7.2.2}%
+\contentsline {subsubsection}{\numberline {7.7.2.3}get\_system\_desacceleration()}{86}{subsubsection.7.7.2.3}%
+\contentsline {subsubsection}{\numberline {7.7.2.4}get\_system\_frequency()}{86}{subsubsection.7.7.2.4}%
+\contentsline {subsubsection}{\numberline {7.7.2.5}sh1106\_init()}{86}{subsubsection.7.7.2.5}%
+\contentsline {subsubsection}{\numberline {7.7.2.6}system\_variables\_save()}{87}{subsubsection.7.7.2.6}%
+\contentsline {subsubsection}{\numberline {7.7.2.7}task\_display()}{87}{subsubsection.7.7.2.7}%
+\contentsline {section}{\numberline {7.8}display.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{88}{section.7.8}%
+\contentsline {section}{\numberline {7.9}Referencia del archivo C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}User/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}LVFV\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ESP32/main/display/sh1106\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}graphics.c}{88}{section.7.9}%
+\contentsline {subsection}{\numberline {7.9.1}Descripción detallada}{89}{subsection.7.9.1}%
+\contentsline {subsection}{\numberline {7.9.2}Documentación de «typedef»}{90}{subsection.7.9.2}%
+\contentsline {subsubsection}{\numberline {7.9.2.1}bitmap\_t}{90}{subsubsection.7.9.2.1}%
+\contentsline {subsection}{\numberline {7.9.3}Documentación de funciones}{90}{subsection.7.9.3}%
+\contentsline {subsubsection}{\numberline {7.9.3.1}sh1106\_draw\_arrow()}{90}{subsubsection.7.9.3.1}%
+\contentsline {subsubsection}{\numberline {7.9.3.2}sh1106\_draw\_bitmap()}{90}{subsubsection.7.9.3.2}%
+\contentsline {subsubsection}{\numberline {7.9.3.3}sh1106\_draw\_fail()}{90}{subsubsection.7.9.3.3}%
+\contentsline {subsubsection}{\numberline {7.9.3.4}sh1106\_draw\_line()}{91}{subsubsection.7.9.3.4}%
+\contentsline {subsubsection}{\numberline {7.9.3.5}sh1106\_draw\_text()}{91}{subsubsection.7.9.3.5}%
+\contentsline {subsubsection}{\numberline {7.9.3.6}sh1106\_draw\_utn\_logo()}{91}{subsubsection.7.9.3.6}%
+\contentsline {subsection}{\numberline {7.9.4}Documentación de variables}{92}{subsection.7.9.4}%
+\contentsline {subsubsection}{\numberline {7.9.4.1}arrow\_bmp}{92}{subsubsection.7.9.4.1}%
+\contentsline {subsubsection}{\numberline {7.9.4.2}fail\_bmp}{92}{subsubsection.7.9.4.2}%
+\contentsline {subsubsection}{\numberline {7.9.4.3}font5x7\_close\_excl}{92}{subsubsection.7.9.4.3}%
+\contentsline {subsubsection}{\numberline {7.9.4.4}font5x7\_close\_quest}{92}{subsubsection.7.9.4.4}%
+\contentsline {subsubsection}{\numberline {7.9.4.5}font5x7\_comma}{92}{subsubsection.7.9.4.5}%
+\contentsline {subsubsection}{\numberline {7.9.4.6}font5x7\_dot}{92}{subsubsection.7.9.4.6}%
+\contentsline {subsubsection}{\numberline {7.9.4.7}font5x7\_double\_dot}{93}{subsubsection.7.9.4.7}%
+\contentsline {subsubsection}{\numberline {7.9.4.8}font5x7\_minus}{93}{subsubsection.7.9.4.8}%
+\contentsline {subsubsection}{\numberline {7.9.4.9}font5x7\_rowmajor}{93}{subsubsection.7.9.4.9}%
+\contentsline {subsubsection}{\numberline {7.9.4.10}font5x7\_rowminor}{94}{subsubsection.7.9.4.10}%
+\contentsline {subsubsection}{\numberline {7.9.4.11}font5x7\_rownumber}{94}{subsubsection.7.9.4.11}%
+\contentsline {subsubsection}{\numberline {7.9.4.12}font5x7\_space}{95}{subsubsection.7.9.4.12}%
+\contentsline {subsubsection}{\numberline {7.9.4.13}font8x14\_close\_excl}{95}{subsubsection.7.9.4.13}%
+\contentsline {subsubsection}{\numberline {7.9.4.14}font8x14\_close\_quest}{95}{subsubsection.7.9.4.14}%
+\contentsline {subsubsection}{\numberline {7.9.4.15}font8x14\_comma}{95}{subsubsection.7.9.4.15}%
+\contentsline {subsubsection}{\numberline {7.9.4.16}font8x14\_dot}{95}{subsubsection.7.9.4.16}%
+\contentsline {subsubsection}{\numberline {7.9.4.17}font8x14\_double\_dot}{96}{subsubsection.7.9.4.17}%
+\contentsline {subsubsection}{\numberline {7.9.4.18}font8x14\_minus}{96}{subsubsection.7.9.4.18}%
+\contentsline {subsubsection}{\numberline {7.9.4.19}font8x14\_rowmajor}{96}{subsubsection.7.9.4.19}%
+\contentsline {subsubsection}{\numberline {7.9.4.20}font8x14\_rowminor}{97}{subsubsection.7.9.4.20}%
+\contentsline {subsubsection}{\numberline {7.9.4.21}font8x14\_rownumber}{97}{subsubsection.7.9.4.21}%
+\contentsline {subsubsection}{\numberline {7.9.4.22}font8x14\_space}{98}{subsubsection.7.9.4.22}%
+\contentsline {subsubsection}{\numberline {7.9.4.23}line\_bmp}{98}{subsubsection.7.9.4.23}%
+\contentsline {subsubsection}{\numberline {7.9.4.24}logo16\_utn\_bmp}{98}{subsubsection.7.9.4.24}%
+\contentsline {subsubsection}{\numberline {7.9.4.25}slash}{98}{subsubsection.7.9.4.25}%
+\contentsline {section}{\numberline {7.10}sh1106\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}graphics.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c}{99}{section.7.10}%
+\contentsline {section}{\numberline {7.11}Referencia del archivo C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}User/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}LVFV\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ESP32/main/display/sh1106\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}graphics.h}{104}{section.7.11}%
+\contentsline {subsection}{\numberline {7.11.1}Descripción detallada}{105}{subsection.7.11.1}%
+\contentsline {subsection}{\numberline {7.11.2}Documentación de «typedef»}{105}{subsection.7.11.2}%
+\contentsline {subsubsection}{\numberline {7.11.2.1}sh1106\_t}{105}{subsubsection.7.11.2.1}%
+\contentsline {subsection}{\numberline {7.11.3}Documentación de funciones}{105}{subsection.7.11.3}%
+\contentsline {subsubsection}{\numberline {7.11.3.1}sh1106\_draw\_arrow()}{105}{subsubsection.7.11.3.1}%
+\contentsline {subsubsection}{\numberline {7.11.3.2}sh1106\_draw\_fail()}{106}{subsubsection.7.11.3.2}%
+\contentsline {subsubsection}{\numberline {7.11.3.3}sh1106\_draw\_line()}{106}{subsubsection.7.11.3.3}%
+\contentsline {subsubsection}{\numberline {7.11.3.4}sh1106\_draw\_text()}{106}{subsubsection.7.11.3.4}%
+\contentsline {subsubsection}{\numberline {7.11.3.5}sh1106\_draw\_utn\_logo()}{107}{subsubsection.7.11.3.5}%
+\contentsline {section}{\numberline {7.12}sh1106\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}graphics.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{107}{section.7.12}%
+\contentsline {section}{\numberline {7.13}Referencia del archivo C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}User/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}LVFV\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ESP32/main/display/sh1106\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}i2c.c}{107}{section.7.13}%
+\contentsline {subsection}{\numberline {7.13.1}Descripción detallada}{108}{subsection.7.13.1}%
+\contentsline {subsection}{\numberline {7.13.2}Documentación de «define»}{108}{subsection.7.13.2}%
+\contentsline {subsubsection}{\numberline {7.13.2.1}CMD\_CONTROL}{108}{subsubsection.7.13.2.1}%
+\contentsline {subsubsection}{\numberline {7.13.2.2}DATA\_CONTROL}{108}{subsubsection.7.13.2.2}%
+\contentsline {subsubsection}{\numberline {7.13.2.3}I2C\_DISPLAY}{109}{subsubsection.7.13.2.3}%
+\contentsline {subsubsection}{\numberline {7.13.2.4}SH1106\_ADDR}{109}{subsubsection.7.13.2.4}%
+\contentsline {subsection}{\numberline {7.13.3}Documentación de funciones}{109}{subsection.7.13.3}%
+\contentsline {subsubsection}{\numberline {7.13.3.1}sh1106\_write()}{109}{subsubsection.7.13.3.1}%
+\contentsline {section}{\numberline {7.14}sh1106\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}i2c.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c}{109}{section.7.14}%
+\contentsline {section}{\numberline {7.15}Referencia del archivo C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}User/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}LVFV\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ESP32/main/display/sh1106\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}i2c.h}{110}{section.7.15}%
+\contentsline {subsection}{\numberline {7.15.1}Descripción detallada}{110}{subsection.7.15.1}%
+\contentsline {subsection}{\numberline {7.15.2}Documentación de enumeraciones}{110}{subsection.7.15.2}%
+\contentsline {subsubsection}{\numberline {7.15.2.1}sh1106\_comm\_type\_t}{110}{subsubsection.7.15.2.1}%
+\contentsline {subsection}{\numberline {7.15.3}Documentación de funciones}{111}{subsection.7.15.3}%
+\contentsline {subsubsection}{\numberline {7.15.3.1}sh1106\_write()}{111}{subsubsection.7.15.3.1}%
+\contentsline {section}{\numberline {7.16}sh1106\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}i2c.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{111}{section.7.16}%
+\contentsline {section}{\numberline {7.17}Referencia del archivo C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}User/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}LVFV\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ESP32/main/io\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}control/io\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}control.c}{112}{section.7.17}%
+\contentsline {subsection}{\numberline {7.17.1}Descripción detallada}{114}{subsection.7.17.1}%
+\contentsline {subsection}{\numberline {7.17.2}Documentación de «define»}{114}{subsection.7.17.2}%
+\contentsline {subsubsection}{\numberline {7.17.2.1}BUZZER\_PIN}{114}{subsubsection.7.17.2.1}%
+\contentsline {subsubsection}{\numberline {7.17.2.2}DUTY\_MAX\_PCT}{114}{subsubsection.7.17.2.2}%
+\contentsline {subsubsection}{\numberline {7.17.2.3}DUTY\_MIN\_PCT}{114}{subsubsection.7.17.2.3}%
+\contentsline {subsubsection}{\numberline {7.17.2.4}FREQ\_SEL\_1\_PIN}{115}{subsubsection.7.17.2.4}%
+\contentsline {subsubsection}{\numberline {7.17.2.5}FREQ\_SEL\_2\_PIN}{115}{subsubsection.7.17.2.5}%
+\contentsline {subsubsection}{\numberline {7.17.2.6}FREQ\_SEL\_3\_PIN}{115}{subsubsection.7.17.2.6}%
+\contentsline {subsubsection}{\numberline {7.17.2.7}FREQ\_SEL\_MASK}{115}{subsubsection.7.17.2.7}%
+\contentsline {subsubsection}{\numberline {7.17.2.8}INT\_A\_PIN}{115}{subsubsection.7.17.2.8}%
+\contentsline {subsubsection}{\numberline {7.17.2.9}INT\_B\_PIN}{115}{subsubsection.7.17.2.9}%
+\contentsline {subsubsection}{\numberline {7.17.2.10}MATRIX\_SW1}{116}{subsubsection.7.17.2.10}%
+\contentsline {subsubsection}{\numberline {7.17.2.11}MATRIX\_SW2}{116}{subsubsection.7.17.2.11}%
+\contentsline {subsubsection}{\numberline {7.17.2.12}MATRIX\_SW3}{116}{subsubsection.7.17.2.12}%
+\contentsline {subsubsection}{\numberline {7.17.2.13}MATRIX\_SW4}{116}{subsubsection.7.17.2.13}%
+\contentsline {subsubsection}{\numberline {7.17.2.14}MATRIX\_SW5}{116}{subsubsection.7.17.2.14}%
+\contentsline {subsubsection}{\numberline {7.17.2.15}MATRIX\_SW6}{116}{subsubsection.7.17.2.15}%
+\contentsline {subsubsection}{\numberline {7.17.2.16}MATRIX\_SW7}{117}{subsubsection.7.17.2.16}%
+\contentsline {subsubsection}{\numberline {7.17.2.17}MATRIX\_SW8}{117}{subsubsection.7.17.2.17}%
+\contentsline {subsubsection}{\numberline {7.17.2.18}PWM\_CHANNEL}{117}{subsubsection.7.17.2.18}%
+\contentsline {subsubsection}{\numberline {7.17.2.19}PWM\_FREQ\_HZ}{117}{subsubsection.7.17.2.19}%
+\contentsline {subsubsection}{\numberline {7.17.2.20}PWM\_GPIO}{117}{subsubsection.7.17.2.20}%
+\contentsline {subsubsection}{\numberline {7.17.2.21}PWM\_MODE}{117}{subsubsection.7.17.2.21}%
+\contentsline {subsubsection}{\numberline {7.17.2.22}PWM\_RES}{118}{subsubsection.7.17.2.22}%
+\contentsline {subsubsection}{\numberline {7.17.2.23}PWM\_STEP\_MS}{118}{subsubsection.7.17.2.23}%
+\contentsline {subsubsection}{\numberline {7.17.2.24}PWM\_TIMER}{118}{subsubsection.7.17.2.24}%
+\contentsline {subsubsection}{\numberline {7.17.2.25}RELAY\_PIN}{118}{subsubsection.7.17.2.25}%
+\contentsline {subsubsection}{\numberline {7.17.2.26}START\_BUTTON\_PIN}{118}{subsubsection.7.17.2.26}%
+\contentsline {subsubsection}{\numberline {7.17.2.27}STOP\_BUTTON\_PIN}{118}{subsubsection.7.17.2.27}%
+\contentsline {subsubsection}{\numberline {7.17.2.28}STOP\_PIN}{119}{subsubsection.7.17.2.28}%
+\contentsline {subsubsection}{\numberline {7.17.2.29}STOP\_SW\_MASK}{119}{subsubsection.7.17.2.29}%
+\contentsline {subsubsection}{\numberline {7.17.2.30}SWITCH\_BUTTON\_BACK}{119}{subsubsection.7.17.2.30}%
+\contentsline {subsubsection}{\numberline {7.17.2.31}SWITCH\_BUTTON\_DOWN}{119}{subsubsection.7.17.2.31}%
+\contentsline {subsubsection}{\numberline {7.17.2.32}SWITCH\_BUTTON\_LEFT}{119}{subsubsection.7.17.2.32}%
+\contentsline {subsubsection}{\numberline {7.17.2.33}SWITCH\_BUTTON\_MENU}{119}{subsubsection.7.17.2.33}%
+\contentsline {subsubsection}{\numberline {7.17.2.34}SWITCH\_BUTTON\_OK}{120}{subsubsection.7.17.2.34}%
+\contentsline {subsubsection}{\numberline {7.17.2.35}SWITCH\_BUTTON\_RIGHT}{120}{subsubsection.7.17.2.35}%
+\contentsline {subsubsection}{\numberline {7.17.2.36}SWITCH\_BUTTON\_SAVE}{120}{subsubsection.7.17.2.36}%
+\contentsline {subsubsection}{\numberline {7.17.2.37}SWITCH\_BUTTON\_UP}{120}{subsubsection.7.17.2.37}%
+\contentsline {subsubsection}{\numberline {7.17.2.38}TERMO\_SW\_MASK}{120}{subsubsection.7.17.2.38}%
+\contentsline {subsubsection}{\numberline {7.17.2.39}TERMO\_SW\_PIN}{120}{subsubsection.7.17.2.39}%
+\contentsline {subsection}{\numberline {7.17.3}Documentación de funciones}{120}{subsection.7.17.3}%
+\contentsline {subsubsection}{\numberline {7.17.3.1}BuzzerEvantPost()}{120}{subsubsection.7.17.3.1}%
+\contentsline {subsubsection}{\numberline {7.17.3.2}freq\_0\_10V\_output()}{121}{subsubsection.7.17.3.2}%
+\contentsline {subsubsection}{\numberline {7.17.3.3}gpio\_init\_interrupts()}{121}{subsubsection.7.17.3.3}%
+\contentsline {subsubsection}{\numberline {7.17.3.4}GPIO\_interrupt\_attendance\_task()}{122}{subsubsection.7.17.3.4}%
+\contentsline {subsubsection}{\numberline {7.17.3.5}gpio\_isr\_handler()}{122}{subsubsection.7.17.3.5}%
+\contentsline {subsubsection}{\numberline {7.17.3.6}MCP23017\_buzzer\_control()}{122}{subsubsection.7.17.3.6}%
+\contentsline {subsubsection}{\numberline {7.17.3.7}MCP23017\_keyboard\_control()}{122}{subsubsection.7.17.3.7}%
+\contentsline {subsubsection}{\numberline {7.17.3.8}MCP23017\_relay\_control()}{123}{subsubsection.7.17.3.8}%
+\contentsline {subsubsection}{\numberline {7.17.3.9}RelayEvantPost()}{123}{subsubsection.7.17.3.9}%
+\contentsline {subsubsection}{\numberline {7.17.3.10}set\_freq\_output()}{124}{subsubsection.7.17.3.10}%
+\contentsline {subsection}{\numberline {7.17.4}Documentación de variables}{124}{subsection.7.17.4}%
+\contentsline {subsubsection}{\numberline {7.17.4.1}buzzer\_evt\_queue}{124}{subsubsection.7.17.4.1}%
+\contentsline {subsubsection}{\numberline {7.17.4.2}GPIO\_evt\_queue}{124}{subsubsection.7.17.4.2}%
+\contentsline {subsubsection}{\numberline {7.17.4.3}mcp\_porta}{125}{subsubsection.7.17.4.3}%
+\contentsline {subsubsection}{\numberline {7.17.4.4}mcp\_portb}{125}{subsubsection.7.17.4.4}%
+\contentsline {subsubsection}{\numberline {7.17.4.5}relay\_evt\_queue}{125}{subsubsection.7.17.4.5}%
+\contentsline {subsubsection}{\numberline {7.17.4.6}TAG}{125}{subsubsection.7.17.4.6}%
+\contentsline {section}{\numberline {7.18}io\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}control.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c}{125}{section.7.18}%
+\contentsline {section}{\numberline {7.19}Referencia del archivo C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}User/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}LVFV\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ESP32/main/io\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}control/io\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}control.h}{132}{section.7.19}%
+\contentsline {subsection}{\numberline {7.19.1}Descripción detallada}{133}{subsection.7.19.1}%
+\contentsline {subsection}{\numberline {7.19.2}Documentación de funciones}{133}{subsection.7.19.2}%
+\contentsline {subsubsection}{\numberline {7.19.2.1}BuzzerEvantPost()}{133}{subsubsection.7.19.2.1}%
+\contentsline {subsubsection}{\numberline {7.19.2.2}GPIO\_interrupt\_attendance\_task()}{133}{subsubsection.7.19.2.2}%
+\contentsline {subsubsection}{\numberline {7.19.2.3}RelayEvantPost()}{134}{subsubsection.7.19.2.3}%
+\contentsline {subsubsection}{\numberline {7.19.2.4}set\_freq\_output()}{135}{subsubsection.7.19.2.4}%
+\contentsline {section}{\numberline {7.20}io\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}control.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{135}{section.7.20}%
+\contentsline {section}{\numberline {7.21}Referencia del archivo C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}User/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}LVFV\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ESP32/main/io\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}control/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}MCP23017.c}{136}{section.7.21}%
+\contentsline {subsection}{\numberline {7.21.1}Descripción detallada}{137}{subsection.7.21.1}%
+\contentsline {subsection}{\numberline {7.21.2}Documentación de «define»}{137}{subsection.7.21.2}%
+\contentsline {subsubsection}{\numberline {7.21.2.1}I2C\_IO\_MASTER\_NUM}{137}{subsubsection.7.21.2.1}%
+\contentsline {subsubsection}{\numberline {7.21.2.2}I2C\_MASTER\_FREQ\_HZ}{138}{subsubsection.7.21.2.2}%
+\contentsline {subsubsection}{\numberline {7.21.2.3}I2C\_MASTER\_RX\_BUF\_DISABLE}{138}{subsubsection.7.21.2.3}%
+\contentsline {subsubsection}{\numberline {7.21.2.4}I2C\_MASTER\_SCL\_IO}{138}{subsubsection.7.21.2.4}%
+\contentsline {subsubsection}{\numberline {7.21.2.5}I2C\_MASTER\_SDA\_IO}{138}{subsubsection.7.21.2.5}%
+\contentsline {subsubsection}{\numberline {7.21.2.6}I2C\_MASTER\_TIMEOUT\_MS}{138}{subsubsection.7.21.2.6}%
+\contentsline {subsubsection}{\numberline {7.21.2.7}I2C\_MASTER\_TX\_BUF\_DISABLE}{138}{subsubsection.7.21.2.7}%
+\contentsline {subsection}{\numberline {7.21.3}Documentación de funciones}{139}{subsection.7.21.3}%
+\contentsline {subsubsection}{\numberline {7.21.3.1}i2c\_is\_hardware\_free()}{139}{subsubsection.7.21.3.1}%
+\contentsline {subsubsection}{\numberline {7.21.3.2}i2c\_master\_init()}{139}{subsubsection.7.21.3.2}%
+\contentsline {subsubsection}{\numberline {7.21.3.3}i2c\_release\_hardware()}{139}{subsubsection.7.21.3.3}%
+\contentsline {subsubsection}{\numberline {7.21.3.4}MCP23017\_INIT()}{140}{subsubsection.7.21.3.4}%
+\contentsline {subsubsection}{\numberline {7.21.3.5}mcp\_get\_on\_interrupt\_input()}{140}{subsubsection.7.21.3.5}%
+\contentsline {subsubsection}{\numberline {7.21.3.6}mcp\_interrupt\_flag()}{141}{subsubsection.7.21.3.6}%
+\contentsline {subsubsection}{\numberline {7.21.3.7}mcp\_read\_port()}{142}{subsubsection.7.21.3.7}%
+\contentsline {subsubsection}{\numberline {7.21.3.8}mcp\_register\_read()}{142}{subsubsection.7.21.3.8}%
+\contentsline {subsubsection}{\numberline {7.21.3.9}mcp\_register\_write()}{143}{subsubsection.7.21.3.9}%
+\contentsline {subsubsection}{\numberline {7.21.3.10}mcp\_write\_output\_pin()}{143}{subsubsection.7.21.3.10}%
+\contentsline {subsubsection}{\numberline {7.21.3.11}mcp\_write\_output\_port()}{144}{subsubsection.7.21.3.11}%
+\contentsline {subsection}{\numberline {7.21.4}Documentación de variables}{144}{subsection.7.21.4}%
+\contentsline {subsubsection}{\numberline {7.21.4.1}TAG}{144}{subsubsection.7.21.4.1}%
+\contentsline {subsubsection}{\numberline {7.21.4.2}xI2C\_Mutex}{145}{subsubsection.7.21.4.2}%
+\contentsline {section}{\numberline {7.22}MCP23017.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c}{145}{section.7.22}%
+\contentsline {section}{\numberline {7.23}Referencia del archivo C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}User/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}LVFV\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ESP32/main/io\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}control/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}MCP23017.h}{149}{section.7.23}%
+\contentsline {subsection}{\numberline {7.23.1}Descripción detallada}{149}{subsection.7.23.1}%
+\contentsline {subsection}{\numberline {7.23.2}Documentación de funciones}{150}{subsection.7.23.2}%
+\contentsline {subsubsection}{\numberline {7.23.2.1}MCP23017\_INIT()}{150}{subsubsection.7.23.2.1}%
+\contentsline {subsubsection}{\numberline {7.23.2.2}mcp\_get\_on\_interrupt\_input()}{150}{subsubsection.7.23.2.2}%
+\contentsline {subsubsection}{\numberline {7.23.2.3}mcp\_interrupt\_flag()}{151}{subsubsection.7.23.2.3}%
+\contentsline {subsubsection}{\numberline {7.23.2.4}mcp\_read\_port()}{151}{subsubsection.7.23.2.4}%
+\contentsline {subsubsection}{\numberline {7.23.2.5}mcp\_write\_output\_pin()}{152}{subsubsection.7.23.2.5}%
+\contentsline {subsubsection}{\numberline {7.23.2.6}mcp\_write\_output\_port()}{152}{subsubsection.7.23.2.6}%
+\contentsline {section}{\numberline {7.24}MCP23017.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{153}{section.7.24}%
+\contentsline {section}{\numberline {7.25}Referencia del archivo C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}User/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}LVFV\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ESP32/main/io\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}control/mcp23017\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}defs.h}{153}{section.7.25}%
+\contentsline {subsection}{\numberline {7.25.1}Documentación de «define»}{155}{subsection.7.25.1}%
+\contentsline {subsubsection}{\numberline {7.25.1.1}\_\_MCP23017\_ADDRESS\_\_}{155}{subsubsection.7.25.1.1}%
+\contentsline {subsubsection}{\numberline {7.25.1.2}\_\_MCP23017\_BANK\_SEQUENTIAL\_\_}{155}{subsubsection.7.25.1.2}%
+\contentsline {subsubsection}{\numberline {7.25.1.3}\_\_MCP23017\_BANK\_SPLIT\_\_}{155}{subsubsection.7.25.1.3}%
+\contentsline {subsubsection}{\numberline {7.25.1.4}\_\_MCP23017\_DISSLW\_DISABLED\_\_}{155}{subsubsection.7.25.1.4}%
+\contentsline {subsubsection}{\numberline {7.25.1.5}\_\_MCP23017\_DISSLW\_ENABLED\_\_}{155}{subsubsection.7.25.1.5}%
+\contentsline {subsubsection}{\numberline {7.25.1.6}\_\_MCP23017\_FUNC\_MODE\_\_}{156}{subsubsection.7.25.1.6}%
+\contentsline {subsubsection}{\numberline {7.25.1.7}\_\_MCP23017\_GPINTEN\_DISABLE\_\_}{156}{subsubsection.7.25.1.7}%
+\contentsline {subsubsection}{\numberline {7.25.1.8}\_\_MCP23017\_GPINTEN\_ENABLE\_\_}{156}{subsubsection.7.25.1.8}%
+\contentsline {subsubsection}{\numberline {7.25.1.9}\_\_MCP23017\_GPPU\_PULL\_UP\_DISABLE\_\_}{156}{subsubsection.7.25.1.9}%
+\contentsline {subsubsection}{\numberline {7.25.1.10}\_\_MCP23017\_GPPU\_PULL\_UP\_ENABLE\_\_}{156}{subsubsection.7.25.1.10}%
+\contentsline {subsubsection}{\numberline {7.25.1.11}\_\_MCP23017\_INTCON\_CHANGE\_\_}{156}{subsubsection.7.25.1.11}%
+\contentsline {subsubsection}{\numberline {7.25.1.12}\_\_MCP23017\_INTCON\_DEFVAL\_\_}{157}{subsubsection.7.25.1.12}%
+\contentsline {subsubsection}{\numberline {7.25.1.13}\_\_MCP23017\_INTERRUPT\_DISABLE\_\_}{157}{subsubsection.7.25.1.13}%
+\contentsline {subsubsection}{\numberline {7.25.1.14}\_\_MCP23017\_INTERRUPT\_ENABLE\_\_}{157}{subsubsection.7.25.1.14}%
+\contentsline {subsubsection}{\numberline {7.25.1.15}\_\_MCP23017\_INTPOL\_POLARITY\_HIGH\_\_}{157}{subsubsection.7.25.1.15}%
+\contentsline {subsubsection}{\numberline {7.25.1.16}\_\_MCP23017\_INTPOL\_POLARITY\_LOW\_\_}{157}{subsubsection.7.25.1.16}%
+\contentsline {subsubsection}{\numberline {7.25.1.17}\_\_MCP23017\_IODIR\_INPUT\_\_}{157}{subsubsection.7.25.1.17}%
+\contentsline {subsubsection}{\numberline {7.25.1.18}\_\_MCP23017\_IODIR\_OUTPUT\_\_}{158}{subsubsection.7.25.1.18}%
+\contentsline {subsubsection}{\numberline {7.25.1.19}\_\_MCP23017\_MIRROR\_CONNECTED\_\_}{158}{subsubsection.7.25.1.19}%
+\contentsline {subsubsection}{\numberline {7.25.1.20}\_\_MCP23017\_MIRROR\_UNCONNECTED\_\_}{158}{subsubsection.7.25.1.20}%
+\contentsline {subsubsection}{\numberline {7.25.1.21}\_\_MCP23017\_ODR\_ACTIVE\_DRIVER\_OUTPUT\_\_}{158}{subsubsection.7.25.1.21}%
+\contentsline {subsubsection}{\numberline {7.25.1.22}\_\_MCP23017\_ODR\_OPEN\_DRAIN\_OUTPUT\_\_}{158}{subsubsection.7.25.1.22}%
+\contentsline {subsubsection}{\numberline {7.25.1.23}\_\_MCP23017\_OPPOSITE\_LOGIC\_\_}{158}{subsubsection.7.25.1.23}%
+\contentsline {subsubsection}{\numberline {7.25.1.24}\_\_MCP23017\_POSITIVE\_LOGIC\_\_}{159}{subsubsection.7.25.1.24}%
+\contentsline {subsubsection}{\numberline {7.25.1.25}\_\_MCP23017\_READ\_\_}{159}{subsubsection.7.25.1.25}%
+\contentsline {subsubsection}{\numberline {7.25.1.26}\_\_MCP23017\_READ\_OPPCODE\_\_}{159}{subsubsection.7.25.1.26}%
+\contentsline {subsubsection}{\numberline {7.25.1.27}\_\_MCP23017\_SEQOP\_DISABLED\_\_}{159}{subsubsection.7.25.1.27}%
+\contentsline {subsubsection}{\numberline {7.25.1.28}\_\_MCP23017\_SEQOP\_ENABLED\_\_}{159}{subsubsection.7.25.1.28}%
+\contentsline {subsubsection}{\numberline {7.25.1.29}\_\_MCP23017\_WRITE\_\_}{159}{subsubsection.7.25.1.29}%
+\contentsline {subsubsection}{\numberline {7.25.1.30}\_\_MCP23017\_WRITE\_OPPCODE\_\_}{160}{subsubsection.7.25.1.30}%
+\contentsline {subsubsection}{\numberline {7.25.1.31}MCP23017\_DEFVALA\_REGISTER}{160}{subsubsection.7.25.1.31}%
+\contentsline {subsubsection}{\numberline {7.25.1.32}MCP23017\_DEFVALB\_REGISTER}{160}{subsubsection.7.25.1.32}%
+\contentsline {subsubsection}{\numberline {7.25.1.33}MCP23017\_GPINTENA\_REGISTER}{160}{subsubsection.7.25.1.33}%
+\contentsline {subsubsection}{\numberline {7.25.1.34}MCP23017\_GPINTENB\_REGISTER}{160}{subsubsection.7.25.1.34}%
+\contentsline {subsubsection}{\numberline {7.25.1.35}MCP23017\_GPIOA\_REGISTER}{160}{subsubsection.7.25.1.35}%
+\contentsline {subsubsection}{\numberline {7.25.1.36}MCP23017\_GPIOB\_REGISTER}{161}{subsubsection.7.25.1.36}%
+\contentsline {subsubsection}{\numberline {7.25.1.37}MCP23017\_GPPUA\_REGISTER}{161}{subsubsection.7.25.1.37}%
+\contentsline {subsubsection}{\numberline {7.25.1.38}MCP23017\_GPPUB\_REGISTER}{161}{subsubsection.7.25.1.38}%
+\contentsline {subsubsection}{\numberline {7.25.1.39}MCP23017\_INTCAPA\_REGISTER}{161}{subsubsection.7.25.1.39}%
+\contentsline {subsubsection}{\numberline {7.25.1.40}MCP23017\_INTCAPB\_REGISTER}{161}{subsubsection.7.25.1.40}%
+\contentsline {subsubsection}{\numberline {7.25.1.41}MCP23017\_INTCONA\_REGISTER}{161}{subsubsection.7.25.1.41}%
+\contentsline {subsubsection}{\numberline {7.25.1.42}MCP23017\_INTCONB\_REGISTER}{162}{subsubsection.7.25.1.42}%
+\contentsline {subsubsection}{\numberline {7.25.1.43}MCP23017\_INTFA\_REGISTER}{162}{subsubsection.7.25.1.43}%
+\contentsline {subsubsection}{\numberline {7.25.1.44}MCP23017\_INTFB\_REGISTER}{162}{subsubsection.7.25.1.44}%
+\contentsline {subsubsection}{\numberline {7.25.1.45}MCP23017\_IOCON\_REGISTER}{162}{subsubsection.7.25.1.45}%
+\contentsline {subsubsection}{\numberline {7.25.1.46}MCP23017\_IODIRA\_REGISTER}{162}{subsubsection.7.25.1.46}%
+\contentsline {subsubsection}{\numberline {7.25.1.47}MCP23017\_IODIRB\_REGISTER}{162}{subsubsection.7.25.1.47}%
+\contentsline {subsubsection}{\numberline {7.25.1.48}MCP23017\_IPOLA\_REGISTER}{163}{subsubsection.7.25.1.48}%
+\contentsline {subsubsection}{\numberline {7.25.1.49}MCP23017\_IPOLB\_REGISTER}{163}{subsubsection.7.25.1.49}%
+\contentsline {subsubsection}{\numberline {7.25.1.50}MCP23017\_OLATA\_REGISTER}{163}{subsubsection.7.25.1.50}%
+\contentsline {subsubsection}{\numberline {7.25.1.51}MCP23017\_OLATB\_REGISTER}{163}{subsubsection.7.25.1.51}%
+\contentsline {subsection}{\numberline {7.25.2}Documentación de enumeraciones}{163}{subsection.7.25.2}%
+\contentsline {subsubsection}{\numberline {7.25.2.1}mcp\_port\_e}{163}{subsubsection.7.25.2.1}%
+\contentsline {section}{\numberline {7.26}mcp23017\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}defs.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{164}{section.7.26}%
+\contentsline {section}{\numberline {7.27}Referencia del archivo C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}User/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}LVFV\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ESP32/main/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}LVFV\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}system.h}{167}{section.7.27}%
+\contentsline {subsection}{\numberline {7.27.1}Descripción detallada}{168}{subsection.7.27.1}%
+\contentsline {subsection}{\numberline {7.27.2}Documentación de «define»}{168}{subsection.7.27.2}%
+\contentsline {subsubsection}{\numberline {7.27.2.1}LINE\_INCREMENT}{168}{subsubsection.7.27.2.1}%
+\contentsline {subsubsection}{\numberline {7.27.2.2}SH1106\_SIZE\_1}{169}{subsubsection.7.27.2.2}%
+\contentsline {subsubsection}{\numberline {7.27.2.3}SH1106\_SIZE\_2}{169}{subsubsection.7.27.2.3}%
+\contentsline {subsubsection}{\numberline {7.27.2.4}VARIABLE\_EIGTH}{169}{subsubsection.7.27.2.4}%
+\contentsline {subsubsection}{\numberline {7.27.2.5}VARIABLE\_FIFTH}{169}{subsubsection.7.27.2.5}%
+\contentsline {subsubsection}{\numberline {7.27.2.6}VARIABLE\_FIRST}{169}{subsubsection.7.27.2.6}%
+\contentsline {subsubsection}{\numberline {7.27.2.7}VARIABLE\_FOURTH}{169}{subsubsection.7.27.2.7}%
+\contentsline {subsubsection}{\numberline {7.27.2.8}VARIABLE\_SECOND}{169}{subsubsection.7.27.2.8}%
+\contentsline {subsubsection}{\numberline {7.27.2.9}VARIABLE\_SEVENTH}{169}{subsubsection.7.27.2.9}%
+\contentsline {subsubsection}{\numberline {7.27.2.10}VARIABLE\_SIXTH}{170}{subsubsection.7.27.2.10}%
+\contentsline {subsubsection}{\numberline {7.27.2.11}VARIABLE\_THIRD}{170}{subsubsection.7.27.2.11}%
+\contentsline {subsection}{\numberline {7.27.3}Documentación de «typedef»}{170}{subsection.7.27.3}%
+\contentsline {subsubsection}{\numberline {7.27.3.1}frequency\_settings\_SH1106\_t}{170}{subsubsection.7.27.3.1}%
+\contentsline {subsubsection}{\numberline {7.27.3.2}frequency\_settings\_t}{170}{subsubsection.7.27.3.2}%
+\contentsline {subsubsection}{\numberline {7.27.3.3}seccurity\_settings\_SH1106\_t}{170}{subsubsection.7.27.3.3}%
+\contentsline {subsubsection}{\numberline {7.27.3.4}seccurity\_settings\_t}{170}{subsubsection.7.27.3.4}%
+\contentsline {subsubsection}{\numberline {7.27.3.5}sh1106\_variable\_lines\_e}{170}{subsubsection.7.27.3.5}%
+\contentsline {subsubsection}{\numberline {7.27.3.6}system\_status\_e}{170}{subsubsection.7.27.3.6}%
+\contentsline {subsubsection}{\numberline {7.27.3.7}system\_status\_t}{170}{subsubsection.7.27.3.7}%
+\contentsline {subsubsection}{\numberline {7.27.3.8}time\_settings\_SH1106\_t}{171}{subsubsection.7.27.3.8}%
+\contentsline {subsubsection}{\numberline {7.27.3.9}time\_settings\_t}{171}{subsubsection.7.27.3.9}%
+\contentsline {subsection}{\numberline {7.27.4}Documentación de enumeraciones}{171}{subsection.7.27.4}%
+\contentsline {subsubsection}{\numberline {7.27.4.1}sh1106\_variable\_lines\_e}{171}{subsubsection.7.27.4.1}%
+\contentsline {subsubsection}{\numberline {7.27.4.2}system\_status\_e}{171}{subsubsection.7.27.4.2}%
+\contentsline {subsubsection}{\numberline {7.27.4.3}systemSignal\_e}{172}{subsubsection.7.27.4.3}%
+\contentsline {section}{\numberline {7.28}LVFV\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}system.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{173}{section.7.28}%
+\contentsline {section}{\numberline {7.29}Referencia del archivo C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}User/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}LVFV\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ESP32/main/main.c}{175}{section.7.29}%
+\contentsline {subsection}{\numberline {7.29.1}Descripción detallada}{176}{subsection.7.29.1}%
+\contentsline {subsection}{\numberline {7.29.2}Documentación de funciones}{176}{subsection.7.29.2}%
+\contentsline {subsubsection}{\numberline {7.29.2.1}app\_main()}{176}{subsubsection.7.29.2.1}%
+\contentsline {subsection}{\numberline {7.29.3}Documentación de variables}{177}{subsection.7.29.3}%
+\contentsline {subsubsection}{\numberline {7.29.3.1}TAG}{177}{subsubsection.7.29.3.1}%
+\contentsline {section}{\numberline {7.30}main.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c}{177}{section.7.30}%
+\contentsline {section}{\numberline {7.31}Referencia del archivo C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}User/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}LVFV\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ESP32/main/nvs/nvs.c}{178}{section.7.31}%
+\contentsline {subsection}{\numberline {7.31.1}Descripción detallada}{179}{subsection.7.31.1}%
+\contentsline {subsection}{\numberline {7.31.2}Documentación de «define»}{179}{subsection.7.31.2}%
+\contentsline {subsubsection}{\numberline {7.31.2.1}load\_acceleration}{179}{subsubsection.7.31.2.1}%
+\contentsline {subsubsection}{\numberline {7.31.2.2}load\_desacceleration}{179}{subsubsection.7.31.2.2}%
+\contentsline {subsubsection}{\numberline {7.31.2.3}load\_frequency}{179}{subsubsection.7.31.2.3}%
+\contentsline {subsubsection}{\numberline {7.31.2.4}load\_hour\_fin}{180}{subsubsection.7.31.2.4}%
+\contentsline {subsubsection}{\numberline {7.31.2.5}load\_hour\_ini}{180}{subsubsection.7.31.2.5}%
+\contentsline {subsubsection}{\numberline {7.31.2.6}load\_ibus\_max}{180}{subsubsection.7.31.2.6}%
+\contentsline {subsubsection}{\numberline {7.31.2.7}load\_input\_variable}{180}{subsubsection.7.31.2.7}%
+\contentsline {subsubsection}{\numberline {7.31.2.8}load\_min\_fin}{180}{subsubsection.7.31.2.8}%
+\contentsline {subsubsection}{\numberline {7.31.2.9}load\_min\_ini}{181}{subsubsection.7.31.2.9}%
+\contentsline {subsubsection}{\numberline {7.31.2.10}load\_vbus\_min}{181}{subsubsection.7.31.2.10}%
+\contentsline {subsubsection}{\numberline {7.31.2.11}save\_acceleration}{181}{subsubsection.7.31.2.11}%
+\contentsline {subsubsection}{\numberline {7.31.2.12}save\_desacceleration}{181}{subsubsection.7.31.2.12}%
+\contentsline {subsubsection}{\numberline {7.31.2.13}save\_frequency}{181}{subsubsection.7.31.2.13}%
+\contentsline {subsubsection}{\numberline {7.31.2.14}save\_hour\_fin}{182}{subsubsection.7.31.2.14}%
+\contentsline {subsubsection}{\numberline {7.31.2.15}save\_hour\_ini}{182}{subsubsection.7.31.2.15}%
+\contentsline {subsubsection}{\numberline {7.31.2.16}save\_ibus\_max}{182}{subsubsection.7.31.2.16}%
+\contentsline {subsubsection}{\numberline {7.31.2.17}save\_input\_variable}{182}{subsubsection.7.31.2.17}%
+\contentsline {subsubsection}{\numberline {7.31.2.18}save\_min\_fin}{182}{subsubsection.7.31.2.18}%
+\contentsline {subsubsection}{\numberline {7.31.2.19}save\_min\_ini}{183}{subsubsection.7.31.2.19}%
+\contentsline {subsubsection}{\numberline {7.31.2.20}save\_vbus\_min}{183}{subsubsection.7.31.2.20}%
+\contentsline {subsection}{\numberline {7.31.3}Documentación de funciones}{183}{subsection.7.31.3}%
+\contentsline {subsubsection}{\numberline {7.31.3.1}load\_16()}{183}{subsubsection.7.31.3.1}%
+\contentsline {subsubsection}{\numberline {7.31.3.2}load\_variables()}{184}{subsubsection.7.31.3.2}%
+\contentsline {subsubsection}{\numberline {7.31.3.3}nvs\_init\_once()}{185}{subsubsection.7.31.3.3}%
+\contentsline {subsubsection}{\numberline {7.31.3.4}save\_16()}{185}{subsubsection.7.31.3.4}%
+\contentsline {subsubsection}{\numberline {7.31.3.5}save\_variables()}{186}{subsubsection.7.31.3.5}%
+\contentsline {subsection}{\numberline {7.31.4}Documentación de variables}{187}{subsection.7.31.4}%
+\contentsline {subsubsection}{\numberline {7.31.4.1}TAG}{187}{subsubsection.7.31.4.1}%
+\contentsline {section}{\numberline {7.32}nvs.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c}{187}{section.7.32}%
+\contentsline {section}{\numberline {7.33}Referencia del archivo C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}User/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}LVFV\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ESP32/main/nvs/nvs.h}{191}{section.7.33}%
+\contentsline {subsection}{\numberline {7.33.1}Descripción detallada}{191}{subsection.7.33.1}%
+\contentsline {subsection}{\numberline {7.33.2}Documentación de funciones}{192}{subsection.7.33.2}%
+\contentsline {subsubsection}{\numberline {7.33.2.1}load\_variables()}{192}{subsubsection.7.33.2.1}%
+\contentsline {subsubsection}{\numberline {7.33.2.2}nvs\_init\_once()}{192}{subsubsection.7.33.2.2}%
+\contentsline {subsubsection}{\numberline {7.33.2.3}save\_variables()}{193}{subsubsection.7.33.2.3}%
+\contentsline {section}{\numberline {7.34}nvs.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{194}{section.7.34}%
+\contentsline {section}{\numberline {7.35}Referencia del archivo C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}User/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}LVFV\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ESP32/main/rtc/rtc.c}{194}{section.7.35}%
+\contentsline {subsection}{\numberline {7.35.1}Descripción detallada}{195}{subsection.7.35.1}%
+\contentsline {subsection}{\numberline {7.35.2}Documentación de funciones}{195}{subsection.7.35.2}%
+\contentsline {subsubsection}{\numberline {7.35.2.1}alarm\_start\_cb()}{195}{subsubsection.7.35.2.1}%
+\contentsline {subsubsection}{\numberline {7.35.2.2}alarm\_stop\_cb()}{195}{subsubsection.7.35.2.2}%
+\contentsline {subsubsection}{\numberline {7.35.2.3}getTime()}{196}{subsubsection.7.35.2.3}%
+\contentsline {subsubsection}{\numberline {7.35.2.4}initRTC()}{196}{subsubsection.7.35.2.4}%
+\contentsline {subsubsection}{\numberline {7.35.2.5}program\_alarm()}{196}{subsubsection.7.35.2.5}%
+\contentsline {subsubsection}{\numberline {7.35.2.6}rtc\_schedule\_alarms()}{197}{subsubsection.7.35.2.6}%
+\contentsline {subsubsection}{\numberline {7.35.2.7}setTime()}{197}{subsubsection.7.35.2.7}%
+\contentsline {subsection}{\numberline {7.35.3}Documentación de variables}{198}{subsection.7.35.3}%
+\contentsline {subsubsection}{\numberline {7.35.3.1}alarm\_settings}{198}{subsubsection.7.35.3.1}%
+\contentsline {subsubsection}{\numberline {7.35.3.2}rtc\_alarms}{198}{subsubsection.7.35.3.2}%
+\contentsline {subsubsection}{\numberline {7.35.3.3}TAG}{198}{subsubsection.7.35.3.3}%
+\contentsline {subsubsection}{\numberline {7.35.3.4}time\_start}{198}{subsubsection.7.35.3.4}%
+\contentsline {subsubsection}{\numberline {7.35.3.5}time\_stop}{198}{subsubsection.7.35.3.5}%
+\contentsline {section}{\numberline {7.36}rtc.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c}{199}{section.7.36}%
+\contentsline {section}{\numberline {7.37}Referencia del archivo C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}User/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}LVFV\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ESP32/main/rtc/rtc.h}{201}{section.7.37}%
+\contentsline {subsection}{\numberline {7.37.1}Descripción detallada}{201}{subsection.7.37.1}%
+\contentsline {subsection}{\numberline {7.37.2}Documentación de funciones}{202}{subsection.7.37.2}%
+\contentsline {subsubsection}{\numberline {7.37.2.1}getTime()}{202}{subsubsection.7.37.2.1}%
+\contentsline {subsubsection}{\numberline {7.37.2.2}initRTC()}{202}{subsubsection.7.37.2.2}%
+\contentsline {subsubsection}{\numberline {7.37.2.3}rtc\_schedule\_alarms()}{202}{subsubsection.7.37.2.3}%
+\contentsline {subsubsection}{\numberline {7.37.2.4}setTime()}{203}{subsubsection.7.37.2.4}%
+\contentsline {section}{\numberline {7.38}rtc.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{203}{section.7.38}%
+\contentsline {section}{\numberline {7.39}Referencia del archivo C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}User/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}LVFV\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ESP32/main/system/sys\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Admin.c}{204}{section.7.39}%
+\contentsline {subsection}{\numberline {7.39.1}Descripción detallada}{205}{subsection.7.39.1}%
+\contentsline {subsection}{\numberline {7.39.2}Documentación de funciones}{205}{subsection.7.39.2}%
+\contentsline {subsubsection}{\numberline {7.39.2.1}accelerating()}{205}{subsubsection.7.39.2.1}%
+\contentsline {subsubsection}{\numberline {7.39.2.2}change\_frequency()}{205}{subsubsection.7.39.2.2}%
+\contentsline {subsubsection}{\numberline {7.39.2.3}desaccelerating()}{206}{subsubsection.7.39.2.3}%
+\contentsline {subsubsection}{\numberline {7.39.2.4}engine\_emergency\_stop()}{206}{subsubsection.7.39.2.4}%
+\contentsline {subsubsection}{\numberline {7.39.2.5}engine\_emergency\_stop\_release()}{206}{subsubsection.7.39.2.5}%
+\contentsline {subsubsection}{\numberline {7.39.2.6}engine\_start()}{207}{subsubsection.7.39.2.6}%
+\contentsline {subsubsection}{\numberline {7.39.2.7}engine\_stop()}{207}{subsubsection.7.39.2.7}%
+\contentsline {subsubsection}{\numberline {7.39.2.8}get\_status()}{207}{subsubsection.7.39.2.8}%
+\contentsline {subsubsection}{\numberline {7.39.2.9}set\_frequency\_table()}{208}{subsubsection.7.39.2.9}%
+\contentsline {subsubsection}{\numberline {7.39.2.10}set\_system\_settings()}{209}{subsubsection.7.39.2.10}%
+\contentsline {subsubsection}{\numberline {7.39.2.11}update\_meas()}{209}{subsubsection.7.39.2.11}%
+\contentsline {subsection}{\numberline {7.39.3}Documentación de variables}{210}{subsection.7.39.3}%
+\contentsline {subsubsection}{\numberline {7.39.3.1}accelerating\_handle}{210}{subsubsection.7.39.3.1}%
+\contentsline {subsubsection}{\numberline {7.39.3.2}desaccelerating\_handle}{210}{subsubsection.7.39.3.2}%
+\contentsline {subsubsection}{\numberline {7.39.3.3}frequency\_table}{210}{subsubsection.7.39.3.3}%
+\contentsline {subsubsection}{\numberline {7.39.3.4}system\_seccurity\_settings}{210}{subsubsection.7.39.3.4}%
+\contentsline {subsubsection}{\numberline {7.39.3.5}system\_status}{210}{subsubsection.7.39.3.5}%
+\contentsline {subsubsection}{\numberline {7.39.3.6}TAG}{210}{subsubsection.7.39.3.6}%
+\contentsline {section}{\numberline {7.40}sys\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Admin.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c}{211}{section.7.40}%
+\contentsline {section}{\numberline {7.41}Referencia del archivo C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}User/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}LVFV\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ESP32/main/system/sys\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Admin.h}{213}{section.7.41}%
+\contentsline {subsection}{\numberline {7.41.1}Descripción detallada}{214}{subsection.7.41.1}%
+\contentsline {subsection}{\numberline {7.41.2}Documentación de funciones}{214}{subsection.7.41.2}%
+\contentsline {subsubsection}{\numberline {7.41.2.1}change\_frequency()}{214}{subsubsection.7.41.2.1}%
+\contentsline {subsubsection}{\numberline {7.41.2.2}engine\_emergency\_stop()}{215}{subsubsection.7.41.2.2}%
+\contentsline {subsubsection}{\numberline {7.41.2.3}engine\_emergency\_stop\_release()}{215}{subsubsection.7.41.2.3}%
+\contentsline {subsubsection}{\numberline {7.41.2.4}engine\_start()}{215}{subsubsection.7.41.2.4}%
+\contentsline {subsubsection}{\numberline {7.41.2.5}engine\_stop()}{216}{subsubsection.7.41.2.5}%
+\contentsline {subsubsection}{\numberline {7.41.2.6}get\_status()}{216}{subsubsection.7.41.2.6}%
+\contentsline {subsubsection}{\numberline {7.41.2.7}set\_frequency\_table()}{216}{subsubsection.7.41.2.7}%
+\contentsline {subsubsection}{\numberline {7.41.2.8}set\_system\_settings()}{217}{subsubsection.7.41.2.8}%
+\contentsline {subsubsection}{\numberline {7.41.2.9}update\_meas()}{217}{subsubsection.7.41.2.9}%
+\contentsline {section}{\numberline {7.42}sys\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Admin.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{218}{section.7.42}%
+\contentsline {section}{\numberline {7.43}Referencia del archivo C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}User/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}LVFV\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ESP32/main/system/sys\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Control.c}{218}{section.7.43}%
+\contentsline {subsection}{\numberline {7.43.1}Descripción detallada}{219}{subsection.7.43.1}%
+\contentsline {subsection}{\numberline {7.43.2}Documentación de «define»}{220}{subsection.7.43.2}%
+\contentsline {subsubsection}{\numberline {7.43.2.1}PIN\_NUM\_CLK}{220}{subsubsection.7.43.2.1}%
+\contentsline {subsubsection}{\numberline {7.43.2.2}PIN\_NUM\_CS}{220}{subsubsection.7.43.2.2}%
+\contentsline {subsubsection}{\numberline {7.43.2.3}PIN\_NUM\_MISO}{220}{subsubsection.7.43.2.3}%
+\contentsline {subsubsection}{\numberline {7.43.2.4}PIN\_NUM\_MOSI}{220}{subsubsection.7.43.2.4}%
+\contentsline {subsubsection}{\numberline {7.43.2.5}SPI\_CLOCK\_HZ}{220}{subsubsection.7.43.2.5}%
+\contentsline {subsubsection}{\numberline {7.43.2.6}SPI\_HOST\_USED}{220}{subsubsection.7.43.2.6}%
+\contentsline {subsubsection}{\numberline {7.43.2.7}SPI\_QUEUE\_TX\_DEPTH}{220}{subsubsection.7.43.2.7}%
+\contentsline {subsection}{\numberline {7.43.3}Documentación de funciones}{221}{subsection.7.43.3}%
+\contentsline {subsubsection}{\numberline {7.43.3.1}SPI\_communication()}{221}{subsubsection.7.43.3.1}%
+\contentsline {subsubsection}{\numberline {7.43.3.2}SPI\_Init()}{221}{subsubsection.7.43.3.2}%
+\contentsline {subsubsection}{\numberline {7.43.3.3}SPI\_SendRequest()}{221}{subsubsection.7.43.3.3}%
+\contentsline {subsubsection}{\numberline {7.43.3.4}SystemEventPost()}{222}{subsubsection.7.43.3.4}%
+\contentsline {subsection}{\numberline {7.43.4}Documentación de variables}{222}{subsection.7.43.4}%
+\contentsline {subsubsection}{\numberline {7.43.4.1}spi\_handle}{222}{subsubsection.7.43.4.1}%
+\contentsline {subsubsection}{\numberline {7.43.4.2}system\_event\_queue}{223}{subsubsection.7.43.4.2}%
+\contentsline {subsubsection}{\numberline {7.43.4.3}TAG}{223}{subsubsection.7.43.4.3}%
+\contentsline {section}{\numberline {7.44}sys\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Control.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c}{223}{section.7.44}%
+\contentsline {section}{\numberline {7.45}Referencia del archivo C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}User/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}LVFV\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ESP32/main/system/sys\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Control.h}{227}{section.7.45}%
+\contentsline {subsection}{\numberline {7.45.1}Descripción detallada}{228}{subsection.7.45.1}%
+\contentsline {subsection}{\numberline {7.45.2}Documentación de enumeraciones}{228}{subsection.7.45.2}%
+\contentsline {subsubsection}{\numberline {7.45.2.1}SPI\_Request}{228}{subsubsection.7.45.2.1}%
+\contentsline {subsubsection}{\numberline {7.45.2.2}SPI\_Response}{229}{subsubsection.7.45.2.2}%
+\contentsline {subsection}{\numberline {7.45.3}Documentación de funciones}{229}{subsection.7.45.3}%
+\contentsline {subsubsection}{\numberline {7.45.3.1}SPI\_communication()}{229}{subsubsection.7.45.3.1}%
+\contentsline {subsubsection}{\numberline {7.45.3.2}SPI\_Init()}{230}{subsubsection.7.45.3.2}%
+\contentsline {subsubsection}{\numberline {7.45.3.3}SystemEventPost()}{230}{subsubsection.7.45.3.3}%
+\contentsline {section}{\numberline {7.46}sys\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Control.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{231}{section.7.46}%
+\contentsline {section}{\numberline {7.47}Referencia del archivo C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}User/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}LVFV\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ESP32/main/wifi/form.c}{231}{section.7.47}%
+\contentsline {subsection}{\numberline {7.47.1}Documentación de variables}{232}{subsection.7.47.1}%
+\contentsline {subsubsection}{\numberline {7.47.1.1}HTML\_FORM}{232}{subsubsection.7.47.1.1}%
+\contentsline {section}{\numberline {7.48}form.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c}{232}{section.7.48}%
+\contentsline {section}{\numberline {7.49}Referencia del archivo C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}User/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}LVFV\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ESP32/main/wifi/form.h}{234}{section.7.49}%
+\contentsline {subsection}{\numberline {7.49.1}Documentación de variables}{234}{subsection.7.49.1}%
+\contentsline {subsubsection}{\numberline {7.49.1.1}HTML\_FORM}{234}{subsubsection.7.49.1.1}%
+\contentsline {section}{\numberline {7.50}form.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{234}{section.7.50}%
+\contentsline {section}{\numberline {7.51}Referencia del archivo C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}User/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}LVFV\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ESP32/main/wifi/wifi.c}{234}{section.7.51}%
+\contentsline {subsection}{\numberline {7.51.1}Documentación de funciones}{235}{subsection.7.51.1}%
+\contentsline {subsubsection}{\numberline {7.51.1.1}get\_param\_value()}{235}{subsubsection.7.51.1.1}%
+\contentsline {subsubsection}{\numberline {7.51.1.2}hex2int()}{236}{subsubsection.7.51.1.2}%
+\contentsline {subsubsection}{\numberline {7.51.1.3}root\_get\_handler()}{236}{subsubsection.7.51.1.3}%
+\contentsline {subsubsection}{\numberline {7.51.1.4}save\_post\_handler()}{236}{subsubsection.7.51.1.4}%
+\contentsline {subsubsection}{\numberline {7.51.1.5}start\_webserver()}{236}{subsubsection.7.51.1.5}%
+\contentsline {subsubsection}{\numberline {7.51.1.6}url\_decode()}{236}{subsubsection.7.51.1.6}%
+\contentsline {subsubsection}{\numberline {7.51.1.7}wifi\_init\_softap()}{237}{subsubsection.7.51.1.7}%
+\contentsline {subsection}{\numberline {7.51.2}Documentación de variables}{237}{subsection.7.51.2}%
+\contentsline {subsubsection}{\numberline {7.51.2.1}TAG}{237}{subsubsection.7.51.2.1}%
+\contentsline {section}{\numberline {7.52}wifi.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c}{237}{section.7.52}%
+\contentsline {section}{\numberline {7.53}Referencia del archivo C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}User/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}LVFV\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ESP32/main/wifi/wifi.h}{241}{section.7.53}%
+\contentsline {subsection}{\numberline {7.53.1}Documentación de funciones}{241}{subsection.7.53.1}%
+\contentsline {subsubsection}{\numberline {7.53.1.1}start\_webserver()}{241}{subsubsection.7.53.1.1}%
+\contentsline {subsubsection}{\numberline {7.53.1.2}wifi\_init\_softap()}{241}{subsubsection.7.53.1.2}%
+\contentsline {section}{\numberline {7.54}wifi.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{241}{section.7.54}%
+\contentsline {chapter}{\'{I}ndice alfab\'{e}tico}{243}{section*.91}%

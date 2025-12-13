@@ -1,0 +1,48 @@
+\doxysection{Referencia del archivo C\+:/\+Users/\+User/\+LVFV\+\_\+\+ESP32/main/wifi/wifi.h}
+\hypertarget{wifi_8h}{}\label{wifi_8h}\index{C:/Users/User/LVFV\_ESP32/main/wifi/wifi.h@{C:/Users/User/LVFV\_ESP32/main/wifi/wifi.h}}
+{\ttfamily \#include "{}esp\+\_\+wifi.\+h"{}}\newline
+{\ttfamily \#include "{}esp\+\_\+http\+\_\+server.\+h"{}}\newline
+\doxysubsubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+httpd\+\_\+handle\+\_\+t \mbox{\hyperlink{wifi_8h_aa405dbf500a1f511f559e1e87efff9da}{start\+\_\+webserver}} (void)
+\begin{DoxyCompactList}\small\item\em Arranca el servidor HTTP y registra endpoints. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{wifi_8h_a4a2bc421f17a5713e35165034943cea3}{wifi\+\_\+init\+\_\+softap}} (void)
+\begin{DoxyCompactList}\small\item\em Configura ESP-\/\+NETIF + Wi-\/\+Fi en modo AP y arranca SSID/clave. (Canal 1, máx 1 cliente, WPA/\+WPA2). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{wifi_8h_doc-func-members}
+\doxysubsection{Documentación de funciones}
+\Hypertarget{wifi_8h_aa405dbf500a1f511f559e1e87efff9da}\index{wifi.h@{wifi.h}!start\_webserver@{start\_webserver}}
+\index{start\_webserver@{start\_webserver}!wifi.h@{wifi.h}}
+\doxysubsubsection{\texorpdfstring{start\_webserver()}{start\_webserver()}}
+{\footnotesize\ttfamily \label{wifi_8h_aa405dbf500a1f511f559e1e87efff9da} 
+httpd\+\_\+handle\+\_\+t start\+\_\+webserver (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Arranca el servidor HTTP y registra endpoints. 
+
+
+\begin{DoxyItemize}
+\item GET "{}/"{} → formulario
+\item POST "{}/save"{} → procesa y responde 
+\end{DoxyItemize}
+
+Definición en la línea \mbox{\hyperlink{wifi_8c_source_l00288}{288}} del archivo \mbox{\hyperlink{wifi_8c_source}{wifi.\+c}}.
+
+\Hypertarget{wifi_8h_a4a2bc421f17a5713e35165034943cea3}\index{wifi.h@{wifi.h}!wifi\_init\_softap@{wifi\_init\_softap}}
+\index{wifi\_init\_softap@{wifi\_init\_softap}!wifi.h@{wifi.h}}
+\doxysubsubsection{\texorpdfstring{wifi\_init\_softap()}{wifi\_init\_softap()}}
+{\footnotesize\ttfamily \label{wifi_8h_a4a2bc421f17a5713e35165034943cea3} 
+void wifi\+\_\+init\+\_\+softap (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Configura ESP-\/\+NETIF + Wi-\/\+Fi en modo AP y arranca SSID/clave. (Canal 1, máx 1 cliente, WPA/\+WPA2). 
+
+
+
+Definición en la línea \mbox{\hyperlink{wifi_8c_source_l00313}{313}} del archivo \mbox{\hyperlink{wifi_8c_source}{wifi.\+c}}.
+

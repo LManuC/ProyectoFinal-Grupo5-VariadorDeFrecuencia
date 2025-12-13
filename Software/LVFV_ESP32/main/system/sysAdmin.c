@@ -209,6 +209,7 @@ system_status_e update_meas(uint16_t vbus_meas, uint16_t ibus_meas) {
             engine_emergency_stop();
             SystemEventPost(SECURITY_EXCEDED);
             ESP_LOGI( TAG, "Mando senal.");
+            system_status.status = SYSTEM_EMERGENCY;
         }
     } else if ( system_status.status == SYSTEM_EMERGENCY ) {
         SystemEventPost(SECURITY_OK);

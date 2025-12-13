@@ -45,6 +45,7 @@ var display_8c =
     [ "sh1106_select_edit_variables", "display_8c.html#a4ecf1cb087c1b0706199c5965ed87c5b", null ],
     [ "sh1106_splash_screen", "display_8c.html#ab07ce08361000a77647dc393f0d7b233", null ],
     [ "sh1106_time_edit_variables", "display_8c.html#a6b84e310816652c40db2a3af353b0194", null ],
+    [ "system_variables_save", "display_8c.html#a9176ac5e0c10e356605c472cadba998c", null ],
     [ "task_display", "display_8c.html#a0c23017a47c450de05f8c7af642c7461", null ],
     [ "blink", "display_8c.html#ab2fc8e2508158b8232828ad0db0ef3ab", null ],
     [ "button_evt_queue", "display_8c.html#a46ebf1f417b7838bb3c41a1f68a02d4f", null ],

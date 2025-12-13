@@ -115,6 +115,8 @@ uint16\+\_\+t \mbox{\hyperlink{display_8c_afa6a8bd839cfecfb389e75fc3946a6b7}{get
 \begin{DoxyCompactList}\small\item\em Entrega el valor de desaceleración seteado por el usuario. \end{DoxyCompactList}\item 
 esp\+\_\+err\+\_\+t \mbox{\hyperlink{display_8c_a274d1d8208b52559a4c9906c2bb62b33}{sh1106\+\_\+init}} ()
 \begin{DoxyCompactList}\small\item\em Función que inicializa el display para comenzar a imprimir. \end{DoxyCompactList}\item 
+esp\+\_\+err\+\_\+t \mbox{\hyperlink{display_8c_a9176ac5e0c10e356605c472cadba998c}{system\+\_\+variables\+\_\+save}} (\mbox{\hyperlink{structfrequency__settings___s_h1106__t}{frequency\+\_\+settings\+\_\+\+SH1106\+\_\+t}} \texorpdfstring{$\ast$}{*}frequency\+\_\+settings, \mbox{\hyperlink{structtime__settings___s_h1106__t}{time\+\_\+settings\+\_\+\+SH1106\+\_\+t}} \texorpdfstring{$\ast$}{*}time\+\_\+settings, \mbox{\hyperlink{structseccurity__settings___s_h1106__t}{seccurity\+\_\+settings\+\_\+\+SH1106\+\_\+t}} \texorpdfstring{$\ast$}{*}seccurity\+\_\+settings)
+\begin{DoxyCompactList}\small\item\em Copia parámetros recibidos desde la UI al estado del sistema, los aplica en tiempo de ejecución y los persiste en NVS. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{display_8c_a0c23017a47c450de05f8c7af642c7461}{task\+\_\+display}} (void \texorpdfstring{$\ast$}{*}pv\+Parameters)
 \begin{DoxyCompactList}\small\item\em Tarea de display que controla las diferentes pantallas de muestra, selección y edición de las variables de sistema. \end{DoxyCompactList}\item 
 esp\+\_\+err\+\_\+t \mbox{\hyperlink{display_8c_ac70cfc639d4afbd5116d8361b1b25b41}{Display\+Event\+Post}} (\mbox{\hyperlink{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796}{system\+Signal\+\_\+e}} event)
@@ -446,7 +448,7 @@ Función que permite encolar acciones para que ejecute la tarea de display.
 \end{DoxyRetVals}
 
 
-Definición en la línea \mbox{\hyperlink{display_8c_source_l00887}{887}} del archivo \mbox{\hyperlink{display_8c_source}{display.\+c}}.
+Definición en la línea \mbox{\hyperlink{display_8c_source_l00901}{901}} del archivo \mbox{\hyperlink{display_8c_source}{display.\+c}}.
 
 \Hypertarget{display_8c_a66d26ed49b8196ba0498d8a553167ec3}\index{display.c@{display.c}!get\_system\_acceleration@{get\_system\_acceleration}}
 \index{get\_system\_acceleration@{get\_system\_acceleration}!display.c@{display.c}}
@@ -699,6 +701,39 @@ Imprime en pantalla las variables de tiempo a editar\+: Hora del sistema, hora d
 
 Definición en la línea \mbox{\hyperlink{display_8c_source_l00244}{244}} del archivo \mbox{\hyperlink{display_8c_source}{display.\+c}}.
 
+\Hypertarget{display_8c_a9176ac5e0c10e356605c472cadba998c}\index{display.c@{display.c}!system\_variables\_save@{system\_variables\_save}}
+\index{system\_variables\_save@{system\_variables\_save}!display.c@{display.c}}
+\doxysubsubsection{\texorpdfstring{system\_variables\_save()}{system\_variables\_save()}}
+{\footnotesize\ttfamily \label{display_8c_a9176ac5e0c10e356605c472cadba998c} 
+esp\+\_\+err\+\_\+t system\+\_\+variables\+\_\+save (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structfrequency__settings___s_h1106__t}{frequency\+\_\+settings\+\_\+\+SH1106\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{frequency\+\_\+settings}{, }\item[{\mbox{\hyperlink{structtime__settings___s_h1106__t}{time\+\_\+settings\+\_\+\+SH1106\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{time\+\_\+settings}{, }\item[{\mbox{\hyperlink{structseccurity__settings___s_h1106__t}{seccurity\+\_\+settings\+\_\+\+SH1106\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{seccurity\+\_\+settings}{}\end{DoxyParamCaption})}
+
+
+
+Copia parámetros recibidos desde la UI al estado del sistema, los aplica en tiempo de ejecución y los persiste en NVS. 
+
+Flujo\+: 1) Valida punteros de entrada. 2) Copia por valor los campos de frecuencia y seguridad a los structs globales {\ttfamily \doxylink{display_8c_a84f2129be3ac14d6d1c3e9b8e9ec2431}{system\+\_\+frequency\+\_\+settings}} y {\ttfamily \doxylink{display_8c_a45b4049988bafe92214f32fd28019e30}{system\+\_\+seccurity\+\_\+settings}}. 3) Copia por valor solo las {\itshape campos} de hora (tm\+\_\+hour/min/sec) hacia las estructuras de tiempo globales apuntadas por {\ttfamily system\+\_\+time\+\_\+settings.\+time\+\_\+\texorpdfstring{$\ast$}{*}}. (No guarda punteros entrantes\+: solo lee sus valores). 4) Aplica cambios en runtime\+:
+\begin{DoxyItemize}
+\item {\ttfamily \doxylink{rtc_8c_a18ec0d194dc994434090b873251093b0}{set\+Time}(system\+\_\+time\+\_\+settings.\+time\+\_\+system)} para RTC.
+\item {\ttfamily set\+\_\+frequency\+\_\+table(...)} para tabla de modulación según entrada/fo.
+\item {\ttfamily \doxylink{rtc_8c_adb9ac05b0bcd1cc3769f8a9931d90c06}{rtc\+\_\+schedule\+\_\+alarms}(\&\doxylink{display_8c_a0bc0b720c1b24f4f27ef79e73002e9a2}{system\+\_\+time\+\_\+settings})} programa alarmas start/stop. 5) Persiste todo en NVS con {\ttfamily save\+\_\+variables(...)}. 6) Notifica/actualiza al resto del sistema con {\ttfamily set\+\_\+system\+\_\+settings(...)}.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em frequency\+\_\+settings} & Parámetros de frecuencia y rampas (Hz, Hz/s).\\
+\hline
+{\em time\+\_\+settings} & Tiempos de sistema/start/stop (struct tm vía punteros).\\
+\hline
+{\em seccurity\+\_\+settings} & Límites de seguridad (Vbus min, Ibus máx).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+ESP\+\_\+\+OK si el flujo se ejecutó; ESP\+\_\+\+ERR\+\_\+\+INVALID\+\_\+\+ARG si algún puntero es NULL. 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{display_8c_source_l00485}{485}} del archivo \mbox{\hyperlink{display_8c_source}{display.\+c}}.
+
 \Hypertarget{display_8c_a0c23017a47c450de05f8c7af642c7461}\index{display.c@{display.c}!task\_display@{task\_display}}
 \index{task\_display@{task\_display}!display.c@{display.c}}
 \doxysubsubsection{\texorpdfstring{task\_display()}{task\_display()}}
@@ -716,7 +751,7 @@ Tarea de display que controla las diferentes pantallas de muestra, selección y 
 \end{DoxyParams}
 
 
-Definición en la línea \mbox{\hyperlink{display_8c_source_l00485}{485}} del archivo \mbox{\hyperlink{display_8c_source}{display.\+c}}.
+Definición en la línea \mbox{\hyperlink{display_8c_source_l00523}{523}} del archivo \mbox{\hyperlink{display_8c_source}{display.\+c}}.
 
 
 

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['program_5falarm_0',['program_alarm',['../rtc_8c.html#ab576cf2b5649a8f5af8c1eca26c1e01a',1,'rtc.c']]]
+  ['nvs_5finit_5fonce_0',['nvs_init_once',['../nvs_8c.html#a3da2b2c6e021ca7b976168dc8308b254',1,'nvs_init_once(void):&#160;nvs.c'],['../nvs_8h.html#a3da2b2c6e021ca7b976168dc8308b254',1,'nvs_init_once(void):&#160;nvs.c']]]
 ];

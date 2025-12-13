@@ -29,7 +29,7 @@
   <td id="projectalign">
    <div id="projectname">Low Voltage Variable Frequency Drive<span id="projectnumber">&#160;2.1</span>
    </div>
-   <div id="projectbrief">Proyecto final Andrenacci-Carra 2026. Variador de frecuencia de motor trifásico 1/3HP utilizando 12V de contínua como fuente de entrada de tensión.</div>
+   <div id="projectbrief">Proyecto final Andrenacci-Carra 2025. Variador de frecuencia de motor trifásico 1/3HP utilizando 12V de contínua como fuente de entrada de tensión.</div>
   </td>
  </tr>
  </tbody>
@@ -186,6 +186,8 @@ Funciones</h2></td></tr>
 <tr class="memdesc:afa6a8bd839cfecfb389e75fc3946a6b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entrega el valor de desaceleración seteado por el usuario.  <br /></td></tr>
 <tr class="memitem:a274d1d8208b52559a4c9906c2bb62b33" id="r_a274d1d8208b52559a4c9906c2bb62b33"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a274d1d8208b52559a4c9906c2bb62b33">sh1106_init</a> ()</td></tr>
 <tr class="memdesc:a274d1d8208b52559a4c9906c2bb62b33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Función que inicializa el display para comenzar a imprimir.  <br /></td></tr>
+<tr class="memitem:a9176ac5e0c10e356605c472cadba998c" id="r_a9176ac5e0c10e356605c472cadba998c"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9176ac5e0c10e356605c472cadba998c">system_variables_save</a> (<a class="el" href="structfrequency__settings___s_h1106__t.html">frequency_settings_SH1106_t</a> *frequency_settings, <a class="el" href="structtime__settings___s_h1106__t.html">time_settings_SH1106_t</a> *time_settings, <a class="el" href="structseccurity__settings___s_h1106__t.html">seccurity_settings_SH1106_t</a> *seccurity_settings)</td></tr>
+<tr class="memdesc:a9176ac5e0c10e356605c472cadba998c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copia parámetros recibidos desde la UI al estado del sistema, los aplica en tiempo de ejecución y los persiste en NVS.  <br /></td></tr>
 <tr class="memitem:a0c23017a47c450de05f8c7af642c7461" id="r_a0c23017a47c450de05f8c7af642c7461"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0c23017a47c450de05f8c7af642c7461">task_display</a> (void *pvParameters)</td></tr>
 <tr class="memdesc:a0c23017a47c450de05f8c7af642c7461"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tarea de display que controla las diferentes pantallas de muestra, selección y edición de las variables de sistema.  <br /></td></tr>
 <tr class="memitem:ac70cfc639d4afbd5116d8361b1b25b41" id="r_ac70cfc639d4afbd5116d8361b1b25b41"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac70cfc639d4afbd5116d8361b1b25b41">DisplayEventPost</a> (<a class="el" href="_l_v_f_v__system_8h.html#ab7a290ebff8e2a3230e8085ee87d4796">systemSignal_e</a> event)</td></tr>
@@ -613,7 +615,7 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00887">887</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00901">901</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
 
 </div>
 </div>
@@ -1072,6 +1074,50 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="a9176ac5e0c10e356605c472cadba998c" name="a9176ac5e0c10e356605c472cadba998c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9176ac5e0c10e356605c472cadba998c">&#9670;&#160;</a></span>system_variables_save()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">esp_err_t system_variables_save </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structfrequency__settings___s_h1106__t.html">frequency_settings_SH1106_t</a> *</td>          <td class="paramname"><span class="paramname"><em>frequency_settings</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structtime__settings___s_h1106__t.html">time_settings_SH1106_t</a> *</td>          <td class="paramname"><span class="paramname"><em>time_settings</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structseccurity__settings___s_h1106__t.html">seccurity_settings_SH1106_t</a> *</td>          <td class="paramname"><span class="paramname"><em>seccurity_settings</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Copia parámetros recibidos desde la UI al estado del sistema, los aplica en tiempo de ejecución y los persiste en NVS. </p>
+<p>Flujo: 1) Valida punteros de entrada. 2) Copia por valor los campos de frecuencia y seguridad a los structs globales <span class="tt"><a class="el" href="#a84f2129be3ac14d6d1c3e9b8e9ec2431">system_frequency_settings</a></span> y <span class="tt"><a class="el" href="#a45b4049988bafe92214f32fd28019e30">system_seccurity_settings</a></span>. 3) Copia por valor solo las <em>campos</em> de hora (tm_hour/min/sec) hacia las estructuras de tiempo globales apuntadas por <span class="tt">system_time_settings.time_*</span>. (No guarda punteros entrantes: solo lee sus valores). 4) Aplica cambios en runtime:</p><ul>
+<li><span class="tt"><a class="el" href="rtc_8c.html#a18ec0d194dc994434090b873251093b0" title="Inicializa el RTC en la hora cargada en setting_time.">setTime</a>(system_time_settings.time_system)</span> para RTC.</li>
+<li><span class="tt">set_frequency_table(...)</span> para tabla de modulación según entrada/fo.</li>
+<li><span class="tt"><a class="el" href="rtc_8c.html#adb9ac05b0bcd1cc3769f8a9931d90c06" title="Inicializa las alarmas de inicio y fin de funcionamiento del motor.">rtc_schedule_alarms</a>(&amp;<a class="el" href="#a0bc0b720c1b24f4f27ef79e73002e9a2">system_time_settings</a>)</span> programa alarmas start/stop. 5) Persiste todo en NVS con <span class="tt">save_variables(...)</span>. 6) Notifica/actualiza al resto del sistema con <span class="tt">set_system_settings(...)</span>.</li>
+</ul>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">frequency_settings</td><td>Parámetros de frecuencia y rampas (Hz, Hz/s).</td></tr>
+    <tr><td class="paramname">time_settings</td><td>Tiempos de sistema/start/stop (struct tm vía punteros).</td></tr>
+    <tr><td class="paramname">seccurity_settings</td><td>Límites de seguridad (Vbus min, Ibus máx).</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>ESP_OK si el flujo se ejecutó; ESP_ERR_INVALID_ARG si algún puntero es NULL. </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00485">485</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
+
+</div>
+</div>
 <a id="a0c23017a47c450de05f8c7af642c7461" name="a0c23017a47c450de05f8c7af642c7461"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0c23017a47c450de05f8c7af642c7461">&#9670;&#160;</a></span>task_display()</h2>
 
@@ -1095,7 +1141,7 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00485">485</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="display_8c_source.html#l00523">523</a> del archivo <a class="el" href="display_8c_source.html">display.c</a>.</p>
 
 </div>
 </div>

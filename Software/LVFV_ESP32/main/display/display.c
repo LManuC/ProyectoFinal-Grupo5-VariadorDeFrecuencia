@@ -876,7 +876,7 @@ void task_display(void *pvParameters) {
             case SCREEN_MAIN:
                 system_status_t s_e;
                 get_status(&s_e);
-                if ( ( s_e.status == SYSTEM_EMERGENCY_SENT || s_e.status == SYSTEM_EMERGENCY || s_e.status == SYSTEM_EMERGENCY_OK ) && blink < 12 ) {
+                if ( ( s_e.status == SYSTEM_EMERGENCY || s_e.status == SYSTEM_EMERGENCY_OK ) && blink < 12 ) {
                     sh1106_print_emergency();
                 } else {
                     sh1106_main_screen();

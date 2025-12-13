@@ -27,29 +27,34 @@
 \DoxyCodeLine{\Hypertarget{main_8c_source_l00030}00030\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{adc_8h}{./adc/adc.h}}"{}}}
 \DoxyCodeLine{\Hypertarget{main_8c_source_l00031}00031\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{nvs_8h}{./nvs/nvs.h}}"{}}}
 \DoxyCodeLine{\Hypertarget{main_8c_source_l00032}00032\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{rtc_8h}{./rtc/rtc.h}}"{}}}
-\DoxyCodeLine{\Hypertarget{main_8c_source_l00033}00033\ }
-\DoxyCodeLine{\Hypertarget{main_8c_source_l00034}00034\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_l_v_f_v__system_8h}{LVFV\_system.h}}"{}}}
-\DoxyCodeLine{\Hypertarget{main_8c_source_l00035}00035\ }
-\DoxyCodeLine{\Hypertarget{main_8c_source_l00036}\mbox{\hyperlink{main_8c_a5a85b9c772bbeb480b209a3e6ea92b4c}{00036}}\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{adc_8c_a5a85b9c772bbeb480b209a3e6ea92b4c}{TAG}}\ =\ \textcolor{stringliteral}{"{}UTN-\/CA-\/PF2025"{}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{main_8c_source_l00037}00037\ }
-\DoxyCodeLine{\Hypertarget{main_8c_source_l00042}\mbox{\hyperlink{main_8c_a630544a7f0a2cc40d8a7fefab7e2fe70}{00042}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{main_8c_a630544a7f0a2cc40d8a7fefab7e2fe70}{app\_main}}(\textcolor{keywordtype}{void})\ \{}
-\DoxyCodeLine{\Hypertarget{main_8c_source_l00043}00043\ }
-\DoxyCodeLine{\Hypertarget{main_8c_source_l00044}00044\ \ \ \ \ \mbox{\hyperlink{nvs_8c_a3da2b2c6e021ca7b976168dc8308b254}{nvs\_init\_once}}();}
-\DoxyCodeLine{\Hypertarget{main_8c_source_l00045}00045\ \ \ \ \ \textcolor{keywordflow}{if}\ (\ \mbox{\hyperlink{rtc_8c_ae110c54d6d4dcbd67211a1ac02cdc222}{initRTC}}()\ ==\ ESP\_OK\ )\ \{}
-\DoxyCodeLine{\Hypertarget{main_8c_source_l00046}00046\ \ \ \ \ \ \ \ \ ESP\_LOGI(\mbox{\hyperlink{adc_8c_a5a85b9c772bbeb480b209a3e6ea92b4c}{TAG}},\ \textcolor{stringliteral}{"{}RTC\ inicializado\ correctamente"{}});}
-\DoxyCodeLine{\Hypertarget{main_8c_source_l00047}00047\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{\Hypertarget{main_8c_source_l00048}00048\ \ \ \ \ \ \ \ \ ESP\_LOGE(\mbox{\hyperlink{adc_8c_a5a85b9c772bbeb480b209a3e6ea92b4c}{TAG}},\ \textcolor{stringliteral}{"{}Error\ al\ inicializar\ el\ RTC"{}});}
-\DoxyCodeLine{\Hypertarget{main_8c_source_l00049}00049\ \ \ \ \ \ \ \ \ ESP\_ERROR\_CHECK(ESP\_FAIL);}
-\DoxyCodeLine{\Hypertarget{main_8c_source_l00050}00050\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{main_8c_source_l00051}00051\ \ \ \ \ xTaskCreatePinnedToCore(\ \mbox{\hyperlink{display_8c_a0c23017a47c450de05f8c7af642c7461}{task\_display}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Tarea\ Display"{}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 4096,\ NULL,\ 10,\ NULL,\ 1);}
-\DoxyCodeLine{\Hypertarget{main_8c_source_l00052}00052\ }
-\DoxyCodeLine{\Hypertarget{main_8c_source_l00053}00053\ \ \ \ \ xTaskCreatePinnedToCore(\mbox{\hyperlink{adc_8c_a1b78b89977b7b9e5ebc32e9456337379}{adc\_task}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}adc\_task"{}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 4096,\ NULL,\ 9,\ \ NULL,\ 0);}
-\DoxyCodeLine{\Hypertarget{main_8c_source_l00054}00054\ \ \ \ \ xTaskCreatePinnedToCore(\mbox{\hyperlink{sys_control_8c_a50b899a34931236e1ec86c160983f167}{SPI\_communication}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}SPI\_communication"{}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 2048,\ NULL,\ 9,\ \ NULL,\ 0);}
-\DoxyCodeLine{\Hypertarget{main_8c_source_l00055}00055\ \ \ \ \ xTaskCreatePinnedToCore(\mbox{\hyperlink{io__control_8c_af7133eb911ac63b8e81d756ec399ff78}{GPIO\_interrupt\_attendance\_task}},\ \textcolor{stringliteral}{"{}GPIO\_interrupt\_attendance\_task"{}},\ \ \ 2048,\ NULL,\ 10,\ NULL,\ 0);}
-\DoxyCodeLine{\Hypertarget{main_8c_source_l00056}00056\ }
-\DoxyCodeLine{\Hypertarget{main_8c_source_l00057}00057\ \ \ \ \ \textcolor{keywordflow}{while}\ (1)\ \{}
-\DoxyCodeLine{\Hypertarget{main_8c_source_l00058}00058\ \ \ \ \ \ \ \ \ vTaskDelay(pdMS\_TO\_TICKS(1000));}
-\DoxyCodeLine{\Hypertarget{main_8c_source_l00059}00059\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{main_8c_source_l00060}00060\ \}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00033}00033\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{wifi_8h}{./wifi/wifi.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00035}00035\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_l_v_f_v__system_8h}{LVFV\_system.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00037}\mbox{\hyperlink{main_8c_a5a85b9c772bbeb480b209a3e6ea92b4c}{00037}}\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{adc_8c_a5a85b9c772bbeb480b209a3e6ea92b4c}{TAG}}\ =\ \textcolor{stringliteral}{"{}UTN-\/CA-\/PF2025"{}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00043}\mbox{\hyperlink{main_8c_a630544a7f0a2cc40d8a7fefab7e2fe70}{00043}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{main_8c_a630544a7f0a2cc40d8a7fefab7e2fe70}{app\_main}}(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00045}00045\ \ \ \ \ \mbox{\hyperlink{nvs_8c_a3da2b2c6e021ca7b976168dc8308b254}{nvs\_init\_once}}();}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00046}00046\ \ \ \ \ \textcolor{keywordflow}{if}\ (\ \mbox{\hyperlink{rtc_8c_ae110c54d6d4dcbd67211a1ac02cdc222}{initRTC}}()\ ==\ ESP\_OK\ )\ \{}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00047}00047\ \ \ \ \ \ \ \ \ ESP\_LOGI(\mbox{\hyperlink{adc_8c_a5a85b9c772bbeb480b209a3e6ea92b4c}{TAG}},\ \textcolor{stringliteral}{"{}RTC\ inicializado\ correctamente"{}});}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00048}00048\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00049}00049\ \ \ \ \ \ \ \ \ ESP\_LOGE(\mbox{\hyperlink{adc_8c_a5a85b9c772bbeb480b209a3e6ea92b4c}{TAG}},\ \textcolor{stringliteral}{"{}Error\ al\ inicializar\ el\ RTC"{}});}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00050}00050\ \ \ \ \ \ \ \ \ ESP\_ERROR\_CHECK(ESP\_FAIL);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00051}00051\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00052}00052\ \ \ \ \ xTaskCreatePinnedToCore(\ \mbox{\hyperlink{display_8c_a0c23017a47c450de05f8c7af642c7461}{task\_display}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Tarea\ Display"{}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 4096,\ NULL,\ 10,\ NULL,\ 1);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00054}00054\ \ \ \ \ xTaskCreatePinnedToCore(\mbox{\hyperlink{adc_8c_a1b78b89977b7b9e5ebc32e9456337379}{adc\_task}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}adc\_task"{}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 4096,\ NULL,\ 9,\ \ NULL,\ 0);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00055}00055\ \ \ \ \ xTaskCreatePinnedToCore(\mbox{\hyperlink{sys_control_8c_a50b899a34931236e1ec86c160983f167}{SPI\_communication}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}SPI\_communication"{}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 2048,\ NULL,\ 9,\ \ NULL,\ 0);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00056}00056\ \ \ \ \ xTaskCreatePinnedToCore(\mbox{\hyperlink{io__control_8c_af7133eb911ac63b8e81d756ec399ff78}{GPIO\_interrupt\_attendance\_task}},\ \textcolor{stringliteral}{"{}GPIO\_interrupt\_attendance\_task"{}},\ \ \ 2048,\ NULL,\ 10,\ NULL,\ 0);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00058}00058\ \ \ \ \ \mbox{\hyperlink{wifi_8c_a4a2bc421f17a5713e35165034943cea3}{wifi\_init\_softap}}();}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00059}00059\ \ \ \ \ \textcolor{comment}{//\ start\_mdns();}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00060}00060\ \ \ \ \ \mbox{\hyperlink{wifi_8c_aa405dbf500a1f511f559e1e87efff9da}{start\_webserver}}();}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00062}00062\ \ \ \ \ \textcolor{keywordflow}{while}\ (1)\ \{}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00063}00063\ \ \ \ \ \ \ \ \ vTaskDelay(pdMS\_TO\_TICKS(1000));}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00064}00064\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00065}00065\ \}}
 
 \end{DoxyCode}

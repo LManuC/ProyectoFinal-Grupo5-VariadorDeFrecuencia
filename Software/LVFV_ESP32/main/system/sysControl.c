@@ -229,8 +229,8 @@ void SPI_communication(void *arg) {
         readADC();
         if ( xQueueReceive( system_event_queue, &new_button, pdMS_TO_TICKS(20) ) ) {
             switch ( new_button ) {
-                case EMERGENCY_STOP_PRESSED:
-                    ESP_LOGI(TAG, "Botón de EMERGENCYA presionado");
+                case EMERGENCI_STOP_PRESSED:
+                    ESP_LOGI(TAG, "Botón de EMERGENCIA presionado");
                     item.request = SPI_REQUEST_EMERGENCY;
                     item.setValue = 0;
                     item.getValue = 0;
@@ -257,8 +257,8 @@ void SPI_communication(void *arg) {
                     ESP_LOGI(TAG, "Termoswitch desactivado");
                     engine_emergency_stop_release();
                     break;
-                case EMERGENCY_STOP_RELEASED:
-                    ESP_LOGI(TAG, "Botón de EMERGENCYA liberado");
+                case EMERGENCI_STOP_RELEASED:
+                    ESP_LOGI(TAG, "Botón de EMERGENCIA liberado");
                     engine_emergency_stop_release();
                     break;
                 case START_PRESSED:

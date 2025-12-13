@@ -1,0 +1,190 @@
+\doxysection{Referencia del archivo C\+:/\+Users/\+User/\+LVFV\+\_\+\+ESP32/main/wifi/wifi.c}
+\hypertarget{wifi_8c}{}\label{wifi_8c}\index{C:/Users/User/LVFV\_ESP32/main/wifi/wifi.c@{C:/Users/User/LVFV\_ESP32/main/wifi/wifi.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+{\ttfamily \#include "{}freertos/\+Free\+RTOS.\+h"{}}\newline
+{\ttfamily \#include "{}freertos/task.\+h"{}}\newline
+{\ttfamily \#include "{}esp\+\_\+event.\+h"{}}\newline
+{\ttfamily \#include "{}esp\+\_\+log.\+h"{}}\newline
+{\ttfamily \#include "{}nvs\+\_\+flash.\+h"{}}\newline
+{\ttfamily \#include "{}esp\+\_\+netif.\+h"{}}\newline
+{\ttfamily \#include "{}../\+LVFV\+\_\+system.\+h"{}}\newline
+{\ttfamily \#include "{}../system/sys\+Control.\+h"{}}\newline
+{\ttfamily \#include "{}../display/display.\+h"{}}\newline
+{\ttfamily \#include "{}./wifi.\+h"{}}\newline
+{\ttfamily \#include "{}form.\+h"{}}\newline
+\doxysubsubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{wifi_8c_abcaa65247952824272d6e0b91d66cf8b}{hex2int}} (char c)
+\begin{DoxyCompactList}\small\item\em Convierte un dígito hex a entero (0..15). \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{wifi_8c_a3183361e8dc52b9c47fed54863439d4d}{url\+\_\+decode}} (char \texorpdfstring{$\ast$}{*}dst, const char \texorpdfstring{$\ast$}{*}src)
+\begin{DoxyCompactList}\small\item\em Decodifica URL (reemplaza \textquotesingle{}+\textquotesingle{} por espacio y HH por byte). \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{wifi_8c_aebcef2c9ac87ea89e0eaed0cb99583e2}{get\+\_\+param\+\_\+value}} (const char \texorpdfstring{$\ast$}{*}body, const char \texorpdfstring{$\ast$}{*}key, char \texorpdfstring{$\ast$}{*}dest, size\+\_\+t dest\+\_\+len)
+\begin{DoxyCompactList}\small\item\em Obtiene el valor de un parámetro key=val del body x-\/www-\/form-\/urlencoded. \end{DoxyCompactList}\item 
+static esp\+\_\+err\+\_\+t \mbox{\hyperlink{wifi_8c_ad8bb541f65016944ecd059dc8e08f531}{root\+\_\+get\+\_\+handler}} (httpd\+\_\+req\+\_\+t \texorpdfstring{$\ast$}{*}req)
+\begin{DoxyCompactList}\small\item\em Handler GET "{}/"{} – devuelve el formulario HTML. \end{DoxyCompactList}\item 
+static esp\+\_\+err\+\_\+t \mbox{\hyperlink{wifi_8c_a7803a9e01b15f01009c423b6e8ebc91a}{save\+\_\+post\+\_\+handler}} (httpd\+\_\+req\+\_\+t \texorpdfstring{$\ast$}{*}req)
+\begin{DoxyCompactList}\small\item\em Handler POST "{}/save"{} – parsea el formulario y actúa. \end{DoxyCompactList}\item 
+httpd\+\_\+handle\+\_\+t \mbox{\hyperlink{wifi_8c_aa405dbf500a1f511f559e1e87efff9da}{start\+\_\+webserver}} (void)
+\begin{DoxyCompactList}\small\item\em Arranca el servidor HTTP y registra endpoints. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{wifi_8c_a4a2bc421f17a5713e35165034943cea3}{wifi\+\_\+init\+\_\+softap}} (void)
+\begin{DoxyCompactList}\small\item\em Configura ESP-\/\+NETIF + Wi-\/\+Fi en modo AP y arranca SSID/clave. (Canal 1, máx 1 cliente, WPA/\+WPA2). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{wifi_8c_a5a85b9c772bbeb480b209a3e6ea92b4c}{TAG}} = "{}WEB\+\_\+\+CFG"{}
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{wifi_8c_doc-func-members}
+\doxysubsection{Documentación de funciones}
+\Hypertarget{wifi_8c_aebcef2c9ac87ea89e0eaed0cb99583e2}\index{wifi.c@{wifi.c}!get\_param\_value@{get\_param\_value}}
+\index{get\_param\_value@{get\_param\_value}!wifi.c@{wifi.c}}
+\doxysubsubsection{\texorpdfstring{get\_param\_value()}{get\_param\_value()}}
+{\footnotesize\ttfamily \label{wifi_8c_aebcef2c9ac87ea89e0eaed0cb99583e2} 
+bool get\+\_\+param\+\_\+value (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{body}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{key}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{dest}{, }\item[{size\+\_\+t}]{dest\+\_\+len}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Obtiene el valor de un parámetro key=val del body x-\/www-\/form-\/urlencoded. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em body} & cuerpo completo del POST (NUL-\/terminated). \\
+\hline
+{\em key} & nombre del parámetro (sin \textquotesingle{}=\textquotesingle{}). \\
+\hline
+{\em dest} & buffer destino para el valor decodificado. \\
+\hline
+{\em dest\+\_\+len} & tamaño de dest, incluye NUL. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+true si se encontró la clave; false si no.
+\end{DoxyReturn}
+\begin{DoxyNote}{Nota}
+Devuelve el valor decodificado (URL-\/decoding). 
+\end{DoxyNote}
+
+
+Definición en la línea \mbox{\hyperlink{wifi_8c_source_l00115}{115}} del archivo \mbox{\hyperlink{wifi_8c_source}{wifi.\+c}}.
+
+\Hypertarget{wifi_8c_abcaa65247952824272d6e0b91d66cf8b}\index{wifi.c@{wifi.c}!hex2int@{hex2int}}
+\index{hex2int@{hex2int}!wifi.c@{wifi.c}}
+\doxysubsubsection{\texorpdfstring{hex2int()}{hex2int()}}
+{\footnotesize\ttfamily \label{wifi_8c_abcaa65247952824272d6e0b91d66cf8b} 
+int hex2int (\begin{DoxyParamCaption}\item[{char}]{c}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Convierte un dígito hex a entero (0..15). 
+
+
+
+Definición en la línea \mbox{\hyperlink{wifi_8c_source_l00091}{91}} del archivo \mbox{\hyperlink{wifi_8c_source}{wifi.\+c}}.
+
+\Hypertarget{wifi_8c_ad8bb541f65016944ecd059dc8e08f531}\index{wifi.c@{wifi.c}!root\_get\_handler@{root\_get\_handler}}
+\index{root\_get\_handler@{root\_get\_handler}!wifi.c@{wifi.c}}
+\doxysubsubsection{\texorpdfstring{root\_get\_handler()}{root\_get\_handler()}}
+{\footnotesize\ttfamily \label{wifi_8c_ad8bb541f65016944ecd059dc8e08f531} 
+esp\+\_\+err\+\_\+t root\+\_\+get\+\_\+handler (\begin{DoxyParamCaption}\item[{httpd\+\_\+req\+\_\+t \texorpdfstring{$\ast$}{*}}]{req}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Handler GET "{}/"{} – devuelve el formulario HTML. 
+
+
+
+Definición en la línea \mbox{\hyperlink{wifi_8c_source_l00152}{152}} del archivo \mbox{\hyperlink{wifi_8c_source}{wifi.\+c}}.
+
+\Hypertarget{wifi_8c_a7803a9e01b15f01009c423b6e8ebc91a}\index{wifi.c@{wifi.c}!save\_post\_handler@{save\_post\_handler}}
+\index{save\_post\_handler@{save\_post\_handler}!wifi.c@{wifi.c}}
+\doxysubsubsection{\texorpdfstring{save\_post\_handler()}{save\_post\_handler()}}
+{\footnotesize\ttfamily \label{wifi_8c_a7803a9e01b15f01009c423b6e8ebc91a} 
+esp\+\_\+err\+\_\+t save\+\_\+post\+\_\+handler (\begin{DoxyParamCaption}\item[{httpd\+\_\+req\+\_\+t \texorpdfstring{$\ast$}{*}}]{req}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Handler POST "{}/save"{} – parsea el formulario y actúa. 
+
+Flujo\+: 1) Lee el body (x-\/www-\/form-\/urlencoded) a \textquotesingle{}body\textquotesingle{}. 2) Extrae parámetros\+: frequency, accel, decel, imax, vmin, variation\+\_\+str (linear/cuadratica), sys\+\_\+time, start\+\_\+time, stop\+\_\+time. 3) Llena estructuras frequency\+\_\+edit, seccurity\+\_\+edit, time\+\_\+edit. 4) Si cmd=save → system\+\_\+variables\+\_\+save(...). Si cmd=start → System\+Event\+Post( \doxylink{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796a63785524fddc6173ea49aacebd1ba9b4}{START\+\_\+\+PRESSED}). Si cmd=stop → System\+Event\+Post( \doxylink{_l_v_f_v__system_8h_ab7a290ebff8e2a3230e8085ee87d4796aa9aca1a320269de9561c234df472939c}{STOP\+\_\+\+PRESSED}). 5) Responde nuevamente con el formulario.
+
+\begin{DoxyWarning}{Atención}
+Los campos time\+\_\+\texorpdfstring{$\ast$}{*} se cargan como punteros a variables locales (stack). Si \doxylink{display_8c_a9176ac5e0c10e356605c472cadba998c}{system\+\_\+variables\+\_\+save()} no copia por valor de inmediato y almacena los punteros, quedarían colgando. Ver “\+Posibles issues” más abajo. 
+\end{DoxyWarning}
+
+
+Definición en la línea \mbox{\hyperlink{wifi_8c_source_l00158}{158}} del archivo \mbox{\hyperlink{wifi_8c_source}{wifi.\+c}}.
+
+\Hypertarget{wifi_8c_aa405dbf500a1f511f559e1e87efff9da}\index{wifi.c@{wifi.c}!start\_webserver@{start\_webserver}}
+\index{start\_webserver@{start\_webserver}!wifi.c@{wifi.c}}
+\doxysubsubsection{\texorpdfstring{start\_webserver()}{start\_webserver()}}
+{\footnotesize\ttfamily \label{wifi_8c_aa405dbf500a1f511f559e1e87efff9da} 
+httpd\+\_\+handle\+\_\+t start\+\_\+webserver (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Arranca el servidor HTTP y registra endpoints. 
+
+
+\begin{DoxyItemize}
+\item GET "{}/"{} → formulario
+\item POST "{}/save"{} → procesa y responde 
+\end{DoxyItemize}
+
+Definición en la línea \mbox{\hyperlink{wifi_8c_source_l00288}{288}} del archivo \mbox{\hyperlink{wifi_8c_source}{wifi.\+c}}.
+
+\Hypertarget{wifi_8c_a3183361e8dc52b9c47fed54863439d4d}\index{wifi.c@{wifi.c}!url\_decode@{url\_decode}}
+\index{url\_decode@{url\_decode}!wifi.c@{wifi.c}}
+\doxysubsubsection{\texorpdfstring{url\_decode()}{url\_decode()}}
+{\footnotesize\ttfamily \label{wifi_8c_a3183361e8dc52b9c47fed54863439d4d} 
+void url\+\_\+decode (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{dst}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{src}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Decodifica URL (reemplaza \textquotesingle{}+\textquotesingle{} por espacio y HH por byte). 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em dst} & buffer destino (puede ser mismo que src si hay espacio). \\
+\hline
+{\em src} & cadena codificada. \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea \mbox{\hyperlink{wifi_8c_source_l00098}{98}} del archivo \mbox{\hyperlink{wifi_8c_source}{wifi.\+c}}.
+
+\Hypertarget{wifi_8c_a4a2bc421f17a5713e35165034943cea3}\index{wifi.c@{wifi.c}!wifi\_init\_softap@{wifi\_init\_softap}}
+\index{wifi\_init\_softap@{wifi\_init\_softap}!wifi.c@{wifi.c}}
+\doxysubsubsection{\texorpdfstring{wifi\_init\_softap()}{wifi\_init\_softap()}}
+{\footnotesize\ttfamily \label{wifi_8c_a4a2bc421f17a5713e35165034943cea3} 
+void wifi\+\_\+init\+\_\+softap (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Configura ESP-\/\+NETIF + Wi-\/\+Fi en modo AP y arranca SSID/clave. (Canal 1, máx 1 cliente, WPA/\+WPA2). 
+
+
+
+Definición en la línea \mbox{\hyperlink{wifi_8c_source_l00313}{313}} del archivo \mbox{\hyperlink{wifi_8c_source}{wifi.\+c}}.
+
+
+
+\label{doc-var-members}
+\Hypertarget{wifi_8c_doc-var-members}
+\doxysubsection{Documentación de variables}
+\Hypertarget{wifi_8c_a5a85b9c772bbeb480b209a3e6ea92b4c}\index{wifi.c@{wifi.c}!TAG@{TAG}}
+\index{TAG@{TAG}!wifi.c@{wifi.c}}
+\doxysubsubsection{\texorpdfstring{TAG}{TAG}}
+{\footnotesize\ttfamily \label{wifi_8c_a5a85b9c772bbeb480b209a3e6ea92b4c} 
+const char\texorpdfstring{$\ast$}{*} TAG = "{}WEB\+\_\+\+CFG"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{wifi_8c_source_l00031}{31}} del archivo \mbox{\hyperlink{wifi_8c_source}{wifi.\+c}}.
+
