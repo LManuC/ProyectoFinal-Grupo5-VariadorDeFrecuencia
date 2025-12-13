@@ -55,6 +55,84 @@
       \verb https://www.st.com/resource/en/datasheet/l298.pdf
       \endverb
     \endentry
+    \entry{imperix_svpwm}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=e493d37b1effef0300faa3bb4091cb9b}{%
+           family={{Simon Strobl}},
+           familyi={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{e493d37b1effef0300faa3bb4091cb9b}
+      \strng{fullhash}{e493d37b1effef0300faa3bb4091cb9b}
+      \strng{fullhashraw}{e493d37b1effef0300faa3bb4091cb9b}
+      \strng{bibnamehash}{e493d37b1effef0300faa3bb4091cb9b}
+      \strng{authorbibnamehash}{e493d37b1effef0300faa3bb4091cb9b}
+      \strng{authornamehash}{e493d37b1effef0300faa3bb4091cb9b}
+      \strng{authorfullhash}{e493d37b1effef0300faa3bb4091cb9b}
+      \strng{authorfullhashraw}{e493d37b1effef0300faa3bb4091cb9b}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{9}
+      \field{langid}{english}
+      \field{month}{8}
+      \field{note}{Tutorial}
+      \field{title}{Space Vector Modulation (SVM)}
+      \field{urlday}{20}
+      \field{urlmonth}{5}
+      \field{urlyear}{2025}
+      \field{year}{2021}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://imperix.com/doc/implementation/space-vector-modulation
+      \endverb
+      \verb{url}
+      \verb https://imperix.com/doc/implementation/space-vector-modulation
+      \endverb
+    \endentry
+    \entry{switchcraft_svpwm_intro}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=b2be52f83273b6fd576f47016dab78f6}{%
+           family={{Yngve Solbakken}},
+           familyi={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{b2be52f83273b6fd576f47016dab78f6}
+      \strng{fullhash}{b2be52f83273b6fd576f47016dab78f6}
+      \strng{fullhashraw}{b2be52f83273b6fd576f47016dab78f6}
+      \strng{bibnamehash}{b2be52f83273b6fd576f47016dab78f6}
+      \strng{authorbibnamehash}{b2be52f83273b6fd576f47016dab78f6}
+      \strng{authornamehash}{b2be52f83273b6fd576f47016dab78f6}
+      \strng{authorfullhash}{b2be52f83273b6fd576f47016dab78f6}
+      \strng{authorfullhashraw}{b2be52f83273b6fd576f47016dab78f6}
+      \field{sortinit}{Y}
+      \field{sortinithash}{fd67ad5a9ef0f7456bdd9aab10fe1495}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{1}
+      \field{langid}{english}
+      \field{month}{5}
+      \field{note}{Tutorial}
+      \field{title}{Space Vector PWM: An Introduction}
+      \field{urlday}{20}
+      \field{urlmonth}{5}
+      \field{urlyear}{2025}
+      \field{year}{2017}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.switchcraft.org/learning/2017/3/15/space-vector-pwm-intro
+      \endverb
+      \verb{url}
+      \verb https://www.switchcraft.org/learning/2017/3/15/space-vector-pwm-intro
+      \endverb
+    \endentry
   \enddatalist
   \datalist[entry]{apa/global//global/global/global}
     \entry{Buzzer_datasheet}{manual}{}{}
@@ -91,6 +169,84 @@
       \endverb
       \verb{url}
       \verb https://www.st.com/resource/en/datasheet/l298.pdf
+      \endverb
+    \endentry
+    \entry{imperix_svpwm}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=e493d37b1effef0300faa3bb4091cb9b}{%
+           family={{Simon Strobl}},
+           familyi={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{e493d37b1effef0300faa3bb4091cb9b}
+      \strng{fullhash}{e493d37b1effef0300faa3bb4091cb9b}
+      \strng{fullhashraw}{e493d37b1effef0300faa3bb4091cb9b}
+      \strng{bibnamehash}{e493d37b1effef0300faa3bb4091cb9b}
+      \strng{authorbibnamehash}{e493d37b1effef0300faa3bb4091cb9b}
+      \strng{authornamehash}{e493d37b1effef0300faa3bb4091cb9b}
+      \strng{authorfullhash}{e493d37b1effef0300faa3bb4091cb9b}
+      \strng{authorfullhashraw}{e493d37b1effef0300faa3bb4091cb9b}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{9}
+      \field{langid}{english}
+      \field{month}{8}
+      \field{note}{Tutorial}
+      \field{title}{Space Vector Modulation (SVM)}
+      \field{urlday}{20}
+      \field{urlmonth}{5}
+      \field{urlyear}{2025}
+      \field{year}{2021}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://imperix.com/doc/implementation/space-vector-modulation
+      \endverb
+      \verb{url}
+      \verb https://imperix.com/doc/implementation/space-vector-modulation
+      \endverb
+    \endentry
+    \entry{switchcraft_svpwm_intro}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=b2be52f83273b6fd576f47016dab78f6}{%
+           family={{Yngve Solbakken}},
+           familyi={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{b2be52f83273b6fd576f47016dab78f6}
+      \strng{fullhash}{b2be52f83273b6fd576f47016dab78f6}
+      \strng{fullhashraw}{b2be52f83273b6fd576f47016dab78f6}
+      \strng{bibnamehash}{b2be52f83273b6fd576f47016dab78f6}
+      \strng{authorbibnamehash}{b2be52f83273b6fd576f47016dab78f6}
+      \strng{authornamehash}{b2be52f83273b6fd576f47016dab78f6}
+      \strng{authorfullhash}{b2be52f83273b6fd576f47016dab78f6}
+      \strng{authorfullhashraw}{b2be52f83273b6fd576f47016dab78f6}
+      \field{sortinit}{Y}
+      \field{sortinithash}{fd67ad5a9ef0f7456bdd9aab10fe1495}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{1}
+      \field{langid}{english}
+      \field{month}{5}
+      \field{note}{Tutorial}
+      \field{title}{Space Vector PWM: An Introduction}
+      \field{urlday}{20}
+      \field{urlmonth}{5}
+      \field{urlyear}{2025}
+      \field{year}{2017}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.switchcraft.org/learning/2017/3/15/space-vector-pwm-intro
+      \endverb
+      \verb{url}
+      \verb https://www.switchcraft.org/learning/2017/3/15/space-vector-pwm-intro
       \endverb
     \endentry
   \enddatalist

@@ -6,7 +6,7 @@ La modulación cumple un rol fundamental en el control de inversores, ya que per
 
 En la actualidad existen diversas técnicas de modulación aplicables al control de inversores trifásicos, cada una con un nivel diferente de complejidad y desempeño. Las más utilizadas son las basadas en PWM, como la modulación sinusoidal y sus variantes optimizadas, que permiten regular la tensión efectiva aplicada al motor mediante el ajuste del ciclo de trabajo. Una alternativa más avanzada es la modulación por vectores espaciales (SVM), que optimiza la utilización del bus de continua y reduce la distorsión armónica al considerar el inversor como un sistema vectorial. Finalmente, en niveles superiores de control aparece el Field Oriented Control (FOC), que combina técnicas de modulación con estrategias de control orientadas al flujo y al par para lograr un comportamiento más preciso y dinámico del motor. Estas opciones cubren la mayoría de las necesidades en variadores industriales y de propósito general.
 
-Ventajas de la Modulación SVM frente a técnicas PWM convencionales
+\paragraph{Ventajas de la Modulación SVM frente a técnicas PWM convencionales}
 
 La elección de la modulación SVM se fundamenta en su capacidad para maximizar el desempeño del inversor en comparación con técnicas PWM convencionales. Al operar mediante una representación vectorial de las tensiones del inversor, la SVM permite una utilización más eficiente del bus de continua, obteniendo mayor tensión de salida disponible sin incrementar la frecuencia de conmutación. Además, reduce significativamente la distorsión armónica y mejora la calidad de la forma de onda aplicada al motor, lo que se traduce en un funcionamiento más suave, menor calentamiento y mayor eficiencia energética. Estas características hacen que la SVM sea especialmente adecuada para variadores donde se busca un control preciso, buena respuesta dinámica y un rendimiento eléctrico óptimo.
 
@@ -23,7 +23,7 @@ El principio fundamental de la SVM se basa en que un inversor trifásico puede g
 \label{fig:imgMT_Mod_modHexagonVectors}
 \end{figure}
 
-La implementación de SVM también define una secuencia óptima de conmutación que minimiza el número de cambios de estado en los interruptores, reduciendo pérdidas por conmutación y mejorando la eficiencia global del inversor. El resultado es una forma de onda más cercana a una sinusoide ideal, con menor distorsión armónica y una utilización más eficiente del bus de continua en comparación con PWM sinusoidal. De hecho, la SVM permite obtener aproximadamente un quince por ciento más de tensión útil sin aumentar la frecuencia de conmutación, lo que se traduce en un mejor desempeño energético y térmico del sistema.
+La implementación de SVM también define una secuencia óptima de conmutación que minimiza el número de cambios de estado en los interruptores, reduciendo pérdidas por conmutación y mejorando la eficiencia global del inversor. El resultado es una forma de onda más cercana a una sinusoide ideal, con menor distorsión armónica y una utilización más eficiente del bus de continua en comparación con PWM sinusoidal. De hecho, la SVM permite obtener aproximadamente un quince por ciento más de tensión útil sin aumentar la frecuencia de conmutación, lo que se traduce en un mejor desempeño energético y térmico del sistema.\footcite{switchcraft_svpwm_intro}
 
 \begin{figure}[H]
 \centering
@@ -41,26 +41,29 @@ Se interpreta el vector activo del hexágono como la representación espacial de
 
 Los tiempos de aplicación de cada vector se determinan a partir de las siguientes constantes:
 
-\[
-A = \frac{3 \sqrt{3}}{2\pi} \ T
-\]
-\[
-B = \frac{3}{\pi} \ T
-\]
+\begin{equation}\label{eq:svm_coef_A}
+A = \frac{3 \sqrt{3}}{2\pi} \text{T}
+\end{equation}
+
+\begin{equation}\label{eq:svm_coef_B}
+B = \frac{3}{\pi} \text{T}
+\end{equation}
 
 donde $T$ corresponde al período de conmutación del inversor.
 
-Los tiempos de permanencia de cada vector se obtienen mediante:
+Completando con las ecuaciones \eqref{eq:svm_coef_A} y \eqref{eq:svm_coef_B}, los tiempos de permanencia de cada vector se obtienen mediante:
 
-\[
+\begin{equation}\label{eq:svm_coef_t1}
 t_1 = I_{mod} \ A \   \cos{\alpha} - \frac{t_2}{2}
-\]
-\[
+\end{equation}
+
+\begin{equation}\label{eq:svm_coef_t2}
 t_2 = I_{mod} \ B \ \sin{\alpha}
-\]
-\[
+\end{equation}
+
+\begin{equation}\label{eq:svm_coef_t0}
 t_0 = \frac{T}{2} - t_1 - t_2
-\]
+\end{equation}
 
 En estas expresiones, $\alpha$ es el ángulo eléctrico dentro del sector correspondiente del hexágono, mientras que el índice de modulación $I_{mod}$ permite ajustar la amplitud de la tensión de salida generada por el inversor.
 
@@ -69,4 +72,5 @@ En estas expresiones, $\alpha$ es el ángulo eléctrico dentro del sector corres
     \includegraphics[width=0.7\textwidth]{mt/mod/img/SwitchingPattern.png}
     \caption{Patrón de conmutación de los transistores.}
 \label{fig:imgMT_Mod_switchPattern}
+\footcite{imperix_svpwm}
 \end{figure}
