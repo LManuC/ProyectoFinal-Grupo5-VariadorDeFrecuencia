@@ -810,7 +810,6 @@ void task_display(void *pvParameters) {
                         edit_variable_max = 0;
                     } else if ( screen_displayed == SCREEN_MAIN ) {
                         SystemEventPost(STOP_PRESSED);
-                        RelayEvantPost( 0 );
                     }
                     break;
                 case BUTTON_UP:
