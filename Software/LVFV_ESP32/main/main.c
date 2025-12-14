@@ -52,8 +52,8 @@ void app_main(void) {
     xTaskCreatePinnedToCore( task_display,                  "Tarea Display",                    4096, NULL, 10, NULL, 1);
 
     xTaskCreatePinnedToCore(adc_task,                       "adc_task",                         4096, NULL, 9,  NULL, 0);
-    xTaskCreatePinnedToCore(SPI_communication,              "SPI_communication",                2048, NULL, 9,  NULL, 0);
-    xTaskCreatePinnedToCore(GPIO_interrupt_attendance_task, "GPIO_interrupt_attendance_task",   2048, NULL, 10, NULL, 0);
+    xTaskCreatePinnedToCore(SPI_communication,              "SPI_communication",                4096, NULL, 9,  NULL, 0);
+    xTaskCreatePinnedToCore(GPIO_interrupt_attendance_task, "GPIO_interrupt_attendance_task",   4096, NULL, 10, NULL, 0);
 
     wifi_init_softap();
     // start_mdns();
