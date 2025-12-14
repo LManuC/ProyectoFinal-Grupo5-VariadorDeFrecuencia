@@ -230,39 +230,77 @@ void SPI_communication(void *arg) {
         if ( xQueueReceive( system_event_queue, &new_button, pdMS_TO_TICKS(20) ) ) {
             switch ( new_button ) {
                 case EMERGENCI_STOP_PRESSED:
-                    ESP_LOGI(TAG, "Botón de EMERGENCIA presionado");
-                    item.request = SPI_REQUEST_EMERGENCY;
-                    item.setValue = 0;
-                    item.getValue = 0;
-                    SPI_SendRequest(&item);
-                    engine_emergency_stop();
+                    if ( s_e.status != SYSTEM_EMERGENCY ) {
+                        ESP_LOGI(TAG, "Botón de EMERGENCIA presionado");
+                        item.request = SPI_REQUEST_EMERGENCY;
+                        item.setValue = 0;
+                        item.getValue = 0;
+                        SPI_SendRequest(&item);
+                        RelayEvantPost( 1 );
+                    } else {
+                        ESP_LOGI(TAG, "El sistema ya se encontraba en emergencia");
+                    }
+                    engine_emergency_stop(0b001);
+                    break;
+                case SECURITY_EXCEDED:
+                    if ( s_e.status != SYSTEM_EMERGENCY ) {
+                        ESP_LOGI(TAG, "Corriente elevada o tensión reducida");
+                        item.request = SPI_REQUEST_EMERGENCY;
+                        item.setValue = 0;
+                        item.getValue = 0;
+                        SPI_SendRequest(&item);
+                        RelayEvantPost( 1 );
+                    } else {
+                        ESP_LOGI(TAG, "El sistema ya se encontraba en emergencia");
+                    }
+                    engine_emergency_stop(0b010);
+                    break;
+                case TERMO_SW_PRESSED:
+                    if ( s_e.status != SYSTEM_EMERGENCY ) {
+                        ESP_LOGI(TAG, "Termoswitch activo");
+                        item.request = SPI_REQUEST_EMERGENCY;
+                        item.setValue = 0;
+                        item.getValue = 0;
+                        SPI_SendRequest(&item);
+                        RelayEvantPost( 1 );
+                    } else {
+                        ESP_LOGI(TAG, "El sistema ya se encontraba en emergencia");
+                    }
+                    engine_emergency_stop(0b100);
+                    break;
+                case EMERGENCI_STOP_RELEASED:
+                    ESP_LOGI(TAG, "Botón de EMERGENCIA liberado");
+                    engine_emergency_stop_release(0b001);
+                    break;
+                case SECURITY_OK:
+                    ESP_LOGI(TAG, "Tensión y corriente normalizadas");
+                    engine_emergency_stop_release(0b010);
+                    break;
+                case TERMO_SW_RELEASED:
+                    ESP_LOGI(TAG, "Termoswitch desactivado");
+                    engine_emergency_stop_release(0b100);
                     break;
                 case STOP_PRESSED:
-                    if ( s_e.status != SYSTEM_EMERGENCY ) {
+                    if ( s_e.status == SYSTEM_EMERGENCY ) {
+                        ESP_LOGI(TAG,"Primero salir de estado de emergencia");
+                    } else if ( s_e.status == SYSTEM_ACCLE_DESACCEL || s_e.status == SYSTEM_REGIME ) {
                         engine_stop();
                         ESP_LOGI(TAG, "Botón de Parada presionado");
                         item.request = SPI_REQUEST_STOP;
                         item.setValue = 0;
                         item.getValue = 0;
                         SPI_SendRequest(&item);
-                    } else {
-                        ESP_LOGI(TAG,"Primero salir de estado de emergencia");
+                    } else if ( s_e.status == SYSTEM_EMERGENCY_OK ) {
+                        engine_stop();
+                        ESP_LOGI(TAG, "Botón de Parada presionado - Liberando estado de emergencia");
+                        item.request = SPI_REQUEST_STOP;
+                        item.setValue = 0;
+                        item.getValue = 0;
+                        SPI_SendRequest(&item);
+                        RelayEvantPost( 0 );                      
                     }
                     break;
-                case SECURITY_OK:
-                    ESP_LOGI(TAG, "Tensión y corriente normalizadas");
-                    engine_emergency_stop_release();
-                    break;
-                case TERMO_SW_RELEASED:
-                    ESP_LOGI(TAG, "Termoswitch desactivado");
-                    engine_emergency_stop_release();
-                    break;
-                case EMERGENCI_STOP_RELEASED:
-                    ESP_LOGI(TAG, "Botón de EMERGENCIA liberado");
-                    engine_emergency_stop_release();
-                    break;
                 case START_PRESSED:
-
                     if ( s_e.status == SYSTEM_IDLE ) {
                         ESP_LOGI(TAG, "Botón de Inicio presionado");
                         SPI_Response SPI_commando_response;
@@ -310,22 +348,6 @@ void SPI_communication(void *arg) {
                     break;
                 case START_RELEASED:
                     ESP_LOGI(TAG, "Botón de Inicio liberado");
-                    break;
-                case SECURITY_EXCEDED:
-                    ESP_LOGI(TAG, "Corriente elevada o tensión reducida");
-                    item.request = SPI_REQUEST_EMERGENCY;
-                    item.setValue = 0;
-                    item.getValue = 0;
-                    SPI_SendRequest(&item);
-                    RelayEvantPost( 1 );
-                    break;
-                case TERMO_SW_PRESSED:
-                    ESP_LOGI(TAG, "Termoswitch activo");
-                    item.request = SPI_REQUEST_EMERGENCY;
-                    item.setValue = 0;
-                    item.getValue = 0;
-                    SPI_SendRequest(&item);
-                    engine_emergency_stop();
                     break;
                 case SPEED_SELECTOR_0:
                 case SPEED_SELECTOR_1:

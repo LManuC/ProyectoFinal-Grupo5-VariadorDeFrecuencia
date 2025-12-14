@@ -115,6 +115,7 @@ typedef struct system_status_t {
     uint16_t desacceleration;                               // Velocidad de desaceleración del motor configurada por el usuario
     uint8_t inputs_status;                                  // Índice de entrada aislada seleccionado para la variación de velocidad
     system_status_e status;                                 // Estado general del sistema
+    uint8_t emergency_signals;                              // Estado actual de las señales de emergencia b0: Entrada emergencia; b1: Security; b3: Termo-switch
 } system_status_t;
 
 /*

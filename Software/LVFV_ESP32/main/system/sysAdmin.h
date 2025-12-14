@@ -49,20 +49,26 @@ uint16_t engine_start();
 uint16_t engine_stop();
 
 /**
- * @fn void engine_emergency_stop_release();
+ * @fn bool engine_emergency_stop_release(uint8_t signal);
  *
- * @brief Pasa a estado SYSTEM_EMERGENCY_OK para que el usuario pueda enviar la señal de stop al STM32 necesaria para poder arrancar nuevamente el motor.
+ * @brief Pasa a estado SYSTEM_EMERGENCY_OK si todas las señales de emergencia son 0 para que el usuario pueda enviar la señal de stop al STM32 necesaria para poder arrancar nuevamente el motor.
+ *
+ * @param[in] signal: Señal que normaliza el estado de emergencia
+ *
+ * @retval true: si cambia a SYSTEM_EMERGENCY_OK; false si existe alguna señal aún activa
  */
-void engine_emergency_stop_release();
+bool engine_emergency_stop_release(uint8_t signal);
 
 /**
- * @fn void engine_emergency_stop();
+ * @fn void engine_emergency_stop(uint8_t signal);
  *
  * @brief Pasa la frecuencia de regimen a 0Hz y pasa a estado SYSTEM_EMERGENCY
  *
- * @details Termina las tareas accelerating y desaccelerating
+ * @details Termina las tareas accelerating y desaccelerating y guarda la señal que dispara la emergencia para contabilizar todos las señales vigentes
+ *
+ * @param[in] signal: Señal que genera el estado de emergencia
  */
-void engine_emergency_stop();
+void engine_emergency_stop(uint8_t signal);
 
 /**
  * @fn uint16_t change_frequency(uint8_t speed_slector);

@@ -121,11 +121,19 @@ uint16_t engine_stop() {
     return system_status.frequency_destiny;
 }
 
-void engine_emergency_stop_release() {
-    system_status.status = SYSTEM_EMERGENCY_OK;
+bool engine_emergency_stop_release(uint8_t signal) {
+    bool retval = false;
+    system_status.emergency_signals &= ~signal;
+    if ( system_status.emergency_signals == 0 ) {
+        system_status.status = SYSTEM_EMERGENCY_OK;
+        retval = true;
+    } else {
+        ESP_LOGI(TAG, "Estado de las señales de emergencia: %d", system_status.emergency_signals );
+    }
+    return retval;
 }
 
-void engine_emergency_stop() {
+void engine_emergency_stop(uint8_t signal) {
     if ( accelerating_handle != NULL ) {
         vTaskDelete( accelerating_handle );
         accelerating_handle = NULL;
@@ -137,6 +145,7 @@ void engine_emergency_stop() {
     system_status.frequency_destiny = 0;
     system_status.frequency = 0;
     system_status.status = SYSTEM_EMERGENCY;
+    system_status.emergency_signals |= signal;
 }
 
 uint16_t change_frequency(uint8_t speed_slector) {
@@ -206,12 +215,10 @@ system_status_e update_meas(uint16_t vbus_meas, uint16_t ibus_meas) {
 
     if ( in_emergency == true ) {
         if ( system_status.status != SYSTEM_EMERGENCY ) {
-            engine_emergency_stop();
             SystemEventPost(SECURITY_EXCEDED);
             ESP_LOGI( TAG, "Mando senal.");
-            system_status.status = SYSTEM_EMERGENCY;
         }
-    } else if ( system_status.status == SYSTEM_EMERGENCY ) {
+    } else if ( system_status.status == SYSTEM_EMERGENCY && ( system_status.emergency_signals & 0b010 ) ) {
         SystemEventPost(SECURITY_OK);
         ESP_LOGI( TAG, "Salgo de emergencia por seguridad.");
     }
