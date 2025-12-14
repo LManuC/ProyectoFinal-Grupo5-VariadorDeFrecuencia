@@ -346,7 +346,7 @@ static void MCP23017_relay_control(void* arg) {
     mcp_write_output_pin(PORTA, 1, 0);
     for(;;) {
         if(xQueueReceive(relay_evt_queue, &io_num, portMAX_DELAY)) {
-            ESP_LOGI(TAG, "RelayEvantPost: %d", io_num);
+            ESP_LOGI(TAG, "New relay state: %d", io_num);
             if ( io_num == 1 ) {
                 mcp_write_output_pin(PORTA, 1, 1);
             } else {
@@ -530,23 +530,22 @@ void GPIO_interrupt_attendance_task(void* arg) {
                 break;
             case TERMO_SW_PRESSED:
                 if ( !(mcp_porta & TERMO_SW_MASK) ) {
-                    SystemEventPost(last_interrupt);
-                    RelayEvantPost( 1 );
+                    SystemEventPost(TERMO_SW_PRESSED);
                 }
                 break;
             case TERMO_SW_RELEASED:
                 if ( mcp_porta & TERMO_SW_MASK ) {
-                    SystemEventPost(last_interrupt);
+                    SystemEventPost(TERMO_SW_RELEASED);
                 }
                 break;
             case STOP_PRESSED:
                 if ( !(mcp_porta & STOP_SW_MASK) ) {
-                    SystemEventPost(last_interrupt);
+                    SystemEventPost(STOP_PRESSED);
                 }
                 break;
             case STOP_RELEASED:
                 if ( mcp_porta & STOP_SW_MASK ) {
-                    SystemEventPost(last_interrupt);
+                    SystemEventPost(STOP_RELEASED);
                 }
                 break;
             case SPEED_SELECTOR_0:
@@ -568,23 +567,22 @@ void GPIO_interrupt_attendance_task(void* arg) {
                 break;
             case EMERGENCI_STOP_PRESSED:
                 if ( gpio_get_level(STOP_BUTTON_PIN) ) {
-                    SystemEventPost(last_interrupt);
-                    RelayEvantPost( 1 );
+                    SystemEventPost(EMERGENCI_STOP_PRESSED);
                 }
                 break;
             case EMERGENCI_STOP_RELEASED:
                 if ( !gpio_get_level(STOP_BUTTON_PIN) ) {
-                    SystemEventPost(last_interrupt);
+                    SystemEventPost(EMERGENCI_STOP_RELEASED);
                 }
                 break;
             case START_PRESSED:
                 if ( !gpio_get_level(START_BUTTON_PIN) ) {
-                    SystemEventPost(last_interrupt);
+                    SystemEventPost(START_PRESSED);
                 }
                 break;
             case START_RELEASED:
                 if ( gpio_get_level(START_BUTTON_PIN) ) {
-                    SystemEventPost(last_interrupt);
+                    SystemEventPost(START_RELEASED);
                 }
                 break;
         }
@@ -594,7 +592,6 @@ void GPIO_interrupt_attendance_task(void* arg) {
 
 esp_err_t RelayEvantPost( uint8_t relay_event ) {
     uint8_t event = relay_event;
-    ESP_LOGI(TAG, "Relay event: %d", event);
     if ( event == 1 || event == 0 ) {
         return xQueueSend(relay_evt_queue, &event, 0);
     }
