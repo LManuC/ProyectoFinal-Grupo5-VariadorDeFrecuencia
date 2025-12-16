@@ -19,80 +19,35 @@
 
 \refsection{0}
   \datalist[entry]{apa/apasortcite//global/global/global}
-    \entry{Buzzer_datasheet}{manual}{}{}
+    \entry{FuentesConmutadas_Floriani}{book}{}{}
       \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=e510911ba16f29bf1f72c1e0b29cd0f3}{%
-           family={{Jiangsu Wauwha Electronics}},
-           familyi={J\bibinitperiod}}}%
+        {{un=0,uniquepart=base,hash=daee755d2c064d8fa5cd17360c71fec9}{%
+           family={FLoriani},
+           familyi={F\bibinitperiod},
+           given={Juan\bibnamedelima Carlos},
+           giveni={J\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
       }
-      \strng{namehash}{e510911ba16f29bf1f72c1e0b29cd0f3}
-      \strng{fullhash}{e510911ba16f29bf1f72c1e0b29cd0f3}
-      \strng{fullhashraw}{e510911ba16f29bf1f72c1e0b29cd0f3}
-      \strng{bibnamehash}{e510911ba16f29bf1f72c1e0b29cd0f3}
-      \strng{authorbibnamehash}{e510911ba16f29bf1f72c1e0b29cd0f3}
-      \strng{authornamehash}{e510911ba16f29bf1f72c1e0b29cd0f3}
-      \strng{authorfullhash}{e510911ba16f29bf1f72c1e0b29cd0f3}
-      \strng{authorfullhashraw}{e510911ba16f29bf1f72c1e0b29cd0f3}
-      \field{sortinit}{J}
-      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
+      \list{publisher}{1}{%
+        {Universitas}%
+      }
+      \strng{namehash}{daee755d2c064d8fa5cd17360c71fec9}
+      \strng{fullhash}{daee755d2c064d8fa5cd17360c71fec9}
+      \strng{fullhashraw}{daee755d2c064d8fa5cd17360c71fec9}
+      \strng{bibnamehash}{daee755d2c064d8fa5cd17360c71fec9}
+      \strng{authorbibnamehash}{daee755d2c064d8fa5cd17360c71fec9}
+      \strng{authornamehash}{daee755d2c064d8fa5cd17360c71fec9}
+      \strng{authorfullhash}{daee755d2c064d8fa5cd17360c71fec9}
+      \strng{authorfullhashraw}{daee755d2c064d8fa5cd17360c71fec9}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \true{uniqueprimaryauthor}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{subtitle}{Datasheet}
-      \field{title}{Electromagnetic buzzer}
-      \field{type}{Hoja de datos}
-      \field{urlday}{7}
-      \field{urlmonth}{8}
-      \field{urlyear}{2025}
-      \field{year}{2022}
-      \field{urldateera}{ce}
-      \verb{urlraw}
-      \verb https://www.st.com/resource/en/datasheet/l298.pdf
-      \endverb
-      \verb{url}
-      \verb https://www.st.com/resource/en/datasheet/l298.pdf
-      \endverb
-    \endentry
-    \entry{imperix_svpwm}{online}{}{}
-      \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=e493d37b1effef0300faa3bb4091cb9b}{%
-           family={{Simon Strobl}},
-           familyi={S\bibinitperiod}}}%
-      }
-      \strng{namehash}{e493d37b1effef0300faa3bb4091cb9b}
-      \strng{fullhash}{e493d37b1effef0300faa3bb4091cb9b}
-      \strng{fullhashraw}{e493d37b1effef0300faa3bb4091cb9b}
-      \strng{bibnamehash}{e493d37b1effef0300faa3bb4091cb9b}
-      \strng{authorbibnamehash}{e493d37b1effef0300faa3bb4091cb9b}
-      \strng{authornamehash}{e493d37b1effef0300faa3bb4091cb9b}
-      \strng{authorfullhash}{e493d37b1effef0300faa3bb4091cb9b}
-      \strng{authorfullhashraw}{e493d37b1effef0300faa3bb4091cb9b}
-      \field{sortinit}{S}
-      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \true{uniqueprimaryauthor}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{day}{9}
-      \field{langid}{english}
-      \field{month}{8}
-      \field{note}{Tutorial}
-      \field{title}{Space Vector Modulation (SVM)}
-      \field{urlday}{20}
-      \field{urlmonth}{5}
-      \field{urlyear}{2025}
-      \field{year}{2021}
-      \field{dateera}{ce}
-      \field{urldateera}{ce}
-      \verb{urlraw}
-      \verb https://imperix.com/doc/implementation/space-vector-modulation
-      \endverb
-      \verb{url}
-      \verb https://imperix.com/doc/implementation/space-vector-modulation
-      \endverb
+      \field{title}{Fuentes conmutadas - Análisis y diseño}
+      \field{year}{2010}
     \endentry
     \entry{switchcraft_svpwm_intro}{online}{}{}
       \name{author}{1}{}{%
@@ -135,80 +90,35 @@
     \endentry
   \enddatalist
   \datalist[entry]{apa/global//global/global/global}
-    \entry{Buzzer_datasheet}{manual}{}{}
+    \entry{FuentesConmutadas_Floriani}{book}{}{}
       \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=e510911ba16f29bf1f72c1e0b29cd0f3}{%
-           family={{Jiangsu Wauwha Electronics}},
-           familyi={J\bibinitperiod}}}%
+        {{un=0,uniquepart=base,hash=daee755d2c064d8fa5cd17360c71fec9}{%
+           family={FLoriani},
+           familyi={F\bibinitperiod},
+           given={Juan\bibnamedelima Carlos},
+           giveni={J\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
       }
-      \strng{namehash}{e510911ba16f29bf1f72c1e0b29cd0f3}
-      \strng{fullhash}{e510911ba16f29bf1f72c1e0b29cd0f3}
-      \strng{fullhashraw}{e510911ba16f29bf1f72c1e0b29cd0f3}
-      \strng{bibnamehash}{e510911ba16f29bf1f72c1e0b29cd0f3}
-      \strng{authorbibnamehash}{e510911ba16f29bf1f72c1e0b29cd0f3}
-      \strng{authornamehash}{e510911ba16f29bf1f72c1e0b29cd0f3}
-      \strng{authorfullhash}{e510911ba16f29bf1f72c1e0b29cd0f3}
-      \strng{authorfullhashraw}{e510911ba16f29bf1f72c1e0b29cd0f3}
-      \field{sortinit}{J}
-      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
+      \list{publisher}{1}{%
+        {Universitas}%
+      }
+      \strng{namehash}{daee755d2c064d8fa5cd17360c71fec9}
+      \strng{fullhash}{daee755d2c064d8fa5cd17360c71fec9}
+      \strng{fullhashraw}{daee755d2c064d8fa5cd17360c71fec9}
+      \strng{bibnamehash}{daee755d2c064d8fa5cd17360c71fec9}
+      \strng{authorbibnamehash}{daee755d2c064d8fa5cd17360c71fec9}
+      \strng{authornamehash}{daee755d2c064d8fa5cd17360c71fec9}
+      \strng{authorfullhash}{daee755d2c064d8fa5cd17360c71fec9}
+      \strng{authorfullhashraw}{daee755d2c064d8fa5cd17360c71fec9}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \true{uniqueprimaryauthor}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{subtitle}{Datasheet}
-      \field{title}{Electromagnetic buzzer}
-      \field{type}{Hoja de datos}
-      \field{urlday}{7}
-      \field{urlmonth}{8}
-      \field{urlyear}{2025}
-      \field{year}{2022}
-      \field{urldateera}{ce}
-      \verb{urlraw}
-      \verb https://www.st.com/resource/en/datasheet/l298.pdf
-      \endverb
-      \verb{url}
-      \verb https://www.st.com/resource/en/datasheet/l298.pdf
-      \endverb
-    \endentry
-    \entry{imperix_svpwm}{online}{}{}
-      \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=e493d37b1effef0300faa3bb4091cb9b}{%
-           family={{Simon Strobl}},
-           familyi={S\bibinitperiod}}}%
-      }
-      \strng{namehash}{e493d37b1effef0300faa3bb4091cb9b}
-      \strng{fullhash}{e493d37b1effef0300faa3bb4091cb9b}
-      \strng{fullhashraw}{e493d37b1effef0300faa3bb4091cb9b}
-      \strng{bibnamehash}{e493d37b1effef0300faa3bb4091cb9b}
-      \strng{authorbibnamehash}{e493d37b1effef0300faa3bb4091cb9b}
-      \strng{authornamehash}{e493d37b1effef0300faa3bb4091cb9b}
-      \strng{authorfullhash}{e493d37b1effef0300faa3bb4091cb9b}
-      \strng{authorfullhashraw}{e493d37b1effef0300faa3bb4091cb9b}
-      \field{sortinit}{S}
-      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \true{uniqueprimaryauthor}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{day}{9}
-      \field{langid}{english}
-      \field{month}{8}
-      \field{note}{Tutorial}
-      \field{title}{Space Vector Modulation (SVM)}
-      \field{urlday}{20}
-      \field{urlmonth}{5}
-      \field{urlyear}{2025}
-      \field{year}{2021}
-      \field{dateera}{ce}
-      \field{urldateera}{ce}
-      \verb{urlraw}
-      \verb https://imperix.com/doc/implementation/space-vector-modulation
-      \endverb
-      \verb{url}
-      \verb https://imperix.com/doc/implementation/space-vector-modulation
-      \endverb
+      \field{title}{Fuentes conmutadas - Análisis y diseño}
+      \field{year}{2010}
     \endentry
     \entry{switchcraft_svpwm_intro}{online}{}{}
       \name{author}{1}{}{%
@@ -250,6 +160,7 @@
       \endverb
     \endentry
   \enddatalist
+  \missing{imperix_svpwm}
 \endrefsection
 \endinput
 

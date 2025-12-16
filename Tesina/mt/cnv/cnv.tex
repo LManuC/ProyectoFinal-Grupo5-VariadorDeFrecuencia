@@ -19,7 +19,7 @@
 
   El primero se distingue por el uso de un transformador de alta frecuencia para la transferencia de energía, pudiendo lograr una relación entrada salida mucho más alta aunque con un sistema más complejo y costoso; mientras que el segundo es más eficiente, tiene un menor costo, tamaño y un control más simple aunque con relaciones de tensión entrada-salida mucho más reducidas.
 
-  Dadas las condiciones del proyecto, se decidió rápidamente utilizar un conversor aislado dentro de los que vamos a encontrar varias topologías distintas, entre ellas tenemos la flyback, forward, medio puente, puente completo y push pull. En este caso, por motivos que explicaremos en cada una de las diferentes topologías, se optó por la configuración push-pull, es por es que centraremos el análisis particularmente en este modelo, además de en revisar algunas cuestiones del puente completo, otro circuito que cumplía con las condiciones pero que quedará finalmente descartado.
+  Dadas las condiciones del proyecto, se decidió rápidamente utilizar un conversor aislado dentro de los que vamos a encontrar varias topologías distintas, entre ellas tenemos la flyback, forward, medio puente, puente completo y push-pull. En este caso, por motivos que explicaremos en cada una de las diferentes topologías, se optó por la configuración push-pull, es por eso que centraremos el análisis particularmente en este modelo, además de en revisar algunas cuestiones del puente completo, otro circuito que cumplía con las condiciones pero que quedará finalmente descartado.
 
 \subsubsection{Flyback}
 
@@ -41,9 +41,9 @@
 
   En este caso se utiliza un transformador con punto medio y dos transistores que lo controlan en forma alternada. Es una topología reductora-elevadora con un costo no muy elevado, con circuitos de control sencillos debido a que ambos transistores tienen la referencia a masa en común; la desventaja principal es que los interruptores deben soportar al menos el doble de la tensión de entrada. Típicamente usado para sistemas de baja tensión de entrada, altas corrientes y para potencias bajas y medias.
 
-\subsubsection{Análisis del convertidor de puente completo y pushhpull}
+\subsubsection{Análisis del convertidor de puente completo y push-pull}
 
-  Ambos conversores constan de tres bloques principales: la etapa de conmutación en puente del lado primario, el transformador de alta frecuencia y la etapa rectificadora de lado del secundario coo puede observarse en las figuras~\ref{fig:imgMTEsqConvPuente} y figuras~\ref{fig:imgMTEsqConvPushPull}
+  Ambos conversores constan de tres bloques principales: la etapa de conmutación en puente del lado primario, el transformador de alta frecuencia y la etapa rectificadora de lado del secundario como puede observarse en las figuras~\ref{fig:imgMTEsqConvPuente} y figuras~\ref{fig:imgMTEsqConvPushPull}
 
   \begin{figure}[h]
   \centering
@@ -101,7 +101,7 @@
 
   La ferrita es un material cerámico compuesto por óxidos de hierro combinados con otros elementos metálicos como manganeso, zinc o níquel. Su principal ventaja es su alta resistividad eléctrica, lo que minimiza las corrientes parásitas (eddy currents) incluso cuando el flujo magnético varía rápidamente, como ocurre en los conversores conmutados. Además, las ferritas presentan bajas pérdidas por histéresis a frecuencias elevadas, comparado con núcleos metálicos tradicionales como el hierro al silicio.
 
-  Las ferritas utilizadas en transformadores de potencia pertenecen generalmente a las familias MnZn (manganeso y zinc) para frecuencias medias y altas potencias o NiZn (niquel y zinc) para frecuencias más elevadas y bajas potencias. La selección del tipo de ferrita y su geometría depende directamente de la frecuencia de conmutación, la potencia a transferir, el tipo de topología y los márgenes térmicos del sistema.
+  Las ferritas utilizadas en transformadores de potencia pertenecen generalmente a las familias MnZn (manganeso y zinc) para frecuencias medias y altas potencias o NiZn (níquel y zinc) para frecuencias más elevadas y bajas potencias. La selección del tipo de ferrita y su geometría depende directamente de la frecuencia de conmutación, la potencia a transferir, el tipo de topología y los márgenes térmicos del sistema.
 
 \paragraph{Parámetros relevantes en el diseño del transformador}
 
@@ -121,6 +121,7 @@
   \end{itemize}
 
 \subsubsection{Análisis del transformador}
+\footcite{FuentesConmutadas_Floriani}
 
   Para el cálculo de un transformador se utilizan reglas empíricas ya que resulta muy complejo el análisis puramente teórico. A continuación, vamos a detallar una serie de pasos para poder construir un transformador de núcleo de ferrita. 
 
@@ -151,12 +152,12 @@
   El diseño del transformador también exige conocer la corriente media de entrada y la eficiencia del convertidor. Estos se obtienen con las siguientes fórmulas:
 
   \begin{subequations}\label{eq:mt_cnv_corriente_entrada_rend}
-    \begin{minipage}{0.48\textwidth}
+    \begin{minipage}{0.4\textwidth}
       \begin{equation}\label{eq:mt_cnv_Iin}
         I_{in} = \frac{P_{in}}{V_{in}}
       \end{equation}
     \end{minipage}\hfill
-    \begin{minipage}{0.48\textwidth}
+    \begin{minipage}{0.4\textwidth}
       \begin{equation}\label{eq:mt_cnv_eta}
         \eta = \frac{P_{out}}{P_{in}}
       \end{equation}
@@ -335,7 +336,7 @@
   Podremos decir que, introduciendo \eqref{eq:mt_cnv_volumen_nucleo} y \eqref{eq:mt_cnv_induccion_magnetica} en \eqref{eq:mt_cnv_energia_inductor} 
   Se obtiene que la energía en el inductor es proporcional. Con esto podemos calcular la inductancia:
 
-  \begin{equation}\label{eq:mt_cnv_inductor_parcial}
+  \begin{equation}\label{eq:mt_cnv_inductor_parcial_2}
   L = \frac{\mu_0 \ \mu_e \ A_c}{l_e} n^2 = A_l \ n^2
   \end{equation}
 
@@ -348,7 +349,7 @@
   \paragraph{Determinación de las dimensiones del núcleo}
   Nos interesa obtener el producto de área para poder seleccionar un núcleo especifico. Juntando \eqref{eq:mt_cnv_densidad_corriente_conductores},\eqref{eq:mt_cnv_energia_inductor} y \eqref{eq:mt_cnv_ancho_ventana} podremos obtenerla:
 
-  \begin{equation}\label{eq:mt_cnv_permeancia_magnetica}
+  \begin{equation}\label{eq:mt_cnv_permeancia_magnetica_2}
   A_p = \left({\frac{L \ I^2 \ 10^4}{k_j \ k_u \ k_p \ B}}\right)^{1.31} \quad \text{[cm}^4\text{]}
   \end{equation}
 
@@ -360,7 +361,7 @@
   n_{min}=\frac{L \ I_{max}}{B_{max} \ A_c} 10^4     \ \ \ \    o     \ \ \ \        n_{min}=\frac{L \ \Delta I}{\hat{B} \ A_c} 10^4   \ \ \     con \  A_c [cm^4]
   \end{equation}
 
-  Para hallar la longitud de entrehierro $l_g$, lo que nos va a determinar la reluctancia, aplicamos la ecuación \eqref{eq:mt_cnv_inductor_parcial} considerando a $\mu_e = 1$
+  Para hallar la longitud de entrehierro $l_g$, lo que nos va a determinar la reluctancia, aplicamos la ecuación \eqref{eq:mt_cnv_inductor_parcial_2} considerando a $\mu_e = 1$
 
   \begin{equation}\label{eq:mt_cnv_reluctancia_trafo}
   l_g=\frac{\mu_o \ n^2 \ A_c}{L}

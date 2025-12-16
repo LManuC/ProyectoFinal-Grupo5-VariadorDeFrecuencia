@@ -1,0 +1,54 @@
+\label{sec:3_mont}
+
+\subsection{Montaje y disipación térmica}
+
+Para el montaje del equipo se modeló la carcaza utilizando el software SolidWorks, una herramienta especializada en diseño 3D que permitió definir con precisión la geometría, los alojamientos internos y los puntos de fijación. La carcaza se pensó para ser impresa en plástico y posee el espacio necesario para alojar todas las placas electrónicas, garantizando un ensamble mecánico estable y seguro.
+
+La estructura incorpora insertos metálicos embutidos en el material plástico, permitiendo fijar las PCBs mediante tornillería M4. Esto asegura una sujeción rígida, repetitiva y confiable, evitando el desgaste del plástico ante sucesivos montajes y desmontajes. Las dimensiones finales del dispositivo son de $108\text{mm}$ de ancho, $272\text{mm}$ de largo y $110\text{mm}$ de alto.
+
+
+\begin{figure}[H]
+\centering
+    \includegraphics[width=0.9\textwidth]{dev/mont/img/EquipoEntero.png}
+    \caption{Perspectiva del dispositivo completo.}
+\label{fig:imgDev_Mont_EquipoEntero}
+\end{figure}
+
+En las figuras~\ref{fig:imgDev_Mont_EquipoEntero} y ~\ref{fig:imgDev_Mont_BornConex} se ve que en la cara frontal del equipo se ubicó un display junto con botones que conforman la interfaz HMI, permitiendo realizar la configuración del sistema. En la parte inferior se dispuso una tapa deslizable que brinda acceso directo a las borneras de conexión, utilizadas tanto para la alimentación como para las entradas y salidas digitales y analógicas.
+
+\begin{figure}[H]
+\centering
+    \includegraphics[width=0.9\textwidth]{dev/mont/img/BorneraConex.png}
+    \caption{Perspectiva del equipo con la tapa inferior removida, mostrando las borneras de conexión.}
+\label{fig:imgDev_Mont_BornConex}
+\end{figure}
+
+La figura~\ref{fig:imgDev_Mont_CuerpoPersp} ilustra al componente principal del montaje es el cuerpo como una única pieza estructural sobre la cual se fijan todas las PCBs, los disipadores de potencia y el ventilador del sistema de refrigeración forzada ubicado en su parte inferior.
+
+\begin{figure}[H]
+\centering
+    \includegraphics[width=0.9\textwidth]{dev/mont/img/CuerpoPersp.png}
+    \caption{Perspectiva del cuerpo del dispositivo.}
+\label{fig:imgDev_Mont_CuerpoPersp}
+\end{figure}
+
+
+El ventilador queda alojado como se observa en la figura~\ref{fig:imgDev_Mont_CorteLong}, generando un flujo de aire longitudinal que atravesará al equipo de extremo a extremo. Este flujo estará orientado de forma tal que recorra directamente las zonas de mayor generación térmica, manteniendo los componentes dentro de un régimen adecuado incluso bajo cargas continuas. Esta estrategia de refrigeración forzada es fundamental para garantizar la confiabilidad del hardware de potencia.
+
+\begin{figure}[H]
+\centering
+    \includegraphics[width=0.9\textwidth]{dev/mont/img/CorteLong.png}
+    \caption{Corte longitudinal del equipo, mostrando la disposición de los componentes respecto al flujo de aire.}
+\label{fig:imgDev_Mont_CorteLong}
+\end{figure}
+
+Se muestra en la figura~\ref{fig:imgDev_Mont_MontMosfets} que los transistores de potencia se montan sobre dos disipadores independientes, separados mediante un aislante. En el primer disipador se instalan los transistores del inversor junto con dos correspondientes al conversor, mientras que en el segundo se montan los dos transistores restantes del inversor. Esta distribución permite fijar los dispositivos directamente sobre el aluminio sin utilizar láminas aislantes, evitando el incremento de la resistencia térmica y favoreciendo una disipación más eficiente. Cabe destacar que los transistores del inversor poseen encapsulado aislado, lo que permite su montaje conjunto en un mismo disipador sin riesgo eléctrico.
+
+\begin{figure}[H]
+\centering
+    \includegraphics[width=0.9\textwidth]{dev/mont/img/MontMosfets.png}
+    \caption{Perspectiva de transistores montados sobre ambos disipadores.}
+\label{fig:imgDev_Mont_MontMosfets}
+\end{figure}
+
+El diseño final resulta compacto, robusto y con una gestión térmica adecuada a las exigencias del sistema, permitiendo un funcionamiento seguro, estable y confiable del equipo en condiciones reales de operación.

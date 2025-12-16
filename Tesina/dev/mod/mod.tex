@@ -2,14 +2,11 @@
 
 \subsection{Modulación}
 
-La implementacion de la modulacion se realiza en el STM32 el cual tiene una performance suficiente para manejar nuestra modulacion, ademas de los perisfericos adecuados.
+La implementación de la modulación se realizó en un microcontrolador STM32, cuya capacidad de procesamiento y conjunto de periféricos resultan adecuados para ejecutar el esquema de modulación requerido.
 
-La modulacion SVM necesito una salida PWM alineada al centro. Esto se logra configurando el timer 3 del microcontrolador en modo 3 en donde el contador asciende, desciende y hace comparaciones en ambos caminos. En este nos permite incluir tres valores para comparar, los cuales estan asociados a $t_1$, $t_2$, $t_0$ y uno extra para recargar los valores. En estas comparaciones se genera una interrupcion interna en donde se conmutan los pines necesarios.
+\paragraph{Timer 3} La modulación SVM exige la generación de señales PWM centradas. Para ello se configuró el Timer 3 de manera tal que el contador ascienda y descienda, efectuando comparaciones en ambos sentidos para que, además, permita definir tres valores de comparación asociados a $t_1$, $t_2$, $t_0$ y un valor adicional para la recarga. Cada comparación genera una interrupción interna mediante la cual se actualizan los pines de conmutación correspondientes. La frecuencia de operación del Timer 3 se fijó en $2.5kHz$.
 
-La frecuencia de salida de este timer 3 esta seteada para que sea de $2.5kHz$.
-
-En paralelo, el timer 2 que se dispara a una frecuencia mayor y es el encargado de realizar los calculos de los siguientes valores de conmutacion. Para reducir los tiempos de calculos se realiza una aproximacion en donde el error cometido es bajo. Esto se debe a que las expresiones de calculo tienen funciones trigonometricas como seno y coseno.
-Partiendo de las ecuaciones de los tiempos antes descriptas, se calcula para incrementos de 1 grado los valores de tiempo y este se transforma en ticks necesarios del microcontrolador para el siguiente cambio. Con estos valores se aplica una regresión lineal y se encuentran los valores del termino lineal e independiente.
+\paragraph{Timer 2} En paralelo, el Timer 2 opera a una frecuencia mayor y es el encargado de calcular los valores de conmutación para el siguiente ciclo. Con el fin de reducir el tiempo de cómputo, se aplicó una aproximación que introduce un error despreciable respecto de las expresiones exactas, las cuales incluyen funciones trigonométricas (seno y coseno) donde el error introducido puede observarse en la figura~\ref{fig:imgDev_Mod_RegresTicksMod}. A partir de las ecuaciones de los tiempos previamente definidas, se calcularon los valores correspondientes a incrementos de $1$°, convirtiéndolos luego a la cantidad de ticks del microcontrolador necesarios para la actualización siguiente. Sobre estos datos se aplicó una regresión lineal, obteniéndose los coeficientes lineales e independientes utilizados en tiempo real
 
 \[
 tick_1 = M_1\left[ A_1 * \alpha + B_1 \right]
@@ -28,4 +25,4 @@ tick_0 = 255 - tick_1 - tick_2
 \label{fig:imgDev_Mod_RegresTicksMod}
 \end{figure}
 
-Los valores de angulos y velocidades se utilizaron escalados en 1e6 para permitir multiplicaciones usando números enteros y que los truncamientos no generen errores apreciables. 
+Los valores de ángulos y velocidades se escalaron por un factor de $10^6$, permitiendo realizar todas las operaciones utilizando enteros y minimizando errores significativos por truncamiento.

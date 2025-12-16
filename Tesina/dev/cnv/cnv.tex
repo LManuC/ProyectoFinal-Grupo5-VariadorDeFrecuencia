@@ -4,13 +4,21 @@
 
 \paragraph{Selección de topología}
 
-    El módulo conversor debe elevar de 12V a 311V, mantener una tensión de salida estable frente a variación de carga, ofrecer un arranque suave para no solicitar en exceso a los componentes y permitir desactivar el bus dc. Para cumplir con estos requerimientos se implementa una topología de conversor aislado en configuración pushpull. 
+El módulo conversor debe:
+\begin{itemize}
+    \item Elevar de 12Vdc a 311Vdc,
+    \item mantener una tensión de salida estable frente a variación de carga,
+    \item ofrecer un arranque suave para no exigir en exceso a los componentes, 
+    \item y permitir desactivar el bus dc.
+\end{itemize} 
 
-    Esta topología fue seleccionada por su adecuada capacidad de manejo de potencia para el tipo de carga prevista y por su ventaja de permitir una elevada relación entre la tensión de entrada y la de salida. A diferencia de la topología flyback, el convertidor push-pull transfiere energía durante ambos semiciclos del ciclo de conmutación, optimizando así la utilización del núcleo del transformador. Si bien requiere transistores capaces de soportar el doble de la tensión de entrada y un transformador con derivación central, y aunque el convertidor en puente completo ofrece una mayor eficiencia y menor generación de calor, el push-pull presenta una construcción más simple y un menor costo, al necesitar menos componentes.
+Para cumplir con estos requerimientos se implementó una topología de conversor aislado en configuración pushpull. 
 
-    Otra ventaja importante de esta topología es que permite el uso de transformadores con menor relación de espiras, ya que se puede aplicar toda la tensión de entrada al primario en cada ciclo. Esto simplifica el diseño magnético, reduce pérdidas por histéresis y permite operar a frecuencias de conmutación más altas, lo cual a su vez posibilita el uso de inductores y capacitores de menor tamaño.
+Esta topología fue seleccionada por su adecuada capacidad de manejo de potencia para el tipo de carga prevista y por su ventaja de permitir una elevada relación entre la tensión de entrada y la de salida. A diferencia de la topología flyback, el convertidor push-pull transfiere energía durante ambos semiciclos del ciclo de conmutación, optimizando así la utilización del núcleo del transformador. Si bien requiere transistores capaces de soportar el doble de la tensión de entrada y un transformador con derivación central y, aunque el convertidor en puente completo ofrece una mayor eficiencia y menor generación de calor, el push-pull presenta una construcción más simple y un menor costo al necesitar menos componentes.
 
-    Nos resulta un punto muy importante el aislamiento galvánico que brinda el transformador, este permite formar una barrera entre el bus de alta tensión y el de baja tensión, lo que se traduce a una mayor seguridad tanto en instalación y funcionamiento como en el ensayo para el operario. Además, esto nos habilita un diseño más seguro y modular, facilitando la integración del conversor con otros subsistemas como el del control general.
+Otra ventaja importante de esta topología es que, como se puede aplicar toda la tensión de entrada al primario en cada ciclo, permite el uso de transformadores con menor relación de espiras, simplificando el diseño magnético, reduciendo pérdidas por histéresis y permitiendo operar a frecuencias de conmutación más altas. Esto último, además, posibilita el uso de inductores y capacitores de menor tamaño.
+
+El aislamiento galvánico que brinda el transformador permite formar una barrera entre el bus de alta tensión y el de baja tensión, lo que se traduce a una mayor seguridad tanto en instalación y funcionamiento como en el ensayo para el operario. Además, esto habilitó un diseño más seguro y modular, facilitando la integración del conversor con otros subsistemas como el del control general.
 
 \paragraph{Requerimientos mínimos eléctricos}
 
@@ -60,11 +68,11 @@ Salida & 1.25 \\
 \subsubsection{Diseño de transformador}
 
 \paragraph{Selección del núcleo}
-Se seleccionó un núcleo de ferrita ETD42 debido a su geometría optimizada para aplicaciones de conmutación y su facilidad de montaje. Este modelo ofrece un equilibrio adecuado entre la capacidad para manejar el flujo magnético y minimizar pérdidas, evitando la saturación bajo las condiciones de diseño. Además, su tamaño compacto y buena disipación térmica lo hacen apropiado para la potencia prevista.
+Se seleccionó un núcleo de ferrita ETD36 debido a su geometría optimizada para aplicaciones de conmutación y su facilidad de montaje. Este modelo ofrece un equilibrio adecuado entre la capacidad para manejar el flujo magnético y minimizar pérdidas, evitando la saturación bajo las condiciones de diseño. Además, su tamaño compacto y buena disipación térmica lo hacen apropiado para la potencia prevista.
 
-A continuación, se listan las características del núcleo de ferrita EDT42 importantes para el cálculo posterior.
+A continuación, en la tabla~\ref{tab:cnv_caracteristicas_ETD36} se listan sus características más importantes, junto a sus características magnéticas en la tabla~\ref{tab:cnv_EDT36_Caracteristicas_magneticas} y sus dimensiones físicas en la tabla~\ref{tab:cnv_EDT36_Dimensiones_Fisicas} para el cálculo posterior.
 
-
+En la figura~\ref{fig:cnv_EDT36_referencias_medidas} se pueden referencias las medidas descriptas.
 \begin{table}[H]
 \centering
 \renewcommand{\arraystretch}{1.2}
@@ -73,12 +81,13 @@ A continuación, se listan las características del núcleo de ferrita EDT42 imp
 \textbf{Parámetro} & \textbf{Valor} \\
 \hline
 Aleación & MgZn \\
-Forma & ED42 \\
+Forma & ETD36 \\
 Material & GP95 \\
 Color & Negro \\
 \hline
 \end{tabular}
-\caption{Información general del núcleo ED42}
+\caption{Información general del núcleo ETD36}
+\label{tab:cnv_caracteristicas_ETD36}
 \end{table}
 
 
@@ -93,7 +102,8 @@ $B_{sat}$ & 400 mT \\
 $\mu_i$ (25°C) & 3300 \\
 \hline
 \end{tabular}
-\caption{Características magnéticas del núcleo ED42}
+\caption{Características magnéticas del núcleo ETD36}
+\label{tab:cnv_EDT36_Caracteristicas_magneticas}
 \end{table}
 
 
@@ -104,31 +114,33 @@ $\mu_i$ (25°C) & 3300 \\
 \hline
 \textbf{Parámetro} & \textbf{Valor} \\
 \hline
-Largo efectivo $l_e$ & 104 mm \\
-Área transversal $A_c$ & 233.58 mm$^2$ \\
-Área ventana $A_w$ & 295.77 mm$^2$ \\
-Volumen efectivo $V_e$ & 21757 mm$^3$ \\
-Dimensión L & 42 mm \\
-Dimensión A & 8.8 mm \\
-Dimensión E & 17.25 mm \\
-Dimensión W & 19.75 mm \\
-Dimensión D & 32.8 mm \\
+Largo efectivo $l_e$ & 97.5 mm \\
+Área transversal $A_c$ & 70.88 mm$^2$ \\
+Área ventana $A_w$ & 231 mm$^2$ \\
+Volumen efectivo $V_e$ & 20757 mm$^3$ \\
+Dimensión A & 36 mm \\
+Dimensión B & 26 mm \\
+Dimensión C & 21.5 mm \\
+Dimensión D & 14 mm \\
+Dimensión E & 9.5 mm \\
+Dimensión F & 11.2 mm \\
 \hline
 \end{tabular}
-\caption{Parámetros geométricos y efectivos del núcleo ED42}
+\caption{Parámetros geométricos y efectivos del núcleo ETD36}
+\label{tab:cnv_EDT36_Dimensiones_Fisicas}
 \end{table}
 
 \begin{figure}[h!tbp]
 \centering
     \includegraphics[width=0.9\textwidth]{mt/cnv/img/EsqDimEDT42.png}
     \caption{Referencias de medidas del transformador.}
-\label{fig:imgMTEsqDimEDT42}
+\label{fig:cnv_EDT36_referencias_medidas}
 \end{figure}
 
 
 \paragraph{Relación de transformación y cálculo de espiras}
 
-El cálculo inicial de la relación de transformación arrojó un valor de 1:26.6. Sin embargo, tras las pruebas experimentales, se determinó conveniente incorporar un factor de sobre relación ensayos se puede la conveniencia de utilizar un factor de sobre relación, dado que a máxima carga la tensión del secundario tiende a disminuir. Para mantener la tensión dentro del rango admisible del bus de continua, se incrementó la relación a 1:45, equivalente a un factor de 1.7. 
+El cálculo inicial de la relación de transformación arrojó un valor de 1:26.6, sin embargo, tras las pruebas experimentales, se incorporó un margen de seguridad para aumentarla dado que a máxima carga la tensión del secundario tiende a disminuir. Para mantener la tensión dentro del rango admisible del bus de continua, se incrementó la relación a 1:45, equivalente a un factor de 1.7. 
 
 El devanado primario se compone de 3 + 3 espiras con punto medio, y el secundario consta de 135 espiras.
 
@@ -136,7 +148,7 @@ El devanado primario se compone de 3 + 3 espiras con punto medio, y el secundari
 
 Para la elección de la sección del conductor se adoptaron densidades de corriente típicas de 2 a 5 $A/mm^2$, valores comunes en bobinados de transformadores. En el primario se seleccionó una densidad de 3 $A/mm^2$ y en el secundario de 5 $A/mm^2$, considerando la cantidad de espiras necesarias.
 
-Suponiendo una forma de onda cuadrada con ciclo de trabajo del 45\%, la corriente RMS del primario resulta 13.8 $A$, lo que determina secciones de 4.6 $mm^2$ para el primario y 0.3 $mm^2$ para el secundario. Finalmente, se utilizaron conductores de 5 $mm^2$ en el primario y doble alambre de 0.4 $mm$ de diámetro en el secundario, verificándose que la ocupación de la ventana del núcleo resultara adecuada.
+Suponiendo una forma de onda cuadrada con ciclo de trabajo del 45\%, la corriente RMS del primario resulta 13.8 $A$, lo que determina secciones de 4.6 $mm^2$ para el primario y 0.3 $mm^2$ para el secundario. Finalmente, se utilizaron conductores de 5 $mm^2$ en el primario y doble alambre de 0.4 $mm$ de diámetro en el secundario. No se verifica la ocupación de la ventana del núcleo por lo que se incrementa la densidad de corriente del secundario a $10A/mm^2$ y se bobina con un solo alambre de 0.4 $mm$ de diámetro.
 
 \begin{figure}[H]
 \centering
@@ -146,7 +158,7 @@ Suponiendo una forma de onda cuadrada con ciclo de trabajo del 45\%, la corrient
 \end{figure}
 
 \subsubsection{Diseño y simulación de circuito de conmutación}
-El circuito de conmutación del conversor debe manejar corrientes elevadas, por lo que la selección de los transistores de potencia y del circuito de excitación de compuerta es crítica. En la figura siguiente se muestra el diagrama circuital simplificado del convertidor.
+El circuito de conmutación del conversor debe manejar corrientes elevadas, por lo que la selección de los transistores de potencia y del circuito de excitación de compuerta es crítica. En la figura~\ref{fig:imgDevEsqPushPull} se muestra el diagrama circuital simplificado del convertidor.
 
 \begin{figure}[H]
 \centering
@@ -157,13 +169,13 @@ El circuito de conmutación del conversor debe manejar corrientes elevadas, por 
 
 La topología utilizada corresponde a una fuente push-pull, la cual emplea dos transistores que conmutan de forma complementaria. A la salida se dispone un rectificador de onda completa con filtro LC que estabiliza la tensión de salida. Se incorpora además un diodo en serie para evitar el frenado regenerativo y proteger el capacitor principal frente a sobrecargas.
 
-Con el fin de reducir la corriente en cada dispositivo, se implementó paralelización de transistores, lo que permite distribuir mejor la disipación térmica y disminuir la resistencia de conducción efectiva. Este método reduce las pérdidas y mejora la eficiencia global del sistema.
+Con el fin de reducir la corriente en cada dispositivo, se implementaron dos transistores en paralelo, lo que permitió distribuir mejor la disipación térmica y disminuir la resistencia de conducción efectiva. Este método reduce las pérdidas y mejora la eficiencia global del sistema.
 
 Un aspecto fundamental para garantizar la vida útil y el correcto funcionamiento de los transistores es asegurar una adecuada refrigeración. La disipación térmica resulta crítica para evitar el sobrecalentamiento y preservar la integridad de los dispositivos. Este criterio constituyó el punto de partida para el diseño del montaje.
 
 \paragraph{Selección de los transistores de conmutación}
 
-La corriente máxima por rama alcanza aproximadamente $37 A$, valor adecuado para el uso de transistores MOSFET. Los dispositivos deben soportar una tensión drenaje-fuente superior a $24 V$ y presentar una resistencia $R_{DS(on)}$ lo más baja posible para minimizar pérdidas. Dado que la frecuencia de operación es de $50 kHz$, se seleccionó el IRFB4110 de International Rectifier, cuyas características se muestran a continuación.
+La corriente máxima por rama alcanza aproximadamente $37 A$, valor adecuado para el uso de transistores MOSFET. Los dispositivos deben soportar una tensión drenaje-fuente superior a $24 V$ y presentar una resistencia $R_{DS(on)}$ lo más baja posible para minimizar pérdidas. Dado que la frecuencia de operación es de $50 kHz$, se seleccionó el IRFB4110 de International Rectifier, cuyas características se muestran en la tabla~\ref{tab:IRFB4110_specs}.
 
 
 \begin{table}[H]
@@ -200,7 +212,7 @@ De acuerdo con la curva de área de operación segura, el dispositivo trabaja de
 
 \paragraph{Simulación del circuito de conmutación}
 
-Para anticipar y evaluar el diseño del circuito se utiliza la herramienta LTSpice para la simulación. Solo se busca analizar el comportamiento tanto del transformador como de los transistores de potencia y la etapa de filtrado. Se excluye el circuito de control por la complejidad. En este se coloca el transformador con sus tres arrollamientos con un acoplamiento unitario además de los componentes complementarios. 
+Para anticipar y evaluar el diseño del circuito se utiliza la herramienta LTSpice para la simulación, algo que se muestra en la figura ~\ref{fig:imgDev_EsqSimSimplificado}. Solo se busca analizar el comportamiento tanto del transformador como de los transistores de potencia y la etapa de filtrado. Se excluye el circuito de control por la complejidad. En este se coloca el transformador con sus tres arrollamientos con un acoplamiento unitario además de los componentes complementarios. 
 
 Para asegurar un buen funcionamiento del conversor en las simulaciones se exigen ligeramente al circuito, se coloca una carga que consuma $400W$, esto va a generar corrientes mas grandes sobre los transistores.
 
@@ -211,7 +223,7 @@ Para asegurar un buen funcionamiento del conversor en las simulaciones se exigen
 \label{fig:imgDev_EsqSimSimplificado}
 \end{figure}
 
-Se inyecta dos señales a las compuertas de los transistores de $0V$ a $12V$ con un ciclo de actividad de $45\%$ y una frecuencia de $50 kHz$.
+Se inyecta dos señales a las compuertas de los transistores de $0V$ a $12V$ con un ciclo de actividad de $45\%$ y una frecuencia de $50 kHz$ con la de la figura ~\ref{fig:imgDev_SimVgs}.
 
 \begin{figure}[H]
 \centering
@@ -220,7 +232,7 @@ Se inyecta dos señales a las compuertas de los transistores de $0V$ a $12V$ con
 \label{fig:imgDev_SimVgs}
 \end{figure}
 
-Por un lado, tenemos la tensión entre drenaje y fuente, la cual desciende a $0V$ cuando el transistor esta conduciendo y a $24V$, el doble de la tensión de fuente, cuando deja de conducir. Lo esperado en una topología push-pull. Por otro lado, mostramos como arranca el sistema.
+Por un lado, tenemos la tensión entre drenaje y fuente, la cual desciende a $0V$ cuando el transistor conduce y a $24V$, el doble de la tensión de fuente, cuando deja de hacerlo. Lo esperado en una topología push-pull. Por otro lado, en la figura~\ref{fig:imgDev_SimVds} se muestra el arranque del sistema.
 
 \begin{figure}[H]
 \centering
@@ -229,7 +241,7 @@ Por un lado, tenemos la tensión entre drenaje y fuente, la cual desciende a $0V
 \label{fig:imgDev_SimVds}
 \end{figure}
 
-A continuación, se gráfica la corriente de drenaje de uno de los transistores de entrada. Se nota una gran corriente de entrada al inicio. Esto se debe a la carga inicial del capacitor además de encontrarse el circuito bajo carga lo cual no puede ocurrir en nuestro sistema. Esta corriente de entrada es demasiado alta incluso para la carga del capacitor, por ello se implementa el circuito de arranque suave sobre el sistema de control. 
+A continuación, en la figura ~\ref{fig:imgDev_SimVds-Ids} se gráfica la corriente de drenaje de uno de los transistores de entrada. Se nota una gran corriente de entrada al inicio. Esto se debe a la carga inicial del capacitor además de encontrarse el circuito bajo carga lo cual no puede ocurrir en nuestro sistema. Esta corriente de entrada es demasiado alta incluso para la carga del capacitor, por ello se implementa el circuito de arranque suave sobre el sistema de control. 
 
 \begin{figure}[H]
 \centering
@@ -238,7 +250,7 @@ A continuación, se gráfica la corriente de drenaje de uno de los transistores 
 \label{fig:imgDev_SimVds-Ids}
 \end{figure}
 
-En el transitorio se nota una corriente cuadrada con un ciclo de trabajo de $45\%$ con una corriente pico de $40 A$.
+En los transitorios de la figura~\ref{fig:imgDev_SimIds} se nota una corriente cuadrada con un ciclo de trabajo de $45\%$ con una corriente pico de $40 A$.
 
 \begin{figure}[H]
 \centering
@@ -247,7 +259,7 @@ En el transitorio se nota una corriente cuadrada con un ciclo de trabajo de $45\
 \label{fig:imgDev_SimIds}
 \end{figure}
 
-Por otro lado, tenemos la tensión y la corriente sobre la carga. En donde se nota la carga del capacitor.
+Por otro lado, en la figura~\ref{fig:imgDev_SimVout-Iout}, tenemos la tensión y la corriente sobre la carga, además de notarse la carga del capacitor en el arranque del convertidor.
 
 \begin{figure}[H]
 \centering
@@ -256,24 +268,14 @@ Por otro lado, tenemos la tensión y la corriente sobre la carga. En donde se no
 \label{fig:imgDev_SimVout-Iout}
 \end{figure}
 
-También se muestra el ripple en el bus DC en régimen permanente menor a $1V$, esto cambia mucho con nuestro sistema de control.
-
-\begin{figure}[H]
-\centering
-    \includegraphics[width=0.9\textwidth]{dev/cnv/img/SimVout.png}
-    \caption{Simulación de tensión en la salida en régimen permanente.}
-\label{fig:imgDev_SimVout}
-\end{figure}
-
 \paragraph{Diseño del controlador de los transistores de conmutación}
 
-Para lograr conmutaciones rápidas y minimizar pérdidas por transición, se diseñó un circuito totem-pole driver encargado de excitar las compuertas de los MOSFETs. Dado que la compuerta se comporta como una carga capacitiva, es necesario conmutarla rápidamente entre $0V$ y $12V$.
+Para lograr conmutaciones rápidas y minimizar pérdidas por transición, se diseñó un circuito totem-pole driver como el de la figura ~\ref{fig:imgDev_EsqTotemPole} encargado de excitar las compuertas de los MOSFETs. Dado que la compuerta se comporta como una carga capacitiva, es necesario conmutarla rápidamente entre $0V$ y $12V$.
 
-El circuito totem-pole proporciona una respuesta veloz con bajo consumo. Se estimó una corriente de colector de aproximadamente $1.2A$, calculada como:
-
-\[
-I_c=\frac{V_{CC}}{R_g} \cong 1.2A
-\]
+El circuito totem-pole proporciona una respuesta veloz con bajo consumo. Se estimó una corriente de colector de aproximadamente $1.2A$, calculada en la ecuación~\eqref{eq:dev_cnv_IcTotemPol}.
+  \begin{equation}\label{eq:dev_cnv_IcTotemPol}
+  I_c=\frac{V_{CC}}{R_g} \cong 1.2A
+  \end{equation}
 
 Para su implementación se utilizaron transistores SS8050 (NPN) y SS8550 (PNP), ambos con una corriente máxima admisible de $1.5 A$.
 
@@ -284,13 +286,45 @@ Para su implementación se utilizaron transistores SS8050 (NPN) y SS8550 (PNP), 
 \label{fig:imgDev_EsqTotemPole}
 \end{figure}
 
-\hl{Aca falta la simulacion de los tiempos}
+Se realizan simulaciones del circuito en \textit{LTspice} representado en la figura~\ref{fig:imgDev_EsqSim_TotemPole} con el objetivo de evaluar los tiempos de transición asociados al accionamiento del transistor MOSFET mediante la etapa \textit{totem-pole}. Este análisis permite verificar que la compuerta del dispositivo alcance los niveles de tensión requeridos dentro de los tiempos adecuados para garantizar una conmutación segura y eficiente, algo que en la figura ~\ref{fig:imgDev_Conv_SimVgate}.
+
+\begin{figure}[H]
+\centering
+    \includegraphics[width=0.9\textwidth]{dev/cnv/img/EsqSim-TotemPole.png}
+    \caption{Esquema circuital del circuito totem-pole para simulación.}
+\label{fig:imgDev_EsqSim_TotemPole}
+\end{figure}
+
+En el circuito se aplica una señal cuadrada de $50kHz$ y se registra la tensión en la compuerta del MOSFET para evaluar la respuesta dinámica de la etapa de manejo.
+
+\begin{figure}[H]
+\centering
+    \includegraphics[width=0.9\textwidth]{dev/cnv/img/SimTotem_Vgate.png}
+    \caption{Simulación de la tensión de control y la tensión en la compuerta del MOSFET.}
+\label{fig:imgDev_Conv_SimVgate}
+\end{figure}
+
+Mediante una ampliación de las zonas de conmutación se determina un tiempo de subida de $345ns$ y un tiempo de bajada de $369.83ns$. Estos valores graficados en la figura~\ref{fig:imgDev_Conv_SimRiseTime} y ~\ref{fig:imgDev_Conv_SimFallTime} se consideran adecuados para la frecuencia de operación seleccionada y confirman que el circuito presenta capacidades suficiente para conmutar la compuerta.
+
+\begin{figure}[H]
+\centering
+    \includegraphics[width=0.9\textwidth]{dev/cnv/img/SimTP_RiseTime.png}
+    \caption{Simulación del tiempo de subida de la tensión de compuerta frente a la señal de control.}
+\label{fig:imgDev_Conv_SimRiseTime}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+    \includegraphics[width=0.9\textwidth]{dev/cnv/img/SimTP_FallTime.png}
+    \caption{Simulación del tiempo de bajada de la tensión de compuerta frente a la señal de control.}
+\label{fig:imgDev_Conv_SimFallTime}
+\end{figure}
 
 \subsubsection{Diseño de circuito de control}
 
 Para el control del convertidor se empleó el TL494, un circuito integrado ampliamente utilizado en fuentes conmutadas por su robustez y versatilidad. Este dispositivo integra un oscilador, amplificadores de error, comparadores y salidas PWM, permitiendo una regulación precisa de la tensión de salida.
 
-El circuito fue configurado de modo que, al detectar variaciones en la tensión de salida respecto al valor de referencia, ajusta el ciclo de trabajo de los transistores de potencia para mantener estable la salida ante cambios en carga o en tensión de entrada. La frecuencia de conmutación se fijó en $50 kHz$, valor que representa un compromiso adecuado entre rendimiento y pérdidas. Para ello se emplearon un capacitor de $2.2 nF$ y un resistor de $10k\Omega$, según las ecuaciones del fabricante.
+El circuito fue configurado de modo tal que, al detectar variaciones en la tensión de salida respecto al valor de referencia, ajusta el ciclo de trabajo de los transistores de potencia para mantener estable la salida ante cambios en carga o en tensión de entrada. Con lo componente $C_1$ y $R_1$, gracias a las ecuaciones del fabricante, se fijó la frecuencia de conmutación en $50 kHz$, valor que representa un compromiso adecuado entre rendimiento y pérdidas. 
 
 \begin{figure}[H]
 \centering
@@ -299,7 +333,7 @@ El circuito fue configurado de modo que, al detectar variaciones en la tensión 
 \label{fig:imgDev_EsqTL494}
 \end{figure}
 
-Se incorporó además un potenciómetro de ajuste fino en el lazo de realimentación para compensar posibles dispersiones entre componentes y fijar con precisión la tensión del bus de continua. Además, se añadió un circuito de arranque suave (soft-start) que permiten limitar la corriente de irrupción inicial y proteger los componentes durante el encendido.
+En la figura~\ref{fig:imgDev_EsqTL494Comp} se detalla el agregado del potenciómetro $R_5$ para el ajuste fino en el lazo de realimentación para compensar posibles dispersiones entre componentes y fijar con precisión la tensión del bus de continua. Además, se añadió un circuito $R_4 C_2$ de arranque suave (soft-start) que permiten limitar la corriente de irrupción inicial y proteger los componentes durante el encendido.
 
 \begin{figure}[H]
 \centering
@@ -310,7 +344,7 @@ Se incorporó además un potenciómetro de ajuste fino en el lazo de realimentac
 
 \paragraph{Circuito de medición de tensión}
 
-El conversor es completamente aislado galvánicamente, lo que mejora la seguridad y facilita las pruebas del sistema. Para realizar las mediciones de tensión y corriente de forma aislada, se implementó un optoacoplador PC817 en conjunto con un compensador TL431, los cuales atenúan las altas frecuencias no deseadas, garantizan una realimentación estable del bus DC y protección contra transitorios.
+El conversor es completamente aislado galvánicamente, lo que mejora la seguridad y facilita las pruebas del sistema. Para realizar las mediciones de tensión y corriente de forma aislada, se implementó un optoacoplador PC817 en conjunto con un compensador TL431 como lo representa la figura~\ref{fig:imgDev_EsqTL431-PC817}, los cuales atenúan las altas frecuencias no deseadas, garantizan una realimentación estable del bus DC y protección contra transitorios.
 
 \begin{figure}[H]
 \centering
@@ -321,16 +355,30 @@ El conversor es completamente aislado galvánicamente, lo que mejora la segurida
 
 \paragraph{Circuito de medición de corriente}
 
-\hl{Explicar el ACS712}
+En la medición de corriente se utiliza el integrado \textit{ACS712}, un sensor basado en efecto Hall con salida lineal y aislamiento galvánico completo. Este dispositivo de la figura~\ref{fig:imgDev_EsqACS712} se alimenta con $5V$ y permite medir corrientes de hasta $\pm 5A$, valor adecuado para los niveles de corriente presentes en nuestro sistema. La salida del sensor entrega $2.5V$ para una corriente de $0A$. Dado que la electrónica de adquisición opera a $3.3V$, y con el fin de evitar posibles sobre-tensiones en la etapa de lectura, se invierte el sentido de circulación de la corriente de modo que el rango útil del sensor se mantenga entre $0V$ y $2.5V$, garantizando así un funcionamiento seguro y dentro de las especificaciones del sistema.
 
+\begin{figure}[H]
+\centering
+    \includegraphics[width=0.9\textwidth]{dev/cnv/img/EsqACS712.png}
+    \caption{Esquemático de circuito de medición de corriente usando un ACS712.}
+\label{fig:imgDev_EsqACS712}
+\end{figure}
 
+\subsubsection{Limitaciones detectadas en la implementación}
 
+La etapa conversora no es capaz de entregar de forma continua una potencia del orden de $1/3\text{HP}$. Esta limitación se origina en un error de cálculo en la densidad de corriente del devanado secundario del transformador. La corriente por unidad de área resulta excesiva, generando temperaturas superiores a la admitida por los aislantes y el núcleo. Como consecuencia, el sistema queda limitado a una potencia continua aproximada de $1/6,\text{HP}$.
+
+La medición de tensión no arrojó resultados satisfactorios debido a que la relación entre la tensión del bus DC y la tensión de salida no es lineal, sino de tipo cuadrática, presentando además una compresión en la zona de interés. Esto provoca una baja resolución efectiva de la medición. Esta característica se debe al comportamiento no lineal del optoacoplador PC817. Adicionalmente, la tensión de salida en el punto nominal de operación es de aproximadamente $3.15,V$, valor que no resulta adecuado para el convertidor analógico-digital (ADC) del ESP32, ya que se encuentra fuera de su rango óptimo de resolución, impidiendo discriminar correctamente pequeñas variaciones de tensión.
+
+Por su parte, la medición de corriente mediante el sensor ACS712 tampoco presentó un desempeño adecuado, principalmente debido a la elevada dispersión en la tensión de salida, lo que introduce incertidumbre y ruido en la medición. Esta característica limita su utilidad para la aplicación desarrollada.
+
+Finalmente, se identificó la ausencia de filtrado pasivo adecuado en las etapas de medición como un factor adicional que degradó la calidad de las señales adquiridas. En particular, la presencia de picos de tensión generaba lecturas erróneas visualizadas en la interfaz HMI. Para mitigar este efecto, se implementaron filtros RC pasivos, mejorando la estabilidad y confiabilidad de las mediciones. 
 
 \subsubsection{Dificultades encontradas}
 
-En esta sección se detallan las complicaciones enfrentadas durante el diseño del conversor y las soluciones aplicadas, dado que este resultó ser el componente de potencia más complejo del proyecto. En esta etapa inicial contábamos con un conocimiento limitado sobre el diseño de convertidores de alta potencia, por lo que comprender los aspectos críticos implicó un proceso prolongado de análisis y pruebas.
+En esta sección se detallan las complicaciones enfrentadas durante el diseño del conversor y las soluciones aplicadas, dado que este resultó ser el componente de potencia más complejo del proyecto. En esta etapa inicial se contaba con un conocimiento limitado sobre el diseño de convertidores de alta potencia, por lo que comprender los aspectos críticos implicó un proceso prolongado de análisis y pruebas.
 
-Nuestra idea inicial fue implementar una topología de puente completo, ya que presenta una alta eficiencia y era un aspecto que considerábamos prioritario. Para ello se fabricó un transformador con un núcleo cuya relación de transformación era de $12:320$. El tamaño del núcleo resultó ser considerablemente grande, lo que obligó a bobinar un primario de 16 espiras, generando pérdidas significativas. El número de vueltas había sido calculado correctamente según las expresiones presentadas en el marco teórico, pero en la práctica el diseño no ofreció el rendimiento esperado.
+La idea inicial fue implementar una topología de puente completo, ya que presenta una alta eficiencia y era un aspecto que considerábamos prioritario. Para ello se fabricó el transformador de la figura~\ref{fig:imgDev_Dif_Trafo1} con un núcleo cuya relación de transformación era de $12:320$. El tamaño del núcleo resultó ser considerablemente grande, lo que obligó a bobinar un primario de 16 espiras, generando pérdidas significativas. El número de vueltas había sido calculado correctamente según las expresiones presentadas en el marco teórico, pero en la práctica el diseño no ofreció el rendimiento esperado.
 
 
 \begin{figure}[H]
@@ -340,7 +388,7 @@ Nuestra idea inicial fue implementar una topología de puente completo, ya que p
 \label{fig:imgDev_Dif_Trafo1}
 \end{figure}
 
-En los ensayos se logró obtener únicamente $30 W$ con una eficiencia del $50\%$, un valor demasiado bajo para los objetivos del diseño. Parte de este desempeño deficiente se debía a que, en esta primera iteración, no habíamos dimensionado correctamente la corriente requerida en el primario, además de que existían pérdidas considerables en el cableado del bus DC de baja tensión.
+En los ensayos se logró obtener únicamente $30 W$ con una eficiencia del $50\%$, un valor demasiado bajo para los objetivos del diseño. Parte de este desempeño deficiente se debía a que, en esta primera iteración, no habíamos dimensionado correctamente la corriente requerida en el primario, además de que existían pérdidas considerables en el cableado del bus DC de baja tensión debido al montaje realizado de la figura~\ref{fig:imgDev_Dif_PuenteHTrafo1}.
 
 \begin{figure}[H]
 \centering
@@ -349,7 +397,7 @@ En los ensayos se logró obtener únicamente $30 W$ con una eficiencia del $50\%
 \label{fig:imgDev_Dif_PuenteHTrafo1}
 \end{figure}
 
-Al observar la baja performance de este transformador y tomando como referencia el diseño de transformadores de fuentes conmutadas existentes, además de otras guías prácticas, se construyó un segundo transformador con 3 vueltas en el primario y se redujo drásticamente la distancia del cableado del bus DC. Estos cambios produjeron una mejora sustancial.
+Al observar la baja performance de este transformador y tomando como referencia el diseño de transformadores de fuentes conmutadas existentes, además de otras guías prácticas, se construyó un segundo transformador con 3 vueltas en el primario y, como ilustra la figura~\ref{fig:imgDev_Dif_PuenteHTrafo2}, se redujo drásticamente la distancia del cableado del bus DC. Estos cambios produjeron una mejora sustancial.
 
 
 \begin{figure}[H]
@@ -359,7 +407,7 @@ Al observar la baja performance de este transformador y tomando como referencia 
 \label{fig:imgDev_Dif_PuenteHTrafo2}
 \end{figure}
 
-Con el objetivo de optimizar aún más el rendimiento, se construyó un tercer transformador. En este caso no disponíamos del carrete adecuado, por lo que fue impreso en plástico y luego bobinado manualmente.
+Con el objetivo de optimizar aún más el rendimiento, se construyó el tercer transformador de la figura ~\ref{fig:imgDev_Dif_PuenteHTrafo3}. En este caso no disponíamos del carrete adecuado, por lo que fue impreso en plástico y luego bobinado manualmente.
 
 \begin{figure}[H]
 \centering
@@ -372,7 +420,7 @@ Este tercer transformador presentó la mejor performance: con una carga de $250\
 
 Ante esta situación, se decidió cambiar a una topología más simple. Esto respondía tanto a la necesidad de reducir la complejidad del circuito de conmutación como a la de simplificar el cableado. Además, los transistores se dañaban con frecuencia durante las pruebas y solían fallar de a pares, lo cual implicaba un considerable gasto de tiempo y reemplazo de componentes.
 
-La topología seleccionada fue la de \textit{push-pull}. Se montaron tres transistores por cada rama, colocados en un disipador y aislados mediante mica.
+La topología seleccionada fue la de \textit{push-pull}. Como se observa en la figura~\ref{fig:imgDev_Dif_Pushpull}, se montaron tres transistores por cada rama, colocados en un disipador y aislados mediante mica.
 
 \begin{figure}[H]
 \centering
@@ -381,9 +429,7 @@ La topología seleccionada fue la de \textit{push-pull}. Se montaron tres transi
 \label{fig:imgDev_Dif_Pushpull}
 \end{figure}
 
-Con esta nueva topología se obtuvo un rendimiento levemente inferior, pero las ventajas en simplicidad y confiabilidad justificaron su adopción. Durante los ensayos se detectó que la tensión en los terminales del transformador no coincidía con la tensión real entregada por la fuente, debido a caídas en los conductores. Esto explicaba por qué no se alcanzaban los $320V$. En un primer intento se incrementó significativamente la sección de los cables, incluso utilizando barras de aluminio. Si bien esto no mejoró los resultados, permitió observar la ventaja de evitar el uso de mica en los transistores, reemplazándolo por dos bloques de disipadores independientes, lo que mejoró notablemente la disipación y prolongó la vida útil de los transistores.
-
-También se ensayó el uso de los dos mejores transformadores, tanto con los primarios en paralelo como en serie, sin obtener mejoras sustanciales.
+A continuación, en la figura~\ref{fig:imgDev_Dif_PushpullEtapa2}, con esta nueva topología se obtuvo un rendimiento levemente inferior, pero las ventajas en simplicidad y confiabilidad justificaron su adopción. Durante sus ensayos se detectó que la tensión en los terminales del transformador no coincidía con la tensión real entregada por la fuente, debido a caídas en los conductores. Esto explicaba por qué no se alcanzaban los $320V$. En un primer intento se incrementó significativamente la sección de los cables, incluso utilizando barras de aluminio. Si bien esto no mejoró los resultados, permitió observar la ventaja de evitar el uso de mica en los transistores, reemplazándolo por dos bloques de disipadores independientes, lo que mejoró notablemente la disipación y prolongó la vida útil de los transistores. También se ensayó el uso de los dos mejores transformadores, tanto con los primarios en paralelo como en serie, sin obtener mejoras sustanciales.
 
 \begin{figure}[H]
 \centering
@@ -392,7 +438,7 @@ También se ensayó el uso de los dos mejores transformadores, tanto con los pri
 \label{fig:imgDev_Dif_PushpullEtapa2}
 \end{figure}
 
-Finalmente, utilizando el transformador con mejor rendimiento, se decidió incrementar la relación de transformación agregando espiras en el secundario por encima del valor inicial de $12:320$. Paralelamente se implementó un circuito de control práctico con el TL494, permitiendo ajustar el ciclo de trabajo mediante un potenciómetro. Esta modificación sí permitió alcanzar los $320V$ y obtener momentáneamente una potencia de salida de 460 W. Sin embargo, surgió un inconveniente importante: sin carga, la tensión escalaba fácilmente por encima de los $450V$. Esto hizo indispensable implementar un control realimentado, utilizando una medición aislada de la tensión de salida.
+Finalmente, en la figura ~\ref{fig:imgDev_Dif_PushpullEtapa3} se muestra que, utilizando el transformador con mejor rendimiento, se decidió incrementar la relación de transformación agregando espiras en el secundario por encima del valor inicial de $12:320$. Paralelamente se implementó un circuito de control práctico con el TL494, permitiendo ajustar el ciclo de trabajo mediante un potenciómetro. Esta modificación sí permitió alcanzar los $320V$ y obtener momentáneamente una potencia de salida de 460 W. Sin embargo, surgió un inconveniente importante: sin carga, la tensión escalaba fácilmente por encima de los $450V$. Esto hizo indispensable implementar un control realimentado, utilizando una medición aislada de la tensión de salida.
 
 \begin{figure}[H]
 \centering

@@ -4,7 +4,7 @@
 
 En esta sección se presentan los ensayos experimentales realizados sobre el variador de frecuencia desarrollado. El objetivo de estas pruebas es verificar el correcto funcionamiento del dispositivo en condiciones reales de operación, evaluar su respuesta ante distintas cargas y frecuencias, y garantizar que los parámetros eléctricos se mantengan dentro de límites seguros.
 
-Los ensayos permiten comprobar tanto el desempeño del conversor, como el comportamiento del inversor, en esto se involucra la conmutación de los MOSFET, la modulación (SVM) implementada y el programa de control.
+Los ensayos permitieron comprobar tanto el desempeño del conversor, como el comportamiento del inversor, en esto se involucra la conmutación de los MOSFET, la modulación (SVM) implementada y el programa de control.
 
 
 
@@ -272,3 +272,23 @@ El rendimiento total del variador está determinado por la combinación del rend
 
 \subsection{Durabilidad}
 
+Para garantizar el funcionamiento continuo del sistema, se realizó un ensayo de durabilidad en el cual el variador fue exigido con una carga de $120W$ durante un período de $30$ minutos. Los resultados obtenidos demostraron que el equipo es capaz de soportar sin inconvenientes una carga equivalente a $1/6\text{HP}$ durante intervalos prolongados de operación.
+
+No obstante, durante este ensayo se identificaron limitaciones en la etapa conversora, evidenciadas por un incremento significativo de la temperatura del transformador, la cual alcanzó los $112^\circ\text{C}$. Este valor representa el límite máximo admisible para garantizar un funcionamiento seguro, debido a las pérdidas en la aislación del bobinado. Cabe destacar que esta problemática no se encuentra asociada a una deficiencia en el sistema de refrigeración, sino que responde principalmente a un diseño no óptimo del transformador utilizado en la etapa conversora.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{ens/img/dura/Durabilidad.png}
+\caption{Ensayo de durabilidad del dispositivo luego de $26$ minutos de operación con una carga de $120W$.}
+\label{fig:img_ens_durabilidad}
+\end{figure}
+
+Los instrumentos visualizados en la pantalla permiten monitorear las siguientes magnitudes:
+
+\begin{itemize}
+\item Temperatura del disipador principal.
+\item Tensión sobre la resistencia shunt del bus DC.
+\item Tensión del bus DC.
+\item Tensión alterna eficaz de salida.
+\item Temperatura del transformador.
+\end{itemize}

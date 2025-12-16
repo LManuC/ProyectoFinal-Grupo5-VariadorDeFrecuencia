@@ -18,22 +18,21 @@
 \usepackage[affil-it]{authblk}
 \usepackage{soul}
 \usepackage{array}
-\usepackage{tabularx}
-\usepackage{amsmath}
-\usepackage{IEEEtrantools}
+\usepackage{tabularx} % <<-- clave
 % Idioma y codificación
+\usepackage[spanish]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage{csquotes}
+\providecommand{\keywords}[1]{\par\smallskip\noindent\textbf{Palabras clave:} #1\par}
+
 
 % Configuraciones
 %\setmainfont{Times New Roman}
 \usepackage{newtxtext,newtxmath}
-
 % Para que funcione correctamente con APA
-\usepackage[spanish]{babel}
-\usepackage[backend=biber,style=apa]{biblatex}
+\usepackage[style=apa, backend=biber]{biblatex}
+\addbibresource{04-bibliografia.bib}
 \DeclareLanguageMapping{spanish}{spanish-apa}
-\addbibresource{bibliografia.bib}
 
 \usepackage[hidelinks]{hyperref}
 
@@ -55,11 +54,11 @@
 	{\LARGE Proyecto Final\par}
     {\LARGE 2025\par}
 	\vspace{1cm}
-	{\huge\bfseries Variador de frecuencia para motor trifásico para instalaciones de baja tensión\par}
+	{\huge\bfseries Controlador de motor trifásico para instalaciones de baja tensión\par}
 	\vspace{1cm}
     {\LARGE Tesina\par}
     \vspace{1cm}
-	{\Large\itshape Elian Andrenacci, Lucas Carra\par}
+	{\Large\itshape Elian Andrenacci, Lucas Manuel Carra\par}
 	\vfill
 \end{titlepage}
 
@@ -67,22 +66,21 @@
 
 \newpage
 \section{Abstract}
-\input{abstract.tex}
+\input{01-abstract.tex}
 
-
-\newpage
 \section{Marco teórico}
 \input{mt/cnv/cnv.tex}
-\input{mt/mod/mod}
 \input{mt/motor/motor.tex}
 \input{mt/inv/inv.tex}
 \input{mt/hmi/hmi.tex}
+\input{mt/mod/mod}
 
 \newpage
 \section{Desarrollo de proyecto}
 \input{dev/cnv/cnv.tex}
 \input{dev/inv/inv.tex}
 \input{dev/hmi/hmi.tex}
+\input{dev/mod/mod.tex}
 \input{dev/mont/mont}
 
 \newpage
@@ -91,13 +89,14 @@
 
 \newpage
 \section{Conclusiones}
-\label{sec:5_concl}
+\input{anexo/cnv/cnv}
+\input{02-conclusion.tex}
 
 \newpage
 \section{Referencias}
-\label{sec:6_refs}
+\input{03-referencias.tex}
 
 \section{Bibliografía}
-\label{sec:7_bib}
 \printbibliography
+
 \end{document}

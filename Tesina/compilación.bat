@@ -7,7 +7,8 @@ set OUTDIR=out
 set DESTPDF=Tesina_Andrenacci-Carra.pdf
 
 cd .\Tesina
-REM rmdir -r %OUTDIR%
+if exist "%OUTDIR%" rmdir /s /q "%OUTDIR%"
+mkdir "%OUTDIR%"
 
 pdflatex -interaction=nonstopmode -halt-on-error -file-line-error -output-directory=%OUTDIR% %MAIN%.tex
 biber --input-directory %OUTDIR% --output-directory %OUTDIR% %MAIN%
