@@ -3071,9 +3071,25 @@
     <bcf:datasource type="file" datatype="bibtex" glob="false">04-bibliografia.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1" intorder="1">FuentesConmutadas_Floriani</bcf:citekey>
-    <bcf:citekey order="2" intorder="1">switchcraft_svpwm_intro</bcf:citekey>
-    <bcf:citekey order="3" intorder="1">imperix_svpwm</bcf:citekey>
+    <bcf:citekey order="1" intorder="1">ConceptosSobreFuentesConmutadas_Pantaleo</bcf:citekey>
+    <bcf:citekey order="2" intorder="1">EstudioYDesarrolloDeUnConvertidorPushPull_Valenzuela</bcf:citekey>
+    <bcf:citekey order="3" intorder="1">FuentesConmutadas_Floriani</bcf:citekey>
+    <bcf:citekey order="4" intorder="1">SVMVSPWM_Zhou</bcf:citekey>
+    <bcf:citekey order="5" intorder="1">switchcraft_svpwm_intro</bcf:citekey>
+    <bcf:citekey order="6" intorder="1">SVMTechnique_Yousef</bcf:citekey>
+    <bcf:citekey order="7" intorder="1">imperix_svpwm</bcf:citekey>
+    <bcf:citekey order="8" intorder="1">DisenoDeRectificadoresRegenerativos_Velaquez</bcf:citekey>
+    <bcf:citekey order="9" intorder="1">TL431_ONSEMI</bcf:citekey>
+    <bcf:citekey order="10" intorder="1" nocite="1">SVM_Strobl</bcf:citekey>
+    <bcf:citekey order="11" intorder="2" nocite="1">DesignAndOptimization_Wang</bcf:citekey>
+    <bcf:citekey order="12" intorder="3" nocite="1">IsolationInACMotorDrivers</bcf:citekey>
+    <bcf:citekey order="13" intorder="4" nocite="1">AnIsolatedMosfetGateDriver_Walker</bcf:citekey>
+    <bcf:citekey order="14" intorder="5" nocite="1">IsolatedMultipleOutputFlybacj</bcf:citekey>
+    <bcf:citekey order="15" intorder="6" nocite="1">DigitalMotorContol_TI</bcf:citekey>
+    <bcf:citekey order="16" intorder="7" nocite="1">SoftSwitchingSnubber_Zhang</bcf:citekey>
+    <bcf:citekey order="17" intorder="8" nocite="1">THDAndTorqueRipple_Sieklucki</bcf:citekey>
+    <bcf:citekey order="18" intorder="9" nocite="1">H-BridgeMultilevelInverter_Nagle</bcf:citekey>
+    <bcf:citekey order="19" intorder="10" nocite="1">StructureMultilevelConverter_Zare</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="apa">

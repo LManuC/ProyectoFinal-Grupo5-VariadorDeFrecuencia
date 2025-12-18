@@ -12,7 +12,7 @@ La elección de la modulación SVM se fundamenta en su capacidad para maximizar 
 
 \subsubsection{Modulación de vector espacial}
 
-La modulación por vectores espaciales (SVM, Space Vector Modulation) es una técnica avanzada generalmente utilizada en inversores trifásicos para generar señales de salida que aproximen de la mejor manera posible una tensión senoidal. A diferencia del PWM sinusoidal tradicional, que trata cada fase por separado, SVM considera al inversor como un sistema único capaz de generar un conjunto limitado de tensiones discretas. Estas tensiones pueden representarse como vectores en un plano bidimensional (plano $\alpha-\beta$) mediante la transformación de Clarke.
+La modulación por vectores espaciales (SVM, Space Vector Modulation) es una técnica avanzada generalmente utilizada en inversores trifásicos para generar señales de salida que aproximen de la mejor manera posible una tensión senoidal. A diferencia del PWM sinusoidal tradicional, que trata cada fase por separado, SVM considera al inversor como un sistema único capaz de generar un conjunto limitado de tensiones discretas. Estas tensiones pueden representarse como vectores en un plano bidimensional (plano $\alpha-\beta$) mediante la transformación de Clarke\footcite{SVMVSPWM_Zhou}.
 
 El principio fundamental de la SVM se basa en que un inversor trifásico puede generar seis vectores activos y dos vectores nulos figura \ref{fig:imgMT_Mod_modHexagonVectors}, que en conjunto forman un hexágono regular en el plano vectorial. El objetivo de la técnica consiste en aproximar un vector de referencia rotante, que representa la tensión trifásica deseada, utilizando combinaciones temporales de estos vectores disponibles. Dentro de cada periodo de conmutación, el algoritmo determina en qué sector del hexágono se encuentra el vector de referencia y selecciona los dos vectores activos correspondientes junto con un vector nulo. A partir de esto se calculan los tiempos durante los cuales cada vector debe aplicarse para reproducir, en promedio, la tensión deseada en ese intervalo.
 
@@ -37,9 +37,9 @@ Además de estas ventajas, la modulación SVM se integra de manera natural con e
 
 \subsubsection{Patrón SVM}
 
-Se interpreta el vector activo del hexágono como la representación espacial del campo magnético resultante en el estator del motor. Dentro de cada uno de los seis sectores del hexágono se produce la conmutación entre dos vectores activos y los dos vectores nulos. Durante la primera mitad del sector predomina uno de los vectores activos, mientras que en la segunda mitad predomina el otro, garantizando así la transición suave del vector resultante.
+Se interpreta el vector activo del hexágono como la representación espacial del campo magnético resultante en el estator del motor. Dentro de cada uno de los seis sectores del hexágono se produce la conmutación entre dos vectores activos y los dos vectores nulos. Durante la primera mitad del sector predomina uno de los vectores activos, mientras que en la segunda mitad predomina el otro, garantizando así la transición suave del vector resultante\footcite{SVMTechnique_Yousef}.
 
-Los tiempos de aplicación de cada vector se determinan a partir de las siguientes constantes\footcite{SVMTechnique_Yousef}:
+Los tiempos de aplicación de cada vector se determinan a partir de las siguientes constantes:
 
 \begin{equation}\label{eq:svm_coef_A}
 A = \frac{3 \sqrt{3}}{2\pi} \text{T}

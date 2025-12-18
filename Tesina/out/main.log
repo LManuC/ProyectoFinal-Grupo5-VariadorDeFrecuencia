@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.12.3)  16 DEC 2025 07:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.12.3)  18 DEC 2025 00:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -923,7 +923,7 @@ File: ot1ntxtlf.fd 2021/05/24 v1.0 font definition file for OT1/ntx/tlf
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
 (Font)              scaled to size 10.0pt on input line 46.
 
-(c:\Users\User\Desktop\ProyectoFinal-Grupo5-VariadorDeFrecuencia\Tesina\out\mai
+(C:\Users\User\Desktop\ProyectoFinal-Grupo5-VariadorDeFrecuencia\Tesina\out\mai
 n.aux
 LaTeX Info: Redefining \. on input line 12.
 LaTeX Info: Redefining \% on input line 12.
@@ -1038,8 +1038,110 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
 
-(c:\Users\User\Desktop\ProyectoFinal-Grupo5-VariadorDeFrecuencia\Tesina\out\mai
+(C:\Users\User\Desktop\ProyectoFinal-Grupo5-VariadorDeFrecuencia\Tesina\out\mai
 n.bbl
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'StructureMultilevelConverter_Zare':
+(biblatex)                - online entry 'StructureMultilevelConverter_Zare' (0
+4-bibliografia.bib): Invalid format 'Jan 2007' of date field 'date' - ignoring.
+
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'AnIsolatedMosfetGateDriver_Walker':
+(biblatex)                - online entry 'AnIsolatedMosfetGateDriver_Walker' (0
+4-bibliografia.bib): Invalid format 'January 1996' of date field 'date' - ignor
+ing.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'THDAndTorqueRipple_Sieklucki':
+(biblatex)                - online entry 'THDAndTorqueRipple_Sieklucki' (04-bib
+liografia.bib): Invalid format 'May 2023' of date field 'date' - ignoring.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'SVMVSPWM_Zhou':
+(biblatex)                - online entry 'SVMVSPWM_Zhou' (04-bibliografia.bib):
+ Invalid format 'FEBRUARY 2002' of date field 'date' - ignoring.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'H-BridgeMultilevelInverter_Nagle':
+(biblatex)                - online entry 'H-BridgeMultilevelInverter_Nagle' (04
+-bibliografia.bib): Invalid format 'January 2017' of date field 'date' - ignori
+ng.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'IsolatedMultipleOutputFlybacj':
+(biblatex)                - online entry 'IsolatedMultipleOutputFlybacj' (04-bi
+bliografia.bib): Invalid format 'April 2014' of date field 'date' - ignoring.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'DigitalMotorContol_TI':
+(biblatex)                - online entry 'DigitalMotorContol_TI' (04-bibliograf
+ia.bib): Invalid format 'October 2003' of date field 'date' - ignoring.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'SoftSwitchingSnubber_Zhang':
+(biblatex)                - online entry 'SoftSwitchingSnubber_Zhang' (04-bibli
+ografia.bib): Invalid format 'June 2020' of date field 'date' - ignoring.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'StructureMultilevelConverter_Zare':
+(biblatex)                - online entry 'StructureMultilevelConverter_Zare' (0
+4-bibliografia.bib): Invalid format 'Jan 2007' of date field 'date' - ignoring.
+
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'AnIsolatedMosfetGateDriver_Walker':
+(biblatex)                - online entry 'AnIsolatedMosfetGateDriver_Walker' (0
+4-bibliografia.bib): Invalid format 'January 1996' of date field 'date' - ignor
+ing.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'THDAndTorqueRipple_Sieklucki':
+(biblatex)                - online entry 'THDAndTorqueRipple_Sieklucki' (04-bib
+liografia.bib): Invalid format 'May 2023' of date field 'date' - ignoring.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'SVMVSPWM_Zhou':
+(biblatex)                - online entry 'SVMVSPWM_Zhou' (04-bibliografia.bib):
+ Invalid format 'FEBRUARY 2002' of date field 'date' - ignoring.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'H-BridgeMultilevelInverter_Nagle':
+(biblatex)                - online entry 'H-BridgeMultilevelInverter_Nagle' (04
+-bibliografia.bib): Invalid format 'January 2017' of date field 'date' - ignori
+ng.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'IsolatedMultipleOutputFlybacj':
+(biblatex)                - online entry 'IsolatedMultipleOutputFlybacj' (04-bi
+bliografia.bib): Invalid format 'April 2014' of date field 'date' - ignoring.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'DigitalMotorContol_TI':
+(biblatex)                - online entry 'DigitalMotorContol_TI' (04-bibliograf
+ia.bib): Invalid format 'October 2003' of date field 'date' - ignoring.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'SoftSwitchingSnubber_Zhang':
+(biblatex)                - online entry 'SoftSwitchingSnubber_Zhang' (04-bibli
+ografia.bib): Invalid format 'June 2020' of date field 'date' - ignoring.
+
 
 Package biblatex Warning: The following entry could not be found
 (biblatex)                in the database:
@@ -1052,14 +1154,14 @@ Package biblatex Info: Reference section=0 on input line 46.
 Package biblatex Info: Reference segment=0 on input line 46.
 Package hyperref Info: Link coloring ON on input line 46.
 
-(c:\Users\User\Desktop\ProyectoFinal-Grupo5-VariadorDeFrecuencia\Tesina\out\mai
+(C:\Users\User\Desktop\ProyectoFinal-Grupo5-VariadorDeFrecuencia\Tesina\out\mai
 n.out)
-(c:\Users\User\Desktop\ProyectoFinal-Grupo5-VariadorDeFrecuencia\Tesina\out\mai
+(C:\Users\User\Desktop\ProyectoFinal-Grupo5-VariadorDeFrecuencia\Tesina\out\mai
 n.out)
 \@outlinefile=\write4
 \openout4 = `main.out'.
 
-<utn.jpg, id=243, 2001.4775pt x 627.34375pt>
+<utn.jpg, id=239, 2001.4775pt x 627.34375pt>
 File: utn.jpg Graphic file (type jpg)
 <use utn.jpg>
 Package pdftex.def Info: utn.jpg  used on input line 51.
@@ -1082,7 +1184,7 @@ AppData/Local/Programs/MiKTeX/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc} <./utn.jpg
 LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
 (Font)              scaled to size 14.4pt on input line 65.
 
-(c:\Users\User\Desktop\ProyectoFinal-Grupo5-VariadorDeFrecuencia\Tesina\out\mai
+(C:\Users\User\Desktop\ProyectoFinal-Grupo5-VariadorDeFrecuencia\Tesina\out\mai
 n.toc
 LaTeX Info: Redefining \sptext on input line 1.
 LaTeX Info: Redefining \. on input line 1.
@@ -1177,53 +1279,53 @@ LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
 (Font)              scaled to size 12.0pt on input line 3.
  [3]
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 7.3pt on input line 38.
+(Font)              scaled to size 7.3pt on input line 24.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 8.0pt on input line 38.
+(Font)              scaled to size 8.0pt on input line 24.
 LaTeX Font Info:    Font shape `OT1/minntx/m/n' will be
-(Font)              scaled to size 8.0pt on input line 38.
+(Font)              scaled to size 8.0pt on input line 24.
 LaTeX Font Info:    Font shape `OT1/minntx/m/n' will be
-(Font)              scaled to size 6.0pt on input line 38.
+(Font)              scaled to size 6.0pt on input line 24.
 LaTeX Font Info:    Font shape `OML/ntxmi/m/it' will be
-(Font)              scaled to size 8.0pt on input line 38.
+(Font)              scaled to size 8.0pt on input line 24.
 LaTeX Font Info:    Font shape `OML/ntxmi/m/it' will be
-(Font)              scaled to size 6.0pt on input line 38.
+(Font)              scaled to size 6.0pt on input line 24.
 LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
-(Font)              scaled to size 8.0pt on input line 38.
+(Font)              scaled to size 8.0pt on input line 24.
 LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
-(Font)              scaled to size 6.0pt on input line 38.
+(Font)              scaled to size 6.0pt on input line 24.
 LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
-(Font)              scaled to size 8.0pt on input line 38.
+(Font)              scaled to size 8.0pt on input line 24.
 LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
-(Font)              scaled to size 6.0pt on input line 38.
+(Font)              scaled to size 6.0pt on input line 24.
 LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
-(Font)              scaled to size 8.0pt on input line 38.
+(Font)              scaled to size 8.0pt on input line 24.
 LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
-(Font)              scaled to size 6.0pt on input line 38.
+(Font)              scaled to size 6.0pt on input line 24.
 LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
-(Font)              scaled to size 8.0pt on input line 38.
+(Font)              scaled to size 8.0pt on input line 24.
 LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
-(Font)              scaled to size 6.0pt on input line 38.
+(Font)              scaled to size 6.0pt on input line 24.
 LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
-(Font)              scaled to size 8.0pt on input line 38.
+(Font)              scaled to size 8.0pt on input line 24.
 LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
-(Font)              scaled to size 6.0pt on input line 38.
+(Font)              scaled to size 6.0pt on input line 24.
 LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
-(Font)              scaled to size 8.0pt on input line 38.
+(Font)              scaled to size 8.0pt on input line 24.
 LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
-(Font)              scaled to size 6.0pt on input line 38.
+(Font)              scaled to size 6.0pt on input line 24.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 6.0pt on input line 38.
+(Font)              scaled to size 6.0pt on input line 24.
  [4]
-<mt/cnv/img/EsqConvPuente.png, id=332, 984.67876pt x 443.40656pt>
+<mt/cnv/img/EsqConvPuente.png, id=333, 984.67876pt x 443.40656pt>
 File: mt/cnv/img/EsqConvPuente.png Graphic file (type png)
 <use mt/cnv/img/EsqConvPuente.png>
-Package pdftex.def Info: mt/cnv/img/EsqConvPuente.png  used on input line 50.
+Package pdftex.def Info: mt/cnv/img/EsqConvPuente.png  used on input line 52.
 (pdftex.def)             Requested size: 310.4979pt x 139.81589pt.
-<mt/cnv/img/EsqConvPushPull.png, id=333, 949.74825pt x 424.58624pt>
+<mt/cnv/img/EsqConvPushPull.png, id=334, 949.74825pt x 424.58624pt>
 File: mt/cnv/img/EsqConvPushPull.png Graphic file (type png)
 <use mt/cnv/img/EsqConvPushPull.png>
-Package pdftex.def Info: mt/cnv/img/EsqConvPushPull.png  used on input line 57.
+Package pdftex.def Info: mt/cnv/img/EsqConvPushPull.png  used on input line 59.
 
 (pdftex.def)             Requested size: 310.4979pt x 138.81168pt.
 
@@ -1232,28 +1334,28 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 [5 <./mt/cnv/img/EsqConvPuente.png>] [6 <./mt/cnv/img/EsqConvPushPull.png>]
 [7] [8]
-<mt/cnv/img/EsqMedioFerrite-Areas.png, id=368, 564.60938pt x 588.69937pt>
+<mt/cnv/img/EsqMedioFerrite-Areas.png, id=371, 564.60938pt x 588.69937pt>
 File: mt/cnv/img/EsqMedioFerrite-Areas.png Graphic file (type png)
 <use mt/cnv/img/EsqMedioFerrite-Areas.png>
 Package pdftex.def Info: mt/cnv/img/EsqMedioFerrite-Areas.png  used on input li
-ne 137.
+ne 139.
 (pdftex.def)             Requested size: 310.4979pt x 323.74971pt.
  [9 <./mt/cnv/img/EsqMedioFerrite-Areas.png>]
 LaTeX Font Info:    Trying to load font information for TS1+ntxtlf on input lin
-e 150.
+e 152.
 
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/newtx\ts1ntxtlf.fd
 File: ts1ntxtlf.fd 2015/01/18 v1.0 fd file for TS1/ntxtlf
 )
 LaTeX Font Info:    Font shape `TS1/ntxtlf/m/n' will be
-(Font)              scaled to size 10.0pt on input line 150.
+(Font)              scaled to size 10.0pt on input line 152.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 5.5pt on input line 190.
+(Font)              scaled to size 5.5pt on input line 192.
 
 [10{C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/tex-gyre/q-ts1.
 enc}] [11] [12] [13]) (mt/motor/motor.tex [14]) (mt/inv/inv.tex [15])
 (mt/hmi/hmi.tex [16]
-<mt/hmi/img/bit_transfer.png, id=463, 208.98074pt x 90.93974pt>
+<mt/hmi/img/bit_transfer.png, id=466, 208.98074pt x 90.93974pt>
 File: mt/hmi/img/bit_transfer.png Graphic file (type png)
 <use mt/hmi/img/bit_transfer.png>
 Package pdftex.def Info: mt/hmi/img/bit_transfer.png  used on input line 28.
@@ -1262,13 +1364,13 @@ LaTeX Font Info:    Font shape `OT1/ntxtlf/m/it' will be
 (Font)              scaled to size 10.0pt on input line 34.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/b/it' will be
 (Font)              scaled to size 10.0pt on input line 34.
-<mt/hmi/img/start_stop_condition.png, id=465, 272.81924pt x 96.36pt>
+<mt/hmi/img/start_stop_condition.png, id=468, 272.81924pt x 96.36pt>
 File: mt/hmi/img/start_stop_condition.png Graphic file (type png)
 <use mt/hmi/img/start_stop_condition.png>
 Package pdftex.def Info: mt/hmi/img/start_stop_condition.png  used on input lin
 e 38.
 (pdftex.def)             Requested size: 310.4979pt x 109.66919pt.
-<mt/hmi/img/acknowledge.png, id=467, 384.2355pt x 134.904pt>
+<mt/hmi/img/acknowledge.png, id=470, 384.2355pt x 134.904pt>
 File: mt/hmi/img/acknowledge.png Graphic file (type png)
 <use mt/hmi/img/acknowledge.png>
 Package pdftex.def Info: mt/hmi/img/acknowledge.png  used on input line 51.
@@ -1277,32 +1379,32 @@ Package pdftex.def Info: mt/hmi/img/acknowledge.png  used on input line 51.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<mt/hmi/img/I2C_Interface.png, id=469, 257.16075pt x 389.65575pt>
+<mt/hmi/img/I2C_Interface.png, id=472, 257.16075pt x 389.65575pt>
 File: mt/hmi/img/I2C_Interface.png Graphic file (type png)
 <use mt/hmi/img/I2C_Interface.png>
 Package pdftex.def Info: mt/hmi/img/I2C_Interface.png  used on input line 60.
 (pdftex.def)             Requested size: 241.49895pt x 365.92564pt.
 [17 <./mt/hmi/img/bit_transfer.png> <./mt/hmi/img/start_stop_condition.png>]
 [18 <./mt/hmi/img/acknowledge.png> <./mt/hmi/img/I2C_Interface.png>]
-<mt/hmi/img/ISO_Input.png, id=490, 563.10374pt x 241.90375pt>
+<mt/hmi/img/ISO_Input.png, id=493, 563.10374pt x 241.90375pt>
 File: mt/hmi/img/ISO_Input.png Graphic file (type png)
 <use mt/hmi/img/ISO_Input.png>
 Package pdftex.def Info: mt/hmi/img/ISO_Input.png  used on input line 75.
 (pdftex.def)             Requested size: 310.4979pt x 133.38705pt.
  [19 <./mt/hmi/img/ISO_Input.png>]) (mt/mod/mod.tex [20]
-<mt/mod/img/modHexagonVectors.jpg, id=508, 1313.90875pt x 1177.39874pt>
+<mt/mod/img/modHexagonVectors.jpg, id=513, 1313.90875pt x 1177.39874pt>
 File: mt/mod/img/modHexagonVectors.jpg Graphic file (type jpg)
 <use mt/mod/img/modHexagonVectors.jpg>
 Package pdftex.def Info: mt/mod/img/modHexagonVectors.jpg  used on input line 2
 1.
 (pdftex.def)             Requested size: 241.49895pt x 216.39607pt.
-<mt/mod/img/modVectors.png, id=511, 2386.41562pt x 2571.6075pt>
+<mt/mod/img/modVectors.png, id=516, 2386.41562pt x 2571.6075pt>
 File: mt/mod/img/modVectors.png Graphic file (type png)
 <use mt/mod/img/modVectors.png>
 Package pdftex.def Info: mt/mod/img/modVectors.png  used on input line 30.
 (pdftex.def)             Requested size: 241.49895pt x 260.2365pt.
  [21 <./mt/mod/img/modHexagonVectors.jpg>] [22 <./mt/mod/img/modVectors.png>]
-<mt/mod/img/SwitchingPattern.png, id=529, 622.325pt x 513.92pt>
+<mt/mod/img/SwitchingPattern.png, id=540, 622.325pt x 513.92pt>
 File: mt/mod/img/SwitchingPattern.png Graphic file (type png)
 <use mt/mod/img/SwitchingPattern.png>
 Package pdftex.def Info: mt/mod/img/SwitchingPattern.png  used on input line 72
@@ -1315,76 +1417,78 @@ LaTeX Warning: Citation 'imperix_svpwm' on page 23 undefined on input line 75.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
 (Font)              scaled to size 8.0pt on input line 75.
 ) [23 <./mt/mod/img/SwitchingPattern.png>] (dev/cnv/cnv.tex [24] [25]
-<mt/cnv/img/EsqDimEDT42.png, id=563, 501.072pt x 153.57375pt>
+<mt/cnv/img/EsqDimEDT42.png, id=574, 501.072pt x 153.57375pt>
 File: mt/cnv/img/EsqDimEDT42.png Graphic file (type png)
 <use mt/cnv/img/EsqDimEDT42.png>
 Package pdftex.def Info: mt/cnv/img/EsqDimEDT42.png  used on input line 135.
 (pdftex.def)             Requested size: 310.4979pt x 95.16551pt.
-<dev/cnv/img/Trafo.jpg, id=564, 1204.5pt x 1606.0pt>
+<dev/cnv/img/Trafo.jpg, id=575, 1204.5pt x 1606.0pt>
 File: dev/cnv/img/Trafo.jpg Graphic file (type jpg)
 <use dev/cnv/img/Trafo.jpg>
 Package pdftex.def Info: dev/cnv/img/Trafo.jpg  used on input line 155.
 (pdftex.def)             Requested size: 137.9979pt x 183.9877pt.
  [26 <./mt/cnv/img/EsqDimEDT42.png>]
-<mt/cnv/img/EsqCircConv.jpg, id=573, 858.8085pt x 467.346pt>
+<mt/cnv/img/EsqCircConv.jpg, id=584, 858.8085pt x 467.346pt>
 File: mt/cnv/img/EsqCircConv.jpg Graphic file (type jpg)
 <use mt/cnv/img/EsqCircConv.jpg>
 Package pdftex.def Info: mt/cnv/img/EsqCircConv.jpg  used on input line 165.
 (pdftex.def)             Requested size: 310.4979pt x 168.96466pt.
+LaTeX Font Info:    Font shape `TS1/ntxtlf/m/n' will be
+(Font)              scaled to size 8.0pt on input line 170.
  [27 <./dev/cnv/img/Trafo.jpg> <./mt/cnv/img/EsqCircConv.jpg>]
-<dev/cnv/img/SOA-IRFB4110.png, id=581, 459.51675pt x 434.8245pt>
+<dev/cnv/img/SOA-IRFB4110.png, id=596, 459.51675pt x 434.8245pt>
 File: dev/cnv/img/SOA-IRFB4110.png Graphic file (type png)
 <use dev/cnv/img/SOA-IRFB4110.png>
 Package pdftex.def Info: dev/cnv/img/SOA-IRFB4110.png  used on input line 208.
 (pdftex.def)             Requested size: 310.4979pt x 293.81895pt.
  [28]
-<dev/cnv/img/EsqSimpleSim.jpg, id=589, 947.03813pt x 386.94562pt>
+<dev/cnv/img/EsqSimpleSim.jpg, id=604, 947.03813pt x 386.94562pt>
 File: dev/cnv/img/EsqSimpleSim.jpg Graphic file (type jpg)
 <use dev/cnv/img/EsqSimpleSim.jpg>
 Package pdftex.def Info: dev/cnv/img/EsqSimpleSim.jpg  used on input line 221.
 (pdftex.def)             Requested size: 310.4979pt x 126.85994pt.
  [29 <./dev/cnv/img/SOA-IRFB4110.png>]
-<dev/cnv/img/SimVgs.png, id=599, 712.16063pt x 384.6872pt>
+<dev/cnv/img/SimVgs.png, id=614, 712.16063pt x 384.6872pt>
 File: dev/cnv/img/SimVgs.png Graphic file (type png)
 <use dev/cnv/img/SimVgs.png>
 Package pdftex.def Info: dev/cnv/img/SimVgs.png  used on input line 230.
 (pdftex.def)             Requested size: 310.4979pt x 167.71912pt.
-<dev/cnv/img/SimVds.png, id=601, 712.16063pt x 384.6872pt>
+<dev/cnv/img/SimVds.png, id=616, 712.16063pt x 384.6872pt>
 File: dev/cnv/img/SimVds.png Graphic file (type png)
 <use dev/cnv/img/SimVds.png>
 Package pdftex.def Info: dev/cnv/img/SimVds.png  used on input line 239.
 (pdftex.def)             Requested size: 310.4979pt x 167.71912pt.
  [30 <./dev/cnv/img/EsqSimpleSim.jpg> <./dev/cnv/img/SimVgs.png>]
-<dev/cnv/img/SimVds-Id.png, id=610, 712.16063pt x 384.6872pt>
+<dev/cnv/img/SimVds-Id.png, id=625, 712.16063pt x 384.6872pt>
 File: dev/cnv/img/SimVds-Id.png Graphic file (type png)
 <use dev/cnv/img/SimVds-Id.png>
 Package pdftex.def Info: dev/cnv/img/SimVds-Id.png  used on input line 248.
 (pdftex.def)             Requested size: 310.4979pt x 167.71912pt.
-<dev/cnv/img/SimId.png, id=612, 712.16063pt x 384.6872pt>
+<dev/cnv/img/SimId.png, id=627, 712.16063pt x 384.6872pt>
 File: dev/cnv/img/SimId.png Graphic file (type png)
 <use dev/cnv/img/SimId.png>
 Package pdftex.def Info: dev/cnv/img/SimId.png  used on input line 257.
 (pdftex.def)             Requested size: 310.4979pt x 167.71912pt.
  [31 <./dev/cnv/img/SimVds.png> <./dev/cnv/img/SimVds-Id.png>]
-<dev/cnv/img/SimVout-Iout.png, id=620, 712.16063pt x 384.6872pt>
+<dev/cnv/img/SimVout-Iout.png, id=635, 712.16063pt x 384.6872pt>
 File: dev/cnv/img/SimVout-Iout.png Graphic file (type png)
 <use dev/cnv/img/SimVout-Iout.png>
 Package pdftex.def Info: dev/cnv/img/SimVout-Iout.png  used on input line 266.
 (pdftex.def)             Requested size: 310.4979pt x 167.71912pt.
-<dev/cnv/img/EsqMosfetDriver-TotemPole.png, id=623, 675.12225pt x 464.33475pt>
+<dev/cnv/img/EsqMosfetDriver-TotemPole.png, id=638, 675.12225pt x 464.33475pt>
 File: dev/cnv/img/EsqMosfetDriver-TotemPole.png Graphic file (type png)
 <use dev/cnv/img/EsqMosfetDriver-TotemPole.png>
 Package pdftex.def Info: dev/cnv/img/EsqMosfetDriver-TotemPole.png  used on inp
 ut line 284.
 (pdftex.def)             Requested size: 310.4979pt x 213.56114pt.
  [32 <./dev/cnv/img/SimId.png> <./dev/cnv/img/SimVout-Iout.png>]
-<dev/cnv/img/EsqSim-TotemPole.png, id=635, 860.46469pt x 444.91219pt>
+<dev/cnv/img/EsqSim-TotemPole.png, id=650, 860.46469pt x 444.91219pt>
 File: dev/cnv/img/EsqSim-TotemPole.png Graphic file (type png)
 <use dev/cnv/img/EsqSim-TotemPole.png>
 Package pdftex.def Info: dev/cnv/img/EsqSim-TotemPole.png  used on input line 2
 93.
 (pdftex.def)             Requested size: 310.4979pt x 160.54843pt.
-<dev/cnv/img/SimTotem_Vgate.png, id=636, 700.11563pt x 372.64218pt>
+<dev/cnv/img/SimTotem_Vgate.png, id=651, 700.11563pt x 372.64218pt>
 File: dev/cnv/img/SimTotem_Vgate.png Graphic file (type png)
 <use dev/cnv/img/SimTotem_Vgate.png>
 Package pdftex.def Info: dev/cnv/img/SimTotem_Vgate.png  used on input line 302
@@ -1392,57 +1496,57 @@ Package pdftex.def Info: dev/cnv/img/SimTotem_Vgate.png  used on input line 302
 (pdftex.def)             Requested size: 310.4979pt x 165.26517pt.
  [33 <./dev/cnv/img/EsqMosfetDriver-TotemPole.png> <./dev/cnv/img/EsqSim-TotemP
 ole.png>]
-<dev/cnv/img/SimTP_RiseTime.png, id=647, 700.11563pt x 371.13657pt>
+<dev/cnv/img/SimTP_RiseTime.png, id=662, 700.11563pt x 371.13657pt>
 File: dev/cnv/img/SimTP_RiseTime.png Graphic file (type png)
 <use dev/cnv/img/SimTP_RiseTime.png>
 Package pdftex.def Info: dev/cnv/img/SimTP_RiseTime.png  used on input line 311
 .
 (pdftex.def)             Requested size: 310.4979pt x 164.59743pt.
-<dev/cnv/img/SimTP_FallTime.png, id=648, 689.57625pt x 371.13657pt>
+<dev/cnv/img/SimTP_FallTime.png, id=663, 689.57625pt x 371.13657pt>
 File: dev/cnv/img/SimTP_FallTime.png Graphic file (type png)
 <use dev/cnv/img/SimTP_FallTime.png>
 Package pdftex.def Info: dev/cnv/img/SimTP_FallTime.png  used on input line 318
 .
 (pdftex.def)             Requested size: 310.4979pt x 167.11183pt.
  [34 <./dev/cnv/img/SimTotem_Vgate.png> <./dev/cnv/img/SimTP_RiseTime.png>]
-<dev/cnv/img/EsqTL494.png, id=656, 406.51875pt x 248.72925pt>
+<dev/cnv/img/EsqTL494.png, id=671, 406.51875pt x 248.72925pt>
 File: dev/cnv/img/EsqTL494.png Graphic file (type png)
 <use dev/cnv/img/EsqTL494.png>
 Package pdftex.def Info: dev/cnv/img/EsqTL494.png  used on input line 331.
 (pdftex.def)             Requested size: 310.4979pt x 189.98502pt.
  [35 <./dev/cnv/img/SimTP_FallTime.png> <./dev/cnv/img/EsqTL494.png>]
-<dev/cnv/img/EsqTL494Comp.png, id=665, 356.532pt x 218.0145pt>
+<dev/cnv/img/EsqTL494Comp.png, id=680, 356.532pt x 218.0145pt>
 File: dev/cnv/img/EsqTL494Comp.png Graphic file (type png)
 <use dev/cnv/img/EsqTL494Comp.png>
 Package pdftex.def Info: dev/cnv/img/EsqTL494Comp.png  used on input line 340.
 (pdftex.def)             Requested size: 310.4979pt x 189.88065pt.
-<dev/cnv/img/EsqTL431-PC817.png, id=667, 408.3255pt x 289.68225pt>
+<dev/cnv/img/EsqTL431-PC817.png, id=684, 408.3255pt x 289.68225pt>
 File: dev/cnv/img/EsqTL431-PC817.png Graphic file (type png)
 <use dev/cnv/img/EsqTL431-PC817.png>
 Package pdftex.def Info: dev/cnv/img/EsqTL431-PC817.png  used on input line 351
 .
 (pdftex.def)             Requested size: 310.4979pt x 220.28455pt.
  [36 <./dev/cnv/img/EsqTL494Comp.png>]
-<dev/cnv/img/EsqACS712.png, id=678, 963.6pt x 379.4175pt>
+<dev/cnv/img/EsqACS712.png, id=697, 963.6pt x 379.4175pt>
 File: dev/cnv/img/EsqACS712.png Graphic file (type png)
 <use dev/cnv/img/EsqACS712.png>
 Package pdftex.def Info: dev/cnv/img/EsqACS712.png  used on input line 362.
 (pdftex.def)             Requested size: 310.4979pt x 122.25554pt.
  [37 <./dev/cnv/img/EsqTL431-PC817.png> <./dev/cnv/img/EsqACS712.png>]
-<dev/cnv/img/Dif_Trafo1.jpg, id=688, 492.33937pt x 651.93562pt>
+<dev/cnv/img/Dif_Trafo1.jpg, id=707, 492.33937pt x 651.93562pt>
 File: dev/cnv/img/Dif_Trafo1.jpg Graphic file (type jpg)
 <use dev/cnv/img/Dif_Trafo1.jpg>
 Package pdftex.def Info: dev/cnv/img/Dif_Trafo1.jpg  used on input line 386.
 (pdftex.def)             Requested size: 310.4979pt x 411.16925pt.
  [38]
-<dev/cnv/img/Dif_PuenteHTrafo1.jpg, id=695, 584.1825pt x 306.39468pt>
+<dev/cnv/img/Dif_PuenteHTrafo1.jpg, id=714, 584.1825pt x 306.39468pt>
 File: dev/cnv/img/Dif_PuenteHTrafo1.jpg Graphic file (type jpg)
 <use dev/cnv/img/Dif_PuenteHTrafo1.jpg>
 Package pdftex.def Info: dev/cnv/img/Dif_PuenteHTrafo1.jpg  used on input line 
 395.
 (pdftex.def)             Requested size: 310.4979pt x 162.85593pt.
  [39 <./dev/cnv/img/Dif_Trafo1.jpg>]
-<dev/cnv/img/Dif_PuenteHTrafo2.jpg, id=702, 859.71187pt x 788.9475pt>
+<dev/cnv/img/Dif_PuenteHTrafo2.jpg, id=721, 859.71187pt x 788.9475pt>
 File: dev/cnv/img/Dif_PuenteHTrafo2.jpg Graphic file (type jpg)
 <use dev/cnv/img/Dif_PuenteHTrafo2.jpg>
 Package pdftex.def Info: dev/cnv/img/Dif_PuenteHTrafo2.jpg  used on input line 
@@ -1451,26 +1555,26 @@ Package pdftex.def Info: dev/cnv/img/Dif_PuenteHTrafo2.jpg  used on input line
 
 [40 <./dev/cnv/img/Dif_PuenteHTrafo1.jpg> <./dev/cnv/img/Dif_PuenteHTrafo2.jpg>
 ]
-<dev/cnv/img/Dif_PuenteHTrafo3.jpg, id=709, 639.89063pt x 903.375pt>
+<dev/cnv/img/Dif_PuenteHTrafo3.jpg, id=728, 639.89063pt x 903.375pt>
 File: dev/cnv/img/Dif_PuenteHTrafo3.jpg Graphic file (type jpg)
 <use dev/cnv/img/Dif_PuenteHTrafo3.jpg>
 Package pdftex.def Info: dev/cnv/img/Dif_PuenteHTrafo3.jpg  used on input line 
 414.
 (pdftex.def)             Requested size: 310.4979pt x 438.3569pt.
  [41 <./dev/cnv/img/Dif_PuenteHTrafo3.jpg>]
-<dev/cnv/img/Dif_PushPull.jpg, id=716, 1164.60094pt x 664.73344pt>
+<dev/cnv/img/Dif_PushPull.jpg, id=735, 1164.60094pt x 664.73344pt>
 File: dev/cnv/img/Dif_PushPull.jpg Graphic file (type jpg)
 <use dev/cnv/img/Dif_PushPull.jpg>
 Package pdftex.def Info: dev/cnv/img/Dif_PushPull.jpg  used on input line 427.
 (pdftex.def)             Requested size: 310.4979pt x 177.21854pt.
-<dev/cnv/img/Dif_PushpullEtapa2.jpg, id=718, 1204.5pt x 1606.0pt>
+<dev/cnv/img/Dif_PushpullEtapa2.jpg, id=737, 1204.5pt x 1606.0pt>
 File: dev/cnv/img/Dif_PushpullEtapa2.jpg Graphic file (type jpg)
 <use dev/cnv/img/Dif_PushpullEtapa2.jpg>
 Package pdftex.def Info: dev/cnv/img/Dif_PushpullEtapa2.jpg  used on input line
  436.
 (pdftex.def)             Requested size: 310.4979pt x 413.99686pt.
  [42 <./dev/cnv/img/Dif_PushPull.jpg>]
-<dev/cnv/img/Dif_PushPullEtapa3.jpg, id=727, 1606.0pt x 1204.5pt>
+<dev/cnv/img/Dif_PushPullEtapa3.jpg, id=746, 1606.0pt x 1204.5pt>
 File: dev/cnv/img/Dif_PushPullEtapa3.jpg Graphic file (type jpg)
 <use dev/cnv/img/Dif_PushPullEtapa3.jpg>
 Package pdftex.def Info: dev/cnv/img/Dif_PushPullEtapa3.jpg  used on input line
@@ -1478,7 +1582,7 @@ Package pdftex.def Info: dev/cnv/img/Dif_PushPullEtapa3.jpg  used on input line
 (pdftex.def)             Requested size: 310.4979pt x 232.86403pt.
  [43 <./dev/cnv/img/Dif_PushpullEtapa2.jpg>]) (dev/inv/inv.tex)
 (dev/hmi/hmi.tex
-<dev/hmi/img/DC-DC_PS.png, id=734, 709.4505pt x 235.47975pt>
+<dev/hmi/img/DC-DC_PS.png, id=753, 709.4505pt x 235.47975pt>
 File: dev/hmi/img/DC-DC_PS.png Graphic file (type png)
 <use dev/hmi/img/DC-DC_PS.png>
 Package pdftex.def Info: dev/hmi/img/DC-DC_PS.png  used on input line 9.
@@ -1499,18 +1603,18 @@ Overfull \hbox (70.60004pt too wide) in paragraph at lines 48--58
  []
 
 [44 <./dev/cnv/img/Dif_PushPullEtapa3.jpg>] [45 <./dev/hmi/img/DC-DC_PS.png>]
-<dev/hmi/img/DC-DC_PS_PCB.png, id=749, 443.85825pt x 241.50224pt>
+<dev/hmi/img/DC-DC_PS_PCB.png, id=768, 443.85825pt x 241.50224pt>
 File: dev/hmi/img/DC-DC_PS_PCB.png Graphic file (type png)
 <use dev/hmi/img/DC-DC_PS_PCB.png>
 Package pdftex.def Info: dev/hmi/img/DC-DC_PS_PCB.png  used on input line 65.
 (pdftex.def)             Requested size: 310.4979pt x 168.94353pt.
-<dev/hmi/img/DC-DC_PS_PCB_3D.png, id=750, 711.25725pt x 318.59026pt>
+<dev/hmi/img/DC-DC_PS_PCB_3D.png, id=769, 711.25725pt x 318.59026pt>
 File: dev/hmi/img/DC-DC_PS_PCB_3D.png Graphic file (type png)
 <use dev/hmi/img/DC-DC_PS_PCB_3D.png>
 Package pdftex.def Info: dev/hmi/img/DC-DC_PS_PCB_3D.png  used on input line 72
 .
 (pdftex.def)             Requested size: 310.4979pt x 139.07663pt.
-<dev/hmi/img/pantallasVFLVdc-Estructura-de-codigo.png, id=752, 442.65375pt x 77
+<dev/hmi/img/pantallasVFLVdc-Estructura-de-codigo.png, id=771, 442.65375pt x 77
 3.89125pt>
 File: dev/hmi/img/pantallasVFLVdc-Estructura-de-codigo.png Graphic file (type p
 ng)
@@ -1518,13 +1622,13 @@ ng)
 Package pdftex.def Info: dev/hmi/img/pantallasVFLVdc-Estructura-de-codigo.png  
 used on input line 83.
 (pdftex.def)             Requested size: 310.4979pt x 542.86562pt.
-<dev/hmi/img/I2C_Interface_KCD.png, id=755, 551.05875pt x 281.853pt>
+<dev/hmi/img/I2C_Interface_KCD.png, id=774, 551.05875pt x 281.853pt>
 File: dev/hmi/img/I2C_Interface_KCD.png Graphic file (type png)
 <use dev/hmi/img/I2C_Interface_KCD.png>
 Package pdftex.def Info: dev/hmi/img/I2C_Interface_KCD.png  used on input line 
 94.
 (pdftex.def)             Requested size: 310.4979pt x 158.81717pt.
-<dev/hmi/img/OLED_PCB.png, id=756, 342.078pt x 327.02174pt>
+<dev/hmi/img/OLED_PCB.png, id=775, 342.078pt x 327.02174pt>
 File: dev/hmi/img/OLED_PCB.png Graphic file (type png)
 <use dev/hmi/img/OLED_PCB.png>
 Package pdftex.def Info: dev/hmi/img/OLED_PCB.png  used on input line 101.
@@ -1533,27 +1637,27 @@ Package pdftex.def Info: dev/hmi/img/OLED_PCB.png  used on input line 101.
 [46 <./dev/hmi/img/DC-DC_PS_PCB.png> <./dev/hmi/img/DC-DC_PS_PCB_3D.png>]
 [47 <./dev/hmi/img/pantallasVFLVdc-Estructura-de-codigo.png>] [48 <./dev/hmi/im
 g/I2C_Interface_KCD.png> <./dev/hmi/img/OLED_PCB.png>]
-<dev/hmi/img/pantallasVFLVdc-Display.png, id=781, 592.2125pt x 423.5825pt>
+<dev/hmi/img/pantallasVFLVdc-Display.png, id=800, 592.2125pt x 423.5825pt>
 File: dev/hmi/img/pantallasVFLVdc-Display.png Graphic file (type png)
 <use dev/hmi/img/pantallasVFLVdc-Display.png>
 Package pdftex.def Info: dev/hmi/img/pantallasVFLVdc-Display.png  used on input
  line 110.
 (pdftex.def)             Requested size: 310.4979pt x 222.09329pt.
  [49 <./dev/hmi/img/pantallasVFLVdc-Display.png>] [50]
-<dev/hmi/img/MaquinaEstados_HMI.png, id=794, 1170.3725pt x 924.45375pt>
+<dev/hmi/img/MaquinaEstados_HMI.png, id=813, 1170.3725pt x 924.45375pt>
 File: dev/hmi/img/MaquinaEstados_HMI.png Graphic file (type png)
 <use dev/hmi/img/MaquinaEstados_HMI.png>
 Package pdftex.def Info: dev/hmi/img/MaquinaEstados_HMI.png  used on input line
  210.
 (pdftex.def)             Requested size: 1170.36964pt x 924.45149pt.
  [51] [52 <./dev/hmi/img/MaquinaEstados_HMI.png>]
-<dev/hmi/img/Estructura-de-mensajes-SPI.png, id=806, 323.2075pt x 202.7575pt>
+<dev/hmi/img/Estructura-de-mensajes-SPI.png, id=825, 323.2075pt x 202.7575pt>
 File: dev/hmi/img/Estructura-de-mensajes-SPI.png Graphic file (type png)
 <use dev/hmi/img/Estructura-de-mensajes-SPI.png>
 Package pdftex.def Info: dev/hmi/img/Estructura-de-mensajes-SPI.png  used on in
 put line 223.
 (pdftex.def)             Requested size: 310.4979pt x 194.79349pt.
-<dev/hmi/img/IOExpander_SCH.png, id=808, 589.60275pt x 396.2805pt>
+<dev/hmi/img/IOExpander_SCH.png, id=827, 589.60275pt x 396.2805pt>
 File: dev/hmi/img/IOExpander_SCH.png Graphic file (type png)
 <use dev/hmi/img/IOExpander_SCH.png>
 Package pdftex.def Info: dev/hmi/img/IOExpander_SCH.png  used on input line 237
@@ -1561,68 +1665,68 @@ Package pdftex.def Info: dev/hmi/img/IOExpander_SCH.png  used on input line 237
 (pdftex.def)             Requested size: 310.4979pt x 208.69133pt.
 
 [53 <./dev/hmi/img/Estructura-de-mensajes-SPI.png>]
-<dev/hmi/img/Relay_SCH.png, id=819, 437.2335pt x 252.34274pt>
+<dev/hmi/img/Relay_SCH.png, id=838, 437.2335pt x 252.34274pt>
 File: dev/hmi/img/Relay_SCH.png Graphic file (type png)
 <use dev/hmi/img/Relay_SCH.png>
 Package pdftex.def Info: dev/hmi/img/Relay_SCH.png  used on input line 252.
 (pdftex.def)             Requested size: 310.4979pt x 179.2031pt.
-<dev/hmi/img/Relay_PCB2D.png, id=822, 239.6955pt x 328.22626pt>
+<dev/hmi/img/Relay_PCB2D.png, id=841, 239.6955pt x 328.22626pt>
 File: dev/hmi/img/Relay_PCB2D.png Graphic file (type png)
 <use dev/hmi/img/Relay_PCB2D.png>
 Package pdftex.def Info: dev/hmi/img/Relay_PCB2D.png  used on input line 261.
 (pdftex.def)             Requested size: 310.4979pt x 425.19157pt.
-<dev/hmi/img/Relay_PCB3D.png, id=823, 339.669pt x 514.3215pt>
+<dev/hmi/img/Relay_PCB3D.png, id=842, 339.669pt x 514.3215pt>
 File: dev/hmi/img/Relay_PCB3D.png Graphic file (type png)
 <use dev/hmi/img/Relay_PCB3D.png>
 Package pdftex.def Info: dev/hmi/img/Relay_PCB3D.png  used on input line 268.
 (pdftex.def)             Requested size: 310.4979pt x 470.16008pt.
-<dev/hmi/img/Relay_PCB3D_2.png, id=825, 981.06525pt x 290.2845pt>
+<dev/hmi/img/Relay_PCB3D_2.png, id=844, 981.06525pt x 290.2845pt>
 File: dev/hmi/img/Relay_PCB3D_2.png Graphic file (type png)
 <use dev/hmi/img/Relay_PCB3D_2.png>
 Package pdftex.def Info: dev/hmi/img/Relay_PCB3D_2.png  used on input line 277.
 
 (pdftex.def)             Requested size: 310.4979pt x 91.86974pt.
  [54 <./dev/hmi/img/IOExpander_SCH.png>]
-<dev/hmi/img/Buzzer_SCH.png, id=838, 273.4215pt x 344.487pt>
+<dev/hmi/img/Buzzer_SCH.png, id=857, 273.4215pt x 344.487pt>
 File: dev/hmi/img/Buzzer_SCH.png Graphic file (type png)
 <use dev/hmi/img/Buzzer_SCH.png>
 Package pdftex.def Info: dev/hmi/img/Buzzer_SCH.png  used on input line 288.
 (pdftex.def)             Requested size: 310.4979pt x 391.2159pt.
-<dev/hmi/img/ISO_Input_SCH.png, id=842, 426.99525pt x 195.73125pt>
+<dev/hmi/img/ISO_Input_SCH.png, id=861, 426.99525pt x 195.73125pt>
 File: dev/hmi/img/ISO_Input_SCH.png Graphic file (type png)
 <use dev/hmi/img/ISO_Input_SCH.png>
 Package pdftex.def Info: dev/hmi/img/ISO_Input_SCH.png  used on input line 299.
 
 (pdftex.def)             Requested size: 310.4979pt x 142.33606pt.
-<dev/hmi/img/ISO_0-10V_SCH.png, id=843, 664.884pt x 335.45325pt>
+<dev/hmi/img/ISO_0-10V_SCH.png, id=862, 664.884pt x 335.45325pt>
 File: dev/hmi/img/ISO_0-10V_SCH.png Graphic file (type png)
 <use dev/hmi/img/ISO_0-10V_SCH.png>
 Package pdftex.def Info: dev/hmi/img/ISO_0-10V_SCH.png  used on input line 306.
 
 (pdftex.def)             Requested size: 310.4979pt x 156.65466pt.
-<dev/hmi/img/ISO_Thermoswitch_SCH.png, id=844, 530.58224pt x 286.06876pt>
+<dev/hmi/img/ISO_Thermoswitch_SCH.png, id=863, 530.58224pt x 286.06876pt>
 File: dev/hmi/img/ISO_Thermoswitch_SCH.png Graphic file (type png)
 <use dev/hmi/img/ISO_Thermoswitch_SCH.png>
 Package pdftex.def Info: dev/hmi/img/ISO_Thermoswitch_SCH.png  used on input li
 ne 313.
 (pdftex.def)             Requested size: 310.4979pt x 167.41284pt.
-<dev/hmi/img/ISO_IO_PCB.png, id=847, 423.38174pt x 436.63126pt>
+<dev/hmi/img/ISO_IO_PCB.png, id=866, 423.38174pt x 436.63126pt>
 File: dev/hmi/img/ISO_IO_PCB.png Graphic file (type png)
 <use dev/hmi/img/ISO_IO_PCB.png>
 Package pdftex.def Info: dev/hmi/img/ISO_IO_PCB.png  used on input line 322.
 (pdftex.def)             Requested size: 310.4979pt x 320.21722pt.
-<dev/hmi/img/ISO_IO_PCB3D.png, id=848, 494.44725pt x 483.60675pt>
+<dev/hmi/img/ISO_IO_PCB3D.png, id=867, 494.44725pt x 483.60675pt>
 File: dev/hmi/img/ISO_IO_PCB3D.png Graphic file (type png)
 <use dev/hmi/img/ISO_IO_PCB3D.png>
 Package pdftex.def Info: dev/hmi/img/ISO_IO_PCB3D.png  used on input line 329.
 (pdftex.def)             Requested size: 310.4979pt x 303.69241pt.
-<dev/hmi/img/ISO_0-10V_SIM.png, id=851, 423.38174pt x 187.902pt>
+<dev/hmi/img/ISO_0-10V_SIM.png, id=870, 423.38174pt x 187.902pt>
 File: dev/hmi/img/ISO_0-10V_SIM.png Graphic file (type png)
 <use dev/hmi/img/ISO_0-10V_SIM.png>
 Package pdftex.def Info: dev/hmi/img/ISO_0-10V_SIM.png  used on input line 340.
 
 (pdftex.def)             Requested size: 310.4979pt x 137.80382pt.
-<dev/hmi/img/ISO_0-10V_signal_output.png, id=852, 569.12625pt x 517.935pt>
+<dev/hmi/img/ISO_0-10V_signal_output.png, id=871, 569.12625pt x 517.935pt>
 File: dev/hmi/img/ISO_0-10V_signal_output.png Graphic file (type png)
 <use dev/hmi/img/ISO_0-10V_signal_output.png>
 Package pdftex.def Info: dev/hmi/img/ISO_0-10V_signal_output.png  used on input
@@ -1634,19 +1738,19 @@ Package pdftex.def Info: dev/hmi/img/ISO_0-10V_signal_output.png  used on input
 0-10V_SCH.png> <./dev/hmi/img/ISO_Thermoswitch_SCH.png>] [60 <./dev/hmi/img/ISO
 _IO_PCB.png>] [61 <./dev/hmi/img/ISO_IO_PCB3D.png> <./dev/hmi/img/ISO_0-10V_SIM
 .png>] [62 <./dev/hmi/img/ISO_0-10V_signal_output.png>]
-<dev/hmi/img/MatrizPulsadoresSCH.png, id=909, 808.82175pt x 357.13425pt>
+<dev/hmi/img/MatrizPulsadoresSCH.png, id=928, 808.82175pt x 357.13425pt>
 File: dev/hmi/img/MatrizPulsadoresSCH.png Graphic file (type png)
 <use dev/hmi/img/MatrizPulsadoresSCH.png>
 Package pdftex.def Info: dev/hmi/img/MatrizPulsadoresSCH.png  used on input lin
 e 360.
 (pdftex.def)             Requested size: 310.4979pt x 137.09657pt.
-<dev/hmi/img/MatrizPulsadoresPCB2D.png, id=912, 669.09975pt x 236.68425pt>
+<dev/hmi/img/MatrizPulsadoresPCB2D.png, id=931, 669.09975pt x 236.68425pt>
 File: dev/hmi/img/MatrizPulsadoresPCB2D.png Graphic file (type png)
 <use dev/hmi/img/MatrizPulsadoresPCB2D.png>
 Package pdftex.def Info: dev/hmi/img/MatrizPulsadoresPCB2D.png  used on input l
 ine 369.
 (pdftex.def)             Requested size: 310.4979pt x 109.83311pt.
-<dev/hmi/img/MatrizPulsadoresPCB3D.png, id=913, 841.34325pt x 296.90926pt>
+<dev/hmi/img/MatrizPulsadoresPCB3D.png, id=932, 841.34325pt x 296.90926pt>
 File: dev/hmi/img/MatrizPulsadoresPCB3D.png Graphic file (type png)
 <use dev/hmi/img/MatrizPulsadoresPCB3D.png>
 Package pdftex.def Info: dev/hmi/img/MatrizPulsadoresPCB3D.png  used on input l
@@ -1660,7 +1764,7 @@ i[]on. La ta-rea \OT1/ntxtlf/m/it/10 GPIO[]interrupt[]attendance[]task
 
 ) (dev/mod/mod.tex [63 <./dev/hmi/img/MatrizPulsadoresSCH.png> <./dev/hmi/img/M
 atrizPulsadoresPCB2D.png>]
-<dev/mod/img/RegresTicksMod.png, id=925, 779.16093pt x 417.05812pt>
+<dev/mod/img/RegresTicksMod.png, id=944, 779.16093pt x 417.05812pt>
 File: dev/mod/img/RegresTicksMod.png Graphic file (type png)
 <use dev/mod/img/RegresTicksMod.png>
 Package pdftex.def Info: dev/mod/img/RegresTicksMod.png  used on input line 23.
@@ -1668,172 +1772,172 @@ Package pdftex.def Info: dev/mod/img/RegresTicksMod.png  used on input line 23.
 (pdftex.def)             Requested size: 241.49895pt x 129.26122pt.
  [64 <./dev/hmi/img/MatrizPulsadoresPCB3D.png>])
 (dev/mont/mont.tex
-<dev/mont/img/EquipoEntero.png, id=934, 591.71063pt x 398.23781pt>
+<dev/mont/img/EquipoEntero.png, id=953, 591.71063pt x 398.23781pt>
 File: dev/mont/img/EquipoEntero.png Graphic file (type png)
 <use dev/mont/img/EquipoEntero.png>
 Package pdftex.def Info: dev/mont/img/EquipoEntero.png  used on input line 12.
 (pdftex.def)             Requested size: 310.4979pt x 208.98074pt.
  [65 <./dev/mod/img/RegresTicksMod.png> <./dev/mont/img/EquipoEntero.png>]
-<dev/mont/img/BorneraConex.png, id=944, 738.50906pt x 386.19281pt>
+<dev/mont/img/BorneraConex.png, id=963, 738.50906pt x 386.19281pt>
 File: dev/mont/img/BorneraConex.png Graphic file (type png)
 <use dev/mont/img/BorneraConex.png>
 Package pdftex.def Info: dev/mont/img/BorneraConex.png  used on input line 21.
 (pdftex.def)             Requested size: 310.4979pt x 162.37076pt.
-<dev/mont/img/CuerpoPersp.png, id=946, 440.39531pt x 371.88937pt>
+<dev/mont/img/CuerpoPersp.png, id=965, 440.39531pt x 371.88937pt>
 File: dev/mont/img/CuerpoPersp.png Graphic file (type png)
 <use dev/mont/img/CuerpoPersp.png>
 Package pdftex.def Info: dev/mont/img/CuerpoPersp.png  used on input line 30.
 (pdftex.def)             Requested size: 310.4979pt x 262.20473pt.
  [66 <./dev/mont/img/BorneraConex.png>]
-<dev/mont/img/CorteLong.png, id=956, 648.92438pt x 405.01312pt>
+<dev/mont/img/CorteLong.png, id=975, 648.92438pt x 405.01312pt>
 File: dev/mont/img/CorteLong.png Graphic file (type png)
 <use dev/mont/img/CorteLong.png>
 Package pdftex.def Info: dev/mont/img/CorteLong.png  used on input line 40.
 (pdftex.def)             Requested size: 310.4979pt x 193.79225pt.
  [67 <./dev/mont/img/CuerpoPersp.png>]
-<dev/mont/img/MontMosfets.png, id=964, 835.62187pt x 389.95688pt>
+<dev/mont/img/MontMosfets.png, id=983, 835.62187pt x 389.95688pt>
 File: dev/mont/img/MontMosfets.png Graphic file (type png)
 <use dev/mont/img/MontMosfets.png>
 Package pdftex.def Info: dev/mont/img/MontMosfets.png  used on input line 49.
 (pdftex.def)             Requested size: 310.4979pt x 144.9006pt.
 ) [68 <./dev/mont/img/CorteLong.png> <./dev/mont/img/MontMosfets.png>] (ens/ens
 .tex
-<ens/img/func/DiagConexion.png, id=972, 272.217pt x 334.851pt>
+<ens/img/func/DiagConexion.png, id=991, 272.217pt x 334.851pt>
 File: ens/img/func/DiagConexion.png Graphic file (type png)
 <use ens/img/func/DiagConexion.png>
 Package pdftex.def Info: ens/img/func/DiagConexion.png  used on input line 17.
 (pdftex.def)             Requested size: 137.9979pt x 169.75497pt.
-<ens/img/func/SetupMedicion.jpg, id=973, 1606.0pt x 1204.5pt>
+<ens/img/func/SetupMedicion.jpg, id=992, 1606.0pt x 1204.5pt>
 File: ens/img/func/SetupMedicion.jpg Graphic file (type jpg)
 <use ens/img/func/SetupMedicion.jpg>
 Package pdftex.def Info: ens/img/func/SetupMedicion.jpg  used on input line 25.
 
 (pdftex.def)             Requested size: 310.4979pt x 232.86403pt.
  [69 <./ens/img/func/DiagConexion.png>]
-<ens/img/func/FrenoMotor.jpg, id=980, 1606.0pt x 1204.5pt>
+<ens/img/func/FrenoMotor.jpg, id=999, 1606.0pt x 1204.5pt>
 File: ens/img/func/FrenoMotor.jpg Graphic file (type jpg)
 <use ens/img/func/FrenoMotor.jpg>
 Package pdftex.def Info: ens/img/func/FrenoMotor.jpg  used on input line 38.
 (pdftex.def)             Requested size: 310.4979pt x 232.86403pt.
  [70 <./ens/img/func/SetupMedicion.jpg>]
-<ens/img/func/EstadoIdle.jpg, id=986, 1606.0pt x 1204.5pt>
+<ens/img/func/EstadoIdle.jpg, id=1005, 1606.0pt x 1204.5pt>
 File: ens/img/func/EstadoIdle.jpg Graphic file (type jpg)
 <use ens/img/func/EstadoIdle.jpg>
 Package pdftex.def Info: ens/img/func/EstadoIdle.jpg  used on input line 47.
 (pdftex.def)             Requested size: 310.4979pt x 232.86403pt.
  [71 <./ens/img/func/FrenoMotor.jpg> <./ens/img/func/EstadoIdle.jpg>]
-<ens/img/mod/Dif_MedFrec.jpg, id=993, 301.125pt x 180.675pt>
+<ens/img/mod/Dif_MedFrec.jpg, id=1012, 301.125pt x 180.675pt>
 File: ens/img/mod/Dif_MedFrec.jpg Graphic file (type jpg)
 <use ens/img/mod/Dif_MedFrec.jpg>
 Package pdftex.def Info: ens/img/mod/Dif_MedFrec.jpg  used on input line 63.
 (pdftex.def)             Requested size: 310.4979pt x 186.31511pt.
-<ens/img/mod/Dif_MedDesf.jpg, id=994, 301.125pt x 180.675pt>
+<ens/img/mod/Dif_MedDesf.jpg, id=1013, 301.125pt x 180.675pt>
 File: ens/img/mod/Dif_MedDesf.jpg Graphic file (type jpg)
 <use ens/img/mod/Dif_MedDesf.jpg>
 Package pdftex.def Info: ens/img/mod/Dif_MedDesf.jpg  used on input line 70.
 (pdftex.def)             Requested size: 310.4979pt x 186.31511pt.
  [72 <./ens/img/mod/Dif_MedFrec.jpg>]
-<ens/img/mod/Dif_Med10Hz.jpg, id=1001, 301.125pt x 180.675pt>
+<ens/img/mod/Dif_Med10Hz.jpg, id=1020, 301.125pt x 180.675pt>
 File: ens/img/mod/Dif_Med10Hz.jpg Graphic file (type jpg)
 <use ens/img/mod/Dif_Med10Hz.jpg>
 Package pdftex.def Info: ens/img/mod/Dif_Med10Hz.jpg  used on input line 79.
 (pdftex.def)             Requested size: 310.4979pt x 186.31511pt.
-<ens/img/mod/Dif_Med150Hz.jpg, id=1002, 301.125pt x 180.675pt>
+<ens/img/mod/Dif_Med150Hz.jpg, id=1021, 301.125pt x 180.675pt>
 File: ens/img/mod/Dif_Med150Hz.jpg Graphic file (type jpg)
 <use ens/img/mod/Dif_Med150Hz.jpg>
 Package pdftex.def Info: ens/img/mod/Dif_Med150Hz.jpg  used on input line 86.
 (pdftex.def)             Requested size: 310.4979pt x 186.31511pt.
  [73 <./ens/img/mod/Dif_MedDesf.jpg> <./ens/img/mod/Dif_Med10Hz.jpg>]
-<ens/img/mod/Dif_Zoom1.jpg, id=1009, 301.125pt x 180.675pt>
+<ens/img/mod/Dif_Zoom1.jpg, id=1028, 301.125pt x 180.675pt>
 File: ens/img/mod/Dif_Zoom1.jpg Graphic file (type jpg)
 <use ens/img/mod/Dif_Zoom1.jpg>
 Package pdftex.def Info: ens/img/mod/Dif_Zoom1.jpg  used on input line 95.
 (pdftex.def)             Requested size: 310.4979pt x 186.31511pt.
-<ens/img/mod/Dif_Zoom2.jpg, id=1010, 301.125pt x 180.675pt>
+<ens/img/mod/Dif_Zoom2.jpg, id=1029, 301.125pt x 180.675pt>
 File: ens/img/mod/Dif_Zoom2.jpg Graphic file (type jpg)
 <use ens/img/mod/Dif_Zoom2.jpg>
 Package pdftex.def Info: ens/img/mod/Dif_Zoom2.jpg  used on input line 102.
 (pdftex.def)             Requested size: 310.4979pt x 186.31511pt.
  [74 <./ens/img/mod/Dif_Med150Hz.jpg> <./ens/img/mod/Dif_Zoom1.jpg>]
-<ens/img/mod/SimPulsoGral.jpg, id=1017, 301.125pt x 180.675pt>
+<ens/img/mod/SimPulsoGral.jpg, id=1036, 301.125pt x 180.675pt>
 File: ens/img/mod/SimPulsoGral.jpg Graphic file (type jpg)
 <use ens/img/mod/SimPulsoGral.jpg>
 Package pdftex.def Info: ens/img/mod/SimPulsoGral.jpg  used on input line 113.
 (pdftex.def)             Requested size: 310.4979pt x 186.31511pt.
-<ens/img/mod/SimPulsoMed1.jpg, id=1018, 301.125pt x 180.675pt>
+<ens/img/mod/SimPulsoMed1.jpg, id=1037, 301.125pt x 180.675pt>
 File: ens/img/mod/SimPulsoMed1.jpg Graphic file (type jpg)
 <use ens/img/mod/SimPulsoMed1.jpg>
 Package pdftex.def Info: ens/img/mod/SimPulsoMed1.jpg  used on input line 122.
 (pdftex.def)             Requested size: 310.4979pt x 186.31511pt.
  [75 <./ens/img/mod/Dif_Zoom2.jpg> <./ens/img/mod/SimPulsoGral.jpg>]
-<ens/img/mod/SimPulsoMed2.jpg, id=1025, 301.125pt x 180.675pt>
+<ens/img/mod/SimPulsoMed2.jpg, id=1044, 301.125pt x 180.675pt>
 File: ens/img/mod/SimPulsoMed2.jpg Graphic file (type jpg)
 <use ens/img/mod/SimPulsoMed2.jpg>
 Package pdftex.def Info: ens/img/mod/SimPulsoMed2.jpg  used on input line 129.
 (pdftex.def)             Requested size: 310.4979pt x 186.31511pt.
  [76 <./ens/img/mod/SimPulsoMed1.jpg> <./ens/img/mod/SimPulsoMed2.jpg>]
-<ens/img/mod/ModFrec5Hz.jpg, id=1033, 1606.0pt x 1204.5pt>
+<ens/img/mod/ModFrec5Hz.jpg, id=1052, 1606.0pt x 1204.5pt>
 File: ens/img/mod/ModFrec5Hz.jpg Graphic file (type jpg)
 <use ens/img/mod/ModFrec5Hz.jpg>
 Package pdftex.def Info: ens/img/mod/ModFrec5Hz.jpg  used on input line 153.
 (pdftex.def)             Requested size: 310.4979pt x 232.86403pt.
-<ens/img/mod/ModFrec10Hz.jpg, id=1034, 1606.0pt x 1204.5pt>
+<ens/img/mod/ModFrec10Hz.jpg, id=1053, 1606.0pt x 1204.5pt>
 File: ens/img/mod/ModFrec10Hz.jpg Graphic file (type jpg)
 <use ens/img/mod/ModFrec10Hz.jpg>
 Package pdftex.def Info: ens/img/mod/ModFrec10Hz.jpg  used on input line 160.
 (pdftex.def)             Requested size: 310.4979pt x 232.86403pt.
  [77 <./ens/img/mod/ModFrec5Hz.jpg>]
-<ens/img/mod/ModFrec20Hz.jpg, id=1043, 1606.0pt x 1204.5pt>
+<ens/img/mod/ModFrec20Hz.jpg, id=1062, 1606.0pt x 1204.5pt>
 File: ens/img/mod/ModFrec20Hz.jpg Graphic file (type jpg)
 <use ens/img/mod/ModFrec20Hz.jpg>
 Package pdftex.def Info: ens/img/mod/ModFrec20Hz.jpg  used on input line 167.
 (pdftex.def)             Requested size: 310.4979pt x 232.86403pt.
-<ens/img/mod/ModFrec30Hz.jpg, id=1044, 1606.0pt x 1204.5pt>
+<ens/img/mod/ModFrec30Hz.jpg, id=1063, 1606.0pt x 1204.5pt>
 File: ens/img/mod/ModFrec30Hz.jpg Graphic file (type jpg)
 <use ens/img/mod/ModFrec30Hz.jpg>
 Package pdftex.def Info: ens/img/mod/ModFrec30Hz.jpg  used on input line 174.
 (pdftex.def)             Requested size: 310.4979pt x 232.86403pt.
  [78 <./ens/img/mod/ModFrec10Hz.jpg> <./ens/img/mod/ModFrec20Hz.jpg>]
-<ens/img/mod/ModFrec50Hz.jpg, id=1052, 1606.0pt x 1204.5pt>
+<ens/img/mod/ModFrec50Hz.jpg, id=1071, 1606.0pt x 1204.5pt>
 File: ens/img/mod/ModFrec50Hz.jpg Graphic file (type jpg)
 <use ens/img/mod/ModFrec50Hz.jpg>
 Package pdftex.def Info: ens/img/mod/ModFrec50Hz.jpg  used on input line 181.
 (pdftex.def)             Requested size: 310.4979pt x 232.86403pt.
  [79 <./ens/img/mod/ModFrec30Hz.jpg> <./ens/img/mod/ModFrec50Hz.jpg>]
-<ens/img/rend/Cnv_50W_Med1.jpg, id=1059, 1204.5pt x 903.375pt>
+<ens/img/rend/Cnv_50W_Med1.jpg, id=1078, 1204.5pt x 903.375pt>
 File: ens/img/rend/Cnv_50W_Med1.jpg Graphic file (type jpg)
 <use ens/img/rend/Cnv_50W_Med1.jpg>
 Package pdftex.def Info: ens/img/rend/Cnv_50W_Med1.jpg  used on input line 204.
 
 (pdftex.def)             Requested size: 310.4979pt x 232.87323pt.
-<ens/img/rend/Cnv_50W_Med2.jpg, id=1060, 301.125pt x 180.675pt>
+<ens/img/rend/Cnv_50W_Med2.jpg, id=1079, 301.125pt x 180.675pt>
 File: ens/img/rend/Cnv_50W_Med2.jpg Graphic file (type jpg)
 <use ens/img/rend/Cnv_50W_Med2.jpg>
 Package pdftex.def Info: ens/img/rend/Cnv_50W_Med2.jpg  used on input line 213.
 
 (pdftex.def)             Requested size: 310.4979pt x 186.31511pt.
  [80 <./ens/img/rend/Cnv_50W_Med1.jpg>]
-<ens/img/rend/Cnv_300W_Med1.jpg, id=1066, 1017.04968pt x 576.65437pt>
+<ens/img/rend/Cnv_300W_Med1.jpg, id=1085, 1017.04968pt x 576.65437pt>
 File: ens/img/rend/Cnv_300W_Med1.jpg Graphic file (type jpg)
 <use ens/img/rend/Cnv_300W_Med1.jpg>
 Package pdftex.def Info: ens/img/rend/Cnv_300W_Med1.jpg  used on input line 230
 .
 (pdftex.def)             Requested size: 310.4979pt x 176.0509pt.
  [81 <./ens/img/rend/Cnv_50W_Med2.jpg>]
-<ens/img/rend/Cnv_300W_Med2.jpg, id=1072, 301.125pt x 180.675pt>
+<ens/img/rend/Cnv_300W_Med2.jpg, id=1091, 301.125pt x 180.675pt>
 File: ens/img/rend/Cnv_300W_Med2.jpg Graphic file (type jpg)
 <use ens/img/rend/Cnv_300W_Med2.jpg>
 Package pdftex.def Info: ens/img/rend/Cnv_300W_Med2.jpg  used on input line 237
 .
 (pdftex.def)             Requested size: 310.4979pt x 186.31511pt.
  [82 <./ens/img/rend/Cnv_300W_Med1.jpg> <./ens/img/rend/Cnv_300W_Med2.jpg>]
-<ens/img/rend/Inv_120W.jpg, id=1079, 1084.05pt x 903.375pt>
+<ens/img/rend/Inv_120W.jpg, id=1098, 1084.05pt x 903.375pt>
 File: ens/img/rend/Inv_120W.jpg Graphic file (type jpg)
 <use ens/img/rend/Inv_120W.jpg>
 Package pdftex.def Info: ens/img/rend/Inv_120W.jpg  used on input line 258.
 (pdftex.def)             Requested size: 310.4979pt x 258.74649pt.
  [83 <./ens/img/rend/Inv_120W.jpg>]
-<ens/img/dura/Durabilidad.png, id=1085, 904.88063pt x 520.19344pt>
+<ens/img/dura/Durabilidad.png, id=1104, 904.88063pt x 520.19344pt>
 File: ens/img/dura/Durabilidad.png Graphic file (type png)
 <use ens/img/dura/Durabilidad.png>
 Package pdftex.def Info: ens/img/dura/Durabilidad.png  used on input line 281.
@@ -1843,8 +1947,17 @@ File: mt/cnv/img/EsqDimEDT42.png Graphic file (type png)
 <use mt/cnv/img/EsqDimEDT42.png>
 Package pdftex.def Info: mt/cnv/img/EsqDimEDT42.png  used on input line 61.
 (pdftex.def)             Requested size: 310.4979pt x 95.16551pt.
- [85]) (02-conclusion.tex) [86] (03-referencias.tex) [87]
-(c:\Users\User\Desktop\ProyectoFinal-Grupo5-VariadorDeFrecuencia\Tesina\out\mai
+ [85]) (02-conclusion.tex) [86]
+Overfull \hbox (88.70494pt too wide) in paragraph at lines 108--108
+\OT1/minntx/m/n/10 communityserver -[] discussions -[] components -[] ^^Lles / 
+171 / SpaceVectorPulseWidthModulationTechnique .
+ []
+
+Missing character: There is no â in font ntx-Regular-tlf-ot1!
+Missing character: There is no € in font ntx-Regular-tlf-ot1!
+Missing character: There is no “ in font ntx-Regular-tlf-ot1!
+[87] [88]
+(C:\Users\User\Desktop\ProyectoFinal-Grupo5-VariadorDeFrecuencia\Tesina\out\mai
 n.aux
 LaTeX Info: Redefining \sptext on input line 12.
 LaTeX Info: Redefining \. on input line 12.
@@ -1855,21 +1968,21 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2020/03/25>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 5A6087FF3C07F2A9AD43F1D71000E073;9919.
+(rerunfilecheck)             Checksum: 72E9790142D3BAB5B69C2D391FAFB961;9820.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 26952 strings out of 467871
- 474579 string characters out of 5418860
- 1379468 words of memory out of 5000000
- 55074 multiletter control sequences out of 15000+600000
- 673218 words of font info for 128 fonts, out of 8000000 for 9000
+ 27056 strings out of 467871
+ 479509 string characters out of 5418860
+ 1382040 words of memory out of 5000000
+ 55159 multiletter control sequences out of 15000+600000
+ 673594 words of font info for 129 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  74i,12n,79p,1477b,2903s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-pdfTeX warning (dest): name{Hfootnote.4} has been referenced but does not exist
+pdfTeX warning (dest): name{Hfootnote.8} has been referenced but does not exist
 , replaced by a fixed one
 
 <C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/NewTXMI.p
@@ -1884,10 +1997,10 @@ c/newtx/ztmb.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/publi
 c/newtx/ztmbi.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/publ
 ic/newtx/ztmr.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/publ
 ic/newtx/ztmri.pfb>
-Output written on c:\Users\User\Desktop\ProyectoFinal-Grupo5-VariadorDeFrecuenc
-ia\Tesina\out\main.pdf (88 pages, 10822625 bytes).
+Output written on C:\Users\User\Desktop\ProyectoFinal-Grupo5-VariadorDeFrecuenc
+ia\Tesina\out\main.pdf (89 pages, 10844617 bytes).
 PDF statistics:
- 1237 PDF objects out of 1440 (max. 8388607)
- 343 named destinations out of 1000 (max. 500000)
- 946 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1305 PDF objects out of 1440 (max. 8388607)
+ 365 named destinations out of 1000 (max. 500000)
+ 938 words of extra memory for PDF output out of 10000 (max. 10000000)
 

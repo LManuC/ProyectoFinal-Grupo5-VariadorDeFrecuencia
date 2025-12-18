@@ -21,6 +21,8 @@
 
   Dadas las condiciones del proyecto, se decidió rápidamente utilizar un conversor aislado dentro de los que vamos a encontrar varias topologías distintas, entre ellas tenemos la flyback, forward, medio puente, puente completo y push-pull. En este caso, por motivos que explicaremos en cada una de las diferentes topologías, se optó por la configuración push-pull, es por eso que centraremos el análisis particularmente en este modelo, además de en revisar algunas cuestiones del puente completo, otro circuito que cumplía con las condiciones pero que quedará finalmente descartado.
 
+  A continuación detallaremos algunas de ellas para justificar la elección\footcite{ConceptosSobreFuentesConmutadas_Pantaleo}:
+
 \subsubsection{Flyback}
 
   El convertidor flyback funciona almacenando energía en forma de flujo en el transformador mientras se hace circular corriente por el primario, cuando esta corriente se desvanece, la energía se transfiere al secundario y se disipa en la carga. En esta topología el transformador actúa mas como un inductor que como un transformador ideal. Sus ventajas son la simplicidad del diseño y el bajo costo, lo que la hace ideal para aplicaciones de baja potencia. No obstante, sus desventajas incluyen mayores pérdidas por conmutación, elevados picos de tensión en el transistor del primario y una eficiencia limitada cuando se trabaja con potencias medias o altas, motivo por el cual no profundizaremos en este circuito.
@@ -39,7 +41,7 @@
 
 \subsubsection{Push-pull}
 
-  En este caso se utiliza un transformador con punto medio y dos transistores que lo controlan en forma alternada. Es una topología reductora-elevadora con un costo no muy elevado, con circuitos de control sencillos debido a que ambos transistores tienen la referencia a masa en común; la desventaja principal es que los interruptores deben soportar al menos el doble de la tensión de entrada. Típicamente usado para sistemas de baja tensión de entrada, altas corrientes y para potencias bajas y medias.
+  En este caso se utiliza un transformador con punto medio y dos transistores que lo controlan en forma alternada. Es una topología reductora-elevadora con un costo no muy elevado, con circuitos de control sencillos debido a que ambos transistores tienen la referencia a masa en común; la desventaja principal es que los interruptores deben soportar al menos el doble de la tensión de entrada. Típicamente usado para sistemas de baja tensión de entrada, altas corrientes y para potencias bajas y medias\footcite{EstudioYDesarrolloDeUnConvertidorPushPull_Valenzuela}.
 
 \subsubsection{Análisis del convertidor de puente completo y push-pull}
 

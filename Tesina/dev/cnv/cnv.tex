@@ -167,7 +167,7 @@ El circuito de conmutación del conversor debe manejar corrientes elevadas, por 
 \label{fig:imgDevEsqPushPull}
 \end{figure}
 
-La topología utilizada corresponde a una fuente push-pull, la cual emplea dos transistores que conmutan de forma complementaria. A la salida se dispone un rectificador de onda completa con filtro LC que estabiliza la tensión de salida. Se incorpora además un diodo en serie para evitar el frenado regenerativo y proteger el capacitor principal frente a sobrecargas.
+La topología utilizada corresponde a una fuente push-pull, la cual emplea dos transistores que conmutan de forma complementaria. A la salida se dispone un rectificador de onda completa con filtro LC que estabiliza la tensión de salida. Se incorpora además un diodo en serie para evitar el frenado regenerativo y proteger el capacitor principal frente a sobrecargas\footcite{DisenoDeRectificadoresRegenerativos_Velaquez}.
 
 Con el fin de reducir la corriente en cada dispositivo, se implementaron dos transistores en paralelo, lo que permitió distribuir mejor la disipación térmica y disminuir la resistencia de conducción efectiva. Este método reduce las pérdidas y mejora la eficiencia global del sistema.
 
@@ -344,7 +344,7 @@ En la figura~\ref{fig:imgDev_EsqTL494Comp} se detalla el agregado del potencióm
 
 \paragraph{Circuito de medición de tensión}
 
-El conversor es completamente aislado galvánicamente, lo que mejora la seguridad y facilita las pruebas del sistema. Para realizar las mediciones de tensión y corriente de forma aislada, se implementó un optoacoplador PC817 en conjunto con un compensador TL431 como lo representa la figura~\ref{fig:imgDev_EsqTL431-PC817}, los cuales atenúan las altas frecuencias no deseadas, garantizan una realimentación estable del bus DC y protección contra transitorios.
+El conversor es completamente aislado galvánicamente, lo que mejora la seguridad y facilita las pruebas del sistema. Para realizar las mediciones de tensión y corriente de forma aislada, se implementó un optoacoplador PC817 en conjunto con un compensador TL431 como lo representa la figura~\ref{fig:imgDev_EsqTL431-PC817}, los cuales atenúan las altas frecuencias no deseadas, garantizan una realimentación estable del bus DC y protección contra transitorios\footcite{TL431_ONSEMI}.
 
 \begin{figure}[H]
 \centering

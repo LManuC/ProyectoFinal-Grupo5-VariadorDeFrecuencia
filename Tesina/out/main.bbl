@@ -19,6 +19,108 @@
 
 \refsection{0}
   \datalist[entry]{apa/apasortcite//global/global/global}
+    \entry{IsolationInACMotorDrivers}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=a1ecfebc851be72ae6dc432a78e629f7}{%
+           family={{Anant S. Kamath}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{a1ecfebc851be72ae6dc432a78e629f7}
+      \strng{fullhash}{a1ecfebc851be72ae6dc432a78e629f7}
+      \strng{fullhashraw}{a1ecfebc851be72ae6dc432a78e629f7}
+      \strng{bibnamehash}{a1ecfebc851be72ae6dc432a78e629f7}
+      \strng{authorbibnamehash}{a1ecfebc851be72ae6dc432a78e629f7}
+      \strng{authornamehash}{a1ecfebc851be72ae6dc432a78e629f7}
+      \strng{authorfullhash}{a1ecfebc851be72ae6dc432a78e629f7}
+      \strng{authorfullhashraw}{a1ecfebc851be72ae6dc432a78e629f7}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{9}
+      \field{title}{Isolation in AC Motor Drives: Understanding the IEC 61800-5-1 Safety Standard}
+      \field{year}{2019}
+      \field{dateera}{ce}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://www.ti.com/lit/fs/slyy080a/slyy080a.pdf?ts=1766024898674
+      \endverb
+      \verb{url}
+      \verb https://www.ti.com/lit/fs/slyy080a/slyy080a.pdf?ts=1766024898674
+      \endverb
+    \endentry
+    \entry{SVMTechnique_Yousef}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=3cf8f5f02a0541ba1f21a030b368d358}{%
+           family={{Ayman Y. Yousef}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{3cf8f5f02a0541ba1f21a030b368d358}
+      \strng{fullhash}{3cf8f5f02a0541ba1f21a030b368d358}
+      \strng{fullhashraw}{3cf8f5f02a0541ba1f21a030b368d358}
+      \strng{bibnamehash}{3cf8f5f02a0541ba1f21a030b368d358}
+      \strng{authorbibnamehash}{3cf8f5f02a0541ba1f21a030b368d358}
+      \strng{authornamehash}{3cf8f5f02a0541ba1f21a030b368d358}
+      \strng{authorfullhash}{3cf8f5f02a0541ba1f21a030b368d358}
+      \strng{authorfullhashraw}{3cf8f5f02a0541ba1f21a030b368d358}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{1}
+      \field{langid}{english}
+      \field{month}{5}
+      \field{title}{Space Vector Pulse Width Modulation Technique}
+      \field{urlday}{20}
+      \field{urlmonth}{5}
+      \field{urlyear}{2025}
+      \field{year}{2015}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://e2e.ti.com/cfs-file/__key/communityserver-discussions-components-files/171/SpaceVectorPulseWidthModulationTechnique.pdf
+      \endverb
+      \verb{url}
+      \verb https://e2e.ti.com/cfs-file/__key/communityserver-discussions-components-files/171/SpaceVectorPulseWidthModulationTechnique.pdf
+      \endverb
+    \endentry
+    \entry{StructureMultilevelConverter_Zare}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=fd130b1a0486ab4a062412c5dd24989e}{%
+           family={{Firuz Zare, Gerard Ledwich and Keith Hoffman}},
+           familyi={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{fd130b1a0486ab4a062412c5dd24989e}
+      \strng{fullhash}{fd130b1a0486ab4a062412c5dd24989e}
+      \strng{fullhashraw}{fd130b1a0486ab4a062412c5dd24989e}
+      \strng{bibnamehash}{fd130b1a0486ab4a062412c5dd24989e}
+      \strng{authorbibnamehash}{fd130b1a0486ab4a062412c5dd24989e}
+      \strng{authornamehash}{fd130b1a0486ab4a062412c5dd24989e}
+      \strng{authorfullhash}{fd130b1a0486ab4a062412c5dd24989e}
+      \strng{authorfullhashraw}{fd130b1a0486ab4a062412c5dd24989e}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{labeldatesource}{nodate}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{School of Electrical & Electronic Systems Engineering}
+      \field{title}{PHYSICAL STRUCTURE OF A PLANAR BUSBAR FOR MULTILEVEL CONVERTER}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://www.researchgate.net/publication/228407256_PHYSICAL_STRUCTURE_OF_A_PLANAR_BUSBAR_FOR_MULTILEVEL_CONVERTER
+      \endverb
+      \verb{url}
+      \verb https://www.researchgate.net/publication/228407256_PHYSICAL_STRUCTURE_OF_A_PLANAR_BUSBAR_FOR_MULTILEVEL_CONVERTER
+      \endverb
+      \warn{\item online entry 'StructureMultilevelConverter_Zare' (04-bibliografia.bib): Invalid format 'Jan 2007' of date field 'date' - ignoring}
+    \endentry
     \entry{FuentesConmutadas_Floriani}{book}{}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=daee755d2c064d8fa5cd17360c71fec9}{%
@@ -48,6 +150,396 @@
       \field{labeltitlesource}{title}
       \field{title}{Fuentes conmutadas - Análisis y diseño}
       \field{year}{2010}
+    \endentry
+    \entry{AnIsolatedMosfetGateDriver_Walker}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=2cf4fae2514f1961c3d906b119dad19e}{%
+           family={{Geoff Walker and Gerard Ledwich}},
+           familyi={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{2cf4fae2514f1961c3d906b119dad19e}
+      \strng{fullhash}{2cf4fae2514f1961c3d906b119dad19e}
+      \strng{fullhashraw}{2cf4fae2514f1961c3d906b119dad19e}
+      \strng{bibnamehash}{2cf4fae2514f1961c3d906b119dad19e}
+      \strng{authorbibnamehash}{2cf4fae2514f1961c3d906b119dad19e}
+      \strng{authornamehash}{2cf4fae2514f1961c3d906b119dad19e}
+      \strng{authorfullhash}{2cf4fae2514f1961c3d906b119dad19e}
+      \strng{authorfullhashraw}{2cf4fae2514f1961c3d906b119dad19e}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labeldatesource}{nodate}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{AN ISOLATED MOSFET GATE DRIVER}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://www.researchgate.net/publication/228542350_An_isolated_MOSFET_gate_driver
+      \endverb
+      \verb{url}
+      \verb https://www.researchgate.net/publication/228542350_An_isolated_MOSFET_gate_driver
+      \endverb
+      \warn{\item online entry 'AnIsolatedMosfetGateDriver_Walker' (04-bibliografia.bib): Invalid format 'January 1996' of date field 'date' - ignoring}
+    \endentry
+    \entry{THDAndTorqueRipple_Sieklucki}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=caaa7a6a670d86daf91c1c75236714d5}{%
+           family={{Grzegorz Sieklucki, Sylwester Sobieraj, Józef Gromba and Raluca-Elena Necula}},
+           familyi={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{caaa7a6a670d86daf91c1c75236714d5}
+      \strng{fullhash}{caaa7a6a670d86daf91c1c75236714d5}
+      \strng{fullhashraw}{caaa7a6a670d86daf91c1c75236714d5}
+      \strng{bibnamehash}{caaa7a6a670d86daf91c1c75236714d5}
+      \strng{authorbibnamehash}{caaa7a6a670d86daf91c1c75236714d5}
+      \strng{authornamehash}{caaa7a6a670d86daf91c1c75236714d5}
+      \strng{authorfullhash}{caaa7a6a670d86daf91c1c75236714d5}
+      \strng{authorfullhashraw}{caaa7a6a670d86daf91c1c75236714d5}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labeldatesource}{nodate}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Analysis and Approximation of THD and Torque Ripple of Induction Motor for SVPWM Control of VSI}
+      \true{nocite}
+      \verb{doi}
+      \verb 10.20944/preprints202305.1934.v1
+      \endverb
+      \verb{urlraw}
+      \verb https://www.mdpi.com/1996-1073/16/12/4628
+      \endverb
+      \verb{url}
+      \verb https://www.mdpi.com/1996-1073/16/12/4628
+      \endverb
+      \warn{\item online entry 'THDAndTorqueRipple_Sieklucki' (04-bibliografia.bib): Invalid format 'May 2023' of date field 'date' - ignoring}
+    \endentry
+    \entry{SVMVSPWM_Zhou}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=3ea25249088cba664fa904dd0d443543}{%
+           family={{Keliang Zhou and Danwei Wang}},
+           familyi={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{3ea25249088cba664fa904dd0d443543}
+      \strng{fullhash}{3ea25249088cba664fa904dd0d443543}
+      \strng{fullhashraw}{3ea25249088cba664fa904dd0d443543}
+      \strng{bibnamehash}{3ea25249088cba664fa904dd0d443543}
+      \strng{authorbibnamehash}{3ea25249088cba664fa904dd0d443543}
+      \strng{authornamehash}{3ea25249088cba664fa904dd0d443543}
+      \strng{authorfullhash}{3ea25249088cba664fa904dd0d443543}
+      \strng{authorfullhashraw}{3ea25249088cba664fa904dd0d443543}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{IEEE TRANSACTIONS ON INDUSTRIAL ELECTRONICS}
+      \field{title}{Relationship Between Space-Vector Modulation and Three-Phase Carrier-Based PWM: A Comprehensive Analysis}
+      \field{year}{2002}
+      \verb{doi}
+      \verb 0278–0046/02
+      \endverb
+      \warn{\item online entry 'SVMVSPWM_Zhou' (04-bibliografia.bib): Invalid format 'FEBRUARY 2002' of date field 'date' - ignoring}
+    \endentry
+    \entry{DisenoDeRectificadoresRegenerativos_Velaquez}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=23022988e284969f3c7ea660d6d40388}{%
+           family={{Mª Pilar Germán Velázquez}},
+           familyi={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{23022988e284969f3c7ea660d6d40388}
+      \strng{fullhash}{23022988e284969f3c7ea660d6d40388}
+      \strng{fullhashraw}{23022988e284969f3c7ea660d6d40388}
+      \strng{bibnamehash}{23022988e284969f3c7ea660d6d40388}
+      \strng{authorbibnamehash}{23022988e284969f3c7ea660d6d40388}
+      \strng{authornamehash}{23022988e284969f3c7ea660d6d40388}
+      \strng{authorfullhash}{23022988e284969f3c7ea660d6d40388}
+      \strng{authorfullhashraw}{23022988e284969f3c7ea660d6d40388}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{19}
+      \field{langid}{spanish}
+      \field{month}{11}
+      \field{title}{Diseño de rectificador regenerativo a red para recuperación de energía en ascensores}
+      \field{urlday}{9}
+      \field{urlmonth}{12}
+      \field{urlyear}{2025}
+      \field{year}{2015}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://zaguan.unizar.es/record/48544/files/TAZ-TFG-2015-3730.pdf?version=1
+      \endverb
+      \verb{url}
+      \verb https://zaguan.unizar.es/record/48544/files/TAZ-TFG-2015-3730.pdf?version=1
+      \endverb
+    \endentry
+    \entry{ConceptosSobreFuentesConmutadas_Pantaleo}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=1b5ef181db0320b9622b60521a8c25ec}{%
+           family={{Martín Pantaleo}},
+           familyi={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{1b5ef181db0320b9622b60521a8c25ec}
+      \strng{fullhash}{1b5ef181db0320b9622b60521a8c25ec}
+      \strng{fullhashraw}{1b5ef181db0320b9622b60521a8c25ec}
+      \strng{bibnamehash}{1b5ef181db0320b9622b60521a8c25ec}
+      \strng{authorbibnamehash}{1b5ef181db0320b9622b60521a8c25ec}
+      \strng{authornamehash}{1b5ef181db0320b9622b60521a8c25ec}
+      \strng{authorfullhash}{1b5ef181db0320b9622b60521a8c25ec}
+      \strng{authorfullhashraw}{1b5ef181db0320b9622b60521a8c25ec}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{2}
+      \field{langid}{spanish}
+      \field{month}{3}
+      \field{title}{Conceptos sobre Fuentes Conmutadas}
+      \field{urlday}{9}
+      \field{urlmonth}{12}
+      \field{urlyear}{2025}
+      \field{year}{2007}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://catedra.ing.unlp.edu.ar/electrotecnia/conpot/Documentos/M2.MonografiaConvertidorCCCC.pdf
+      \endverb
+      \verb{url}
+      \verb https://catedra.ing.unlp.edu.ar/electrotecnia/conpot/Documentos/M2.MonografiaConvertidorCCCC.pdf
+      \endverb
+    \endentry
+    \entry{TL431_ONSEMI}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=67db4f113b588959cdd667d42a72fbe7}{%
+           family={{ONSEMI}},
+           familyi={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{67db4f113b588959cdd667d42a72fbe7}
+      \strng{fullhash}{67db4f113b588959cdd667d42a72fbe7}
+      \strng{fullhashraw}{67db4f113b588959cdd667d42a72fbe7}
+      \strng{bibnamehash}{67db4f113b588959cdd667d42a72fbe7}
+      \strng{authorbibnamehash}{67db4f113b588959cdd667d42a72fbe7}
+      \strng{authornamehash}{67db4f113b588959cdd667d42a72fbe7}
+      \strng{authorfullhash}{67db4f113b588959cdd667d42a72fbe7}
+      \strng{authorfullhashraw}{67db4f113b588959cdd667d42a72fbe7}
+      \field{sortinit}{O}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{labeldatesource}{nodate}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{The TL431 in the Control of Switching Power Supplies}
+      \verb{urlraw}
+      \verb https://www.onsemi.com/pub/collateral/tnd381-d.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.onsemi.com/pub/collateral/tnd381-d.pdf
+      \endverb
+    \endentry
+    \entry{H-BridgeMultilevelInverter_Nagle}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=f6964117afa08663ba7032d8cbd3e44e}{%
+           family={{Prarthana Nagle, C.S. Sharma, Manoj Hirani and S. Phulambrikar}},
+           familyi={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{f6964117afa08663ba7032d8cbd3e44e}
+      \strng{fullhash}{f6964117afa08663ba7032d8cbd3e44e}
+      \strng{fullhashraw}{f6964117afa08663ba7032d8cbd3e44e}
+      \strng{bibnamehash}{f6964117afa08663ba7032d8cbd3e44e}
+      \strng{authorbibnamehash}{f6964117afa08663ba7032d8cbd3e44e}
+      \strng{authornamehash}{f6964117afa08663ba7032d8cbd3e44e}
+      \strng{authorfullhash}{f6964117afa08663ba7032d8cbd3e44e}
+      \strng{authorfullhashraw}{f6964117afa08663ba7032d8cbd3e44e}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labeldatesource}{nodate}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{International Journal of Innovative Research in Electrical, Electronics, Instrumentation and Control Engineering}
+      \field{title}{Cascade H-Bridge Multilevel Inverter Fed Induction Motor Drive}
+      \true{nocite}
+      \verb{doi}
+      \verb 10.17148/IJIREEICE.2017.5107
+      \endverb
+      \warn{\item online entry 'H-BridgeMultilevelInverter_Nagle' (04-bibliografia.bib): Invalid format 'January 2017' of date field 'date' - ignoring}
+    \endentry
+    \entry{DesignAndOptimization_Wang}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=9e6fed9b4b9aa3ac96d58f6d676720c2}{%
+           family={{Qiong Wang, Xuning Zhang, Rolando Burgos, Dushan Boroyevich, Adam White and Mustansir Kheraluwala}},
+           familyi={Q\bibinitperiod}}}%
+      }
+      \strng{namehash}{9e6fed9b4b9aa3ac96d58f6d676720c2}
+      \strng{fullhash}{9e6fed9b4b9aa3ac96d58f6d676720c2}
+      \strng{fullhashraw}{9e6fed9b4b9aa3ac96d58f6d676720c2}
+      \strng{bibnamehash}{9e6fed9b4b9aa3ac96d58f6d676720c2}
+      \strng{authorbibnamehash}{9e6fed9b4b9aa3ac96d58f6d676720c2}
+      \strng{authornamehash}{9e6fed9b4b9aa3ac96d58f6d676720c2}
+      \strng{authorfullhash}{9e6fed9b4b9aa3ac96d58f6d676720c2}
+      \strng{authorfullhashraw}{9e6fed9b4b9aa3ac96d58f6d676720c2}
+      \field{sortinit}{Q}
+      \field{sortinithash}{ce69a400a872ddd02ee7fdb3b38c6abd}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{2016 IEEE Energy Conversion Congress and Exposition (ECCE)}
+      \field{title}{Design and Optimization of a High Performance Isolated Three Phase AC/DC Converter}
+      \field{year}{2016}
+      \true{nocite}
+      \verb{doi}
+      \verb 10.1109/ECCE.2016.7855009
+      \endverb
+    \endentry
+    \entry{SVM_Strobl}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=e493d37b1effef0300faa3bb4091cb9b}{%
+           family={{Simon Strobl}},
+           familyi={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{e493d37b1effef0300faa3bb4091cb9b}
+      \strng{fullhash}{e493d37b1effef0300faa3bb4091cb9b}
+      \strng{fullhashraw}{e493d37b1effef0300faa3bb4091cb9b}
+      \strng{bibnamehash}{e493d37b1effef0300faa3bb4091cb9b}
+      \strng{authorbibnamehash}{e493d37b1effef0300faa3bb4091cb9b}
+      \strng{authornamehash}{e493d37b1effef0300faa3bb4091cb9b}
+      \strng{authorfullhash}{e493d37b1effef0300faa3bb4091cb9b}
+      \strng{authorfullhashraw}{e493d37b1effef0300faa3bb4091cb9b}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{9}
+      \field{langid}{english}
+      \field{month}{8}
+      \field{title}{Space Vector Modulation (SVM)}
+      \field{urlday}{20}
+      \field{urlmonth}{5}
+      \field{urlyear}{2025}
+      \field{year}{2021}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://imperix.com/doc/implementation/space-vector-modulation
+      \endverb
+      \verb{url}
+      \verb https://imperix.com/doc/implementation/space-vector-modulation
+      \endverb
+    \endentry
+    \entry{IsolatedMultipleOutputFlybacj}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=3d453403967c7f4776ad1be509b760a0}{%
+           family={{Srivatsa Raghunath}},
+           familyi={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{3d453403967c7f4776ad1be509b760a0}
+      \strng{fullhash}{3d453403967c7f4776ad1be509b760a0}
+      \strng{fullhashraw}{3d453403967c7f4776ad1be509b760a0}
+      \strng{bibnamehash}{3d453403967c7f4776ad1be509b760a0}
+      \strng{authorbibnamehash}{3d453403967c7f4776ad1be509b760a0}
+      \strng{authornamehash}{3d453403967c7f4776ad1be509b760a0}
+      \strng{authorfullhash}{3d453403967c7f4776ad1be509b760a0}
+      \strng{authorfullhashraw}{3d453403967c7f4776ad1be509b760a0}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labeldatesource}{nodate}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Isolated Multiple Output Flyback Converter Design Using TL494}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://www.ti.com/lit/an/slva666/slva666.pdf?ts=1765818659869&ref_url=https%253A%252F%252Fwww.google.com%252F
+      \endverb
+      \verb{url}
+      \verb https://www.ti.com/lit/an/slva666/slva666.pdf?ts=1765818659869&ref_url=https%253A%252F%252Fwww.google.com%252F
+      \endverb
+      \warn{\item online entry 'IsolatedMultipleOutputFlybacj' (04-bibliografia.bib): Invalid format 'April 2014' of date field 'date' - ignoring}
+    \endentry
+    \entry{DigitalMotorContol_TI}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=5b579e975d5ffada3219fd66a5943837}{%
+           family={{TI - Digital Control Systems (DCS) Group}},
+           familyi={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{5b579e975d5ffada3219fd66a5943837}
+      \strng{fullhash}{5b579e975d5ffada3219fd66a5943837}
+      \strng{fullhashraw}{5b579e975d5ffada3219fd66a5943837}
+      \strng{bibnamehash}{5b579e975d5ffada3219fd66a5943837}
+      \strng{authorbibnamehash}{5b579e975d5ffada3219fd66a5943837}
+      \strng{authornamehash}{5b579e975d5ffada3219fd66a5943837}
+      \strng{authorfullhash}{5b579e975d5ffada3219fd66a5943837}
+      \strng{authorfullhashraw}{5b579e975d5ffada3219fd66a5943837}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labeldatesource}{nodate}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Digital Motor Control}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://www.ti.com/lit/ug/spru485a/spru485a.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.ti.com/lit/ug/spru485a/spru485a.pdf
+      \endverb
+      \warn{\item online entry 'DigitalMotorContol_TI' (04-bibliografia.bib): Invalid format 'October 2003' of date field 'date' - ignoring}
+    \endentry
+    \entry{EstudioYDesarrolloDeUnConvertidorPushPull_Valenzuela}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=b368c092c58bf0ba5a06398b4bd38cd3}{%
+           family={{Valenzuela, Simón María}},
+           familyi={V\bibinitperiod}}}%
+      }
+      \strng{namehash}{b368c092c58bf0ba5a06398b4bd38cd3}
+      \strng{fullhash}{b368c092c58bf0ba5a06398b4bd38cd3}
+      \strng{fullhashraw}{b368c092c58bf0ba5a06398b4bd38cd3}
+      \strng{bibnamehash}{b368c092c58bf0ba5a06398b4bd38cd3}
+      \strng{authorbibnamehash}{b368c092c58bf0ba5a06398b4bd38cd3}
+      \strng{authornamehash}{b368c092c58bf0ba5a06398b4bd38cd3}
+      \strng{authorfullhash}{b368c092c58bf0ba5a06398b4bd38cd3}
+      \strng{authorfullhashraw}{b368c092c58bf0ba5a06398b4bd38cd3}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{4}
+      \field{langid}{spanish}
+      \field{month}{12}
+      \field{title}{Estudio y Desarrollo de un convertidor Push-Pull como elevador de tensión de baterías para Sistemas de Alimentación Ininterrumpida}
+      \field{urlday}{9}
+      \field{urlmonth}{12}
+      \field{urlyear}{2025}
+      \field{year}{2024}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://autoresjidetev.fio.unam.edu.ar/index.php/jidetev/article/view/1032/818
+      \endverb
+      \verb{url}
+      \verb https://autoresjidetev.fio.unam.edu.ar/index.php/jidetev/article/view/1032/818
+      \endverb
     \endentry
     \entry{switchcraft_svpwm_intro}{online}{}{}
       \name{author}{1}{}{%
@@ -87,9 +579,139 @@
       \verb{url}
       \verb https://www.switchcraft.org/learning/2017/3/15/space-vector-pwm-intro
       \endverb
+    \endentry
+    \entry{SoftSwitchingSnubber_Zhang}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=d8651ede31d4faf7c70806b457671563}{%
+           family={{Zhi Zhang, Xiaofeng Yang, Trillion Q. Zheng and Jieping Zhang}},
+           familyi={Z\bibinitperiod}}}%
+      }
+      \strng{namehash}{d8651ede31d4faf7c70806b457671563}
+      \strng{fullhash}{d8651ede31d4faf7c70806b457671563}
+      \strng{fullhashraw}{d8651ede31d4faf7c70806b457671563}
+      \strng{bibnamehash}{d8651ede31d4faf7c70806b457671563}
+      \strng{authorbibnamehash}{d8651ede31d4faf7c70806b457671563}
+      \strng{authornamehash}{d8651ede31d4faf7c70806b457671563}
+      \strng{authorfullhash}{d8651ede31d4faf7c70806b457671563}
+      \strng{authorfullhashraw}{d8651ede31d4faf7c70806b457671563}
+      \field{sortinit}{Z}
+      \field{sortinithash}{96892c0b0a36bb8557c40c49813d48b3}
+      \field{labeldatesource}{nodate}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{IEEE Access}
+      \field{title}{A Passive Soft-Switching Snubber With Energy Active Recovery Circuit for PWM Inverters}
+      \true{nocite}
+      \verb{doi}
+      \verb 10.1109/ACCESS.2020.2998147
+      \endverb
+      \warn{\item online entry 'SoftSwitchingSnubber_Zhang' (04-bibliografia.bib): Invalid format 'June 2020' of date field 'date' - ignoring}
     \endentry
   \enddatalist
   \datalist[entry]{apa/global//global/global/global}
+    \entry{IsolationInACMotorDrivers}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=a1ecfebc851be72ae6dc432a78e629f7}{%
+           family={{Anant S. Kamath}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{a1ecfebc851be72ae6dc432a78e629f7}
+      \strng{fullhash}{a1ecfebc851be72ae6dc432a78e629f7}
+      \strng{fullhashraw}{a1ecfebc851be72ae6dc432a78e629f7}
+      \strng{bibnamehash}{a1ecfebc851be72ae6dc432a78e629f7}
+      \strng{authorbibnamehash}{a1ecfebc851be72ae6dc432a78e629f7}
+      \strng{authornamehash}{a1ecfebc851be72ae6dc432a78e629f7}
+      \strng{authorfullhash}{a1ecfebc851be72ae6dc432a78e629f7}
+      \strng{authorfullhashraw}{a1ecfebc851be72ae6dc432a78e629f7}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{9}
+      \field{title}{Isolation in AC Motor Drives: Understanding the IEC 61800-5-1 Safety Standard}
+      \field{year}{2019}
+      \field{dateera}{ce}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://www.ti.com/lit/fs/slyy080a/slyy080a.pdf?ts=1766024898674
+      \endverb
+      \verb{url}
+      \verb https://www.ti.com/lit/fs/slyy080a/slyy080a.pdf?ts=1766024898674
+      \endverb
+    \endentry
+    \entry{SVMTechnique_Yousef}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=3cf8f5f02a0541ba1f21a030b368d358}{%
+           family={{Ayman Y. Yousef}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{3cf8f5f02a0541ba1f21a030b368d358}
+      \strng{fullhash}{3cf8f5f02a0541ba1f21a030b368d358}
+      \strng{fullhashraw}{3cf8f5f02a0541ba1f21a030b368d358}
+      \strng{bibnamehash}{3cf8f5f02a0541ba1f21a030b368d358}
+      \strng{authorbibnamehash}{3cf8f5f02a0541ba1f21a030b368d358}
+      \strng{authornamehash}{3cf8f5f02a0541ba1f21a030b368d358}
+      \strng{authorfullhash}{3cf8f5f02a0541ba1f21a030b368d358}
+      \strng{authorfullhashraw}{3cf8f5f02a0541ba1f21a030b368d358}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{1}
+      \field{langid}{english}
+      \field{month}{5}
+      \field{title}{Space Vector Pulse Width Modulation Technique}
+      \field{urlday}{20}
+      \field{urlmonth}{5}
+      \field{urlyear}{2025}
+      \field{year}{2015}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://e2e.ti.com/cfs-file/__key/communityserver-discussions-components-files/171/SpaceVectorPulseWidthModulationTechnique.pdf
+      \endverb
+      \verb{url}
+      \verb https://e2e.ti.com/cfs-file/__key/communityserver-discussions-components-files/171/SpaceVectorPulseWidthModulationTechnique.pdf
+      \endverb
+    \endentry
+    \entry{StructureMultilevelConverter_Zare}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=fd130b1a0486ab4a062412c5dd24989e}{%
+           family={{Firuz Zare, Gerard Ledwich and Keith Hoffman}},
+           familyi={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{fd130b1a0486ab4a062412c5dd24989e}
+      \strng{fullhash}{fd130b1a0486ab4a062412c5dd24989e}
+      \strng{fullhashraw}{fd130b1a0486ab4a062412c5dd24989e}
+      \strng{bibnamehash}{fd130b1a0486ab4a062412c5dd24989e}
+      \strng{authorbibnamehash}{fd130b1a0486ab4a062412c5dd24989e}
+      \strng{authornamehash}{fd130b1a0486ab4a062412c5dd24989e}
+      \strng{authorfullhash}{fd130b1a0486ab4a062412c5dd24989e}
+      \strng{authorfullhashraw}{fd130b1a0486ab4a062412c5dd24989e}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{labeldatesource}{nodate}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{School of Electrical & Electronic Systems Engineering}
+      \field{title}{PHYSICAL STRUCTURE OF A PLANAR BUSBAR FOR MULTILEVEL CONVERTER}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://www.researchgate.net/publication/228407256_PHYSICAL_STRUCTURE_OF_A_PLANAR_BUSBAR_FOR_MULTILEVEL_CONVERTER
+      \endverb
+      \verb{url}
+      \verb https://www.researchgate.net/publication/228407256_PHYSICAL_STRUCTURE_OF_A_PLANAR_BUSBAR_FOR_MULTILEVEL_CONVERTER
+      \endverb
+      \warn{\item online entry 'StructureMultilevelConverter_Zare' (04-bibliografia.bib): Invalid format 'Jan 2007' of date field 'date' - ignoring}
+    \endentry
     \entry{FuentesConmutadas_Floriani}{book}{}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=daee755d2c064d8fa5cd17360c71fec9}{%
@@ -119,6 +741,396 @@
       \field{labeltitlesource}{title}
       \field{title}{Fuentes conmutadas - Análisis y diseño}
       \field{year}{2010}
+    \endentry
+    \entry{AnIsolatedMosfetGateDriver_Walker}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=2cf4fae2514f1961c3d906b119dad19e}{%
+           family={{Geoff Walker and Gerard Ledwich}},
+           familyi={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{2cf4fae2514f1961c3d906b119dad19e}
+      \strng{fullhash}{2cf4fae2514f1961c3d906b119dad19e}
+      \strng{fullhashraw}{2cf4fae2514f1961c3d906b119dad19e}
+      \strng{bibnamehash}{2cf4fae2514f1961c3d906b119dad19e}
+      \strng{authorbibnamehash}{2cf4fae2514f1961c3d906b119dad19e}
+      \strng{authornamehash}{2cf4fae2514f1961c3d906b119dad19e}
+      \strng{authorfullhash}{2cf4fae2514f1961c3d906b119dad19e}
+      \strng{authorfullhashraw}{2cf4fae2514f1961c3d906b119dad19e}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labeldatesource}{nodate}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{AN ISOLATED MOSFET GATE DRIVER}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://www.researchgate.net/publication/228542350_An_isolated_MOSFET_gate_driver
+      \endverb
+      \verb{url}
+      \verb https://www.researchgate.net/publication/228542350_An_isolated_MOSFET_gate_driver
+      \endverb
+      \warn{\item online entry 'AnIsolatedMosfetGateDriver_Walker' (04-bibliografia.bib): Invalid format 'January 1996' of date field 'date' - ignoring}
+    \endentry
+    \entry{THDAndTorqueRipple_Sieklucki}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=caaa7a6a670d86daf91c1c75236714d5}{%
+           family={{Grzegorz Sieklucki, Sylwester Sobieraj, Józef Gromba and Raluca-Elena Necula}},
+           familyi={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{caaa7a6a670d86daf91c1c75236714d5}
+      \strng{fullhash}{caaa7a6a670d86daf91c1c75236714d5}
+      \strng{fullhashraw}{caaa7a6a670d86daf91c1c75236714d5}
+      \strng{bibnamehash}{caaa7a6a670d86daf91c1c75236714d5}
+      \strng{authorbibnamehash}{caaa7a6a670d86daf91c1c75236714d5}
+      \strng{authornamehash}{caaa7a6a670d86daf91c1c75236714d5}
+      \strng{authorfullhash}{caaa7a6a670d86daf91c1c75236714d5}
+      \strng{authorfullhashraw}{caaa7a6a670d86daf91c1c75236714d5}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labeldatesource}{nodate}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Analysis and Approximation of THD and Torque Ripple of Induction Motor for SVPWM Control of VSI}
+      \true{nocite}
+      \verb{doi}
+      \verb 10.20944/preprints202305.1934.v1
+      \endverb
+      \verb{urlraw}
+      \verb https://www.mdpi.com/1996-1073/16/12/4628
+      \endverb
+      \verb{url}
+      \verb https://www.mdpi.com/1996-1073/16/12/4628
+      \endverb
+      \warn{\item online entry 'THDAndTorqueRipple_Sieklucki' (04-bibliografia.bib): Invalid format 'May 2023' of date field 'date' - ignoring}
+    \endentry
+    \entry{SVMVSPWM_Zhou}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=3ea25249088cba664fa904dd0d443543}{%
+           family={{Keliang Zhou and Danwei Wang}},
+           familyi={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{3ea25249088cba664fa904dd0d443543}
+      \strng{fullhash}{3ea25249088cba664fa904dd0d443543}
+      \strng{fullhashraw}{3ea25249088cba664fa904dd0d443543}
+      \strng{bibnamehash}{3ea25249088cba664fa904dd0d443543}
+      \strng{authorbibnamehash}{3ea25249088cba664fa904dd0d443543}
+      \strng{authornamehash}{3ea25249088cba664fa904dd0d443543}
+      \strng{authorfullhash}{3ea25249088cba664fa904dd0d443543}
+      \strng{authorfullhashraw}{3ea25249088cba664fa904dd0d443543}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{IEEE TRANSACTIONS ON INDUSTRIAL ELECTRONICS}
+      \field{title}{Relationship Between Space-Vector Modulation and Three-Phase Carrier-Based PWM: A Comprehensive Analysis}
+      \field{year}{2002}
+      \verb{doi}
+      \verb 0278–0046/02
+      \endverb
+      \warn{\item online entry 'SVMVSPWM_Zhou' (04-bibliografia.bib): Invalid format 'FEBRUARY 2002' of date field 'date' - ignoring}
+    \endentry
+    \entry{DisenoDeRectificadoresRegenerativos_Velaquez}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=23022988e284969f3c7ea660d6d40388}{%
+           family={{Mª Pilar Germán Velázquez}},
+           familyi={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{23022988e284969f3c7ea660d6d40388}
+      \strng{fullhash}{23022988e284969f3c7ea660d6d40388}
+      \strng{fullhashraw}{23022988e284969f3c7ea660d6d40388}
+      \strng{bibnamehash}{23022988e284969f3c7ea660d6d40388}
+      \strng{authorbibnamehash}{23022988e284969f3c7ea660d6d40388}
+      \strng{authornamehash}{23022988e284969f3c7ea660d6d40388}
+      \strng{authorfullhash}{23022988e284969f3c7ea660d6d40388}
+      \strng{authorfullhashraw}{23022988e284969f3c7ea660d6d40388}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{19}
+      \field{langid}{spanish}
+      \field{month}{11}
+      \field{title}{Diseño de rectificador regenerativo a red para recuperación de energía en ascensores}
+      \field{urlday}{9}
+      \field{urlmonth}{12}
+      \field{urlyear}{2025}
+      \field{year}{2015}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://zaguan.unizar.es/record/48544/files/TAZ-TFG-2015-3730.pdf?version=1
+      \endverb
+      \verb{url}
+      \verb https://zaguan.unizar.es/record/48544/files/TAZ-TFG-2015-3730.pdf?version=1
+      \endverb
+    \endentry
+    \entry{ConceptosSobreFuentesConmutadas_Pantaleo}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=1b5ef181db0320b9622b60521a8c25ec}{%
+           family={{Martín Pantaleo}},
+           familyi={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{1b5ef181db0320b9622b60521a8c25ec}
+      \strng{fullhash}{1b5ef181db0320b9622b60521a8c25ec}
+      \strng{fullhashraw}{1b5ef181db0320b9622b60521a8c25ec}
+      \strng{bibnamehash}{1b5ef181db0320b9622b60521a8c25ec}
+      \strng{authorbibnamehash}{1b5ef181db0320b9622b60521a8c25ec}
+      \strng{authornamehash}{1b5ef181db0320b9622b60521a8c25ec}
+      \strng{authorfullhash}{1b5ef181db0320b9622b60521a8c25ec}
+      \strng{authorfullhashraw}{1b5ef181db0320b9622b60521a8c25ec}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{2}
+      \field{langid}{spanish}
+      \field{month}{3}
+      \field{title}{Conceptos sobre Fuentes Conmutadas}
+      \field{urlday}{9}
+      \field{urlmonth}{12}
+      \field{urlyear}{2025}
+      \field{year}{2007}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://catedra.ing.unlp.edu.ar/electrotecnia/conpot/Documentos/M2.MonografiaConvertidorCCCC.pdf
+      \endverb
+      \verb{url}
+      \verb https://catedra.ing.unlp.edu.ar/electrotecnia/conpot/Documentos/M2.MonografiaConvertidorCCCC.pdf
+      \endverb
+    \endentry
+    \entry{TL431_ONSEMI}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=67db4f113b588959cdd667d42a72fbe7}{%
+           family={{ONSEMI}},
+           familyi={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{67db4f113b588959cdd667d42a72fbe7}
+      \strng{fullhash}{67db4f113b588959cdd667d42a72fbe7}
+      \strng{fullhashraw}{67db4f113b588959cdd667d42a72fbe7}
+      \strng{bibnamehash}{67db4f113b588959cdd667d42a72fbe7}
+      \strng{authorbibnamehash}{67db4f113b588959cdd667d42a72fbe7}
+      \strng{authornamehash}{67db4f113b588959cdd667d42a72fbe7}
+      \strng{authorfullhash}{67db4f113b588959cdd667d42a72fbe7}
+      \strng{authorfullhashraw}{67db4f113b588959cdd667d42a72fbe7}
+      \field{sortinit}{O}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{labeldatesource}{nodate}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{The TL431 in the Control of Switching Power Supplies}
+      \verb{urlraw}
+      \verb https://www.onsemi.com/pub/collateral/tnd381-d.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.onsemi.com/pub/collateral/tnd381-d.pdf
+      \endverb
+    \endentry
+    \entry{H-BridgeMultilevelInverter_Nagle}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=f6964117afa08663ba7032d8cbd3e44e}{%
+           family={{Prarthana Nagle, C.S. Sharma, Manoj Hirani and S. Phulambrikar}},
+           familyi={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{f6964117afa08663ba7032d8cbd3e44e}
+      \strng{fullhash}{f6964117afa08663ba7032d8cbd3e44e}
+      \strng{fullhashraw}{f6964117afa08663ba7032d8cbd3e44e}
+      \strng{bibnamehash}{f6964117afa08663ba7032d8cbd3e44e}
+      \strng{authorbibnamehash}{f6964117afa08663ba7032d8cbd3e44e}
+      \strng{authornamehash}{f6964117afa08663ba7032d8cbd3e44e}
+      \strng{authorfullhash}{f6964117afa08663ba7032d8cbd3e44e}
+      \strng{authorfullhashraw}{f6964117afa08663ba7032d8cbd3e44e}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labeldatesource}{nodate}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{International Journal of Innovative Research in Electrical, Electronics, Instrumentation and Control Engineering}
+      \field{title}{Cascade H-Bridge Multilevel Inverter Fed Induction Motor Drive}
+      \true{nocite}
+      \verb{doi}
+      \verb 10.17148/IJIREEICE.2017.5107
+      \endverb
+      \warn{\item online entry 'H-BridgeMultilevelInverter_Nagle' (04-bibliografia.bib): Invalid format 'January 2017' of date field 'date' - ignoring}
+    \endentry
+    \entry{DesignAndOptimization_Wang}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=9e6fed9b4b9aa3ac96d58f6d676720c2}{%
+           family={{Qiong Wang, Xuning Zhang, Rolando Burgos, Dushan Boroyevich, Adam White and Mustansir Kheraluwala}},
+           familyi={Q\bibinitperiod}}}%
+      }
+      \strng{namehash}{9e6fed9b4b9aa3ac96d58f6d676720c2}
+      \strng{fullhash}{9e6fed9b4b9aa3ac96d58f6d676720c2}
+      \strng{fullhashraw}{9e6fed9b4b9aa3ac96d58f6d676720c2}
+      \strng{bibnamehash}{9e6fed9b4b9aa3ac96d58f6d676720c2}
+      \strng{authorbibnamehash}{9e6fed9b4b9aa3ac96d58f6d676720c2}
+      \strng{authornamehash}{9e6fed9b4b9aa3ac96d58f6d676720c2}
+      \strng{authorfullhash}{9e6fed9b4b9aa3ac96d58f6d676720c2}
+      \strng{authorfullhashraw}{9e6fed9b4b9aa3ac96d58f6d676720c2}
+      \field{sortinit}{Q}
+      \field{sortinithash}{ce69a400a872ddd02ee7fdb3b38c6abd}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{2016 IEEE Energy Conversion Congress and Exposition (ECCE)}
+      \field{title}{Design and Optimization of a High Performance Isolated Three Phase AC/DC Converter}
+      \field{year}{2016}
+      \true{nocite}
+      \verb{doi}
+      \verb 10.1109/ECCE.2016.7855009
+      \endverb
+    \endentry
+    \entry{SVM_Strobl}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=e493d37b1effef0300faa3bb4091cb9b}{%
+           family={{Simon Strobl}},
+           familyi={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{e493d37b1effef0300faa3bb4091cb9b}
+      \strng{fullhash}{e493d37b1effef0300faa3bb4091cb9b}
+      \strng{fullhashraw}{e493d37b1effef0300faa3bb4091cb9b}
+      \strng{bibnamehash}{e493d37b1effef0300faa3bb4091cb9b}
+      \strng{authorbibnamehash}{e493d37b1effef0300faa3bb4091cb9b}
+      \strng{authornamehash}{e493d37b1effef0300faa3bb4091cb9b}
+      \strng{authorfullhash}{e493d37b1effef0300faa3bb4091cb9b}
+      \strng{authorfullhashraw}{e493d37b1effef0300faa3bb4091cb9b}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{9}
+      \field{langid}{english}
+      \field{month}{8}
+      \field{title}{Space Vector Modulation (SVM)}
+      \field{urlday}{20}
+      \field{urlmonth}{5}
+      \field{urlyear}{2025}
+      \field{year}{2021}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://imperix.com/doc/implementation/space-vector-modulation
+      \endverb
+      \verb{url}
+      \verb https://imperix.com/doc/implementation/space-vector-modulation
+      \endverb
+    \endentry
+    \entry{IsolatedMultipleOutputFlybacj}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=3d453403967c7f4776ad1be509b760a0}{%
+           family={{Srivatsa Raghunath}},
+           familyi={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{3d453403967c7f4776ad1be509b760a0}
+      \strng{fullhash}{3d453403967c7f4776ad1be509b760a0}
+      \strng{fullhashraw}{3d453403967c7f4776ad1be509b760a0}
+      \strng{bibnamehash}{3d453403967c7f4776ad1be509b760a0}
+      \strng{authorbibnamehash}{3d453403967c7f4776ad1be509b760a0}
+      \strng{authornamehash}{3d453403967c7f4776ad1be509b760a0}
+      \strng{authorfullhash}{3d453403967c7f4776ad1be509b760a0}
+      \strng{authorfullhashraw}{3d453403967c7f4776ad1be509b760a0}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labeldatesource}{nodate}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Isolated Multiple Output Flyback Converter Design Using TL494}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://www.ti.com/lit/an/slva666/slva666.pdf?ts=1765818659869&ref_url=https%253A%252F%252Fwww.google.com%252F
+      \endverb
+      \verb{url}
+      \verb https://www.ti.com/lit/an/slva666/slva666.pdf?ts=1765818659869&ref_url=https%253A%252F%252Fwww.google.com%252F
+      \endverb
+      \warn{\item online entry 'IsolatedMultipleOutputFlybacj' (04-bibliografia.bib): Invalid format 'April 2014' of date field 'date' - ignoring}
+    \endentry
+    \entry{DigitalMotorContol_TI}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=5b579e975d5ffada3219fd66a5943837}{%
+           family={{TI - Digital Control Systems (DCS) Group}},
+           familyi={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{5b579e975d5ffada3219fd66a5943837}
+      \strng{fullhash}{5b579e975d5ffada3219fd66a5943837}
+      \strng{fullhashraw}{5b579e975d5ffada3219fd66a5943837}
+      \strng{bibnamehash}{5b579e975d5ffada3219fd66a5943837}
+      \strng{authorbibnamehash}{5b579e975d5ffada3219fd66a5943837}
+      \strng{authornamehash}{5b579e975d5ffada3219fd66a5943837}
+      \strng{authorfullhash}{5b579e975d5ffada3219fd66a5943837}
+      \strng{authorfullhashraw}{5b579e975d5ffada3219fd66a5943837}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labeldatesource}{nodate}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Digital Motor Control}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://www.ti.com/lit/ug/spru485a/spru485a.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.ti.com/lit/ug/spru485a/spru485a.pdf
+      \endverb
+      \warn{\item online entry 'DigitalMotorContol_TI' (04-bibliografia.bib): Invalid format 'October 2003' of date field 'date' - ignoring}
+    \endentry
+    \entry{EstudioYDesarrolloDeUnConvertidorPushPull_Valenzuela}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=b368c092c58bf0ba5a06398b4bd38cd3}{%
+           family={{Valenzuela, Simón María}},
+           familyi={V\bibinitperiod}}}%
+      }
+      \strng{namehash}{b368c092c58bf0ba5a06398b4bd38cd3}
+      \strng{fullhash}{b368c092c58bf0ba5a06398b4bd38cd3}
+      \strng{fullhashraw}{b368c092c58bf0ba5a06398b4bd38cd3}
+      \strng{bibnamehash}{b368c092c58bf0ba5a06398b4bd38cd3}
+      \strng{authorbibnamehash}{b368c092c58bf0ba5a06398b4bd38cd3}
+      \strng{authornamehash}{b368c092c58bf0ba5a06398b4bd38cd3}
+      \strng{authorfullhash}{b368c092c58bf0ba5a06398b4bd38cd3}
+      \strng{authorfullhashraw}{b368c092c58bf0ba5a06398b4bd38cd3}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{4}
+      \field{langid}{spanish}
+      \field{month}{12}
+      \field{title}{Estudio y Desarrollo de un convertidor Push-Pull como elevador de tensión de baterías para Sistemas de Alimentación Ininterrumpida}
+      \field{urlday}{9}
+      \field{urlmonth}{12}
+      \field{urlyear}{2025}
+      \field{year}{2024}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://autoresjidetev.fio.unam.edu.ar/index.php/jidetev/article/view/1032/818
+      \endverb
+      \verb{url}
+      \verb https://autoresjidetev.fio.unam.edu.ar/index.php/jidetev/article/view/1032/818
+      \endverb
     \endentry
     \entry{switchcraft_svpwm_intro}{online}{}{}
       \name{author}{1}{}{%
@@ -158,6 +1170,34 @@
       \verb{url}
       \verb https://www.switchcraft.org/learning/2017/3/15/space-vector-pwm-intro
       \endverb
+    \endentry
+    \entry{SoftSwitchingSnubber_Zhang}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=d8651ede31d4faf7c70806b457671563}{%
+           family={{Zhi Zhang, Xiaofeng Yang, Trillion Q. Zheng and Jieping Zhang}},
+           familyi={Z\bibinitperiod}}}%
+      }
+      \strng{namehash}{d8651ede31d4faf7c70806b457671563}
+      \strng{fullhash}{d8651ede31d4faf7c70806b457671563}
+      \strng{fullhashraw}{d8651ede31d4faf7c70806b457671563}
+      \strng{bibnamehash}{d8651ede31d4faf7c70806b457671563}
+      \strng{authorbibnamehash}{d8651ede31d4faf7c70806b457671563}
+      \strng{authornamehash}{d8651ede31d4faf7c70806b457671563}
+      \strng{authorfullhash}{d8651ede31d4faf7c70806b457671563}
+      \strng{authorfullhashraw}{d8651ede31d4faf7c70806b457671563}
+      \field{sortinit}{Z}
+      \field{sortinithash}{96892c0b0a36bb8557c40c49813d48b3}
+      \field{labeldatesource}{nodate}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{IEEE Access}
+      \field{title}{A Passive Soft-Switching Snubber With Energy Active Recovery Circuit for PWM Inverters}
+      \true{nocite}
+      \verb{doi}
+      \verb 10.1109/ACCESS.2020.2998147
+      \endverb
+      \warn{\item online entry 'SoftSwitchingSnubber_Zhang' (04-bibliografia.bib): Invalid format 'June 2020' of date field 'date' - ignoring}
     \endentry
   \enddatalist
   \missing{imperix_svpwm}

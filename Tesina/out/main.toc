@@ -9,7 +9,7 @@
 \contentsline {subsubsection}{\numberline {2.1.5}Push-pull}{5}{subsubsection.2.1.5}%
 \contentsline {subsubsection}{\numberline {2.1.6}Análisis del convertidor de puente completo y push-pull}{5}{subsubsection.2.1.6}%
 \contentsline {paragraph}{Etapa del primario - puente completo}{5}{paragraph*.4}%
-\contentsline {paragraph}{Etapa del primario - push-pull}{5}{paragraph*.5}%
+\contentsline {paragraph}{Etapa del primario - push-pull}{6}{paragraph*.5}%
 \contentsline {paragraph}{Transformador de alta frecuencia}{6}{paragraph*.6}%
 \contentsline {paragraph}{Etapa del secundario}{6}{paragraph*.7}%
 \contentsline {subsubsection}{\numberline {2.1.7}Comparativa push-pull contra puente completo}{6}{subsubsection.2.1.7}%
@@ -99,5 +99,4 @@
 \contentsline {section}{\numberline {5}Conclusiones}{85}{section.5}%
 \contentsline {paragraph}{Relación de transformación y cálculo de espiras}{85}{paragraph*.148}%
 \contentsline {paragraph}{Sección de conductores}{86}{paragraph*.149}%
-\contentsline {section}{\numberline {6}Referencias}{87}{section.6}%
-\contentsline {section}{\numberline {7}Bibliografía}{87}{section.7}%
+\contentsline {section}{\numberline {6}Bibliografía}{87}{section.6}%
