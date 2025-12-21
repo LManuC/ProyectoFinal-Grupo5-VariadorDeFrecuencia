@@ -1,0 +1,267 @@
+\documentclass[a4paper,10pt]{article}
+
+% Paquetes
+%\usepackage{fontspec}
+\usepackage{titlesec}
+\usepackage{titling}
+\usepackage{setspace}
+\usepackage[hidelinks]{hyperref}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage[affil-it]{authblk}
+\usepackage{biblatex}
+%\addbibresource{Mendeley.bib}
+
+% Idioma
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+
+
+% Configuraciones
+\usepackage{newtxtext,newtxmath}
+\hypersetup{
+    colorlinks,
+    linkcolor={red!50!black},
+    citecolor={blue!50!black},
+    urlcolor={blue!80!black}
+}
+
+
+\begin{document}
+\begin{titlepage}
+\centering
+\begin{figure}[t]
+	\centering
+	\includegraphics[scale=0.15]{img/utn.jpg}
+    \vspace{0.5cm}
+\end{figure}%
+	{\LARGE Proyecto Final\par}
+    {\LARGE 2025\par}
+	\vspace{1cm}
+	{\huge\bfseries Controlador de motor trifásico para instalaciones de baja tensión\par}
+	\vspace{1cm}
+    {\LARGE Test de Aceptación\par}
+    \vspace{1cm}
+	{\Large\itshape Elian Andrenacci, Lucas Manuel Carra\par}
+	\vfill
+\end{titlepage}
+
+
+\tableofcontents
+
+\newpage
+\section{Objeto del Documento}
+\label{sec:0_objeto}
+El presente documento tiene por objeto presentar los diferentes puntos para ensayo y prueba que demuestre que el equipo cumple con sus especificaciones acordadas en el documento de Anteproyecto.
+
+A través de los ensayos detallados en las secciones siguientes, se busca validar el correcto funcionamiento de las distintas etapas del sistema, incluyendo la etapa conversora DC, la etapa inversora trifásica, el sistema de control y modulación. Asimismo, se evalúan parámetros eléctricos relevantes tales como tensiones, corrientes, formas de onda, estabilidad del bus DC y comportamiento del sistema ante distintas condiciones de carga.
+
+Los resultados obtenidos permiten determinar el grado de cumplimiento de los objetivos planteados inicialmente, identificar limitaciones del diseño actual y establecer lineamientos claros para futuras mejoras y optimizaciones del equipo.
+
+\newpage
+\section{Identificación del Producto}
+\label{sec:1_ident}
+
+El producto bajo ensayo corresponde a un prototipo funcional de variador de frecuencia trifásico alimentado en corriente continua, desarrollado en el marco del presente proyecto de grado y conforme al alcance definido en la etapa de Anteproyecto.
+
+El dispositivo que se ve en la figura~\ref{fig:Dispositivo} está diseñado para accionar motores asincrónicos trifásicos de hasta $1/3 HP$ de potencia nominal, a partir de una fuente de alimentación de $12 VDC$, generando una salida trifásica de $220 Vac$ con frecuencia variable en el rango de $0$ a $150 Hz$. La potencia máxima prevista para el equipo es de $240 W$, acorde a las limitaciones eléctricas y térmicas consideradas en el diseño.
+
+\begin{figure}[H]
+\centering
+    \includegraphics[width=0.9\textwidth]{img/Dispositivo.png}
+    \caption{Render del dispositivo bajo medición.}
+\label{fig:Dispositivo}
+\end{figure}
+
+El sistema integra una etapa de conversión y elevación de tensión en corriente continua, una etapa inversora trifásica controlada digitalmente, y un sistema de control que permite la variación de la velocidad de giro del motor mediante el ajuste de la frecuencia de salida. Asimismo, el dispositivo contempla señales de control e interfaz típicas del ámbito industrial, tales como entrada analógica de 0–10 V para referencia de velocidad, parada de emergencia y selección de velocidades preconfiguradas mediante entradas digitales.
+
+En cuanto a las capacidades de comunicación, el producto admite la incorporación de conectividad WiFi orientada a la configuración. No obstante, en el alcance de este proyecto dicha funcionalidad se limita a una red local, permitiendo únicamente la configuración del equipo en las cercanías del inversor, sin contemplar operación remota a través de redes externas.
+
+El prototipo desarrollado representa una solución orientada a aplicaciones de campo donde se dispone de alimentación en baja tensión continua y se requiere el control de motores trifásicos de potencia moderada, priorizando la simplicidad del sistema, la funcionalidad básica de control y la posibilidad de futuras ampliaciones.
+
+\newpage
+\section{Elementos y Equipamiento Necesarios}
+\label{sec:2_elementos}
+
+Para la realización de los ensayos y pruebas descriptos en este documento fue necesario contar con el siguiente equipamiento:
+
+\begin{itemize}
+    \item Dos fuentes de alimentación DC regulada, capaz de suministrar hasta $12 Vdc$ y una corriente de 40A requerida por el sistema bajo ensayo.
+    \item Fuente de alimentación DC de $12Vdc$ de $10A$ para alimentar la etapa lógica del equipo.
+    \item Motor asincrónico de inducción trifásico utilizado como carga, con características compatibles con el rango de operación del variador.
+    \item Multímetros digitales para medición de tensiones y corrientes en continua y alterna.
+    \item Osciloscopio digital de al menos dos canales para la observación de formas de onda de tensión y corriente.
+    \item Termocuplas y multimetros para la medición de la temperatura de trabajo.
+    \item Resistencia Shunt de $1.5m\Omega$ y $0.1\Omega$ para la medición de corriente de entrada.
+    \item Dispositivo de frenado del motor.
+    \item Cables, conectores, protecciones y elementos auxiliares necesarios para una conexión segura del sistema.
+\end{itemize}
+
+Todo el equipamiento fue utilizado respetando las normas básicas de seguridad eléctrica y buenas prácticas de laboratorio.
+
+\newpage
+\section{Desarrollo del Ensayo}
+\label{sec:3_de}
+
+El desarrollo de los ensayos se estructuró en distintas etapas con el objetivo de validar el correcto funcionamiento del variador de frecuencia trifásico, así como caracterizar su desempeño eléctrico, funcional y térmico dentro del alcance definido para el proyecto.
+
+En primer lugar, se realizaron ensayos funcionales orientados a verificar el accionamiento del motor trifásico, evaluando las condiciones de arranque, régimen permanente y detención para un amplio rango de frecuencias de salida. Posteriormente, se llevaron a cabo ensayos específicos sobre el esquema de modulación por vector espacial (SVM), analizando la integridad de las señales generadas, la simetría de los pulsos y el comportamiento del índice de modulación conforme a la estrategia $V/f$.
+
+Finalmente, se realizaron ensayos de rendimiento y durabilidad, permitiendo cuantificar la eficiencia de las distintas etapas del sistema y evaluar su capacidad de operación continua bajo carga. Todos los ensayos se efectuaron en un banco de pruebas controlado, utilizando instrumentación adecuada y respetando las limitaciones propias del prototipo desarrollado.
+
+\newpage
+\subsection{Forma de Medición}
+\label{sec:4_formas}
+
+Las mediciones eléctricas se realizaron mediante instrumentación externa, complementadas con las lecturas internas provistas por el sistema de control y supervisión del variador. Para la medición de tensiones continuas y alternas se emplearon multímetros digitales, mientras que las formas de onda de tensión y corriente fueron observadas utilizando un osciloscopio digital.
+
+La corriente de entrada del conversor fue medida de manera indirecta mediante resistencias shunt de bajo valor, registrando la caída de tensión sobre las mismas con el osciloscopio. Esta metodología permitió analizar tanto el valor RMS de la corriente como su comportamiento temporal, caracterizado por una forma de onda pulsante asociada a la conmutación del conversor.
+
+En el caso del inversor, las mediciones directas de corriente de salida fueron descartadas debido a la presencia de ruido y resultados no físicamente coherentes, consecuencia de la conmutación PWM. Por tal motivo, la evaluación del rendimiento del inversor se realizó utilizando una carga resistiva de valor conocido, permitiendo estimar la potencia entregada a partir de la tensión de línea medida.
+
+\newpage
+\subsection{Condiciones Iniciales}
+\label{sec:5_ci}
+
+Previo a la ejecución de cada ensayo, el sistema fue inicializado bajo condiciones controladas. El variador fue alimentado mediante dos fuentes de $12V$ conectadas en paralelo para la etapa de potencia, mientras que una tercera fuente independiente se destinó exclusivamente a la electrónica de control, asegurando estabilidad y aislamiento entre ambos subsistemas.
+
+El motor trifásico fue inicialmente ensayado en vacío o con carga mínima, permitiendo verificar el funcionamiento básico del sistema antes de aplicar mayores demandas de potencia. La frecuencia de salida se configuró inicialmente en valores bajos, incrementándose progresivamente durante los ensayos para evitar esfuerzos innecesarios sobre la etapa de potencia.
+
+El conexionado de prueba básico queda ejemplificado en la figura~\ref{fig:DiagramaDeConexion}.
+
+\begin{figure}[H]
+\centering
+    \includegraphics[width=0.9\textwidth]{img/DiagramaDeConexion.png}
+    \caption{Diagrama de conexión de fuentes de alimentación y motor.}
+\label{fig:DiagramaDeConexion}
+\end{figure}
+
+Asimismo, se verificó el correcto estado de las conexiones eléctricas, la inicialización del sistema de control y el correcto funcionamiento de las protecciones implementadas, incluyendo el circuito de parada de emergencia.
+
+\newpage
+\subsection{Preparación de la Prueba}
+\label{sec:6_pprueba}
+
+
+La preparación de cada prueba incluyó la configuración del banco de ensayos, la conexión del motor trifásico al inversor y la disposición de la instrumentación necesaria para la medición de las variables de interés.
+
+Se establecieron puntos de medición para la tensión de salida donde marca la figura~\ref{fig:SalidaVAC} y corriente de entrada con una resistencia de shunt en serie a las fuentes de tensión como se ve en la figura~\ref{fig:DiagramaDeConexionShunt} y la tensión y corriente en el bus DC como marca la figura~\ref{fig:DiagramaDeConexionVIdc}, considerando que la corriente máxima siempre debería ser menor a 2A.
+
+\begin{figure}[H]
+\centering
+    \includegraphics[width=0.9\textwidth]{img/SalidaVAC.png}
+    \caption{Punto de medición de tensión de salida.}
+\label{fig:SalidaVAC}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+    \includegraphics[width=0.6\textwidth]{img/DiagramaDeConexionShunt.png}
+    \caption{Conexión para medición de corriente de entrada.}
+\label{fig:DiagramaDeConexionShunt}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+    \includegraphics[width=0.9\textwidth]{img/DiagramaDeConexionVIdc.png}
+    \caption{Punto de medición de tensión y corriente contínua del bus.}
+\label{fig:DiagramaDeConexionVIdc}
+\end{figure}
+
+En los ensayos de modulación, se configuraron frecuencias de salida fijas y conocidas, permitiendo evaluar el comportamiento del sistema en distintos puntos de operación.
+
+Para los ensayos de rendimiento, se montó el sistema de frenado dinámico sobre el motor observable en la figura~\ref{fig:FrenoMotor}, posibilitando la aplicación de distintos niveles de carga de manera controlada.
+
+\begin{figure}[H]
+\centering
+    \includegraphics[width=0.9\textwidth]{img/FrenoMotor.jpg}
+    \caption{Freno dinámico sobre el motor.}
+\label{fig:FrenoMotor}
+\end{figure}
+
+Antes de cada ensayo se verificó la correcta visualización de las magnitudes medidas en la interfaz del sistema, garantizando la coherencia entre las mediciones externas y las variables internas del variador.
+
+\newpage
+\subsection{Mediciones y Observaciones}
+\label{sec:7_obs}
+
+Durante los ensayos funcionales se observó un comportamiento estable del motor en todo el rango de frecuencias ensayado, comprendido entre $10Hz$ y $150Hz$, sin presencia de vibraciones, ruidos anómalos ni inestabilidades. Esto indica que el sistema trifásico generado por el inversor se encuentra correctamente balanceado y que el esquema de modulación implementado funciona conforme a lo esperado.
+
+Los ensayos de modulación evidenciaron una correcta integridad de las señales generadas, con desfases adecuados entre fases y pulsos simétricos en los tiempos de conmutación. Asimismo, se verificó en la figura~\ref{fig:v_f-vs-Freq} que el índice de modulación se ajusta correctamente a la estrategia $V/f$, manteniendo una relación proporcional entre la frecuencia de salida y la tensión aplicada al motor con una recta horizontal a lo largo de los diferentes puntos de operación. Esta condición también se puede observar en la figura~\ref{fig:Frecuencia-vs-Tension_AC}, que compara la tensión de salida contra la frecuencia de operación, donde se espera obtener una recta monótonamente creciente.
+
+\begin{figure}[H]
+\centering
+    \includegraphics[width=0.7\textwidth]{img/V_f-vs-Frecuencia.png}
+    \caption{Relación V/f frente a la frecuencia de operación.}
+\label{fig:v_f-vs-Freq}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+    \includegraphics[width=0.7\textwidth]{img/Frecuencia-vs-Tension_AC.png}
+    \caption{Relación frecuencia frente a la tensión de salida del dispositivo.}
+\label{fig:Frecuencia-vs-Tension_AC}
+\end{figure}
+
+En cuanto al rendimiento, se observó que la etapa inversora presenta una eficiencia elevada $95.2\%$, mientras que la etapa conversora $85.4\%$, la cualconstituye la principal fuente de pérdidas del sistema. Finalmente, en los ensayos de durabilidad se identificó una limitación térmica en el transformador del conversor, que restringe la potencia continua entregable a aproximadamente $1/6HP$ durante operación prolongada. Se puede ver en las figuras \ref{fig:Corriente} y \ref{fig:Tension} como los parámetros de salida se mantienen estables durante 30 minutos luego del transitorio del arranque.
+
+\begin{figure}[H]
+\centering
+    \includegraphics[width=0.7\textwidth]{img/Corriente.png}
+    \caption{Evolución de la corriente durante 30 minutos de operación.}
+\label{fig:Corriente}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+    \includegraphics[width=0.7\textwidth]{img/Tension.png}
+    \caption{Evolución de la tensión durante 30 minutos de operación.}
+\label{fig:Tension}
+\end{figure}
+
+Además se evaluó el perfil de incremento de temperatura del transformador en la figura~\ref{fig:Temperatura} y, en las figuras~\ref{fig:Temperatura-vs-Corriente} y ~\ref{fig:Temperatura-vs-Tension} como las tensión y corriente del bus de contínua se mantienen estables durante toda la prueba frente a la variación de temperatura.
+
+\begin{figure}[H]
+\centering
+    \includegraphics[width=0.7\textwidth]{img/Temperatura.png}
+    \caption{Evolución de la temperatura durante 30 minutos de operación.}
+\label{fig:Temperatura}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+    \includegraphics[width=0.7\textwidth]{img/Temperatura-vs-Corriente.png}
+    \caption{Comparación temperatura vs corriente durante 30 minutos de operación.}
+\label{fig:Temperatura-vs-Corriente}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+    \includegraphics[width=0.7\textwidth]{img/Temperatura-vs-Tension.png}
+    \caption{Comparación temperatura vs tensión durante 30 minutos de operación.}
+\label{fig:Temperatura-vs-Tension}
+\end{figure}
+
+Se comprobó el correcto funcionamiento de la salida analógica de 0-10V, donde expone un funcionamiento lineal en la zona de frecuencias medias y una pequeña alinealidad en los extremos como se ve en la figura~\ref{fig:0-10V}-
+
+\begin{figure}[H]
+\centering
+    \includegraphics[width=0.7\textwidth]{img/0-10V.png}
+    \caption{Evolución de la salida 0-10V en representación de la frecuencia.}
+\label{fig:0-10V}
+\end{figure}
+
+\newpage
+\section{Conclusiones}
+\label{sec:8_concl}
+
+A partir de los ensayos realizados se concluye que el variador de frecuencia desarrollado cumple con los objetivos funcionales planteados en el alcance del proyecto, permitiendo el accionamiento y control de velocidad de un motor trifásico mediante una alimentación de baja tensión continua.
+
+El sistema demuestra un funcionamiento estable, una modulación adecuada y un elevado rendimiento en la etapa inversora. No obstante, se identifican limitaciones en la etapa conversora, principalmente asociadas al diseño del transformador, que condicionan la potencia continua máxima entregable y el comportamiento térmico del equipo.
+
+En este sentido, el prototipo constituye una base sólida para futuras mejoras, orientadas a optimizar el diseño del conversor, incrementar la potencia continua y mejorar la robustez térmica del sistema, consolidando así una solución viable para aplicaciones reales dentro del dominio planteado.
+
+\end{document}
