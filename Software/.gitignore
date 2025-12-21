@@ -1,1 +1,3 @@
 **/build/**
+**/doxy/html
+**/doxy/latex
