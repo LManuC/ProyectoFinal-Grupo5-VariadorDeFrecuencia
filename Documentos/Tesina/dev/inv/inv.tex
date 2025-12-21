@@ -1,0 +1,160 @@
+\label{sec:3_dev_inv}
+\subsection{Inversor}
+
+\subsubsection{Introducción}
+
+En esta sección se describe el diseño y funcionamiento de la etapa inversora, encargada de convertir la tensión continua del bus DC en una tensión alterna trifásica apta para la alimentación del motor. Para esta etapa se adoptó una topología de puente completo trifásico, basada en seis interruptores electrónicos de potencia, la cual se caracteriza por su simplicidad, versatilidad y amplia utilización en variadores de frecuencia.
+
+Esta configuración permite generar tensiones de polaridad bidireccional en cada fase, resultando adecuada para el manejo de cargas inductivas y para la implementación de estrategias de modulación como el vector espacial (SVM). Si bien existen topologías que pueden ofrecer una menor distorsión armónica en la tensión de salida, la topología seleccionada resulta suficiente para los niveles de potencia y exigencias de la aplicación desarrollada, sin comprometer el correcto funcionamiento del motor.
+
+Por otro lado, se priorizó el cumplimiento de la aislación galvánica entre la etapa de control y la etapa de potencia, con el objetivo de proteger al microcontrolador frente al ruido eléctrico generado durante las conmutaciones de los transistores. Para ello se emplearon dispositivos de aislamiento en las señales de control y una fuente DC-DC aislada para la alimentación de los circuitos de disparo, garantizando así un funcionamiento seguro y robusto del sistema.
+
+
+\subsubsection{Topología de puente trifásico}
+
+La etapa inversora se implementó mediante una topología de puente trifásico de dos niveles como el de la figura \ref{fig:dev_inv_PuenteHTrifasico}, conformada por seis interruptores electrónicos de potencia dispuestos en tres ramas. Cada rama está compuesta por un transistor superior y uno inferior conectados en serie entre los rieles positivo y negativo del bus DC, siendo el punto medio de cada rama la salida correspondiente a una fase del sistema trifásico.
+
+\begin{figure}[H]
+\centering
+    \includegraphics[width=0.9\textwidth]{dev/inv/img/PuenteHCompleto.png}
+    \caption{Esquema de puente H trifásico completo.}
+\label{fig:dev_inv_PuenteHTrifasico}
+\end{figure}
+
+Esta configuración permite generar tensiones alternas trifásicas equilibradas, desfasadas $120^\circ$ entre sí, y resulta ampliamente utilizada en variadores de frecuencia debido a su simplicidad, robustez y compatibilidad con estrategias de modulación avanzadas como la modulación por vector espacial (SVM). Asimismo, la topología seleccionada ofrece un buen compromiso entre complejidad de implementación, calidad de la forma de onda y pérdidas por conmutación, siendo adecuada para los niveles de potencia considerados en este proyecto.
+
+\subsubsection{Selección de los transistores de potencia}
+
+El puente H trifásico se implementa mediante seis transistores MOSFET de canal N. Esta elección presenta ventajas significativas frente al uso de dispositivos de canal P, principalmente debido a su mayor disponibilidad comercial, menores resistencias de conducción y mejores prestaciones dinámicas. Como contraparte, el control de los transistores del lado alto se vuelve ligeramente más complejo, ya que para su encendido se requiere una tensión superior a $V_{DD}$. Esta limitación se resuelve mediante el uso de circuitos drivers específicos para medio puente.
+
+La potencia requerida en la salida corresponde a la alimentación de un motor trifásico de $1/3 \, HP$, equivalente a $248.56 \, W$. Se asume un factor de potencia de $0.85$, y a partir de la expresión de potencia trifásica se calcula la corriente de línea, obteniéndose un valor eficaz de $0.76 \, A$ y una corriente pico de $1.08 \, A$.
+
+\[
+P = \sqrt{3} \, V_L \, I_L \, FP
+\]
+\[
+I_L=\frac{P}{\sqrt{3} \, V_L FP}=\frac{248.56 \, W}{\sqrt{3} \, 220V \, 0.85} = 0.767 \, A
+\]
+\[
+\hat{I_L} \, \sqrt{2} = 1.08 \, A
+\]
+
+Considerando una corriente máxima de $1.08 \, A$, una tensión de bus de $320 \, V$ y una frecuencia de conmutación de $2.5 \, kHz$, se seleccionaron los transistores MOSFET \textit{STF24N65M2} de STMicroelectronics. Sus principales características se detallan en la tabla \ref{tab:STF24N65M2_specs}. Este dispositivo se presenta en encapsulado TO-220FP, el cual incorpora aislación eléctrica entre el semiconductor y su carcasa, facilitando el montaje mecánico y reduciendo la complejidad del sistema de aislamiento.
+
+
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.3} % Aumenta el espaciado para mejor legibilidad
+\begin{tabular}{|l|l|}
+\hline
+\multicolumn{2}{|c|}{\textbf{Características Clave del MOSFET STF24N65M2}} \\
+\hline
+\textbf{Parámetro} & \textbf{Valor Típico / Máximo} \\
+\hline
+Tipo de Transistor & N-Channel MDmesh \\
+Tensión Máxima Drenaje-Fuente ($V_{DSS}$) & 650 V \\
+Corriente Continua Máx. Drenaje ($I_D$ @ 25°C) & 16 A \\
+Resistencia Drenaje-Fuente On ($R_{DS(on)}$ máx.) & $230 \, m\Omega$ \\
+Disipación de Potencia Máx. ($P_D$ @ 25°C) & $30 \, W$ \\
+Carga de Puerta Total ($Q_g$) & $29 \, nC$ \\
+Encapsulado & TO-220FP \\
+\hline
+\end{tabular}
+\caption{Especificaciones técnicas principales del MOSFET de potencia STF24N65M2.}
+\label{tab:STF24N65M2_specs}
+\end{table}
+
+De acuerdo con la curva de área de operación segura de la figura \ref{fig:imgDevSOA-STF24N65M2}, el dispositivo trabaja dentro de condiciones seguras, considerando pulsos de $400 \, \mu s$ y tensión de $320 \, V$ nos da una corriente máxima de operación de $2.5 \, A$, manteniendo un margen de seguridad.
+
+
+\begin{figure}[H]
+\centering
+    \includegraphics[width=0.9\textwidth]{dev/inv/img/SOA-STF24N65M2.png}
+    \caption{Área de operación segura del STF24N65M2.}
+\label{fig:imgDevSOA-STF24N65M2}
+\end{figure}
+
+
+
+\subsubsection{Circuito de disparo}
+
+En un inversor trifásico de seis interruptores, una alternativa clásica consiste en emplear tres MOSFETs de canal N y tres de canal P. Sin embargo, esta solución resulta poco conveniente debido a que los dispositivos de canal P presentan valores mayores de resistencia de conducción $R_{DS(on)}$, lo que incrementa las pérdidas y reduce la eficiencia global del sistema. Además, los MOSFETs de canal P con alta tensión de ruptura son menos comunes y considerablemente más costosos.
+
+Por este motivo, se opta por utilizar exclusivamente MOSFETs de canal N. No obstante, esta decisión implica la necesidad de generar una tensión de compuerta superior al potencial del nodo de salida para accionar los transistores superiores del puente. Para resolver este desafío se emplea la técnica de bootstrap mediante el driver de compuerta IR2104, cuyo esquema básico de aplicación se muestra en la figura \ref{fig:img_inv_dev_Esq_IR2104}.
+
+
+\begin{figure}[H]
+\centering
+    \includegraphics[width=0.9\textwidth]{dev/inv/img/Esq_IR2104.png}
+    \caption{Esquema básico de implementación del driver IR2104.}
+\label{fig:img_inv_dev_Esq_IR2104}
+\end{figure}
+
+
+El IR2104 permite el control de un medio puente cargando un capacitor de bootstrap cuando el transistor inferior se encuentra en conducción. Posteriormente, este capacitor se conecta entre los terminales gate-source del transistor superior, proporcionando la tensión necesaria para su activación. Esta técnica elimina la necesidad de fuentes auxiliares aisladas para los transistores del lado alto, simplificando el diseño y mejorando la eficiencia del sistema.
+
+El integrado dispone de dos entradas de control y tres salidas. El pin SD, cuando se encuentra en nivel lógico HIGH, habilita las salidas, mientras que en nivel LOW las coloca en estado de alta impedancia. El pin IN determina qué transistor conduce: en HIGH se activa el transistor superior y en LOW el inferior. El capacitor de bootstrap se conecta entre los terminales VB y VS. La lógica interna del IR2104 impide la activación simultánea de ambos transistores de un mismo medio puente, evitando situaciones de cortocircuito del bus DC.
+
+Al operar con cargas inductivas, como motores eléctricos, resulta crítico analizar el comportamiento de la corriente durante los eventos de conmutación. Debido a la naturaleza inductiva de la carga, la corriente no puede variar instantáneamente, generándose picos de tensión al intentar interrumpir el flujo de corriente. Para absorber esta energía y proteger los dispositivos de potencia, se requiere una trayectoria de circulación libre de corriente (\textit{freewheeling}). Esta función es cumplida por los diodos intrínsecos de los MOSFETs, conectados en antiparalelo con el canal, los cuales proporcionan un camino seguro para la corriente durante los intervalos de conmutación.
+
+
+
+\subsubsection{Aislación galvánica de las señales de control}
+
+
+Con el objetivo de mantener aislada eléctricamente la etapa de control basada en el microcontrolador de la etapa de potencia del inversor, se implementa una barrera de aislación galvánica mediante el uso de optoacopladores. Dado que las señales de control poseen frecuencias de hasta $2.5 \, kHz$, es necesario emplear dispositivos de alta velocidad.
+
+Los optoacopladores seleccionados son los 6N135, los cuales incorporan un fotodiodo con salida transistorizada de alta velocidad. Este diseño, junto con la conexión separada del fotodiodo, permite mejorar significativamente el tiempo de respuesta respecto a optoacopladores convencionales. La salida es compatible con lógica CMOS, TTL y LSTTL. Para adecuar la polaridad de la señal, se utiliza un transistor complementario que invierte la lógica de salida, tal como se muestra en la figura \ref{fig:img_inv_dev_Esq_6N135}.
+
+\begin{figure}[H]
+\centering
+    \includegraphics[width=0.9\textwidth]{dev/inv/img/Esq_6N135.png}
+    \caption{Esquema circuital del circuito de aislación utilizando el optoacoplador 6N135.}
+\label{fig:img_inv_dev_Esq_6N135}
+\end{figure}
+
+\subsubsection{Simulación}
+
+Con el fin de validar el correcto funcionamiento del driver IR2104, se realizó una simulación de una pierna completa del inversor, utilizando dos MOSFETs y una carga resistiva, alimentada con una tensión de bus de $320 \, V$, como se muestra en la figura \ref{fig:img_inv_dev_Sim_IR2104}.
+
+\begin{figure}[H]
+\centering
+    \includegraphics[width=0.9\textwidth]{dev/inv/img/Sim_IR2104.png}
+    \caption{Esquemático del circuito simulado para la conmutación de una pierna del inversor.}
+\label{fig:img_inv_dev_Sim_IR2104}
+\end{figure}
+
+
+En la figura \ref{fig:img_inv_dev_Sim_Vgs_Id} se presentan las formas de onda de tensión y corriente sobre la carga. Se observa una conmutación limpia y estable, sin picos excesivos ni comportamientos anómalos, lo que confirma la correcta operación del circuito de disparo y su adecuada adaptación para su implementación en el inversor trifásico desarrollado.
+
+\begin{figure}[H]
+\centering
+    \includegraphics[width=0.9\textwidth]{dev/inv/img/Sim_Vgs_Id.png}
+    \caption{Simulación de tensión sobre la carga en trazo verde y corriente a través de la carga en trazo azul.}
+\label{fig:img_inv_dev_Sim_Vgs_Id}
+\end{figure}
+
+\subsubsection{Diseño de circuito impreso}
+
+
+El diseño del PCB del inversor se realizó con una topología simple y funcional, como se muestra en las figuras \ref{fig:img_inv_dev_PCB_Front} y \ref{fig:img_inv_dev_PCB_Back}. Los seis transistores del puente H trifásico se disponen en las proximidades de los conectores del bus de continua y de la salida hacia el motor, con el objetivo de minimizar la longitud de las pistas de potencia y reducir las inductancias parásitas.
+
+Las pistas correspondientes a la etapa de potencia se dejaron sin recubrimiento de máscara antisoldante, permitiendo su estañado. Esta práctica incrementa la sección transversal efectiva del conductor, disminuyendo la resistencia eléctrica y, en consecuencia, las pérdidas por conducción.
+
+Los circuitos de disparo se ubican en la zona central de la placa y se implementan bajo una estructura modular en forma de celda, la cual se replica tres veces. Cada celda incluye su respectivo integrado IR2104 y los optoacopladores asociados a ambas señales de control del medio puente, facilitando el ruteo, la repetitividad del diseño y la escalabilidad del sistema.
+
+En la parte inferior de la placa se localizan los conectores correspondientes a las señales de modulación provenientes del sistema de control, así como la entrada de alimentación de $12 \, V$ provista por el convertidor DC-DC auxiliar.
+
+\begin{figure}[H]
+\centering
+    \includegraphics[width=0.9\textwidth]{dev/inv/img/PCB_Front.png}
+    \caption{Vista frontal de la PCB del inversor.}
+\label{fig:img_inv_dev_PCB_Front}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+    \includegraphics[width=0.9\textwidth]{dev/inv/img/PCB_Back.png}
+    \caption{Vista trasera de la PCB del inversor.}
+\label{fig:img_inv_dev_PCB_Back}
+\end{figure}

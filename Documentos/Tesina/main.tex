@@ -1,0 +1,124 @@
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%     Build: pdflatex -aux-directory=out/build -output-directory=out main.tex     %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\documentclass[a4paper,10pt]{article}
+
+% Paquetes
+\usepackage{titlesec}
+\usepackage{titling}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage[affil-it]{authblk}
+\usepackage{soul}
+\usepackage{array}
+\usepackage{tabularx} % <<-- clave
+% Idioma y codificación
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{csquotes}
+
+% Configuraciones
+%\setmainfont{Times New Roman}
+\usepackage{newtxtext,newtxmath}
+% Para que funcione correctamente con APA
+\usepackage[style=apa, backend=biber]{biblatex}
+%\addbibresource{04-bibliografia.bib}
+\DeclareLanguageMapping{spanish}{spanish-apa}
+
+
+
+\usepackage[hidelinks]{hyperref}
+
+\hypersetup{
+    colorlinks,
+    linkcolor={red!50!black},
+    citecolor={blue!50!black},
+    urlcolor={blue!80!black}
+}
+
+\begin{document}
+\begin{titlepage}
+\centering
+\begin{figure}[t]
+	\centering
+	\includegraphics[scale=0.15]{utn.jpg}
+    \vspace{0.5cm}
+\end{figure}%
+	{\LARGE Proyecto Final\par}
+    {\LARGE 2025\par}
+	\vspace{1cm}
+	{\huge\bfseries Controlador de motor trifásico para instalaciones de baja tensión\par}
+	\vspace{1cm}
+    {\LARGE Tesina\par}
+    \vspace{1cm}
+	{\Large\itshape Elian Andrenacci, Lucas Manuel Carra\par}
+	\vfill
+\end{titlepage}
+
+\tableofcontents
+
+
+\newpage
+\section{Abstract}
+\input{01-abstract.tex}
+
+\newpage
+\section{Marco teórico}
+\input{mt/cnv/cnv.tex}
+\input{mt/motor/motor.tex}
+\input{mt/inv/inv.tex}
+\input{mt/hmi/hmi.tex}
+\input{mt/mod/mod}
+
+\newpage
+\section{Desarrollo de proyecto}
+\input{dev/cnv/cnv.tex}
+\input{dev/inv/inv.tex}
+\input{dev/hmi/hmi.tex}
+\input{dev/mod/mod.tex}
+\input{dev/mont/mont}
+
+\newpage
+\section{Ensayos y Verificación}
+\input{ens/ens.tex}
+
+\newpage
+\section{Conclusiones}
+\input{02-conclusion.tex}
+
+\newpage
+\section{Bibliografía}
+\label{sec:7_bib}
+\nocite{SVM_Strobl}
+\nocite{DesignAndOptimization_Wang}
+\nocite{IsolationInACMotorDrivers}
+\nocite{AnIsolatedMosfetGateDriver_Walker}
+\nocite{IsolatedMultipleOutputFlybacj}
+\nocite{DigitalMotorContol_TI}
+\nocite{SoftSwitchingSnubber_Zhang}
+\nocite{THDAndTorqueRipple_Sieklucki}
+\nocite{H-BridgeMultilevelInverter_Nagle}
+\nocite{StructureMultilevelConverter_Zare}
+\printbibliography[heading=none]
+
+\newpage
+\section{Índice de Figuras y Tablas}
+\label{sec:7b_indice}
+
+\listoffigures
+\listoftables
+
+\newpage
+\section{Anexo}
+\input{anexo/cnv/cnv.tex}
+\input{anexo/costos/costos}
+
+\end{document}

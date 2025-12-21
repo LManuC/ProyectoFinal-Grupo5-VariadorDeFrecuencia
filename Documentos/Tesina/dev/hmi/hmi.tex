@@ -1,0 +1,383 @@
+\subsection{HMI} \label{sec:3_dev_hmi}
+
+\subsubsection{Fuente de alimentación}
+
+    El circuito aislado constará del regulador B1205S-2WR2, con una tensión de entrada de 10.8 a 13.2Vdc y una salida de 5Vdc, lo que permitirá completar el esquema con un regulador lineal de 3.3Vdc tradicional sin inconvenientes. Se opta por una circuitería como la de la figura~\ref{fig:imgDCDC_PS}.
+
+    \begin{figure}[H]
+        \centering
+            \includegraphics[width=0.9\textwidth]{dev/hmi/img/DC-DC_PS.png}
+            \caption{Diagrama de la fuente de alimentación de la etapa de control.}
+        \label{fig:imgDCDC_PS}
+    \end{figure}
+
+    Sumando los consumos de corriente pesimistas y aproximados de los componentes más importantes obtenemos:
+
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{ | c | c | c | c | c |}
+        \hline
+        Componente & Función                                    & Consumo [mA]  & Cantidad  & Total [mA]    \\ \hline
+        STM32      & Microcontrolador variador                  & 150           & 1         & 150           \\ \hline
+        ESP32      & Microcontrolador HMI                       & 500           & 1         & 500           \\ \hline
+        MCP23017   & Expansor de GPIO                           & 1             & 1         & 1             \\ \hline
+        SH1106     & Controlador de display y display OLED      & 120           & 1         & 120           \\ \hline
+        Buzzer     & Indicador de pulsada panel frontal         & 30            & 1         & 30            \\ \hline
+        Leds       & Indicadores testigo                        & 5             & 5         & 25            \\ \hline
+        \multicolumn{4}{|r|}{Total}                                                         & 826           \\ \hline
+        \end{tabular}
+        \caption{Tabla de consumos}
+    \end{table}
+
+    Incluso, sin agregar un margen de seguridad del 20\%, lo que nos daría un consumo total de 991mA, se superan los 800mA que un regulador lineal SMD como el AMS1117 podría llegar a entregar sin ponerlo en riesgo. Dada esta condición, se decidió colocar dos fuentes gemelas. Una de ellas alimentará el microcontrolador que administra la señal de los transistores de salida junto con sus led testigos, la otra abastecerá al microcontrolador del HMI, sus periféricos y leds testigos:
+
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{ | c | c | c | c | c  |}
+        \hline
+        Componente  & Función                                   & Consumo [mA]  & Cantidad  & Total [mA]    \\  \hline
+        STM32       & Microcontrolador variador                 & 150           & 1         & 150           \\ \hline
+        Leds        & Indicadores testigo                       & 3             & 5         & 15            \\ \hline
+        \multicolumn{4}{|r|}{Total}                                                         & 165           \\ \hline
+        \end{tabular}
+        \caption{Tabla de consumos}
+    \end{table}
+
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{ | c | c | c | c | c  |}
+        \hline
+        Componente  & Función                                   & Consumo [mA]  & Cantidad  & Total [mA]    \\  \hline
+        ESP32       & Microcontrolador HMI                      & 500           & 1         & 500           \\ \hline
+        MCP23017    & Expansor de GPIO                          & 1             & 1         & 1             \\ \hline
+        SH1106      & Controlador de display y display OLED     & 120           & 1         & 120           \\ \hline
+        Buzzer      & Indicador de pulsada panel frontal        & 30            & 1         & 30            \\ \hline
+        Leds        & Indicadores testigo                       & 2             & 5         & 10            \\ \hline
+        \multicolumn{4}{|r|}{Total}                                                         & 661           \\ \hline
+        \end{tabular}
+        \caption{Tabla de consumos}
+    \end{table}
+
+    De esta manera se logra, adicionando ese mismo margen del 20\% 198mA y 793mA respectivamente, cumpliendo con la limitación antes mencionada. Así se llega a un diseño de PCB como el de la siguiente figura~\ref{fig:imgDCDC_PS_PCB}.
+
+    \begin{figure}[H]
+        \centering
+            \includegraphics[width=0.9\textwidth]{dev/hmi/img/DC-DC_PS_PCB.png}
+            \caption{Diseño PCB de la fuente de alimentación.}
+        \label{fig:imgDCDC_PS_PCB}
+    \end{figure}
+
+    \begin{figure}[tbp]
+        \centering
+            \includegraphics[width=0.9\textwidth]{dev/hmi/img/DC-DC_PS_PCB_3D.png}
+            \caption{Diseño 3D de la fuente de alimentación.}
+        \label{fig:imgDCDC_PS_PCB_3D}
+    \end{figure}
+
+\subsubsection{Estructura del código}
+
+    Para el desarrollo del código del HMI se basó en freeRTOS sobre el framework del ESP32 de Espressif. Se hizo un desmembramiento de las distintas funcionalidades hasta llegar a una estructura atómica de tareas, cada una con un periférico y función específica que se comunica a través de diferentes queues y semáforos. La figura~\ref{fig:imgEstructuraDelCodigo} muestra las conexiones entre cada tarea y bloque funcional.
+
+    \begin{figure}[H]
+        \centering
+            \includegraphics[width=0.9\textwidth]{dev/hmi/img/pantallasVFLVdc-Estructura-de-codigo.png}
+            \caption{Esquema de comunicación entre módulos de código.}
+        \label{fig:imgEstructuraDelCodigo}
+    \end{figure}
+
+\subsubsection{Display}
+
+    El diseño de PCB del display no reviste demasiado desarrollo, basta con mencionar que se conectan solamente los pines SDA, SCL y alimentación tal como muestra la figura~\ref{fig:imgSH1106ConnectionKiCAD} y figura~\ref{fig:imgSH1106ConnKiCADPCB} debido a la utilización del módulo comercial del SH1106.
+
+    \begin{figure}[H]
+        \centering
+            \includegraphics[width=0.9\textwidth]{dev/hmi/img/I2C_Interface_KCD.png}
+            \caption{Conexionado de display en PCB.}
+        \label{fig:imgSH1106ConnectionKiCAD}
+    \end{figure}
+    
+    \begin{figure}[H]
+        \centering
+            \includegraphics[width=0.9\textwidth]{dev/hmi/img/OLED_PCB.png}
+            \caption{Conexionado de display en PCB.}
+        \label{fig:imgSH1106ConnKiCADPCB}
+    \end{figure}
+
+    \paragraph{Desarrollo del software} Para el control del display se trabajó con una tarea específica llamada \textit{task\_display},donde se lo inicializa junto al puerto $I^{2}C$; se reciben señales desde el panel frontal o el control del sistema del variador de frecuencia a través de colas de comandos para ingresar al menú, navegarlo, editar variables ,guardarlas en memoria no volátil, arrancar y frenar el motor. El menú tendrá un mapa de navegación como se muestra en la figura~\ref{fig:imgPantallasOLED}.
+
+    \begin{figure}[H]
+        \centering
+            \includegraphics[width=0.9\textwidth]{dev/hmi/img/pantallasVFLVdc-Display.png}
+            \caption{Mapa de navegación del display.}
+        \label{fig:imgPantallasOLED}
+    \end{figure}
+
+    Se dispondrá de una pantalla splash que por tiempo avanzará a la principal que mostrándonos la frecuencia de trabajo de la salida de potencia, la corriente y tensión del bus de continua, la hora de inicio y fin de funcionamiento de motor y la hora del sistema. Entrando en los menúes pueden editarse las variables de frecuencia, temporales y de seguridad:
+
+    \begin{itemize}
+        \item Frecuencia
+        \begin{itemize}
+            \item Frecuencia de operación
+                \begin{itemize}
+                \item Es la frecuencia a la cual funcionará el motor cuando llegue a régimen si no hay ninguna entrada de control de velocidad activa.
+                \item Mínimo 1$Hz$; Máximo 150$Hz$.
+            \end{itemize}
+            \item Aceleración
+                \begin{itemize}
+                \item Es la variación de frecuencia en $\frac{Hz}{S}$ que el motor incrementará en cada segundo hasta llegar a régimen.
+                \item Mínimo 1$\frac{Hz}{S}$; Máximo 50$\frac{Hz}{S}$.
+            \end{itemize}
+            \item Desaceleración
+                \begin{itemize}
+                \item Es la variación de frecuencia en $\frac{Hz}{S}$ que el motor decrementará en cada segundo hasta llegar a régimen o hasta frenar.
+                \item Mínimo 1$\frac{Hz}{S}$; Máximo 50$\frac{Hz}{S}$.
+            \end{itemize}
+            \item Variación de lineal o cuadrática de las entradas de control
+                \begin{itemize}
+                \item Es la variación de frecuencia en $Hz$ que las entradas de control de velocidad tendrán entre ellas con 0Hz como valor inicial y la Frecuencia de operación como valor final.
+                \item Puede ser lineal o cuadrática.
+            \end{itemize}
+        \end{itemize}
+        \item Seguridad
+        \begin{itemize}
+            \item Tensión de bus
+                \begin{itemize}
+                \item Es la mínima tensión en el bus de contínua en $V$ que podrá admitirse sin entrar en estado de emergencia.
+                \item Mínimo 250$V$; Máximo 360$V$.
+            \end{itemize}
+            \item Corriente de bus
+                \begin{itemize}
+                \item Es la máxima corriente que podrá circular por el bus de contínua en $mA$ sin entrar en estado de emergencia.
+                \item Mínimo 500$mA$; Máximo 2000$mA$.
+            \end{itemize}
+        \end{itemize}
+        \item Tiempo
+        \begin{itemize}
+            \item Hora
+                \begin{itemize}
+                \item Es la hora del sistema. Se imprime en la parte superior del display.
+            \end{itemize}
+            \item Inicio
+                \begin{itemize}
+                \item Es la hora a la que iniciará a funcionar el motor.
+                \item Se compara contra la hora de sistema.
+            \end{itemize}
+            \item Fin
+                \begin{itemize}
+                \item Es la hora a la que frenará el motor.
+                \item Se compara contra la hora de sistema.
+            \end{itemize}
+        \end{itemize}
+    \end{itemize}
+
+\subsubsection{Configuración Wi-Fi}
+
+    El ESP32 genera una red Wi-Fi como access point (AP) que, conectándose a ella, se accede a un formulario WEB que permitirá configurar los mismos parámetros descritos en la sección anterior. Además se podrá encender y apagar el motor desde allí con los parámetros ya guardados.
+
+    Aún hay mejoras en la experiencia de usuario que se deben realizar desde la interfaz web: Menajes al usuario de validación, redireccionamientos y lectura de datos cargados. Estos cambios deben realizarse desde el código HTML de cada página que se muestra en pantalla, con el agregado de scripts de javascript.
+
+\subsubsection{Memoria no volátil}
+
+    Para el almacenamiento de las variables configuradas por el usuario y mantenerlas cuando el sistema se desenergiza, se optó por utilizar la memoria no volátil del ESP32. Esto nos ahorra la necesidad de disponer de un circuito adicional de memoria EEPROM externa. Todos los parámetros arriba mencionados se salvarán utilizando un sector llamado \textit{storage} y las siguientes etiquetas para la lectura y escritura:
+
+    \begin{itemize}
+        \item freq\_freq
+        \item freq\_acce
+        \item freq\_desa
+        \item freq\_input
+        \item vbus\_min
+        \item ibus\_max
+        \item hour\_ini
+        \item min\_ini
+        \item hour\_fin
+        \item min\_fin
+    \end{itemize}
+
+    Cada vez que el sistema inicia, hace una lectura de todas las variables y las carga en la memoria RAM; luego, en cada edición de parámetros, captura todos los datos editables, los asigna en la memoria RAM del sistema para que entren en vigencia y luego los guarda nuevamente en la memoria no volátil.
+
+\subsubsection{Comunicación SPI}
+
+    Debido a que la exigencia de tiempos del variador de frecuencia es muy alta, no fue posible utilizar un único microcontrolador para el sistema, lo que obligó a disponer de un segundo. El ESP32 se encargará de la operación del HMI: Control de display, lectura de entradas y salidas digitales, salidas analógicas y protecciones de seguridad, además se aprovechó la capacidad de este microcontrolador para agregar la funcionalidad de configuración y comando Wi-Fi; mientras que el STM32 solo se hará cargo del control del variador de frecuencia.
+
+    Una vez que los cambios son realizados en el HMI, estos deben ser enviados al sistema de control del variador de frecuencia. Para ello se utilizó una comunicación SPI entre ambos microcontroladores. El ESP32 actúa como maestro y el STM32 como esclavo.
+
+    Si bien se decidió que el motor pueda estar girando mientras se hacen ediciones de parámetros, estos no impactarán en el variador de frecuencia hasta que el motor se detenga y vuelva a arrancar nuevamente. La máquina de estados del ESP32, es heredada del STM32 ya que se le tuvo que hacer algunos mínimos cambios con motivos funcionales. La misma se encuentra ~\ref{fig:imgMaquinaEstadosHMI}.
+ 
+    \begin{figure}[H]
+    \noindent
+        \makebox[\textwidth]{
+            \includegraphics[angle=90, width=1.2\textwidth]{dev/hmi/img/MaquinaEstados_HMI.png}
+        }
+        \caption{Máquina de estados del HMI.}
+    \label{fig:imgMaquinaEstadosHMI}
+    \end{figure}
+
+    La diferencia de esta máquina de estados con la del STM32 es la existencia del estado \textit{SYSTEM\_EMERGENCY\_OK} como intermediario entre \textit{SYSTEM\_EMERGENCY} y \textit{SYSTEM\_IDLE} para asegurar que no se envíe el comando de parada para volver a habilitar el arranque del motor hasta que el sistema tenga todas las condiciones para salir de estado de emergencia
+
+    Para no entorpecer la operación del variador, cada vez que el motor está cambiando de velocidad, la HMI no hará una consulta sistemática de la frecuencia a la que está operando, sino que crea una tarea paralela que hace la cuenta una vez por segundo incrementando o decrementando la frecuencia de operación en la aceleración o desaceleración configurada. Esto ocasiona un ligero desacoplamiento entre el valor de frecuencia que muestra el display y la real, pero es un compromiso que se eligió tener para no afectar la operación del variador.
+
+    Todos estos estados y configuraciones que se cargan sobre el STM32, esclavo, se logran con una comunicación SPI donde el ESP32 es configurado como maestro. Cada una de ellas se realiza enviando un comando, luego de una demora, el maestro le consulta al esclavo la respuesta a la operación enviada inicialmente. La estructura de los mensajes es como muestra la siguiente figura~\ref{fig:imgEstructuraMensajesSPI}.
+
+    \begin{figure}[H]
+        \centering
+            \includegraphics[width=0.9\textwidth]{dev/hmi/img/Estructura-de-mensajes-SPI.png}
+            \caption{Estructura de mensajes SPI entre ESP32 y STM32.}
+        \label{fig:imgEstructuraMensajesSPI}
+    \end{figure}
+
+    En cada transacción el maestro envía el comando, seguido de dos bytes de datos. Cuando el comando no lo requiere, completa esos espacios con ceros. Luego de 400ms, el maestro envía nuevamente un comando, esta vez de lectura de la respuesta, esperando recibir algún estado del motor o un error. Cuando el maestro le pide un dato como la velocidad, dirección, aceleración o desaceleración, el proceso es idéntico con el agregado que el esclavo le responde con el valor solicitado, caso contrario no introduce los dos bytes de datos.
+
+\subsubsection{GPIO - MCP23017}
+    \paragraph{\textbf{Descripción general}} El MCP23017 es un expansor de pines de propósito general (GPIO) que se comunica con el microcontrolador a través del bus $I^{2}C$. Proporciona 16 pines de entrada/salida adicionales que pueden ser configurados individualmente como entradas o salidas digitales. En este proyecto, el MCP23017 es utilizado para gestionar las entradas y salidas digitales del HMI, permitiendo la conexión de botones, indicadores LED y otros dispositivos periféricos.
+
+        En esta ocasión, se separó las funcionalidades en dos puertos, dejando al puerto A para varias entradas y salidas aisladas y no aisladas y el puerto B únicamente para una matriz de pulsadores 4x2, como se detallará más adelante y como se grafica en la figura~\ref{fig:MCP23017_SCH}.
+
+        \begin{figure}[H]
+            \centering
+                \includegraphics[width=0.9\textwidth]{dev/hmi/img/IOExpander_SCH.png}
+                \caption{Esquema de la matriz de pulsadores.}
+            \label{fig:MCP23017_SCH}
+        \end{figure}
+
+        Se decidió configurar el expansor con un mapa de memoria secuencial, permitiendo acceder a cada registro del puerto A o B de manera consecutiva. Esto facilitó enormemente el desarrollo de las funciones de lectura y escritura de los registros. Además se utilizó las pines INTA e INTB en forma separada, para distinguir claramente cuando la interrupción se genera por una acción sobre el panel frontal o cuando proviene de una entrada aislada; esto ocurrirá con un estado alto de estos pines.
+
+        Con respecto a las salidas, por disposición del diseño de PCB, se configuraron como salidas activas, permitiendo colocar un estado alto o bajo según se requiera. En el caso de las entradas, se configuraron con resistencias de pull-up internas en el caso de la matriz de pulsadores, evitando la necesidad de colocar unas externas en el diseño; para las entradas aisladas se utilizaron resistencias externas de pull-up y pull-down según el caso para asegurar perfectamente la saturación del optoacoplador.
+
+        \paragraph{Relay} Se dispuso una salida a relay para la externalización de un estado de emergencia. Cada vez que ocurre un consumo excesivo de corriente, una baja tensión en el bus de contínua, una señal externa de emergencia o una temperatura elevada en el circuito de potencia, se activa esta salida la cual estará controlada por el pin GPA1 del MCP23017, como se observa en la figura~\ref{fig:MCP23017_SCH}.
+
+        Se decidió utilizar un optoacoplador para que el consumo de corriente que genera la bobina del relay, quede suministrada por la fuente externa de la HMI, sin cargar las fuentes de tensión descritas en la primera parte de esta sección. Con la utilización del PC817, se diseñó el circuito de la figura~\ref{fig:Relay_SCH}, inicialmente sin el transistor $Q_3$, BC847. Al momento de realizar los cálculos teóricos, se descubrió que el consumo de corriente que la bobina podría demandar, era superior a la que el optoacoplador podría entregar, es por eso que se utilizó una configuración Darlintong final.
+        
+        \begin{figure}[H]
+            \centering
+                \includegraphics[width=0.9\textwidth]{dev/hmi/img/Relay_SCH.png}
+                \caption{Esquema de la matriz de pulsadores.}
+            \label{fig:Relay_SCH}
+        \end{figure}
+
+        Finalmente, la disposición del PCB, queda como se muestra en la figura~\ref{fig:Relay_PCB_2D} y figura~\ref{fig:Relay_PCB_3D}. 
+
+        \begin{figure}[H]
+            \centering
+                \includegraphics[width=0.9\textwidth]{dev/hmi/img/Relay_PCB2D.png}
+                \caption{Diseño del control del relay 2D.}
+            \label{fig:Relay_PCB_2D}
+        \end{figure}
+
+        \begin{figure}[H]
+            \centering
+                \includegraphics[width=0.9\textwidth]{dev/hmi/img/Relay_PCB3D.png}
+                \caption{Diseño del control del relay 3D.}
+            \label{fig:Relay_PCB_3D}
+        \end{figure}
+
+        Además, se puede observar que la bornera de salida queda montada sobre la cara opuesta ya que esto permitirá una mejor disposición final, evitando la interferencia del relay contra el frente de gabinete, sin tener que extender demasiado el PCB. Esto se ve claramente en el render de la figura~\ref{fig:Relay_PCB3D_2}.
+
+        \begin{figure}[H]
+            \centering
+                \includegraphics[width=0.9\textwidth]{dev/hmi/img/Relay_PCB3D_2.png}
+                \caption{Disposición de las borneras con respecto al resto del PCB.}
+            \label{fig:Relay_PCB3D_2}
+        \end{figure}
+
+        \paragraph{Buzzer} El buzzer será una herramienta que, en caso de haber tenido una pulsada en el panel frontal, se envía un evento a una tarea llamada MCP23017\_buzzer\_control para que el buzzer suene y el usuario entienda que su pulsada fue registrada.
+
+        El diseño es sencillo, como se observa en la figura~\ref{fig:Buzzer_SCH}, donde el pin GPA0 del MCP23017 controla un transistor BC847 que activa el buzzer piezoeléctrico.
+
+        \begin{figure}[H]
+            \centering
+                \includegraphics[width=0.9\textwidth]{dev/hmi/img/Buzzer_SCH.png}
+                \caption{Diseño del controlador del buzzer.}
+            \label{fig:Buzzer_SCH}
+        \end{figure}
+
+        \paragraph{Entradas y salidas aisladas} Se disponen entradas aisladas para el arranque, parada, parada de emergencia, cambio de velocidades del motor y termoswitch interno con el objetivo de brindarle al usuario la posibilidad de conectar un controlador o sensorización externa que pueda interactuar con el variador de frecuencia. Además se coloca una salida analógica de 0-10V que representará la frecuencia de operación, donde 0V será 0Hz y 10V será 150Hz.
+
+        Cada una de estas entradas y salidas son aisladas con un optoacoplador para evitar que ruidos o picos de tensión puedan dañar los componentes internos del HMI. Así tendremos un circuito para los controles de motor como los de la figura~\ref{fig:Input_SCH}, un circuito para la salida analógica como figura~\ref{fig:Output_SCH} y un circuito para la entrada del termoswitch como figura~\ref{fig:Thermoswitch_SCH}.
+
+        \begin{figure}[H]
+            \centering
+                \includegraphics[width=0.9\textwidth]{dev/hmi/img/ISO_Input_SCH.png}
+                \caption{Diseño del controlador de entradas aisladas.}
+            \label{fig:Input_SCH}
+        \end{figure}
+
+        \begin{figure}[H]
+            \centering
+                \includegraphics[width=0.9\textwidth]{dev/hmi/img/ISO_0-10V_SCH.png}
+                \caption{Diseño del controlador de salida analógica aislada.}
+            \label{fig:Output_SCH}
+        \end{figure}
+
+        \begin{figure}[H]
+            \centering
+                \includegraphics[width=0.9\textwidth]{dev/hmi/img/ISO_Thermoswitch_SCH.png}
+                \caption{Diseño del controlador de entrada del termoswitch aislada.}
+            \label{fig:Thermoswitch_SCH}
+        \end{figure}
+
+        Finalmente, la disposición del PCB, queda como se muestra en la figura~\ref{fig:ISO_IO_PCB} y figura~\ref{fig:ISO_IO_PCB3D} donde se pueden observar claramente la línea de optoacopladores y los dos planos de tensión aislados entre si.
+
+        \begin{figure}[H]
+            \centering
+                \includegraphics[width=0.9\textwidth]{dev/hmi/img/ISO_IO_PCB.png}
+                \caption{Diseño del controlador de entradas y salidas aisladas PCB.}
+            \label{fig:ISO_IO_PCB}
+        \end{figure}
+
+        \begin{figure}[H]
+            \centering
+                \includegraphics[width=0.9\textwidth]{dev/hmi/img/ISO_IO_PCB3D.png}
+                \caption{Diseño 3D del controlador de entradas y salidas aisladas PCB.}
+            \label{fig:ISO_IO_PCB3D}
+        \end{figure}
+
+        De la misma manera que el relay, las borneras de entrada y salida quedan montadas sobre la cara opuesta.
+
+        El funcionamiento de la salida 0-10V parte de una señal PWM 3.3Vdc máximo generada por el microcontrolador, amplificada por el transistor 2N7002 (Q2), filtrada por el capacitor C22 para excitar al transistor BC847 (Q1) que controlará el led del optoacoplador. Finalmente, con un último filtro pasivo (C21) se obtiene la señal analógica de 0-10Vdc sobre la resistencia de carga R22. Este circuito fue simulado en LTSpice para certificar su correcto funcionamiento, como se observa en la figura~\ref{fig:ISO_0-10V_SIM} y figura~\ref{fig:ISO_0-10V_signal_output}.
+
+        \begin{figure}[H]
+            \centering
+                \includegraphics[width=0.9\textwidth]{dev/hmi/img/ISO_0-10V_SIM.png}
+                \caption{Simulación del controlador de salida analógica aislada.}
+            \label{fig:ISO_0-10V_SIM}
+        \end{figure}
+
+        \begin{figure}[H]
+            \centering
+                \includegraphics[width=0.9\textwidth]{dev/hmi/img/ISO_0-10V_signal_output.png}
+                \caption{Gráficos de tensión de salida 0-10V.}
+            \label{fig:ISO_0-10V_signal_output}
+        \end{figure}
+
+        El detalle importante a tener en cuenta es la corriente que circula por la resistencia R21 que nos obliga a utilizar una resistencia de 1W ya que la disipación de potencia en la misma es de aproximadamente 0,75W.
+
+        \paragraph{Botonera}
+
+        Para el panel frontal se dispondrá una matriz de pulsadores de 4x2, donde cada fila y columna se conectarán al MCP23017, quien será el encargado de la lectura de las pulsada. Estos eventos serán reportados como una interrupción del expansor de GPIO y se reportará al ESP32, en donde se hará la lectura de los puertos y determinación del estado de los pulsadores. En el diseño original se dispuso de dos resistencias de pull-up, una por cada fila, sin embargo no fueron montadas y se configuró las salidas del controlador de pines de esa misma manera, generando un ahorro en la disposición de las resistencias R26 y R27, algo que podrá observarse en la figura~\ref{fig:MatrizPulsadores_SCH}.
+        
+        \begin{figure}[H]
+            \centering
+                \includegraphics[width=0.9\textwidth]{dev/hmi/img/MatrizPulsadoresSCH.png}
+                \caption{Esquema de la matriz de pulsadores.}
+            \label{fig:MatrizPulsadores_SCH}
+        \end{figure}
+
+        Inicialmente la placa de la HMI fue pensada con la botonera montada sobre la misma PCB, pero por cuestiones de diseño del gabinete final, se dispuso que quede en una placa diferente, con un conector que comunique ambas placas. El diseño de la PCB de la botonera es el que se muestra en la figura~\ref{fig:MatrizPulsadoresPCB2D} y figura~\ref{fig:MatrizPulsadoresPCB3D}.
+
+        \begin{figure}[H]
+            \centering
+                \includegraphics[width=0.9\textwidth]{dev/hmi/img/MatrizPulsadoresPCB2D.png}
+                \caption{Diseño PCB de la botonera.}
+            \label{fig:MatrizPulsadoresPCB2D}
+        \end{figure}
+
+        \begin{figure}[H]
+            \centering
+                \includegraphics[width=0.9\textwidth]{dev/hmi/img/MatrizPulsadoresPCB3D.png}
+                \caption{Diseño 3D de la botonera.}
+            \label{fig:MatrizPulsadoresPCB3D}
+        \end{figure}
+
+        Al momento de pulsar un botón, el MCP23017 generará un interrupción por el pin INTB, leído por el ESP32 y generando una interrupción. La tarea \textit{GPIO\_interrupt\_attendance\_task} recibe el tipo de evento, interpreta su origen y se envía a si mismo otro evento con el tipo de botón presionado. Luego de 50mS de anti rebote, se lee nuevamente el estado de los pines para certificar que el estado de las entradas se mantenga en la misma condición y se envía el evento final a la cola de eventos del display o sistema según corresponda.
+
+        El control de las salidas de la matriz de pulsadores está a cargo de una tarea local llamada \textit{MCP23017\_keyboard\_control} que alterna el estado alto en las dos filas de la matriz, excepto cuando registra que alguna de las columnas está en estado bajo, signo que delata que hay un botón pulsado. Esta tarea no toma ninguna decisión sobre la lectura, para eso está la \textit{GPIO\_interrupt\_attendance\_task} mencionada anteriormente.
