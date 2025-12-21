@@ -75,29 +75,26 @@ Cátedra Proyecto Final: Mg.Ing. Sebastián Verrastro, Mg.Ing. Pablo Sánchez, M
       	  \begin{column}{\onecolwid}
 		  \begin{block}{Objetivo}
 
-          Fabricar un variador de frecuencia de un motor trifásico (3x220VAC) con potencia de salida máxima de 1/3HP con tensión de entrada de 12VDC desde 0 a 150Hz, con el objetivo de ser un controlador para zonas remotas o de difícil acceso sin la necesidad de la infraestructura de un proveedor de servicio eléctrico tradicional.
-          Este dispositivo tendrá como meta proveer a productores que tengan trabajos dentro y fuera de plantas estables, que necesiten trasladar maquinarias de trabajo, pudiendo conservar instalaciones eficientes dentro y fuera de los espacios de trabajo tradicionales sin tener diversidad en la maquinaria empleada.
+          Fabricar un variador de frecuencia de un motor trifásico (3x220VAC) con potencia de salida máxima de 1/3HP con tensión de entrada de 12VDC desde 0 a 150Hz, para ser un controlador para zonas remotas o de difícil acceso sin la necesidad de la infraestructura de un proveedor de servicio eléctrico tradicional.
+          Este dispositivo está diseñado para proveer a productores que tengan trabajos que se realicen dentro y fuera de plantas estables, que necesiten trasladar maquinarias de trabajo, pudiendo conservar instalaciones eficientes dentro y fuera de los espacios de trabajo tradicionales sin tener diversidad en la maquinaria empleada.
   
           \end{block}
           
           \begin{block}{Marco Teórico}
-          Teniendo en cuenta la entrada de tensión disponible, lograr un sistema eficiente es una necesidad primaria. Lograr una elevación de tensión y manejo de potencia de baja a media tensión resultó un desafío en el  desarrollo del dispositivo.
-          Considerando que la potencia requerida es baja para los sistemas de electrónica de potencia, se utilizó una convertidor DC/DC push-pull, una topología aislada reductora/elevadora que, gracias al transformador que emplea, permite grandes saltos de tensión entre entrada y salida. Gracias a la baja entrada de salida, la principal desventaja no resultó un escollo, la tensión que deben soportar los transistores son el doble de la de entrada, es decir superior a los 24V.
-          El variador de frecuencia se desarrolló utilizando la modulacion de vector espacial o \textit{SVM}, lo que permitió lograr la señal de salida trifasica de 220V rms con una tensión de bus de contínua de 320VDC. Este tipo de modulación se centra en una representación vectorial de las tensiones mejorando la eficiencia del bus, la distorsión armónica y la calidad en la forma de onda de salida con consecuencias positivas sobre el motor cuyo funcionamiento será más suave, menos caliente y con una mejor eficiencia energética.
+          Teniendo en cuenta la entrada de tensión disponible, es necesaria una etapa de conversión de tensión DC/DC que eleve la tensión al menos 26 veces y que pueda manejar potencias superiores a los 250 W. Si bien la topología puente completo tiene mejores características para el cumplimiento del objetivo, el convertidor push-pull resulta adecuado en convertidores de baja potencia (en el orden del 1kW) con un circuito de control más simplificado, aunque con un aprovechamiento menos eficiente del transformador.
+          El variador de frecuencia tiene como función convertir el bus de corriente contínua en corriente alterna trifásica para el accionamiento del motor. Debido a la alta relación de tensión de la etapa de entrada del sistema, se implementa una modulación de vector espacial o \textit{SVM} que permite lograr la señal antes mencionada con una tensión de bus de contínua de 320 VDC. En comparación con el método PWM clásico, este tipo de modulación logra un mejor aprovechamiento del bus de contínua, reduce la distorsión armónica y optimiza la calidad de la forma de onda de salida, con efectos positivos sobre el funcionamiento del motor, tales como un régimen de operación más suave, menor calentamiento y una mayor eficiencia energética.
     
           \end{block}
 
           \begin{block}{Resultados}
-          Durante las pruebas del sistema completo, se observó un excesivo calentamiento del transformador, algo que podría resultar en la rotura del mismo y evidenciando un error en su construcción.
-          El dispositivo tolera perfectamente una carga de 1/6HP y durante 10 minutos 1/3HP. Durante el análisis del problema, detectamos un error en uno de los bobinados del transformador, provocando el síntoma y resultando en la necesidad rebobinar el transformador con un conductor extra motivo por el cual, además, requerirá de un núcleo más grande.
-          Excluyendo esta situación, se logró controlar el motor con trabajos programados, señales eléctricas externas, comandos Wi-Fi desde una red AP generada por el dispositivo y configurar su régimen de funcionamiento.
+          Durante las pruebas del sistema completo, se observó un excesivo calentamiento del transformador por encima de los 110°C, temperatura superior a la indicada por el fabricante del núcleo del transformador, pudiendo resultar en la rotura del mismo. El dispositivo tolera perfectamente una carga de 1/6HP por períodos prolongados de tiempo, manteniendo estable las tensiones y corrientes de cada fase alcanzando los 140 W, y durante 10 minutos 1/3HP debido a un error en el bobinado secundario del transformador.
+          En un análisis posterior permitió identificar una incosistencia en el diseño del transformador, lo que explica el comportamiento térmico observado. Para corregir el problema se deberá rebobinar el transformador con un conductor extra en el bobinado del secundario, motivo por el cual, además, requerirá de un núcleo más grande que permita alojar la totalidad del bobinado.
+          A pesar de esta limitación, se logró controlar el motor con trabajos programados, señales eléctricas externas, control y configuración desde una red Wi-Fi AP generada por el dispositivo y configurar y controlar su régimen de funcionamiento desde el panel frontal.
 
           \end{block}
           
           \begin{block}{Conclusiones}
-          El  proyecto cumple con los objetivos propuestos para un variador de frecuencia trifásico alimentado desde baja tensión orientado a aplicaciones de potencia moderada. El permite el control adecuado de un motor trifásico
-
-          \vspace*{4cm}
+          El proyecto cumple con los objetivos propuestos para un variador de fre-
 
          \end{block}
          \end{column}
@@ -105,11 +102,11 @@ Cátedra Proyecto Final: Mg.Ing. Sebastián Verrastro, Mg.Ing. Pablo Sánchez, M
          \begin{column}{\onecolwid} %The second column
          
          \begin{block}{\vspace*{2.7cm}}
-         mediante modulación vectorial \textit{SVM}, logrando una generación de tensiones adecuadas, un buen aprovechamiento del bus de continua y un comportamiento estable en régimen permanente.
+         cuencia trifásico alimentado desde baja tensión orientado a aplicaciones de potencia moderada. El sistema permite el control adecuado de un motor trifásico mediante modulación vectorial \textit{SVM}, logrando una generación de tensiones esperadas, un aprovechamiento del bus de contínua que permitió lograr la señal de salida sin una tensión del bus de contínua muy elevada y un comportamiento estable en régimen permanente.
           
-          Demuestra una capacidad de sobrecarga limitada pero controlada: el variador es capaz de sostener una potencia del orden de 1/3 HP durante intervalos de tiempo reducidos, sin embargo, el sistema mantiene de forma confiable solo una potencia de 1/6 HP para operación continua por problemas térmicos.
+        Demuestra una capacidad de sobrecarga limitada pero controlada: el variador es capaz de sostener una potencia del orden de 1/3 HP durante intervalos de tiempo reducidos, sin embargo, el sistema mantiene de forma confiable solo una potencia de 1/6 HP para operación continua, limitando la temperatura del transformador dentro de los límites seguros declarados por el fabricante del núcleo magnético.
 
-El sistema de control es bueno y confiable, lo que permite una buena base de trabajo para futuras mejoras y actualización.
+        El sistema de control es bueno y confiable, lo que permite una buena base de trabajo para futuras mejoras y actualizaciones.
          \end{block}
           
           \begin{block}{ }
