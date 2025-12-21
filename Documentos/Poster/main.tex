@@ -1,0 +1,184 @@
+\def\footer#1{\def\insertfooter{#1}}
+\documentclass[final]{beamer}
+
+\usepackage[scale=1.150]{beamerposter}
+\usetheme{MUWposter}
+
+%Logo/Banner de la Empresa/Proyecto
+\logo{
+\pgfputat{
+\pgfxy(-10,108)}{
+\pgfbox[center,base]{\includegraphics{img/ProjectLogo.png}}
+}
+}  
+
+\usepackage{multicol}
+\usepackage{array}
+\newcolumntype{L}{>{\arraybackslash}m{22cm}}
+\newcolumntype{S}{>{\arraybackslash}m{5cm}}
+\usepackage{pgf}  
+\usepackage{mathtools}
+\usepackage{amsmath, amsthm, amssymb, amsfonts}
+\usepackage{exscale}
+\usepackage{xcolor}
+\usepackage{ushort}
+\usepackage{setspace}
+\usepackage[square,numbers]{natbib}
+\usepackage{url}
+\bibliographystyle{abbrvnat}
+\renewcommand{\vec}[1]{\ushort{#1}}
+\renewcommand{\vec}[1]{\mathbf{#1}}
+\definecolor{greenMUW}{RGB}{60,191,174}
+\definecolor{blueMUW}{RGB}{17,29,79}
+\definecolor{skinMUW}{RGB}{254,228,217}
+\definecolor{hellblauMUW}{RGB}{95,180,229}
+\colorlet{themecolor}{greenMUW}
+\usebackgroundtemplate{\includegraphics{MUW_green.pdf}}
+
+%-----------------------------------------------
+%  Columnas
+%-----------------------------------------------
+\setlength{\paperwidth}{33.1in}
+\setlength{\paperheight}{46.8in}
+\newlength{\sepmargin}
+\newlength{\sepwid}
+\newlength{\onecolwid}
+\newlength{\twocolwid}
+\newlength{\threecolwid}
+\setlength{\sepmargin}{0.055\paperwidth}
+\setlength{\sepwid}{0.03\paperwidth}
+\setlength{\onecolwid}{0.43\paperwidth}
+\setlength{\twocolwid}{0.9\paperwidth}
+
+%--------------------------------------------------------------------------------------
+%	TITULO 
+%--------------------------------------------------------------------------------------
+\setbeamertemplate{title}[left]
+\setbeamertemplate{frametitle}[default][left]
+
+\title{CONTROLADOR DE MOTOR TRIFÁSICO PARA INSTALACIONES DE BAJA TENSIÓN} % Poster title
+\author{Elian Andrenacci, Lucas Manuel Carra}
+\institute{Universidad Tecnológica Nacional - Facultad Regional Buenos Aires \vspace{0.5cm} \linebreak
+Cátedra Proyecto Final: Mg.Ing. Sebastián Verrastro, Mg.Ing. Pablo Sánchez, Mg.Ing. Mariano Vidal, Ing. Fernando Valenzuela}
+%--------------------------------------------------------------------------------------
+
+\begin{document}
+
+  \addtobeamertemplate{block end}{}{\vspace*{1ex}}
+  \addtobeamertemplate{block alerted end}{}{\vspace*{0ex}}
+  \setlength{\belowcaptionskip}{2ex}
+  \setlength\belowdisplayshortskip{1ex}
+    
+  \begin{frame}[t] 
+      \begin{columns}[t] 	  
+      \begin{column}{\sepmargin}\end{column}
+      	  \begin{column}{\onecolwid}
+		  \begin{block}{Objetivo}
+
+          Fabricar un variador de frecuencia de un motor trifásico (3x220VAC) con potencia de salida máxima de 1/3HP con tensión de entrada de 12VDC desde 0 a 150Hz, con el objetivo de ser un controlador para zonas remotas o de difícil acceso sin la necesidad de la infraestructura de un proveedor de servicio eléctrico tradicional.
+          Este dispositivo tendrá como meta proveer a productores que tengan trabajos dentro y fuera de plantas estables, que necesiten trasladar maquinarias de trabajo, pudiendo conservar instalaciones eficientes dentro y fuera de los espacios de trabajo tradicionales sin tener diversidad en la maquinaria empleada.
+  
+          \end{block}
+          
+          \begin{block}{Marco Teórico}
+          Teniendo en cuenta la entrada de tensión disponible, lograr un sistema eficiente es una necesidad primaria. Lograr una elevación de tensión y manejo de potencia de baja a media tensión resultó un desafío en el  desarrollo del dispositivo.
+          Considerando que la potencia requerida es baja para los sistemas de electrónica de potencia, se utilizó una convertidor DC/DC push-pull, una topología aislada reductora/elevadora que, gracias al transformador que emplea, permite grandes saltos de tensión entre entrada y salida. Gracias a la baja entrada de salida, la principal desventaja no resultó un escollo, la tensión que deben soportar los transistores son el doble de la de entrada, es decir superior a los 24V.
+          El variador de frecuencia se desarrolló utilizando la modulacion de vector espacial o \textit{SVM}, lo que permitió lograr la señal de salida trifasica de 220V rms con una tensión de bus de contínua de 320VDC. Este tipo de modulación se centra en una representación vectorial de las tensiones mejorando la eficiencia del bus, la distorsión armónica y la calidad en la forma de onda de salida con consecuencias positivas sobre el motor cuyo funcionamiento será más suave, menos caliente y con una mejor eficiencia energética.
+    
+          \end{block}
+
+          \begin{block}{Resultados}
+          Durante las pruebas del sistema completo, se observó un excesivo calentamiento del transformador, algo que podría resultar en la rotura del mismo y evidenciando un error en su construcción.
+          El dispositivo tolera perfectamente una carga de 1/6HP y durante 10 minutos 1/3HP. Durante el análisis del problema, detectamos un error en uno de los bobinados del transformador, provocando el síntoma y resultando en la necesidad rebobinar el transformador con un conductor extra motivo por el cual, además, requerirá de un núcleo más grande.
+          Excluyendo esta situación, se logró controlar el motor con trabajos programados, señales eléctricas externas, comandos Wi-Fi desde una red AP generada por el dispositivo y configurar su régimen de funcionamiento.
+
+          \end{block}
+          
+          \begin{block}{Conclusiones}
+          El  proyecto cumple con los objetivos propuestos para un variador de frecuencia trifásico alimentado desde baja tensión orientado a aplicaciones de potencia moderada. El permite el control adecuado de un motor trifásico
+
+          \vspace*{4cm}
+
+         \end{block}
+         \end{column}
+         \begin{column}{\sepwid}  \end{column}
+         \begin{column}{\onecolwid} %The second column
+         
+         \begin{block}{\vspace*{2.7cm}}
+         mediante modulación vectorial \textit{SVM}, logrando una generación de tensiones adecuadas, un buen aprovechamiento del bus de continua y un comportamiento estable en régimen permanente.
+          
+          Demuestra una capacidad de sobrecarga limitada pero controlada: el variador es capaz de sostener una potencia del orden de 1/3 HP durante intervalos de tiempo reducidos, sin embargo, el sistema mantiene de forma confiable solo una potencia de 1/6 HP para operación continua por problemas térmicos.
+
+El sistema de control es bueno y confiable, lo que permite una buena base de trabajo para futuras mejoras y actualización.
+         \end{block}
+          
+          \begin{block}{ }
+				\begin{figure}
+                    \includegraphics[width=.7\linewidth]{img/Salida_osc.jpg}
+				\end{figure}
+                
+                \begin{multicols}{2}
+                \begin{figure}
+                	\vspace*{0.7cm}
+                    \includegraphics[width=.8\linewidth]{img/modHexagonVectors.jpg}
+				\end{figure}
+                \begin{figure}
+                    \includegraphics[width=1\linewidth]{img/Potencia.png}
+				\end{figure}
+                \end{multicols}
+                
+                \begin{figure}
+                    \includegraphics[width=.9\linewidth]{img/Dispositivo.png}
+				\end{figure}
+                
+	  \end{block}
+      \end{column}
+      \begin{column}{\sepmargin} \end{column}
+      \end{columns} 
+      \begin{columns}[t]       
+      \begin{column}{\sepmargin} \end{column}
+      \begin{column}{\onecolwid}
+			    \vspace*{-0.9cm}
+				\begin{alertblock}{\large Contacto e Información}
+                \vspace*{-0.5cm}
+					\begin{footnotesize}
+					\begin{itemize}
+						\item {Proyecto Final - UTN-FRBA} - \href{Proyecto Final - UTN-FRBA}{https://www.frba.utn.edu.ar/electronica/proyecto-final/}
+                        \item {Repositorio proyecto} - \href{Repositorio proyecto}{https://github.com/LManuC/ProyectoFinal-Grupo5-VariadorDeFrecuencia/}
+                        \item {Canal de youtube con video de funcionamiento} - \href{Canal de youtube con video de funcionamiento}{https://www.youtube.com/playlist?list=PLN\_nehD\_w6V3k8sGirIR0Lm5y22pTkL74}
+					\end{itemize}
+				\end{footnotesize}			
+				\end{alertblock}
+		    \end{column}
+			\begin{column}{\sepwid}\end{column} 
+			\begin{column}{\onecolwid} 
+              \begin{block}{\large Referencias}
+			  \vspace*{-0.5cm}
+              	\nocite{*}
+					{\footnotesize
+\begin{thebibliography}{9}
+
+\bibitem{cita_1}
+    Juan Carlos FLoriani
+    \textit{"Fuentes conmutadas - Análisis y diseño"}
+    Universidad Nacional del Litoral
+    Argentina
+    2010
+    ISBN 987-9406-45-1
+
+\bibitem{cita_2}
+    Ayman Y. Yousef
+    \textit{"Space Vector Pulse Width Modulation Technique"}
+    Electrical Engineering Department, Faculty of Engineering at Shoubra
+    Egypt
+    2015
+    ISSN 0976-1353
+
+\end{thebibliography}
+}
+			\end{block} 
+			\end{column}             
+			\begin{column}{\sepmargin}\end{column}            
+\end{columns}
+\end{frame}	
+\end{document}
