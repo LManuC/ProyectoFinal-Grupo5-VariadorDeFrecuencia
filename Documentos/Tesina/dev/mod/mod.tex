@@ -9,10 +9,10 @@ La implementación de la modulación se realizó en un microcontrolador STM32, c
 \paragraph{Timer 2} En paralelo, el Timer 2 opera a una frecuencia mayor y es el encargado de calcular los valores de conmutación para el siguiente ciclo. Con el fin de reducir el tiempo de cómputo, se aplicó una aproximación que introduce un error despreciable respecto de las expresiones exactas, las cuales incluyen funciones trigonométricas (seno y coseno) donde el error introducido puede observarse en la figura~\ref{fig:imgDev_Mod_RegresTicksMod}. A partir de las ecuaciones de los tiempos previamente definidas, se calcularon los valores correspondientes a incrementos de $1$°, convirtiéndolos luego a la cantidad de ticks del microcontrolador necesarios para la actualización siguiente. Sobre estos datos se aplicó una regresión lineal, obteniéndose los coeficientes lineales e independientes utilizados en tiempo real
 
 \[
-tick_1 = M_1\left[ A_1 * \alpha + B_1 \right]
+tick_1 = M \left[ A_1 * \alpha + B_1 \right]
 \]
 \[
-tick_2 = M_2\left[ A_2 * \alpha + B_2 \right]
+tick_2 = M \left[ A_2 * \alpha + B_2 \right]
 \]
 \[
 tick_0 = 255 - tick_1 - tick_2
