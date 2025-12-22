@@ -10,6 +10,5 @@ cd .\Documentos\TestDeAceptacion
 
 pdflatex -interaction=nonstopmode -halt-on-error -file-line-error -output-directory=%OUTDIR% %MAIN%.tex
 pdflatex -interaction=nonstopmode -halt-on-error -file-line-error -output-directory=%OUTDIR% %MAIN%.tex
-pdflatex -interaction=nonstopmode -halt-on-error -file-line-error -output-directory=%OUTDIR% %MAIN%.tex
 
 move %OUTDIR%\%MAIN%.pdf .\%DESTPDF%
