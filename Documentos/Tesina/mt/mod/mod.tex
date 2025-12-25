@@ -39,7 +39,7 @@ Además de estas ventajas, la modulación SVM se integra de manera natural con e
 
 Se interpreta el vector activo del hexágono como la representación espacial del campo magnético resultante en el estator del motor. Dentro de cada uno de los seis sectores del hexágono se produce la conmutación entre dos vectores activos y los dos vectores nulos. Durante la primera mitad del sector predomina uno de los vectores activos, mientras que en la segunda mitad predomina el otro, garantizando así la transición suave del vector resultante\footcite{SVMTechnique_Yousef}.
 
-Los tiempos de aplicación de cada vector se determinan a partir de las siguientes constantes:
+Los tiempos de aplicación de cada vector son determinados a partir de las siguientes constantes:
 
 \begin{equation}\label{eq:svm_coef_A}
 A = \frac{3 \sqrt{3}}{2\pi} \text{T}
@@ -51,18 +51,21 @@ B = \frac{3}{\pi} \text{T}
 
 donde $T$ corresponde al período de conmutación del inversor.
 
-Completando con las ecuaciones \eqref{eq:svm_coef_A} y \eqref{eq:svm_coef_B}, los tiempos de permanencia de cada vector se obtienen mediante:
+Completando con las ecuaciones \eqref{eq:svm_coef_A} y \eqref{eq:svm_coef_B}, los tiempos de permanencia de cada vector son obtenidos mediante las ecuaciones~\ref{eq:svm_coef_t1}, ~\ref{eq:svm_coef_t2} y ~\ref{eq:svm_coef_t3}:
 
-\begin{equation}\label{eq:svm_coef_t1}
-t_1 = I_{mod} \ A \   \cos{\alpha} - \frac{t_2}{2}
+\begin{equation}
+    \label{eq:svm_coef_t1}
+    t_1 = I_{mod} \ A \   \cos{\alpha} - \frac{t_2}{2}
 \end{equation}
 
-\begin{equation}\label{eq:svm_coef_t2}
-t_2 = I_{mod} \ B \ \sin{\alpha}
+\begin{equation}
+    \label{eq:svm_coef_t2}
+    t_2 = I_{mod} \ B \ \sin{\alpha}
 \end{equation}
 
-\begin{equation}\label{eq:svm_coef_t0}
-t_0 = \frac{T}{2} - t_1 - t_2
+\begin{equation}
+    \label{eq:svm_coef_t0}
+    t_0 = \frac{T}{2} - t_1 - t_2
 \end{equation}
 
 En estas expresiones, $\alpha$ es el ángulo eléctrico dentro del sector correspondiente del hexágono, mientras que el índice de modulación $I_{mod}$ permite ajustar la amplitud de la tensión de salida generada por el inversor.
@@ -74,3 +77,38 @@ En estas expresiones, $\alpha$ es el ángulo eléctrico dentro del sector corres
 \label{fig:imgMT_Mod_switchPattern}
 \footcite{imperix_svpwm}
 \end{figure}
+
+\subsubsection{Comunicación SPI}
+
+Debido a la alta demanda que introduce la modulación y con el objetivo de modularizar las funcionalidades, se decidió separar el HMI de la modulación, motivo por el cual se ustilizó un micocontrolador aparte que se comunicará con el HMI mediante un puerto SPI.
+
+Este puerto de comunicación es un maestro-esclavo, multi esclavo y full duplex que fue creado para comunicaciones de corta distancia y alta velocidad, normalmente de hasta 125MHz, aunque puedan encontrarse casos de mayor velocidad en dispositivos avanzados. Requiere de al menos cuatro pines de conexión que involucran un pin de clock, uno de selección de esclavo (por cada esclavo extra, se sumará una señal adicional) y los pines de comunicación propiamente dichos MOSI (\textit{Master output - Slave input}) y MISO (\textit{Master input - Slave output}) que intercomuincará a todos los dispositivos intervinientes en la comunicación.
+
+El esquema de conexión habitual tiene el formato de la figura~\ref{fig:SPI_COnnection}
+
+\begin{figure}[H]
+\centering
+    \includegraphics[width=0.7\textwidth]{mt/mod/img/ConexionSPI.png}
+    \caption{Circuito de conexión SPI.}
+\label{fig:SPI_COnnection}
+\end{figure}
+
+\paragraph{Configuración} Al igual que el $I^2C$, este puerto de comunicación puede variar el momento en el que lee el dato y cuales son los estados de clock que espera tener para permitir el cambio en el bus de información.
+
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+\textbf{Modo} & \textbf{CPOL} & \textbf{CPHA} & \textbf{Clock IDLE} & \textbf{Comportamiento} \\
+\hline
+0 & 0 & 0 & Estado bajo & Dato en flanco creciente, escrito en flanco decreciente \\
+1 & 0 & 1 & Estado bajo & Dato en flanco decreciente, escrito en flanco creciente \\
+2 & 1 & 0 & Estado alto & Dato en flanco decreciente, escrito en flanco creciente \\
+3 & 1 & 1 & Estado alto & Dato en flanco creciente, escrito en flanco decreciente \\
+\hline
+\end{tabular}
+\caption{Modos de operación SPI}
+\end{table}
+
+Para esta comunicación se estableción el modo 0 simplemente para adoptar uno en particular.

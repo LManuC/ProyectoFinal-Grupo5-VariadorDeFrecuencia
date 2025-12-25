@@ -4,9 +4,9 @@
 
 La principal función de este módulo es poder darle al usuario una interfaz de configuración y control del comportamiento del sistema. Habitualmente son dispositivos que leen y controlan las variables del sistema y se las presenta al usuario en un formato amigable, abstrayéndolo de variables eléctricas y transformando la información colectada en su representación final y más adecuada para la aplicación para la cual se la diseño. Además, interactúa con dispositivos eléctricos y electrónicos a través de puertos de comunicación, entradas y salidas para poner en ejecución lo configurado por el humano.
 
-\subsubsection{Fuente de alimentación}
+Creemos que es indispensable la aislación eléctrica entre la etapa de potencia y control en el dispositivo para evitar por todos los medios posibles que haya daños en alguno de los circuitos lógicos. Esto nos obliga a utilizar una circuitos eléctricamente aisladados.
 
-Creemos que es indispensable la aislación eléctrica entre la etapa de potencia y control en el dispositivo para evitar por todos los medios posibles que haya filtración de ruido en alguno de los circuitos lógicos. Esto nos obliga a utilizar una fuente aislada.
+\subsubsection{Fuente de alimentación}
 
 Al tener una entrada de tensión continua desde el exterior del dispositivo, será necesario utilizar convertidor DC/DC aislado. Estos dispositivos son por lo general ruidosos en relación a la necesidad de un microcontrolador, por lo que debemos poder separar esta etapa en dos:
 
@@ -17,11 +17,12 @@ Al tener una entrada de tensión continua desde el exterior del dispositivo, ser
 
 \subsubsection{Display}
 
-Una de las principales partes de una HMI es un medio de representación de la información. Muchas veces pueden ser únicamente un display, táctil, pequeño o grande, siempre de acuerdo a la función que deba cumplir el dispositivo y la necesidad que pueda presentarse para el usuario. En el caso del variador de frecuencia, se plantea para zonas remotas, de difícil acceso, remoto o poco concurrido, por lo que no dispondremos de un display muy sofisticado y, en consecuencia de alto valor económico.
+El display es una de las principales partes de una HMI, es el medio de representación de la información para el usuario. Muchas veces pueden ser únicamente un display, táctil, pequeño o grande, siempre de acuerdo a la función que deba cumplir el dispositivo y la necesidad que pueda presentarse para el usuario. En el caso del variador de frecuencia, se plantea para zonas remotas, de difícil acceso, remoto o poco concurrido, por lo que no dispondremos de un display muy sofisticado y, en consecuencia de alto valor económico.
 
 Se trata de un display OLED pequeño de $1.3"$ conformado por una matriz gráfica de leds que responde a una memoria RAM de 132 x 64 que puede ser manipulada a través de un puerto $I^{2}C$ esclavo con su línea de comunicación de datos (SDA) y la línea de clock (SCL) que deben estar conectadas a positivo mediante una resistencia de pull-up.
 
-\paragraph{Funcionamiento del puerto $I^{2}C$} Durante la transferencia de datos, el dato será leído desde el flanco ascendente de la línea de clock hasta su flanco decreciente, lo que permitirá cambiar el dato que se pretende escribir cuando su estado es bajo, tal como lo indica la Figura~\ref{fig:imgBitTransfer}.
+\subsubsection{Funcionamiento del puerto $I^{2}C$}
+Durante la transferencia de datos, el dato será leído desde el flanco ascendente de la línea de clock hasta su flanco decreciente, lo que permitirá cambiar el dato que se pretende escribir cuando su estado es bajo, tal como lo indica la Figura~\ref{fig:imgBitTransfer}.
 
 \begin{figure}[tbp]
 \centering
@@ -66,7 +67,7 @@ De la hoja de datos del SH1106, el controlador del display que se utilizará, ob
 
 Debido a la cantidad de entradas y salidas que deben ser controladas, para no disponer de un microcontrolador con una encapsulado más grande, se dispondrá de un extensor de GPIO con control por puerto $I^{2}C$. El extensor MCP23017 tiene un comportamiento idéntico al del display arriba mencionado, razón por la cual se no se ahondará en detalles en esta sección del documento.
 
-Colocar un chip para esta función permite además lograr una aislación adicional entre los GPIO y el microcontrolador. Si bien esta separación existe, las referencias de tensión no quedarán separadas y eso no evitará que debamos colocar un optoacoplador en cada pin que interactúe con señales eléctricas desde el exterior del HMI para evitar problemas. Cada una de ellas deberá activarse colocando el cátodo del led del optoacoplador a GND, lo que evitará así que el sistema externo deba suministrar tensión.
+Colocar un chip para esta función permite además lograr una aislación adicional entre los GPIO y el microcontrolador. Si bien esta separación existe, las referencias de tensión no quedarán separadas y eso no evitará que debamos colocar un optoacoplador en cada pin que interactúe con señales eléctricas desde el exterior del HMI para evitar problemas. Cada una de ellas se activará colocando el cátodo del led del optoacoplador a GND, lo que evitará así que el sistema externo deba suministrar tensión.
 
 El circuito aproximado teórico sería algo similar al de la figura~\ref{fig:ISO_Inputs}:
 
@@ -79,17 +80,12 @@ El circuito aproximado teórico sería algo similar al de la figura~\ref{fig:ISO
 
 Los diferentes entradas y salidas serán las siguiente:
 
-\paragraph{Teclado}
-El teclado será el medio por el cual el usuario podrá interactuar con el dispositivo. Podrá configurar y controlar al variador de frecuencia a través de un teclado matricial simple de 2x4.
-
-Esta circuitería no necesita ser optoacoplada ya que no tiene exteriorización de las señales.
-
 \vspace{0.25\baselineskip}
 
 \paragraph{Entradas y salidas aisladas}
 Las entradas aisladas servirán como control para dispositivos de automatización de procesos como un PLC. Todas ellas tendrán un optoacoplador para aislar eléctricamente la parte lógica del sistema del exterior.
 
-Además habrá una salida analógica de 0-10V que representará la frecuencia de salida del variador de frecuencia, siendo 0V la representación de 0Hz y 10V la de 150Hz.
+Además se dispondrá de una salida analógica de 0-10V que representará la frecuencia de salida del variador de frecuencia, siendo 0V la representación de 0Hz y 10V la de 150Hz.
 
 Al ser una salida analógica para informar una condición hacia el exterior del sistema, se utilizará un optoacoplador al final del conversor digital analógico.
 
@@ -105,11 +101,17 @@ Debido al consumo de corriente de la bobina, para no sobre cargar las fuentes de
 \paragraph{Termoswitch}
 Es un componente de protección del variador de frecuencia, no disponible para el usuario, con la intención de proteger a los dispositivos que controlan la potencia del sistema (variador de frecuencia e inversor).
 
-Si bien es una señal que quedará circunscrita al dispositivo, la aislación eléctrica es necesaria ya que no deseamos tener ningún punto de contacto posible entre la etapa de potencia y la de control.
+Si bien es una señal que quedará circunscrita al dispositivo, la aislación eléctrica es necesaria ya que no es deseable tener ningún punto de contacto posible entre la etapa de potencia y la de control.
 
 \vspace{0.25\baselineskip}
 
 \paragraph{Buzzer}
-Señalización para dar al usuario una señal audible que indique que está pulsando alguno de los botones del teclado matricial disponibles en panel frontal.
+Señalización audible para dar al usuario que indique que está pulsando alguno de los botones del teclado matricial disponibles en panel frontal.
 
 El dispositivo será controlado sin ningún circuito de seguridad ya que quedará montado sobre la misma placa de control.
+
+\vspace{0.25\baselineskip}
+
+\paragraph{Teclado} El teclado será el medio por el cual el usuario podrá interactuar con el dispositivo. Se podrá configurar y controlar al variador de frecuencia a través de un teclado matricial simple de 2x4.
+
+Esta circuitería no necesita ser optoacoplada ya que no tiene exteriorización de las señales.
