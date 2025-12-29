@@ -1,8 +1,6 @@
 \label{sec:3_dev_cnv}
 \subsection{Conversor DC-DC}
-\subsubsection{Introducción}
-
-\paragraph{Selección de topología}
+\subsubsection{Selección de topología}
 
 El módulo conversor debe:
 \begin{itemize}
@@ -18,9 +16,9 @@ Esta topología fue seleccionada por su adecuada capacidad de manejo de potencia
 
 Otra ventaja importante de esta topología es que, como se puede aplicar toda la tensión de entrada al primario en cada ciclo, permite el uso de transformadores con menor relación de espiras, simplificando el diseño magnético, reduciendo pérdidas por histéresis y permitiendo operar a frecuencias de conmutación más altas. Esto último, además, posibilita el uso de inductores y capacitores de menor tamaño.
 
-El aislamiento galvánico que brinda el transformador permite formar una barrera entre el bus de alta tensión y el de baja tensión, lo que se traduce a una mayor seguridad tanto en instalación y funcionamiento como en el ensayo para el operario. Además, esto habilitó un diseño más seguro y modular, facilitando la integración del conversor con otros subsistemas como el del control general.
+El aislamiento galvánico que brinda el transformador permite formar una barrera entre el bus de alta tensión y el de baja tensión, lo que se traduce a una mayor seguridad tanto en instalación y funcionamiento, como en el ensayo para el operario. Además, esto habilitó un diseño más seguro y modular, facilitando la integración del conversor con otros subsistemas como el del control general.
 
-\paragraph{Requerimientos mínimos eléctricos}
+\subsubsection{Requerimientos mínimos eléctricos}
 
 Se establecieron los requerimientos mínimos que el convertidor debe cumplir, a partir de los cuales se realizaron los cálculos de diseño. Los parámetros principales se resumen a continuación:
 
@@ -72,7 +70,7 @@ Se seleccionó un núcleo de ferrita ETD36 debido a su geometría optimizada par
 
 A continuación, en la tabla~\ref{tab:cnv_caracteristicas_ETD36} se listan sus características más importantes, junto a sus características magnéticas en la tabla~\ref{tab:cnv_EDT36_Caracteristicas_magneticas} y sus dimensiones físicas en la tabla~\ref{tab:cnv_EDT36_Dimensiones_Fisicas} para el cálculo posterior.
 
-En la figura~\ref{fig:cnv_EDT36_referencias_medidas} se pueden referencias las medidas descriptas.
+En la figura~\ref{fig:cnv_EDT36_referencias_medidas} se pueden ver referencias de las medidas descriptas.
 \begin{table}[H]
 \centering
 \renewcommand{\arraystretch}{1.2}
@@ -212,9 +210,9 @@ De acuerdo con la curva de área de operación segura, el dispositivo trabaja de
 
 \paragraph{Simulación del circuito de conmutación}
 
-Para anticipar y evaluar el diseño del circuito se utiliza la herramienta LTSpice para la simulación, algo que se muestra en la figura ~\ref{fig:imgDev_EsqSimSimplificado}. Solo se busca analizar el comportamiento tanto del transformador como de los transistores de potencia y la etapa de filtrado. Se excluye el circuito de control por la complejidad. En este se coloca el transformador con sus tres arrollamientos con un acoplamiento unitario además de los componentes complementarios. 
+Para anticipar y evaluar el diseño del circuito se utilizó la herramienta LTSpice para la simulación, algo que se muestra en la figura ~\ref{fig:imgDev_EsqSimSimplificado}. Solo se buscó analizar el comportamiento tanto del transformador como de los transistores de potencia y la etapa de filtrado. Se excluyó el circuito de control por la complejidad. En este se colocó el transformador con sus tres arrollamientos con un acoplamiento unitario además de los componentes complementarios. 
 
-Para asegurar un buen funcionamiento del conversor en las simulaciones se exigen ligeramente al circuito, se coloca una carga que consuma $400W$, esto va a generar corrientes mas grandes sobre los transistores.
+Para asegurar un buen funcionamiento del conversor en las simulaciones se exigió ligeramente al circuito, colocando una carga que consuma $400W$ para generar corrientes más grandes sobre los transistores.
 
 \begin{figure}[H]
 \centering
@@ -223,7 +221,7 @@ Para asegurar un buen funcionamiento del conversor en las simulaciones se exigen
 \label{fig:imgDev_EsqSimSimplificado}
 \end{figure}
 
-Se inyecta dos señales a las compuertas de los transistores de $0V$ a $12V$ con un ciclo de actividad de $45\%$ y una frecuencia de $50 kHz$ con la de la figura ~\ref{fig:imgDev_SimVgs}.
+Se inyectaron dos señales a las compuertas de los transistores de $0V$ a $12V$ con un ciclo de actividad de $45\%$ y una frecuencia de $50 kHz$ con la de la figura ~\ref{fig:imgDev_SimVgs}.
 
 \begin{figure}[H]
 \centering
@@ -232,7 +230,7 @@ Se inyecta dos señales a las compuertas de los transistores de $0V$ a $12V$ con
 \label{fig:imgDev_SimVgs}
 \end{figure}
 
-Por un lado, tenemos la tensión entre drenaje y fuente, la cual desciende a $0V$ cuando el transistor conduce y a $24V$, el doble de la tensión de fuente, cuando deja de hacerlo. Lo esperado en una topología push-pull. Por otro lado, en la figura~\ref{fig:imgDev_SimVds} se muestra el arranque del sistema.
+Por un lado, se obtuvo la tensión entre drenaje y fuente, la cual desciende a $0V$ cuando el transistor conduce y a $24V$ (el doble de la tensión de fuente) cuando deja de hacerlo, lo esperado en una topología push-pull. Por otro lado, en la figura~\ref{fig:imgDev_SimVds} se muestra el arranque del sistema.
 
 \begin{figure}[H]
 \centering
@@ -241,7 +239,7 @@ Por un lado, tenemos la tensión entre drenaje y fuente, la cual desciende a $0V
 \label{fig:imgDev_SimVds}
 \end{figure}
 
-A continuación, en la figura ~\ref{fig:imgDev_SimVds-Ids} se gráfica la corriente de drenaje de uno de los transistores de entrada. Se nota una gran corriente de entrada al inicio. Esto se debe a la carga inicial del capacitor además de encontrarse el circuito bajo carga lo cual no puede ocurrir en nuestro sistema. Esta corriente de entrada es demasiado alta incluso para la carga del capacitor, por ello se implementa el circuito de arranque suave sobre el sistema de control. 
+A continuación, en la figura ~\ref{fig:imgDev_SimVds-Ids} se gráfica la corriente de drenaje de uno de los transistores de entrada. Se nota una gran corriente de entrada al inicio debido a la carga inicial del capacitor además de encontrarse el circuito cargado, escenario que no podrá ocurrir en nuestro sistema. Esta corriente de entrada es demasiado alta incluso para la carga del capacitor, por ello se implementa el circuito de arranque suave sobre el sistema de control. 
 
 \begin{figure}[H]
 \centering

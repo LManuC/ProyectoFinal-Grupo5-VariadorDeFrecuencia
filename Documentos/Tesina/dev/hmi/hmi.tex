@@ -2,7 +2,7 @@
 
 \subsubsection{Fuente de alimentación}
 
-    El circuito aislado constará del regulador B1205S-2WR2, con una tensión de entrada de 10.8 a 13.2Vdc y una salida de 5Vdc, lo que permitirá completar el esquema con un regulador lineal de 3.3Vdc tradicional sin inconvenientes. Se opta por una circuitería como la de la figura~\ref{fig:imgDCDC_PS}.
+    El circuito aislado consta del regulador B1205S-2WR2, con una tensión de entrada de 10.8 a 13.2Vdc y una salida de 5Vdc, lo que permite completar el esquema con un regulador lineal de 3.3Vdc tradicional sin inconvenientes. Se optó por una circuitería como la de la figura~\ref{fig:imgDCDC_PS}.
 
     \begin{figure}[H]
         \centering
@@ -11,7 +11,7 @@
         \label{fig:imgDCDC_PS}
     \end{figure}
 
-    Sumando los consumos de corriente pesimistas y aproximados de los componentes más importantes obtenemos:
+    Sumando los consumos de corriente pesimistas y aproximados de los componentes más importantes se obtiene:
 
     \begin{table}[H]
         \centering
@@ -29,7 +29,7 @@
         \caption{Tabla de consumos}
     \end{table}
 
-    Incluso, sin agregar un margen de seguridad del 20\%, lo que nos daría un consumo total de 991mA, se superan los 800mA que un regulador lineal SMD como el AMS1117 podría llegar a entregar sin ponerlo en riesgo. Dada esta condición, se decidió colocar dos fuentes gemelas. Una de ellas alimentará el microcontrolador que administra la señal de los transistores de salida junto con sus led testigos, la otra abastecerá al microcontrolador del HMI, sus periféricos y leds testigos:
+    Incluso, sin agregar un margen de seguridad del 20\%, se obtendría un consumo total de 991mA, superando los 800mA que un regulador lineal SMD como el AMS1117 podría llegar a tolerar sin ponerlo en riesgo. Dada esta condición, se decidió colocar dos fuentes gemelas. Una de ellas alimentará el microcontrolador que administra la señal de los transistores de salida junto con sus led testigos, la otra abastecerá al microcontrolador del HMI, sus periféricos y leds testigos:
 
     \begin{table}[H]
         \centering
@@ -67,7 +67,7 @@
         \label{fig:imgDCDC_PS_PCB}
     \end{figure}
 
-    \begin{figure}[tbp]
+    \begin{figure}[H]
         \centering
             \includegraphics[width=0.9\textwidth]{dev/hmi/img/DC-DC_PS_PCB_3D.png}
             \caption{Diseño 3D de la fuente de alimentación.}
@@ -172,13 +172,20 @@
 
 \subsubsection{Configuración Wi-Fi}
 
-    El ESP32 genera una red Wi-Fi como access point (AP) que, conectándose a ella, se accede a un formulario WEB que permitirá configurar los mismos parámetros descritos en la sección anterior. Además se podrá encender y apagar el motor desde allí con los parámetros ya guardados.
+    El ESP32 genera una red Wi-Fi como access point (AP) que, conectándose a ella, se accede a un formulario WEB que permitirá configurar los mismos parámetros descritos en la sección anterior. Además se podrá encender y apagar el motor desde allí con los parámetros ya guardados. En la figura~\ref{} se muestra la interfaz gráfica.
+    
+    \begin{figure}[H]
+        \centering
+            \includegraphics[width=0.9\textwidth]{dev/hmi/img/pantallaVFLV_wifi.png}
+            \caption{Conexionado de display en PCB.}
+        \label{fig:imgWEB}
+    \end{figure}
 
     Aún hay mejoras en la experiencia de usuario que se deben realizar desde la interfaz web: Menajes al usuario de validación, redireccionamientos y lectura de datos cargados. Estos cambios deben realizarse desde el código HTML de cada página que se muestra en pantalla, con el agregado de scripts de javascript.
 
 \subsubsection{Memoria no volátil}
 
-    Para el almacenamiento de las variables configuradas por el usuario y mantenerlas cuando el sistema se desenergiza, se optó por utilizar la memoria no volátil del ESP32. Esto nos ahorra la necesidad de disponer de un circuito adicional de memoria EEPROM externa. Todos los parámetros arriba mencionados se salvarán utilizando un sector llamado \textit{storage} y las siguientes etiquetas para la lectura y escritura:
+    Para el almacenamiento de las variables configuradas por el usuario y mantenerlas cuando el sistema se desenergiza, se optó por utilizar la memoria no volátil del ESP32. Esto evita la necesidad de disponer de un circuito adicional de memoria EEPROM externa. Todos los parámetros arriba mencionados se salvarán utilizando un sector llamado \textit{storage} y las siguientes etiquetas para la lectura y escritura:
 
     \begin{itemize}
         \item freq\_freq
@@ -292,7 +299,7 @@
 
         \paragraph{Entradas y salidas aisladas} Se disponen entradas aisladas para el arranque, parada, parada de emergencia, cambio de velocidades del motor y termoswitch interno con el objetivo de brindarle al usuario la posibilidad de conectar un controlador o sensorización externa que pueda interactuar con el variador de frecuencia. Además se coloca una salida analógica de 0-10V que representará la frecuencia de operación, donde 0V será 0Hz y 10V será 150Hz.
 
-        Cada una de estas entradas y salidas son aisladas con un optoacoplador para evitar que ruidos o picos de tensión puedan dañar los componentes internos del HMI. Así tendremos un circuito para los controles de motor como los de la figura~\ref{fig:Input_SCH}, un circuito para la salida analógica como figura~\ref{fig:Output_SCH} y un circuito para la entrada del termoswitch como figura~\ref{fig:Thermoswitch_SCH}.
+        Cada una de estas entradas y salidas son aisladas con un optoacoplador para evitar que ruidos o picos de tensión puedan dañar los componentes internos del HMI. See diseñó un circuito para los controles de motor como los de la figura~\ref{fig:Input_SCH}, un circuito para la salida analógica como figura~\ref{fig:Output_SCH} y un circuito para la entrada del termoswitch como figura~\ref{fig:Thermoswitch_SCH}.
 
         \begin{figure}[H]
             \centering
